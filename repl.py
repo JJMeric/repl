@@ -275,20 +275,22 @@ elif arg=="bailleul" : tonal="bailleul"
 
 if tonal=="" : sys.exit("text:script non defini : pas de meta ou pas d'argument (tonal, bailleul)")
 
-if notfast: print tout.count("class=\"annot\""), " phrases"
-totalmots=tout.count("class=\"w\"")
-if notfast: print totalmots, " mots"
+if notfast:
+    print tout.count("class=\"annot\""), " phrases"
+    totalmots = tout.count("class=\"w\"")
+    print totalmots, " mots"
 
-ambs=ambiguous.findall(tout)
-nbambs=len(ambs)
-if notfast: print nbambs, " mots ambigus restants apres gparser, soit : ", 100*nbambs/totalmots, "%"
-psambs=psambsearch.findall(tout)
-nbpsambs=len(psambs)
-psambslist=""
-if nbpsambs>0:
-  for psamb in psambs:
-    if psamb not in psambslist: psambslist=psambslist+psamb+" "
-if notfast: print nbpsambs, " ps ambigues ( "+psambslist+")", 100*nbpsambs/totalmots, "%"
+if notfast:
+    ambs = ambiguous.findall(tout)
+    nbambs = len(ambs)
+    print nbambs, " mots ambigus restants apres gparser, soit : ", 100*nbambs/totalmots, "%"
+    psambs = psambsearch.findall(tout)
+    nbpsambs = len(psambs)
+    psambslist = ""
+    if nbpsambs > 0:
+      for psamb in psambs:
+        if psamb not in psambslist: psambslist=psambslist+psamb+" "
+    print nbpsambs, " ps ambigues ( "+psambslist+")", 100*nbpsambs/totalmots, "%"
 
 psvalides="|adj|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers|pm|pp|prep|prn|prt|ptcp|v|vq|"
 valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_AORN_DORP_ADJORD_"
