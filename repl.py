@@ -438,7 +438,7 @@ wrepl=ur'<span class="w" stage="\g<1>">\g<2><span class="lemma">\g<6><sub class=
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # Gloss doubles lemma/lemma var
 if nombre>0 :
   msg="%i modifs doublons v/n -> n/v pour NORV" % nombre +"\n"
-  log.write(msg.encode("utf-8"))
+  if notfast: log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -470,13 +470,11 @@ if arg=="fast" or arg=="-fast":
   while linerepl :
     linerepl=re.sub(ur"\n$",u"",linerepl,0,re.U+re.MULTILINE)    # strip trailing newline char
     nblinerepl=nblinerepl+1
-    replelems=linerepl.split("===")
-    wsearch0=replelems[0]
+    wsearch, wrepl = linerepl.split("===")
     #log.write(wsearch0+"\n")
-    wsearch=wsearch0.replace(u"¤¤",ur"\n")
+    wsearch = wsearch.replace(u"¤¤",ur"\n")
     # log.write(wsearch+"\n")
-    wrepl=replelems[1]
-    wrepl=wrepl.replace(u"¤¤",u"\n")
+    wrepl = wrepl.replace(u"¤¤",u"\n")
     #wsearch=re.sub(u"¤¤",ur"\n",wsearch0,0,re.U+re.MULTILINE)
     #wrepl=re.sub(u"¤¤",u"\n",wrepl,0,re.U+re.MULTILINE)
     #log.write("wsearch="+wsearch0+u"\n")
