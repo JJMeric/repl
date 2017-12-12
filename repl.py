@@ -275,20 +275,22 @@ elif arg=="bailleul" : tonal="bailleul"
 
 if tonal=="" : sys.exit("text:script non defini : pas de meta ou pas d'argument (tonal, bailleul)")
 
-if notfast: print tout.count("class=\"annot\""), " phrases"
-totalmots=tout.count("class=\"w\"")
-if notfast: print totalmots, " mots"
+if notfast:
+    print tout.count("class=\"annot\""), " phrases"
+    totalmots = tout.count("class=\"w\"")
+    print totalmots, " mots"
 
-ambs=ambiguous.findall(tout)
-nbambs=len(ambs)
-if notfast: print nbambs, " mots ambigus restants apres gparser, soit : ", 100*nbambs/totalmots, "%"
-psambs=psambsearch.findall(tout)
-nbpsambs=len(psambs)
-psambslist=""
-if nbpsambs>0:
-  for psamb in psambs:
-    if psamb not in psambslist: psambslist=psambslist+psamb+" "
-if notfast: print nbpsambs, " ps ambigues ( "+psambslist+")", 100*nbpsambs/totalmots, "%"
+if notfast:
+    ambs = ambiguous.findall(tout)
+    nbambs = len(ambs)
+    print nbambs, " mots ambigus restants apres gparser, soit : ", 100*nbambs/totalmots, "%"
+    psambs = psambsearch.findall(tout)
+    nbpsambs = len(psambs)
+    psambslist = ""
+    if nbpsambs > 0:
+      for psamb in psambs:
+        if psamb not in psambslist: psambslist=psambslist+psamb+" "
+    print nbpsambs, " ps ambigues ( "+psambslist+")", 100*nbpsambs/totalmots, "%"
 
 psvalides="|adj|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers|pm|pp|prep|prn|prt|ptcp|v|vq|"
 valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_AORN_DORP_ADJORD_"
@@ -436,7 +438,7 @@ wrepl=ur'<span class="w" stage="\g<1>">\g<2><span class="lemma">\g<6><sub class=
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # Gloss doubles lemma/lemma var
 if nombre>0 :
   msg="%i modifs doublons v/n -> n/v pour NORV" % nombre +"\n"
-  log.write(msg.encode("utf-8"))
+  if notfast: log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -468,13 +470,11 @@ if arg=="fast" or arg=="-fast":
   while linerepl :
     linerepl=re.sub(ur"\n$",u"",linerepl,0,re.U+re.MULTILINE)    # strip trailing newline char
     nblinerepl=nblinerepl+1
-    replelems=linerepl.split("===")
-    wsearch0=replelems[0]
+    wsearch, wrepl = linerepl.split("===")
     #log.write(wsearch0+"\n")
-    wsearch=wsearch0.replace(u"¤¤",ur"\n")
+    wsearch = wsearch.replace(u"¤¤",ur"\n")
     # log.write(wsearch+"\n")
-    wrepl=replelems[1]
-    wrepl=wrepl.replace(u"¤¤",u"\n")
+    wrepl = wrepl.replace(u"¤¤",u"\n")
     #wsearch=re.sub(u"¤¤",ur"\n",wsearch0,0,re.U+re.MULTILINE)
     #wrepl=re.sub(u"¤¤",u"\n",wrepl,0,re.U+re.MULTILINE)
     #log.write("wsearch="+wsearch0+u"\n")
