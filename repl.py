@@ -275,9 +275,10 @@ elif arg=="bailleul" : tonal="bailleul"
 
 if tonal=="" : sys.exit("text:script non defini : pas de meta ou pas d'argument (tonal, bailleul)")
 
+totalmots = tout.count("class=\"w\"")   # is needed in the final message to compute average ambiguous left and elapse time/word
+    
 if notfast:
     print tout.count("class=\"annot\""), " phrases"
-    totalmots = tout.count("class=\"w\"")
     print totalmots, " mots"
 
 if notfast:
@@ -329,8 +330,9 @@ wsearch=ur'<span class="w" stage="[^\"]+">([A-Z\-]+)<span class="lemma">[a-z\-]+
 wrepl=ur'<span class="w" stage="repl">\g<1><span class="lemma">\g<1><sub class="ps">n.prop</sub><sub class="gloss">ABR</sub></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # eliminer EMPR ex: ONI::EMPR
 if nombre>0 :
-  msg="%i modifs EMPR->ABR " % nombre +"\n"
-  log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs EMPR->ABR " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -341,8 +343,9 @@ wsearch=ur'<span class="w" stage="-1">([A-Z\-0-9]+)<span class="lemma">[a-zA-Z\-
 wrepl=ur'<span class="w" stage="repl">\g<1><span class="lemma">\g<1><sub class="ps">n.prop</sub><sub class="gloss">ABR</sub></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # autres ABR possibles
 if nombre>0 :
-  msg="%i modifs Majuscules sans gloss->ABR " % nombre +"\n"
-  log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs Majuscules sans gloss->ABR " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -354,8 +357,9 @@ wsearch=ur'<span class="lemma var">([^<]+)</span>'
 wrepl=ur''
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # gloss vides ex: baarakelen::
 if nombre>0 :
-  msg="%i modifs Gloss vide en lemma var" % nombre +"\n"
-  log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs Gloss vide en lemma var" % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -369,8 +373,9 @@ wsearch=ur'<span class="lemma">([^<]+)<span class="lemma var">([^<]+)<sub class=
 wrepl=ur'<span class="lemma">\g<1><span class="lemma var">\g<2></span></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # Gloss vide en lemma et n/adj/dtm/prn/ptcp/n.prop/num
 if nombre>0 :
-  msg="%i modifs Gloss vide en lemma et n/adj/dtm/prn/ptcp/n.prop/num" % nombre +"\n"
-  log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs Gloss vide en lemma et n/adj/dtm/prn/ptcp/n.prop/num" % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -385,8 +390,9 @@ wrepl=ur'<span class="lemma var">\g<1><sub class="ps">\g<2></sub>\g<3></span>'
 
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # Gloss doubles lemma var/lemma var
 if nombre>0 :
-  msg="%i modifs Gloss doubles lemma var/lemma var" % nombre +"\n"
-  log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs Gloss doubles lemma var/lemma var" % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -401,8 +407,9 @@ wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">(?P<stemps>[^<]+)</sub><su
 wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<3></sub>\g<4></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # Gloss doubles lemma/lemma var
 if nombre>0 :
-  msg="%i modifs Gloss doubles lemma/lemma var  - mais lemma var pas = lemma" % nombre +"\n"
-  log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs Gloss doubles lemma/lemma var  - mais lemma var pas = lemma" % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -413,8 +420,9 @@ wsearch=ur'<span class="lemma">(?P<stem>[0-9]+)nan<span class="lemma var">(?P=st
 wrepl=ur'<span class="lemma">\g<1>nan<sub class="ps">adj</sub><span class="m">\g<1><sub class="ps">num</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # Gloss doubles lemma/lemma var
 if nombre>0 :
-  msg="%i modifs ordinaux type 39nan avec lemma var" % nombre +"\n"
-  log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs ordinaux type 39nan avec lemma var" % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -437,8 +445,9 @@ wrepl=ur'<span class="w" stage="\g<1>">\g<2><span class="lemma">\g<6><sub class=
 # attention décalage $5 $6 -> $6 $7 à cause de la formule (((?!lemma var).)*)
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # Gloss doubles lemma/lemma var
 if nombre>0 :
-  msg="%i modifs doublons v/n -> n/v pour NORV" % nombre +"\n"
-  if notfast: log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs doublons v/n -> n/v pour NORV" % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -453,8 +462,9 @@ wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">(?P<ps>[^<]+)</sub><sub cl
 wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<3></sub><\g<4>></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # Gloss doubles lemma/lemma var
 if nombre>0 :
-  msg="%i modifs doublons entrée lexicale identiques" % nombre +"\n"
-  log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs doublons entrée lexicale identiques" % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -471,24 +481,13 @@ if arg=="fast" or arg=="-fast":
     linerepl=re.sub(ur"\n$",u"",linerepl,0,re.U+re.MULTILINE)    # strip trailing newline char
     nblinerepl=nblinerepl+1
     wsearch, wrepl = linerepl.split("===")
-    #log.write(wsearch0+"\n")
     wsearch = wsearch.replace(u"¤¤",ur"\n")
-    # log.write(wsearch+"\n")
     wrepl = wrepl.replace(u"¤¤",u"\n")
-    #wsearch=re.sub(u"¤¤",ur"\n",wsearch0,0,re.U+re.MULTILINE)
-    #wrepl=re.sub(u"¤¤",u"\n",wrepl,0,re.U+re.MULTILINE)
-    #log.write("wsearch="+wsearch0+u"\n")
-    
-    #if nblinerepl==800: sys.exit("fin tests")
     
     tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U+
-    #iprogress=nblinerepl/float(nlignerepl)
-    #update_progress(iprogress)
     if nombre>0 :
       nbrulesapplied=nbrulesapplied+1
       nbmodif=nbmodif+nombre
-      # msg="%i modifs avec " % nombre +wsearch+"\n"
-      # log.write(msg.encode("utf-8"))
     linerepl=fileREPC.readline()
 
 else :
@@ -496,26 +495,18 @@ else :
 
   ###### replacement rules as per REPL.txt ######################################################################################################
 
-  #linerepl=fileREP.readline()
-  #linerepl=linerepl.decode('utf-8')
   nblinerepl=0
-  #print "lecture REPL"
-  #print linerepl
+  
   toutrepl=toutrepl.decode("utf-8")
   toutrepllines=toutrepl.split(u"\n")
   for linerepl in toutrepllines :
     nblinerepl=nblinerepl+1
 
-    #log.write("#   "+linerepl.encode('utf-8'))
     log.write("#   "+linerepl+"\n")
 
     if linerepl[0:1]==u"#":
-      #linerepl=fileREP.readline()
-      #linerepl=linerepl.decode('utf-8')
       continue
     if linerepl[0:1]==u"\n" or len(linerepl)<=2 :  # le premier test ne marche pas sur mac 
-      #linerepl=fileREP.readline()
-      #linerepl=linerepl.decode('utf-8')
       continue
     if u"===" not in linerepl :
       log.write("erreur de === :"+str(nblinerepl)+" : "+linerepl+"\n len="+str(len(linerepl)))
@@ -529,13 +520,11 @@ else :
     wrepl=u""
     wrepl2=u""
     sequence=u""
-    #linerepl=linerepl[0:len(linerepl)-1]   # enlève \n
-
+    
     if u"#" in linerepl :
       linerepl_sp=linerepl.split(u"#")
       linerepl=linerepl_sp[0].strip()
-      #log.write("réduit à '"+linerepl+"'\n")
-
+      
     if "====" in linerepl :
       sys.exit(linerepl+"\n==== au lieu de === ?")
 
@@ -575,7 +564,6 @@ else :
 
     liste_gloses=elements[1]
 
-    #print "todo : ",liste_mots," -> ",liste_gloses
     #
     # PETITES VALIDATIONS
     #
@@ -762,12 +750,6 @@ else :
       if sequence=="": sequence=mot
       else : sequence=sequence+" "+mot
     
-    """
-    log.write("lm='"+liste_mots+"'\n")
-    log.write("ws='"+wsearch+"'\n")
-    print "\nsearch",wsearch
-
-    """
     
     lmots=len(mots)
     lgloses=len(gloses)
@@ -1103,44 +1085,22 @@ else :
           #log.write("[] glosstext_to_html: "+glose+" -> "+htmlgloss+"\n")
           wrepl=wrepl+u"<span class=\"w\" stage=\"0\">"+word+htmlgloss+u"\n</span>"
     
-    #print "repl :",wrepl
     nbreplok=nbreplok+1
     iprogress=nbreplok/float(nlignerepl)
     update_progress(iprogress)
-
-    """
-    # test
-    trouve=re.findall(wsearch,tout,re.U+re.M)
-    if trouve : print "\n"+wsearch+"   :   "+str(len(trouve))+ " éléments trouvés"
-    else : print "rien trouvé"
-
-    trouve=re.findall(wsearch.decode("utf-8"),tout.decode("utf-8"),re.U+re.M)
-    if trouve : print "\n"+wsearch.decode("utf-8")+"   :   "+str(len(trouve))+ " éléments trouvés (decode)"
-    else : print "rien trouvé (decode)"
-    """
 
     tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U+
 
     # écrire les formules compilées
 
-    # wsearch=wsearch.replace(u"\n",u"¤¤")
     wsearch=re.sub(ur"\n",u"¤¤",wsearch,0,re.U+re.MULTILINE)
     wsearch=re.sub(ur"\\n",u"¤¤",wsearch,0,re.U+re.MULTILINE)  
     
-    # wrepl=wrepl.replace(u"\n",u"¤¤")
     wrepl=re.sub(ur"\n",u"¤¤",wrepl,0,re.U+re.MULTILINE)
     wrepl=re.sub(ur"\\n",u"¤¤",wrepl,0,re.U+re.MULTILINE)
     
     fileREPC.write(wsearch+u"==="+wrepl+u"\n")
 
-    #print "nombre=",nombre
-
-    #if u"<sé>" in tout :
-    #log.write(u"check glose wsearch:"+wsearch+u"\nwrel:"+wrepl+u"\n")
-    #  sys.exit("voir log pour l'etape du probleme de decalage ")
-    #if u"PRMRK_NAME_kɛ́" in liste_mots:
-    #  log.write(u"check glose wsearch:"+wsearch+u"\nwrel:"+wrepl+u"\n")
-    #  sys.exit("voir log si c'est repare ici ")
     if nombre>0 :
       msg="%i modifs avec " % nombre +sequence+"\n"
       log.write(msg.encode("utf-8"))
@@ -1152,12 +1112,8 @@ else :
         if glose+"_" not in valides :
           lmots=lmots+1
       nbmots=nbmots+(nombre*lmots)
-    #linerepl=fileREP.readline()
-    #linerepl=linerepl.decode('utf-8')
-    #end of for loop
-
-
-# POST : systematic global replaces 
+    
+# POST : systematic global replaces ###############################################
 
 # handle double pm   like dtm/prn 
 # simple cases (simple gloss)
@@ -1166,8 +1122,9 @@ wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><s
 wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub></span>\g<5>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: ps double -> lemma/lemma var duplication
 if nombre>0 :
-  msg="%i modifs ps double -> lemma/lemma var duplication " % nombre +"\n"
-  if notfast: log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs ps double -> lemma/lemma var duplication " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -1176,8 +1133,9 @@ wsearch=ur'<span class="lemma var">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</su
 wrepl=ur'<span class="lemma var">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub></span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: double -> lemma var/lemma var duplication
 if nombre>0 :
-  msg="%i modifs double -> lemma var/lemma var duplication " % nombre +"\n"
-  if notfast: log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs double -> lemma var/lemma var duplication " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -1188,8 +1146,9 @@ wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><s
 wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span></span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: ps double complexgloss -> lemma/lemma var duplication
 if nombre>0 :
-  msg="%i modifs ps double complexgloss -> lemma/lemma var duplication " % nombre +"\n"
-  if notfast: log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs ps double complexgloss -> lemma/lemma var duplication " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -1199,8 +1158,9 @@ wsearch=ur'<span class="lemma var">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</su
 wrepl=ur'<span class="lemma var">\g<1><sub class="ps">\g<2></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span></span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: double  complexgloss-> lemma var/lemma var duplication
 if nombre>0 :
-  msg="%i modifs double  complexgloss-> lemma var/lemma var duplication " % nombre +"\n"
-  if notfast: log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs double  complexgloss-> lemma var/lemma var duplication " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -1211,8 +1171,9 @@ wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><s
 wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span></span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: ps double complexgloss -> lemma/lemma var duplication
 if nombre>0 :
-  msg="%i modifs ps double complexgloss -> lemma/lemma var duplication " % nombre +"\n"
-  if notfast: log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs ps double complexgloss -> lemma/lemma var duplication " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -1222,8 +1183,9 @@ wsearch=ur'<span class="lemma var">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</su
 wrepl=ur'<span class="lemma var">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span></span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: double  complexgloss-> lemma var/lemma var duplication
 if nombre>0 :
-  msg="%i modifs double  complexgloss-> lemma var/lemma var duplication " % nombre +"\n"
-  if notfast: log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i modifs double  complexgloss-> lemma var/lemma var duplication " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -1245,8 +1207,9 @@ wsearch=ur'</style>'
 wrepl=ur'span.lemma.var {background-color:lightblue;}\n</style><title>'+filenametemp+ur'</title>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  
 if nombre>0 :
-  msg="%i  highlight ambiguous words left for better navigator visualisation" % nombre +"\n"
-  if notfast: log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i  highlight ambiguous words left for better navigator visualisation" % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
@@ -1255,21 +1218,19 @@ wsearch=ur'<span class="lemma">([^<]+)</span>'
 wrepl=ur'<span class="lemma" style="background-color:red;">\g<1>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  
 if nombre>0 :
-  msg="%i  highlight unkown words left for better navigator visualisation" % nombre +"\n"
-  if notfast: log.write(msg.encode("utf-8"))
+  if notfast: 
+    msg="%i  highlight unkown words left for better navigator visualisation" % nombre +"\n"
+    log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
-
-""" NE MARCHE PAS STRUCTURE CASSEE
-"""
 # FINISH
-
-msg="\n %i modifs au total" % nbmodif
-if notfast: log.write(msg.encode('utf-8'))
-msg="\n %i mots modifies au total" % nbmots
-if notfast: log.write(msg.encode('utf-8'))
+if notfast: 
+  msg="\n %i modifs au total" % nbmodif
+  log.write(msg.encode('utf-8'))
+  msg="\n %i mots modifies au total" % nbmots
+  log.write(msg.encode('utf-8'))
 
 fileOUT.write(tout)
 #fileOUT.write(tout.encode("utf-8"))
