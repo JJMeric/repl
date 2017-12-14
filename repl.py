@@ -86,16 +86,6 @@ def update_progress(progress):
     sys.stdout.write(text)
     sys.stdout.flush()
 
-# test
-"""
-element="PERS"
-nbelement=re.findall(element,"b'_PERS_bólo_PUNCT")
-nbelementg=re.findall(element,"b':cop:être_à:pers:3SG_bólo:pp:CNTRL_PUNCT")
-print len(nbelement), len(nbelementg)
-if (len(nbelement)!=len(nbelementg)) and not (len(nbelementg)==0 and element in "_TIRET_"):
-        print u"il n'y a pas le même nombre de '"+element+u"' de part et d'autre de ===\n"
-sys.exit("FIN TEST")
-"""
 #à compléter : 
 # 1) débuts et fins de phrase (+ de ligne, ponctuations...)
 # 2) variantes : ok pour le pipe ?
@@ -216,10 +206,10 @@ if nargv>2 :
       print "using REPL-STANDARD-C.txt"
     except:
       try:
-        fileREPC = open ("/home/corpus-team/GIT/corbama-build/REPL-STANDARD-C.txt","r")
-        print "using /home/corpus-team/GIT/corbama-build/REPL-STANDARD-C.txt"
+        fileREPC = open ("/home/corpus-team/REPL/REPL-STANDARD-C.txt","r")
+        print "using /home/corpus-team/REPL/REPL-STANDARD-C.txt"
       except :
-        sys.exit("repl.py needs a REPL-C.txt file or a REPL-STANDARD-C.txt file in the current directory (or corbama-build, with option fast)")
+        sys.exit("repl.py needs a REPL-C.txt file or a REPL-STANDARD-C.txt file in the current directory (or in REPL)")
 
 if notfast:
   try:
@@ -230,7 +220,11 @@ if notfast:
       fileREP = open ("REPL-STANDARD.txt","rb")
       print "using REPL-STANDARD.txt"
     except:
-      sys.exit("repl.py needs a REPL.txt file or a REPL-STANDARD.txt file in the current directory")
+      try:
+        fileREPC = open ("/home/corpus-team/REPL/REPL-STANDARD.txt","r")
+        print "using /home/corpus-team/REPL/REPL-STANDARD.txt"
+      except :
+        sys.exit("repl.py needs a REPL.txt file or a REPL-STANDARD.txt file in the current directory (or in REPL)")
 
   logfilename=filenametemp+"-replacements.log"
   log =  open (logfilename,"w")
@@ -294,7 +288,7 @@ if notfast:
     print nbpsambs, " ps ambigues ( "+psambslist+")", 100*nbpsambs/totalmots, "%"
 
 psvalides="|adj|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers|pm|pp|prep|prn|prt|ptcp|v|vq|"
-valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_AORN_DORP_ADJORD_"
+valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_AORN_DORP_ADJORD_PMORCOP_"
 # toujours commencer et finir par _
 # autres mots utilisés, traitements spéciaux : NUMnan, degremove, ADVNforcen, ADVNforceadv, CONJPREPforceconj, CONJPREPforceprep
 gvalides=u"NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRICE_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV.PROG_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_BE_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
@@ -740,9 +734,13 @@ else :
       elif mot==u"NPROPRETOP"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub>(((?!lemma var).)*)</span>\n</span>'
       elif mot==u"DOONIN"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">dɔ́ɔnin<sub class="ps">adj/n</sub><(((?!lemma var).)*)>\n</span>'
       elif mot==u"NORV"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">v</sub><(((?!lemma var).)*)></span></span>\n</span>'
+      elif mot==u"PMORCOP"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pm</sub><sub class="gloss">([^<]+)</sub><span class="lemma var">([^<]+)<sub class="ps">cop</sub><sub class="gloss">([^<]+)</sub></span></span>\n</span>'
       elif mot==u"AORN"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)></span></span>\n</span>'
       elif mot==u"DORP"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">dtm</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">prn</sub><(((?!lemma var).)*)></span></span>\n</span>'
-      
+      # to be implemented : GNMEMBER
+      # <span class="lemma">([^<]+)<sub class="ps">(n|n.prop|pers|prn|dtm|adj|ptcp|prt)</sub><sub class="gloss">([^<]+)</sub>|<span class="lemma">([^<]+)<sub class="ps">(conj|prep\/conj|pp)</sub><sub class="gloss">(POSS|et|ainsi\.que)</sub>
+      # add around this class="w" and not lemma var
+      # check impact on capt_gr_index  (TEST THOROUGHLY!!!)
       elif mot==u"AMBIGUOUS": wsearch=wsearch+ur'<span class="w"(.*)lemma var(.*)\n</span>'
       else :
         if u"'" in mot: mot=re.sub(ur"\'",u"[\'\’]+",mot)   # satanées curly brackets
@@ -935,6 +933,15 @@ else :
       elif glose==u"NORVverbe" :
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+5)+ur'><sub class="ps">v</sub><\g<'+str(capt_gr_index+6)+ur'>></span>\n</span>'
         capt_gr_index=capt_gr_index+5+2 # attention décalage du au 1er (((?!lemma var).)*)
+      elif glose==u"PMORCOP" :   # leave as it is
+        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">pm</sub><sub class="gloss">\g<'+str(capt_gr_index+3)+ur'></sub><span class="lemma var">\g<'+str(capt_gr_index+4)+ur'><sub class="ps">cop</sub><sub class="gloss">\g<'+str(capt_gr_index+5)+ur'></sub></span></span>\n</span>'
+        capt_gr_index=capt_gr_index+5+1
+      elif glose==u"PMORCOPpm" :
+        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">pm</sub><sub class="gloss">\g<'+str(capt_gr_index+3)+ur'></sub></span>\n</span>'
+        capt_gr_index=capt_gr_index+5+1
+      elif glose==u"PMORCOPcop" :
+        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+4)+ur'><sub class="ps">cop</sub><sub class="gloss">\g<'+str(capt_gr_index+5)+ur'></sub></span>\n</span>'
+        capt_gr_index=capt_gr_index+5+1
       elif glose==u"AORNname" :
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n</sub><\g<'+str(capt_gr_index+3)+ur'>></span>\n</span>'
         capt_gr_index=capt_gr_index+5+2 # 2  à cause des 2 (((?!lemma var).)*)
