@@ -297,7 +297,7 @@ gvalides=u"NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_P
 fixevalides="_ETRG_ETRG.FRA_CHNT_Q_PREV_"
 # cf kàmana:n:PREV de kamanagan
 pmlist=u"bɛ́nà:pm:FUT_bɛ́n':pm:FUT_bɛ:pm:IPFV.AFF_b':pm:IPFV.AFF_be:pm:IPFV.AFF_bɛ́kà:pm:PROG.AFF_bɛ́k':pm:PROG.AFF_bɛ́ka:pm:INFR_bága:pm:INFR_bìlen:pm:COND.NEG_kà:pm:INF_k':pm:INF_ka:pm:SBJV_k':pm:SBJV_ka:pm:QUAL.AFF_man:pm:QUAL.NEG_kànâ:pm:PROH_kàn':pm:PROH_ma:pm:PFV.NEG_m':pm:PFV.NEG_mánà:pm:COND.AFF_mán':pm:COND.AFF_máa:pm:COND.AFF_nà:pm:CERT_n':pm:CERT_tɛ:pm:IPFV.NEG_t':pm:IPFV.NEG_tɛ́kà:pm:PROG.NEG_tɛ́k':pm:PROG.NEG_tɛ́ka:pm:INFR.NEG_tɛ́k':pm:INFR.NEG_tɛ́nà:pm:FUT.NEG_tɛ́n':pm:FUT.NEG_ye:pm:PFV.TR_y':pm:PFV.TR_yé:pm:IPFV_yé:pm:IMP_y':pm:IMP_yékà:pm:RCNT_màa:pm:DES_mà:pm:DES_m':pm:DES_"
-coplist=u"bɛ́:cop:être_b':cop:être_b':cop:être_yé:cop:être_kó:cop:QUOT_k':cop:QUOT_dòn:cop:ID_tɛ́:cop:COP.NEG_t':cop:COP.NEG_yé:cop:EQU_y':cop:EQU_bé:cop:être_"
+coplist=u"bɛ́:cop:être_b':cop:être_b':cop:être_yé:cop:être_kó:cop:QUOT_k':cop:QUOT_dòn:cop:ID_dò:cop:ID_tɛ́:cop:COP.NEG_t':cop:COP.NEG_yé:cop:EQU_y':cop:EQU_bé:cop:être_"
 prnlist=u"ɲɔ́gɔn:prn:RECP_mîn:prn:REL_mínnu:prn:REL.PL2_nìnnú:prn:DEM.PL_mín:prn:REL_nìn:prn:DEM_"
 dtmlist=u"ìn:dtm:DEF_mîn:dtm:REL_nìn:dtm:DEM_nìn:dtm/prn:DEM_mín:dtm:REL_mínnu:dtm:REL.PL2_nìnnú:dtm:DEM.PL_nìnnú:dtm/prn:DEM.PL_"
 perslist=u"ń:pers:1SG_nê:pers:1SG.EMPH_í:pers:2SG_í:pers:REFL_ê:pers:2SG.EMPH_à:pers:3SG_àlê:pers:3SG.EMPH_án:pers:1PL_ánw:pers:1PL.EMPH_a':pers:2PL_á:pers:2PL_á':pers:2PL_áw:pers:2PL.EMPH_ù:pers:3PL_òlû:pers:ce.PL2_"
