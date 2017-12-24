@@ -138,7 +138,7 @@ if nargv>2 :
   arg= str(sys.argv[2])
   # print "arg="+arg
 
-  if arg=="check" :
+  if arg=="check" or arg=="-check" :
     try:
       fileMMC=open("bamadaba-mmc.txt")
     except : sys.exit ("arg 'check' needs file bamadaba-mmc.txt in current directory")
@@ -153,6 +153,7 @@ if nargv>2 :
       mmclx=mmclist[0]
       mmcps=mmclist[1]
       mmcgloss=mmclist[2]   # au sens large avec les sous gloses
+      mmcgloss1=mmcgloss
       if u"[" in mmcgloss: 
         mmcgloss=mmcgloss[0:mmcgloss.find(u"[")].strip()
       mmcshort.append(mmclx+u":"+mmcps+u":"+mmcgloss)
@@ -164,7 +165,7 @@ if nargv>2 :
         #log.write( "\n"+entrymmc+"\n")
         mmclxlist=mmclx.split(u"|")
         for mmclxel in mmclxlist:
-          mmc.append(mmclxel+u":"+mmcps+u":"+mmcgloss)
+          mmc.append(mmclxel+u":"+mmcps+u":"+mmcgloss1)
           #log.write(mmclxel+u":"+mmcps+u":"+mmcgloss+"\n")
           if u"[" in mmcgloss: 
             mmcgloss=mmcgloss[0:mmcgloss.find(u"[")].strip()
@@ -172,7 +173,7 @@ if nargv>2 :
           if u"/" in mmcps:
             mmcpslist=mmcps.split(u"/")
             for mmcpsel in mmcpslist:
-              mmc.append(mmclxel+u":"+mmcpsel+u":"+mmcgloss)
+              mmc.append(mmclxel+u":"+mmcpsel+u":"+mmcgloss1)
               #log.write(mmclxel+u":"+mmcpsel+u":"+mmcgloss+"\n")
               if u"[" in mmcgloss: 
                 mmcgloss=mmcgloss[0:mmcgloss.find(u"[")].strip()
@@ -182,7 +183,7 @@ if nargv>2 :
         #log.write( "\n"+entrymmc+"\n")
         mmcpslist=mmcps.split(u"/")
         for mmcpsel in mmcpslist:
-          mmc.append(mmclx+u":"+mmcpsel+u":"+mmcgloss)
+          mmc.append(mmclx+u":"+mmcpsel+u":"+mmcgloss1)
           #log.write(mmclx+u":"+mmcpsel+u":"+mmcgloss+"\n")
           if u"[" in mmcgloss: 
             mmcgloss=mmcgloss[0:mmcgloss.find(u"[")].strip()
@@ -192,7 +193,7 @@ if nargv>2 :
 
       linemmc=fileMMC.readline()
     fileMMC.close()
-    print "mmc loaded "+str(len(mmc))+" words"
+    print "check : mmc loaded "+str(len(mmc))+" words"
     #print 'sample 50 : "'+mmc[50]+'" '
     #print 'sample 12000 : "'+mmc[12000]+'" '
   elif arg=="fast" or arg=="-fast" :
@@ -296,7 +297,7 @@ gvalides=u"NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_P
 #  CFA à cause de la glose de dɔrɔmɛ qui finit par franc.CFA !!!
 fixevalides="_ETRG_ETRG.FRA_CHNT_Q_PREV_"
 # cf kàmana:n:PREV de kamanagan
-pmlist=u"bɛ́nà:pm:FUT_bɛ́n':pm:FUT_bɛ:pm:IPFV.AFF_b':pm:IPFV.AFF_be:pm:IPFV.AFF_bɛ́kà:pm:PROG.AFF_bɛ́k':pm:PROG.AFF_bɛ́ka:pm:INFR_bága:pm:INFR_bìlen:pm:COND.NEG_kà:pm:INF_k':pm:INF_ka:pm:SBJV_k':pm:SBJV_ka:pm:QUAL.AFF_man:pm:QUAL.NEG_kànâ:pm:PROH_kàn':pm:PROH_ma:pm:PFV.NEG_m':pm:PFV.NEG_mánà:pm:COND.AFF_mán':pm:COND.AFF_máa:pm:COND.AFF_nà:pm:CERT_n':pm:CERT_tɛ:pm:IPFV.NEG_t':pm:IPFV.NEG_tɛ́kà:pm:PROG.NEG_tɛ́k':pm:PROG.NEG_tɛ́ka:pm:INFR.NEG_tɛ́k':pm:INFR.NEG_tɛ́nà:pm:FUT.NEG_tɛ́n':pm:FUT.NEG_ye:pm:PFV.TR_y':pm:PFV.TR_yé:pm:IPFV_yé:pm:IMP_y':pm:IMP_yékà:pm:RCNT_màa:pm:DES_mà:pm:DES_m':pm:DES_"
+pmlist=u"bɛ́nà:pm:FUT_bɛ́n':pm:FUT_bɛ:pm:IPFV.AFF_b':pm:IPFV.AFF_be:pm:IPFV.AFF_bɛ́kà:pm:PROG.AFF_bɛ́k':pm:PROG.AFF_bɛ́ka:pm:INFR_bága:pm:INFR_bìlen:pm:COND.NEG_kà:pm:INF_k':pm:INF_ka:pm:SBJV_k':pm:SBJV_ka:pm:QUAL.AFF_mán:pm:QUAL.NEG_kànâ:pm:PROH_kàn':pm:PROH_ma:pm:PFV.NEG_m':pm:PFV.NEG_mánà:pm:COND.AFF_mán':pm:COND.AFF_máa:pm:COND.AFF_nà:pm:CERT_n':pm:CERT_tɛ:pm:IPFV.NEG_t':pm:IPFV.NEG_tɛ́kà:pm:PROG.NEG_tɛ́k':pm:PROG.NEG_tɛ́ka:pm:INFR.NEG_tɛ́k':pm:INFR.NEG_tɛ́nà:pm:FUT.NEG_tɛ́n':pm:FUT.NEG_ye:pm:PFV.TR_y':pm:PFV.TR_yé:pm:IPFV_yé:pm:IMP_y':pm:IMP_yékà:pm:RCNT_màa:pm:DES_mà:pm:DES_m':pm:DES_"
 coplist=u"bɛ́:cop:être_b':cop:être_b':cop:être_yé:cop:être_kó:cop:QUOT_k':cop:QUOT_dòn:cop:ID_dò:cop:ID_tɛ́:cop:COP.NEG_t':cop:COP.NEG_yé:cop:EQU_y':cop:EQU_bé:cop:être_"
 prnlist=u"ɲɔ́gɔn:prn:RECP_mîn:prn:REL_mínnu:prn:REL.PL2_nìnnú:prn:DEM.PL_mín:prn:REL_nìn:prn:DEM_"
 dtmlist=u"ìn:dtm:DEF_mîn:dtm:REL_nìn:dtm:DEM_nìn:dtm/prn:DEM_mín:dtm:REL_mínnu:dtm:REL.PL2_nìnnú:dtm:DEM.PL_nìnnú:dtm/prn:DEM.PL_"
@@ -1012,9 +1013,87 @@ else :
         #  log.write(u"check glose :"+glose+u"\n")
 
         # ICI on peut vérifier glose // Bamadaba mmc 
-        if arg=="check":
-          if glose not in mmc :
+        if arg=="check" or arg=="-check":
+          docheck=True
+          if    u": [" in glose : docheck=False
+          elif u"§§" in glose : docheck=False
+          elif u"nan:adj:ORDINAL" in glose : docheck=False
+          elif u":num:CARDINAL" in glose : docheck=False
+          elif u":conv.n:" in glose : docheck=False
+          elif u":n.prop:ABR" in glose : docheck=False
+          elif u"ETRG.FRA" in glose : docheck=False
+          elif u"::CHNT" in glose : docheck=False
+          elif u":n.prop:NOM.ETRG" in glose : docheck=False
+          elif u":n.prop:NOM.FRA" in glose : docheck=False
+          elif u":n.prop:NOM.ESP" in glose : docheck=False
+          elif u":n.prop:NOM.US" in glose : docheck=False
+          elif u":n.prop:NOM.ENG" in glose : docheck=False
+          elif u":n.prop:NOM.POR" in glose : docheck=False
+          elif u":n.prop:NOM.ITA" in glose : docheck=False
+          elif u":n.prop:NOM.RUS" in glose : docheck=False
+          elif u":n.prop:NOM.FUL" in glose : docheck=False
+          elif u":n.prop:TOP" in glose : docheck=False
+          elif glose==u"bà:num:mille" : docheck=False
+          elif glose==u"bàa:num:mille" : docheck=False
+          elif glose==u"nìnnú:prn:DEM.PL [nìn:prn:DEM nu:mrph:PL2]" : docheck=False
+          elif glose==u"nìnnú:dtm:DEM.PL [nìn:dtm:DEM nu:mrph:PL2]" : docheck=False
+          elif glose==u"fàr':v:ajouter" : docheck=False
+          elif glose==u"kàbini:conj:depuis [kàbi:conj:depuis ní:conj:si]" : docheck=False
+          elif glose==u"kàbini:prep:depuis [kàbi:prep:depuis ní:prep:si]" : docheck=False
+          elif glose==u"dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:adj:autre]" : docheck=False
+          elif glose==u"yànni:conj:avant.que [yàn:n:ici ni:conj:et]" : docheck=False
+          elif glose==u"yànni:prep:avant.que [yàn:n:ici ni:prep:et]" : docheck=False
+          elif glose==u"cɛ̀nímùsoya:n:rapports.sexuels [cɛ̀:n:mâle ni:conj:et mùso:n:femme ya:mrph:ABSTR]" : docheck=False
+          elif glose==u"bámanankan:n:langue.bambara [bámànan:n:bambara kán:n:cou]"  : docheck=False
+          elif glose==u"bámanankan:n:langue.bambara [bámàna:n:bambara kán:n:cou]"  : docheck=False
+          elif glose==u"n':prep:si" : docheck=False
+          elif glose==u"ní:prep:si" : docheck=False
+          elif glose==u"bímɛtɛrɛ:n:décamètre [bî:num:dizaine mɛ́tɛrɛ:n:mètre]" : docheck=False
+          elif glose==u"dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:dtm:autre]" : docheck=False
+          elif glose==u"dùgujɛ:n:aube [dùgu:n:terre jɛ́:adj:blanc]" : docheck=False
+          elif glose==u"sábula:prep:parce.que [sábu:n:cause lá:pp:à]" : docheck=False
+          elif glose==u"bámànandunun:n:tambour" : docheck=False
+          elif glose==u"jákabɔ:n:se.moquer [jáka:n:dîme bɔ́:v:sortir]" : docheck=False
+          elif glose==u"wíli:v:bouillir" : docheck=False
+          elif glose==u"Má:n:Dieu" : docheck=False
+          elif glose==u"díyagoya:v:contraindre [díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] gó:vq:désagréable ya:mrph:DEQU]" : docheck=False
+          elif glose==u"díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU]" : docheck=False
+          elif glose==u"díya:n:bon.goût [dí:vq:agréable ya:mrph:DEQU]" : docheck=False
+          elif glose==u"yɛ̀rɛmahɔrɔnya:n:liberté [yɛ̀rɛmahɔrɔn:n:homme.libre [yɛ̀rɛ̂:dtm:même mà:pp:ADR hɔ́rɔn:n:libre] ya:mrph:ABSTR]"  : docheck=False
+          elif glose==u"mínisiriso:n:ministère [mínisiri:n:ministre só:n:maison]" : docheck=False
+          elif glose==u"ládiyalifɛn:n:prix [ládiya:v:récompenser [lá:mrph:CAUS díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] li:mrph:NMLZ] fɛ́n:n:chose]"  : docheck=False
+          elif glose==u"hɔ́rɔnya:n:liberté [hɔ́rɔn:n:libre ya:mrph:ABSTR]" : docheck=False
+          elif glose==u"júguman:n:méchant [júgu:vq:mauvais man:mrph:ADJ]" : docheck=False
+          elif glose==u"bùlonba:n:case.à.palabres [bùlon:n:antichambre ba:mrph:AUGM]" : docheck=False
+          elif glose==u"tánnifilafili:n:plénitude [tán:num:dix ni:conj:et fìla:num:deux fìli:v:jeter]" : docheck=False
+          elif glose==u"kɛ́cogo:n:manière.de.faire [kɛ́:v:faire cógo:n:manière]" : docheck=False
+          elif glose==u"báden:n:frère.soeur.utérin(e) [bá:n:mère dén:n:enfant]" : docheck=False
+          elif glose==u"sényɛrɛkɔrɔ:n:autosuffisance [sé:v:arriver ń:pers:1SG yɛ̀rɛ̂:dtm:même kɔ́rɔ:pp:sous]" : docheck=False
+          elif glose==u"dúnta:ptcp:comestible [dún:v:manger ta:mrph:PTCP.POT]" : docheck=False
+          elif glose==u"bìlama:adj:actuel [bì:n:aujourd'hui lama:mrph:STAT]" : docheck=False
+          elif glose==u"jɛ́man:adj:blanc [jɛ́:vq:blanc man:mrph:ADJ]" : docheck=False
+          elif glose==u"màliden:n:malien [Màli:n.prop:TOP dén:n:enfant]" : docheck=False
+          elif glose==u"mánanin:n:sac.plastique [mána:n:substance.collante nin:mrph:DIM]" : docheck=False
+          elif glose==u"nísɔndiya:n:joie [nísɔn:n:humeur [ní:n:âme sɔ̀n:n:cœur] dí:adj:agréable ya:mrph:ABSTR]" : docheck=False
+          elif glose==u"tíminandiya:n:bonne.application [tíminandi:n:appliqué tími:v:s'appliquer nan:mrph:dans dí:adj:agréable ya:mrph:ABSTR]" : docheck=False
+          elif glose==u"kɔ̀ɔkɛ:n:frère.aîné [kɔ̀rɔ:n:aîné kɛ:adj:mâle]" : docheck=False
+          elif glose==u"kɔ̀ɔmuso:n:grande.soeur [kɔ̀rɔ:n:aîné mùso:adj:femme]" : docheck=False
+          elif glose==u"màakɔrɔbaya:n:vieillesse [màakɔrɔba:n:vieux [màa:n:homme kɔ̀rɔ:adj:vieux ba:mrph:AUGM] ya:mrph:ABSTR]" : docheck=False
+          elif glose==u"bànajuguba:n:maladie.très.grave [bàna:n:maladie júgu:adj:mauvais ba:mrph:AUGM]" : docheck=False
+          elif glose==u"bàlabilen:adj:sorgho.rouge" : docheck=False
+          elif glose==u"tɔ́ri:intj:absolument.pas" : docheck=False
+          elif glose==u"sófɛri:n:chauffeur" : docheck=False
+          elif glose==u"kásadiyalan:n:parfum [kása:n:odeur díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU]" : docheck=False
+          elif glose==u"dɔ̀lɔso:n:bar [dɔ̀lɔ:n:bière.de.mil só:n:maison]" : docheck=False
+          elif glose==u"díɲɛdenya:n:libertinage [díɲɛden:n:initié.à.tout [díɲɛ:n:monde dén:n:enfant] ya:mrph:ABSTR]" : docheck=False
+          elif glose==u"sɛ̀gɛnbagatɔ:n:pauvre [sɛ̀gɛn:v:fatiguer baa:mrph:AG.OCC tɔ:mrph:ST]" : docheck=False
+          elif glose==u"kòrosakorosa:n:urticaire" : docheck=False
+          elif glose==u"dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:adj:autre]" : docheck=False
+          elif glose==u"ǹka:prep:mais" : docheck=False
+          elif glose==u"dádiya:v:aiguiser [dá:n:bouche dí:vq:agréable ya:mrph:DEQU]" : docheck=False
+          elif glose==u"sábu:prep:parce.que" : docheck=False
 
+          if docheck==True and glose not in mmc :
             derivation=False
 
             gloselist=glose.split(u":",2)
@@ -1246,6 +1325,12 @@ fileIN.close()
 fileOUT.close()
 if notfast :
   fileREP.close()
+  if arg=="check" or arg=="-check" :
+    log.write("------------mmc----------------\n")
+    for mmcitem in mmc :
+      log.write(mmcitem+"\n")
+    log.write("------------fin mmc------------\n")
+
   log.close()
 else :
   fileREPC.close()
@@ -1289,7 +1374,7 @@ else:
     print "    "+str(nbmodif)+" remplacements effectues / replacements done"
     print "    "+str(nbreplok)+" regles appliquées, voir le détail dans / see detail of applied rules in :"+logfilename
  
-    if arg=="check":
+    if arg=="check" or arg=="-check" :
       print "    check : mots absents de Bamadaba : ", nmmcquestion
 
 # print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())

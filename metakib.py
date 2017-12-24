@@ -660,7 +660,7 @@ for filename in filenames:
 		addtheme(old,"Communication",ur"(kunnafonidila|kibaru|amap|jɛkabaara|arajo|tele|jabaranin|ORTM|nɛgɛjurusira|SOTƐLIMA|KABAARU|kabaaru)")
 		addtheme(old,"Economie et Finances",ur"(wusuru|dugujukɔrɔfɛn|babili|izini|taji sɔngɔ|tajijago|tajifeere|sanbaga|nafolotigi|sefawari|warikodɛmɛ|sanubɔ|BNDA|banki)")
 		addtheme(old,"Environnement",ur"(pɔnpekɔlɔn|Pɔnpekɔlɔn|jikodɛsɛ|jikomako|sanjiba|tasuma don kungo|sigiyɔrɔ lakana|sanjiko|jakɔngɔ|sanji hakɛ|sanji mumɛ|sigida|lamini|sanya|ɲamanton)")
-		addtheme(old,"G&#233;ographie",ur"(sigicogo|SIGICOGO|ye dugu ye a bɛ)")
+		addtheme(old,"G&#233;ographie",ur"(sigicogo|SIGICOGO|sigi cogo|ye dugu ye a bɛ)")
 		addtheme(old,"Histoire",ur"(tariku|Tariku|jɔnfeere|Jɔnfeere|Eziputi|farawona|farawuna|lawale|Lawale|tubabutile|Samori|Bakarijan|Bakari Jan|Kanku Musa|Sunjata Keyita)")
 		addtheme(old,"Islam", ur"(hijitaa|silamɛ|makantaa|misiri|sunkalo|sunbagatɔ|morikɛ|kuranɛ|garibu)")
 		addtheme(old,"Linguistique",ur"(wolokan|bamanankan|sinminkan|kanw sɛbɛnni|mabɛn|fasokan|mabɛnnidaɲɛ|kawaleyalan|kamankutulan|dɛmɛnan|kɔbila|sinsinnan|sɛbɛncogo|Mandenkan|kanbolofara|daɲɛgafe|siginiden)")
@@ -808,7 +808,7 @@ for filename in filenames:
 			addauthor(ur"(Sumana Kane|Sumana KANE)",u"11aefaf1-6d5b-4ffa-84c7-24a3edb32670")
 			addauthor(ur"(mari kanɛ|mari kanè|Mari Kanɛ|Mari Kanè)",u"d43907f8-d08b-4474-8bb3-1d6a55b15f1a")
 		if "_kante_" in authshort : 
-			addauthor(ur"(amadu ganyi kante|amadu ganyi kantè|A.G. Kante|A. G. Kante|A.G. KANTE|A. G. KANTE|Amadu GANI Kante|Amadu GAƝI Kante|Amadu GAƝi Kante|Amadu Gaɲi Kante|Amadou Gaɲi Kante|Amadu G. Kante|Amadu G. KANTE|Amadu GANYI Kante|Amadu Ganyi Kante|Amadu Gagny Kante|Amadu Gaɲi KANTE)",u"797f3350-5147-480b-9ec5-4f7ccfe35139")
+			addauthor(ur"(amadu ganyi kante|amadu ganyi kantè|A.G. Kante|A. G. Kante|A.G. KANTE|A. G. KANTE|Amadu GANI Kante|Amadu GAƝI Kante|Amadu GAƝi Kante|Amadu Gaɲi Kante|Amadou Gaɲi Kante|Amadu G. Kante|Amadu G. KANTE|Amadu GANYI Kante|Amadu GAGNY Kante|Amadu Gagny Kante|Amadu Ganyi Kante|Amadu Gagny Kante|Amadu Gaɲi KANTE)",u"797f3350-5147-480b-9ec5-4f7ccfe35139")
 			addauthor(ur"(Solomani Kantɛ|Solomani kantɛ|Solomani KANTƐ|solomani kantè)",u"dd718913-98f3-47aa-bce2-2fbffb72e317")
 			addauthor(ur"(Ibarahima Kante|Ibarahima KANTE)",u"40310b23-7d3e-4f67-98ba-8e48cbae36da")
 			addauthor(ur"(Mamadu Kanute|Mamadu Lamini Kanute|Mamadu KANUTE)",u"690f4a15-86cc-4381-9e81-f75dd9d6616d")
