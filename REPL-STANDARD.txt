@@ -2519,6 +2519,7 @@ bòlila_kà_bɔ́===bòlila:v: [bòli:v:courir la:mrph:PFV.INTR]_kà:pm:INF
 bòlila_kà_nà===bòlila:v: [bòli:v:courir la:mrph:PFV.INTR]_kà:pm:INF_nà:v:venir
 bòlila_kà_n'===bòlila:v: [bòli:v:courir la:mrph:PFV.INTR]_kà:pm:INF_n':v:venir
 
+kà_bòli===kà:pm:INF_bòli:v:courir
 bɛ́_bòli===bɛ:pm:IPFV.AFF_bòli:v:courir
 tɛ́_bòli===tɛ:pm:IPFV.NEG_bòli:v:courir    # attention bóli fétiche 54/8 : bɛ boli la / bɛ boli sɔn --- NB:UNE ERREUR [word="bɛ|tɛ"] [word="boli" & gloss!="courir"]
 à_bòlila===à:pers:3SG_bòlila:v: [bòli:v:courir la:mrph:PFV.INTR]
@@ -5382,6 +5383,8 @@ kísi_bàna_júgu_mà===kísi:v:sauver_bàna:n:maladie_júgu:adj:mauvais_
 #
 PUNCT_kà_fìni_kò_PUNCT===PUNCT_kà:pm:INF_fìni:n:tissu_kò:v:laver_PUNCT     # risque avec le fonio ?
 PUNCT_kà_fìniw_kò_PUNCT===PUNCT_kà:pm:INF_fìniw:n: [fìni:n:tissu w:mrph:PL]_kò:v:laver_PUNCT
+mánà_PERS_kò_PUNCT===mánà:pm:COND.AFF_PERS_kò:v:laver_PUNCT
+mánà_í_kò_PUNCT===mánà:pm:COND.AFF_í:pers:REFL_kò:v:laver_PUNCT
 
 #
 #	kò "arriver"
@@ -5902,6 +5905,14 @@ m'_PERS_mìnɛ===m':pm:PFV.NEG_PERS_mìnɛ:v:attraper
 n'_PERS_mìnɛ===n':pm:CERT_PERS_mìnɛ:v:attraper
 kà_n'_PERS_mìnɛ===kà:pm:INF_n':v:venir_PERS_mìnɛ:v:attraper
 
+k'_PERS_yɛ̀rɛ̂_mìnɛ===k':pm:INF_PERS_yɛ̀rɛ̂:dtm:même_mìnɛ:v:attraper
+b'_PERS_yɛ̀rɛ̂_mìnɛ===b':pm:IPFV.AFF_PERS_yɛ̀rɛ̂:dtm:même_mìnɛ:v:attraper
+t'_PERS_yɛ̀rɛ̂_mìnɛ===t':pm:IPFV.NEG_PERS_yɛ̀rɛ̂:dtm:même_mìnɛ:v:attraper
+y'_PERS_yɛ̀rɛ̂_mìnɛ===y':pm:PFV.TR_PERS_yɛ̀rɛ̂:dtm:même_mìnɛ:v:attraper
+m'_PERS_yɛ̀rɛ̂_mìnɛ===m':pm:PFV.NEG_PERS_yɛ̀rɛ̂:dtm:même_mìnɛ:v:attraper
+n'_PERS_yɛ̀rɛ̂_mìnɛ===n':pm:CERT_PERS_yɛ̀rɛ̂:dtm:même_mìnɛ:v:attraper
+kà_n'_PERS_yɛ̀rɛ̂_mìnɛ===kà:pm:INF_n':v:venir_PERS_yɛ̀rɛ̂:dtm:même_mìnɛ:v:attraper
+
 mìnɛ_ɲɔ́gɔn_fɛ̀===mìnɛ:v:attraper_ɲɔ́gɔn:prn:RECP_fɛ̀:pp:par
 n'_à_hákili_cɛ̀_kà_fɛ́n_dɔ́_mìnɛ===n':conj:et_à:pers:3SG_hákili:n:esprit_cɛ́:pp:entre_kà:pm:INF_fɛ́n:n:chose_dɔ́:dtm:certain_mìnɛ:v:attraper
 fɛ́n_dɔ́_mìnɛ_à_tìgi_lá===fɛ́n:n:chose_dɔ́:dtm:certain_mìnɛ:v:attraper_à:pers:3SG_tìgi:n:maître_lá:pp:à
@@ -6080,6 +6091,9 @@ nàna_sé===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_sé:v:arriver
 má_nà===ma:pm:PFV.NEG_nà:v:venir
 mána_nà===mánà:pm:COND.AFF_nà:v:venir
 
+nà_n'_PERS_yé===nà:v:venir_n':conj:et_PERS_yé:pp:PP
+nà_n'_ò_yé===nà:v:venir_n':conj:et_ò:prn:ce_yé:pp:PP
+
 nà_n'_à_tɔ̀_yé===nà:v:venir_n':conj:et_à:pers:3SG_tɔ̀:n:le.reste_yé:pp:PP
 nà_ni_à_tɔ̀_yé===nà:v:venir_ni:conj:et_à:pers:3SG_tɔ̀:n:le.reste_yé:pp:PP
 
@@ -6145,6 +6159,8 @@ nàna_à_yɛ̀rɛ̂_mà===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_à:pers:
 
 sɔ̀rɔ_kà_nà===sɔ̀rɔ:v:obtenir_kà:pm:INF_nà:v:venir
 sɔ̀rɔ_kà_n'===sɔ̀rɔ:v:obtenir_kà:pm:INF_n':v:venir
+sɔ̀rɔ_kà_táa===sɔ̀rɔ:v:obtenir_kà:pm:INF_táa:v:aller
+sɔ̀rɔ_kà_tága===sɔ̀rɔ:v:obtenir_kà:pm:INF_tága:v:aller
 
 #	nɔ̀gɔya "faciliter"
 #
@@ -8188,6 +8204,12 @@ yàf'_PERS_kɔ́===yàfa:v:pardonner_PERS_kɔ́:pp:après
 yàfar'_PERS_kɔ́===yáfara:v: [yàfa:v:pardonner ra:mrph:PFV.INTR]_PERS_kɔ́:pp:après
 
 yàfa_mùso_kɔ́===yàfa:v:pardonner_mùso:n:femme_kɔ́:pp:après
+
+#
+#	yáala "errer"
+#
+yáala_dɔ́gɔ_kɔ́nɔ===yáala:v:errer_dɔ́gɔ:n:marché_kɔ́nɔ:pp:dans
+yáala_súgu_kɔ́nɔ===yáala:v:errer_súgu:n:marché_kɔ́nɔ:pp:dans
 
 
 #	yé "voir"
@@ -13355,6 +13377,7 @@ sísàn_mùɲu===sísàn:n:maintenant_mùɲu:n:patience
 sísàn_màa===sísàn:n:maintenant_màa:n:homme
 Sísàn_màa===sísàn:n:maintenant_màa:n:homme
 só_wáranda===só:n:maison_wáranda:n:véranda
+só_síra===só:n:maison_síra:n:chemin
 só_yɔ́rɔ===só:n:maison_yɔ́rɔ:n:lieu
 sú_kòli===sú:n:nuit_kòli:n: [kò:v:arriver li:mrph:NMLZ]
 súguya_cáya===súguya:n:espèce [súgu:n:espèce ya:mrph:ABSTR]_cáya:n:grand.nombre [cá:vq:nombreux ya:mrph:DEQU]
@@ -14042,6 +14065,7 @@ dɔ́gɔkun_nàta===dɔ́gɔkun:n:semaine [dɔ́gɔ:n:marché kùn:n:tête]_na
 dúmuni_dúnta===dúmuni:n:action.de.manger_dúnta:ptcp:comestible [dún:v:manger ta:mrph:PTCP.POT]
 dúmuni_dúntaw===dúmuni:n:action.de.manger_dúntaw:ptcp: [dúnta:ptcp:comestible [dún:v:manger ta:mrph:PTCP.POT] w:mrph:PL]
 dɛ̀gɛ_kɛ́nɛ===dɛ̀gɛ:n:brouet_kɛ́nɛ:adj:sain
+dɛ̀gɛ_kùmu===dɛ̀gɛ:n:brouet_kùmu:adj:aigre
 fà_wúlilen===fà:n:folie_wúlilen:ptcp: [wúli:v:se.lever len:mrph:PTCP.RES]
 fà_dè_wúlilen===fà:n:folie_dè:prt:FOC_wúlilen:ptcp: [wúli:v:se.lever len:mrph:PTCP.RES]
 fàn_bɛ́ɛ_mɔ̀gɔw===fàn:n:côté_bɛ́ɛ:dtm:tout_mɔ̀gɔw:n: [mɔ̀gɔ:n:homme w:mrph:PL]
@@ -19065,6 +19089,9 @@ Kàramɔgɔ===Kàramɔgɔ:n.prop:NOM.M
 Màkán===Màkán:n.prop:NOM.M   # il y a aussi un TOP !
 dɔ́gɔjɔ===dɔ́gɔjɔ:n: [dɔ́gɔ:n:marché jɔ̀:v:dresser]
 súgumɔ===súgumɔ:n: [súgu:n:marché mɔ̀:n:croissance]   # cadeau du marché (au retour du marché)
+dɔ́gɔmɔ===dɔ́gɔmɔ:n: [dɔ́gɔ:n:marché mɔ̀:n:croissance]   # cadeau du marché (au retour du marché)
+súgu_mɔ===súgu:n:marché_mɔ̀:n:croissance   # cadeau du marché (au retour du marché)
+dɔ́gɔ_mɔ===dɔ́gɔ:n:marché_mɔ̀:n:croissance   # cadeau du marché (au retour du marché)
 GUILLEMET_non_GUILLEMET===GUILLEMET_àyí:intj:non_GUILLEMET
 kɛ̀mɛna===kɛ̀mɛna:n: [kɛ̀mɛ:num:cent na:mrph:PRICE]
 Mádùjɛ===Mádùjɛ:n.prop:NOM.M
@@ -19550,7 +19577,8 @@ bùguridala===bùguridala:n:devin [bùguri:n:poussière dá:v:poser la:mrph:
 díbisogo===díbisogo:n: [díbi:n:four sògo:n:viande]
 nàbaliyakun===nàbaliyakun:n: [nàbaliya:n: [nà:v:venir bali:mrph:PTCP.PRIV ya:mrph:ABSTR] kùn:n:tête]
 Cɛkɔrɔ===Cɛ̀kɔrɔ:n.prop:NOM.M    # cf Manigances12 aout
-
+táakan===táakan:n: [tága:v:aller kán:n:cou]
+tágakan===tágakan:n: [tága:v:aller kán:n:cou]
 
 # fin Dico Annexe  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #
@@ -19817,6 +19845,8 @@ PERS_dén_ká_kɛ́nɛ===PERS_dén:n:enfant_ka:pm:QUAL.AFF_kɛ́nɛ:vq:sain
 #
 # Bénédictions ???
 #
+Ála_ká_dɔ́gɔ_díya===Ála:n:Dieu_ka:pm:SBJV_dɔ́gɔ:n:marché_díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU]
+Ála_ká_súgu_díya===Ála:n:Dieu_ka:pm:SBJV_súgu:n:marché_díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU]
 Ála_sàgo_COMMA_PERS_sàgo===Ála:n:Dieu_sàgo:n:volonté_COMMA_PERS_sàgo:n:volonté
 Ála_ká_sé_ní_PERS_ɲùman_yé===Ála:n:Dieu_ka:pm:SBJV_sé:v:arriver_ni:conj:et_PERS_ɲùman:adj:bon_yé:pp:PP
 Ála_ká_sé_n'_PERS_ɲùman_yé===Ála:n:Dieu_ka:pm:SBJV_sé:v:arriver_n':conj:et_PERS_ɲùman:adj:bon_yé:pp:PP
@@ -20332,6 +20362,11 @@ ká_dí_ní_PERS_yé===ka:pm:QUAL.AFF_dí:vq:agréable_ni:conj:et_PERS_yé
 ká_dí_ní_PERS_bɛ́ɛ_yé===ka:pm:QUAL.AFF_dí:vq:agréable_ni:conj:et_PERS_bɛ́ɛ:dtm:tout_yé:pp:PP
 ká_dí_n'_PERS_yé===ka:pm:QUAL.AFF_dí:vq:agréable_n':conj:et_PERS_yé:pp:PP
 ká_dí_n'_PERS_bɛ́ɛ_yé===ka:pm:QUAL.AFF_dí:vq:agréable_n':conj:et_PERS_bɛ́ɛ:dtm:tout_yé:pp:PP
+
+ká_dí_PERS_lá_ni_PERS_yé===ka:pm:QUAL.AFF_dí:vq:agréable_PERS_lá:pp:à_ni:conj:et_PERS_yé:pp:PP
+ká_dí_PERS_lá_n'_PERS_yé===ka:pm:QUAL.AFF_dí:vq:agréable_PERS_lá:pp:à_n':conj:et_PERS_yé:pp:PP
+ká_dí_PERS_lá_ni_NAME_yé===ka:pm:QUAL.AFF_dí:vq:agréable_PERS_lá:pp:à_ni:conj:et_NAME_yé:pp:PP
+ká_dí_PERS_lá_ni_NPROPRE_NAME_yé===ka:pm:QUAL.AFF_dí:vq:agréable_PERS_lá:pp:à_ni:conj:et_NPROPRE_NAME_yé:pp:PP
 
 PERS_ká_kó_ká_dí_PERS_yé===PERS_ka:pp:POSS_kó:n:affaire_ka:pm:QUAL.AFF_dí:vq:agréable_PERS_yé:pp:PP
 PERS_ká_kó_tùn_ká_dí_PERS_yé===PERS_ka:pp:POSS_kó:n:affaire_tùn:prt:PST_ka:pm:QUAL.AFF_dí:vq:agréable_PERS_yé:pp:PP
@@ -24270,6 +24305,37 @@ ma_nà_PERS_VERBE===ma:pm:PFV.NEG_nà:v:venir_PERS_VERBE
 nàna_VERBE===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_VERBE 
 nàna_NAME_VERBE===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_NAME_VERBE
 nàna_PERS_VERBE===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PERS_VERBE
+mánà_nà_VERBE===mánà:pm:COND.AFF_nà:v:venir_VERBE 
+mánà_nà_NAME_VERBE===mánà:pm:COND.AFF_nà:v:venir_NAME_VERBE
+mánà_nà_PERS_VERBE===mánà:pm:COND.AFF_nà:v:venir_PERS_VERBE
+bɛ́nà_nà_VERBE===bɛ́nà:pm:FUT_nà:v:venir_VERBE 
+bɛ́nà_nà_NAME_VERBE===bɛ́nà:pm:FUT_nà:v:venir_NAME_VERBE
+bɛ́nà_nà_PERS_VERBE===bɛ́nà:pm:FUT_nà:v:venir_PERS_VERBE
+tɛ́nà_nà_VERBE===tɛ́nà:pm:FUT.NEG_nà:v:venir_VERBE 
+tɛ́nà_nà_NAME_VERBE===tɛ́nà:pm:FUT.NEG_nà:v:venir_NAME_VERBE
+tɛ́nà_nà_PERS_VERBE===tɛ́nà:pm:FUT.NEG_nà:v:venir_PERS_VERBE
+kànâ_nà_VERBE===kànâ:pm:PROH_nà:v:venir_VERBE 
+kànâ_nà_NAME_VERBE===kànâ:pm:PROH_nà:v:venir_NAME_VERBE
+kànâ_nà_PERS_VERBE===kànâ:pm:PROH_nà:v:venir_PERS_VERBE
+kà_n'_PERS_VERBE===kà:pm:INF_n':v:venir_PERS_VERBE
+bɛ_n'_PERS_VERBE===bɛ:pm:IPFV.AFF_n':v:venir_PERS_VERBE
+tɛ_n'_PERS_VERBE===tɛ:pm:IPFV.NEG_n':v:venir_PERS_VERBE
+ma_n'_PERS_VERBE===ma:pm:PFV.NEG_n':v:venir_PERS_VERBE
+nàna_PERS_VERBE===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PERS_VERBE
+mánà_n'_PERS_VERBE===mánà:pm:COND.AFF_n':v:venir_PERS_VERBE
+bɛ́nà_n'_PERS_VERBE===bɛ́nà:pm:FUT_n':v:venir_PERS_VERBE
+tɛ́nà_n'_PERS_VERBE===tɛ́nà:pm:FUT.NEG_n':v:venir_PERS_VERBE
+kànâ_n'_PERS_VERBE===kànâ:pm:PROH_n':v:venir_PERS_VERBE
+kà_n'_ò_VERBE===kà:pm:INF_n':v:venir_ò:prn:ce_VERBE
+bɛ_n'_ò_VERBE===bɛ:pm:IPFV.AFF_n':v:venir_ò:prn:ce_VERBE
+tɛ_n'_ò_VERBE===tɛ:pm:IPFV.NEG_n':v:venir_ò:prn:ce_VERBE
+ma_n'_ò_VERBE===ma:pm:PFV.NEG_n':v:venir_ò:prn:ce_VERBE
+nàna_ò_VERBE===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_ò:prn:ce_VERBE
+mánà_n'_ò_VERBE===mánà:pm:COND.AFF_n':v:venir_ò:prn:ce_VERBE
+bɛ́nà_n'_ò_VERBE===bɛ́nà:pm:FUT_n':v:venir_ò:prn:ce_VERBE
+tɛ́nà_n'_ò_VERBE===tɛ́nà:pm:FUT.NEG_n':v:venir_ò:prn:ce_VERBE
+kànâ_n'_ò_VERBE===kànâ:pm:PROH_n':v:venir_ò:prn:ce_VERBE
+
 
 #
 # nb: pas "na ni X ye" car on peut être entre une pp "na" et le "ni" début d'une conditionnelle/temporelle
@@ -29187,6 +29253,7 @@ NPROPRETOP_Táriku===NPROPRETOP_táriku:n:histoire
 NPROPRETOP_fàn_bɛ́ɛ===NPROPRETOP_fàn:n:côté_bɛ́ɛ:dtm:tout
 NPROPRETOP_mɛ́rɛ===NPROPRETOP_mɛ́rɛ:n:maire
 NPROPRETOP_súgu===NPROPRETOP_súgu:n:marché
+NPROPRETOP_dɔ́gɔ===NPROPRETOP_dɔ́gɔ:n:marché
 NPROPRETOP_màabaw===NPROPRETOP_màabaw:n: [màaba:n:personne.importante [mɔ̀gɔ:n:homme ba:mrph:AUGM] w:mrph:PL]
 NPROPRETOP_bá===NPROPRETOP_bá:n:fleuve
 NPROPRETOP_dánkan===NPROPRETOP_dánkan:n:berge
