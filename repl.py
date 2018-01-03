@@ -1015,12 +1015,14 @@ else :
         # ICI on peut vérifier glose // Bamadaba mmc 
         if arg=="check" or arg=="-check":
           docheck=True
-          if    u": [" in glose : docheck=False
-          elif u"§§" in glose : docheck=False
+          #if    u": [" in glose : docheck=False
+          #elif u"§§" in glose : docheck=False
+          if u"§§" in glose : docheck=False
           elif u"nan:adj:ORDINAL" in glose : docheck=False
           elif u":num:CARDINAL" in glose : docheck=False
           elif u":conv.n:" in glose : docheck=False
           elif u":n.prop:ABR" in glose : docheck=False
+          elif re.search(ur"\:n\.prop\:[A-Z\-]+",glose) : docheck=False
           elif u"ETRG.FRA" in glose : docheck=False
           elif u"::CHNT" in glose : docheck=False
           elif u":n.prop:NOM.ETRG" in glose : docheck=False
@@ -1092,6 +1094,15 @@ else :
           elif glose==u"ǹka:prep:mais" : docheck=False
           elif glose==u"dádiya:v:aiguiser [dá:n:bouche dí:vq:agréable ya:mrph:DEQU]" : docheck=False
           elif glose==u"sábu:prep:parce.que" : docheck=False
+          elif glose==u"desigaramu:n:décigramme" : docheck=False
+          elif glose==u"kɛ̀mɛmɛtɛrɛ:n:hectomètre [kɛ̀mɛ:num:cent mɛ́tɛrɛ:n:mètre]" : docheck=False
+          elif glose==u"santigaramu:n:centigramme" : docheck=False
+          elif glose==u"penalitiduurutan:n:tirs.au.but [penaliti:n:penalty dúuru:num:cinq tán:v:donner.coup.de.pied]" : docheck=False
+          elif glose==u"cámanko:n:pluralité [cáman:adj:nombreux [cá:vq:nombreux man:mrph:ADJ] kó:n:affaire]" : docheck=False
+          elif glose==u"sùkarocayabana:n:diabète.maladie [súkaro:n:sucre cáya:v:multiplier [cá:vq:nombreux ya:mrph:DEQU] bàna:n:maladie]" : docheck=False
+          elif glose==u"báyɛlɛmani===báyɛlɛmani:n:transformation [báyɛ̀lɛma:v:transformer [bá:n:base yɛ̀lɛma:v:changer] li:mrph:NMLZ]" : docheck=False
+          elif glose==u"kásadiyalan:n:parfum [kása:n:odeur díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] lan:mrph:INSTR]" : docheck=False
+          elif glose==u"jòlimangoya:n:antipathie [jòlimango:adj:antipathique [jòliman:n:sang.actif [jòli:n:sang màn:mrph:SUPER] gó:adj:désagréable] ya:mrph:ABSTR]" : docheck=False
 
           if docheck==True and glose not in mmc :
             derivation=False
