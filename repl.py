@@ -203,12 +203,16 @@ if nargv>2 :
       print "using REPL-C.txt"
    except : 
     try:
-      fileREPC = open ("REPL-STANDARD-C.txt","r")
-      print "using REPL-STANDARD-C.txt"
+      fileREPCname="REPL-STANDARD-C.txt"
+      if ".old" in filenametemp : fileREPCname="REPL-STANDARD-C.old.txt"
+      fileREPC = open (fileREPCname,"r")
+      print "Compiled rules from : "+fileREPCname
     except:
       try:
-        fileREPC = open ("/home/corpus-team/REPL/REPL-STANDARD-C.txt","r")
-        print "using /home/corpus-team/REPL/REPL-STANDARD-C.txt"
+        fileREPCname="/home/corpus-team/REPL/REPL-STANDARD-C.txt"
+        if ".old" in filenametemp : fileREPCname="/home/corpus-team/REPL/REPL-STANDARD-C.old.txt"
+        fileREPC = open (fileREPCname,"r")
+        print "Compiled rules from : "+fileREPCname
       except :
         sys.exit("repl.py needs a REPL-C.txt file or a REPL-STANDARD-C.txt file in the current directory (or in REPL)")
 
@@ -486,7 +490,9 @@ if arg=="fast" or arg=="-fast":
     linerepl=fileREPC.readline()
 
 else :
-  fileREPC = open ("REPL-STANDARD-C.txt","wb")
+  fileREPCname="REPL-STANDARD-C.txt"
+  if ".old" in filenametemp : fileREPCname="REPL-STANDARD-C.old.txt"
+  fileREPC = open (fileREPCname,"wb")
 
   ###### replacement rules as per REPL.txt ######################################################################################################
 
@@ -543,7 +549,7 @@ else :
       liste_mots=re.sub(u"ɔ","ò",liste_mots)
       liste_mots=re.sub(u"Ɔ","Ò",liste_mots)
       liste_mots=re.sub(u"ɲ","ny",liste_mots)
-      liste_mots=re.sub(u"Ɲ","Nỳ",liste_mots)
+      liste_mots=re.sub(u"Ɲ","Ny",liste_mots)
 
     liste_mots=re.sub(u"é","é",liste_mots)   # normaliser les caractères français éventuels (ETRG.FRA intégraux possibles)
     liste_mots=re.sub(u"è","è",liste_mots)
