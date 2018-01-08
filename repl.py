@@ -1013,7 +1013,7 @@ else :
             word=re.sub(u"ɔ","ò",word)
             word=re.sub(u"Ɔ","Ò",word)
             word=re.sub(u"ɲ","ny",word)
-            word=re.sub(u"Ɲ","Nỳ",word)
+            word=re.sub(u"Ɲ","Ny",word)
         
         #if u"POSTP_kà_tɛ̀mɛ_NAME_kàn" in liste_mots:
         #  log.write(u"check glose :"+glose+u"\n")
