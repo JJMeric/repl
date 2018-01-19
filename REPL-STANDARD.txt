@@ -959,6 +959,10 @@ Ò_yɛ̀rɛ̂_dàma_tɛ́===ò:prn:ce_yɛ̀rɛ̂:dtm:même_dàma:dtm:seuleme
 PERS_nísɔndiyalen_bɛ́===PERS_nísɔndiyalen:ptcp: [nísɔndiya:v:réjouir [nísɔn:n:humeur ní:n:âme sɔ̀n:n:coeur dí:vq:agréable ya:mrph:ABSTR] len:mrph:PTCP.RES]_bɛ́:cop:être
 PERS_nɔ̀_dòn_PUNCT===PERS_nɔ̀:n:trace_dòn:cop:ID_PUNCT
 PERS_nɔ̀_tɛ́_PUNCT===PERS_nɔ̀:n:trace_tɛ́:cop:COP.NEG_PUNCT
+PERS_yɛ̀rɛ̂_nɔ̀_dòn_PUNCT===PERS_yɛ̀rɛ̂:dtm:même_nɔ̀:n:trace_dòn:cop:ID_PUNCT
+PERS_yɛ̀rɛ̂_nɔ̀_tɛ́_PUNCT===PERS_yɛ̀rɛ̂:dtm:même_nɔ̀:n:trace_tɛ́:cop:COP.NEG_PUNCT
+Ála_nɔ̀_dòn_PUNCT===Ála:n:Dieu_nɔ̀:n:trace_dòn:cop:ID_PUNCT
+Ála_nɔ̀_tɛ́_PUNCT===Ála:n:Dieu_nɔ̀:n:trace_tɛ́:cop:COP.NEG_PUNCT
 dàbali_nɔ̀_dòn_PUNCT===dàbali:n:moyen_nɔ̀:n:trace_dòn:cop:ID_PUNCT
 
 PERS_kɔ́nɔma_dòn===PERS_kɔ́nɔma:adj:enceinte [kɔ́nɔ:n:ventre ma:mrph:COM]_dòn:cop:ID
@@ -1270,6 +1274,8 @@ dá_ká_nɔ̀gɔ===dá:n:bouche_ka:pm:QUAL.AFF_nɔ̀gɔ:vq:facile
 dá_ká_nɔ̀gɔn===dá:n:bouche_ka:pm:QUAL.AFF_nɔ̀gɔn:vq:facile
 sɔ̀ngɔ_ká_nɔ̀gɔ===sɔ̀ngɔ:n:prix_ka:pm:QUAL.AFF_nɔ̀gɔ:vq:facile
 ò_ká_nɔ̀gɔ_Ála_fɛ̀===ò:prn:ce_ka:pm:QUAL.AFF_nɔ̀gɔ:vq:facile_Ála:n:Dieu_fɛ̀:pp:par
+ò_kó_ká_nɔ̀gɔ_Ála_fɛ̀===ò:dtm:ce_kó:n:affaire_ka:pm:QUAL.AFF_nɔ̀gɔ:vq:facile_Ála:n:Dieu_fɛ̀:pp:par
+ò_kó_ká_nɔ̀gɔ_PUNCT===ò:dtm:ce_kó:n:affaire_ka:pm:QUAL.AFF_nɔ̀gɔ:vq:facile_PUNCT
 mán_nɔ̀gɔ===mán:pm:QUAL.NEG_nɔ̀gɔ:vq:facile
 mán_nɔ̀gɔn===mán:pm:QUAL.NEG_nɔ̀gɔn:vq:facile
 mán_nɔ̀gɔ_PERS_bólo===mán:pm:QUAL.NEG_nɔ̀gɔ:vq:facile_PERS_bólo:pp:CNTRL
@@ -1511,6 +1517,10 @@ bɛ́_PERS_fɛ̀===bɛ́:cop:être_PERS_fɛ̀:pp:par
 tɛ́_PERS_fɛ̀===tɛ́:cop:COP.NEG_PERS_fɛ̀:pp:par
 b'_PERS_fɛ̀===b':cop:être_PERS_fɛ̀:pp:par
 t'_PERS_fɛ̀===t':cop:COP.NEG_PERS_fɛ̀:pp:par
+bɛ́_PERS_ní_fɛ̀===bɛ́:cop:être_PERS_ní:n:âme_fɛ̀:pp:par
+tɛ́_PERS_ní_fɛ̀===tɛ́:cop:COP.NEG_PERS_ní:n:âme_fɛ̀:pp:par
+b'_PERS_ní_fɛ̀===b':cop:être_PERS_ní:n:âme_fɛ̀:pp:par
+t'_PERS_ní_fɛ̀===t':cop:COP.NEG_PERS_ní:n:âme_fɛ̀:pp:par
 bɛ́_ò_fɛ̀===bɛ́:cop:être_ò:prn:ce_fɛ̀:pp:par
 tɛ́_ò_fɛ̀===tɛ́:cop:COP.NEG_ò:prn:ce_fɛ̀:pp:par
 b'_ò_fɛ̀===b':cop:être_ò:prn:ce_fɛ̀:pp:par
@@ -1830,6 +1840,7 @@ jó_tɛ́_ò_lá===jó:n:raison_tɛ́:cop:COP.NEG_ò:prn:ce_lá:pp:à
 
 màkari_bɛ́_mɔ̀gɔ_lá===màkari:n:pitié_bɛ́:cop:être_mɔ̀gɔ:n:homme_lá:pp:à
 màkari_tɛ́_mɔ̀gɔ_lá===màkari:n:pitié_tɛ́:cop:COP.NEG_mɔ̀gɔ:n:homme_lá:pp:à
+màkari_tɛ́_mɔ̀gɔ_sí_lá===màkari:n:pitié_tɛ́:cop:COP.NEG_mɔ̀gɔ:n:homme_sí:dtm:aucun_lá:pp:à
 màkari_bɛ́_PERS_lá===màkari:n:pitié_bɛ́:cop:être_PERS_lá:pp:à
 màkari_tɛ́_PERS_lá===màkari:n:pitié_tɛ́:cop:COP.NEG_PERS_lá:pp:à
 màkari_bɛ́_PERS_ná===màkari:n:pitié_bɛ́:cop:être_PERS_ná:pp:à
@@ -2089,6 +2100,7 @@ táama_lá===táama:n:voyage_lá:pp:à
 b'_PERS_ká_báara_lá===b':cop:être_PERS_ka:pp:POSS_báara:n:travail_lá:pp:à
 b'_à_ká_báara_lá===b':cop:être_à:pers:3SG_ka:pp:POSS_báara:n:travail_lá:pp:à
 b'_í_ká_báara_lá===b':cop:être_í:pers:2SG_ka:pp:POSS_báara:n:travail_lá:pp:à
+bɛ_tóbilikɛ_lá===bɛ:cop:être_tóbilikɛ:n: [tóbi:v:cuire li:mrph:NMLZ kɛ́:v:faire]_lá:pp:à
 
 tɛ́_hákilila_kelen_na===tɛ́:cop:COP.NEG_hákilila:n:opinion [hákili:n:esprit la:mrph:MNT1]_kélen:num:un_ná:pp:à   # n'est pas du même avis
 bɛ́_NUM_ná_PUNCT===bɛ́:cop:être_NUM_ná:pp:à_PUNCT
@@ -2326,6 +2338,7 @@ kàn'_PERS_bálo===kàn':pm:PROH_PERS_bálo:v:vivre
 
 bálola===bálola:v: [bálo:v:vivre la:mrph:PFV.INTR]
 
+
 #
 #	bán "terminer"
 #
@@ -2515,6 +2528,7 @@ bìla_kà_táa===bìla:v:mettre_kà:pm:INF_táa:v:aller
 bìla_kà_tága===bìla:v:mettre_kà:pm:INF_tága:v:aller
 PUNCT_k'_à_bìla===PUNCT_k':pm:INF_à:pers:3SG_bìla:v:mettre
 PUNCT_k'_ò_bìla===PUNCT_k':pm:INF_ò:prn:ce_bìla:v:mettre
+bìla_dá_lá===bìla:v:mettre_dá:n:bouche_lá:pp:à
 bìla_cí_lá===bìla:v:mettre_cí:n:commission_lá:pp:à
 bìla_cíw_lá===bìla:v:mettre_cíw:n: [cí:n:commission w:mrph:PL]_lá:pp:à
 bìlala_cí_lá===bìlala:v: [bìla:v:mettre la:mrph:PFV.INTR]_cí:n:commission_lá:pp:à
@@ -2609,6 +2623,7 @@ kà_bín_dùgu_mà===kà:pm:INF_bìn:v:tomber_dùgu:n:terre_mà:pp:ADR
 bìn_ò_kàn===bìn:v:tomber_ò:prn:ce_kàn:pp:sur
 bìn_ò_tìgi_kàn===bìn:v:tomber_ò:prn:ce_tìgi:n:maître_kàn:pp:sur
 kà_ɲɔ́gɔn_bìn===kà:pm:INF_ɲɔ́gɔn:prn:RECP_bìn:v:tomber
+kà_PERS_bìn===kà:pm:INF_PERS_bìn:v:tomber
 
 #
 #	bìsimila
@@ -2729,7 +2744,8 @@ bɔ́_nìn_mànkan_kàla_mà===bɔ́:v:sortir_nìn:dtm:DEM_mànkan:n:bruit
 bɔ́_nìn_mànkan_kàlamà===bɔ́:v:sortir_nìn:dtm:DEM_mànkan:n:bruit_kàla:n:tige_mà:pp:ADR
 bɔ́ra_nìn_mànkan_kàla_mà===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_nìn:dtm:DEM_mànkan:n:bruit_kàla:n:tige_mà:pp:ADR
 bɔ́ra_nìn_mànkan_kàlamà===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_nìn:dtm:DEM_mànkan:n:bruit_kàla:n:tige_mà:pp:ADR
-
+bɔ́_dá_fɛ̀===bɔ́:v:sortir_dá:n:bouche_fɛ̀:pp:par
+bɔ́ra_dá_fɛ̀===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_dá:n:bouche_fɛ̀:pp:par
 
 bɛ́_bɔ́_mín_QUESTION===bɛ:pm:IPFV.AFF_bɔ́:v:sortir_mín:adv:où_QUESTION
 sèn_bɛ́_bɔ́===sèn:n:jambe_bɛ:pm:IPFV.AFF_bɔ́:v:sortir
@@ -3092,6 +3108,8 @@ dá_PERS_kàn===dá:v:poser_PERS_kàn:pp:sur
 d'_PERS_kàn===d':v:poser_PERS_kàn:pp:sur
 dá_ò_kàn===dá:v:poser_ò:prn:ce_kàn:pp:sur
 d'_ò_kàn===d':v:poser_ò:prn:ce_kàn:pp:sur
+dára_PERS_kàn===dára:v: [dá:v:poser ra:mrph:PFV.INTR]_PERS_kàn:pp:sur
+dára_ò_kàn===dára:v: [dá:v:poser ra:mrph:PFV.INTR]_ò:prn:ce_kàn:pp:sur
 dá_PERS_bɛ́ɛ_kàn===dá:v:poser_PERS_bɛ́ɛ:dtm:tout_kàn:pp:sur
 d'_PERS_bɛ́ɛ_kàn===d':v:poser_PERS_bɛ́ɛ:dtm:tout_kàn:pp:sur
 dá_ò_bɛ́ɛ_kàn===dá:v:poser_ò:prn:ce_bɛ́ɛ:dtm:tout_kàn:pp:sur
@@ -3132,6 +3150,7 @@ à_dá_à_túlo_kɔ́rɔ===à:pers:3SG_dá:v:poser_à:pers:3SG_túlo:n:o
 tɛ́gɛ_dá_à_túlow_kɔ́rɔ===tɛ́gɛ:n:paume_dá:v:poser_à:pers:3SG_túlow:n: [túlo:n:oreille w:mrph:PL]_kɔ́rɔ:pp:sous    # gifler
 à_dá_à_túlow_kɔ́rɔ===à:pers:3SG_dá:v:poser_à:pers:3SG_túlow:n: [túlo:n:oreille w:mrph:PL]_kɔ́rɔ:pp:sous
 à_fúra_à_túlow_kɔ́rɔ===à:pers:3SG_fúra:v:balayer_à:pers:3SG_túlow:n: [túlo:n:oreille w:mrph:PL]_kɔ́rɔ:pp:sous
+bàna_yé_PERS_dá===bàna:n:maladie_ye:pm:PFV.TR_PERS_dá:v:poser
 
 kà_PERS_dá_PUNCT===kà:pm:INF_PERS_dá:v:poser_PUNCT  # attention b'i da dɛ... etc
 bɛ_PERS_dá_PUNCT===bɛ:pm:IPFV.AFF_PERS_dá:v:poser_PUNCT  # attention b'i da dɛ... etc
@@ -3258,10 +3277,14 @@ dálen_bɛ́_PERS_lá===dálen:ptcp: [dá:v:poser len:mrph:PTCP.RES]_bɛ́:c
 ò_bɛ́_dábìla===ò:prn:ce_bɛ:pm:IPFV.AFF_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
 ò_tɛ́_dábìla===ò:prn:ce_tɛ:pm:IPFV.NEG_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
 ò_ká_dábìla===ò:prn:ce_ka:pm:SBJV_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
+kà_dábìla_PUNCT===kà:pm:INF_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]_PUNCT
 bɛ́_dábìla_PUNCT===bɛ:pm:IPFV.AFF_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]_PUNCT
 tɛ́_dábìla_PUNCT===tɛ:pm:IPFV.NEG_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]_PUNCT
 má_dábìla_PUNCT===ma:pm:PFV.NEG_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]_PUNCT
+bɛ́nà_dábìla_PUNCT===bɛ́nà:pm:FUT_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]_PUNCT
+tɛ́nà_dábìla_PUNCT===tɛ́nà:pm:FUT.NEG_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]_PUNCT
 
+kà_à_dábìla===kà:pm:INF_à:pers:3SG_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
 k'_à_dábìla===k':pm:INF_à:pers:3SG_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
 b'_à_dábìla===b':pm:IPFV.AFF_à:pers:3SG_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
 t'_à_dábìla===t':pm:IPFV.NEG_à:pers:3SG_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
@@ -3272,6 +3295,8 @@ b'_ò_dábìla===b':pm:IPFV.AFF_ò:prn:ce_dábìla:v:cesser [dá:n:bouche
 t'_ò_dábìla===t':pm:IPFV.NEG_ò:prn:ce_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
 m'_ò_dábìla===m':pm:PFV.NEG_ò:prn:ce_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
 y'_ò_dábìla===y':pm:PFV.TR_ò:prn:ce_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
+
+k'_à_kó_dábìla===k':pm:INF_à:pers:3SG_kó:n:affaire_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
 
 kó_bɛ́ɛ_dábìla===kó:n:affaire_bɛ́ɛ:dtm:tout_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
 dábìlala===dábìlala:v: [dábìla:v:cesser [dá:n:bouche bìla:v:mettre] la:mrph:PFV.INTR]
@@ -3452,8 +3477,10 @@ ká_kán_kà_dɛ́se===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_dɛ́sɛ:v:�
 mán_kán_kà_dɛ́se===mán:pm:QUAL.NEG_kán:vq:égal_kà:pm:INF_dɛ́sɛ:v:échouer
 déli_kà_dɛ́sɛ===déli:v:prier_kà:pm:INF_dɛ́sɛ:v:échouer
 ɲíni_kà_dɛ́sɛ===ɲíni:v:chercher_kà:pm:INF_dɛ́sɛ:v:échouer
-dɛ́sɛ_à_kɔ́rɔ===dɛ́sɛ:v:échouer_à:pers:3SG_kɔ́rɔ:pp:sous
+dɛ́sɛ_PERS_kɔ́rɔ===dɛ́sɛ:v:échouer_PERS_kɔ́rɔ:pp:sous
 dɛ́sɛ_ò_kɔ́rɔ===dɛ́sɛ:v:échouer_ò:prn:ce_kɔ́rɔ:pp:sous
+dɛ́sɛra_PERS_kɔ́rɔ===dɛ́sɛra:v: [dɛ́sɛ:v:échouer ra:mrph:PFV.INTR]_PERS_kɔ́rɔ:pp:sous
+dɛ́sɛra_ò_kɔ́rɔ===dɛ́sɛra:v: [dɛ́sɛ:v:échouer ra:mrph:PFV.INTR]_ò:prn:ce_kɔ́rɔ:pp:sous
 ò_sí_má_dɛ́sɛ===ò:prn:ce_sí:dtm:aucun_ma:pm:PFV.NEG_dɛ́sɛ:v:échouer
 kà_dɛ́sɛ===kà:pm:INF_dɛ́sɛ:v:échouer
 
@@ -3484,6 +3511,7 @@ kà_n'_PERS_dí_PERS_mà===kà:pm:INF_n':v:venir_PERS_dí:v:donner_PERS_ma�
 
 dí_PERS_mà===dí:v:donner_PERS_mà:pp:ADR
 dí_ò_mà===dí:v:donner_ò:prn:ce_mà:pp:ADR
+dí_ɲɔ́gɔn_mà===dí:v:donner_ɲɔ́gɔn:prn:RECP_mà:pp:ADR
 d'_PERS_mà===d':v:donner_PERS_mà:pp:ADR
 d'_ò_mà===d':v:donner_ò:prn:ce_mà:pp:ADR
 dí_nìn_mà===dí:v:donner_nìn:prn:ceci_mà:pp:ADR
@@ -3515,23 +3543,37 @@ má_wári_dí===ma:pm:PFV.NEG_wári:n:argent_dí:v:donner
 mánà_wári_dí===mánà:pm:COND.AFF_wári:n:argent_dí:v:donner
 kànâ_wári_dí===kànâ:pm:PROH_wári:n:argent_dí:v:donner
 wári_dí_yàn_PUNCT===wári:n:argent_dí:v:donner_yàn:adv:ici_PUNCT
-
-kà_à_dí===kà:pm:INF_à:pers:3SG_dí:v:donner
-bɛ́_à_dí===bɛ:pm:IPFV.AFF_à:pers:3SG_dí:v:donner
-tɛ́_à_dí===tɛ:pm:IPFV.NEG_à:pers:3SG_dí:v:donner
-yé_à_dí===ye:pm:PFV.TR_à:pers:3SG_dí:v:donner
-má_à_dí===ma:pm:PFV.NEG_à:pers:3SG_dí:v:donner
-mánà_à_dí===mánà:pm:COND.AFF_à:pers:3SG_dí:v:donner
-kànâ_à_dí===kànâ:pm:PROH_à:pers:3SG_dí:v:donner
 à_dí_yàn_PUNCT===à:pers:3SG_dí:v:donner_yàn:adv:ici_PUNCT
 
-k'_à_dí===k':pm:INF_à:pers:3SG_dí:v:donner
-b'_à_dí===b':pm:IPFV.AFF_à:pers:3SG_dí:v:donner
-t'_à_dí===t':pm:IPFV.NEG_à:pers:3SG_dí:v:donner
-y'_à_dí===y':pm:PFV.TR_à:pers:3SG_dí:v:donner
-m'_à_dí===m':pm:PFV.NEG_à:pers:3SG_dí:v:donner
-mán'_à_dí===mán':pm:COND.AFF_à:pers:3SG_dí:v:donner
-kàn'_à_dí===kàn':pm:PROH_à:pers:3SG_dí:v:donner
+kà_PERS_dí===kà:pm:INF_PERS_dí:v:donner
+bɛ́_PERS_dí===bɛ:pm:IPFV.AFF_PERS_dí:v:donner
+tɛ́_PERS_dí===tɛ:pm:IPFV.NEG_PERS_dí:v:donner
+yé_PERS_dí===ye:pm:PFV.TR_PERS_dí:v:donner
+má_PERS_dí===ma:pm:PFV.NEG_PERS_dí:v:donner
+mánà_PERS_dí===mánà:pm:COND.AFF_PERS_dí:v:donner
+kànâ_PERS_dí===kànâ:pm:PROH_PERS_dí:v:donner
+k'_PERS_dí===k':pm:INF_PERS_dí:v:donner
+b'_PERS_dí===b':pm:IPFV.AFF_PERS_dí:v:donner
+t'_PERS_dí===t':pm:IPFV.NEG_PERS_dí:v:donner
+y'_PERS_dí===y':pm:PFV.TR_PERS_dí:v:donner
+m'_PERS_dí===m':pm:PFV.NEG_PERS_dí:v:donner
+mán'_PERS_dí===mán':pm:COND.AFF_PERS_dí:v:donner
+kàn'_PERS_dí===kàn':pm:PROH_PERS_dí:v:donner
+
+kà_ò_dí===kà:pm:INF_ò:prn:ce_dí:v:donner
+bɛ́_ò_dí===bɛ:pm:IPFV.AFF_ò:prn:ce_dí:v:donner
+tɛ́_ò_dí===tɛ:pm:IPFV.NEG_ò:prn:ce_dí:v:donner
+yé_ò_dí===ye:pm:PFV.TR_ò:prn:ce_dí:v:donner
+má_ò_dí===ma:pm:PFV.NEG_ò:prn:ce_dí:v:donner
+mánà_ò_dí===mánà:pm:COND.AFF_ò:prn:ce_dí:v:donner
+kànâ_ò_dí===kànâ:pm:PROH_ò:prn:ce_dí:v:donner
+k'_ò_dí===k':pm:INF_ò:prn:ce_dí:v:donner
+b'_ò_dí===b':pm:IPFV.AFF_ò:prn:ce_dí:v:donner
+t'_ò_dí===t':pm:IPFV.NEG_ò:prn:ce_dí:v:donner
+y'_ò_dí===y':pm:PFV.TR_ò:prn:ce_dí:v:donner
+m'_ò_dí===m':pm:PFV.NEG_ò:prn:ce_dí:v:donner
+mán'_ò_dí===mán':pm:COND.AFF_ò:prn:ce_dí:v:donner
+kàn'_ò_dí===kàn':pm:PROH_ò:prn:ce_dí:v:donner
 
 kà_NUM_dí===kà:pm:INF_NUM_dí:v:donner
 bɛ́_NUM_dí===bɛ:pm:IPFV.AFF_NUM_dí:v:donner
@@ -3873,6 +3915,8 @@ Án_ka_dòn_EXCLAM===án:pers:1PL_ka:pm:SBJV_dòn:v:entrer_EXCLAM
 kànâ_dòn===kànâ:pm:PROH_dòn:v:entrer
 kó_PERS_n'_ò_dòn_wòro_lá===kó:cop:QUOT_PERS_n':pm:CERT_ò:prn:ce_dòn:v:entrer_wòro:n:kola_lá:pp:à
 kó_PERS_k'_ò_dòn_wòro_lá===kó:cop:QUOT_PERS_k':pm:SBJV_ò:prn:ce_dòn:v:entrer_wòro:n:kola_lá:pp:à
+kó_PERS_ka_ò_dòn_wòro_lá===kó:cop:QUOT_PERS_ka:pm:SBJV_ò:prn:ce_dòn:v:entrer_wòro:n:kola_lá:pp:à
+kó_PERS_ka_ò_dòn_fìni_lá===kó:cop:QUOT_PERS_ka:pm:SBJV_ò:prn:ce_dòn:v:entrer_fìni:n:tissu_lá:pp:à
 jàtigɛ_dòn_PERS_lá===jàtigɛ:n:peur [jà:n:ombre tìgɛ:v:couper]_dòn:v:entrer_PERS_lá:pp:à
 
 # impératifs
@@ -4167,6 +4211,14 @@ yé_PERS_fàga===ye:pm:PFV.TR_PERS_fàga:v:tuer
 má_PERS_fàga===ma:pm:PFV.NEG_PERS_fàga:v:tuer
 mánà_PERS_fàga===mánà:pm:COND.AFF_PERS_fàga:v:tuer
 
+kà_PERS_dè_fàga===kà:pm:INF_PERS_dè:prt:FOC_fàga:v:tuer
+bɛ́_PERS_dè_fàga===bɛ:pm:IPFV.AFF_PERS_dè:prt:FOC_fàga:v:tuer
+tɛ́_PERS_dè_fàga===tɛ:pm:IPFV.NEG_PERS_dè:prt:FOC_fàga:v:tuer
+nà_PERS_dè_fàga===nà:pm:CERT_PERS_dè:prt:FOC_fàga:v:tuer
+yé_PERS_dè_fàga===ye:pm:PFV.TR_PERS_dè:prt:FOC_fàga:v:tuer
+má_PERS_dè_fàga===ma:pm:PFV.NEG_PERS_dè:prt:FOC_fàga:v:tuer
+mánà_PERS_dè_fàga===mánà:pm:COND.AFF_PERS_dè:prt:FOC_fàga:v:tuer
+
 k'_ò_fàga===k':pm:INF_ò:prn:ce_fàga:v:tuer
 b'_ò_fàga===b':pm:IPFV.AFF_ò:prn:ce_fàga:v:tuer
 t'_ò_fàga===t':pm:IPFV.NEG_ò:prn:ce_fàga:v:tuer
@@ -4198,6 +4250,9 @@ nímisa_b'_PERS_fàga===nímisa:n:regret_b':pm:IPFV.AFF_PERS_fàga:v:tuer
 nímisa_bɛ́_PERS_dè_fàga===nímisa:n:regret_bɛ:pm:IPFV.AFF_PERS_dè:prt:FOC_fàga:v:tuer
 nímisa_b'_PERS_dè_fàga===nímisa:n:regret_b':pm:IPFV.AFF_PERS_dè:prt:FOC_fàga:v:tuer
 fàga_ní_màloya_yé===fàga:v:tuer_ni:conj:et_màloya:n:honte [màlo:n:honte ya:mrph:ABSTR]_yé:pp:PP
+
+yé_PERS_cɛ̀_fàga===ye:pm:PFV.TR_PERS_cɛ̀:n:mâle_fàga:v:tuer
+y'_PERS_cɛ̀_fàga===y':pm:PFV.TR_PERS_cɛ̀:n:mâle_fàga:v:tuer
 
 
 #	fàa
@@ -4234,6 +4289,12 @@ fára_PERS_ná===fára:v:diviser_PERS_ná:pp:à
 fára_PERS_lá===fára:v:diviser_PERS_lá:pp:à
 fára_ò_lá===fára:v:diviser_ò:prn:ce_lá:pp:à
 fára_yèn_ná===fára:v:diviser_yèn:n:là-bas_ná:pp:à
+kà_fára_kà===kà:pm:INF_fára:v:diviser_kà:pm:INF   # cesser de (cf tila)
+bɛ́_fára_kà===bɛ:pm:IPFV.AFF_fára:v:diviser_kà:pm:INF
+tɛ́_fára_kà===tɛ:pm:IPFV.NEG_fára:v:diviser_kà:pm:INF
+má_fára_kà===ma:pm:PFV.NEG_fára:v:diviser_kà:pm:INF
+mánà_fára_kà===mánà:pm:COND.AFF_fára:v:diviser_kà:pm:INF
+
 
 #	fàra ... kàn "ajouter"
 #
@@ -4422,6 +4483,7 @@ à_nà_fɔ́_à_mà_kó===à:pers:3SG_nà:pm:CERT_fɔ́:v:dire_à:pers:3
 à_má_fɔ́_à_mà_kó===à:pers:3SG_ma:pm:PFV.NEG_fɔ́:v:dire_à:pers:3SG_mà:pp:ADR_kó:cop:QUOT
 à_y'_à_fɔ́_à_mà_kó===à:pers:3SG_y':pm:PFV.TR_à:pers:3SG_fɔ́:v:dire_à:pers:3SG_mà:pp:ADR_kó:cop:QUOT
 à_fɔ́ra_à_mà_kó===à:pers:3SG_fɔ́ra:v: [fɔ́:v:dire ra:mrph:PFV.INTR]_à:pers:3SG_mà:pp:ADR_kó:cop:QUOT
+
 b'_à_fɔ́_PERS_mà===b':pm:IPFV.AFF_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR
 t'_à_fɔ́_PERS_mà===t':pm:IPFV.NEG_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR
 n'_à_fɔ́_PERS_mà===n':pm:CERT_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR
@@ -4432,6 +4494,18 @@ t'_à_fɔ́_PERS_mà_kó===t':pm:IPFV.NEG_à:pers:3SG_fɔ́:v:dire_PERS_mà
 n'_à_fɔ́_PERS_mà_kó===n':pm:CERT_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR_kó:cop:QUOT
 m'_à_fɔ́_PERS_mà_kó===m':pm:PFV.NEG_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR_kó:cop:QUOT
 y'_à_fɔ́_PERS_mà_kó===y':pm:PFV.TR_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR_kó:cop:QUOT
+bɛ_à_fɔ́_PERS_mà===bɛ:pm:IPFV.AFF_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR
+tɛ_à_fɔ́_PERS_mà===tɛ:pm:IPFV.NEG_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR
+na_à_fɔ́_PERS_mà===nà:pm:CERT_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR
+ma_àa_fɔ́_PERS_mà===ma:pm:PFV.NEG_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR
+ye_à_fɔ́_PERS_mà===ye:pm:PFV.TR_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR
+bɛ_à_fɔ́_PERS_mà_kó===bɛ:pm:IPFV.AFF_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR_kó:cop:QUOT
+tɛ_à_fɔ́_PERS_mà_kó===tɛ:pm:IPFV.NEG_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR_kó:cop:QUOT
+na_à_fɔ́_PERS_mà_kó===nà:pm:CERT_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR_kó:cop:QUOT
+ma_à_fɔ́_PERS_mà_kó===ma:pm:PFV.NEG_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR_kó:cop:QUOT
+ye_à_fɔ́_PERS_mà_kó===ye:pm:PFV.TR_à:pers:3SG_fɔ́:v:dire_PERS_mà:pp:ADR_kó:cop:QUOT
+
+
 b'_à_fɔ́_mîn_mà===b':pm:IPFV.AFF_à:pers:3SG_fɔ́:v:dire_mîn:prn:REL_mà:pp:ADR
 t'_à_fɔ́_mîn_mà===t':pm:IPFV.NEG_à:pers:3SG_fɔ́:v:dire_mîn:prn:REL_mà:pp:ADR
 n'_à_fɔ́_mîn_mà===n':pm:CERT_à:pers:3SG_fɔ́:v:dire_mîn:prn:REL_mà:pp:ADR
@@ -4514,7 +4588,6 @@ má_ò_fɔ́===ma:pm:PFV.NEG_ò:prn:ce_fɔ́:v:dire
 yé_ò_fɔ́===ye:pm:PFV.TR_ò:prn:ce_fɔ́:v:dire
 mánà_ò_fɔ́===mánà:pm:COND.AFF_ò:prn:ce_fɔ́:v:dire
 nàna_ò_fɔ́===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_ò:prn:ce_fɔ́:v:dire
-
 k'_ò_fɔ́===k':pm:INF_ò:prn:ce_fɔ́:v:dire
 b'_ò_fɔ́===b':pm:IPFV.AFF_ò:prn:ce_fɔ́:v:dire
 b'_ò_fɔ́_kó===b':pm:IPFV.AFF_ò:prn:ce_fɔ́:v:dire_kó:cop:QUOT
@@ -4530,6 +4603,24 @@ mánà_ò_fɔ́===mánà:pm:COND.AFF_ò:prn:ce_fɔ́:v:dire
 mán'_ò_fɔ́===mán':pm:COND.AFF_ò:prn:ce_fɔ́:v:dire
 nàna_ò_fɔ́===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_ò:prn:ce_fɔ́:v:dire
 nàn'_ò_fɔ́===nàn':v: [nà:v:venir na:mrph:PFV.INTR]_ò:prn:ce_fɔ́:v:dire
+
+kà_PERS_tá_fɔ́===kà:pm:INF_PERS_tá:n:propriété_fɔ́:v:dire
+bɛ́_PERS_tá_fɔ́===bɛ:pm:IPFV.AFF_PERS_tá:n:propriété_fɔ́:v:dire
+tɛ́_PERS_tá_fɔ́===tɛ:pm:IPFV.NEG_PERS_tá:n:propriété_fɔ́:v:dire
+má_PERS_tá_fɔ́===ma:pm:PFV.NEG_PERS_tá:n:propriété_fɔ́:v:dire
+yé_PERS_tá_fɔ́===ye:pm:PFV.TR_PERS_tá:n:propriété_fɔ́:v:dire
+nàna_PERS_tá_fɔ́===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PERS_tá:n:propriété_fɔ́:v:dire
+k'_PERS_tá_fɔ́===k':pm:INF_PERS_tá:n:propriété_fɔ́:v:dire
+b'_PERS_tá_fɔ́===b':pm:IPFV.AFF_PERS_tá:n:propriété_fɔ́:v:dire
+b'_PERS_tá_fɔ́_COMMA_kó===b':pm:IPFV.AFF_PERS_tá:n:propriété_fɔ́:v:dire_COMMA_kó:cop:QUOT
+t'_PERS_tá_fɔ́===t':pm:IPFV.NEG_PERS_tá:n:propriété_fɔ́:v:dire
+y'_PERS_tá_fɔ́===y':pm:PFV.TR_PERS_tá:n:propriété_fɔ́:v:dire
+m'_PERS_tá_fɔ́===m':pm:PFV.NEG_PERS_tá:n:propriété_fɔ́:v:dire
+má_PERS_tá_fɔ́===ma:pm:PFV.NEG_PERS_tá:n:propriété_fɔ́:v:dire
+mánà_PERS_tá_fɔ́===mánà:pm:COND.AFF_PERS_tá:n:propriété_fɔ́:v:dire
+mán'_PERS_tá_fɔ́===mán':pm:COND.AFF_PERS_tá:n:propriété_fɔ́:v:dire
+nàna_PERS_tá_fɔ́===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PERS_tá:n:propriété_fɔ́:v:dire
+nàn'_PERS_tá_fɔ́===nàn':v: [nà:v:venir na:mrph:PFV.INTR]_PERS_tá:n:propriété_fɔ́:v:dire
 
 tɛ́_dɔ́wɛrɛ_fɔ́===tɛ:pm:IPFV.NEG_dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:adj:autre]_fɔ́:v:dire
 tɛ́_dɔ́wɛrɛ_fɔ́_kó===tɛ:pm:IPFV.NEG_dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:adj:autre]_fɔ́:v:dire_kó:cop:QUOT
@@ -4943,9 +5034,23 @@ PERS_jàrabi_PERS_lá===PERS_jàrabi:v:se.passionner_PERS_lá:pp:à
 PERS_jàrabira_PERS_lá===PERS_jàrabira:v: [jàrabi:v:se.passionner ra:mrph:PFV.INTR]_PERS_lá:pp:à
 
 #
-#	jàte "compter"
+#	jàte / jàti "compter"
 #
+jàte_fóyì_yé_PERS_kɔ́===jàte:v:compter_fóyì:n:rien_yé:pp:PP_PERS_kɔ́:pp:après
+jàti_fóyì_yé_PERS_kɔ́===jàte:v:compter_fóyì:n:rien_yé:pp:PP_PERS_kɔ́:pp:après
+jàte_fósì_yé_PERS_kɔ́===jàte:v:compter_fósì:n:rien_yé:pp:PP_PERS_kɔ́:pp:après
+jàti_fósì_yé_PERS_kɔ́===jàte:v:compter_fósì:n:rien_yé:pp:PP_PERS_kɔ́:pp:après
+
+jàte_fóyì_yé_ò_kɔ́===jàte:v:compter_fóyì:n:rien_yé:pp:PP_ò:prn:ce_kɔ́:pp:après
+jàti_fóyì_yé_ò_kɔ́===jàte:v:compter_fóyì:n:rien_yé:pp:PP_ò:prn:ce_kɔ́:pp:après
+jàte_fósì_yé_ò_kɔ́===jàte:v:compter_fósì:n:rien_yé:pp:PP_ò:prn:ce_kɔ́:pp:après
+jàti_fósì_yé_ò_kɔ́===jàte:v:compter_fósì:n:rien_yé:pp:PP_ò:prn:ce_kɔ́:pp:après
+
 jàte_fóyì_yé===jàte:v:compter_fóyì:n:rien_yé:pp:PP
+jàti_fóyì_yé===jàte:v:compter_fóyì:n:rien_yé:pp:PP
+jàte_fósì_yé===jàte:v:compter_fósì:n:rien_yé:pp:PP
+jàti_fósì_yé===jàte:v:compter_fósì:n:rien_yé:pp:PP
+
 
 #
 # 	jàteminɛ "calculer"
@@ -5172,6 +5277,7 @@ jìra_à_ká_kúma_kɔ́nɔ===jìra:v:montrer_à:pers:3SG_ka:pp:POSS_kúm
 jìrala_à_ká_kúma_kɔ́nɔ===jìrala:v: [jìra:v:montrer la:mrph:PFV.INTR]_à:pers:3SG_ka:pp:POSS_kúma:n:parole_kɔ́nɔ:pp:dans
 jìrala_PERS_lá===jìrala:v: [jìra:v:montrer la:mrph:PFV.INTR]_PERS_lá:pp:à
 jìrala_jàma_ná===jìrala:v: [jìra:v:montrer la:mrph:PFV.INTR]_jàma:n:foule_ná:pp:à
+jìra_ɲɔ́gɔn_ná===jìra:v:montrer_ɲɔ́gɔn:prn:RECP_ná:pp:à
 
 #
 #	jógin "blesser"
@@ -5227,6 +5333,9 @@ kà_n'_í_jɔ̀===kà:pm:INF_n':v:venir_í:pers:REFL_jɔ̀:v:dresser
 PERS_ɲɛ́_jɔ̀_PERS_lá===PERS_ɲɛ́:n:oeil_jɔ̀:v:dresser_PERS_lá:pp:à
 PERS_ɲɛ́_jɔ̀_PERS_ná===PERS_ɲɛ́:n:oeil_jɔ̀:v:dresser_PERS_ná:pp:à
 
+fɔ́len_tɛ́_jɔ̀===fɔ́len:n:dit [fɔ́:v:dire len:mrph:PTCP.RES]_tɛ:pm:IPFV.NEG_jɔ̀:v:dresser   # le dit ne tient pas debout (c'est pas vrai)
+fɔ́len_má_jɔ̀===fɔ́len:n:dit [fɔ́:v:dire len:mrph:PTCP.RES]_ma:pm:PFV.NEG_jɔ̀:v:dresser   # le dit ne tient pas debout (c'est pas vrai)
+
 #
 #	jɔ̀rɔ "s'inquiéter"
 #
@@ -5241,6 +5350,7 @@ tɛ́_júguya_PUNCT===tɛ:pm:IPFV.NEG_júguya:v:être.méchant [júgu:vq:mauv
 má_júguya_PUNCT===ma:pm:PFV.NEG_júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]_PUNCT
 mánà_júguya_PUNCT===mánà:pm:COND.AFF_júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]_PUNCT
 mánà_júguya_kójugu===mánà:pm:COND.AFF_júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]_kójugu:adv:trop [kó:n:affaire júgu:adj:mauvais]
+mánà_júguya_ô_júguya===mánà:pm:COND.AFF_júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]_ô:conj:DISTR_júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]
 júguya_kà_táa_à_fɛ̀===júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]_kà:pm:INF_táa:v:aller_à:pers:3SG_fɛ̀:pp:par
 júguya_kà_sé===júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]_kà:pm:INF_sé:v:arriver
 júguya_kà_kɛ́===júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]_kà:pm:INF_kɛ́:v:faire
@@ -5392,6 +5502,8 @@ kɛ́_mínnu_ná===kɛ́:v:faire_mínnu:prn:REL.PL2 [mîn:prn:REL nu:mrph:PL
 
 kɛ́_báari_yé===kɛ́:v:faire_báari:n:lutte_yé:pp:PP
 kɛ́_bì_yé===kɛ́:v:faire_bì:n:aujourd'hui_yé:pp:PP
+kɛ́_bòli_yé===kɛ́:v:faire_bòli:n:course_yé:pp:PP
+kɛ́ra_bòli_yé===kɛ́ra:v: [kɛ́:v:faire ra:mrph:PFV.INTR]_bòli:n:course_yé:pp:PP
 kɛ́_dén_yé===kɛ́:v:faire_dén:n:enfant_yé:pp:PP
 kɛ́_dònso_yé===kɛ́:v:faire_dònso:n:chasseur_yé:pp:PP
 kɛ́ra_fàma_yé===kɛ́ra:v: [kɛ́:v:faire ra:mrph:PFV.INTR]_fàma:n:longue.absence_yé:pp:PP
@@ -5730,6 +5842,12 @@ kɛ́tɔ===kɛ́tɔ:ptcp: [kɛ́:v:faire tɔ:mrph:CONV.PROG]
 kɛ́_k'_à_ɲɛ̀_PUNCT===kɛ́:v:faire_k':pm:INF_à:pers:3SG_ɲɛ̀:v:réussir_PUNCT
 kɛ́_k'_ò_ɲɛ̀_PUNCT===kɛ́:v:faire_k':pm:INF_ò:prn:ce_ɲɛ̀:v:réussir_PUNCT
 
+kɛ́tɔ_tɛ́_kà===kɛ́tɔ:ptcp: [kɛ́:v:faire tɔ:mrph:CONV.PROG]_tɛ́:cop:COP.NEG_kà:pm:INF
+kɛ́tɔ_bɛ́_kà===kɛ́tɔ:ptcp: [kɛ́:v:faire tɔ:mrph:CONV.PROG]_bɛ́:cop:être_kà:pm:INF
+kɛ́tɔ_tɛ́_k'===kɛ́tɔ:ptcp: [kɛ́:v:faire tɔ:mrph:CONV.PROG]_tɛ́:cop:COP.NEG_k':pm:INF
+kɛ́tɔ_bɛ́_k'===kɛ́tɔ:ptcp: [kɛ́:v:faire tɔ:mrph:CONV.PROG]_bɛ́:cop:être_k':pm:INF
+
+
 #
 #	kɛ̀lɛ "combattre"
 #
@@ -5814,6 +5932,25 @@ PUNCT_kà_fìni_kò_PUNCT===PUNCT_kà:pm:INF_fìni:n:tissu_kò:v:laver_PUN
 PUNCT_kà_fìniw_kò_PUNCT===PUNCT_kà:pm:INF_fìniw:n: [fìni:n:tissu w:mrph:PL]_kò:v:laver_PUNCT
 mánà_PERS_kò_PUNCT===mánà:pm:COND.AFF_PERS_kò:v:laver_PUNCT
 mánà_í_kò_PUNCT===mánà:pm:COND.AFF_í:pers:REFL_kò:v:laver_PUNCT
+
+kà_í_kò_PUNCT===kà:pm:INF_í:pers:REFL_kò:v:laver_PUNCT
+bɛ_í_kò_PUNCT===bɛ:pm:IPFV.AFF_í:pers:REFL_kò:v:laver_PUNCT
+tɛ_í_kò_PUNCT===tɛ:pm:IPFV.NEG_í:pers:REFL_kò:v:laver_PUNCT
+ye_í_kò_PUNCT===ye:pm:PFV.TR_í:pers:REFL_kò:v:laver_PUNCT
+ma_í_kò_PUNCT===ma:pm:PFV.NEG_í:pers:REFL_kò:v:laver_PUNCT
+kànâ_í_kò_PUNCT===kànâ:pm:PROH_í:pers:REFL_kò:v:laver_PUNCT
+bɛ́nà_í_kò_PUNCT===bɛ́nà:pm:FUT_í:pers:REFL_kò:v:laver_PUNCT
+tɛ́nà_í_kò_PUNCT===tɛ́nà:pm:FUT.NEG_í:pers:REFL_kò:v:laver_PUNCT
+
+kà_í_kò_jí_lá===kà:pm:INF_í:pers:REFL_kò:v:laver_jí:n:eau_lá:pp:à
+bɛ_í_kò_jí_lá===bɛ:pm:IPFV.AFF_í:pers:REFL_kò:v:laver_jí:n:eau_lá:pp:à
+tɛ_í_kò_jí_lá===tɛ:pm:IPFV.NEG_í:pers:REFL_kò:v:laver_jí:n:eau_lá:pp:à
+ye_í_kò_jí_lá===ye:pm:PFV.TR_í:pers:REFL_kò:v:laver_jí:n:eau_lá:pp:à
+ma_í_kò_jí_lá===ma:pm:PFV.NEG_í:pers:REFL_kò:v:laver_jí:n:eau_lá:pp:à
+mánà_í_kò_jí_lá===mánà:pm:COND.AFF_í:pers:REFL_kò:v:laver_jí:n:eau_lá:pp:à
+kànâ_í_kò_jí_lá===kànâ:pm:PROH_í:pers:REFL_kò:v:laver_jí:n:eau_lá:pp:à
+bɛ́nà_í_kò_jí_lá===bɛ́nà:pm:FUT_í:pers:REFL_kò:v:laver_jí:n:eau_lá:pp:à
+tɛ́nà_í_kò_jí_lá===tɛ́nà:pm:FUT.NEG_í:pers:REFL_kò:v:laver_jí:n:eau_lá:pp:à
 
 #
 #	kò "arriver"
@@ -5999,12 +6136,16 @@ PERS_kúmana_PUNCT===PERS_kúmana:v: [kúma:v:parler na:mrph:PFV.INTR]_PUNCT
 #
 #	kún "s'adapter"
 #
+kà_kún_PERS_lá===kà:pm:INF_kún:v:s'adapter_PERS_lá:pp:à
+kà_kún_PERS_ná===kà:pm:INF_kún:v:s'adapter_PERS_ná:pp:à
 bɛ́_kún_PERS_lá===bɛ:pm:IPFV.AFF_kún:v:s'adapter_PERS_lá:pp:à
 bɛ́_kún_PERS_ná===bɛ:pm:IPFV.AFF_kún:v:s'adapter_PERS_ná:pp:à
 tɛ́_kún_PERS_lá===tɛ:pm:IPFV.NEG_kún:v:s'adapter_PERS_lá:pp:à
 tɛ́_kún_PERS_ná===tɛ:pm:IPFV.NEG_kún:v:s'adapter_PERS_ná:pp:à
 má_kún_PERS_lá===ma:pm:PFV.NEG_kún:v:s'adapter_PERS_lá:pp:à
 má_kún_PERS_ná===ma:pm:PFV.NEG_kún:v:s'adapter_PERS_ná:pp:à
+mánà_kún_PERS_lá===mánà:pm:COND.AFF_kún:v:s'adapter_PERS_lá:pp:à
+mánà_kún_PERS_ná===mánà:pm:COND.AFF_kún:v:s'adapter_PERS_ná:pp:à
 bɛ́_kún_PERS_fɛ̀===bɛ:pm:IPFV.AFF_kún:v:s'adapter_PERS_fɛ̀:pp:par
 tɛ́_kún_PERS_fɛ̀===tɛ:pm:IPFV.NEG_kún:v:s'adapter_PERS_fɛ̀:pp:par
 má_kún_PERS_fɛ̀===ma:pm:PFV.NEG_kún:v:s'adapter_PERS_fɛ̀:pp:par
@@ -6254,6 +6395,15 @@ màra_fúru_lá===màra:v:garder_fúru:n:mariage_lá:pp:à
 kà_nìn_màra===kà:pm:INF_nìn:prn:ceci_màra:v:garder
 kà_ò_màra===kà:pm:INF_ò:prn:ce_màra:v:garder
 k'_ò_màra===k':pm:INF_ò:prn:ce_màra:v:garder
+kà_PERS_màra===kà:pm:INF_PERS_màra:v:garder
+bɛ́_PERS_màra===bɛ:pm:IPFV.AFF_PERS_màra:v:garder
+tɛ́_PERS_màra===tɛ:pm:IPFV.NEG_PERS_màra:v:garder
+má_PERS_màra===ma:pm:PFV.NEG_PERS_màra:v:garder
+k'_PERS_màra===k':pm:INF_PERS_màra:v:garder
+b'_PERS_màra===b':pm:IPFV.AFF_PERS_màra:v:garder
+t'_PERS_màra===t':pm:IPFV.NEG_PERS_màra:v:garder
+m'_PERS_màra===m':pm:PFV.NEG_PERS_màra:v:garder
+
 màra_PERS_kɔ́rɔ===màra:v:garder_PERS_kɔ́rɔ:pp:sous    # garder par devers soi
 
 #
@@ -6622,6 +6772,7 @@ PERS_nàna_ɲɔ́gɔn_fɛ̀===PERS_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_ɲ
 NPROPRE_nàna_PUNCT===NPROPRE_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PUNCT
 Nê_nàna_só_kà_nà_fɔ́len_sɛ́bɛn===nê:pers:1SG.EMPH_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_só:n:maison_kà:pm:INF_nà:v:venir_fɔ́len:n:dit [fɔ́:v:dire len:mrph:PTCP.RES]_sɛ́bɛn:v:écrire
 nàna_fɔ́len_bɛ́ɛ_sɛ́bɛn===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_fɔ́len:n:dit [fɔ́:v:dire len:mrph:PTCP.RES]_bɛ́ɛ:dtm:tout_sɛ́bɛn:v:écrire
+ni_kà_nà_fɔ́len_sɛ́bɛn===ni:conj:et_kà:pm:INF_nà:v:venir_fɔ́len:n:dit [fɔ́:v:dire len:mrph:PTCP.RES]_sɛ́bɛn:v:écrire
 
 kà_nà_bàro_lá===kà:pm:INF_nà:v:venir_bàro:n:conversation_lá:pp:à
 kà_nà_bàrokɛ_lá===kà:pm:INF_nà:v:venir_bàrokɛ:n: [bàro:n:conversation kɛ́:v:faire]_lá:pp:à
@@ -6724,6 +6875,9 @@ bɛ́_ɲɛ̀_kɔ́yi===bɛ:pm:IPFV.AFF_ɲɛ̀:v:réussir_kɔ́yi:prt:certes
 tɛ́_ɲɛ̀_kɔ́yi===tɛ:pm:IPFV.NEG_ɲɛ̀:v:réussir_kɔ́yi:prt:certes   # = pas du tout
 má_ɲɛ̀_kɔ́yi===ma:pm:PFV.NEG_ɲɛ̀:v:réussir_kɔ́yi:prt:certes
 
+ní_PERS_ní_PERS_ɲɛ̀na===ní:conj:si_PERS_ni:conj:et_PERS_ɲɛ̀na:v: [ɲɛ̀:v:réussir na:mrph:PFV.INTR]
+ní_PERS_ní_ò_ɲɛ̀na===ní:conj:si_PERS_ni:conj:et_ò:prn:ce_ɲɛ̀na:v: [ɲɛ̀:v:réussir na:mrph:PFV.INTR]
+
 #
 #	ɲɛ́fɔ  "expliquer"
 #
@@ -6748,6 +6902,19 @@ táa_à_ɲɛ́fɔ===táa:v:aller_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n
 táara_à_ɲɛ́fɔ===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
 tága_à_ɲɛ́fɔ===tága:v:aller_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
 tágara_à_ɲɛ́fɔ===tágara:v: [táa:v:aller ra:mrph:PFV.INTR]_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+nà_à_ɲɛ́fɔ===nà:v:venir_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+PERS_nà_à_ɲɛ́fɔ===PERS_nà:pm:CERT_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+nàna_à_ɲɛ́fɔ===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+
+táa_ò_ɲɛ́fɔ===táa:v:aller_ò:prn:ce_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+táara_ò_ɲɛ́fɔ===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_ò:prn:ce_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+tága_ò_ɲɛ́fɔ===tága:v:aller_ò:prn:ce_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+tágara_ò_ɲɛ́fɔ===tágara:v: [táa:v:aller ra:mrph:PFV.INTR]_ò:prn:ce_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+nà_ò_ɲɛ́fɔ===nà:v:venir_ò:prn:ce_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+PERS_nà_ò_ɲɛ́fɔ===PERS_nà:pm:CERT_ò:prn:ce_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+nàna_ò_ɲɛ́fɔ===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_ò:prn:ce_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+
+
 à_ɲɛ́fɔ_EXCLAM===à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_EXCLAM
 
 #
@@ -6871,6 +7038,10 @@ táa_ò_ɲíni===táa:v:aller_ò:prn:ce_ɲíni:v:chercher
 tága_PERS_ɲíni===tága:v:aller_PERS_ɲíni:v:chercher
 tága_ò_ɲíni===tága:v:aller_ò:prn:ce_ɲíni:v:chercher
 
+ɲíni_kà_tán_bɔ́===ɲíni:v:chercher_kà:pm:INF_tán:num:dix_bɔ́:v:sortir
+ɲíni_kà_NUM_bɔ́===ɲíni:v:chercher_kà:pm:INF_NUM_bɔ́:v:sortir
+ɲíni_kà_NUM_NUM_bɔ́===ɲíni:v:chercher_kà:pm:INF_NUM_NUM_bɔ́:v:sortir
+
 #	ɲìninka "interroger"
 #
 kà_PERS_ɲìninka_kó===kà:pm:INF_PERS_ɲìninka:v:interroger_kó:cop:QUOT
@@ -6884,6 +7055,8 @@ màko_bɛ́_sà===màko:n:besoin_bɛ:pm:IPFV.AFF_sà:v:mourir
 màgo_bɛ́_sà===màgo:n:besoin_bɛ:pm:IPFV.AFF_sà:v:mourir
 fúru_bɛ́_sà===fúru:n:mariage_bɛ:pm:IPFV.AFF_sà:v:mourir
 fúru_tùn_bɛ́_sà===fúru:n:mariage_tùn:prt:PST_bɛ:pm:IPFV.AFF_sà:v:mourir
+fúru_tɛ́_sà===fúru:n:mariage_tɛ:pm:IPFV.NEG_sà:v:mourir
+kà_fúru_sà===kà:pm:INF_fúru:n:mariage_sà:v:mourir
 
 cɛ̀_y'_PERS_fúru_sà===cɛ̀:n:mâle_y':pm:PFV.TR_PERS_fúru:n:mariage_sà:v:mourir
 Cɛ̀_y'_PERS_fúru_sà===cɛ̀:n:mâle_y':pm:PFV.TR_PERS_fúru:n:mariage_sà:v:mourir
@@ -6946,6 +7119,8 @@ màgo_mánà_sà===màgo:n:besoin_mánà:pm:COND.AFF_sà:v:mourir
 # yé_sà===ye:pm:PFV.TR_sà:v:mourir
 # ná_sà===nà:pm:CERT_sà:v:mourir
 mánà_sà===mánà:pm:COND.AFF_sà:v:mourir
+sánì_PERS_ka_sà===sánì:conj:avant.de_PERS_ka:pm:SBJV_sà:v:mourir
+Sánì_PERS_ka_sà===sánì:prep:avant.de_PERS_ka:pm:SBJV_sà:v:mourir
 
 bɛ́_sà_fú_lá===bɛ:pm:IPFV.AFF_sà:v:mourir_fú:n:zéro_lá:pp:à    # mourir pour rien
 sàra_kà_PERS_dén_tó_PERS_bólo===sàra:v: [sà:v:mourir ra:mrph:PFV.INTR]_kà:pm:INF_PERS_dén:n:enfant_tó:v:rester_PERS_bólo:pp:CNTRL
@@ -6964,6 +7139,8 @@ kɔ́rɔkɛ_sàra===kɔ̀rɔkɛ:n:frère.aîné [kɔ̀rɔ:n:aîné kɛ:adj:mâl
 bàlimakɛ_sàra===bálimakɛ:n:frère [bálima:n:frère kɛ:adj:mâle]_sàra:v: [sà:v:mourir ra:mrph:PFV.INTR]
 bàlimakɛ_dɔ́_sàra===bálimakɛ:n:frère [bálima:n:frère kɛ:adj:mâle]_dɔ́:dtm:certain_sàra:v: [sà:v:mourir ra:mrph:PFV.INTR]
 bɛ́ɛnkɛ_sàra===bɛ́ɛnkɛ:n:oncle.maternel [bɛ́ɛn:n:oncle.maternel kɛ:adj:mâle]_sàra:v: [sà:v:mourir ra:mrph:PFV.INTR]
+wóloba_sàra===wóloba:n:propre.mère [wólo:v:accoucher bá:n:mère]_sàra:v: [sà:v:mourir ra:mrph:PFV.INTR]
+wólofa_sàra===wólofa:n:propre.père [wólo:v:accoucher fà:n:père]_sàra:v: [sà:v:mourir ra:mrph:PFV.INTR]
 
 cɛ̀_sàlen_PUNCT===cɛ̀:n:mâle_sàlen:ptcp: [sà:v:mourir len:mrph:PTCP.RES]_PUNCT
 mùso_sàlen_PUNCT===mùso:n:femme_sàlen:ptcp: [sà:v:mourir len:mrph:PTCP.RES]_PUNCT
@@ -6985,6 +7162,8 @@ sà_mɔ̀gɔ_ɲìnɛ_mà===sà:v:mourir_mɔ̀gɔ:n:homme_ɲìnɛ:n:oubli_ma
 sàra_mɔ̀gɔ_ɲìnɛ_mà===sàra:v: [sà:v:mourir ra:mrph:PFV.INTR]_mɔ̀gɔ:n:homme_ɲìnɛ:n:oubli_mà:pp:ADR
 
 sɔ̀rɔ_kà_sà===sɔ̀rɔ:v:obtenir_kà:pm:INF_sà:v:mourir
+bìlen_fó_kà_PERS_sà===bìlen:adv:encore_fó:conj:jusqu'à_kà:pm:INF_PERS_sà:v:mourir
+fó_kà_PERS_sà===fó:conj:jusqu'à_kà:pm:INF_PERS_sà:v:mourir
 
 #
 #	sábali "être patient"
@@ -7289,6 +7468,8 @@ dá_tɛ́_sé_mínnu_mà===dá:n:bouche_tɛ:pm:IPFV.NEG_sé:v:arriver_mí
 
 sé_sàn_NUM_mà===sé:v:arriver_sàn:n:année_NUM_mà:pp:ADR
 séra_sàn_NUM_mà===séra:v: [sé:v:arriver ra:mrph:PFV.INTR]_sàn:n:année_NUM_mà:pp:ADR
+sé_sàn_NUM_NUM_mà===sé:v:arriver_sàn:n:année_NUM_NUM_mà:pp:ADR
+séra_sàn_NUM_NUM_mà===séra:v: [sé:v:arriver ra:mrph:PFV.INTR]_sàn:n:année_NUM_NUM_mà:pp:ADR
 
 ò_mána_sé_kà_kɛ́===ò:prn:ce_mánà:pm:COND.AFF_sé:v:arriver_kà:pm:INF_kɛ́:v:faire
 
@@ -7454,6 +7635,8 @@ bɛ́_sì_à_kɔ́nɔ_PUNCT===bɛ:pm:IPFV.AFF_sì:v:passer.la.nuit_à:pers:3
 tɛ́_sì_à_kɔ́nɔ_PUNCT===tɛ:pm:IPFV.NEG_sì:v:passer.la.nuit_à:pers:3SG_kɔ́nɔ:pp:dans_PUNCT
 má_sì_à_kɔ́nɔ_PUNCT===ma:pm:PFV.NEG_sì:v:passer.la.nuit_à:pers:3SG_kɔ́nɔ:pp:dans_PUNCT
 
+bɛ́_sì_kàso_lá===bɛ:pm:IPFV.AFF_sì:v:passer.la.nuit_kàso:n:prison_lá:pp:à
+
 PUNCT_kà_sì_à_kɔ́nɔ_PUNCT===PUNCT_kà:pm:INF_sì:v:passer.la.nuit_à:pers:3SG_kɔ́nɔ:pp:dans_PUNCT
 PUNCT_kà_sì_à_kàn_PUNCT===PUNCT_kà:pm:INF_sì:v:passer.la.nuit_à:pers:3SG_kàn:pp:sur_PUNCT
 PUNCT_kà_sì_ò_kàn_PUNCT===PUNCT_kà:pm:INF_sì:v:passer.la.nuit_ò:prn:ce_kàn:pp:sur_PUNCT
@@ -7603,9 +7786,12 @@ sínna_kà_kàba===sínna:v: [sín:v:diriger na:mrph:PFV.INTR]_kà:pm:INF_
 sínna_kà_kɛ́===sínna:v: [sín:v:diriger na:mrph:PFV.INTR]_kà:pm:INF_kɛ́:v:faire
 sínna_kà_wúli===sínna:v: [sín:v:diriger na:mrph:PFV.INTR]_kà:pm:INF_wúli:v:se.lever
 sínna_kà_yɛ́lɛ===sínna:v: [sín:v:diriger na:mrph:PFV.INTR]_kà:pm:INF_yɛ́lɛ:v:rire
+sínna_kà===sínna:v: [sín:v:diriger na:mrph:PFV.INTR]_kà:pm:INF
 
 sínna_ɲɔ́gɔn_mà===sínna:v: [sín:v:diriger na:mrph:PFV.INTR]_ɲɔ́gɔn:prn:RECP_mà:pp:ADR
 sínna_só_mà===sínna:v: [sín:v:diriger na:mrph:PFV.INTR]_só:n:maison_mà:pp:ADR
+sínna_PERS_mà===sínna:v: [sín:v:diriger na:mrph:PFV.INTR]_PERS_mà:pp:ADR
+sínna_ò_mà===sínna:v: [sín:v:diriger na:mrph:PFV.INTR]_ò:prn:ce_mà:pp:ADR
 
 sín_kà_nà_dòn===sín:v:diriger_kà:pm:INF_nà:v:venir_dòn:v:entrer
 sín_kà_nà===sín:v:diriger_kà:pm:INF_nà:v:venir
@@ -7730,7 +7916,11 @@ sɔ̀nn'_ò_mà===sɔ̀nn':v: [sɔ̀n:v:accepter na:mrph:PFV.INTR]_ò:prn:ce_
 má_sɔ̀n===ma:pm:PFV.NEG_sɔ̀n:v:accepter
 sɔ̀n_ò_mà===sɔ̀n:v:accepter_ò:prn:ce_mà:pp:ADR
 sɔ̀n_fúru_mà===sɔ̀n:v:accepter_fúru:n:mariage_mà:pp:ADR
+sɔ̀nna_fúru_mà===sɔ̀nna:v: [sɔ̀n:v:accepter na:mrph:PFV.INTR]_fúru:n:mariage_mà:pp:ADR
+sɔ̀nna_cɛ̀_ka_fúru_mà===sɔ̀nna:v: [sɔ̀n:v:accepter na:mrph:PFV.INTR]_cɛ̀:n:mâle_ka:pp:POSS_fúru:n:mariage_mà:pp:ADR
 sɔ̀n_PERS_mà===sɔ̀n:v:accepter_PERS_mà:pp:ADR
+sɔ̀nna_PERS_mà===sɔ̀nna:v: [sɔ̀n:v:accepter na:mrph:PFV.INTR]_PERS_mà:pp:ADR
+
 ò_sí_tɛ́_sɔ̀n===ò:prn:ce_sí:dtm:aucun_tɛ:pm:IPFV.NEG_sɔ̀n:v:accepter    # + subjonctif
 ò_sí_tɛ́_sɔ̀n_ò_ɲɔ̀gɔnna===ò:prn:ce_sí:dtm:aucun_tɛ:pm:IPFV.NEG_sɔ̀n:v:accepter_ò:prn:ce_ɲɔ̀gɔnna:n:pareil    # + subjonctif
 sí_má_sɔ̀n_sí_tá_mà===sí:prn:aucun_ma:pm:PFV.NEG_sɔ̀n:v:accepter_sí:prn:aucun_tá:n:propriété_mà:pp:ADR
@@ -7938,11 +8128,13 @@ y'_à_ka_yɛ̀rɛmahɔrɔnya_sɔ̀rɔ===y':pm:PFV.TR_à:pers:3SG_ka:pp:POSS_y�
 ɲɛ́_bɛ́_sɔ̀rɔ_à_lá===ɲɛ́:n:oeil_bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à   #   "ça peut s'arranger"  (ɲɛ̀ réussite?)
 Ɲɛ́_bɛ́_sɔ̀rɔ_à_lá===ɲɛ́:n:oeil_bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
 
-sɔ̀rɔ_ỳan===sɔ̀rɔ:v:obtenir_yàn:adv:ici
-sɔ̀rɔ_ỳen===sɔ̀rɔ:v:obtenir_yèn:adv:là-bas
+sɔ̀rɔ_yàn===sɔ̀rɔ:v:obtenir_yàn:adv:ici
+sɔ̀rɔ_yèn===sɔ̀rɔ:v:obtenir_yèn:adv:là-bas
 
 bɛ́_sàn_NUM_sɔ̀rɔ===bɛ:pm:IPFV.AFF_sàn:n:année_NUM_sɔ̀rɔ:v:obtenir
 yé_sàn_NUM_sɔ̀rɔ===ye:pm:PFV.TR_sàn:n:année_NUM_sɔ̀rɔ:v:obtenir
+bɛ́_sàn_dámadɔ_sɔ̀rɔ===bɛ:pm:IPFV.AFF_sàn:n:année_dámadɔ:dtm:quelques [dán:n:compte ma:mrph:COM dɔ́:dtm:certain]_sɔ̀rɔ:v:obtenir
+yé_sàn_dámadɔ_sɔ̀rɔ===ye:pm:PFV.TR_sàn:n:année_dámadɔ:dtm:quelques [dán:n:compte ma:mrph:COM dɔ́:dtm:certain]_sɔ̀rɔ:v:obtenir
 
 
 #	sɔ̀sɔ "contredire"
@@ -8000,6 +8192,7 @@ yé_mùso_tà===ye:pm:PFV.TR_mùso:n:femme_tà:v:prendre
 má_mùso_tà===ma:pm:PFV.NEG_mùso:n:femme_tà:v:prendre
 kà_mùso_wɛ́rɛ_tà===kà:pm:INF_mùso:n:femme_wɛ́rɛ:dtm:autre_tà:v:prendre
 bɛ_mùso_wɛ́rɛ_tà===bɛ:pm:IPFV.AFF_mùso:n:femme_wɛ́rɛ:dtm:autre_tà:v:prendre
+yé_mùso_wɛ́rɛ_tà===ye:pm:PFV.TR_mùso:n:femme_wɛ́rɛ:dtm:autre_tà:v:prendre
 tɛ_mùso_wɛ́rɛ_tà===tɛ:pm:IPFV.NEG_mùso:n:femme_wɛ́rɛ:dtm:autre_tà:v:prendre
 PERS_tà_mùso_yé===PERS_tà:v:prendre_mùso:n:femme_yé:pp:PP
 yé_jí_tà===ye:pm:PFV.TR_jí:n:eau_tà:v:prendre
@@ -8019,6 +8212,8 @@ bɛ_PERS_tà_PUNCT===bɛ:pm:IPFV.AFF_PERS_tà:v:prendre_PUNCT
 tɛ_PERS_tà_PUNCT===tɛ:pm:IPFV.NEG_PERS_tà:v:prendre_PUNCT
 ye_PERS_tà_PUNCT===ye:pm:PFV.TR_PERS_tà:v:prendre_PUNCT
 ma_PERS_tà_PUNCT===ma:pm:PFV.NEG_PERS_tà:v:prendre_PUNCT
+bɛ́nà_PERS_tà_PUNCT===bɛ́nà:pm:FUT_PERS_tà:v:prendre_PUNCT
+tɛ́nà_PERS_tà_PUNCT===tɛ́nà:pm:FUT.NEG_PERS_tà:v:prendre_PUNCT
 mánà_PERS_tà_PUNCT===mánà:pm:COND.AFF_PERS_tà:v:prendre_PUNCT
 kànâ_PERS_tà_PUNCT===kànâ:pm:PROH_PERS_tà:v:prendre_PUNCT
 kà_nà_PERS_tà_PUNCT===kà:pm:INF_nà:v:venir_PERS_tà:v:prendre_PUNCT
@@ -8211,6 +8406,8 @@ táa_mùso_kɛ́===táa:v:aller_mùso:n:femme_kɛ́:v:faire
 
 táa_ò_lájɛ===táa:v:aller_ò:prn:ce_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
 táara_ò_lájɛ===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_ò:prn:ce_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
+táa_ò_tìgi_lájɛ===táa:v:aller_ò:prn:ce_tìgi:n:maître_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
+táara_ò_tìgi_lájɛ===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_ò:prn:ce_tìgi:n:maître_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
 táa_PERS_lájɛ===táa:v:aller_PERS_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
 táara_PERS_lájɛ===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_PERS_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
 táa_PERS_bìla===táa:v:aller_PERS_bìla:v:mettre
@@ -8222,6 +8419,15 @@ táa_PERS_ka_só_yɔ́rɔ_dɔ́n===táa:v:aller_PERS_ka:pp:POSS_só:n:maison
 táa_PERS_ka_só===táa:v:aller_PERS_ka:pp:POSS_só:n:maison
 táara_PERS_ka_só_yɔ́rɔ_dɔ́n===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_PERS_ka:pp:POSS_só:n:maison_yɔ́rɔ:n:lieu_dɔ́n:v:connaître
 táara_PERS_ka_só===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_PERS_ka:pp:POSS_só:n:maison
+
+táa_ò_ka_só_yɔ́rɔ_dɔ́n===táa:v:aller_ò:prn:ce_ka:pp:POSS_só:n:maison_yɔ́rɔ:n:lieu_dɔ́n:v:connaître
+táa_ò_ka_só===táa:v:aller_ò:prn:ce_ka:pp:POSS_só:n:maison
+táara_ò_ka_só_yɔ́rɔ_dɔ́n===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_ò:prn:ce_ka:pp:POSS_só:n:maison_yɔ́rɔ:n:lieu_dɔ́n:v:connaître
+táara_ò_ka_só===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_ò:prn:ce_ka:pp:POSS_só:n:maison
+táa_nìn_ka_só_yɔ́rɔ_dɔ́n===táa:v:aller_nìn:prn:ceci_ka:pp:POSS_só:n:maison_yɔ́rɔ:n:lieu_dɔ́n:v:connaître
+táa_nìn_ka_só===táa:v:aller_nìn:prn:ceci_ka:pp:POSS_só:n:maison
+táara_nìn_ka_só_yɔ́rɔ_dɔ́n===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_nìn:prn:ceci_ka:pp:POSS_só:n:maison_yɔ́rɔ:n:lieu_dɔ́n:v:connaître
+táara_nìn_ka_só===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_nìn:prn:ceci_ka:pp:POSS_só:n:maison
 
 #Attention! ɲɛ́ # peut être (sans ton) "réussir" mais :
 táa_ɲɛ́_PUNCT===táa:v:aller_ɲɛ́:pp:devant_PUNCT
@@ -8365,6 +8571,8 @@ tága_mùso_kɛ́===tága:v:aller_mùso:n:femme_kɛ́:v:faire
 
 tága_ò_lájɛ===tága:v:aller_ò:prn:ce_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
 tágara_ò_lájɛ===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_ò:prn:ce_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
+tága_ò_tìgi_lájɛ===tága:v:aller_ò:prn:ce_tìgi:n:maître_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
+tágara_ò_tìgi_lájɛ===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_ò:prn:ce_tìgi:n:maître_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
 tága_PERS_lájɛ===tága:v:aller_PERS_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
 tágara_PERS_lájɛ===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_PERS_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
 tága_PERS_bìla===tága:v:aller_PERS_bìla:v:mettre
@@ -8376,6 +8584,16 @@ tága_PERS_ka_só_yɔ́rɔ_dɔ́n===tága:v:aller_PERS_ka:pp:POSS_só:n:mais
 tága_PERS_ka_só===tága:v:aller_PERS_ka:pp:POSS_só:n:maison
 tágara_PERS_ka_só_yɔ́rɔ_dɔ́n===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_PERS_ka:pp:POSS_só:n:maison_yɔ́rɔ:n:lieu_dɔ́n:v:connaître
 tágara_PERS_ka_só===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_PERS_ka:pp:POSS_só:n:maison
+
+tága_ò_ka_só_yɔ́rɔ_dɔ́n===tága:v:aller_ò:prn:ce_ka:pp:POSS_só:n:maison_yɔ́rɔ:n:lieu_dɔ́n:v:connaître
+tága_ò_ka_só===tága:v:aller_ò:prn:ce_ka:pp:POSS_só:n:maison
+tágara_ò_ka_só_yɔ́rɔ_dɔ́n===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_ò:prn:ce_ka:pp:POSS_só:n:maison_yɔ́rɔ:n:lieu_dɔ́n:v:connaître
+tágara_ò_ka_só===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_ò:prn:ce_ka:pp:POSS_só:n:maison
+tága_nìn_ka_só_yɔ́rɔ_dɔ́n===tága:v:aller_nìn:prn:ceci_ka:pp:POSS_só:n:maison_yɔ́rɔ:n:lieu_dɔ́n:v:connaître
+tága_nìn_ka_só===tága:v:aller_nìn:prn:ceci_ka:pp:POSS_só:n:maison
+tágara_nìn_ka_só_yɔ́rɔ_dɔ́n===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_nìn:prn:ceci_ka:pp:POSS_só:n:maison_yɔ́rɔ:n:lieu_dɔ́n:v:connaître
+tágara_nìn_ka_só===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_nìn:prn:ceci_ka:pp:POSS_só:n:maison
+
 
 #Attention! ɲɛ́ # peut être (sans ton) "réussir" mais :
 tága_ɲɛ́_PUNCT===tága:v:aller_ɲɛ́:pp:devant_PUNCT
@@ -8444,7 +8662,7 @@ tɛ́_tɛ̀mɛ===tɛ:pm:IPFV.NEG_tɛ̀mɛ:v:passer
 má_tɛ̀mɛ===ma:pm:PFV.NEG_tɛ̀mɛ:v:passer
 mánà_tɛ́mɛ===mánà:pm:COND.AFF_tɛ̀mɛ:v:passer
 kànâ_tɛ́mɛ===kànâ:pm:PROH_tɛ̀mɛ:v:passer
-nàna_tɛ́mɛ===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_kànâ:pm:PROH_tɛ̀mɛ:v:passer
+nàna_tɛ́mɛ===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_tɛ̀mɛ:v:passer
 
 tɛ̀mɛ_PERS_kàn===tɛ̀mɛ:v:passer_PERS_kàn:pp:sur
 tɛ̀mɛ_ò_kàn===tɛ̀mɛ:v:passer_ò:prn:ce_kàn:pp:sur
@@ -8632,6 +8850,7 @@ bɛ́nà_tíɲɛ_PUNCT===bɛ́nà:pm:FUT_tíɲɛ:v:gâter_PUNCT
 bɛ́_tíɲɛ_PUNCT===bɛ:pm:IPFV.AFF_tíɲɛ:v:gâter_PUNCT
 tɛ́_tíɲɛ_PUNCT===tɛ:pm:IPFV.NEG_tíɲɛ:v:gâter_PUNCT
 ò_tɛ́_fósì_tíɲɛ===ò:prn:ce_tɛ:pm:IPFV.NEG_fósì:n:rien_tíɲɛ:v:gâter
+ò_tɛ́_fɛ́n_tíɲɛ===ò:prn:ce_tɛ:pm:IPFV.NEG_fɛ́n:n:chose_tíɲɛ:v:gâter
 tá_tíɲɛna===tá:n:propriété_tíɲɛna:v: [tíɲɛ:v:gâter na:mrph:PFV.INTR]
 ɲɛ́namaya_tíɲɛna===ɲɛ́namaya:n:vie [ɲɛ́nama:adj:vivant [ɲɛ́:n:oeil nama:mrph:STAT] ya:mrph:ABSTR]_tíɲɛna:v: [tíɲɛ:v:gâter na:mrph:PFV.INTR]
 tíɲɛna===tíɲɛna:v: [tíɲɛ:v:gâter na:mrph:PFV.INTR]
@@ -8715,6 +8934,9 @@ kàn'_à_tó===kàn':pm:PROH_à:pers:3SG_tó:v:rester
 
 tó_yèn===tó:v:rester_yèn:adv:là-bas
 tóra_tèn===tóra:v: [tó:v:rester ra:mrph:PFV.INTR]_tèn:adv:ainsi
+tó_só_PUNCT===tó:v:rester_só:n:maison_PUNCT
+tóra_só_PUNCT===tóra:v: [tó:v:rester ra:mrph:PFV.INTR]_só:n:maison_PUNCT
+
 tó_PERS_bólo===tó:v:rester_PERS_bólo:pp:CNTRL
 tóra_PERS_bólo===tóra:v: [tó:v:rester ra:mrph:PFV.INTR]_PERS_bólo:pp:CNTRL
 
@@ -8797,6 +9019,8 @@ tó_kà_bònya===tó:v:rester_kà:pm:INF_bònya:v:grossir [bòn:vq:grand 
 tó_kà_júguya===tó:v:rester_kà:pm:INF_júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]
 
 PERS_tá_tó_Ála_mà===PERS_tá:n:propriété_tó:v:rester_Ála:n:Dieu_mà:pp:à
+ò_kó_tó_PERS_mà===ò:prn:ce_kó:n:affaire_tó:v:rester_PERS_mà:pp:à
+à_kó_tó_PERS_mà===à:pers:3SG_kó:n:affaire_tó:v:rester_PERS_mà:pp:à
 
 #
 #	tòli "pourrir"
@@ -8861,6 +9085,7 @@ t'_PERS_wéle===t':pm:IPFV.NEG_PERS_wéle:v:appeler
 yé_PERS_wéle===ye:pm:PFV.TR_PERS_wéle:v:appeler
 y'_PERS_wéle===y':pm:PFV.TR_PERS_wéle:v:appeler
 m'_PERS_wéle===m':pm:PFV.NEG_PERS_wéle:v:appeler
+ma_PERS_wéle===ma:pm:PFV.NEG_PERS_wéle:v:appeler
 kà_nà_PERS_wéle===kà:pm:INF_nà:v:venir_PERS_wéle:v:appeler
 kà_n'_PERS_wéle===kà:pm:INF_n':v:venir_PERS_wéle:v:appeler
 
@@ -8971,6 +9196,9 @@ yàfa_mùso_kɔ́===yàfa:v:pardonner_mùso:n:femme_kɔ́:pp:après
 #
 #	yáala "errer"
 #
+kà_yáala===kà:pm:INF_yáala:v:errer    # risque avec "promenade"
+bɛ_yáala===bɛ:pm:IPFV.AFF_yáala:v:errer
+
 yáala_dɔ́gɔ_kɔ́nɔ===yáala:v:errer_dɔ́gɔ:n:marché_kɔ́nɔ:pp:dans
 yáala_súgu_kɔ́nɔ===yáala:v:errer_súgu:n:marché_kɔ́nɔ:pp:dans
 
@@ -9084,6 +9312,7 @@ cɛ̀_yɛ́lɛla===cɛ̀:n:mâle_yɛ́lɛla:v: [yɛ́lɛ:v:rire la:mrph:PFV.INTR
 dén_yɛ́lɛla===dén:n:enfant_yɛ́lɛla:v: [yɛ́lɛ:v:rire la:mrph:PFV.INTR]
 Mùso_yɛ́lɛla===mùso:n:femme_yɛ́lɛla:v: [yɛ́lɛ:v:rire la:mrph:PFV.INTR]
 Mɔ̀gɔ_yɛ́lɛla===mɔ̀gɔ:n:homme_yɛ́lɛla:v: [yɛ́lɛ:v:rire la:mrph:PFV.INTR]
+Mɔ̀gɔw_yɛ́lɛla===mɔ̀gɔw:n: [mɔ̀gɔ:n:homme w:mrph:PL]_yɛ́lɛla:v: [yɛ́lɛ:v:rire la:mrph:PFV.INTR]
 Jàma_yɛ́lɛla===jàma:n:foule_yɛ́lɛla:v: [yɛ́lɛ:v:rire la:mrph:PFV.INTR]
 Cɛ̀_yɛ́lɛla===cɛ̀:n:mâle_yɛ́lɛla:v: [yɛ́lɛ:v:rire la:mrph:PFV.INTR]
 Dén_yɛ́lɛla===dén:n:enfant_yɛ́lɛla:v: [yɛ́lɛ:v:rire la:mrph:PFV.INTR]
@@ -9217,7 +9446,7 @@ kùnna_PUNCT===kùnna:pp:au.dessus [kùn:n:tête ná:pp:à]_PUNCT
 ɲɛ́fɛ̀_PUNCT===ɲɛ́fɛ̀:pp:devant [ɲɛ́:n:oeil fɛ̀:pp:par]_PUNCT
 ɲɛ́kɔ́rɔ_PUNCT===ɲɛ́kɔrɔ:pp:en.présence.de [ɲɛ́:n:oeil kɔ́rɔ:pp:sous]_PUNCT
 ɲɛ́mà_PUNCT===ɲɛ́mà:pp:devant [ɲɛ́:n:oeil mà:pp:ADR]_PUNCT
-ɲɛ́na_PUNCT===ɲɛ́na:pp:devant [ɲɛ́:n:oeil ná:pp:à]_PUNCT    # attention avec le perfectif de ɲɛ̀ "réussir" voir le verbe
+# ɲɛ́na_PUNCT===ɲɛ́na:pp:devant [ɲɛ́:n:oeil ná:pp:à]_PUNCT    # attention avec le perfectif de ɲɛ̀ "réussir" voir le verbe
 nɔ̀fɛ̀_PUNCT===nɔ̀fɛ̀:pp:derrière [nɔ̀:n:trace fɛ̀:pp:par]_PUNCT
 nɔ̀kàn_PUNCT===nɔ̀kàn:pp:après [nɔ̀:n:trace kàn:pp:sur]_PUNCT
 nɔ̀na_PUNCT===nɔ̀na:pp:à.la.place.de [nɔ̀:n:trace ná:pp:à]_PUNCT
@@ -9235,6 +9464,8 @@ ò_tùma_ná_fɛ̀===ò:prn:ce_tùma:n:moment_ná:pp:à_fɛ̀:pp:par
 ò_yɔ́rɔ_lá===ò:prn:ce_yɔ́rɔ:n:lieu_lá:pp:à
 ò_yɔ́rɔ_kélen_lá===ò:prn:ce_yɔ́rɔ:n:lieu_kélen:num:un_lá:pp:à   # au même endroit
 Ò_tùma_ná===ò:prn:ce_tùma:n:moment_ná:pp:à
+Ɲɔ̀gɔn_tùma===ɲɔ̀gɔn:n:pareil_tùma:n:moment
+PUNCT_ɲɔ̀gɔn_tùma===PUNCT_ɲɔ̀gɔn:n:pareil_tùma:n:moment
 Ò_yɔ́rɔ_lá===ò:prn:ce_yɔ́rɔ:n:lieu_lá:pp:à
 ò_wáatiw_lá===ò:dtm:ce_wáatiw:n: [wáati:n:moment w:mrph:PL]_lá:pp:à
 Ò_wáatiw_lá===ò:dtm:ce_wáatiw:n: [wáati:n:moment w:mrph:PL]_lá:pp:à
@@ -9322,6 +9553,8 @@ wáriko_nàsira_lá===wáriko:n: [wári:n:argent kó:n:affaire]_nàsira:n
 sɛ̀nɛ_nàsira_lá===sɛ̀nɛ:n:culture_nàsira:n:manière [nà:v:venir síra:n:chemin]_lá:pp:à
 Sɛ̀nɛ_nàsira_lá===sɛ̀nɛ:n:culture_nàsira:n:manière [nà:v:venir síra:n:chemin]_lá:pp:à
 
+báara_lá===báara:n:travail_lá:pp:à
+tóbilikɛ_lá===tóbilikɛ:n: [tóbi:v:cuire li:mrph:NMLZ kɛ́:v:faire]_lá:pp:à
 mɔ́nnikɛ_lá===mɔ́nnikɛ:n: [mɔ́nni:n: [mɔ́n:v:pêcher ni:mrph:NMLZ] kɛ́:v:faire]_lá:pp:à
 túlonkɛ_lá===túlonkɛ:n: [túlon:n:jeu kɛ́:v:faire]_lá:pp:à
 npògotigiya_lá===npògotigiya:n:jeunesse.de.fille [npògo.tigi:n:jeune.fille npògo:n:cache-sexe.des.filles tìgi:n:maître ya:mrph:ABSTR]_lá:pp:à
@@ -9331,7 +9564,7 @@ Ò_kɔ́nɔna_ná===ò:prn:ce_kɔ́nɔna:n:l'intérieur [kɔ́nɔ:n:ventre na
 kɔ́nɔna_lá===kɔ́nɔna:n:l'intérieur [kɔ́nɔ:n:ventre na:mrph:LOC]_lá:pp:à
 ò_kɔ́nɔna_lá===ò:prn:ce_kɔ́nɔna:n:l'intérieur [kɔ́nɔ:n:ventre na:mrph:LOC]_lá:pp:à
 Ò_kɔ́nɔna_lá===ò:prn:ce_kɔ́nɔna:n:l'intérieur [kɔ́nɔ:n:ventre na:mrph:LOC]_lá:pp:à
-
+kàso_lá===kàso:n:prison_lá:pp:à
 bɔ́_PERS_kán_ná===bɔ́:v:sortir_PERS_kán:n:cou_ná:pp:à   # enlever (vêtement)
 dòn_PERS_kán_ná===dòn:v:entrer_PERS_kán:n:cou_ná:pp:à   # enfiler (vêtement)
 PERS_kán_ná===PERS_kán:n:cou_ná:pp:à
@@ -9349,7 +9582,8 @@ à_sàko_lá===à:pers:3SG_sàko:n:volonté_lá:pp:à
 PERS_sàko_lá===PERS_sàko:n:volonté_lá:pp:à
 dìbi_lá===dìbi:n:obscurité_lá:pp:à
 PERS_ká_dùgu_lá===PERS_ka:pp:POSS_dùgu:n:terre_lá:pp:à
-
+fàantanya_lá===fàantanya:n:pauvreté [fàa:n:force ntan:mrph:PRIV ya:mrph:ABSTR]_lá:pp:à
+díya_lá===díya:n:bon.goût [dí:vq/adj:agréable ya:mrph:DEQU]_lá:pp:à
 dúmunikɛ_lá===dúmunikɛ:n: [dúmuni:n:action.de.manger kɛ́:v:faire]_lá:pp:à
 cíkɛ_lá===cíkɛ:n:culture [cí:n:commission kɛ́:v:faire]_lá:pp:à
 PERS_tɔ́gɔ_lá===PERS_tɔ́gɔ:n:nom_lá:pp:à
@@ -9576,7 +9810,9 @@ nɛ̀gɛso_bála===nɛ̀gɛso:n:vélo [nɛ̀gɛ:n:fer sò:n:cheval]_bála:pp:
 sò_bála===sò:n:cheval_bála:pp:sur
 mùso_bála===mùso:n:femme_bála:pp:sur
 jíri_bála===jíri:n:arbre_bála:pp:sur
+sún_bála===sún:n:tronc_bála:pp:sur
 jíribolo_bála===jíribolo:n:branche [jíri:n:arbre bólo:n:branche]_bála:pp:sur
+bólo_bála===bólo:n:branche_bála:pp:sur
 kógo_bála===kógo:n:petit.mur_bála:pp:sur
 
 #
@@ -9618,6 +9854,8 @@ sánì_à_táawaati_cɛ́===sánì:conj:avant.de_à:pers:3SG_táawaati:n
 sánì_à_bɔ́tuma_cɛ́===sánì:conj:avant.de_à:pers:3SG_bɔ́tuma:n: [bɔ́:v:sortir tùma:n:moment]_cɛ́:pp:entre
 sánnì_sàn_NUM_cɛ́===sánnì:conj:avant.de_sàn:n:année_NUM_cɛ́:pp:entre
 sánì_sàn_NUM_cɛ́===sánì:conj:avant.de_sàn:n:année_NUM_cɛ́:pp:entre
+sánì_sótaa_tùma_cɛ́===sánì:conj:avant.de_sótaa:n: [só:n:maison táa:v:aller]_tùma:n:moment_cɛ́:pp:entre
+sánì_sótaga_tùma_cɛ́===sánì:conj:avant.de_sótaga:n: [só:n:maison tága:v:aller]_tùma:n:moment_cɛ́:pp:entre
 
 dànfara_bɛ́_PERS_cɛ́===dànfara:n:séparation [dàn:n:limite fára:v:diviser]_bɛ́:cop:être_PERS_cɛ́:pp:entre
 dànfara_b'_PERS_cɛ́===dànfara:n:séparation [dàn:n:limite fára:v:diviser]_b':cop:être_PERS_cɛ́:pp:entre
@@ -9627,6 +9865,8 @@ dànfaranin_b'_PERS_cɛ́===dànfaranin:n: [dànfara:n:séparation [dàn:n:l
 
 #	fɛ̀                ######################
 #
+
+ò_fɛ̀_PUNCT===ò:prn:ce_fɛ̀:pp:par_PUNCT
 ## síra_fɛ̀ : tout seul trop imprécis (baobab, tabac?)
 Síra_fɛ̀_COMMA===síra:n:chemin_fɛ̀:pp:par_COMMA
 síra_kélen_fɛ̀===síra:n:chemin_kélen:num:un_fɛ̀:pp:par
@@ -9791,6 +10031,7 @@ nkàlon_kàn===nkàlon:n:mensonge_kàn:pp:sur
 sìgili_sèn_kàn===sìgili:n: [sìgi:v:asseoir li:mrph:NMLZ]_sèn:n:jambe_kàn:pp:sur
 sìgili_sènkan===sìgili:n: [sìgi:v:asseoir li:mrph:NMLZ]_sèn:n:jambe_kàn:pp:sur
 dɔ́gɔya_kàn_PUNCT===dɔ́gɔya:n:petitesse [dɔ́gɔ:vq:étroit ya:mrph:DEQU]_kàn:pp:sur_PUNCT
+díya_kàn_PUNCT===díya:n:bon.goût [dí:vq/adj:agréable ya:mrph:DEQU]_kàn:pp:sur_PUNCT
 kánkun_kàn===kánkun:n:bord [kán:n:cou kùn:n:tête]_kàn:pp:sur
 sèn_ɲùman_kàn===sèn:n:jambe_ɲùman:adj:bon_kàn:pp:sur
 sèn_kàn===sèn:n:jambe_kàn:pp:sur
@@ -9850,9 +10091,11 @@ dú_kɔ́nɔ_PUNCT===dú:n:concession_kɔ́nɔ:pp:dans_PUNCT
 Dú_kɔ́nɔ===dú:n:concession_kɔ́nɔ:pp:dans
 dú_kélen_kɔ́nɔ===dú:n:concession_kélen:num:un_kɔ́nɔ:pp:dans
 dú_kɔ́nɔ_yàn===dú:n:concession_kɔ́nɔ:pp:dans_yàn:adv:ici
+dú_kɔ́nɔ_yèn===dú:n:concession_kɔ́nɔ:pp:dans_yèn:adv:là-bas
 dú_wɛ́rɛ_kɔ́nɔ_PUNCT===dú:n:concession_wɛ́rɛ:dtm:autre_kɔ́nɔ:pp:dans_PUNCT
 dùgu_kɔ́nɔ===dùgu:n:terre_kɔ́nɔ:pp:dans
 Dùgu_kɔ́nɔ===dùgu:n:terre_kɔ́nɔ:pp:dans
+lámini_kɔ́nɔ===lámini:n:alentours [lá:mrph:CAUS míni:v:enrouler]_kɔ́nɔ:pp:dans
 PERS_ká_dùgu_kɔ́nɔ===PERS_ka:pp:POSS_dùgu:n:terre_kɔ́nɔ:pp:dans
 dùguba_kɔ́nɔ===dùguba:n:gros.village [dùgu:n:terre ba:mrph:AUGM]_kɔ́nɔ:pp:dans
 Dùguba_kɔ́nɔ===dùguba:n:gros.village [dùgu:n:terre ba:mrph:AUGM]_kɔ́nɔ:pp:dans
@@ -9915,6 +10158,7 @@ kàbila_kɔ́nɔ===kàbila:n:grande.famille_kɔ́nɔ:pp:dans
 sìso_kɔ́nɔ===sìso:n:chambre.à.coucher [sì:v:passer.la.nuit só:n:maison]_kɔ́nɔ:pp:dans
 kɔ́ɲɔso_kɔ́nɔ===kɔ́ɲɔso:n:chambre.nuptiale [kɔ́ɲɔ:n:noce só:n:maison]_kɔ́nɔ:pp:dans
 kàlanso_kɔ́nɔ===kàlanso:n:classe.d'école [kàlan:n:lecture só:n:maison]_kɔ́nɔ:pp:dans
+kàso_kɔ́nɔ===kàso:n:prison_kɔ́nɔ:pp:dans
 bùgu_kɔ́nɔ===bùgu:n:paillote_kɔ́nɔ:pp:dans
 dùgu_kɔ́nɔ===dùgu:n:terre_kɔ́nɔ:pp:dans
 dùgu_ìn_kɔ́nɔ===dùgu:n:terre_ìn:dtm:DEF_kɔ́nɔ:pp:dans
@@ -9962,6 +10206,7 @@ Ála_ká_kùranɛ_kɔ́nɔ===Ála:n:Dieu_ka:pp:POSS_kùranɛ:n:Coran_kɔ́n
 kùranɛ_kɔ́nɔ===kùranɛ:n:Coran_kɔ́nɔ:pp:dans
 tìle_dámadɔ_kɔ́nɔ===tìle:n:soleil_dámadɔ:dtm:quelques [dán:n:compte ma:mrph:COM dɔ́:dtm:certain]_kɔ́nɔ:pp:dans
 túlo_kɔ́nɔ===túlo:n:oreille_kɔ́nɔ:pp:dans
+sàmiya_kɔ́nɔ===sàmiya:n:hivernage_kɔ́nɔ:pp:dans
 
 #
 #	avec kɔ́rɔ         ######################
@@ -10414,6 +10659,7 @@ yé_PERS_fɛ̀la_yé===yé:cop:EQU_PERS_fɛ̀la:n:opinion [fɛ̀:pp:par la:mr
 yé_fìlanfilan_yé===yé:cop:EQU_fìlanfilan:n:indécision_yé:pp:PP
 yé_fìlanfilan_dè_yé===yé:cop:EQU_fìlanfilan:n:indécision_dè:prt:FOC_yé:pp:PP
 yé_jɔ̂n_nɔ̀_yé===yé:cop:EQU_jɔ̂n:prn:qui_nɔ̀:n:trace_yé:pp:PP
+yé_fàantanya_nɔ̀_yé===yé:cop:EQU_fàantanya:n:pauvreté [fàa:n:force ntan:mrph:PRIV ya:mrph:ABSTR]_nɔ̀:n:trace_yé:pp:PP
 y'_à_dɔ́gɔyalenba_yé===y':cop:EQU_à:pers:3SG_dɔ́gɔyalenba:adj:au.moins [dɔ́gɔ:vq:étroit ya:mrph:ABSTR len:mrph:PTCP.RES ba:mrph:AUGM]_yé:pp:PP
 yé_hásidiya_yé===yé:cop:EQU_hásidiya:n:jalousie [hásidi:n:jaloux ya:mrph:ABSTR]_yé:pp:PP
 yé_cáya_dàn_yé===yé:cop:EQU_cáya:n:grand.nombre [cá:vq:nombreux ya:mrph:DEQU]_dàn:n:limite_yé:pp:PP
@@ -11485,6 +11731,9 @@ wúli_kà_dòn===wúli:v:se.lever_kà:pm:INF_dòn:v:entrer
 wúli_kà_nà===wúli:v:se.lever_kà:pm:INF_nà:v:venir
 wúlila_kà_nà===wúlila:v: [wúli:v:se.lever la:mrph:PFV.INTR]_kà:pm:INF_nà:v:venir
 wúlila_ni_kà_nà===wúlila:v: [wúli:v:se.lever la:mrph:PFV.INTR]_ni:conj:et_kà:pm:INF_nà:v:venir
+wúli_kà_PERS_tà===wúli:v:se.lever_kà:pm:INF_PERS_tà:v:prendre
+wúli_k'_PERS_tà===wúli:v:se.lever_k':pm:INF_PERS_tà:v:prendre
+wúli_k'_ò_tà===wúli:v:se.lever_k':pm:INF_ò:prn:ce_tà:v:prendre
 wúli_kà_táa===wúli:v:se.lever_kà:pm:INF_táa:v:aller
 wúli_kà_tága===wúli:v:se.lever_kà:pm:INF_tága:v:aller
 Wúli_kà_táa===wúli:v:se.lever_kà:pm:INF_táa:v:aller
@@ -12146,6 +12395,7 @@ ní_hákili_ɲùman_yé_PUNCT===ni:conj:et_hákili:n:esprit_ɲùman:adj:bo
 ní_màloya_yé_PUNCT===ni:conj:et_màloya:n:honte [màlo:n:honte ya:mrph:ABSTR]_yé:pp:PP_PUNCT
 ní_nísɔndiya_yé_PUNCT===ni:conj:et_nísɔndiya:n:joie [nísɔn:n:humeur [ní:n:âme sɔ̀n:n:coeur] dí:vq:agréable ya:mrph:ABSTR]_yé:pp:PP_PUNCT
 ní_nísɔndiya_yé_àní===ni:conj:et_nísɔndiya:n:joie [nísɔn:n:humeur [ní:n:âme sɔ̀n:n:coeur] dí:vq:agréable ya:mrph:ABSTR]_yé:pp:PP_àní:conj:ainsi.que
+ní_à_nísɔndiya_yé_PUNCT===ni:conj:et_à:pers:3SG_nísɔndiya:n:joie [nísɔn:n:humeur [ní:n:âme sɔ̀n:n:coeur] dí:vq:agréable ya:mrph:ABSTR]_yé:pp:PP_PUNCT
 ní_í_yé_PUNCT===ni:conj:et_í:pers:2SG_yé:pp:PP_PUNCT
 ní_í_yé_TAG===ni:conj:et_í:pers:2SG_yé:pp:PP_TAG
 ní_NUM_PERCENT_yé_PUNCT===ni:conj:et_NUM_PERCENT_yé:pp:PP_PUNCT
@@ -12236,7 +12486,9 @@ Jàa_EXCLAM===jàa:conj:en.fait_EXCLAM
 #                  déterminées par le pronom
 #	dè
 #
-## PERS_dè===PERS_dè:prt:FOC   # NON car "i de" peut = "tais-toi!"
+## PERS_dè===PERS_dè:prt:FOC   # NON car "i de" peut = "tais-toi!" - on dit plutôt "i da de"
+PERS_dè===PERS_dè:prt:FOC
+PERS_dùn===PERS_dùn:prt:TOP.CNTR
 NUM_dè===NUM_dè:prt:FOC
 à_dè===à:pers:3SG_dè:prt:FOC
 à_kɔ́rɔ_dè===à:pers:3SG_kɔ́rɔ:n:dessous_dè:prt:FOC
@@ -12344,7 +12596,7 @@ bìlen_PUNCT===bìlen:adv:encore_PUNCT    # attention "'rougir" en fin de phra
 kà_bìlen_PUNCT===kà:pm:INF_bìlen:v:rougir_PUNCT
 bɛ́_bìlen_PUNCT===bɛ:pm:IPFV.AFF_bìlen:v:rougir_PUNCT
 tɛ́_bìlen_PUNCT===tɛ:pm:IPFV.NEG§§tɛ́:cop:COP.NEG_bìlen:v:rougir§§bìlen:adv:encore_PUNCT   # difficile de trancher !
-má_bìlen_PUNCT===ma:pm:PFV.NEG_bìlen:v:rougir_PUNCT
+# má_bìlen_PUNCT===ma:pm:PFV.NEG_bìlen:v:rougir_PUNCT   # pb avec la PP : u tɛ jɛ fosi ma bilen.
 mánà_bìlen_PUNCT===mánà:pm:COND.AFF_bìlen:v:rougir_PUNCT
 k'_í_ɲɛ́_bílen===k':pm:INF_í:pers:2SG_ɲɛ́:n:oeil_bìlen:v:rougir
 k'_à_ɲɛ́_bílen===k':pm:INF_à:pers:3SG_ɲɛ́:n:oeil_bìlen:v:rougir
@@ -12413,6 +12665,10 @@ yèn_dɛ́_TAG===yèn:adv:là-bas_dɛ́:prt:certes_TAG
 ɲìnan_TAG===ɲìnan:adv:cette.année_TAG
 Ɲìnan_PUNCT===ɲìnan:adv:cette.année_PUNCT
 Ɲìnan_TAG===ɲìnan:adv:cette.année_TAG
+tún_bìlen_PUNCT===tún:adv:encore_bìlen:adv:encore_PUNCT
+yàn_bìlen_PUNCT===yàn:adv:ici_bìlen:adv:encore_PUNCT
+yèn_bìlen_PUNCT===yèn:adv:là-bas_bìlen:adv:encore_PUNCT
+
 
 PUNCT_ɲìnan_PERS===PUNCT_ɲìnan:adv:cette.année_PERS
 
@@ -12445,6 +12701,8 @@ Mìsali_COLON===mìsali:n:exemple_COLON
 mìsali_lá_COLON===mìsali:n:exemple_lá:pp:à_COLON
 PUNCT_mùso===PUNCT_mùso:n:femme    # et pas muso adj !
 PERS_mùso===PERS_mùso:n:femme
+PERS_dén===PERS_dén:n:enfant    # impasse sur les v "se taire" et "fructifier"
+
 PERS_mùsow===PERS_mùsow:n: [mùso:n:femme w:mrph:PL]
 DEBUT_mùso===DEBUT_mùso:n:femme
 Mùso===mùso:n:femme
@@ -12486,6 +12744,8 @@ PUNCT_fàama===PUNCT_fàama:n:roi
 Fàama===fàama:n:roi
 mùso_fà===mùso:n:femme_fà:n:père
 dénnin_fà===dénnin:n:fillette [dén:n:enfant nin:mrph:DIM]_fà:n:père
+bá_dɔ́gɔmuso===bá:n:mère_dɔ́gɔmuso:n:cadette [dɔ́gɔ:n:cadet mùso:n:femme]
+bá_kɔ̀rɔmuso===bá:n:mère_kɔ̀rɔmuso:n:grande.soeur [kɔ̀rɔ:n:aîné mùso:adj:femme]
 
 #	déterminés par le déterminant (ATTENTION? discutable: baarakɛla muso dɔ...)
 mùso_dɔ́===mùso:n:femme_dɔ́:dtm:certain    # détermine mùso !
@@ -12741,6 +13001,7 @@ Yɛ̀lɛma_mîn_dònna===yɛ̀lɛma:n:changement_mîn:dtm:REL_dònna:v: [do�
 ######## kɛ
 bàro_dɔ́ɔnin_kɛ́===bàro:n:conversation_dɔ́ɔnin:n:un.peu_kɛ́:v:faire
 bàro_kɛ́===bàro:n:conversation_kɛ́:v:faire
+bàro_tɔ̀_kɛ́===bàro:n:conversation_tɔ̀:n:le.reste_kɛ́:v:faire
 báara_ìn_kɛ́===báara:n:travail_ìn:dtm:DEF_kɛ́:v:faire
 báara_díla===báara:n:travail_díla:v:fabriquer
 báara_kɛ́===báara:n:travail_kɛ́:v:faire
@@ -12795,6 +13056,7 @@ kánkarimada_kɛ́===kànkarimadá:n:avertissement [kàngari:n:mise.en.garde
 kárabali_kɛ́===kárabali:n: [káraba:v:forcer li:mrph:NMLZ]_kɛ́:v:faire
 kàsaara_kɛ́===kàsaara:n:accident_kɛ́:v:faire
 káfiriya_kɛ́===káfiriya:n:paganisme [káafiri:n:païen ya:mrph:ABSTR]_kɛ́:v:faire
+kó_dɔ́_kɛ́===kó:n:affaire_dɔ́:dtm:certain_kɛ́:v:faire
 kɛ̀lɛ_kɛ́===kɛ̀lɛ:n:querelle_kɛ́:v:faire
 kɔ́ɲɔ_kɛ́===kɔ́ɲɔ:n:noce_kɛ́:v:faire
 lábɛn_kɛ́===làbɛn:n:préparatifs [lá:mrph:CAUS bɛ̀n:v:se.rencontrer]_kɛ́:v:faire
@@ -12821,6 +13083,7 @@ sɛ̀bɛ_kɛ́===sɛ̀bɛ:n:sérieux_kɛ́:v:faire   # fonctionne comme un advp.
 sɛ̀nɛ_kɛ́===sɛ̀nɛ:n:culture_kɛ́:v:faire
 sɛ́bɛnni_kɛ́===sɛ́bɛnni:n:écriture [sɛ́bɛn:v:écrire ni:mrph:NMLZ]_kɛ́:v:faire
 sú_bɛ́ɛ_kɛ́===sú:n:nuit_bɛ́ɛ:dtm:tout_kɛ́:v:faire
+PERS_tá_kɛ́===PERS_tá:n:propriété_kɛ́:v:faire   # faire le sien/la sienne (sa vie, etc)
 tàli_kɛ́===tàli:n: [tà:v:prendre li:mrph:NMLZ]_kɛ́:v:faire    # dans la limite de...
 tìɲɛni_kɛ́===tìɲɛni:n: [tíɲɛ:v:gâter ni:mrph:NMLZ]_kɛ́:v:faire
 tìle_NUM_kɛ́===tìle:n:soleil_NUM_kɛ́:v:faire
@@ -12978,10 +13241,12 @@ dàn_kári===dàn:n:limite_kári:v:casser
 dàn_kári_à_lá===dàn:n:limite_kári:v:casser_à:pers:3SG_lá:pp:à
 dànga_fɔ́===dánga:n:malédiction_fɔ́:v:dire
 dán_sɔ̀rɔ===dàn:n:limite_sɔ̀rɔ:v:obtenir
+dànbe_dɔ́n===dànbe:n:dignité_dɔ́n:v:connaître
 dànbe_lágosi===dànbe:n:dignité_lágòsi:v:mépriser [lá:mrph:CAUS gòsi:v:battre]
 dánnaya_dá===dánnaya:n:foi [dá:v:poser ń:pers:1SG ná:pp:à ya:mrph:ABSTR]_dá:v:poser
 dáwula_sɔ̀rɔ===dáwula:n:charme_sɔ̀rɔ:v:obtenir
 dén_bàmu===dén:n:enfant_bàmu:v:porter.sur.le.dos
+dén_lájɛ===dén:n:enfant_lájɛ:v:regarder [lá:mrph:CAUS jɛ́:v:blanchir]
 dén_sɔ̀rɔ_PERS_yé===dén:n:enfant_sɔ̀rɔ:v:obtenir_PERS_yé:pp:PP
 dén_sɔ̀rɔ===dén:n:enfant_sɔ̀rɔ:v:obtenir
 dénw_sɔ̀rɔ===dénw:n: [dén:n:enfant w:mrph:PL]_sɔ̀rɔ:v:obtenir
@@ -13085,6 +13350,7 @@ fúru_sà===fúru:n:mariage_sà:v:mourir
 fúru_dábìla===fúru:n:mariage_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]
 PERS_ká_fúru_sà===PERS_ka:pp:POSS_fúru:n:mariage_sà:v:mourir
 fúru_sìri===fúru:n:mariage_sìri:v:lier
+fɔ́_bɔ́===fɔ́:n:action.de.dire_bɔ́:v:sortir  # vaut la peine de le dire
 fɔ́_dámìnɛ===fɔ́:n:action.de.dire_dámìnɛ:v:commencer [dá:n:bouche mìnɛ:v:attraper]
 fɛ̀la_jìra===fɛ̀la:n:opinion [fɛ̀:pp:par la:mrph:LOC]_jìra:v:montrer
 fɛ̀ɛrɛ_bɛ́ɛ_tìgɛ===fɛ̀ɛrɛ:n:moyen_bɛ́ɛ:dtm:tout_tìgɛ:v:couper
@@ -13222,9 +13488,11 @@ kàsikan_mɛ́n===kàsikan:n:cri [kàsi:n:pleurs kán:n:cou]_mɛ́n:v:entend
 fɔ́kan_mɛ́n===fɔ́kan:n: [fɔ́:v:dire kán:n:cou]_mɛ́n:v:entendre
 sènkan_mɛ́n===sènkan:n: [sèn:n:jambe kán:n:cou]_mɛ́n:v:entendre
 tùbabukan_mɛ́n===tùbabukan:n:langue.française [tùbabu:n:Européen kán:n:cou]_mɛ́n:v:entendre   # etc.
+kán_mɛ́n===kán:n:cou_mɛ́n:v:entendre
 kán_tìgɛ===kán:n:cou_tìgɛ:v:couper
 kɛ́nɛya_sàbati===kɛ́nɛya:n:bonne.santé [kɛ́nɛ:vq:sain ya:mrph:DEQU]_sàbati:v:prospérer
 kìbaruya_dí===kìbaruya:n:nouvelle [kìbaru:n:nouvelle ya:mrph:ABSTR]_dí:v:donner
+kìbaruya_mɛ́n===kìbaruya:n:nouvelle [kìbaru:n:nouvelle ya:mrph:ABSTR]_mɛ́n:v:entendre
 kìbaruya_sɔ̀rɔ===kìbaruya:n:nouvelle [kìbaru:n:nouvelle ya:mrph:ABSTR]_sɔ̀rɔ:v:obtenir
 kíiri_bìn===kíri:n:jugement_bìn:v:tomber
 kíiri_tìgɛ===kíri:n:jugement_tìgɛ:v:couper
@@ -13294,7 +13562,9 @@ láhidu_tà===láhidu:n:promesse_tà:v:prendre
 láyidu_tà===láyidu:n:promesse_tà:v:prendre
 lákana_sàbati===lákana:n:sécurité [lá:mrph:CAUS kána:v:protéger]_sàbati:v:prospérer
 lákanani_nɔ̀gɔya===lákanani:n: [lákana:v:protéger [lá:mrph:CAUS kána:v:protéger] ni:mrph:NMLZ]_nɔ̀gɔya:v:faciliter [nɔ̀gɔ:vq:facile ya:mrph:DEQU]
+lànpa_tà===lànpa:n:lampe_tà:v:prendre
 láyidu_tà===láyidu:n:promesse_tà:v:prendre
+lèbu_sɔ̀rɔ===lèbu:n:humiliation_sɔ̀rɔ:v:obtenir
 lɛ́tɛrɛ_cí===lɛ́tɛrɛ:n:lettre_cí:v:envoyer
 lɛ́tɛrɛw_cí===lɛ́tɛrɛw:n: [lɛ́tɛrɛ:n:lettre w:mrph:PL]_cí:v:envoyer
 màgo_dòn===màgo:n:besoin_dòn:v:entrer
@@ -13451,6 +13721,7 @@ sèn_dòn===sèn:n:jambe_dòn:v:entrer
 sèn_dòn_à_lá===sèn:n:jambe_dòn:v:entrer_à:pers:3SG_lá:pp:à
 sèn_dòn_kó_lá===sèn:n:jambe_dòn:v:entrer_kó:n:affaire_lá:pp:à
 sèn_tɛ́_dòn===sèn:n:jambe_tɛ:pm:IPFV.NEG_dòn:v:entrer
+sèn_má_dòn===sèn:n:jambe_ma:pm:PFV.NEG_dòn:v:entrer
 sé_í_yɛ̀rɛ̂_kɔrɔ===sé:v:arriver_í:pers:2SG_yɛ̀rɛ̂:dtm:même_kɔ́rɔ:pp:sous
 séko_bɛ́ɛ_kɛ́===séko:n:le.maximum [sé:n:arrivée kó:n:affaire]_bɛ́ɛ:dtm:tout_kɛ́:v:faire
 séko_bɛ́ɛ_lájɛ̀len_kɛ́===séko:n:le.maximum [sé:n:arrivée kó:n:affaire]_bɛ́ɛ:dtm:tout_lájɛ̀len:ptcp: [lájɛ̀:v:réunir [lá:mrph:CAUS jɛ̀:v:assembler] len:mrph:PTCP.RES]_kɛ́:v:faire
@@ -13491,6 +13762,7 @@ sìri_tìgɛ===sìri:n:liaison_tìgɛ:v:couper   # ensorceller
 sògo_mìnɛ===sògo:n:viande_mìnɛ:v:attraper
 sògo_mìnɛ_k'_ò_ɲími===sògo:n:viande_mìnɛ:v:attraper_k':pm:INF_ò:prn:ce_ɲími:v:mâcher
 sògokun_bɔ́===sògokun:n: [sògo:n:viande kùn:n:tête]_bɔ́:v:sortir    # sortir les masques
+só_dáyɛ̀lɛ===só:n:maison_dáyɛ̀lɛ:v:ouvrir [dá:n:bouche yɛ̀lɛ:v:ouvrir]
 só_jɔ̀===só:n:maison_jɔ̀:v:dresser
 sów_jɔ̀===sów:n: [só:n:maison w:mrph:PL]_jɔ̀:v:dresser
 sò_bòli===sò:n:cheval_bòli:v:courir
@@ -13844,6 +14116,7 @@ báasi_fósì===báasi:n:problème_fósì:n:rien
 bàganmara_nàfa===báganmara:n:élevage [bágan:n:bête màra:n:garde]_nàfa:n:profit
 bàganw_nàfa===báganw:n: [bágan:n:bête w:mrph:PL]_nàfa:n:profit
 bálo_sɔ̀rɔcogo===bálo:n:nourriture_sɔ̀rɔcogo:n: [sɔ̀rɔ:v:obtenir cógo:n:manière]
+bàna_júguya===bàna:n:maladie_júguya:n:méchanceté [júgu:vq:mauvais ya:mrph:DEQU]
 bàna_màloya===bàna:n:maladie_màloya:n:honte [màlo:n:honte ya:mrph:ABSTR]
 bàna_fúrakɛli===bàna:n:maladie_fúrakɛli:n:traitement [fúra:n:feuille kɛ́:v:faire li:mrph:NMLZ]
 bàna_ìn_fúrakɛli===bàna:n:maladie_ìn:dtm:DEF_fúrakɛli:n:traitement [fúra:n:feuille kɛ́:v:faire li:mrph:NMLZ]
@@ -13871,14 +14144,18 @@ bì_mùso===bì:n:aujourd'hui_mùso:n:femme
 Bì_mùso===bì:n:aujourd'hui_mùso:n:femme
 bì_mùsoya===bì:n:aujourd'hui_mùsoya:n:état.de.femme [mùso:n:femme ya:mrph:ABSTR]
 Bì_mùsoya===bì:n:aujourd'hui_mùsoya:n:état.de.femme [mùso:n:femme ya:mrph:ABSTR]
+bì_kámalenya===bì:n:aujourd'hui_kámalenya:n:jeunesse [kámalen:n:jeune.homme ya:mrph:ABSTR]
 bì_tìle===bì:n:aujourd'hui_tìle:n:soleil
 Bì_tìle===bì:n:aujourd'hui_tìle:n:soleil
 bì_tá===bì:n:aujourd'hui_tá:n:propriété
 Bì_tá===bì:n:aujourd'hui_tá:n:propriété
+bì_táw===bì:n:aujourd'hui_táw:n: [tá:n:propriété w:mrph:PL]
+Bì_táw===bì:n:aujourd'hui_táw:n: [tá:n:propriété w:mrph:PL]
 Bila_kúbeda===Bila:n.prop:TOP_kúbeda:n:quartier.administratif [kúbe:n:batiment.administratif dá:n:bouche]
 Bila_màra===Bila:n.prop:TOP_màra:n:garde
 bò_kása===bò:n:excrément_kása:n:odeur
 bólo_wári===bólo:n:bras_wári:n:argent
+bólo_wárinin===bólo:n:bras_wárinin:n: [wári:n:argent nin:mrph:DIM]
 bólo_fìla===bólo:n:bras_fìla:num:deux
 bólo_kèlen===bólo:n:bras_kélen:num:un
 bólolankolonya_kɛ̀lɛli===bólolankolonya:n: [bólolankolon:adj/n:pauvre [bólo:n:bras lánkolon:adj:vide lan:mrph:dans kólon:adj:vide] ya:mrph:ABSTR]_kɛ̀lɛli:n: [kɛ̀lɛ:v:combattre li:mrph:NMLZ]
@@ -13896,6 +14173,7 @@ cɛ̀_fàrikolo===cɛ̀:n:mâle_fàrikolo:n:corps [fàri:n:corps kólo:n:os]
 cɛ̀_bɛ́ɛ_fàrikolo===cɛ̀:n:mâle_bɛ́ɛ:dtm:tout_fàrikolo:n:corps [fàri:n:corps kólo:n:os]
 cɛ̀nímùsoya_bàna===cɛ̀nímùsoya:n:rapports.sexuels [cɛ̀:n:mâle ni:prep/conj:et mùso:n:femme ya:mrph:ABSTR]_bàna:n:maladie
 dàbali_tìgɛcogo===dàbali:n:moyen_tìgɛcogo:n: [tìgɛ:v:couper cógo:n:manière]
+dáli_tùma===dáli:n: [dá:v:poser li:mrph:NMLZ]_tùma:n:moment
 dánkan_fɔ́lɔ===dánkan:n:adjoint [dá:v:poser ń:pers:1SG kàn:pp:sur]_fɔ́lɔ:adj:premier
 dànnikɛ_màsin===dànnikɛ:n: [dànni:n: [dàn:n:semer ni:mrph:NMLZ] kɛ́:v:faire]_màsin:n:machine
 dànnikɛ_maǹsin===dànnikɛ:n: [dànni:n: [dàn:n:semer ni:mrph:NMLZ] kɛ́:v:faire]_mànsin:n:machine
@@ -13981,6 +14259,8 @@ Manda===manda:n:ETRG.FRA # mandat
 fà_jɔ̀yɔrɔ===fà:n:père_jɔ̀yɔrɔ:n:place [jɔ̀:n:station.debout yɔ́rɔ:n:lieu]
 fà_kélen_bá_kélen===fà:n:père_kélen:num:un_bá:n:mère_kélen:num:un     #   "même père même mère"
 fà_kélen_COMMA_bá_kélen===fà:n:père_kélen:num:un_COMMA_bá:n:mère_kélen:num:un     #   "même père, même mère"
+fàden_sàgo===fàden:n:frère.consanguin [fà:n:père dén:n:enfant]_sàgo:n:volonté     # la risée de tous (à la merci des frères consangins)
+fàdenw_sàgo===fàdenw:n: [fàden:n:frère.consanguin [fà:n:père dén:n:enfant] w:mrph:PL]_sàgo:n:volonté     # la risée de tous (à la merci des frères consangins)
 fàrikolo_fùnteni===fàrikolo:n:corps [fàri:n:corps kólo:n:os]_fùnteni:n:chaleur
 fàrikoloɲɛnajɛ_kɛ́li===fàrikoloɲɛnajɛ:n:sport [fàri:n:corps kólo:n:os ɲɛ́:n:oeil ná:mrph:CAUS jɛ́:v:blanchir]_kɛ́li:n:action [kɛ́:v:faire li:mrph:NMLZ]
 fá_súmanikɛlan===fá:n:plein_súmanikɛlan:n:mesure [súma:v:mesurer ni:mrph:NMLZ kɛ́:v:faire lan:mrph:INSTR]
@@ -14028,10 +14308,13 @@ Fúrakɛli_kùntaala===fúrakɛli:n:traitement [fúra:n:feuille kɛ́:v:fair
 fúrakɛli_dón_fɔ́lɔ===fúrakɛli:n:traitement [fúra:n:feuille kɛ́:v:faire li:mrph:NMLZ]_dón:n:jour_fɔ́lɔ:adj:premier
 Fúrakɛli_dón_fɔ́lɔ===fúrakɛli:n:traitement [fúra:n:feuille kɛ́:v:faire li:mrph:NMLZ]_dón:n:jour_fɔ́lɔ:adj:premier
 fúruko_kúma===fúruko:n: [fúru:n:mariage kó:n:affaire]_kúma:n:parole
+fúruko_gɛ̀lɛya===fúruko:n: [fúru:n:mariage kó:n:affaire]_gɛ̀lɛya:n:dureté [gɛ̀lɛn:vq:dur ya:mrph:DEQU]
 fɛ̀lajira_fɛ̀ɛrɛ===fɛ̀lajira:n: [fɛ̀la:n:opinion [fɛ̀:pp:par la:mrph:LOC] jìra:v:montrer]_fɛ̀ɛrɛ:n:moyen
 fɛ́n_hákɛ===fɛ́n:n:chose_hákɛ:n:mesure
 fúra_bàga===fúra:n:feuille_bàga:n:poison
 fúru_làada===fúru:n:mariage_làada:n:coutume   # cf laadafɛn "prix du mariage coutumier"
+fúru_sàli===fúru:n:mariage_sàli:n: [sà:v:mourir li:mrph:NMLZ]
+Fúru_sàli===fúru:n:mariage_sàli:n: [sà:v:mourir li:mrph:NMLZ]
 gùndo_màrali===gùndo:n:secret_màrali:n: [màra:v:garder li:mrph:NMLZ]
 Gùndo_màrali===gùndo:n:secret_màrali:n: [màra:v:garder li:mrph:NMLZ]
 gɛ̀lɛya_dàn===gɛ̀lɛya:n:dureté [gɛ̀lɛn:vq:dur ya:mrph:DEQU]_dàn:n:limite
@@ -14146,11 +14429,15 @@ kálo_láadilikan===kálo:n:lune_láadilikan:n:conseil [láadi:v:conseiller
 Kálo_láadilikan===kálo:n:lune_láadilikan:n:conseil [láadi:v:conseiller li:mrph:NMLZ kán:n:cou]    # rubrique de Jɛkabaara
 Kálo_Láadilikan===kálo:n:lune_láadilikan:n:conseil [láadi:v:conseiller li:mrph:NMLZ kán:n:cou]    # rubrique de Jɛkabaara
 KÁLO_LÁADILIKAN===kálo:n:lune_láadilikan:n:conseil [láadi:v:conseiller li:mrph:NMLZ kán:n:cou]    # rubrique de Jɛkabaara
+kɛ́lɛkɛlɛ_mùgu===kɛ́lɛkɛlɛ:n:piment_mùgu:n:poudre
 kɛ̀lɛ_ìn===kɛ̀lɛ:n:querelle_ìn:dtm:DEF
 Kìbaru_bɔ́ko===Kìbaru:n.prop:Kibaru_bɔ́ko:n:numéro.de.périodique [bɔ́:v:sortir kó:n:affaire]
 Kìbaru_ɲɛ́mɔgɔso===Kìbaru:n.prop:Kibaru_ɲɛ́mɔgɔso:n: [ɲɛ́mɔgɔ:n:dirigeant [ɲɛ́:n:oeil mɔ̀gɔ:n:homme] só:n:maison]
 kìbaru_ɲɛ́mɔgɔso===Kìbaru:n.prop:Kibaru_ɲɛ́mɔgɔso:n: [ɲɛ́mɔgɔ:n:dirigeant [ɲɛ́:n:oeil mɔ̀gɔ:n:homme] só:n:maison]
 kíiri_sariyaw===kíiri:n:jugement_sariyaw:n: [sàriya:n:loi w:mrph:PL]
+kíiri_tìgɛli===kíiri:n:jugement_tìgɛli:n: [tìgɛ:v:couper li:mrph:NMLZ]
+kíri_sariyaw===kíiri:n:jugement_sariyaw:n: [sàriya:n:loi w:mrph:PL]
+kíri_tìgɛli===kíiri:n:jugement_tìgɛli:n: [tìgɛ:v:couper li:mrph:NMLZ]
 kómini_mɛ́rɛ===kómini:n:commune_mɛ́rɛ:n:maire
 kɔ̀gɔji_dànkan===kɔ̀gɔji:n:mer [kɔ̀gɔ:n:sel jí:n:eau]_dánkan:n:berge
 kɔ̀lɔn_kánkun===kɔ̀lɔn:n:puits_kánkun:n:bord [kán:n:cou kùn:n:tête]
@@ -14384,6 +14671,7 @@ sísàn_mùɲu===sísàn:n:maintenant_mùɲu:n:patience
 sísàn_màa===sísàn:n:maintenant_màa:n:homme
 Sísàn_màa===sísàn:n:maintenant_màa:n:homme
 só_wáranda===só:n:maison_wáranda:n:véranda
+só_séleke===só:n:maison_séleke:n:angle
 só_síra===só:n:maison_síra:n:chemin
 só_yɔ́rɔ===só:n:maison_yɔ́rɔ:n:lieu
 sú_kòli===sú:n:nuit_kòli:n: [kò:v:arriver li:mrph:NMLZ]
@@ -14444,6 +14732,7 @@ wáriko_sàriya===wáriko:n: [wári:n:argent kó:n:affaire]_sàriya:n:loi
 wáriko_nàta===wáriko:n: [wári:n:argent kó:n:affaire]_nàta:n:cupidité
 wòroduguyanfan_jàmana===wòroduguyànfan:n:sud [wòrodugu:n:sud wòro:n:kola dùgu:n:terre yàn:n:ici fàn:n:côté]_jàmana:n:pays
 yàmaruya_díli===yàmaruya:n:autorisation [yàmari:n:autorisation ya:mrph:ABSTR]_díli:n: [dí:v:donner li:mrph:NMLZ]
+yèelen_fàgali===yéelen:n:lumière_fàgali:n: [fàga:v:tuer li:mrph:NMLZ]
 yɛ̀lɛma_dònni===yɛ̀lɛma:n:changement_dònni:n: [dòn:v:entrer ni:mrph:NMLZ]
 Yɛ̀lɛma_dònni===yɛ̀lɛma:n:changement_dònni:n: [dòn:v:entrer ni:mrph:NMLZ]
 yɛ̀lɛma_dònni===yɛ̀lɛma:n:changement_dònni:n: [dòn:v:entrer ni:mrph:NMLZ]
@@ -14479,7 +14768,7 @@ yɛ̀rɛmahɔrɔnya_tàli===yɛ̀rɛmahɔrɔnya:n:liberté [yɛ̀rɛmahɔrɔn:n
 
 
 #
-# 	GNI - GROUPES avec Ni, ani ou walima
+# 	1GNI - GROUPES avec Ni, ani ou walima
 #
 
 
@@ -14562,6 +14851,8 @@ Cɛ̀_àní_mùso===cɛ̀:n:mâle_àní:conj:ainsi.que_mùso:n:femme
 cɛ̀man_ní_mùsoman===cɛ̀man:adj:mâle [cɛ̀:n:mâle ma:mrph:COM]_ni:conj:et_mùsoman:adj:féminin [mùso:n:femme man:mrph:ADJ]
 cɛ̀w_àní_mùsow===cɛw:n: [cɛ̀:n:mâle w:mrph:PL]_àní:conj:ainsi.que_musow:n: [mùso:n:femme w:mrph:PL]
 Cɛ̀w_àní_mùsow===cɛw:n: [cɛ̀:n:mâle w:mrph:PL]_àní:conj:ainsi.que_musow:n: [mùso:n:femme w:mrph:PL]
+cɛ̀_ni_à_mùso===cɛ̀:n:mâle_ni:conj:et_à:pers:3SG_mùso:n:femme
+cɛ̀_n'_à_mùso===cɛ̀:n:mâle_n':conj:et_à:pers:3SG_mùso:n:femme
 cɛ̀w_n'_à_mùsow===cɛ̀w:n: [cɛ̀:n:mâle w:mrph:PL]_n':conj:et_à:pers:3SG_mùsow:n: [mùso:n:femme w:mrph:PL]
 cɛ̀w_ní_mùsow===cɛw:n: [cɛ̀:n:mâle w:mrph:PL]_ni:conj:et_musow:n: [mùso:n:femme w:mrph:PL]
 Cɛ̀w_ní_mùsow===cɛw:n: [cɛ̀:n:mâle w:mrph:PL]_ni:conj:et_musow:n: [mùso:n:femme w:mrph:PL]
@@ -14787,6 +15078,7 @@ sékow_ní_dɔ́nkow===sékow:n: [séko:n:le.maximum [sé:n:arrivée kó:n
 sékow_n'_à_dɔ́nkow===sékow:n: [séko:n:le.maximum [sé:n:arrivée kó:n:affaire] w:mrph:PL]_n':conj:et_à:pers:3SG_dɔ́nkow:n: [dɔ́nko:n:science [dɔ́n:n:connaissance kó:n:affaire] w:mrph:PL]
 séko_ní_dɔ́nko_sóba===séko:n:le.maximum [sé:n:arrivée kó:n:affaire]_ni:conj:et_dɔ́nko:n:science [dɔ́n:n:connaissance kó:n:affaire]_soba:n: [só:n:maison ba:mrph:AUGM]
 Séko_ní_dɔ́nko_sóba===séko:n:le.maximum [sé:n:arrivée kó:n:affaire]_ni:conj:et_dɔ́nko:n:science [dɔ́n:n:connaissance kó:n:affaire]_soba:n: [só:n:maison ba:mrph:AUGM]
+PERS_sèn_ni_PERS_bólo===PERS_sèn:n:jambe_ni:conj:et_PERS_bólo:n:bras
 sì_ní_kɛ́nɛya===sì:n:vie_ni:conj:et_kɛ́nɛya:n:bonne.santé [kɛ́nɛ:vq:sain ya:mrph:DEQU]
 sì_àní_nɛ̀rɛ===sì:n:karité_àní:conj:ainsi.que_nɛ̀rɛ:n:nèrè.de.Gambie
 sìgida_n'_à_lámini===sìgida:n:localité [sìgi:v:asseoir dá:n:bouche]_n':conj:et_à:pers:3SG_lámini:n:alentours [lá:mrph:CAUS míni:v:enrouler]
@@ -14891,6 +15183,8 @@ jàmana_ká_wáriko===jàmana:n:pays_ka:pp:POSS_wáriko:n: [wári:n:argent
 jàmana_ká_dɛ̀mɛ===jàmana:n:pays_ka:pp:POSS_dɛ̀mɛ:n:aide
 jàmana_ká_màra===jàmana:n:pays_ka:pp:POSS_màra:n:garde
 jàmana_ká_sé_hákɛ===jàmana:n:pays_ka:pp:POSS_sé:n:arrivée_hákɛ:n:mesure
+
+jínɛw_ka_nɔ́ɔrɔ===jínɛw:n: [jínɛ:n:esprit w:mrph:PL]_ka:pp:POSS_nɔ́ɔrɔ:n:auréole
 fàso_ka_kélenya===fàso:n:patrie [fà:n:père só:n:maison]_ka:pp:POSS_kélenya:n:unité [kélen:num:un ya:mrph:ABSTR]
 mùsow_ká_ɲɛ́taa===mùsow:n: [mùso:n:femme w:mrph:PL]_ka:pp:POSS_ɲɛ́taa:n:progrès [ɲɛ́:n:oeil táa:n:départ]
 mùsow_ká_dɛ̀mɛ===mùsow:n: [mùso:n:femme w:mrph:PL]_ka:pp:POSS_dɛ̀mɛ:n:aide
@@ -15042,6 +15336,9 @@ cógo_ɲùman===cógo:n:manière_ɲùman:adj:bon
 cógoya_ɲùman===cógoya:n:manière [cógo:n:manière ya:mrph:ABSTR]_ɲùman:adj:bon
 cógoya_wɛ́rɛ===cógoya:n:manière [cógo:n:manière ya:mrph:ABSTR]_wɛ́rɛ:dtm:autre
 cɛ̀_jàtɔ===cɛ̀:n:mâle_játɔ:adj:débauché.invétéré
+cɛ̀_kúra===cɛ̀:n:mâle_kúra:adj:nouveau
+cɛ̀_kɔ̀rɔ_sìgilen===cɛ̀:n:mâle_kɔ̀rɔ:adj:vieux_sìgilen:ptcp: [sìgi:v:asseoir len:mrph:PTCP.RES]
+cɛ̀_sìgilen===cɛ̀:n:mâle_sìgilen:ptcp: [sìgi:v:asseoir len:mrph:PTCP.RES]
 cɛ̀_wɛ́rɛ===cɛ̀:n:mâle_wɛ́rɛ:dtm:autre
 cɛ̀_wɛ́rɛw===cɛ̀:n:mâle_wɛ́rɛw:n: [wɛ́rɛ:dtm:autre w:mrph:PL]
 cɛ̀_nìn===cɛ̀:n:mâle_nìn:dtm:DEM
@@ -15155,6 +15452,7 @@ fúra_wɛ́rɛ===fúra:n:feuille_wɛ́rɛ:dtm:autre
 fɔ́cogo_wɛ́rɛ===fɔ́cogo:n: [fɔ́:v:dire cógo:n:manière]_wɛ́rɛ:dtm:autre
 fɔ́-kà-bɛ̀n_làkika===fɔ́-kà-bɛ̀n:n:accord [fɔ́:v:dire kà:pm:INF bɛ̀n:v:se.rencontrer]_làkika:adj:vrai
 fɔ́kàbɛ̀n_làkika===fɔ́-kà-bɛ̀n:n:accord [fɔ́:v:dire kà:pm:INF bɛ̀n:v:se.rencontrer]_làkika:adj:vrai
+fɔ́len_bɛ́ɛ===fɔ́len:n:dit [fɔ́:v:dire len:mrph:PTCP.RES]_bɛ́ɛ:dtm:tout
 fɛ̀ɛrɛ_gɛ̀lɛn===fɛ̀ɛrɛ:n:moyen_gɛ̀lɛn:adj:difficile
 fɛ̀ɛrɛ_kɛ́nɛmanw===fɛ̀ɛrɛ:n:moyen_kɛ́nɛmanw:adj: [kɛ́nɛman:adj:sain w:mrph:PL]
 fɛ̀ɛrɛ_kúra===fɛ̀ɛrɛ:n:moyen_kúra:adj:nouveau
@@ -15375,6 +15673,7 @@ kɔ́ɔrisi_kɔ̀rɔ===kɔ́ɔrisi:n: [kɔ́ɔri:n:coton sí:n:semence]_kɔ̀r�
 Kɔ́ɔrisi_kɔ̀rɔ===kɔ́ɔrisi:n: [kɔ́ɔri:n:coton sí:n:semence]_kɔ̀rɔ:adj:vieux
 kɔ̀rɔkɛ_kɔ̀rɔba===kɔ̀rɔkɛ:n:frère.aîné [kɔ̀rɔ:n:aîné kɛ:adj:mâle]_kɔ̀rɔba:adj: [kɔ̀rɔ:adj:vieux ba:mrph:AUGM]
 kɔ̀rɔkɛ_kɔ̀rɔbalen===kɔ̀rɔkɛ:n:frère.aîné [kɔ̀rɔ:n:aîné kɛ:adj:mâle]_kɔ̀rɔbalen:n:le.plus.vieux [kɔ̀rɔ:vq/adj:vieux ba:mrph:AUGM len:mrph:PTCP.RES]
+dénkɛ_kɔ̀rɔbalen===dénkɛ:n:fils [dén:n:enfant kɛ:adj:mâle]_kɔ̀rɔbalen:n:le.plus.vieux [kɔ̀rɔ:vq/adj:vieux ba:mrph:AUGM len:mrph:PTCP.RES]
 kɛ́_kó_kùntaala_jàn_yé===kɛ́:v:faire_kó:n:affaire_kùntaala:n:durée [kùn:n:tête táa:v:aller la:mrph:LOC]_jàn:adj:long_yé:pp:PP
 kɛ́baa_ɲùman===kɛ́baa:n: [kɛ́:v:faire baa:mrph:AG.OCC]_ɲùman:adj:bon
 kɛ́cogo_ɲùman===kɛ́cogo:n:manière.de.faire [kɛ́:n:action cógo:n:manière]_ɲùman:adj:bon
@@ -15396,6 +15695,7 @@ ládoncogo_ɲùman===ládoncogo:n: [ládòn:v:faire.entrer [lá:mrph:CAUS 
 ládonko_ɲùman===ládonko:n: [ládòn:v:faire.entrer [lá:mrph:CAUS dòn:v:entrer] kó:n:affaire]_ɲùman:adj:bon
 lájɛ_bàlalen===lájɛ:n:réunion [lá:mrph:CAUS jɛ̀:v:assembler]_bàlalen:ptcp: [bàla:v:surprendre len:mrph:PTCP.RES]   # réunion d'urgence, de crise
 lákana_bèlebele===lákana:n:sécurité [lá:mrph:CAUS kána:v:protéger]_bèlebele:adj:gros
+lámini_bɛ́ɛ===lámini:n:alentours [lá:mrph:CAUS míni:v:enrouler]_bɛ́ɛ:dtm:tout
 láɲini_dámadɔ===làɲini:n:recherche [lá:mrph:CAUS ɲíni:v:chercher]_dámadɔ:dtm:quelques [dán:n:compte ma:mrph:COM dɔ́:dtm:certain]
 láɲini_kúra===làɲini:n:recherche [lá:mrph:CAUS ɲíni:v:chercher]_kúra:adj:nouveau
 màa_kɔ̀rɔlen===màa:n:homme_kɔ̀rɔlen:ptcp: [kɔ̀rɔ:v:vieillir len:mrph:PTCP.RES]
@@ -15595,6 +15895,7 @@ mùso_tère_júgu===mùso:n:femme_tère:n:chance_júgu:adj:mauvais
 tère_júgu===tère:n:chance_júgu:adj:mauvais
 tíla_bɛ́ɛ===tíla:n:moitié_bɛ́ɛ:dtm:tout
 tìle_kúru===tìle:n:soleil_kúru:adj:entier
+tò_dúman===tò:n:“tô”_dúman:adj:agréable
 tùfaden_fɔ́lɔ===tùfaden:n:brique [tùfa:n:brique dén:n:enfant]_fɔ́lɔ:adj:premier
 tùbabukan_jɔ́njɔn===tùbabukan:n:langue.française [tùbabu:n:Européen kán:n:cou]_jɔ́njɔn:adj:exact
 tɔ́gɔ_ɲùman===tɔ́gɔ:n:nom_ɲùman:adj:bon
@@ -15623,6 +15924,7 @@ wáleya_ɲùman===wáleya:n:application [wále:n:acte ya:mrph:ABSTR]_ɲùma
 wári_bɔ́len===wári:n:argent_bɔ́len:ptcp: [bɔ́:v:sortir len:mrph:PTCP.RES]
 wári_cáman===wári:n:argent_cáman:adj:nombreux [cá:vq:nombreux man:mrph:ADJ]
 wári_gána===wári:n:argent_gána:adj:célibataire    # monnaie unique
+wári_màralen===wári:n:argent_màralen:ptcp: [màra:v:garder len:mrph:PTCP.RES]
 wári_mìsɛn===wári:n:argent_mìsɛn:adj:petit
 wári_ɲɛ́nama===wári:n:argent_ɲɛ́nama:adj:vivant [ɲɛ́:n:oeil nama:mrph:STAT]
 wóte_nàtaw===wóte:n:vote_nàtaw:ptcp: [nàta:ptcp:prochain [nà:v:venir ta:mrph:PTCP.POT] w:mrph:PL]
@@ -15646,6 +15948,8 @@ yɔ́rɔ_jàn===yɔ́rɔ:n:lieu_jàn:adj:long
 ɲɔ̀_kɔ́gɔbali===ɲɔ̀:n:mil_kɔ́gɔbali:ptcp:non.mûr [kɔ́gɔ:v:mûrir bali:mrph:PTCP.PRIV]
 ɲɔ̀gɔnna_cáman===ɲɔ̀gɔnna:n:pareil_cáman:adj:nombreux [cá:vq:nombreux man:mrph:ADJ]
 ɲɛ́_fɔ́lɔ===ɲɛ́:n:fois_fɔ́lɔ:adj:premier
+ɲɛ́_wúsulen===ɲɛ́:n:oeil_wúsulen:ptcp: [wúsu:v:écarquiller len:mrph:PTCP.RES]
+ɲɛ́_fìla_wúsulen===ɲɛ́:n:oeil_fìla:num:deux_wúsulen:ptcp: [wúsu:v:écarquiller len:mrph:PTCP.RES]
 ɲɛ́mɔgɔ_fɔ́lɔ===ɲɛ́mɔgɔ:n:dirigeant [ɲɛ́:n:oeil mɔ̀gɔ:n:homme]_fɔ́lɔ:adj:premier
 
 
@@ -15995,7 +16299,8 @@ Ba_Sekujɛ===bà:n:papa_Sekujɛ:n.prop:NOM.M [Sékù:n.prop:NOM.M jɛ́:n:le.
 #Kɔbaba===Kɔbaba:n.prop:NOM.M
 Bɛh===Bɛh:n.prop:NOM   # abbréviation de Bɛdirisa ?
 #Tɛnɛgata===Tɛnɛgata:n.prop:NOM.F  # Tarawele mère de Sumanɛ
-Bɛdirisa===Bɛdirisa:n.prop:NOM.M [bà:n:papa Dirisa:n.prop:NOM.M]    # son mari
+# Bɛdirisa===Bɛdirisa:n.prop:NOM.M [bà:n:papa Dirisa:n.prop:NOM.M]    # son mari
+Bɛdirisa===Bɛ̀dirisa:n.prop:NOM.M   # probablement Bàdirisa, papa Dirisa
 #Seko===Seko:n.prop:NOM.M # 15 décembre 2002
 Seko_Lasinɛ_Káne===Seko:n.prop:NOM.M_Lásìnɛ:n.prop:NOM.M_Káne:n.prop:NOM.CL
 #Bamutu===Bamutu:n.prop:NOM.M # Kane
@@ -16056,7 +16361,7 @@ Roger===Roger:n.prop:NOM.FRA    # le médecin cubain
 Kɔjɔrɔ===Kɔjɔrɔ:n.prop:NOM.M    # 7 février
 Làsanasurunnin===Làsanasurunnin:n.prop: [Làsana:n.prop:NOM.M sùrun:adj:court nin:mrph:DIM]
 Daba===Daba:n.prop:NOM
-Masitan===Masitan:n.prop:NOM.F [má:n:maman Sítàn:n.prop:NOM.F]
+Masitan===Másitan:n.prop:NOM.F [má:n:maman Sítàn:n.prop:NOM.F]
 #Janjiki===Janjiki:n.prop:NOM
 #Diyasana===Diyasana:n.prop:NOM
 Touré===Tùre:n.prop:NOM.CL
@@ -16169,7 +16474,8 @@ Disa===Disa:n.prop:NOM
 Disilame===Disilame:n.prop:NOM.M
 Fi===Fi:n.prop:NOM.F    #   23 avril
 Dara===Dara:n.prop:NOM.M    # abréviation de Daramani. On entend aussi "Dra".
-Adamancinin===Adamancinin:n.prop:NOM.M [Ádama:n.prop:NOM.MF ncínin:adj:petit]
+#Adamancinin===Adamancinin:n.prop:NOM.M [Ádama:n.prop:NOM.MF ncínin:adj:petit]
+Ádamancinin===Ádamancinin:n.prop:NOM.M
 Bɛnu===Bɛnu:n.prop:NOM.M    # Benuwa ?
 Yatura===Yatura:n.prop:NOM.CL    # soma -  25 avril
 Koso===Koso:n.prop:NOM.F    # 26 avril
@@ -16200,7 +16506,7 @@ Bati===Bati:n.prop:NOM.F    # 16 mai
 Bà_Cɛ̀mɔgɔncinin===bà:n:papa_Cɛ̀mɔgɔncinin:n.prop: [Cɛ̀mɔgɔ:n.prop:NOM.M ncínin:adj:petit]    # 19 mai
 Tɛ́nɛba===Tɛ́nɛba:n.prop:NOM.F [tɛ́nɛ:n:tante.paternelle ba:mrph:AUGM]
 Cɛ̀mɔgɔjan===Cɛ̀mɔgɔjan:n.prop: [Cɛ̀mɔgɔ:n.prop:NOM.M jàn:adj:long]
-Badisa===Badisa:n.prop:NOM.M
+Badisa===Bàdisa:n.prop:NOM.M
 Tatajan===Tatajan:n.prop: [Tata:n.prop:NOM.F jàn:adj:long]
 Nuhumane===Nuhumane:n.prop:NOM.M    # 20 mai
 Woba===Woba:n.prop:NOM.M    # 21 mai
@@ -16253,7 +16559,8 @@ Ba_Sumana===bà:n:papa_Sumana:n.prop:NOM.M    # 18 juin
 Ba_Sumanɛ===bà:n:papa_Sumana:n.prop:NOM.M    # 18 juin
 Jelika_Jara===Jèlíkà:n.prop:NOM.F_Jàra:n.prop:NOM.CL
 Bina===Bìnáa:n.prop:NOM.MF    # abréviation de Binafu ?
-Mokitaribilen===Mɔkutaribilen:n.prop:NOM.M [Mɔkutari:n.prop:NOM.M bìlen:adj:rouge]    # 20 juin
+# Mokitaribilen===Mɔkutaribilen:n.prop:NOM.M [Mɔkutari:n.prop:NOM.M bìlen:adj:rouge]    # 20 juin
+Mokitaribilen===Mɔkutaribilen:n.prop:NOM.M
 Mokitari===Mɔkutari:n.prop:NOM.M
 Bata===Bátà:n.prop:NOM.F    # 22 juin
 Famusa===Famusa:n.prop:NOM.M [fà:n:père Músà:n.prop:NOM.M]    # 23 juin
@@ -16426,6 +16733,7 @@ alcool===álikɔli:n:alcool    # mais + probablement dɔ̀lɔ
 alumette===àlimɛti:n:allumette
 bateau===bàton:n:bateau
 bonbon===bɔ̀nbɔn:n:bonbon
+bonbons===bɔ̀nbɔnw:n: [bɔ̀nbɔn:n:bonbon w:mrph:PL]
 boutique===bùtiki:n:magasin
 boutique-da===bùtikida:n: [bùtiki:n:magasin dá:n:bouche]
 cadeau===sàma:n:cadeau
@@ -16577,6 +16885,7 @@ play===play:n:ETRG.FRA    # play-boy
 gagner===gagner:v:ETRG.FRA
 gagné===gagné:ptcp:ETRG.FRA
 convoquer===convoquer:v:ETRG.FRA
+convoque===convoquer:v:ETRG.FRA
 tétanos===tétanos:n:ETRG.FRA
 pansement===pansement:n:ETRG.FRA
 
@@ -20478,8 +20787,8 @@ kélenna===kélenna:adj: [kélen:num:un ná:pp:à]     # isolé  (en opposi
 voyager===táama:v:marcher
 sírajago===sírajago:n: [síra:n:tabac jàgo:n:commerce]
 súnguruntigɛla===súnguruntigɛla:n:séducteur [súnguruntigɛ:v:débaucher [súngurun:n:jeune.fille tìgɛ:v:couper] la:mrph:AG.PRM]
-Bamusa===Bamusa:n.prop:NOM.M
-Bamamy===Bamami:n.prop:NOM.M
+Bamusa===Bàmusa:n.prop:NOM.M
+Bamamy===Bàmami:n.prop:NOM.M
 mùso-saba-tigi===mùsosabatigi:n: [mùso:n:femme sàba:num:trois tìgi:n:maître]
 kɔ́dimin===kɔ́dimi:n:dorsalgie [kɔ́:n:dos dími:n:souffrance]
 kɔ́dimintɔ===kɔ́dimitɔ:adj: [kɔ́dimi:n:dorsalgie [kɔ́:n:dos dími:n:souffrance] tɔ:mrph:ST]
@@ -20724,6 +21033,7 @@ tàtuma===tàtuma:n: [tà:v:prendre tùma:n:moment]
 Labasu===Labasu:n.prop:NOM.M
 Bàɲinibilen===Bàɲinibilen:n.prop:NOM.M
 Bàseyidu===Bàseyidu:n.prop:NOM.M
+Bàseyidubilennin===Bàseyidubilennin:n.prop:NOM.M
 Fántà===Fántà:n.prop:NOM.F
 Aso===Aso:n.prop:NOM.M   # surnom 
 tɛ́gɛrɛtulon===tɛ́gɛrɛtulon:n: [tɛ́gɛrɛ:n:applaudissement túlon:n:jeu]
@@ -20894,7 +21204,7 @@ mɔ̀nisɔngɔ===mɔ̀nisɔngɔ:n: [mɔ̀ni:n:mets.liquide sɔngɔ:n:prix]
 Nahawa===Nahawa:n.prop:NOM.F
 Bamady===Bàmadi:n.prop:NOM.M
 Yamaha===Yahama:n.prop:NOM
-Nuhumany===Nuhumani:n.prop:NOM.M
+Nuhumany===Nuhumane:n.prop:NOM.M
 Bary===Bari:n.prop:NOM.CL
 garisikɛ===gàrisɛgɛ:n:chance
 dàgakɔnɔji===dàgakɔnɔji:n: [dàga:n:canari kɔ́nɔ:pp:dans jí:n:eau]
@@ -21014,6 +21324,85 @@ báarakɛbaga===báarakɛbaga:n: [báara:n:travail kɛ́:v:faire baga:mrph:AG
 Kɔkɔ===Kɔkɔ:n.prop:NOM.M   #   "un vieux"
 fyɛ́rɛbɔ===fɛ́ɛrɛbɔ:v:habiller [fɛ́ɛrɛ:n:guenilles bɔ́:v:sortir]   # aussi utilisé comme nom...
 tòdaga===tòdaga:n: [tò:n:“tô” dàga:n:canari]
+# Chroniques Amoureuses 1995 12
+Diabate===Jabate:n.prop:NOM.CL
+Álalatigɛko===Álalatigɛko:n: [Ála:n:Dieu làtigɛ:n:décision [lá:mrph:CAUS tìgɛ:v:couper] kó:n:affaire]
+Barala===Barala:n.prop:TOP
+Bàla===Bàla:n.prop:NOM.M
+Bayo===Bayo:n.prop:TOP
+Bayokaw===Bayokaw:n: [Bayo:n.prop:TOP ka:mrph:GENT w:mrph:PL]
+Njeny===Njeni:n.prop:NOM.M   # surnom
+Ata===Ata:n.prop:NOM   # M ou F ? Ata ka Kotimy
+mɔ̀gɔɲɛnamaya===mɔ̀gɔɲɛnamaya:n: [mɔ̀gɔ:n:homme ɲɛ́namaya:n:vie [ɲɛ́nama:adj:vivant [ɲɛ́:n:oeil nama:mrph:STAT] ya:mrph:ABSTR]]
+Basidiky===Bàsidiki:n.prop:NOM.M
+Basenu===Bàseni:n.prop:NOM.M   # de Séni NOM.M
+jɔ̀nya===jɔ̀nya:n:esclavage [jɔ̀n:n:esclave ya:mrph:ABSTR]
+ɲɛ́najɛko===ɲɛ́najɛko:n: [ɲɛ́najɛ:n:réjouissance [ɲɛ́:n:oeil ná:mrph:CAUS jɛ́:v:blanchir] kó:n:affaire]
+hɔ́rɔndenw===hɔ́rɔndenw:n: [hɔ́rɔn:n:libre dén:n:enfant w:mrph:PL]
+sɔ̀rɔbagatɔden===sɔ̀rɔbagatɔden:n: [sɔ̀rɔbagatɔ:n:richard [sɔ̀rɔ:v:obtenir baga:mrph:AG.OCC tɔ:mrph:ST] dén:n:enfant]
+Sajiny===Sancinin:n.prop:NOM.F
+Suraka-wɛrɛ===Suraka-wɛrɛ:n.prop:TOP
+sìtɔmɔ_tùma===sìtɔmɔ:n: [sì:n:karité tɔ̀mɔ:v:ramasser]_tùma:n:moment
+sìtɔmɔtuma===sìtɔmɔtuma:n: [sì:n:karité tɔ̀mɔ:v:ramasser tùma:n:moment]
+jínɛbaara===jínɛbaara:n: [jínɛ:n:esprit báara:n:travail]
+jínɛbaaraw===jínɛbaaraw:n: [jínɛbaara:n: [jínɛ:n:esprit báara:n:travail] w:mrph:PL]
+vitesse===téliya:n:rapidité [téli:vq:rapide ya:mrph:DEQU]
+fɛ́nninncinin===fɛ́nninncinin:n: [fɛ́n:n:chose nin:mrph:DIM ncínin:adj:petit]
+Sirama===Sirama:n.prop:NOM.F  # ici c'est un NOM.M ?
+dugawden===dùgawuden:n: [dùgawu:n:bénédiction dén:n:enfant]
+làkalita===làkalita:n:nouvelle.à.diffuser [lákàlí:v:raconter tà:n:action.de.prendre]
+fòlikɛ===fòlikɛ:n: [fòli:n:salutation [fò:v:saluer li:mrph:NMLZ] kɛ́:v:faire]
+dénjuguya===dénjuguya:n:méchanceté [dén:n:enfant júguya:n:méchanceté [júgu:vq:mauvais ya:mrph:DEQU]]
+súngurunbaden===súngurunbaden:n: [súngurunba:n:prostituée [súngurun:n:jeune.fille ba:mrph:AUGM] dén:n:enfant]
+Badugabugu===Badugabugu:n.prop:TOP    # peut être Badukabugu cf Baduka prénom
+Diyakarimu===Diyakarimu:n.prop:NOM.M   # peut-être Jakarimu (de Kárimu)
+Samaba===Samaba:n.prop:NOM.M   # numu
+Swaɲɛbugu===Swaɲɛbugu:n.prop:TOP
+àrajodila===àrajodila:v: [àrajo:n:radio díla:v:fabriquer]
+tátiɲɛkokɛ===tátiɲɛkokɛ:n: [tátiɲɛ:n:catastrophe [tá:n:propriété tíɲɛ:v:gâter] kó:n:affaire kɛ́:v:faire]
+pélepelepele===pélepele:adv:tout.à.fait
+móto_cameco===móto:n:moto_cameco:n.prop:NOM    # marque de moto
+Báfanta===Báfanta:n.prop:NOM.F
+Kamalenkaw===Kamalekaw:n: [Kamale:n.prop:TOP ka:mrph:GENT w:mrph:PL]
+Sídibugu===Sídibugu:n.prop:TOP
+Tijiny===Tìjánì:n.prop:NOM.M
+la_fransaise===la:dtm:ETRG.FRA_française:n:ETRG.FRA
+bàlimayako===bàlimayako:n: [bálimaya:n:fraternité [bálima:n:frère ya:mrph:ABSTR] kó:n:affaire]
+vide===kólon:adj:vide
+Aruna===Aruna:n.prop:NOM.M
+sɔ̀rɔdasicɛ===sɔ̀rɔdasicɛ:n: [sɔ̀rɔdasi:n:militaire cɛ̀:n:mâle]
+sɔ̀rɔdasikɛ===sɔ̀rɔdasikɛ:n: [sɔ̀rɔdasi:n:militaire kɛ̀:n:mâle]
+Kadiya-wara===Kajawara:n.prop:NOM.F
+Bafy===Bàfin:n.prop:NOM.M
+konɛgɛ===kónnɛgɛ:n:clé [kón:n:porte nɛ̀gɛ:n:fer]
+kɛ́li===kɛ́li:n:action [kɛ́:v:faire li:mrph:NMLZ]
+fàneni===fàneni:n: [fà:n:père nèni:v:insulter]
+báneni===báneni:n: [bá:n:mère nèni:v:insulter]
+Tɔrɔ===Tɔrɔ:n.prop:NOM.M   # nom peul
+Sofiya===Sofiya:n.prop:NOM.F   # nom peul
+Bah===Bah:n.prop:NOM.M   # nom peul   .M dans ce texte
+Sofiya_ka_Bah===Sofiya:n.prop:NOM.F_ka:pp:POSS_Bah:n.prop:NOM.M
+sárakatibɔ===sárakatibɔ:n: [sárakati:n:aumône bɔ́:n:sortie]
+Dikarimu===Dikarimu:n.prop:NOM.M
+lettre===lɛ́tɛrɛ:n:lettre
+cɛ̀kɔrɔbalama===cɛ̀kɔrɔbalama:adj: [cɛ̀kɔrɔba:n:vieillard [cɛ̀:n:mâle kɔ̀rɔ:adj:vieux ba:mrph:AUGM] lama:mrph:STAT]
+táa-ka-segin===táa-ka-segin:n:va-et-vient [táa:v:aller kà:pm:INF sègin:v:revenir]
+tága-ka-segin===táa-ka-segin:n:va-et-vient [táa:v:aller kà:pm:INF sègin:v:revenir]
+tága-ni-ka-segin===táa-ka-segin:n:va-et-vient [táa:v:aller kà:pm:INF sègin:v:revenir]
+Babalawu===Babalawu:n.prop:NOM.M
+Hinancinin===Inancinin:n.prop:NOM.F
+wólofantanya===wólofantanya:n: [wólofantan:n:orphelin.de.père [wólofa:n:propre.père [wólo:v:accoucher fà:n:père] ntan:mrph:PRIV] ya:mrph:ABSTR]
+mùsosɔrɔko===mùsosɔrɔko:n: [mùso:n:femme sɔ̀rɔ:v:obtenir kó:n:affaire]
+sɔ̀rɔyɔrɔko===sɔ̀rɔyɔrɔko:n: [sɔ̀rɔ:n:gain yɔ́rɔ:n:lieu kó:n:affaire]
+Bakuba===Bakuba:n.prop:NOM.M
+fìliyaso===fìliyaso:n: [fìliya:n:veuvage só:n:maison]
+kɛ́bali===kɛ́bali:ptcp:non.fait [kɛ́:v:faire bali:mrph:PTCP.PRIV]
+Bagibu===Bagibu:n.prop:NOM.M
+Nyamɛ===Nyamɛ:n.prop:NOM.M   # ou F ? ou Ɲamɛ (cf dromadaire?)
+lágalagatɔ===lágalagatɔ:adj/n:amorphe [lágalaga:n:apathie tɔ:mrph:ST]
+kàmanaganbagatɔ===kàmanaganbagatɔ:n: [kàmanagàn:v:angoisser [kàmana:n:PREV gàn:v:chauffer] bagatɔ:mrph:ST [baga:mrph:AG.OCC tɔ:mrph:ST]]
+hɔ́rɔnden===hɔ́rɔnden:n: [hɔ́rɔn:n:libre dén:n:enfant]
+bɔ́lɔn-fɛ̀-dén===bɔ́lɔn-fɛ̀-dén:n: [bɔ́lɔn:n:rue fɛ̀:pp:par dén:n:efant]
 
 # fin Dico Annexe  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #
@@ -21044,6 +21433,8 @@ mórikɛ===mórikɛ:n: [móri:n:marabout kɛ̀:n:mâle]
 àyí===àyí:intj:non
 sògo===sògo:n:viande
 mìsi===mìsi:n:bovidé
+jínɛ===jínɛ:n:esprit
+jínɛw===jínɛw:n: [jínɛ:n:esprit w:mrph:PL]
 
 Wári===wári:n:argent
 Wári_NPROPRENOMCL===Wári:n.prop:NOM.MF_NPROPRENOMCL
@@ -21136,6 +21527,11 @@ Dɔ́gɔkɛ===dɔ́gɔkɛ:n:frère.cadet [dɔ́gɔ:n:cadet kɛ:adj:mâle]
 Bákarijan===Bákarijan:n.prop:NOM.M
 Bananba===Bananba:n.prop:TOP
 Bàla_NPROPRE===Bàla:n.prop:NOM.M_NPROPRE
+Jɛ̀nɛ́bà===Jɛ̀nɛ́bà:n.prop:NOM.F
+Bánin===Bánin:n.prop:TOP
+Àyá===Àyá:n.prop:NOM.F
+Làsení===Làsení:n.prop:NOM.M
+Kukukaw===Kukukaw:n: [Kuku:n.prop:TOP ka:mrph:GENT w:mrph:PL]
 
 # SALUTATIONS, BENEDICTIONS, PROVERBES ET SENTENCES ##################################################
 
@@ -21351,7 +21747,7 @@ Ála_k'_PERS_ɲùman_tága_k'_PERS_ɲùman_sègin===Ála:n:Dieu_k':pm:SBJV
 Ála_ká_bárika_dòn_PERS_lá===Ála:n:Dieu_ka:pm:SBJV_bárika:n:bénédiction_dòn:v:entrer_PERS_lá:pp:à
 Ála_màa_án_sìra===Ála:n:Dieu_màa:pm:DES_án:pers:1PL_sìra:v: [sì:v:passer.la.nuit ra:mrph:PFV.INTR]
 Ála_k'_PERS_hámiw_nɔ̀gɔya===Ála:n:Dieu_k':pm:SBJV_PERS_hámiw:n: [hámi:n:souci w:mrph:PL]_nɔ̀gɔya:v:faciliter [nɔ̀gɔ:vq:facile ya:mrph:DEQU]
-
+Ála_ká_hɛ́rɛ_kɛ́===Ála:n:Dieu_ka:pm:SBJV_hɛ́rɛ:n:paix_kɛ́:v:faire
 #
 # Kurane
 #
@@ -21380,6 +21776,8 @@ áw_kana_fósì_bàto_fó_Ála===áw:pers:2PL.EMPH_kànâ:pm:PROH_fós
 #
 # Proverbes, dictons... ?
 #
+Ála_y'_à_látìgɛ_PUNCT===Ála:n:Dieu_y':pm:PFV.TR_à:pers:3SG_látìgɛ:v:faire.passer [lá:mrph:CAUS tìgɛ:v:couper]_PUNCT
+Ála_y'_ò_látìgɛ_PUNCT===Ála:n:Dieu_y':pm:PFV.TR_ò:prn:ce_látìgɛ:v:faire.passer [lá:mrph:CAUS tìgɛ:v:couper]_PUNCT
 bámànanw_kó===bámànanw:n: [bámànan:n:bambara w:mrph:PL]_kó:cop:QUOT
 Bámànanw_kó===bámànanw:n: [bámànan:n:bambara w:mrph:PL]_kó:cop:QUOT
 dón_ô_dón_túlo_bɛ́_táa_kàlanso===dón:n:jour_ô:conj:DISTR_dón:n:jour_túlo:n:oreille_bɛ:pm:IPFV.AFF_táa:v:aller_kàlanso:n:classe.d'école [kàlan:n:lecture só:n:maison]
@@ -21420,7 +21818,7 @@ Kà_dòn_dá_kélen_fɛ̀_kà_bɔ́_dá_kélen_fɛ̀===kà:pm:INF_dòn:
 mîn_ká_fìsa_ɲɔ̀_mà_COMMA_ò_yé_bɔ̀rɔ_yé===mîn:prn:REL_ka:pm:QUAL.AFF_fìsa:vq:mieux_ɲɔ̀:n:mil_mà:pp:ADR_COMMA_ò:prn:ce_yé:cop:EQU_bɔ̀rɔ:n:sac_yé:pp:PP
 n'_í_ye_díɲɛ_gírin_COMMA_í_bɛ_sègin_k'_à_nɔ́nsitaama===n':prep:si_í:pers:2SG_ye:pm:PFV.TR_díɲɛ:n:monde_gírin:v:se.précipiter_COMMA_í:pers:2SG_bɛ:pm:IPFV.AFF_sègin:n:revenir_k':pm:INF_à:pers:3SG_nɔ́nsitaama:v: [nɔ́nsi:n:caméléon táama:v:marcher]
 n'_í_ye_díɲɛ_gírin_COMMA_í_bɛ_sègin_k'_à_nɔ́nsitagama===n':prep:si_í:pers:2SG_ye:pm:PFV.TR_díɲɛ:n:monde_gírin:v:se.précipiter_COMMA_í:pers:2SG_bɛ:pm:IPFV.AFF_sègin:n:revenir_k':pm:INF_à:pers:3SG_nɔ́nsitagama:v: [nɔ́nsi:n:caméléon tágama:v:marcher]
-
+làɲini_dè_ká_kɔ̀rɔ_ní_látigɛ_ye===làɲini:n:recherche [lá:mrph:CAUS ɲíni:v:chercher]_dè:prt:FOC_ka:pm:QUAL.AFF_kɔ̀rɔ:vq:vieux_ni:conj:et_làtigɛ:n:décision [lá:mrph:CAUS tìgɛ:v:couper]_yé:pp:PP
 
 #################################################################################################################
 #
@@ -21646,6 +22044,7 @@ NAME_DTM_kó_PERS_NPROPRE_mà===NAME_DTM_kó:cop:QUOT_PERS_NPROPRE_mà:pp:AD
 NAME_fána_dòn_PUNCT===NAME_fána:prt:aussi_dòn:cop:ID_PUNCT
 NAME_fána_tùn_dòn_PUNCT===NAME_fána:prt:aussi_tùn:prt:PST_dòn:cop:ID_PUNCT
 NAME_kɔ́nɔma_dòn_PUNCT===NAME_kɔ́nɔma:adj:enceinte [kɔ́nɔ:n:ventre ma:mrph:COM]_dòn:cop:ID_PUNCT
+NPROPRE_kɔ́nɔma_dòn_PUNCT===NPROPRE_kɔ́nɔma:adj:enceinte [kɔ́nɔ:n:ventre ma:mrph:COM]_dòn:cop:ID_PUNCT
 NAME_bɛ́ɛ_n'_í_NAME_dòn===NAME_bɛ́ɛ:dtm:tout_n':conj:et_í:pers:2SG_NAME_dòn:cop:ID
 NAME_bɛ́ɛ_n'_à_NAME_dòn===NAME_bɛ́ɛ:dtm:tout_n':conj:et_à:pers:3SG_NAME_dòn:cop:ID
 COMMA_bɛ́ɛ_n'_í_NAME_dòn===COMMA_bɛ́ɛ:dtm:tout_n':conj:et_í:pers:2SG_NAME_dòn:cop:ID
@@ -22944,6 +23343,33 @@ y'_PERS_bàli_NPROPRE_ká_sɔ̀rɔ===y':pm:PFV.TR_PERS_bàli:v:empêcher_NPRO
 y'_PERS_bàli_NAME_ká_sègin===y':pm:PFV.TR_PERS_bàli:v:empêcher_NAME_ka:pm:SBJV_sègin:v:revenir
 y'_PERS_bàli_NPROPRE_ká_sègin===y':pm:PFV.TR_PERS_bàli:v:empêcher_NPROPRE_ka:pm:SBJV_sègin:v:revenir
 
+#
+#	bálo "vivre"
+#
+kà_NAME_bálo===kà:pm:INF_NAME_bálo:v:vivre
+bɛ́_NAME_bálo===bɛ:pm:IPFV.AFF_NAME_bálo:v:vivre
+tɛ́_NAME_bálo===tɛ:pm:IPFV.NEG_NAME_bálo:v:vivre
+yé_NAME_bálo===ye:pm:PFV.TR_NAME_bálo:v:vivre
+má_NAME_bálo===ma:pm:PFV.NEG_NAME_bálo:v:vivre
+nà_NAME_bálo===nà:pm:CERT_NAME_bálo:v:vivre
+bɛ́nà_NAME_bálo===bɛ́nà:pm:FUT_NAME_bálo:v:vivre
+tɛ́nà_NAME_bálo===tɛ́nà:pm:FUT.NEG_NAME_bálo:v:vivre
+mánà_NAME_bálo===mánà:pm:COND.AFF_NAME_bálo:v:vivre
+kànâ_NAME_bálo===kànâ:pm:PROH_NAME_bálo:v:vivre
+
+kà_PRONOM_DTM_bálo===kà:pm:INF_PRONOM_DTM_bálo:v:vivre
+bɛ́_PRONOM_DTM_bálo===bɛ:pm:IPFV.AFF_PRONOM_DTM_bálo:v:vivre
+tɛ́_PRONOM_DTM_bálo===tɛ:pm:IPFV.NEG_PRONOM_DTM_bálo:v:vivre
+yé_PRONOM_DTM_bálo===ye:pm:PFV.TR_PRONOM_DTM_bálo:v:vivre
+má_PRONOM_DTM_bálo===ma:pm:PFV.NEG_PRONOM_DTM_bálo:v:vivre
+nà_PRONOM_DTM_bálo===nà:pm:CERT_PRONOM_DTM_bálo:v:vivre
+bɛ́nà_PRONOM_DTM_bálo===bɛ́nà:pm:FUT_PRONOM_DTM_bálo:v:vivre
+tɛ́nà_PRONOM_DTM_bálo===tɛ́nà:pm:FUT.NEG_PRONOM_DTM_bálo:v:vivre
+mánà_PRONOM_DTM_bálo===mánà:pm:COND.AFF_PRONOM_DTM_bálo:v:vivre
+kànâ_PRONOM_DTM_bálo===kànâ:pm:PROH_PRONOM_DTM_bálo:v:vivre
+
+
+
 #	bán "terminer"  2
 #
 bɛ́_NAME_dàbali_bán===bɛ:pm:IPFV.AFF_NAME_dàbali:n:moyen_bán:v:terminer
@@ -23259,6 +23685,7 @@ PRMRK_PERS_bìla_NAME_NAME_ADJECTIF_yèn===PRMRK_PERS_bìla:v:mettre_NAME_NAM
 PRMRK_PERS_bìla_PERS_ka_NAME_yèn===PRMRK_PERS_bìla:v:mettre_PERS_ka:pp:POSS_NAME_yèn:adv:là-bas
 
 bìlala_NPROPRE_NPROPRE_nɔ̀_ná===bìlala:v: [bìla:v:mettre la:mrph:PFV.INTR]_NPROPRE_NPROPRE_nɔ̀:n:trace_ná:pp:à
+NPROPRE_bìla_dá_lá===NPROPRE_bìla:v:mettre_dá:n:bouche_lá:pp:à   # metter qqn à la porte
 
 #
 #	bìlasira "raccompagner"
@@ -24066,6 +24493,14 @@ bɛ́_NAME_dá_géren===bɛ:pm:IPFV.AFF_NAME_dá:n:bouche_géren:v:boucher
 bɛ́_NAME_wò_géren===bɛ:pm:IPFV.AFF_NAME_wò:n:trou_géren:v:boucher
 
 #
+#	jàte / jàti "compter" 2
+#
+jàte_fóyì_yé_NAME_kɔ́===jàte:v:compter_fóyì:n:rien_yé:pp:PP_NAME_kɔ́:pp:après
+jàti_fóyì_yé_NAME_kɔ́===jàte:v:compter_fóyì:n:rien_yé:pp:PP_NAME_kɔ́:pp:après
+jàte_fósì_yé_NAME_kɔ́===jàte:v:compter_fósì:n:rien_yé:pp:PP_NAME_kɔ́:pp:après
+jàti_fósì_yé_NAME_kɔ́===jàte:v:compter_fósì:n:rien_yé:pp:PP_NAME_kɔ́:pp:après
+
+#
 #	jɛ̀   "assembler" 2
 #
 bɛ́_jɛ̀_NAME_mà===bɛ:pm:IPFV.AFF_jɛ̀:v:assembler_NAME_mà:pp:ADR
@@ -24170,8 +24605,12 @@ PRMRK_PERS_júguya_ADV===PRMRK_PERS_júguya:v:être.méchant [júgu:vq:mauvai
 #	dìya "rendtre agréable"  2
 #
 díya_NAME_yé===díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU]_NAME_yé:pp:PP
+díya_NPROPRE_yé===díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU]_NPROPRE_yé:pp:PP
+díya_PERS_NPROPRE_yé===díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU]_PERS_NPROPRE_yé:pp:PP
 díya_PRONOM_yé===díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU]_PRONOM_yé:pp:PP
 díyara_NAME_yé===díyara:v: [díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] ra:mrph:PFV.INTR]_NAME_yé:pp:PP
+díyara_NPROPRE_yé===díyara:v: [díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] ra:mrph:PFV.INTR]_NPROPRE_yé:pp:PP
+díyara_PERS_NPROPRE_yé===díyara:v: [díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] ra:mrph:PFV.INTR]_PERS_NPROPRE_yé:pp:PP
 díyara_PRONOM_yé===díyara:v: [díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] ra:mrph:PFV.INTR]_PRONOM_yé:pp:PP
 
 #	dògo "cacher"  2
@@ -24463,6 +24902,27 @@ t'_PERS_NAME_DTM_fàga===t':pm:IPFV.NEG_PERS_NAME_DTM_fàga:v:tuer
 n'_PERS_NAME_DTM_fàga===n':pm:CERT_PERS_NAME_DTM_fàga:v:tuer
 y'_PERS_NAME_DTM_fàga===y':pm:PFV.TR_PERS_NAME_DTM_fàga:v:tuer
 m'_PERS_NAME_DTM_fàga===m':pm:PFV.NEG_PERS_NAME_DTM_fàga:v:tuer
+
+k'_PRONOM_NAME_fàga===k':pm:INF_PRONOM_NAME_fàga:v:tuer
+b'_PRONOM_NAME_fàga===b':pm:IPFV.AFF_PRONOM_NAME_fàga:v:tuer
+t'_PRONOM_NAME_fàga===t':pm:IPFV.NEG_PRONOM_NAME_fàga:v:tuer
+n'_PRONOM_NAME_fàga===n':pm:CERT_PRONOM_NAME_fàga:v:tuer
+y'_PRONOM_NAME_fàga===y':pm:PFV.TR_PRONOM_NAME_fàga:v:tuer
+m'_PRONOM_NAME_fàga===m':pm:PFV.NEG_PRONOM_NAME_fàga:v:tuer
+
+kà_PRONOM_NAME_NPROPRE_fàga===kà:pm:INF_PRONOM_NAME_NPROPRE_fàga:v:tuer
+bɛ́_PRONOM_NAME_NPROPRE_fàga===bɛ:pm:IPFV.AFF_PRONOM_NAME_NPROPRE_fàga:v:tuer
+tɛ́_PRONOM_NAME_NPROPRE_fàga===tɛ:pm:IPFV.NEG_PRONOM_NAME_NPROPRE_fàga:v:tuer
+nà_PRONOM_NAME_NPROPRE_fàga===nà:pm:CERT_PRONOM_NAME_NPROPRE_fàga:v:tuer
+yé_PRONOM_NAME_NPROPRE_fàga===ye:pm:PFV.TR_PRONOM_NAME_NPROPRE_fàga:v:tuer
+má_PRONOM_NAME_NPROPRE_fàga===ma:pm:PFV.NEG_PRONOM_NAME_NPROPRE_fàga:v:tuer
+
+k'_PRONOM_NAME_DTM_fàga===k':pm:INF_PRONOM_NAME_DTM_fàga:v:tuer
+b'_PRONOM_NAME_DTM_fàga===b':pm:IPFV.AFF_PRONOM_NAME_DTM_fàga:v:tuer
+t'_PRONOM_NAME_DTM_fàga===t':pm:IPFV.NEG_PRONOM_NAME_DTM_fàga:v:tuer
+n'_PRONOM_NAME_DTM_fàga===n':pm:CERT_PRONOM_NAME_DTM_fàga:v:tuer
+y'_PRONOM_NAME_DTM_fàga===y':pm:PFV.TR_PRONOM_NAME_DTM_fàga:v:tuer
+m'_PRONOM_NAME_DTM_fàga===m':pm:PFV.NEG_PRONOM_NAME_DTM_fàga:v:tuer
 
 kà_NPROPRE_fàga===kà:pm:INF_NPROPRE_fàga:v:tuer
 bɛ́_NPROPRE_fàga===bɛ:pm:IPFV.AFF_NPROPRE_fàga:v:tuer
@@ -24840,9 +25300,21 @@ yé_NAME_jáabi_kó===ye:pm:PFV.TR_NAME_jáabi:v:répondre_kó:cop:QUOT
 yé_NAME_jáabi===ye:pm:PFV.TR_NAME_jáabi:v:répondre
 má_NAME_jáabi===ma:pm:PFV.NEG_NAME_jáabi:v:répondre
 
+yé_PERS_NAME_jáabi_kó===ye:pm:PFV.TR_PERS_NAME_jáabi:v:répondre_kó:cop:QUOT
+yé_PERS_NAME_jáabi===ye:pm:PFV.TR_PERS_NAME_jáabi:v:répondre
+má_PERS_NAME_jáabi===ma:pm:PFV.NEG_PERS_NAME_jáabi:v:répondre
+
 yé_NPROPRE_jáabi_kó===ye:pm:PFV.TR_NPROPRE_jáabi:v:répondre_kó:cop:QUOT
 yé_NPROPRE_jáabi===ye:pm:PFV.TR_NPROPRE_jáabi:v:répondre
 má_NPROPRE_jáabi===ma:pm:PFV.NEG_NPROPRE_jáabi:v:répondre
+
+yé_PERS_NAME_NPROPRE_jáabi_kó===ye:pm:PFV.TR_PERS_NAME_NPROPRE_jáabi:v:répondre_kó:cop:QUOT
+yé_PERS_NAME_NPROPRE_jáabi===ye:pm:PFV.TR_PERS_NAME_NPROPRE_jáabi:v:répondre
+má_PERS_NAME_NPROPRE_jáabi===ma:pm:PFV.NEG_PERS_NAME_NPROPRE_jáabi:v:répondre
+y'_PERS_NAME_NPROPRE_jáabi_kó===y':pm:PFV.TR_PERS_NAME_NPROPRE_jáabi:v:répondre_kó:cop:QUOT
+y'_PERS_NAME_NPROPRE_jáabi===y':pm:PFV.TR_PERS_NAME_NPROPRE_jáabi:v:répondre
+m'_PERS_NAME_NPROPRE_jáabi===m':pm:PFV.NEG_PERS_NAME_NPROPRE_jáabi:v:répondre
+
 
 #
 #	jìra "montrer" 2
@@ -24982,6 +25454,17 @@ tɛ́nà_NAME_kɛ́===tɛ́nà:pm:FUT.NEG_NAME_kɛ́:v:faire
 mána_NAME_kɛ́===mánà:pm:COND.AFF_NAME_kɛ́:v:faire
 kànâ_NAME_kɛ́===kànâ:pm:PROH_NAME_kɛ́:v:faire
 
+kà_NAME_NAME_kɛ́===kà:pm:INF_NAME_NAME_kɛ́:v:faire
+bɛ́_NAME_NAME_kɛ́===bɛ:pm:IPFV.AFF_NAME_NAME_kɛ́:v:faire
+tɛ́_NAME_NAME_kɛ́===tɛ:pm:IPFV.NEG_NAME_NAME_kɛ́:v:faire
+má_NAME_NAME_kɛ́===ma:pm:PFV.NEG_NAME_NAME_kɛ́:v:faire
+yé_NAME_NAME_kɛ́===ye:pm:PFV.TR_NAME_NAME_kɛ́:v:faire
+ná_NAME_NAME_kɛ́===nà:pm:CERT_NAME_NAME_kɛ́:v:faire
+bɛ́nà_NAME_NAME_kɛ́===bɛ́nà:pm:FUT_NAME_NAME_kɛ́:v:faire
+tɛ́nà_NAME_NAME_kɛ́===tɛ́nà:pm:FUT.NEG_NAME_NAME_kɛ́:v:faire
+mána_NAME_NAME_kɛ́===mánà:pm:COND.AFF_NAME_NAME_kɛ́:v:faire
+kànâ_NAME_NAME_kɛ́===kànâ:pm:PROH_NAME_NAME_kɛ́:v:faire
+
 kà_PERS_NAME_kɛ́===kà:pm:INF_PERS_NAME_kɛ́:v:faire
 bɛ́_PERS_NAME_kɛ́===bɛ:pm:IPFV.AFF_PERS_NAME_kɛ́:v:faire
 tɛ́_PERS_NAME_kɛ́===tɛ:pm:IPFV.NEG_PERS_NAME_kɛ́:v:faire
@@ -25015,7 +25498,8 @@ tɛ́n'_ò_NAME_kɛ́===tɛ́n':pm:FUT.NEG_ò:dtm:ce_NAME_kɛ́:v:faire
 mán'_ò_NAME_kɛ́===mán':pm:COND.AFF_ò:dtm:ce_NAME_kɛ́:v:faire
 kàn'_ò_NAME_kɛ́===kàn':pm:PROH_ò:dtm:ce_NAME_kɛ́:v:faire
 
-kà_NPROPRE_kɛ́===kà:pm:INF_NPROPRE_kɛ́:v:faire     # sens sexuel
+kà_NPROPRE_kɛ́_PUNCT===kà:pm:INF_NPROPRE_kɛ́:v:faire_PUNCT     # sens sexuel - restriction car peut être ka poss : ale ye Seyidu ka Kadaia kɛ a sungurun ye
+kà_NPROPRE_kɛ́_ADV===kà:pm:INF_NPROPRE_kɛ́:v:faire_ADV     # sens sexuel
 bɛ́_NPROPRE_kɛ́===bɛ:pm:IPFV.AFF_NPROPRE_kɛ́:v:faire
 tɛ́_NPROPRE_kɛ́===tɛ:pm:IPFV.NEG_NPROPRE_kɛ́:v:faire
 má_NPROPRE_kɛ́===ma:pm:PFV.NEG_NPROPRE_kɛ́:v:faire
@@ -25210,12 +25694,16 @@ Ò_kɛ́ra_NPROPRE_kɛ́len_dè_yé_kà===ò:prn:ce_kɛ́ra:v: [kɛ́:v:fai
 kɛ́ra_NAME_ka_fúru_sàlen_yé===kɛ́ra:v: [kɛ́:v:faire ra:mrph:PFV.INTR]_NAME_ka:pp:POSS_fúru:n:mariage_sàlen:ptcp: [sà:v:mourir len:mrph:PTCP.RES]_yé:pp:PP
 kɛ́ra_NPROPRE_ka_fúru_sàlen_yé===kɛ́ra:v: [kɛ́:v:faire ra:mrph:PFV.INTR]_NPROPRE_ka:pp:POSS_fúru:n:mariage_sàlen:ptcp: [sà:v:mourir len:mrph:PTCP.RES]_yé:pp:PP
 
+fósì_kɛ́_NAME_kɔ́===fósì:n:rien_kɛ́:v:faire_NAME_kɔ́:pp:après
+fósì_kɛ́_bìlen_NAME_kɔ́===fósì:n:rien_kɛ́:v:faire_bìlen:adv:encore_NAME_kɔ́:pp:après
 
 NORV_mîn_kɛ́_PUNCT===NORVname_mîn:dtm:REL_kɛ́:v:faire_PUNCT
 
 #
 #		kɛ avec ... yé 
 #
+kɛ́ra_AORN_yé===kɛ́ra:v: [kɛ́:v:faire ra:mrph:PFV.INTR]_AORNname_yé:pp:PP
+
 kɛ́ra_NAME_dàn_yé===kɛ́ra:v: [kɛ́:v:faire ra:mrph:PFV.INTR]_NAME_dàn:n:limite_yé:pp:PP
 kɛ́ra_AMBIGUOUS_dàn_yé===kɛ́ra:v: [kɛ́:v:faire ra:mrph:PFV.INTR]_AMBIGUOUS_dàn:n:limite_yé:pp:PP
 kɛ́ra_NAME_dàn_bɛ́ɛ_yé===kɛ́ra:v: [kɛ́:v:faire ra:mrph:PFV.INTR]_NAME_dàn:n:limite_bɛ́ɛ:dtm:tout_yé:pp:PP
@@ -25232,6 +25720,7 @@ kɛ́_ADV===kɛ́:v:faire_ADV
 # avec pp yé
 kɛ́_NAME_yé===kɛ́:v:faire_NAME_yé:pp:PP
 kɛ́_NORV_yé===kɛ́:v:faire_NORVname_yé:pp:PP
+kɛ́_AORN_yé===kɛ́:v:faire_AORNname_yé:pp:PP
 kɛ́_PERS_NAME_yé===kɛ́:v:faire_PERS_NAME_yé:pp:PP
 kɛ́_PERS_NORV_yé===kɛ́:v:faire_PERS_NORVname_yé:pp:PP
 kɛ́_à_NAME_yé===kɛ́:v:faire_à:pers:3SG_NAME_yé:pp:PP
@@ -25891,6 +26380,10 @@ bɛ́_NAME_DTM_mìnɛ===bɛ:pm:IPFV.AFF_NAME_DTM_mìnɛ:v:attraper
 bɛ́_PERS_ka_NAME_mìnɛ===bɛ:pm:IPFV.AFF_PERS_ka:pp:POSS_NAME_mìnɛ:v:attraper
 tɛ́_NAME_mìnɛ===tɛ:pm:IPFV.NEG_NAME_mìnɛ:v:attraper
 má_NAME_mìnɛ===ma:pm:PFV.NEG_NAME_mìnɛ:v:attraper
+má_NAME_sí_mìnɛ===ma:pm:PFV.NEG_NAME_sí:dtm:aucun_mìnɛ:v:attraper
+má_NAME_NUM_sí_mìnɛ===ma:pm:PFV.NEG_NAME_NUM_sí:dtm:aucun_mìnɛ:v:attraper
+má_DTM_NAME_sí_mìnɛ===ma:pm:PFV.NEG_DTM_NAME_sí:dtm:aucun_mìnɛ:v:attraper
+má_DTM_NAME_NUM_sí_mìnɛ===ma:pm:PFV.NEG_DTM_NAME_NUM_sí:dtm:aucun_mìnɛ:v:attraper
 yé_NAME_mìnɛ===ye:pm:PFV.TR_NAME_mìnɛ:v:attraper
 b'_NAME_mìnɛ===b':pm:IPFV.AFF_NAME_mìnɛ:v:attraper
 t'_NAME_mìnɛ===t':pm:IPFV.NEG_NAME_mìnɛ:v:attraper
@@ -26104,6 +26597,7 @@ PERS_nàna_PERS_NUM_DTM_VERBE===PERS_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_
 PERS_nàna_PRONOM_DTM_VERBE===PERS_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PRONOM_DTM_VERBE
 PERS_nàna_NAME_VERBE===PERS_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_NAME_VERBE
 PERS_nàna_PERS_NAME_VERBE===PERS_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PERS_NAME_VERBE
+PERS_nàna_PRONOM_NAME_VERBE===PERS_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PRONOM_NAME_VERBE
 PERS_nàna_PERS_NAME_NUM_VERBE===PERS_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PERS_NAME_NUM_VERBE
 
 NAME_nàna_VERBE===NAME_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_VERBE
@@ -26114,6 +26608,7 @@ NAME_nàna_PERS_NUM_DTM_VERBE===NAME_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_
 NAME_nàna_PRONOM_DTM_VERBE===NAME_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PRONOM_DTM_VERBE
 NAME_nàna_NAME_VERBE===NAME_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_NAME_VERBE
 NAME_nàna_PERS_NAME_VERBE===NAME_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PERS_NAME_VERBE
+NAME_nàna_PRONOM_NAME_VERBE===NAME_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PRONOM_NAME_VERBE
 NAME_nàna_PERS_NAME_NUM_VERBE===NAME_nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PERS_NAME_NUM_VERBE
 
 # mais possible avec une pm (sinon risque de confusion avec la pp na : ka bɔ tasuma na n'a ye.)
@@ -26319,9 +26814,15 @@ tɛ́_ɲɛ̀_PERS_ka_NAME_ná===tɛ:pm:IPFV.NEG_ɲɛ̀:v:réussir_PERS_ka:pp:PO
 má_ɲɛ̀_PERS_NAME_ná===ma:pm:PFV.NEG_ɲɛ̀:v:réussir_PERS_NAME_ná:pp:à
 
 VERBE_kà_ɲɛ̀===VERBE_kà:pm:INF_ɲɛ̀:v:réussir
+
 #
 #	ɲɛ́fɔ  "expliquer"  2
 #
+
+NAME_nà_à_ɲɛ́fɔ===NAME_nà:pm:CERT_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+NAME_nà_ò_ɲɛ́fɔ===NAME_nà:pm:CERT_ò:prn:ce_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+NPROPRE_nà_à_ɲɛ́fɔ===NPROPRE_nà:pm:CERT_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
+NPROPRE_nà_ò_ɲɛ́fɔ===NPROPRE_nà:pm:CERT_ò:prn:ce_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
 
 k'_à_ɲɛ́fɔ_ADV===k':pm:INF_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_ADV
 b'_à_ɲɛ́fɔ_ADV===b':pm:IPFV.AFF_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_ADV
@@ -26487,6 +26988,11 @@ NPROPRE_mánà_sà===NPROPRE_mánà:pm:COND.AFF_sà:v:mourir
 DEBUT_NPROPRE_sàra_PUNCT===DEBUT_NPROPRE_sàra:v: [sà:v:mourir ra:mrph:PFV.INTR]_PUNCT
 DEBUT_NPROPRE_sàra_ADV===DEBUT_NPROPRE_sàra:v: [sà:v:mourir ra:mrph:PFV.INTR]_ADV
 DEBUT_NPROPRE_sàra_ò_cógo_lá===DEBUT_NPROPRE_sàra:v: [sà:v:mourir ra:mrph:PFV.INTR]_ò:prn:ce_cógo:n:manière_lá:pp:à
+
+bɛ́_sà_ADV===bɛ:pm:IPFV.AFF_sà:v:mourir_ADV
+tɛ́_sà_ADV===tɛ:pm:IPFV.NEG_sà:v:mourir_ADV
+má_sà_ADV===ma:pm:PFV.NEG_sà:v:mourir_ADV
+mánà_sà_ADV===mánà:pm:COND.AFF_sà:v:mourir_ADV
 
 bɛ́_NAME_sà===bɛ:pm:IPFV.AFF_NAME_sà:v:mourir
 tɛ́_NAME_sà===tɛ:pm:IPFV.NEG_NAME_sà:v:mourir
@@ -26722,6 +27228,7 @@ bɛ́_sé_PERS_NORV_kɔ́rɔ===bɛ:pm:IPFV.AFF_sé:v:arriver_PERS_NORVname_kɔ
 bɛ́_sé_ò_NAME_kɔ́rɔ===bɛ:pm:IPFV.AFF_sé:v:arriver_ò:prn:ce_NAME_kɔ́rɔ:pp:sous
 bɛ́_sé_NAME_DTM_kɔ́rɔ===bɛ:pm:IPFV.AFF_sé:v:arriver_NAME_DTM_kɔ́rɔ:pp:sous
 bɛ́_sé_NAME_mà===bɛ:pm:IPFV.AFF_sé:v:arriver_NAME_mà:pp:ADR
+bɛ́_sé_NPROPRE_mà===bɛ:pm:IPFV.AFF_sé:v:arriver_NPROPRE_mà:pp:ADR
 bɛ́_sé_NAME_NUM_mà===bɛ:pm:IPFV.AFF_sé:v:arriver_NAME_NUM_mà:pp:ADR
 bɛ́_sé_NAME_ADJECTIF_mà===bɛ:pm:IPFV.AFF_sé:v:arriver_NAME_ADJECTIF_mà:pp:ADR
 bɛ́_sé_NAME_NAME_NUM_mà===bɛ:pm:IPFV.AFF_sé:v:arriver_NAME_NAME_NUM_mà:pp:ADR
@@ -26733,10 +27240,23 @@ tɛ́_sé_PERS_NORV_kɔ́rɔ===tɛ:pm:IPFV.NEG_sé:v:arriver_PERS_NORVname_kɔ
 tɛ́_sé_ò_NAME_kɔ́rɔ===tɛ:pm:IPFV.NEG_sé:v:arriver_ò:prn:ce_NAME_kɔ́rɔ:pp:sous
 tɛ́_sé_NAME_DTM_kɔ́rɔ===tɛ:pm:IPFV.NEG_sé:v:arriver_NAME_DTM_kɔ́rɔ:pp:sous
 tɛ́_sé_NAME_mà===tɛ:pm:IPFV.NEG_sé:v:arriver_NAME_mà:pp:ADR
+tɛ́_sé_NPROPRE_mà===tɛ:pm:IPFV.NEG_sé:v:arriver_NPROPRE_mà:pp:ADR
 tɛ́_sé_NAME_NUM_mà===tɛ:pm:IPFV.NEG_sé:v:arriver_NAME_NUM_mà:pp:ADR
 tɛ́_sé_NAME_ADJECTIF_mà===tɛ:pm:IPFV.NEG_sé:v:arriver_NAME_ADJECTIF_mà:pp:ADR
 tɛ́_sé_NAME_NAME_NUM_mà===tɛ:pm:IPFV.NEG_sé:v:arriver_NAME_NAME_NUM_mà:pp:ADR
 tɛ́_sé_NAME_NAME_ADJECTIF_mà===tɛ:pm:IPFV.NEG_sé:v:arriver_NAME_NAME_ADJECTIF_mà:pp:ADR
+bɛ́nà_sé_NAME_kɔ́rɔ===bɛ́nà:pm:FUT_sé:v:arriver_NAME_kɔ́rɔ:pp:sous
+bɛ́nà_sé_PERS_NAME_kɔ́rɔ===bɛ́nà:pm:FUT_sé:v:arriver_PERS_NAME_kɔ́rɔ:pp:sous
+bɛ́nà_sé_PERS_NPROPRE_kɔ́rɔ===bɛ́nà:pm:FUT_sé:v:arriver_PERS_NPROPRE_kɔ́rɔ:pp:sous
+bɛ́nà_sé_PERS_NORV_kɔ́rɔ===bɛ́nà:pm:FUT_sé:v:arriver_PERS_NORVname_kɔ́rɔ:pp:sous
+bɛ́nà_sé_ò_NAME_kɔ́rɔ===bɛ́nà:pm:FUT_sé:v:arriver_ò:prn:ce_NAME_kɔ́rɔ:pp:sous
+bɛ́nà_sé_NAME_DTM_kɔ́rɔ===bɛ́nà:pm:FUT_sé:v:arriver_NAME_DTM_kɔ́rɔ:pp:sous
+bɛ́nà_sé_NAME_mà===bɛ́nà:pm:FUT_sé:v:arriver_NAME_mà:pp:ADR
+bɛ́nà_sé_NPROPRE_mà===bɛ́nà:pm:FUT_sé:v:arriver_NPROPRE_mà:pp:ADR
+bɛ́nà_sé_NAME_NUM_mà===bɛ́nà:pm:FUT_sé:v:arriver_NAME_NUM_mà:pp:ADR
+bɛ́nà_sé_NAME_ADJECTIF_mà===bɛ́nà:pm:FUT_sé:v:arriver_NAME_ADJECTIF_mà:pp:ADR
+bɛ́nà_sé_NAME_NAME_NUM_mà===bɛ́nà:pm:FUT_sé:v:arriver_NAME_NAME_NUM_mà:pp:ADR
+bɛ́nà_sé_NAME_NAME_ADJECTIF_mà===bɛ́nà:pm:FUT_sé:v:arriver_NAME_NAME_ADJECTIF_mà:pp:ADR
 VERBE_kà_sé===VERBE_kà:pm:INF_sé:v:arriver
 VERBE_kà_sé_sɔ̀rɔ===VERBE_kà:pm:INF_sé:n:arrivée_sɔ̀rɔ:v:obtenir
 VERBE_kà_sé_kà===VERBE_kà:pm:INF_sé:v:arriver_kà:pm:INF
@@ -26855,7 +27375,13 @@ bɛ́_sì_NAME_fɛ̀===bɛ:pm:IPFV.AFF_sì:v:passer.la.nuit_NAME_fɛ̀:pp:par
 tɛ́_sì_NAME_fɛ̀===tɛ:pm:IPFV.NEG_sì:v:passer.la.nuit_NAME_fɛ̀:pp:par
 má_sì_NAME_fɛ̀===ma:pm:PFV.NEG_sì:v:passer.la.nuit_NAME_fɛ̀:pp:par
 sìra_NAME_fɛ̀===sìra:v: [sì:v:passer.la.nuit ra:mrph:PFV.INTR]_NAME_fɛ̀:pp:par
+bɛ́_sì_ni_NAME_yé===bɛ:pm:IPFV.AFF_sì:v:passer.la.nuit_ni:conj:et_NAME_yé:pp:PP
+tɛ́_sì_ni_NAME_yé===tɛ:pm:IPFV.NEG_sì:v:passer.la.nuit_ni:conj:et_NAME_yé:pp:PP
+má_sì_ni_NAME_yé===ma:pm:PFV.NEG_sì:v:passer.la.nuit_ni:conj:et_NAME_yé:pp:PP
 sìra_ni_NAME_yé===sìra:v: [sì:v:passer.la.nuit ra:mrph:PFV.INTR]_ni:conj:et_NAME_yé:pp:PP
+bɛ́_sì_ni_NPROPRE_yé===bɛ:pm:IPFV.AFF_sì:v:passer.la.nuit_ni:conj:et_NPROPRE_yé:pp:PP
+tɛ́_sì_ni_NPROPRE_yé===tɛ:pm:IPFV.NEG_sì:v:passer.la.nuit_ni:conj:et_NPROPRE_yé:pp:PP
+má_sì_ni_NPROPRE_yé===ma:pm:PFV.NEG_sì:v:passer.la.nuit_ni:conj:et_NPROPRE_yé:pp:PP
 sìra_ni_NPROPRE_yé===sìra:v: [sì:v:passer.la.nuit ra:mrph:PFV.INTR]_ni:conj:et_NPROPRE_yé:pp:PP
 sìra_ni_ò_yé===sìra:v: [sì:v:passer.la.nuit ra:mrph:PFV.INTR]_ni:conj:et_ò:prn:ce_yé:pp:PP
 mánà_sì_NAME_fɛ̀===mánà:pm:COND.AFF_sì:v:passer.la.nuit_NAME_fɛ̀:pp:par
@@ -27043,6 +27569,7 @@ yé_NPROPRE_NAME_sɔ̀rɔ===ye:pm:PFV.TR_NPROPRE_NAME_sɔ̀rɔ:v:obtenir
 bɛ́_NAME_NUM_sɔ̀rɔ===bɛ:pm:IPFV.AFF_NAME_NUM_sɔ̀rɔ:v:obtenir
 tɛ́_NAME_NUM_sɔ̀rɔ===tɛ:pm:IPFV.NEG_NAME_NUM_sɔ̀rɔ:v:obtenir
 má_NAME_NUM_sɔ̀rɔ===ma:pm:PFV.NEG_NAME_NUM_sɔ̀rɔ:v:obtenir
+má_ò_NAME_NUM_sɔ̀rɔ===ma:pm:PFV.NEG_ò:dtm:ce_NAME_NUM_sɔ̀rɔ:v:obtenir
 mána_NAME_NUM_sɔ̀rɔ===mánà:pm:COND.AFF_NAME_NUM_sɔ̀rɔ:v:obtenir
 kànâ_NAME_NUM_sɔ̀rɔ===kànâ:pm:PROH_NAME_NUM_sɔ̀rɔ:v:obtenir
 yé_NAME_NUM_sɔ̀rɔ===ye:pm:PFV.TR_NAME_NUM_sɔ̀rɔ:v:obtenir
@@ -27192,6 +27719,12 @@ PRMRK_bɛ́ɛ_ká_NAME_sɔ̀rɔ_PUNCT===PRMRK_bɛ́ɛ:prn:chacun_ka:pm:SBJV_NAM
 Bɛ́ɛ_ká_NAME_sɔ̀rɔ_PUNCT===bɛ́ɛ:prn:chacun_ka:pm:SBJV_NAME_sɔ̀rɔ:v:obtenir_PUNCT
 PRMRK_bɛ́ɛ_ká_NAME_ADJECTIF_sɔ̀rɔ_PUNCT===PRMRK_bɛ́ɛ:prn:chacun_ka:pm:SBJV_NAME_ADJECTIF_sɔ̀rɔ:v:obtenir_PUNCT
 Bɛ́ɛ_ká_NAME_ADJECTIF_sɔ̀rɔ_PUNCT===bɛ́ɛ:prn:chacun_ka:pm:SBJV_NAME_ADJECTIF_sɔ̀rɔ:v:obtenir_PUNCT
+
+bɛ_sì_sɔ̀rɔ===bɛ:pm:IPFV.AFF_sì:n:vie_sɔ̀rɔ:v:obtenir
+tɛ_sì_sɔ̀rɔ===tɛ:pm:IPFV.NEG_sì:n:vie_sɔ̀rɔ:v:obtenir
+ye_sì_sɔ̀rɔ===ye:pm:PFV.TR_sì:n:vie_sɔ̀rɔ:v:obtenir
+
+
 #
 #	tà "prendre" 2
 #
@@ -27749,6 +28282,9 @@ tɛ̀mɛna_AMBIGUOUS_ADJECTIF_kàn===tɛ̀mɛna:v: [tɛ̀mɛ:v:passer na:mrph:P
 tɛ̀mɛ_AMBIGUOUS_NUM_kàn===tɛ̀mɛ:v:passer_AMBIGUOUS_NUM_kàn:pp:sur
 tɛ̀mɛna_AMBIGUOUS_NUM_kàn===tɛ̀mɛna:v: [tɛ̀mɛ:v:passer na:mrph:PFV.INTR]_AMBIGUOUS_NUM_kàn:pp:sur
 VERBE_kà_tɛ̀mɛ_PUNCT===VERBE_kà:pm:INF_tɛ̀mɛ:v:passer_PUNCT
+kà_tɛ̀mɛ_cɛ̀w_kàn===kà:pm:INF_tɛ̀mɛ:v:passer_cɛ̀w:n: [cɛ̀:n:mâle w:mrph:PL]_kàn:pp:sur
+kà_tɛ̀mɛ_mùsow_kàn===kà:pm:INF_tɛ̀mɛ:v:passer_mùsow:n: [mùso:n:femme w:mrph:PL]_kàn:pp:sur
+# revoir et simplifier les séries précédentes trop frileuses sur le INF/SBJV
 
 
 #
@@ -27824,6 +28360,19 @@ bɛ́_tòli_ADV===bɛ:pm:IPFV.AFF_tòli:v:pourrir_ADV
 #
 #	tó "rester" 2
 #
+
+bɛ́_tó_ADV===bɛ:pm:IPFV.AFF_tó:v:rester_ADV
+tɛ́_tó_ADV===tɛ:pm:IPFV.NEG_tó:v:rester_ADV
+má_tó_ADV===ma:pm:PFV.NEG_tó:v:rester_ADV
+yé_tó_ADV===ye:pm:PFV.TR_tó:v:rester_ADV
+nà_tó_ADV===nà:pm:CERT_tó:v:rester_ADV
+
+bɛ́_tó_NPROPRETOP===bɛ:pm:IPFV.AFF_tó:v:rester_NPROPRETOP
+tɛ́_tó_NPROPRETOP===tɛ:pm:IPFV.NEG_tó:v:rester_NPROPRETOP
+má_tó_NPROPRETOP===ma:pm:PFV.NEG_tó:v:rester_NPROPRETOP
+yé_tó_NPROPRETOP===ye:pm:PFV.TR_tó:v:rester_NPROPRETOP
+nà_tó_NPROPRETOP===nà:pm:CERT_tó:v:rester_NPROPRETOP
+
 tɛ́_tɔ̀_tó_NAME_lá===tɛ:pm:IPFV.NEG_tɔ̀:n:le.reste_tó:v:rester_NAME_lá:pp:à
 tɛ́_tɔ̀_tó_NAME_ná===tɛ:pm:IPFV.NEG_tɔ̀:n:le.reste_tó:v:rester_NAME_ná:pp:à
 tɛ́_tɔ̀_sí_tó_NAME_lá===tɛ:pm:IPFV.NEG_tɔ̀:n:le.reste_sí:dtm:aucun_tó:v:rester_NAME_lá:pp:à
@@ -27833,6 +28382,7 @@ má_tɔ̀_sí_tó_NAME_ná===ma:pm:PFV.NEG_tɔ̀:n:le.reste_sí:dtm:aucun_t
 tó_ADV===tó:v:rester_ADV
 tóra_ADV===tóra:v: [tó:v:rester ra:mrph:PFV.INTR]_ADV
 tóra_NAME_lá===tóra:v: [tó:v:rester ra:mrph:PFV.INTR]_NAME_lá:pp:à
+tóra_NPROPRE_lá===tóra:v: [tó:v:rester ra:mrph:PFV.INTR]_NPROPRE_lá:pp:à
 tóra_NAME_DTM_lá===tóra:v: [tó:v:rester ra:mrph:PFV.INTR]_NAME_DTM_lá:pp:à
 tóra_PRONOM_lá===tóra:v: [tó:v:rester ra:mrph:PFV.INTR]_PRONOM_lá:pp:à
 tóra_NAME_ná===tóra:v: [tó:v:rester ra:mrph:PFV.INTR]_NAME_ná:pp:à
@@ -28004,20 +28554,50 @@ PRMRK_PERS_yàmaruya===PRMRK_PERS_yàmaruya:v:autoriser [yàmari:v:autoriser 
 # 		nb je ne met pas la pm yé car il peut y avoir un équatif...
 # 		attention aux bɛ tɛ situatifs !!!
 #
-bɛ_NAME_yé_PUNCT===bɛ:pm:IPFV.AFF_NAME_yé:v:voir_PUNCT
 # tɛ_NAME_yé_PUNCT===tɛ:pm:IPFV.NEG_NAME_yé:v:voir_PUNCT   # Attention: EQUATIVE possible
-bɛ_NAME_yé_ADV===bɛ:pm:IPFV.AFF_NAME_yé:v:voir_ADV
 # tɛ_NAME_yé_ADV===tɛ:pm:IPFV.NEG_NAME_yé:v:voir_ADV   # Attention: EQUATIVE possible
+kà_NAME_yé_PUNCT===kà:pm:INF_NAME_yé:v:voir_PUNCT
+kà_NAME_yé_ADV===kà:pm:INF_NAME_yé:v:voir_ADV
+kà_NAME_ADJECTIF_yé_PUNCT===kà:pm:INF_NAME_ADJECTIF_yé:v:voir_PUNCT
+kà_NAME_ADJECTIF_yé_ADV===kà:pm:INF_NAME_ADJECTIF_yé:v:voir_ADV
+kà_NPROPRE_yé_PUNCT===kà:pm:INF_NPROPRE_yé:v:voir_PUNCT
+kà_NPROPRE_yé_ADV===kà:pm:INF_NPROPRE_yé:v:voir_ADV
+bɛ_NAME_yé_PUNCT===bɛ:pm:IPFV.AFF_NAME_yé:v:voir_PUNCT
+bɛ_NAME_yé_ADV===bɛ:pm:IPFV.AFF_NAME_yé:v:voir_ADV
+bɛ_NAME_ADJECTIF_yé_PUNCT===bɛ:pm:IPFV.AFF_NAME_ADJECTIF_yé:v:voir_PUNCT
+bɛ_NPROPRE_yé_PUNCT===bɛ:pm:IPFV.AFF_NPROPRE_yé:v:voir_PUNCT
+bɛ_NAME_ADJECTIF_yé_ADV===bɛ:pm:IPFV.AFF_NAME_ADJECTIF_yé:v:voir_ADV
+bɛ_NPROPRE_yé_ADV===bɛ:pm:IPFV.AFF_NPROPRE_yé:v:voir_ADV
 má_NAME_yé===ma:pm:PFV.NEG_NAME_yé:v:voir
+má_NAME_ADJECTIF_yé===ma:pm:PFV.NEG_NAME_ADJECTIF_yé:v:voir
 má_NPROPRE_yé_ò_kɔ́===ma:pm:PFV.NEG_NPROPRE_yé:v:voir_ò:prn:ce_kɔ́:pp:après
 má_NPROPRE_yé_nìn_kɔ́===ma:pm:PFV.NEG_NPROPRE_yé:v:voir_nìn:prn:ceci_kɔ́:pp:après
 má_NPROPRE_yé===ma:pm:PFV.NEG_NPROPRE_yé:v:voir
 má_PRONOM_yé===ma:pm:PFV.NEG_PRONOM_yé:v:voir
+bɛ́nà_NAME_yé===bɛ́nà:pm:FUT_NAME_yé:v:voir
+bɛ́nà_NAME_ADJECTIF_yé===bɛ́nà:pm:FUT_NAME_ADJECTIF_yé:v:voir
+bɛ́nà_NPROPRE_yé===bɛ́nà:pm:FUT_NPROPRE_yé:v:voir
+bɛ́nà_PRONOM_yé===bɛ́nà:pm:FUT_PRONOM_yé:v:voir
+bɛ́nà_NAME_PARTICIPE_yé===bɛ́nà:pm:FUT_NAME_PARTICIPE_yé:v:voir
+bɛ́nà_NAME_NAME_PARTICIPE_yé===bɛ́nà:pm:FUT_NAME_NAME_PARTICIPE_yé:v:voir
+tɛ́nà_NAME_yé===tɛ́nà:pm:FUT.NEG_NAME_yé:v:voir
+tɛ́nà_NAME_ADJECTIF_yé===tɛ́nà:pm:FUT.NEG_NAME_ADJECTIF_yé:v:voir
+tɛ́nà_NPROPRE_yé===tɛ́nà:pm:FUT.NEG_NPROPRE_yé:v:voir
+tɛ́nà_PRONOM_yé===tɛ́nà:pm:FUT.NEG_PRONOM_yé:v:voir
+tɛ́nà_NAME_PARTICIPE_yé===tɛ́nà:pm:FUT.NEG_NAME_PARTICIPE_yé:v:voir
+tɛ́nà_NAME_NAME_PARTICIPE_yé===tɛ́nà:pm:FUT.NEG_NAME_NAME_PARTICIPE_yé:v:voir
 mánà_NAME_yé===mánà:pm:COND.AFF_NAME_yé:v:voir
+mánà_NAME_ADJECTIF_yé===mánà:pm:COND.AFF_NAME_ADJECTIF_yé:v:voir
 mánà_NPROPRE_yé===mánà:pm:COND.AFF_NPROPRE_yé:v:voir
 mánà_PRONOM_yé===mánà:pm:COND.AFF_PRONOM_yé:v:voir
 mánà_NAME_PARTICIPE_yé===mánà:pm:COND.AFF_NAME_PARTICIPE_yé:v:voir
 mánà_NAME_NAME_PARTICIPE_yé===mánà:pm:COND.AFF_NAME_NAME_PARTICIPE_yé:v:voir
+kànâ_NAME_yé===kànâ:pm:PROH_NAME_yé:v:voir
+kànâ_NAME_ADJECTIF_yé===kànâ:pm:PROH_NAME_ADJECTIF_yé:v:voir
+kànâ_NPROPRE_yé===kànâ:pm:PROH_NPROPRE_yé:v:voir
+kànâ_PRONOM_yé===kànâ:pm:PROH_PRONOM_yé:v:voir
+kànâ_NAME_PARTICIPE_yé===kànâ:pm:PROH_NAME_PARTICIPE_yé:v:voir
+kànâ_NAME_NAME_PARTICIPE_yé===kànâ:pm:PROH_NAME_NAME_PARTICIPE_yé:v:voir
 
 # un pb une fois sur la suivante (identification des lemma var défaillante)
 #PRMRK_NAME_yé===PRMRK_NAME_yé:v:voir
@@ -28231,11 +28811,11 @@ PERS_àní_PERS_NAME_cɛ́===PERS_àní:conj:ainsi.que_PERS_NAME_cɛ́:pp:en
 NAME_àní_PERS_AMBIGUOUS_cɛ́===NAME_àní:conj:ainsi.que_PERS_AMBIGUOUS_cɛ́:pp:entre
 PERS_àní_PERS_AMBIGUOUS_cɛ́===PERS_àní:conj:ainsi.que_PERS_AMBIGUOUS_cɛ́:pp:entre
 
-
 sánnì_NAME_dón_cɛ́===sánnì:conj:avant.de_NAME_dón:n:jour_cɛ́:pp:entre
 sánnì_NAME_NUM_cɛ́===sánnì:conj:avant.de_NAME_NUM_cɛ́:pp:entre
 sánì_NAME_dón_cɛ́===sánì:conj:avant.de_NAME_dón:n:jour_cɛ́:pp:entre
 sánì_NAME_NUM_cɛ́===sánì:conj:avant.de_NAME_NUM_cɛ́:pp:entre
+sánì_NAME_NAME_cɛ́===sánì:conj:avant.de_NAME_NAME_cɛ́:pp:entre
 sánì_PERS_NAME_dón_cɛ́===sánì:conj:avant.de_PERS_NAME_dón:n:jour_cɛ́:pp:entre
 sánì_PERS_NAME_cɛ́===sánì:conj:avant.de_PERS_NAME_cɛ́:pp:entre
 sánì_NAME_cɛ́_PUNCT===sánì:conj:avant.de_NAME_cɛ́:pp:entre_PUNCT
@@ -28301,6 +28881,10 @@ NPROPRETOP_kɔ́nɔ===NPROPRETOP_kɔ́nɔ:pp:dans
 NPROPRETOP_yɛ̀rɛ̂_kɔ́nɔ===NPROPRETOP_yɛ̀rɛ̂:dtm:même_kɔ́nɔ:pp:dans
 
 ò_kɔ́nɔ_NPROPRETOP===ò:prn:ce_kɔ́nɔ:pp:dans_NPROPRETOP
+dú_kɔ́nɔ_ADV===dú:n:concession_kɔ́nɔ:pp:dans_ADV
+dú_kɔ́nɔ_NPROPRETOP===dú:n:concession_kɔ́nɔ:pp:dans_NPROPRETOP
+
+
 #
 #	kɔ́rɔ  "sous"
 #
@@ -29007,6 +29591,8 @@ PERS_ni_tùn_COPULE===PERS_ní:n:âme§§nì:n:part_tùn:prt:PST_COPULE
 NAME_ni_tùn_COPULE===NAME_ní:n:âme§§nì:n:part_tùn:prt:PST_COPULE
 NPROPRE_ni_tùn_COPULE===NPROPRE_ní:n:âme§§nì:n:part_tùn:prt:PST_COPULE
 
+NPROPRE_dén===NPROPRE_dén:n:enfant
+
 NPROPRETOP_màsa===NPROPRETOP_màsa:n:roi
 NPROPRETOP_Màsa===NPROPRETOP_màsa:n:roi
 NPROPRETOP_fàama===NPROPRETOP_fàama:n:roi
@@ -29135,6 +29721,7 @@ NAME_fèerelen_tɔ̀nɔ===NAME_fèerelen:ptcp: [fèere:v:vendre len:mrph:PTCP
 wáleya_mîn_PRMRK===wáleya:n:application [wále:n:acte ya:mrph:ABSTR]_mîn:dtm:REL_PRMRK
 wáleya_mîn_COPULE===wáleya:n:application [wále:n:acte ya:mrph:ABSTR]_mîn:dtm:REL_COPULE
 
+màloya_PRMRK===màloya:n:honte [màlo:n:honte ya:mrph:ABSTR]_PRMRK
 
 PRMRK_sísàn_NAME===PRMRK_sísàn:n:maintenant_NAME
 COPULE_sísàn_NAME===COPULE_sísàn:n:maintenant_NAME
@@ -29181,6 +29768,8 @@ NPROPRE_bá_ka_só_mà===NPROPRE_bá:n:mère_ka:pp:POSS_só:n:maison_mà:p
 NPROPRE_ka_só_kɔ́nɔ===NPROPRE_ka:pp:POSS_só:n:maison_kɔ́nɔ:pp:dans
 NPROPRE_ka_só_yàn===NPROPRE_ka:pp:POSS_só:n:maison_yàn:adv:ici
 NPROPRE_ka_só_yèn===NPROPRE_ka:pp:POSS_só:n:maison_yèn:adv:là-bas
+NPROPRE_ka_só_ò_wáati===NPROPRE_ka:pp:POSS_só:n:maison_ò:dtm:ce_wáati:n:moment
+NPROPRE_ka_só_ò_wágati===NPROPRE_ka:pp:POSS_só:n:maison_ò:dtm:ce_wágati:n:moment
 NPROPRE_ka_só_PUNCT===NPROPRE_ka:pp:POSS_só:n:maison_PUNCT
 NPROPRE_ka_só_ADV===NPROPRE_ka:pp:POSS_só:n:maison_ADV
 NPROPRE_ka_só_PRMRK===NPROPRE_ka:pp:POSS_só:n:maison_PRMRK
@@ -29737,6 +30326,7 @@ nàna_NORV_mînkɛ́_PUNCT===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_NORVver
 # 		attention aux SBJV  subjonctif !
 #
 DEBUT_NPROPRE_ka_NPROPRE_COMMA===DEBUT_NPROPRE_ka:pp:POSS_NPROPRE_COMMA
+PUNCT_NPROPRE_ka_NPROPRE_COMMA===PUNCT_NPROPRE_ka:pp:POSS_NPROPRE_COMMA
 PERS_ká_jàmana_PUNCT===PERS_ka:pp:POSS_jàmana:n:pays_PUNCT
 PERS_ká_jàmana_PRMRK===PERS_ka:pp:POSS_jàmana:n:pays_PRMRK
 PERS_ká_jàmana_VERBE===PERS_ka:pp:POSS_jàmana:n:pays_VERBE
@@ -30218,6 +30808,13 @@ bɛ́_NAME_ADJECTIF_kàlama===bɛ́:cop:être_NAME_ADJECTIF_kàla:n:tige_mà:
 bɛ́_NAME_PARTICIPE_kàlama===bɛ́:cop:être_NAME_PARTICIPE_kàla:n:tige_mà:pp:ADR
 NORV_mà_PUNCT===NORVname_mà:pp:ADR_PUNCT
 NORV_mà_CONJ===NORVname_mà:pp:ADR_CONJ
+
+#
+#	ɲɛ́na     (danger avec ɲɛ̀na, le v ɲɛ̀ au PFV)
+#
+VERBE_PERS_ɲɛ́na_PUNCT===VERBE_PERS_ɲɛ́na:pp:devant [ɲɛ́:n:oeil ná:pp:à]_PUNCT
+POSTP_PERS_ɲɛ́na_PUNCT===POSTP_PERS_ɲɛ́na:pp:devant [ɲɛ́:n:oeil ná:pp:à]_PUNCT
+ADV_PERS_ɲɛ́na_PUNCT===ADV_PERS_ɲɛ́na:pp:devant [ɲɛ́:n:oeil ná:pp:à]_PUNCT
 
 #
 #	yé
@@ -30812,6 +31409,13 @@ PUNCT_ò_ká_PERS_VERBE===PUNCT_ò:prn:ce_ka:pm:SBJV_PERS_VERBE
 POSTP_ò_ká_PERS_VERBE===POSTP_ò:prn:ce_ka:pm:SBJV_PERS_VERBE
 ADV_ò_ká_PERS_VERBE===ADV_ò:prn:ce_ka:pm:SBJV_PERS_VERBE
 
+PUNCT_NAME_ká_VERBE===PUNCT_NAME_ka:pm:SBJV_VERBE
+PUNCT_NAME_ká_PERS_VERBE===PUNCT_NAME_ka:pm:SBJV_PERS_VERBE
+PUNCT_NAME_ká_NAME_VERBE===PUNCT_NAME_ka:pm:SBJV_NAME_VERBE
+PUNCT_NAME_ká_PERS_NAME_VERBE===PUNCT_NAME_ka:pm:SBJV_PERS_NAME_VERBE
+PUNCT_NAME_k'_PERS_VERBE===PUNCT_NAME_k':pm:SBJV_PERS_VERBE
+PUNCT_NAME_k'_PERS_NAME_VERBE===PUNCT_NAME_k':pm:SBJV_PERS_NAME_VERBE
+
 PUNCT_kó_NAME_ká_VERBE===PUNCT_kó:cop:QUOT_NAME_ka:pm:SBJV_VERBE   # pb avec kó "affaire"
 PUNCT_kó_NAME_ká_PERS_VERBE===PUNCT_kó:cop:QUOT_NAME_ka:pm:SBJV_PERS_VERBE
 PUNCT_kó_NAME_ká_NAME_VERBE===PUNCT_kó:cop:QUOT_NAME_ka:pm:SBJV_NAME_VERBE
@@ -30873,6 +31477,23 @@ POSTP_PERS_ká_PERS_NORV_PUNCT===POSTP_PERS_ka:pm:SBJV_PERS_NORVverbe_PUNCT
 POSTP_PERS_k'_PERS_VERBE===POSTP_PERS_k':pm:SBJV_PERS_VERBE
 POSTP_PRONOM_ká_VERBE===POSTP_PRONOM_ka:pm:SBJV_VERBE
 POSTP_NPROPRE_ká_VERBE===POSTP_NPROPRE_ka:pm:SBJV_VERBE
+
+VERBE_NAME_ká_VERBE===VERBE_NAME_ka:pm:SBJV_VERBE
+VERBE_PERS_NAME_ká_VERBE===VERBE_PERS_NAME_ka:pm:SBJV_VERBE
+VERBE_ò_NAME_ká_VERBE===VERBE_ò:dtm:ce_NAME_ka:pm:SBJV_VERBE
+VERBE_ò_NAME_dè_ká_VERBE===VERBE_ò:dtm:ce_NAME_dè:prt:FOC_ka:pm:SBJV_VERBE
+VERBE_NAME_ká_PERS_VERBE===VERBE_NAME_ka:pm:SBJV_PERS_VERBE
+VERBE_NAME_ká_NAME_VERBE===VERBE_NAME_ka:pm:SBJV_NAME_VERBE
+VERBE_NAME_ká_PERS_NAME_VERBE===VERBE_NAME_ka:pm:SBJV_PERS_NAME_VERBE
+VERBE_NAME_k'_PERS_VERBE===VERBE_NAME_k':pm:SBJV_PERS_VERBE
+VERBE_NAME_k'_PERS_NAME_VERBE===VERBE_NAME_k':pm:SBJV_PERS_NAME_VERBE
+VERBE_PERS_ká_VERBE===VERBE_PERS_ka:pm:SBJV_VERBE
+VERBE_PERS_ká_PERS_VERBE===VERBE_PERS_ka:pm:SBJV_PERS_VERBE
+VERBE_PERS_ká_PERS_NORV_PUNCT===VERBE_PERS_ka:pm:SBJV_PERS_NORVverbe_PUNCT
+VERBE_PERS_k'_PERS_VERBE===VERBE_PERS_k':pm:SBJV_PERS_VERBE
+VERBE_PRONOM_ká_VERBE===VERBE_PRONOM_ka:pm:SBJV_VERBE
+VERBE_NPROPRE_ká_VERBE===VERBE_NPROPRE_ka:pm:SBJV_VERBE
+
 PUNCT_NAME_ká_VERBE===PUNCT_NAME_ka:pm:SBJV_VERBE
 PUNCT_NAME_ká_PERS_VERBE===PUNCT_NAME_ka:pm:SBJV_PERS_VERBE
 PUNCT_NAME_ká_NAME_VERBE===PUNCT_NAME_ka:pm:SBJV_NAME_VERBE
@@ -31488,13 +32109,17 @@ NPROPRE_sàlen===NPROPRE_sàlen:ptcp: [sà:v:mourir len:mrph:PTCP.RES]
 PERS_sàlen===PERS_sàlen:ptcp: [sà:v:mourir len:mrph:PTCP.RES]
 
 
-# 2GN avec ni, ani
+# 2GNI avec ni, ani
 PRMRK_NAME_ADJECTIF_ni_NAME_ADJECTIF_VERBE===PRMRK_NAME_ADJECTIF_ni:conj:et_NAME_ADJECTIF_VERBE
 NPROPRE_ni_à_bá===NPROPRE_ni:conj:et_à:pers:3SG_bá:n:mère
 NPROPRE_ni_à_fà===NPROPRE_ni:conj:et_à:pers:3SG_fà:n:père
+NPROPRE_fà_ni_PERS_bá===NPROPRE_fà:n:père_ni:conj:et_PERS_bá:n:mère
+NPROPRE_bá_ni_PERS_fà===NPROPRE_bá:n:mère_ni:conj:et_PERS_fà:n:père
+NPROPRE_fà_n'_PERS_bá===NPROPRE_fà:n:père_n':conj:et_PERS_bá:n:mère
+NPROPRE_bá_n'_PERS_fà===NPROPRE_bá:n:mère_n':conj:et_PERS_fà:n:père
 
 #
-# 2GN possessifs
+# 2GPK GN possessifs
 #
 #	essentiellement détermination de la CONJ POSS
 #
@@ -32472,7 +33097,13 @@ NAME_sí_má_VERBE===NAME_sí:dtm:aucun_ma:pm:PFV.NEG_VERBE
 NAME_sí_tɛ́_NORV_PUNCT===NAME_sí:dtm:aucun_tɛ:pm:IPFV.NEG_NORVverbe_PUNCT
 NAME_sí_má_NORV_PUNCT===NAME_sí:dtm:aucun_ma:pm:PFV.NEG_NORVverbe_PUNCT
 
+NAME_sí_tɛ́_NAME_VERBE===NAME_sí:dtm:aucun_tɛ:pm:IPFV.NEG_NAME_VERBE
+NAME_sí_má_NAME_VERBE===NAME_sí:dtm:aucun_ma:pm:PFV.NEG_NAME_VERBE
+NAME_sí_tɛ́_NAME_NORV_PUNCT===NAME_sí:dtm:aucun_tɛ:pm:IPFV.NEG_NAME_NORVverbe_PUNCT
+NAME_sí_má_NAME_NORV_PUNCT===NAME_sí:dtm:aucun_ma:pm:PFV.NEG_NAME_NORVverbe_PUNCT
+
 PERS_sí_tɛ́_VERBE===PERS_sí:dtm:aucun_tɛ:pm:IPFV.NEG_VERBE
+PERS_sí_tɛ́_NAME_VERBE===PERS_sí:dtm:aucun_tɛ:pm:IPFV.NEG_NAME_VERBE
 
 nìn_NORV_ìn===nìn:dtm:DEM_NORVname_ìn:dtm:DEF
 Nìn_NORV_ìn===nìn:dtm:DEM_NORVname_ìn:dtm:DEF
@@ -33138,6 +33769,60 @@ PUNCT_n'_ò_tɛ́_PERS_NAME_ká_NAME_POSTP===PUNCT_ní:prep:si_ò:prn:ce_tɛ
 PUNCT_n'_ò_tɛ́_PERS_NORV_ká_NAME_POSTP===PUNCT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_NORVname_ka:pp:POSS_NAME_POSTP
 PUNCT_n'_ò_tɛ́_PERS_NAME_ká_NORV_POSTP===PUNCT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_NAME_ka:pp:POSS_NORVname_POSTP
 
+# avec ko devant :
+
+PUNCT_kó_n'_ò_tɛ́_PERS_COPULE===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_COPULE
+PUNCT_kó_n'_ò_tɛ́_PERS_tùn_COPULE===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_tùn:prt:PST_COPULE
+PUNCT_kó_n'_ò_tɛ́_NAME_COPULE===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_COPULE
+PUNCT_kó_n'_ò_tɛ́_NAME_DTM_COPULE===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_DTM_COPULE
+PUNCT_kó_n'_ò_tɛ́_NAME_ADJECTIF_COPULE===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_ADJECTIF_COPULE
+PUNCT_kó_n'_ò_tɛ́_NAME_PARTICIPE_COPULE===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_PARTICIPE_COPULE
+PUNCT_kó_n'_ò_tɛ́_NAME_NUM_COPULE===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_NUM_COPULE
+PUNCT_kó_n'_ò_tɛ́_PERS_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_PRMRK
+PUNCT_kó_n'_ò_tɛ́_PERS_tùn_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_tùn:prt:PST_PRMRK
+PUNCT_kó_n'_ò_tɛ́_PERS_tùn===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_tùn:prt:PST
+PUNCT_kó_n'_ò_tɛ́_NAME_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_PRMRK
+PUNCT_kó_n'_ò_tɛ́_NAME_tùn_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_tùn:prt:PST_PRMRK
+PUNCT_kó_n'_ò_tɛ́_PERS_NAME_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_NAME_PRMRK
+# PUNCT_kó_n'_ò_tɛ́_PERS_NAME_tɛ́_NAME_VERBE===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_NAME_tɛ:pp:IPFV.AFF_NAME_VERBE
+PUNCT_kó_n'_ò_tɛ́_NAME_DTM_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_DTM_PRMRK
+PUNCT_kó_n'_ò_tɛ́_NAME_ADJECTIF_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_ADJECTIF_PRMRK
+PUNCT_kó_n'_ò_tɛ́_NAME_PARTICIPE_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_PARTICIPE_PRMRK
+PUNCT_kó_n'_ò_tɛ́_NAME_NUM_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_NUM_PRMRK
+PUNCT_kó_n'_ò_tɛ́_NAME_NAME_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_NAME_PRMRK
+PUNCT_kó_n'_ò_tɛ́_NAME_NAME_NUM_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_NAME_NUM_PRMRK
+
+PUNCT_kó_n'_ò_tɛ́_PERS_VPERF===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_VPERF
+PUNCT_kó_n'_ò_tɛ́_NAME_VPERF===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_VPERF
+PUNCT_kó_n'_ò_tɛ́_NAME_DTM_VPERF===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_DTM_VPERF
+PUNCT_kó_n'_ò_tɛ́_NAME_ADJECTIF_VPERF===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_ADJECTIF_VPERF
+PUNCT_kó_n'_ò_tɛ́_NAME_PARTICIPE_VPERF===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_PARTICIPE_VPERF
+PUNCT_kó_n'_ò_tɛ́_NAME_NUM_VPERF===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_NUM_VPERF
+PUNCT_kó_n'_ò_tɛ́_NAME_NAME_VPERF===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_NAME_VPERF
+PUNCT_kó_n'_ò_tɛ́_NAME_NAME_NUM_VPERF===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_NAME_NUM_VPERF
+
+PUNCT_kó_n'_ò_tɛ́_NAME_PARTICIPE_ADJECTIF_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_NAME_PARTICIPE_ADJECTIF_PRMRK
+PUNCT_kó_n'_ò_tɛ́_DTM_NAME_DTM_COPULE===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_DTM_NAME_DTM_COPULE
+PUNCT_kó_n'_ò_tɛ́_DTM_NAME_ADJECTIF_DTM_COPULE===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_DTM_NAME_ADJECTIF_DTM_COPULE
+PUNCT_kó_n'_ò_tɛ́_DTM_NAME_PARTICIPE_DTM_COPULE===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_DTM_NAME_PARTICIPE_DTM_COPULE
+PUNCT_kó_n'_ò_tɛ́_DTM_NAME_DTM_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_DTM_NAME_DTM_PRMRK
+PUNCT_kó_n'_ò_tɛ́_DTM_NAME_ADJECTIF_DTM_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_DTM_NAME_ADJECTIF_DTM_PRMRK
+PUNCT_kó_n'_ò_tɛ́_DTM_NAME_PARTICIPE_DTM_PRMRK===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_DTM_NAME_PARTICIPE_DTM_PRMRK
+PUNCT_kó_n'_ò_tɛ́_DTM_NAME_DTM_VPERF===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_DTM_NAME_DTM_VPERF
+PUNCT_kó_n'_ò_tɛ́_DTM_NAME_ADJECTIF_DTM_VPERF===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_DTM_NAME_ADJECTIF_DTM_VPERF
+PUNCT_kó_n'_ò_tɛ́_DTM_NAME_PARTICIPE_DTM_VPERF===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_DTM_NAME_PARTICIPE_DTM_VPERF
+
+PUNCT_kó_n'_ò_tɛ́_PERS_NAME_ká_NAME_PUNCT===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_NAME_ka:pp:POSS_NAME_PUNCT
+PUNCT_kó_n'_ò_tɛ́_PERS_NORV_ká_NAME_PUNCT===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_NORVname_ka:pp:POSS_NAME_PUNCT
+PUNCT_kó_n'_ò_tɛ́_PERS_NAME_ká_NORV_PUNCT===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_NAME_ka:pp:POSS_NORVname_PUNCT
+
+PUNCT_kó_n'_ò_tɛ́_PERS_NAME_ká_NAME_POSTP===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_NAME_ka:pp:POSS_NAME_POSTP
+PUNCT_kó_n'_ò_tɛ́_PERS_NORV_ká_NAME_POSTP===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_NORVname_ka:pp:POSS_NAME_POSTP
+PUNCT_kó_n'_ò_tɛ́_PERS_NAME_ká_NORV_POSTP===PUNCT_kó:cop:QUOT_ní:prep:si_ò:prn:ce_tɛ́:cop:COP.NEG_PERS_NAME_ka:pp:POSS_NORVname_POSTP
+
+# fin "ni o tɛ" ------------------------------------
+
+
 PUNCT_n'_ò_kó_COLON===PUNCT_n':conj:si_ò:prn:ce_kó:cop:QUOT_COLON
 PUNCT_n'_PERS_kó_COLON===PUNCT_n':conj:si_PERS_kó:cop:QUOT_COLON
 PUNCT_ní_PERS_kó_COLON===PUNCT_ní:conj:si_PERS_kó:cop:QUOT_COLON
@@ -33525,6 +34210,22 @@ NORV_mîn_VERBE===NORVname_mîn:dtm:REL_VERBE
 NORV_mínnu_VERBE===NORVname_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]_VERBE
 # NORV_mîn_PRMRK===NORVname_mîn:dtm:REL_PRMRK
 # NORV_mínnu_PRMRK===NORVname_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]_PRMRK   # attention si virgule manque après un verbe et que minnu est prn sujet du suivant
+COPULE_NORV_mîn_PRMRK===COPULE_NORVname_mîn:dtm:REL_PRMRK
+COPULE_NORV_mínnu_PRMRK===COPULE_NORVname_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]_PRMRK
+PUNCT_NORV_mîn_PRMRK===PUNCT_NORVname_mîn:dtm:REL_PRMRK
+PUNCT_NORV_mínnu_PRMRK===PUNCT_NORVname_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]_PRMRK
+POSTP_NORV_mîn_PRMRK===POSTP_NORVname_mîn:dtm:REL_PRMRK
+POSTP_NORV_mínnu_PRMRK===POSTP_NORVname_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]_PRMRK
+CONJ_NORV_mîn_PRMRK===CONJ_NORVname_mîn:dtm:REL_PRMRK
+CONJ_NORV_mínnu_PRMRK===CONJ_NORVname_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]_PRMRK
+COPULE_NORV_mîn_tùn===COPULE_NORVname_mîn:dtm:REL_tùn:prt:PST
+COPULE_NORV_mínnu_tùn===COPULE_NORVname_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]_tùn:prt:PST
+PUNCT_NORV_mîn_tùn===PUNCT_NORVname_mîn:dtm:REL_tùn:prt:PST
+PUNCT_NORV_mínnu_tùn===PUNCT_NORVname_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]_tùn:prt:PST
+POSTP_NORV_mîn_tùn===POSTP_NORVname_mîn:dtm:REL_tùn:prt:PST
+POSTP_NORV_mínnu_tùn===POSTP_NORVname_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]_tùn:prt:PST
+CONJ_NORV_mîn_tùn===CONJ_NORVname_mîn:dtm:REL_tùn:prt:PST
+CONJ_NORV_mínnu_tùn===CONJ_NORVname_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]_tùn:prt:PST
 NORV_mîn_COPULE===NORVname_mîn:dtm:REL_COPULE
 NORV_mínnu_COPULE===NORVname_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]_COPULE
 
