@@ -127,7 +127,25 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				if unkn!=0 : ninconnus="inconnus: "+str(unkn)
 				toutout=toutout+titl+"; ; "+filename+"; ; "+word+"; "+auth+"; "+nambigus+ninconnus+"\n"
 			else:
-				toutout=toutout+titl+"; ; "+filename+"; ; "+word+"; "+auth+"; \n"
+				diffauth=""
+				nauth_fn=0
+				fileauth=re.search(r"[0-9\-]*\_[0-9]*([a-z\_]*)\-",filename)
+				if fileauth :
+					authshort=fileauth.group(1)
+					nauth_fn=1
+					if "_" in authshort:
+						spauthshort=authshort.split("_")
+						nauth_fn=len(spauthshort)
+				nauth_meta=0
+				if auth!="":
+					nauth_meta=1
+					if "|" in auth:
+						spauth=auth.split("|")
+						nauth_meta=len(spauth)
+				if nauth_fn!=nauth_meta :
+					diffauth=" "+str(nauth_fn)+"/"+str(nauth_meta)+" ?"
+
+				toutout=toutout+titl+"; ; "+filename+"; ; "+word+"; "+auth+";"+diffauth+"\n"
 			toutwords=toutwords+words
 
 	if toutout!="" :
@@ -136,5 +154,5 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 		grandtotal=grandtotal+toutwords
 		nbrep=nbrep+1
 
-outf.write("TOTAL for "+str(nbrep)+" issues ; ; ; ; "+str(grandtotal)+"; ; \n")
+outf.write("TOTAL for "+str(nbrep)+" issues ; ; ; ; "+str(grandtotal)+"; ;\n")
 outf.close()
