@@ -80,9 +80,16 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u"Т",u"T",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"и",u"u",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"у",u"y",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"ɪ",u"y",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"á",u"a",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"ý",u"y",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"ú",u"u",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"№",u"N°",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"ï",u"i",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"˚",u"°",tout,0,re.U|re.MULTILINE)
+
+				# enforce space between the ° of N° and the number that follows
+				tout=re.sub(u"°([0-9])",u"° \g<1>",tout,0,re.U|re.MULTILINE)
 
 				#align …  and ...
 				tout=re.sub(u"…",u"...",tout,0,re.U|re.MULTILINE)
@@ -97,6 +104,24 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u">>",u"»",tout,0,re.U|re.MULTILINE) 
 				tout=re.sub(u"<h>»",u"<h>«",tout,0,re.U|re.MULTILINE) # erreur fréquente chez zup
 				tout=re.sub(u"<ill>»",u"<ill>«",tout,0,re.U|re.MULTILINE) # erreur fréquente chez zup
+
+				# frequent typos
+				tout=re.sub(u"aia",u"ala",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"eie",u"ele",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"iii",u"ili",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"oio",u"olo",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"ɛiɛ",u"ɛlɛ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"ɔiɔ",u"ɔlɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"iia",u"ila",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"oia",u"ola",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"aii",u"ali",tout,0,re.U|re.MULTILINE)
+				
+				
+				# enforce a' 2PL followed by space
+				tout=re.sub(u" a\'([^\s])",u" a' \g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"\'a\'([^\s])",u"'a' \g<1>",tout,0,re.U|re.MULTILINE)
+				# same for leading A' 2PL ex.  imparative A' ye
+				tout=re.sub(u"A\'([^\s])",u"A' \g<1>",tout,0,re.U|re.MULTILINE)
 
 				# unsolved : "x" on one side and «x» on the other : all with " ?
 				# try with caution :
@@ -148,6 +173,55 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				# unsolved : doz abuse of <ls>... <br/> ... <br/> ... </ls> 
 				tout=re.sub(ur"</br>",u"<br/>",tout,0,re.U|re.MULTILINE)
 				
+				# poems end of para
+				tout=re.sub(ur"<br/>\n\n",u"\n\n",tout,0,re.U|re.MULTILINE)
+				
+				# enforce punctuation before closing tags
+				#tout=re.sub(ur"\.</h>\n",u"</h>.\n",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"([^\.\;\:\!\?])</h>\n",u"\g<1>.</h>\n",tout,0,re.U|re.MULTILINE)
+				#tout=re.sub(ur"\.</ill>\n",u"</ill>.\n",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"([^\.\;\:\!\?])</ill>\n",u"\g<1>.</ill>\n",tout,0,re.U|re.MULTILINE)
+				
+				# numbers with dots between numgroups 281 350 -> 281.350
+				tout=re.sub(ur"([0-9]+)\s([0-9]+)",u"\g<1>.\g<2>",tout,0,re.U|re.MULTILINE)
+				
+				# enforce -nan ordinal to be attached to number
+				tout=re.sub(ur"([0-9])\snan",u"\g<1>nan",tout,0,re.U|re.MULTILINE)
+
+				# no punctuation at end of line ?
+				# ([^\>\.\;\:\!\?])\n\n
+				# \g<1>.\n\n
+				# --------- may be problematic in some cases (eg doz tends to break para)
+				tout=re.sub(ur"([^\>\.\;\:\!\?\,])\n\n",u"\g<1>.\n\n",tout,0,re.U|re.MULTILINE)
+
+				# no line break in a middle of  a sentence (frequent in doz texts)
+				tout=re.sub(ur"([^\>\n])\n([a-zA-Z0-9ɛɔɲŋƐƆƝŊ«])",u"\g<1> \g<2>",tout,0,re.U|re.MULTILINE)
+
+				# no paragraph break after a comma
+				tout=re.sub(ur"\,\n\n",u", ",tout,0,re.U|re.MULTILINE)
+
+				# eliminate extra lines before EOF
+				tout=re.sub(ur"\n\n\n$(?![\r\n])",u"",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"\n\n$(?![\r\n])",u"",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"\n$(?![\r\n])",u"",tout,0,re.U|re.MULTILINE)
+
+				# correct usual errors
+				tout=re.sub(ur"rn",u"m",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"ɲɔgon",u"ɲɔgɔn",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"ɲogɔn",u"ɲɔgɔn",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"ɲogon",u"ɲɔgɔn",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"sɔmɔgɔ",u"somɔgɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" mɔgo",u" mɔgɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" fɔyi",u" foyi",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" fill",u" fili",tout,0,re.U|re.MULTILINE)
+
+				# enforce simple list if only 2 or 3 items in list
+				# to be fixed : if line already starts with - 
+				tout=re.sub(ur"<ls>(.*)<br/>\n(.*)</ls>",u"- \g<1>\n\n- \g<2>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"<ls>(.*)<br/>\n(.*)<br/>\n(.*)</ls>",u"- \g<1>\n\n- \g<2>\n\n- \g<3>",tout,0,re.U|re.MULTILINE)
+				# dirty fix
+				tout=re.sub(ur"\n- - ","\n- ",tout,0,re.U|re.MULTILINE)
+
 				#log.write("tout:'"+tout+"'\n")
 				try : 
 					fileOUT = open(os.path.join(dirname, filename), "w")
