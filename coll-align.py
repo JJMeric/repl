@@ -81,6 +81,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u"и",u"u",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"у",u"y",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"ɪ",u"y",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"л",u"n",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"á",u"a",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"ý",u"y",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"ú",u"u",tout,0,re.U|re.MULTILINE)
@@ -110,11 +111,15 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u"eie",u"ele",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"iii",u"ili",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"oio",u"olo",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"oiu",u"olu",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"ɛiɛ",u"ɛlɛ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"ɔiɔ",u"ɔlɔ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"iia",u"ila",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"iie",u"ile",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"oia",u"ola",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"aii",u"ali",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"all([\s\.\,\;\:\!\?])",u"ali\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"aua",u"aya",tout,0,re.U|re.MULTILINE)
 				
 				
 				# enforce a' 2PL followed by space
@@ -158,6 +163,11 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur" \!",u"!",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" \?",u"?",tout,0,re.U|re.MULTILINE)
 
+				# enforce space after comma, 
+				tout=re.sub(u"\,([^\s])",u", \g<1>",tout,0,re.U|re.MULTILINE)
+				# suppress space(s) before comma,
+				tout=re.sub(u"([\s]+)\,",u",",tout,0,re.U|re.MULTILINE)
+
 				# suppress spaces and tabs after end of line
 				tout=re.sub(ur"[ \t]+\n",u"\n",tout,0,re.U|re.MULTILINE)
 
@@ -188,6 +198,13 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				# enforce -nan ordinal to be attached to number
 				tout=re.sub(ur"([0-9])\snan",u"\g<1>nan",tout,0,re.U|re.MULTILINE)
 
+				# enforce simple list if only 2 or 3 items in list
+				# to be fixed : if line already starts with - 
+				tout=re.sub(ur"<ls>(.*)<br/>\n(.*)</ls>",u"- \g<1>\n\n- \g<2>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"<ls>(.*)<br/>\n(.*)<br/>\n(.*)</ls>",u"- \g<1>\n\n- \g<2>\n\n- \g<3>",tout,0,re.U|re.MULTILINE)
+				# dirty fix
+				tout=re.sub(ur"\n- - ","\n- ",tout,0,re.U|re.MULTILINE)
+
 				# no punctuation at end of line ?
 				# ([^\>\.\;\:\!\?])\n\n
 				# \g<1>.\n\n
@@ -207,20 +224,43 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 
 				# correct usual errors
 				tout=re.sub(ur"rn",u"m",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" minriu",u" minnu",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" bɔgo ",u" bɔgɔ ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" anl ",u" ani ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"ɲɔgɔŋ",u"ɲɔgɔn",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"ɲɔgon",u"ɲɔgɔn",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"ɲogɔn",u"ɲɔgɔn",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"ɲogon",u"ɲɔgɔn",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"sɔmɔgɔ",u"somɔgɔ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" mɔgo",u" mɔgɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" mogo",u" mɔgɔ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" fɔyi",u" foyi",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" fill",u" fili",tout,0,re.U|re.MULTILINE)
-
-				# enforce simple list if only 2 or 3 items in list
-				# to be fixed : if line already starts with - 
-				tout=re.sub(ur"<ls>(.*)<br/>\n(.*)</ls>",u"- \g<1>\n\n- \g<2>",tout,0,re.U|re.MULTILINE)
-				tout=re.sub(ur"<ls>(.*)<br/>\n(.*)<br/>\n(.*)</ls>",u"- \g<1>\n\n- \g<2>\n\n- \g<3>",tout,0,re.U|re.MULTILINE)
-				# dirty fix
-				tout=re.sub(ur"\n- - ","\n- ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sɛn kan",u" sen kan",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sɛnfɛ",u" senfɛ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"bɛ sɛnna",u"bɛ senna",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"bɛ sɛn na",u"bɛ sen na",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kosebɛ",u" kosɛbɛ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kosɛbe",u" kosɛbɛ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sɔro;",u" sɔrɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sɔro",u" sɔrɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɛle ",u" kɛlɛ ",tout,0,re.U|re.MULTILINE)
+				# tout=re.sub(ur"eɛ([\s\,\.])",u"ɛ\g<1>",tout,0,re.U|re.MULTILINE)
+				# tout=re.sub(ur"oɔ([\s\,\.])",u"ɔ\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"eɛ",u"ɛ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"oɔ",u"ɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"nnɛn ",u"nnen ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"nnɛnw ",u"nnenw ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" fen ",u" fɛn ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"bolono",u"bolonɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"jiriwali",u"yiriwali",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"gofɛrenaman",u"gofɛrɛnaman",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kosɔn",u" kɔsɔn",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɔsɛbɛ",u" kosɛbɛ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" bugo ",u" bugɔ ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" fɔlo ",u" fɔlɔ ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" gɛlen",u" gɛlɛn",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"'I ",u"'i ",tout,0,re.U|re.MULTILINE)
 
 				#log.write("tout:'"+tout+"'\n")
 				try : 

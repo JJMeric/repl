@@ -456,6 +456,14 @@ dictauth[u"266a0781-d80f-4f93-8885-fd28c4af344e"]=u"Jara, Dirisa Bakari|||m|Bamb
 dictauth[u"dda27c30-a372-4cdb-884b-2ac8667a1523"]=u"Danbele, Bakaribilen|||m|Bambara||habite Bɛlɛko Gegena, 1996 - Bɛlɛkɔ 1 «ZAERI» sekeretɛri don (Joyila mara la). kib275 1994 - kib276 1995"
 # "Badu, Zerɔmu Ajaku",Jerôme Adjakou Badou,m,,,,"habite le Bénin, kib276 1996, 1997, 1998",1eed21cc-1fee-477f-b51c-433c93f117b2
 dictauth[u"1eed21cc-1fee-477f-b51c-433c93f117b2"]=u"Badu, Zerɔmu Ajaku|Jerôme Adjakou Badou||m|||habite le Bénin, kib276 1996, 1997, 1998"
+# "Sangare, Bubakari",,m,,,Bambara,«Eko» bɔko 78 nan/Jɛkabaara  066 1991 - kib279-280 1995,6db84d53-f9ac-472a-9926-2deb1fdfe0ca
+dictauth[u"6db84d53-f9ac-472a-9926-2deb1fdfe0ca"]=u"Sangare, Bubakari|||m|Bambara||«Eko» bɔko 78 nan/Jɛkabaara  066 1991 - kib279-280 1995"
+# "Fɔnba, Zankɛ Ngolo",Ŋɔlɔ,m,,,Bambara,"habite Jumazana, Fana mara la - kib275 1994 kib280 1995",b4ee46bb-ec0f-417a-a5c5-397024592b62
+dictauth[u"b4ee46bb-ec0f-417a-a5c5-397024592b62"]=u"Fɔnba, Zankɛ Ngolo|||m|Bambara||habite Jumazana, Fana mara la - kib275 1994 kib280 1995"
+# "Samake, Fasun Idirisa",,m,,,Bambara,habite Mɔrɔjanbugu (Kati) balikukalandenjolen - kib282 1995 - 1996 ,9fec18a6-f4e7-43c0-b93e-fd6e43e90454
+dictauth[u"9fec18a6-f4e7-43c0-b93e-fd6e43e90454"]=u"Samake, Fasun Idirisa|||m|Bambara||habite Mɔrɔjanbugu (Kati) balikukalandenjolen - kib282 1995 - 1996"
+# "Sogoba, Bala",,m,,,Bambara,cikɛla ka bɔ Jɛda Bila kafo kɔnɔ  Segu mara la - kib277-279-282 1995,638507fe-69e0-40c2-ad36-8337730f927f
+dictauth[u"638507fe-69e0-40c2-ad36-8337730f927f"]=u"Sogoba, Bala|||m|Bambara||cikɛla ka bɔ Jɛda Bila kafo kɔnɔ  Segu mara la - kib277-279-282 1995"
 
 #modèle dictauth[u"uuid"]=u"Nom, Prénom|spelling|datebirth|sex|Bambara|native|comment"
 #modèle dictauth[u"uuid"]=u"Nom, Prénom|spelling|datebirth|sex|language|native|comment"
@@ -674,26 +682,28 @@ for filename in filenames:
 		# <meta content="XXX" name="text:theme" />
 		theme=""
 
-		addtheme(old,"&#201;ducation",ur"(balikukalan|kalanso|kalanden|kalanbaliya|karamɔgɔ|lakɔli|unesco|lɛkɔliden|lɛkɔlikaramɔgɔ)")
-		addtheme(old,"Administration",ur"(mɛri|komini|minisiri|Minisiri|forobakɛsu|nisɔngɔ|lɛnpo|takisi sarali|takisiw sarali|gɔfɛrɛnɛri|gɔfɛrɛnora|gɔfɛrɛnɛrɛ| kɔnsɛyi|arɔndisiman|erezɔn|sɛriwusida|baarada)")
-		addtheme(old,"Agriculture",ur"(malokisɛ|maloforo|hɛkitari|sayijirinin|Sayijirinin|jirituru|jiriden|jiribulu|jiridili|sɛnɛkɛ|Sɛnɛkɛ|cikɛko|cikɛla|Cikɛla|bagan|mɔnni|nakɔ|sanji|bulukuli|shyɛnni|turuli|saribilennin|dabakurunin|danni|jiri turu|ɲɔforo|kɔɔri|kabaforo|malosɛnɛ|keninge|suman|jiginɛ|misi|shɛmara|syɛmara|sagagɛn|jɛgɛ|taari|kɔrɔshiyɛn|nɔgɔdon|Ofisidinizɛri|pɔmutɛri|tigasɛnɛ)")
+		addtheme(old,"&#201;ducation",ur"(balikukalan|kalanso|kalanden|kalanbaliya|karamɔgɔ|lakɔli|Lakɔli|unesco|lɛkɔliden|lɛkɔlikaramɔgɔ)")
+		addtheme(old,"Administration",ur"(ciyakɛda|mɛri|komini|minisiri|Minisiri|forobakɛsu|nisɔngɔ|lɛnpo|takisi sarali|takisiw sarali|gɔfɛrɛnɛri|gɔfɛrɛnora|gɔfɛrɛnɛrɛ| kɔnsɛyi|arɔndisiman|erezɔn|sɛriwusida|baarada)")
+		addtheme(old,"Agriculture",ur"(fantɔrɔmansin|malokisɛ|maloforo|hɛkitari|sayijirinin|Sayijirinin|jirituru|jiriden|jiribulu|jiridili|sɛnɛkɛ|Sɛnɛkɛ|cikɛko|cikɛla|Cikɛla|bagan|mɔnni|nakɔ|sanji|bulukuli|shyɛnni|turuli|saribilennin|dabakurunin|danni|jiri turu|ɲɔforo|kɔɔri|kabaforo|malosɛnɛ|keninge|suman|jiginɛ|misi|shɛmara|syɛmara|sagagɛn|jɛgɛ|taari|kɔrɔshiyɛn|nɔgɔdon|Ofisidinizɛri|pɔmutɛri|tigasɛnɛ)")
 		addtheme(old,"Arm&#233;e et Guerre",ur"(burudamɛkɛlɛ|binkanni|burudamɛ murutilenw|kɛlɛbansɛbɛn|sɔrɔdasi|marifatigi|binnkannikɛla|binkannikɛla|binnkanikɛla|Minusima|kojugubakɛla|dagayɔrɔ|basigibaliya|maramafɛn)")
 		addtheme(old,"Chasse",ur"(donsokɛ|donsoya|kungo sogo)")
 		addtheme(old,"Communication",ur"(kunnafonidila|kibaru|amap|jɛkabaara|arajo|tele|jabaranin|ORTM|nɛgɛjurusira|SOTƐLIMA|KABAARU|kabaaru)")
-		addtheme(old,"Economie et Finances",ur"(SUKALA|CMDT|KOMATƐKISI|SOTELMA|OTER|OPAM|F.M.I|FARANSEFA|FARANSƐFA|FARANFARANSƐ|Faran Sefa|SEFAKO|forobakɛsu|foroba kɛsu|foroba wariko|dɔrɔmɛ|dugujukɔrɔfɛn|babili|izini|taji sɔngɔ|tajijago|tajifeere|sanbaga|nafolo|musaka|lɛnpo|wusuru|sefawari|warikodɛmɛ|sanubɔ|BNDA|banki|warimaraso|BDI)")
-		addtheme(old,"Environnement",ur"(pɔnpu|pɔnpekɔlɔn|Pɔnpekɔlɔn|jikodɛsɛ|jikomako|sanjiba|tasuma don kungo|sigiyɔrɔ lakana|sigida lakana|sigidaw lakana|sanjiko|jakɔngɔ|sanji hakɛ|sanji mumɛ|sigida|lamini|sanya|ɲamanton)")
-		addtheme(old,"G&#233;ographie",ur"(sigicogo|SIGICOGO|sigi cogo|ye dugu ye a bɛ)")
-		addtheme(old,"Histoire",ur"(tariku|Tariku|jɔnfeere|Jɔnfeere|Eziputi|farawona|farawuna|lawale|Lawale|tubabutile|Samori|Bakarijan|Bakari Jan|Kanku Musa|Sunjata Keyita)")
-		addtheme(old,"Islam", ur"(hijitaa|silamɛ|makantaa|misiri|sunkalo|sunbagatɔ|morikɛ|kuranɛ|garibu)")
+		addtheme(old,"Economie et Finances",ur"(dewaliyasɔn|Dewaliyasɔnkɔlɔnsen|SUKALA|CMDT|KOMATƐKISI|SOTELMA|SEPAMA|OTER|OPAM|F.M.I|FARANSEFA|FARANSƐFA|FARANFARANSƐ|Faran Sefa|SEFAKO|forobakɛsu|foroba kɛsu|foroba wariko|dɔrɔmɛ|dugujukɔrɔfɛn|babili|izini|taji sɔngɔ|tajijago|tajifeere|sanbaga|nafolo|musaka|lɛnpo|wusuru|sefawari|warikodɛmɛ|sanubɔ|BNDA|banki|warimaraso|BDI)")
+		addtheme(old,"Environnement",ur"(kungodaw yiriwali ni sigiyɔrɔw lakanali|Kɔlɔnsen|pɔnpu|pɔnpekɔlɔn|Pɔnpekɔlɔn|jikodɛsɛ|jikomako|sanjiba|tasuma don kungo|sigiyɔrɔ lakana|sigida lakana|sigidaw lakana|sanjiko|jakɔngɔ|sanji hakɛ|sanji mumɛ|sigida|lamini|sanya|ɲamanton)")
+		addtheme(old,"G&#233;ographie",ur"(sigi cogo|sigicogo|SIGICOGO|sigi cogo|ye dugu ye a bɛ)")
+		addtheme(old,"Histoire",ur"(tubabu-bilen|tubabubilen|Fɔlɔ-fɔlɔ|Fɔlɔfɔlɔ|tariki|TARIKI|sigi cogo|sigicogo|tariku|Tariku|jɔnfeere|Jɔnfeere|Eziputi|farawona|farawuna|lawale|Lawale|tubabutile|Samori|Bakarijan|Bakari Jan|Kanku Musa|Sunjata Keyita)")
+		addtheme(old,"Islam", ur"(silamɛ|Silamɛ|hijitaa|silamɛ|makantaa|misiri|sunkalo|sunbagatɔ|morikɛ|kuranɛ|garibu)")
 		addtheme(old,"Linguistique",ur"(wolokan|bamanankan|sinminkan|kanw sɛbɛnni|mabɛn|fasokan|mabɛnnidaɲɛ|kawaleyalan|kamankutulan|dɛmɛnan|kɔbila|sinsinnan|sɛbɛncogo|Mandenkan|kanbolofara|daɲɛgafe|siginiden|kumasen)")
-		addtheme(old,"Loi",ur"(yɛrɛwolodenyasɛbɛn|sariya|Sariya|sariyasen|Sariyasen|ɲangilisariya|sariyatigi|kiiri|kiri|kiritigɛla|kaso)")
-		addtheme(old,"M&#233;decine et sant&#233;",ur"(dɔlɔmin|farigan|tɔgɔtɔgɔnin|O.M.S|kunfilatu|kunfilanitu|kunfilanintu|sida|kɛnɛya|bana|fura|dɔgɔtɔrɔ|dɔkɔtɔrɔ|ɲɛdimi|kɔnɔdimi|dusukundimi|boloci|sumaya|furakisɛ|pilili|fugula nafama|ɲɔnin|ɲɔnisan|muso kɔnɔma|bolokolo|senkolo|bolotuguda)")
+		addtheme(old,"Loi",ur"(OMAFES|yɛrɛwolodenyasɛbɛn|sariya|Sariya|sariyasen|Sariyasen|ɲangilisariya|sariyatigi|kiiri|kiri|kiritigɛla|kaso)")
+		addtheme(old,"M&#233;decine et sant&#233;",ur"(kɔnɔboli|dɔlɔmin|farigan|tɔgɔtɔgɔnin|O.M.S|kunfilatu|kunfilanitu|kunfilanintu|sida|kɛnɛya|bana|fura|dɔgɔtɔrɔ|dɔkɔtɔrɔ|ɲɛdimi|kɔnɔdimi|dusukundimi|boloci|sumaya|furakisɛ|pilili|fugula nafama|ɲɔnin|ɲɔnisan|muso kɔnɔma|bolokolo|senkolo|bolotuguda)")
 		addtheme(old,"Politique",ur"(fangaso|jɛkakuma kunbɛn|Amadu Tumani TURE|Musa Tarawele|Musa TARAWELE|UDPM|UNFM|politiki|pariti|sɛkisɔn|kalata|yɛrɛta|wote|peresidan|gɔfɛrɛnaman|bɛɛya|bɛɛjɛfanga|demokarasi|forobaya|depitew|mɛriw|yɛrɛmahɔrɔnya|Musa TARAWELE)")
 		addtheme(old,"Soci&#233;t&#233;",ur"(dutigi|duden|polisi|kaso|fatɔ|Fatɔ|duguba|musocamanfuru|tungafɛtaala|Tungafɛtaala|yɛrɛwolodenya|binkanni|tungalataa|UNFM|dɔrɔgu|furujoona|furusa|furusiri|boloko|karadante|dennadon|tɔgɔladon|jɔyɔrɔ|musotɔn|jɛkulu|jɛkafɔ|jɛkabaara|jɛkakɛ|senenkunya|sinankunya|dɛsɛbagatɔ|baloko|kɔngɔ kunbɛnniko|musofuru|sigiɲɔgɔnya|denmisɛnw ka donba|denmisɛnw ka seliba|denmisɛnw tɔgɔladon|musow ka donba|musow ka seliba|musow tɔgɔladon|Musocamanfuru|musocamanfuru|furuko|denko|denladon|furu kɔnɔ|garibu|warikogɛlɛya|balokogɛlɛya|jɔnya)")
-		addtheme(old,"Sport",ur"(kupu tanko|bi kelen don|kurunboli|Kurunboli|balontan|ntolatan|Ntolatan|farikoloɲɛnajɛ|bidonna|ziɲɔri|kade|ɲɛfɛmɔgɔ|bololantola|basikɛti|kupu|kupudafiriki|Kupudafiriki|kupudimɔndi|Kupudimɔndi|KUPUDIMƆNDI|KUPU DI MALI|kupu di Mali|baarita|bolokuru|soboli|balɔntan|samatasɛgɛ|Samatasɛgɛ)")
-		addtheme(old,"Transport",ur"siraba|sirantanya|Siraba|bolifɛnko|pɔn jɔra|mobilibolila|mobilitigi|kamyɔn|kamyon|Dugumabolifɛnkow|dugumabolifɛnkow|jikanta|awiyɔn")
-		addtheme(old,"Loisirs", ur"(folisen|jeli|dɔnkilidala|tarikitigi|siniman|Siniman|Eliwisi Pɛrɛsili|Mayikɔli Jakison|Salifu Keyita|Umu Sangare)")
+		addtheme(old,"Sport",ur"(kupu tanko|bi kelen don|kurunboli|Kurunboli|balontan|ntolatan|Ntolatan|ladegebaga|farikoloɲɛnajɛ|bidonna|ziɲɔri|kade|ɲɛfɛmɔgɔ|bololantola|basikɛti|kupu|kupudafiriki|Kupudafiriki|kupudimɔndi|Kupudimɔndi|KUPUDIMƆNDI|KUPU DI MALI|kupu di Mali|baarita|bolokuru|soboli|balɔntan|samatasɛgɛ|Samatasɛgɛ)")
+		addtheme(old,"Transport",ur"sira dilanni|siraba|sirantanya|Siraba|bolifɛnko|pɔn jɔra|mobilibolila|mobilitigi|kamyɔn|kamyon|Dugumabolifɛnkow|dugumabolifɛnkow|jikanta|awiyɔn|pankurun|Pankurun")
+		addtheme(old,"Loisirs", ur"(kasɛti|«O.R.T.M» sigidoolo|gintan|filimu|FESPACO|Shɛki Umaru SISOKO|Sulɛyimani SISE|Etalɔn Yenɛnga|folisen|jeli|dɔnkilidala|tarikitigi|siniman|Siniman|Eliwisi Pɛrɛsili|Mayikɔli Jakison|Salifu Keyita|Umu Sangare|Ali Farika Ture)")
 		addtheme(old,"Philosophie", ur"(saya|limaniya|mɔnɛbɔ|miiri|faamuya)")
+		addtheme(old,"Christianisme", ur"(kereciyɛn|Kereciyɛn|mɔnsɛɲɛri|Mɔnsɛɲɛri|tubabumori|egilizi|Mishɔn|mishɔn)")
+		addtheme(old,"Technologie", ur"(mansin|ɔridinatɛri)")
 		
 		if theme!="" :
 			metas=re.sub(r"\"(XXX)\" name=\"text\:theme\"","\""+theme+"\" name=\"text:theme\"",metas)
@@ -760,7 +770,7 @@ for filename in filenames:
 			addauthor(ur"(Yaya Danbele|Yaya DANBELE)",u"fbfccca8-37b1-484c-a64d-9e2e81ad2832")
 			addauthor(ur"(ibɛrɛhima danbele|Ibɛrɛhima Danbele|Ibèrèhima Danbele)",u"a337a319-000c-43d3-91cf-f3364c45194a")
 			addauthor(ur"(Banuhun Danbɛlɛ|Banuhun DANBƐLƐ)",u"bede413a-a43f-4a5d-823c-cb208a12c96e")
-			addauthor(ur"(Bakaribilen Danbele|Bakari Danbele|Bakari Damele|Bakaribilen Damele)",u"dda27c30-a372-4cdb-884b-2ac8667a1523")
+			addauthor(ur"(Bakaribilen Danbele|Bakari Danbele|Bakari DANBELE|Bakari Damele|Bakaribilen Damele)",u"dda27c30-a372-4cdb-884b-2ac8667a1523")
 
 		if "_darabo_" in authshort : addauthor(ur"(Gawusu Darabo|Gawusu DARABO)",u"127f5500-c5db-4f87-8a33-d073d8430f02")
 		if "_dawo_" in authshort : addauthor(ur"(Dawuda Mace Dawo|Dawuda M\.Dawo|Dawuda M\. Dawo|Dawudi Mace Dawo)",u"f0c85c3c-17d5-4af6-ab3e-28b8fd906fe4")
@@ -790,6 +800,8 @@ for filename in filenames:
 			addauthor(ur"(Amari Fɔnba|Amari FƆNBA|Amari Fonba)",u"f8cab50f-1bba-4b2f-aa0e-5a4d8df8f8fe")
 			addauthor(ur"(Basiru Fɔnba|Basiru FƆNBA)",u"53ef22ce-a19a-459c-a814-84ce03706231")
 			addauthor(ur"(Daramani Fɔnba|Daramani FƆNBA)",u"ea0a1dc6-84e8-4b7c-9a6d-20749c228103")
+			addauthor(ur"(Zankɛ Ngolo Fɔnba|Zankɛ Ngolo FƆNBA|Zankɛ Ŋɔlɔ Fɔnba|)",u"b4ee46bb-ec0f-417a-a5c5-397024592b62")
+
 		if "_gindo_" in authshort : addauthor(ur"(Usmani Gindo|usumani Gindo|Usumani Gindo|Usumani Guido)",u"f96014e9-6a24-4735-9ffb-c9cdda74fe65")
 		if "_jabate_" in authshort : addauthor(ur"(Fuseni Jabate|Fuseni JABATE|Fuseyini Jabate|Fuseyini JABATE)",u"76c495a4-7706-4487-92c1-27be5fb4e943")
 		if "_jaabi_" in authshort : addauthor(ur"(Musa Jaabi|Musa JAABI)",u"51652320-a88e-4b50-87f2-fc1b465a20a6")
@@ -926,6 +938,8 @@ for filename in filenames:
 			addauthor(ur"(Sidi Lamini Samake|Sidi Lamini Samakɛ)",u"e4cac73a-9de6-497a-b977-96a700bedf01")
 			addauthor(ur"(Zan Samake|Zan Samakɛ)",u"5851ab7f-f669-487c-9ba8-d03577181a1d")
 			addauthor(ur"(Dawuda Jinɛmusa Samake|Dawuda jinɛmusa Samake|Dawuda, ko jinɛmusa Samake)",u"2a32f60e-253f-49bf-ad87-02a261f6ed52")
+			addauthor(ur"(Bubakari Sangare|Bubakari SANGARE)",u"6db84d53-f9ac-472a-9926-2deb1fdfe0ca")
+			addauthor(ur"(Fasun Idirisa Samake|Fasun Samake|Fasun Idirisa SAMAKE)",u"9fec18a6-f4e7-43c0-b93e-fd6e43e90454")
 		if "_sangare_" in authshort : 
 			addauthor(ur"(Adama Dawuda Sangare|Adama Dawuda SANGARE)",u"65b9b944-f1a7-4973-a52d-0c30a1ce87c1")
 			addauthor(ur"(Bakari Sangare|Bakari sangare|Bakari SANGARE|Bakary Sangare)",u"1cacb7c3-5fc9-4020-bffc-4f2f60bd30ef")
@@ -956,7 +970,9 @@ for filename in filenames:
 			addauthor(ur"(Ibarahima SO|Ibarahima SƆ|Ibarahima So|Ibarahima Sɔ|ibarahima so)",u"8efb9f72-1f7f-45ef-88e2-63df76aa2766")
 			addauthor(ur"(Shɛki Madu SO|Shɛki Madu SƆ|Shɛki Madu So|Shɛki Madu Sɔ|shɛki madu so)",u"33bc2e39-335a-4d95-8014-2e15b52e2357")
 		if "_sogoba_" in authshort : 
-			addauthor(ur"(Shaka Sogoba|ʃaka Sogoba|Siyaka Sogoba)",u"8c54b573-5ba9-4558-a828-354afef8ee5e")		
+			addauthor(ur"(Shaka Sogoba|ʃaka Sogoba|Siyaka Sogoba)",u"8c54b573-5ba9-4558-a828-354afef8ee5e")
+			addauthor(ur"(Bala Sogoba|Bala SOGOBA)",u"638507fe-69e0-40c2-ad36-8337730f927f")
+			
 		if "_sukuna_" in authshort: addauthor(ur"(Mamayi Sukuna|Mamayi SUKUNA)",u"5ca24c05-96f6-4332-906e-8bd1f9125015")
 		if "_sunkara_" in authshort :addauthor(ur"(Amadu SUNKARA|Amadu Sunkara|amadu sunkara)",u"f65af322-1fe8-4381-b65d-68758164036e")
 		if "_tangara_" in authshort : addauthor(ur"(ya tangara|Ya Tangara)",u"868d316d-c084-45db-921f-966fa94724ef")

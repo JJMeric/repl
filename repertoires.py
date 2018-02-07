@@ -149,7 +149,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 			toutwords=toutwords+words
 
 	if toutout!="" :
-		toutout=toutmedianame+" "+toutmedianumber+" "+toutdate+"; ; ; ; "+str(toutwords)+"; ; \n" +toutout+"\n\n"
+		toutout=toutmedianame+" "+toutmedianumber+" "+toutdate+"; ; ; ; "+str(toutwords)+"; ;\n" +toutout+"\n\n"
 		outf.write(toutout)
 		grandtotal=grandtotal+toutwords
 		nbrep=nbrep+1
