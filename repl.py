@@ -206,7 +206,11 @@ if nargv>2 :
    except : 
     try:
       fileREPCname="REPL-STANDARD-C.txt"
-      if ".old" in filenametemp : fileREPCname="REPL-STANDARD-C.old.txt"
+      if filenametemp.endswith(".old"):
+          fileREPCname = "REPL-STANDARD-C.old.txt"
+          tonal = "old"
+      else:
+          tonal = "new"
       fileREPC = open (fileREPCname,"r")
       print "Compiled rules from : "+fileREPCname
     except:
@@ -265,7 +269,6 @@ while line:
 """
 nligne=tout.count(u"\n")
 
-tonal=""
 script=textscript.search(tout).group(1)
 if notfast: print "text:script="+script
 if script=="Ancien orthographe malien" : tonal="old"
