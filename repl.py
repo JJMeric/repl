@@ -60,7 +60,7 @@ import sys
 import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
-import formats
+import daba.formats
 import unicodedata as u
 from time import gmtime, strftime, time
 # print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
@@ -1179,12 +1179,12 @@ else :
           pglose=glose.split(u"§§")
           glose1=pglose[0]
           glose2=pglose[1]
-          html1=formats.glosstext_to_html(glose1,variant=False, encoding='utf-8')
+          html1=daba.formats.glosstext_to_html(glose1,variant=False, encoding='utf-8')
           html1=re.sub(ur"\<\/span\>$",u"",html1)
-          html2=formats.glosstext_to_html(glose2,variant=True, encoding='utf-8')
+          html2=daba.formats.glosstext_to_html(glose2,variant=True, encoding='utf-8')
           wrepl=wrepl+u"<span class=\"w\" stage=\"0\">"+word+html1+html2+u"</span>\n</span>"
         else :
-          htmlgloss=formats.glosstext_to_html(glose,variant=False, encoding='utf-8')
+          htmlgloss=daba.formats.glosstext_to_html(glose,variant=False, encoding='utf-8')
           #log.write("[] glosstext_to_html: "+glose+" -> "+htmlgloss+"\n")
           wrepl=wrepl+u"<span class=\"w\" stage=\"0\">"+word+htmlgloss+u"\n</span>"
     
