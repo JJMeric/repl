@@ -66,6 +66,8 @@ from time import gmtime, strftime, time
 # print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
 import time
 timestart=time.time()
+# directory where this script resides
+scriptdir = os.path.dirname(os.path.realpath(__file__))
 
 def update_progress(progress):
     barLength = 40 # Modify this to change the length of the progress bar
@@ -209,8 +211,9 @@ if nargv>2 :
       print "Compiled rules from : "+fileREPCname
     except:
       try:
-        fileREPCname="/home/corpus-team/REPL/REPL-STANDARD-C.txt"
-        if ".old" in filenametemp : fileREPCname="/home/corpus-team/REPL/REPL-STANDARD-C.old.txt"
+        fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.txt")
+        if filenametemp.endswith(".old"):
+            fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.old.txt")
         fileREPC = open (fileREPCname,"r")
         print "Compiled rules from : "+fileREPCname
       except :
@@ -226,8 +229,8 @@ if notfast:
       print "using REPL-STANDARD.txt"
     except:
       try:
-        fileREPC = open ("/home/corpus-team/REPL/REPL-STANDARD.txt","r")
-        print "using /home/corpus-team/REPL/REPL-STANDARD.txt"
+        fileREPC = open(os.path.join(scriptdir, "REPL-STANDARD.txt"), "r")
+        print "using {}".format(os.path.join(scriptdir, "REPL-STANDARD.txt"))
       except :
         sys.exit("repl.py needs a REPL.txt file or a REPL-STANDARD.txt file in the current directory (or in REPL)")
 
