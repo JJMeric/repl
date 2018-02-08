@@ -60,12 +60,14 @@ import sys
 import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
-import formats
+import daba.formats
 import unicodedata as u
 from time import gmtime, strftime, time
 # print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
 import time
 timestart=time.time()
+# directory where this script resides
+scriptdir = os.path.dirname(os.path.realpath(__file__))
 
 def update_progress(progress):
     barLength = 40 # Modify this to change the length of the progress bar
@@ -204,13 +206,18 @@ if nargv>2 :
    except : 
     try:
       fileREPCname="REPL-STANDARD-C.txt"
-      if ".old" in filenametemp : fileREPCname="REPL-STANDARD-C.old.txt"
+      if filenametemp.endswith(".old"):
+          fileREPCname = "REPL-STANDARD-C.old.txt"
+          tonal = "old"
+      else:
+          tonal = "new"
       fileREPC = open (fileREPCname,"r")
       print "Compiled rules from : "+fileREPCname
     except:
       try:
-        fileREPCname="/home/corpus-team/REPL/REPL-STANDARD-C.txt"
-        if ".old" in filenametemp : fileREPCname="/home/corpus-team/REPL/REPL-STANDARD-C.old.txt"
+        fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.txt")
+        if filenametemp.endswith(".old"):
+            fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.old.txt")
         fileREPC = open (fileREPCname,"r")
         print "Compiled rules from : "+fileREPCname
       except :
@@ -226,8 +233,8 @@ if notfast:
       print "using REPL-STANDARD.txt"
     except:
       try:
-        fileREPC = open ("/home/corpus-team/REPL/REPL-STANDARD.txt","r")
-        print "using /home/corpus-team/REPL/REPL-STANDARD.txt"
+        fileREPC = open(os.path.join(scriptdir, "REPL-STANDARD.txt"), "r")
+        print "using {}".format(os.path.join(scriptdir, "REPL-STANDARD.txt"))
       except :
         sys.exit("repl.py needs a REPL.txt file or a REPL-STANDARD.txt file in the current directory (or in REPL)")
 
@@ -262,7 +269,6 @@ while line:
 """
 nligne=tout.count(u"\n")
 
-tonal=""
 script=textscript.search(tout).group(1)
 if notfast: print "text:script="+script
 if script=="Ancien orthographe malien" : tonal="old"
@@ -1179,12 +1185,12 @@ else :
           pglose=glose.split(u"§§")
           glose1=pglose[0]
           glose2=pglose[1]
-          html1=formats.glosstext_to_html(glose1,variant=False, encoding='utf-8')
+          html1=daba.formats.glosstext_to_html(glose1,variant=False, encoding='utf-8')
           html1=re.sub(ur"\<\/span\>$",u"",html1)
-          html2=formats.glosstext_to_html(glose2,variant=True, encoding='utf-8')
+          html2=daba.formats.glosstext_to_html(glose2,variant=True, encoding='utf-8')
           wrepl=wrepl+u"<span class=\"w\" stage=\"0\">"+word+html1+html2+u"</span>\n</span>"
         else :
-          htmlgloss=formats.glosstext_to_html(glose,variant=False, encoding='utf-8')
+          htmlgloss=daba.formats.glosstext_to_html(glose,variant=False, encoding='utf-8')
           #log.write("[] glosstext_to_html: "+glose+" -> "+htmlgloss+"\n")
           wrepl=wrepl+u"<span class=\"w\" stage=\"0\">"+word+htmlgloss+u"\n</span>"
     
