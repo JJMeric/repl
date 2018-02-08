@@ -2114,67 +2114,68 @@ hákɛ_sí_t'_à_tíɲɛni_ná===hákɛ:n:mesure_sí:dtm:aucun_t':cop:COP
 #
 #	mà
 #
-t'_à_kàla_mà===t':cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR
-tɛ́_à_kàla_mà===tɛ́:cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR
-t'_à_kàlama===t':cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR
-tɛ́_à_kàlama===tɛ́:cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR
-tɛ́_ɲɔ́gɔn_kàlama===tɛ́:cop:COP.NEG_ɲɔ́gɔn:prn:RECP_kàla:n:tige_mà:pp:ADR
-b'_à_kàla_mà===b':cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR    # danger avec bɔ́
-bɛ́_à_kàla_mà===bɛ́:cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR
-bɔ́_à_kàla_mà===bɔ́:v:sortir_à:pers:3SG_kàla:n:tige_mà:pp:ADR
-bɔ́ra_à_kàla_mà===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_à:pers:3SG_kàla:n:tige_mà:pp:ADR
-b'_à_kàlama===b':cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR    # danger avec bɔ́
-bɛ́_à_kàlama===bɛ́:cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR
-t'_ò_kàla_mà===t':cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR
-tɛ́_ò_kàla_mà===tɛ́:cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR
-t'_ò_kàlama===t':cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR
-t'_ò_sí_kàlama===t':cop:COP.NEG_ò:prn:ce_sí:dtm:aucun_kàla:n:tige_mà:pp:ADR
-tɛ́_ò_kàlama===tɛ́:cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR
-tɛ́_ò_sí_kàlama===tɛ́:cop:COP.NEG_ò:prn:ce_sí:dtm:aucun_kàla:n:tige_mà:pp:ADR
-b'_ò_kàla_mà===b':cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR    # danger avec bɔ́
-bɛ́_ò_kàla_mà===bɛ́:cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR
-bɛ́_nìn_kàla_mà===bɛ́:cop:être_nìn:prn:ceci_kàla:n:tige_mà:pp:ADR
-bɔ́_à_kàla_mà===bɔ́:v:sortir_à:pers:3SG_kàla:n:tige_mà:pp:ADR
-bɔ́ra_à_kàla_mà===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_à:pers:3SG_kàla:n:tige_mà:pp:ADR
-bɔ́_à_bàlawu_kàla_mà===bɔ́:v:sortir_à:pers:3SG_bàlawu:n:catastrophe_kàla:n:tige_mà:pp:ADR
-bɔ́ra_à_bàlawu_kàla_mà===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_à:pers:3SG_bàlawu:n:catastrophe_kàla:n:tige_mà:pp:ADR
-bɔ́_ò_kàla_mà===bɔ́:v:sortir_ò:prn:ce_kàla:n:tige_mà:pp:ADR
-bɔ́ra_ò_kàla_mà===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_ò:prn:ce_kàla:n:tige_mà:pp:ADR
-b'_ò_kàlama===b':cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR    # danger avec bɔ́
-bɛ́_ò_kàlama===bɛ́:cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR
 # id avec ko ?
-t'_à_kàla_mà_kó===t':cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-tɛ́_à_kàla_mà_kó===tɛ́:cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-t'_à_kàlama_kó===t':cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-tɛ́_à_kàlama_kó===tɛ́:cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-b'_à_kàla_mà_kó===b':cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT    # danger avec bɔ́
-bɛ́_à_kàla_mà_kó===bɛ́:cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-bɔ́_à_kàla_mà_kó===bɔ́:v:sortir_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-b'_à_kàlama_kó===b':cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT    # danger avec bɔ́
-bɛ́_à_kàlama_kó===bɛ́:cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-t'_ò_kàla_mà_kó===t':cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-tɛ́_ò_kàla_mà_kó===tɛ́:cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-t'_ò_kàlama_kó===t':cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-tɛ́_ò_kàlama_kó===tɛ́:cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-b'_ò_kàla_mà_kó===b':cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT    # danger avec bɔ́
-bɛ́_ò_kàla_mà_kó===bɛ́:cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-bɔ́_ò_kàla_mà_kó===bɔ́:v:sortir_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-b'_ò_kàlama_kó===b':cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT    # danger avec bɔ́
-bɛ́_ò_kàlama_kó===bɛ́:cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-bɔ́_ɲɔ́gɔn_kàlama===bɔ́:v:sortir_ɲɔ́gɔn:prn:RECP_kàla:n:tige_mà:pp:ADR
-bɛ́_bìtile_ków_kàlama===bɛ́:cop:être_bìtile:n: [bì:n:aujourd'hui tìle:n:soleil]_ków:n: [kó:n:affaire w:mrph:PL]_kàla:n:tige_mà:pp:ADR
-PERS_sí_tɛ́_ɲɔ́gɔn_kàla_mà===PERS_sí:dtm:aucun_tɛ́:cop:COP.NEG_ɲɔ́gɔn:prn:RECP_kàla:n:tige_mà:pp:ADR
-tɛ́_ɲɔ́gɔn_kàla_mà===tɛ́:cop:COP.NEG_ɲɔ́gɔn:prn:RECP_kàla:n:tige_mà:pp:ADR
-tɛ́_kó_kàla_mà===tɛ́:cop:COP.NEG_kó:n:affaire_kàla:n:tige_mà:pp:ADR
-tɛ́_ków_kàla_mà===tɛ́:cop:COP.NEG_ków:n: [kó:n:affaire w:mrph:PL]_kàla:n:tige_mà:pp:ADR
-tɛ́_díɲɛ_kàla_mà===tɛ́:cop:COP.NEG_díɲɛ:n:monde_kàla:n:tige_mà:pp:ADR
-bɔ́_à_kó_kàla_mà_kó===bɔ́:v:sortir_à:pers:3SG_kó:n:affaire_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
-b'_à_kó_kàlama_kó===b':cop:être_à:pers:3SG_kó:n:affaire_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT    # danger avec bɔ́
-bɔ́_à_kó_kàla_mà===bɔ́:v:sortir_à:pers:3SG_kó:n:affaire_kàla:n:tige_mà:pp:ADR
-má_b'_à_kó_kàla_mà===ma:pm:PFV.NEG_b':v:sortir_à:pers:3SG_kó:n:affaire_kàla:n:tige_mà:pp:ADR
-PERS_b'_à_kó_kàlama===PERS_b':cop:être_à:pers:3SG_kó:n:affaire_kàla:n:tige_mà:pp:ADR    # danger avec bɔ́
 à_fɛ́rɛ_mà_PUNCT===à:pers:3SG_fɛ́rɛ:n:repos_mà:pp:ADR_PUNCT  # à son aise
 à_fɛ́rɛma_PUNCT===à:pers:3SG_fɛ́rɛ:n:repos_mà:pp:ADR_PUNCT   # contraction incorrecte
+b'_à_kàla_mà===b':cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR    # danger avec bɔ́
+b'_à_kàla_mà_kó===b':cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT    # danger avec bɔ́
+b'_à_kàlama===b':cop:être_à:pers:3SG_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]    # danger avec bɔ́
+b'_à_kàlama_kó===b':cop:être_à:pers:3SG_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]_kó:cop:QUOT    # danger avec bɔ́
+b'_à_kó_kàlama_kó===b':cop:être_à:pers:3SG_kó:n:affaire_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]_kó:cop:QUOT    # danger avec bɔ́
+b'_ò_kàla_mà===b':cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR    # danger avec bɔ́
+b'_ò_kàla_mà_kó===b':cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT    # danger avec bɔ́
+b'_ò_kàlama===b':cop:être_ò:prn:ce_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]    # danger avec bɔ́
+b'_ò_kàlama_kó===b':cop:être_ò:prn:ce_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]_kó:cop:QUOT    # danger avec bɔ́
+bɔ́_à_bàlawu_kàla_mà===bɔ́:v:sortir_à:pers:3SG_bàlawu:n:catastrophe_kàla:n:tige_mà:pp:ADR
+bɔ́_à_bàlawu_kàlamà===bɔ́:v:sortir_à:pers:3SG_bàlawu:n:catastrophe_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+bɔ́_à_kàla_mà===bɔ́:v:sortir_à:pers:3SG_kàla:n:tige_mà:pp:ADR
+bɔ́_à_kàla_mà_kó===bɔ́:v:sortir_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
+bɔ́_à_kó_kàla_mà===bɔ́:v:sortir_à:pers:3SG_kó:n:affaire_kàla:n:tige_mà:pp:ADR
+bɔ́_à_kó_kàla_mà_kó===bɔ́:v:sortir_à:pers:3SG_kó:n:affaire_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
+bɔ́_ò_kàla_mà===bɔ́:v:sortir_ò:prn:ce_kàla:n:tige_mà:pp:ADR
+bɔ́_ò_kàla_mà_kó===bɔ́:v:sortir_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
+bɔ́_ɲɔ́gɔn_kàlama===bɔ́:v:sortir_ɲɔ́gɔn:prn:RECP_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+bɔ́ra_à_bàlawu_kàla_mà===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_à:pers:3SG_bàlawu:n:catastrophe_kàla:n:tige_mà:pp:ADR
+bɔ́ra_à_bàlawu_kàlamà===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_à:pers:3SG_bàlawu:n:catastrophe_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+bɔ́ra_à_kàla_mà===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_à:pers:3SG_kàla:n:tige_mà:pp:ADR
+bɔ́ra_ò_kàla_mà===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_ò:prn:ce_kàla:n:tige_mà:pp:ADR
+bɛ_b'_à_kàlama===bɛ:pm:IPFV.AFF_b':v:sortir_à:pers:3SG_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]    # danger avec bɔ́
+bɛ́_à_kàla_mà===bɛ́:cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR
+bɛ́_à_kàla_mà_kó===bɛ́:cop:être_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
+bɛ́_à_kàlama===bɛ́:cop:être_à:pers:3SG_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+bɛ́_à_kàlama_kó===bɛ́:cop:être_à:pers:3SG_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]_kó:cop:QUOT
+bɛ́_bìtile_ków_kàlama===bɛ́:cop:être_bìtile:n: [bì:n:aujourd'hui tìle:n:soleil]_ków:n: [kó:n:affaire w:mrph:PL]_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+bɛ́_nìn_kàla_mà===bɛ́:cop:être_nìn:prn:ceci_kàla:n:tige_mà:pp:ADR
+bɛ́_ò_kàla_mà===bɛ́:cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR
+bɛ́_ò_kàla_mà_kó===bɛ́:cop:être_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
+bɛ́_ò_kàlama===bɛ́:cop:être_ò:prn:ce_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+bɛ́_ò_kàlama_kó===bɛ́:cop:être_ò:prn:ce_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]_kó:cop:QUOT
+má_b'_à_kó_kàla_mà===ma:pm:PFV.NEG_b':v:sortir_à:pers:3SG_kó:n:affaire_kàla:n:tige_mà:pp:ADR
+PERS_b'_à_kó_kàlama===PERS_b':cop:être_à:pers:3SG_kó:n:affaire_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+PERS_sí_tɛ́_ɲɔ́gɔn_kàla_mà===PERS_sí:dtm:aucun_tɛ́:cop:COP.NEG_ɲɔ́gɔn:prn:RECP_kàla:n:tige_mà:pp:ADR
+t'_à_kàla_mà===t':cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR
+t'_à_kàla_mà_kó===t':cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
+t'_à_kàlama===t':cop:COP.NEG_à:pers:3SG_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+t'_à_kàlama_kó===t':cop:COP.NEG_à:pers:3SG_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]_kó:cop:QUOT
+t'_ò_kàla_mà===t':cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR
+t'_ò_kàla_mà_kó===t':cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
+t'_ò_kàlama===t':cop:COP.NEG_ò:prn:ce_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+t'_ò_kàlama_kó===t':cop:COP.NEG_ò:prn:ce_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]_kó:cop:QUOT
+t'_ò_sí_kàlama===t':cop:COP.NEG_ò:prn:ce_sí:dtm:aucun_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+tɛ́_à_kàla_mà===tɛ́:cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR
+tɛ́_à_kàla_mà_kó===tɛ́:cop:COP.NEG_à:pers:3SG_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
+tɛ́_à_kàlama===tɛ́:cop:COP.NEG_à:pers:3SG_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+tɛ́_à_kàlama_kó===tɛ́:cop:COP.NEG_à:pers:3SG_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]_kó:cop:QUOT
+tɛ́_díɲɛ_kàla_mà===tɛ́:cop:COP.NEG_díɲɛ:n:monde_kàla:n:tige_mà:pp:ADR
+tɛ́_kó_kàla_mà===tɛ́:cop:COP.NEG_kó:n:affaire_kàla:n:tige_mà:pp:ADR
+tɛ́_ków_kàla_mà===tɛ́:cop:COP.NEG_ków:n: [kó:n:affaire w:mrph:PL]_kàla:n:tige_mà:pp:ADR
+tɛ́_ò_kàla_mà===tɛ́:cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR
+tɛ́_ò_kàla_mà_kó===tɛ́:cop:COP.NEG_ò:prn:ce_kàla:n:tige_mà:pp:ADR_kó:cop:QUOT
+tɛ́_ò_kàlama===tɛ́:cop:COP.NEG_ò:prn:ce_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+tɛ́_ò_kàlama_kó===tɛ́:cop:COP.NEG_ò:prn:ce_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]_kó:cop:QUOT
+tɛ́_ò_sí_kàlama===tɛ́:cop:COP.NEG_ò:prn:ce_sí:dtm:aucun_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
+tɛ́_ɲɔ́gɔn_kàla_mà===tɛ́:cop:COP.NEG_ɲɔ́gɔn:prn:RECP_kàla:n:tige_mà:pp:ADR
+tɛ́_ɲɔ́gɔn_kàlama===tɛ́:cop:COP.NEG_ɲɔ́gɔn:prn:RECP_kàlamà:pp:au.courant.de [kàla:n:tige mà:pp:ADR]
 
 #
 #	ɲɛ́fɛ̀
