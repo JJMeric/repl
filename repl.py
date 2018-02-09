@@ -269,7 +269,15 @@ while line:
 """
 nligne=tout.count(u"\n")
 
-script=textscript.search(tout).group(1)
+# script=textscript.search(tout).group(1)
+txtsc=textscript.search(tout)
+if txtsc!=None :   # supposedly = if txtsc :
+  script=txtsc.group(1)
+else :
+    script="Nouvel orthographe malien"
+    if filenametemp.endswith(".old"): script="Ancien orthographe malien"
+    print " ! textscript not set for "+filenametemp+" !!!  ASSUMED : "+script
+
 if notfast: print "text:script="+script
 if script=="Ancien orthographe malien" : tonal="old"
 elif script=="Nouvel orthographe malien" : tonal="new"
