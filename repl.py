@@ -212,14 +212,14 @@ if nargv>2 :
       else:
           tonal = "new"
       fileREPC = open (fileREPCname,"r")
-      print "Compiled rules from : "+fileREPCname
+      # print "Compiled rules from : "+fileREPCname
     except:
       try:
         fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.txt")
         if filenametemp.endswith(".old"):
             fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.old.txt")
         fileREPC = open (fileREPCname,"r")
-        print "Compiled rules from : "+fileREPCname
+        # print "Compiled rules from : "+fileREPCname
       except :
         sys.exit("repl.py needs a REPL-C.txt file or a REPL-STANDARD-C.txt file in the current directory (or in REPL)")
 
@@ -233,7 +233,7 @@ if notfast:
       print "using REPL-STANDARD.txt"
     except:
       try:
-        fileREPC = open(os.path.join(scriptdir, "REPL-STANDARD.txt"), "r")
+        fileREP = open(os.path.join(scriptdir, "REPL-STANDARD.txt"), "r")
         print "using {}".format(os.path.join(scriptdir, "REPL-STANDARD.txt"))
       except :
         sys.exit("repl.py needs a REPL.txt file or a REPL-STANDARD.txt file in the current directory (or in REPL)")
@@ -482,8 +482,26 @@ if nombre>0 :
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
+#
+# déterminer les noms propres, même vaguement!
+#
+# mot non initial commençant par une majuscule
+# et ambigu :
+wsearch=ur"</span><span class=\"w\" stage=\"[0-9\-]+\">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-]+)<.*lemma var.*></span>\n"
+wrepl=u"</span><span class=\"w\" stage=\"0\">\g<1><span class=\"lemma\">\g<1><sub class=\"ps\">n.prop</sub><sub class=\"gloss\">NOM</sub></span>\n"
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
+if nombre>0 :
+  if notfast: 
+    msg="%i modifs NOMPROPRE non-initial ambigu " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
 
-# NOW THE BIG TASK
+# # ou inconnu (pas trouvé):
+#</span><span class="w" stage="[0-9\-]+">[A-ZƐƆƝŊ][a-zɛɔɲŋ\-]+<span class="lemma">([^<]+)</span>
+
+# NOW THE BIG TASK     -go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!--
 if notfast : print "arg="+arg
 
 if arg=="fast" or arg=="-fast":
@@ -929,6 +947,9 @@ else :
         capt_gr_index=capt_gr_index+2 # 2 seulement (on ne récupère ni ps ni gloss) pas de +1 : pas de !lemma var
       elif glose==u"NPROPRE"      : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><\g<'+str(capt_gr_index+3)+ur'>>\n</span>'
+        capt_gr_index=capt_gr_index+3+1
+      elif glose==u"NPROPREforcetop"      : 
+        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
         capt_gr_index=capt_gr_index+3+1
       elif glose==u"NPROPRENOMM"      : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><sub class="gloss">NOM.M</sub></span>\n</span>'
@@ -1385,18 +1406,18 @@ else:
     os.rename(filenameout, filenamein)
     filegiven=filenamein
   else :
-    print "   "+filegiven+" ... mara dilannen don / fichier disponible / file is available\n"
+    if notfast : print "   "+filegiven+" ... mara dilannen don / fichier disponible / file is available\n"
    
   if notfast : print "    "+str(nbmots)+" mots desambiguises / disambiguated words"
   
   ambs=ambiguous.findall(tout)
   nbambs=len(ambs)
-  print "   ",nbambs, " mots ambigus restants  / ambiguous words left ", 100*nbambs/totalmots, "%"
+  if notfast : print "   ",nbambs, " mots ambigus restants  / ambiguous words left ", 100*nbambs/totalmots, "%"
    
-  psambs=psambsearch.findall(tout)
-  nbpsambs=len(psambs)
-  psambslist=""
   if notfast: 
+    psambs=psambsearch.findall(tout)
+    nbpsambs=len(psambs)
+    psambslist=""
     if nbpsambs>0:
       for psamb in psambs:
         if psamb not in psambslist: psambslist=psambslist+psamb+" "
@@ -1412,4 +1433,5 @@ else:
 timeend=time.time()
 timeelapsed=timeend-timestart
 # en minutes, approximativement
-print "    duree du traitement : "+str(int(timeelapsed))+" secondes, soit ",timeelapsed/totalmots," secondes/mot"
+if notfast : print "    duree du traitement : "+str(int(timeelapsed))+" secondes, soit ",timeelapsed/totalmots," secondes/mot"
+else : print filegiven+" ; ",totalmots," ; ",nbambs," ; ",int(timeelapsed)

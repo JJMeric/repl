@@ -29570,6 +29570,13 @@ ségin_yé_CONJ===ségin:num:huit_yé:pp:PP_CONJ
 #
 # 2NOMS (déterminés par ponctuation?)
 #
+táara_NPROPRE_PUNCT===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_NPROPREforcetop_PUNCT
+táa_NPROPRE_PUNCT===táa:v:aller_NPROPREforcetop_PUNCT
+bɔ́ra_NPROPRE_PUNCT===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_NPROPREforcetop_PUNCT
+bɔ́_NPROPRE_PUNCT===bɔ́:v:sortir_NPROPREforcetop_PUNCT
+tágara_NPROPRE_PUNCT===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_NPROPREforcetop_PUNCT
+tága_NPROPRE_PUNCT===tága:v:aller_NPROPREforcetop_PUNCT
+
 NORV_PRMRK===NORVname_PRMRK
 NORV_COPULE===NORVname_COPULE
 NORV_PMORCOP===NORVname_PMORCOP
