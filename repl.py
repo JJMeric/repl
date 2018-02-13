@@ -206,7 +206,7 @@ if nargv>2 :
    except : 
     try:
       fileREPCname="REPL-STANDARD-C.txt"
-      if filenametemp.endswith(".old"):
+      if filenametemp.endswith(".old") and "baabu_ni_baabu" not in filenametemp :
           fileREPCname = "REPL-STANDARD-C.old.txt"
           tonal = "old"
       else:
@@ -216,7 +216,7 @@ if nargv>2 :
     except:
       try:
         fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.txt")
-        if filenametemp.endswith(".old"):
+        if filenametemp.endswith(".old")  and "baabu_ni_baabu" not in filenametemp:
             fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.old.txt")
         fileREPC = open (fileREPCname,"r")
         # print "Compiled rules from : "+fileREPCname
@@ -282,6 +282,8 @@ if notfast: print "text:script="+script
 if script=="Ancien orthographe malien" : tonal="old"
 elif script=="Nouvel orthographe malien" : tonal="new"
 # elif script=="bailleul" : tonal="bailleul" # <---------- n'existe pas en réalité, vérifier arg !!!
+
+if "baabu_ni_baabu" in filename: tonal="new"
 
 if arg=="tonal" : tonal="tonal"
 elif arg=="bailleul" : tonal="bailleul"
@@ -582,7 +584,9 @@ else :
       liste_mots=re.sub(u"Ɔ","Ò",liste_mots)
       liste_mots=re.sub(u"ɲ","ny",liste_mots)
       liste_mots=re.sub(u"Ɲ","Ny",liste_mots)
-
+    elif  tonal=="new" :    # or use a non-capturing alternative (?:ɲ|ny)   and (?:Ɲ|Ny)
+      liste_mots=re.sub(u"ɲ","(?:ɲ|ny)",liste_mots)
+      liste_mots=re.sub(u"Ɲ","(?:Ɲ|Ny)",liste_mots)
     liste_mots=re.sub(u"é","é",liste_mots)   # normaliser les caractères français éventuels (ETRG.FRA intégraux possibles)
     liste_mots=re.sub(u"è","è",liste_mots)
     liste_mots=re.sub(u"ë","ë",liste_mots)

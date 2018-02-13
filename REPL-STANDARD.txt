@@ -4623,8 +4623,8 @@ mán'_PERS_tá_fɔ́===mán':pm:COND.AFF_PERS_tá:n:propriété_fɔ́:v:dire
 nàna_PERS_tá_fɔ́===nàna:v: [nà:v:venir na:mrph:PFV.INTR]_PERS_tá:n:propriété_fɔ́:v:dire
 nàn'_PERS_tá_fɔ́===nàn':v: [nà:v:venir na:mrph:PFV.INTR]_PERS_tá:n:propriété_fɔ́:v:dire
 
-tɛ́_dɔ́wɛrɛ_fɔ́===tɛ:pm:IPFV.NEG_dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:adj:autre]_fɔ́:v:dire
-tɛ́_dɔ́wɛrɛ_fɔ́_kó===tɛ:pm:IPFV.NEG_dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:adj:autre]_fɔ́:v:dire_kó:cop:QUOT
+tɛ́_dɔ́wɛrɛ_fɔ́===tɛ:pm:IPFV.NEG_dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:dtm:autre]_fɔ́:v:dire
+tɛ́_dɔ́wɛrɛ_fɔ́_kó===tɛ:pm:IPFV.NEG_dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:dtm:autre]_fɔ́:v:dire_kó:cop:QUOT
 à_fɔ́ra===à:pers:3SG_fɔ́ra:v: [fɔ́:v:dire ra:mrph:PFV.INTR]    # attention peut être fɔ́ rater avec kɔ́ - corrigé dans la partie PS SYNTAX
 n'_à_fɔ́ra===n':conj:si_à:pers:3SG_fɔ́ra:v: [fɔ́:v:dire ra:mrph:PFV.INTR]
 N'_à_fɔ́ra===n':conj:si_à:pers:3SG_fɔ́ra:v: [fɔ́:v:dire ra:mrph:PFV.INTR]
@@ -21709,7 +21709,7 @@ Ála_màa_sì_ní_à_kɛ́nɛya_díra_í_mà===Ála:n:Dieu_màa:pm:DES
 Ála_màa_sì_ní_à_kɛ́nɛya_díra_PERS_mà===Ála:n:Dieu_màa:pm:DES_sì:n:vie_ni:conj:et_à:pers:3SG_kɛ́nɛya:n:bonne.santé [kɛ́nɛ:vq:sain ya:mrph:DEQU]_díra:v: [dí:v:donner ra:mrph:PFV.INTR]_PERS_mà:pp:ADR
 Ála_màa_lábanko_ɲùman_díra_í_mà===Ála:n:Dieu_màa:pm:DES_lábanko:n:mort [lában:v:finir [lá:mrph:CAUS bán:v:terminer] kó:n:affaire]_ɲùman:adj:bon_díra:v: [dí:v:donner ra:mrph:PFV.INTR]_í:pers:2SG_mà:pp:ADR
 Ála_màa_lábanko_ɲùman_díra_PERS_mà===Ála:n:Dieu_màa:pm:DES_lábanko:n:mort [lában:v:finir [lá:mrph:CAUS bán:v:terminer] kó:n:affaire]_ɲùman:adj:bon_díra:v: [dí:v:donner ra:mrph:PFV.INTR]_PERS_mà:pp:ADR
-Ála_k'_án_fàma_ní_dɔ́wɛrɛ_mà===Ála:n:Dieu_k':pm:SBJV_án:pers:1PL_fàma:v:être.longtemps.absent_ni:conj:et_dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:adj:autre]_mà:pp:ADR
+Ála_k'_án_fàma_ní_dɔ́wɛrɛ_mà===Ála:n:Dieu_k':pm:SBJV_án:pers:1PL_fàma:v:être.longtemps.absent_ni:conj:et_dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:dtm:autre]_mà:pp:ADR
 N'_à_ká_dí_Ála_yé===n':prep:si_à:pers:3SG_ka:pm:QUAL.AFF_dí:vq:agréable_Ála:n:Dieu_yé:pp:PP
 N'_à_ká_dí_ála_yé===n':prep:si_à:pers:3SG_ka:pm:QUAL.AFF_dí:vq:agréable_Ála:n:Dieu_yé:pp:PP
 n'_à_ká_dí_Ála_yé===n':conj:si_à:pers:3SG_ka:pm:QUAL.AFF_dí:vq:agréable_Ála:n:Dieu_yé:pp:PP
@@ -22798,9 +22798,9 @@ fòsi_tɛ́_NAME_kɔ́===fósì:n:rien_tɛ́:cop:COP.NEG_NAME_kɔ́:pp:après
 fòsi_tɛ́_yé_NAME_kɔ́===fósì:n:rien_tɛ:pm:IPFV.NEG_yé:v:voir_NAME_kɔ́:pp:après
 PARTICIPE_kɔ́_PUNCT===PARTICIPE_kɔ́:pp:après_PUNCT
 PARTICIPE_kɔ́_dè_PUNCT===PARTICIPE_kɔ́:pp:après_dè:prt:FOC_PUNCT
-dɔ́wɛrɛ_tɛ́_NAME_fànga_bònya_kójugu_kɔ́===dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:adj:autre]_tɛ́:cop:COP.NEG_NAME_fànga:n:force_bònya:n:grosseur [bòn:vq:grand ya:mrph:DEQU]_kójugu:adv:trop [kó:n:affaire júgu:adj:mauvais]_kɔ́:pp:après
-dɔ́wɛrɛ_tɛ́_NAME_yé_NAME_kɔ́===dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:adj:autre]_tɛ́:cop:COP.NEG_NAME_yé:pp:PP_NAME_kɔ́:pp:après
-dɔ́wɛrɛ_tɛ́_NAME_NAME_yé_NAME_kɔ́===dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:adj:autre]_tɛ́:cop:COP.NEG_NAME_NAME_yé:pp:PP_NAME_kɔ́:pp:après
+dɔ́wɛrɛ_tɛ́_NAME_fànga_bònya_kójugu_kɔ́===dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:dtm:autre]_tɛ́:cop:COP.NEG_NAME_fànga:n:force_bònya:n:grosseur [bòn:vq:grand ya:mrph:DEQU]_kójugu:adv:trop [kó:n:affaire júgu:adj:mauvais]_kɔ́:pp:après
+dɔ́wɛrɛ_tɛ́_NAME_yé_NAME_kɔ́===dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:dtm:autre]_tɛ́:cop:COP.NEG_NAME_yé:pp:PP_NAME_kɔ́:pp:après
+dɔ́wɛrɛ_tɛ́_NAME_NAME_yé_NAME_kɔ́===dɔ́wɛrɛ:prn:autre [dɔ́:prn:certain wɛ́rɛ:dtm:autre]_tɛ́:cop:COP.NEG_NAME_NAME_yé:pp:PP_NAME_kɔ́:pp:après
 
 #
 #	kɔ́nɔ
@@ -29576,6 +29576,8 @@ bɔ́ra_NPROPRE_PUNCT===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_NPROPREforc
 bɔ́_NPROPRE_PUNCT===bɔ́:v:sortir_NPROPREforcetop_PUNCT
 tágara_NPROPRE_PUNCT===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_NPROPREforcetop_PUNCT
 tága_NPROPRE_PUNCT===tága:v:aller_NPROPREforcetop_PUNCT
+NPROPRETOP_ni_NPROPRE_cɛ́_PUNCT===NPROPRETOP_ni:conj:et_NPROPREforcetop_cɛ́:pp:entre_PUNCT
+NPROPRETOP_àní_NPROPRE_cɛ́_PUNCT===NPROPRETOP_àní:conj:ainsi.que_NPROPREforcetop_cɛ́:pp:entre_PUNCT
 
 NORV_PRMRK===NORVname_PRMRK
 NORV_COPULE===NORVname_COPULE
