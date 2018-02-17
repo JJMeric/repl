@@ -284,9 +284,18 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur"ɲogɔn",u"ɲɔgɔn",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"ɲɔgon",u"ɲɔgɔn",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"ɲɔgɔŋ",u"ɲɔgɔn",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" tɔgɔdala",u" togodala",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" tɔgɔdaw",u" togodaw",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" fɛn ɲɛnama",u" fɛnɲɛnama",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"jira kɔ ",u"jira ko ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"jirala kɔ ",u"jirala ko ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"jatɛminɛ",u"jateminɛ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" wɛlɛ ",u" wele ",tout,0,re.U|re.MULTILINE)
 				
 				# force duplicates to stick together
 				tout=re.sub(ur" (?P<stem>.+) \- (?P=stem) ", u" \g<1>-\g<1> ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" (?P<stem>.+)\- (?P=stem) ", u" \g<1>-\g<1> ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" (?P<stem>.+) \-(?P=stem) ", u" \g<1>-\g<1> ",tout,0,re.U|re.MULTILINE)
 
 				#log.write("tout:'"+tout+"'\n")
 				try : 

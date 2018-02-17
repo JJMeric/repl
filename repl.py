@@ -278,12 +278,13 @@ else :
     if filenametemp.endswith(".old"): script="Ancien orthographe malien"
     print " ! textscript not set for "+filenametemp+" !!!  ASSUMED : "+script
 
-if notfast: print "text:script="+script
 if script=="Ancien orthographe malien" : tonal="old"
 elif script=="Nouvel orthographe malien" : tonal="new"
 # elif script=="bailleul" : tonal="bailleul" # <---------- n'existe pas en réalité, vérifier arg !!!
 
 if "baabu_ni_baabu" in filename: tonal="new"
+
+if notfast: print "text:script="+script+    ",    tonal="+tonal
 
 if arg=="tonal" : tonal="tonal"
 elif arg=="bailleul" : tonal="bailleul"
@@ -309,7 +310,7 @@ if notfast:
     print nbpsambs, " ps ambigues ( "+psambslist+")", 100*nbpsambs/totalmots, "%"
 
 psvalides="|adj|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers|pm|pp|prep|prn|prt|ptcp|v|vq|"
-valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_AORN_DORP_ADJORD_PMORCOP_"
+valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_AORN_DORP_ADJORD_PMORCOP_"
 # toujours commencer et finir par _
 # autres mots utilisés, traitements spéciaux : NUMnan, degremove, ADVNforcen, ADVNforceadv, CONJPREPforceconj, CONJPREPforceprep
 gvalides=u"NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRICE_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV.PROG_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_BE_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
@@ -384,8 +385,13 @@ if nombre>0 :
 # exemple traité : on ne garde pas le lemma var n/adj/dtm/prn/ptcp/n.prop/num, on garde les autres (si il y a des dérivations possibles)
 # <span class="lemma">siyansikalanw<span class="lemma var">siyansikalanw<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub><span class="m">siyansikalan<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">siyansikalanw<sub class="ps">n</sub><span class="m">siyansika<sub class="ps">v</sub></span><span class="m">lan<sub class="ps">mrph</sub><sub class="gloss">INSTR</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span>\n</span>
 
-wsearch=ur'<span class="lemma">([^<]+)<span class="lemma var">([^<]+)<sub class="ps">n/adj/dtm/prn/ptcp/n\.prop/num</sub><span class="m">[^<]+<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">(.+)</span></span>\n</span>'
-wrepl=ur'<span class="lemma">\g<1><span class="lemma var">\g<2></span></span>\n</span>'
+# ne marche pas pour: (est-ce que ça marche avec la correction du 2d n\.prop   ?)
+# <span class="w" stage="0">konyèw<span class="lemma">konyɛw<span class="lemma var">konyɛw<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub><span class="m">konyɛ<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">koɲɛw<sub class="ps">n</sub><span class="m">kóɲɛ<sub class="ps">n</sub><sub class="gloss">affaire</sub><span class="m">kó<sub class="ps">n</sub><sub class="gloss">affaire</sub></span><span class="m">ɲɛ́<sub class="ps">n</sub><sub class="gloss">fois</sub></span></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span>
+# </span>
+# revue de la formule complète le 16/2/18
+
+wsearch=ur'<span class="lemma">[^<]+<span class="lemma var">[^<]+<sub class="ps">n/adj/dtm/prn/ptcp/n\.prop/num</sub><span class="m">[^<]+<sub class="ps">n/adj/dtm/prn/ptcp/n\.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">(.+)</span></span>\n</span>'
+wrepl=ur'<span class="lemma">\g<1></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # Gloss vide en lemma et n/adj/dtm/prn/ptcp/n.prop/num
 if nombre>0 :
   if notfast: 
@@ -514,8 +520,8 @@ if arg=="fast" or arg=="-fast":
     linerepl=re.sub(ur"\n$",u"",linerepl,0,re.U+re.MULTILINE)    # strip trailing newline char
     nblinerepl=nblinerepl+1
     wsearch, wrepl = linerepl.split("===")
-    wsearch = wsearch.replace(u"¤¤",ur"\n")
-    wrepl = wrepl.replace(u"¤¤",u"\n")
+    #wsearch = wsearch.replace(u"¤¤",ur"\n")
+    #wrepl = wrepl.replace(u"¤¤",u"\n")
     
     tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U+
     if nombre>0 :
@@ -566,6 +572,7 @@ else :
     linerepl=linerepl.strip()   # strips trailing spaces ?
     elements=linerepl.split(u"===")
     liste_mots=elements[0]
+    # liste_mots_orig=liste_mots
 
     if tonal=="bailleul" : 
       liste_mots=re.sub(u"́","",liste_mots)
@@ -770,6 +777,7 @@ else :
       elif mot==u"CONJPREP" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(prep/conj|conj/prep)</sub><(((?!lemma var).)*)>\n</span>'
       elif mot==u"CONJPOSS" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">conj</sub><sub class="gloss">POSS</sub></span>\n</span>'
       elif mot==u"NPROPRE"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><(((?!lemma var).)*)>\n</span>'
+      elif mot==u"NPROPRENOM"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM</sub></span>\n</span>'
       elif mot==u"NPROPRENOMM"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.M</sub></span>\n</span>'
       elif mot==u"NPROPRENOMF"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.F</sub></span>\n</span>'
       elif mot==u"NPROPRENOMMF"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.MF</sub></span>\n</span>'
@@ -787,7 +795,7 @@ else :
       elif mot==u"AMBIGUOUS": wsearch=wsearch+ur'<span class="w"(.*)lemma var(.*)\n</span>'
       else :
         if u"'" in mot: mot=re.sub(ur"\'",u"[\'\’]+",mot)   # satanées curly brackets
-        wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+mot+u'<.*</span>\n</span>'
+        wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+mot+ur'<.*</span>\n</span>'
       if sequence=="": sequence=mot
       else : sequence=sequence+" "+mot
     
@@ -822,13 +830,13 @@ else :
       elif glose==u"GUILLEMET"    : wrepl=wrepl+ur'<span class="c">"</span>\n'
       elif glose==u"PERCENT"  : wrepl=wrepl+ur'<span class="c">%</span>\n'
       elif glose==u"PUNCT"    :
-        wrepl=wrepl+ur'<span class="c">\g<'+str(capt_gr_index+1)+u'></span>\n'
+        wrepl=wrepl+ur'<span class="c">\g<'+str(capt_gr_index+1)+ur'></span>\n'
         capt_gr_index=capt_gr_index+1
       elif glose==u"COMMENT"    :
-        wrepl=wrepl+ur'<span class="comment">\g<'+str(capt_gr_index+1)+u'></span>\n'
+        wrepl=wrepl+ur'<span class="comment">\g<'+str(capt_gr_index+1)+ur'></span>\n'
         capt_gr_index=capt_gr_index+1
       elif glose==u"TAG"    :
-        wrepl=wrepl+ur'<span class="t">\g<'+str(capt_gr_index+1)+u'></span>\n'
+        wrepl=wrepl+ur'<span class="t">\g<'+str(capt_gr_index+1)+ur'></span>\n'
         capt_gr_index=capt_gr_index+1
       elif glose==u"NAME"      : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n</sub><\g<'+str(capt_gr_index+3)+ur'>>\n</span>'
@@ -848,13 +856,13 @@ else :
         capt_gr_index=capt_gr_index+3+1
       elif glose==u"VPERF"    : 
         #log.write(ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">v</sub><\g<'+str(capt_gr_index+3)+ur'>PFV.INTR\g<'+str(capt_gr_index+5)+'>>\n</span>')
-        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">v</sub><\g<'+str(capt_gr_index+3)+ur'>PFV.INTR\g<'+str(capt_gr_index+5)+'>>\n</span>'
+        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">v</sub><\g<'+str(capt_gr_index+3)+ur'>PFV.INTR\g<'+str(capt_gr_index+5)+ur'>>\n</span>'
         capt_gr_index=capt_gr_index+5+1  # j'aurais pensé +2 : il y a deux groupes  (?!lemma var) autour de PFV.INTR
       #elif glose==u"VPERF"    : 
       #  wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">v</sub><span class="m">\g<'+str(capt_gr_index+3)+ur'><sub class="ps">v</sub><sub class="gloss">\g<'+str(capt_gr_index+4)+ur'></sub></span><span class="m">\g<'+str(capt_gr_index+5)+ur'><sub class="ps">mrph</sub><sub class="gloss">PFV.INTR</sub></span></span>\n</span>'
       #  capt_gr_index=capt_gr_index+5 # +1 (pas de (?!lemma var))
       elif glose==u"ADJORD"    : 
-        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">adj</sub><\g<'+str(capt_gr_index+3)+ur'><sub class="gloss">ORD</sub>\g<'+str(capt_gr_index+5)+'>>\n</span>'
+        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">adj</sub><\g<'+str(capt_gr_index+3)+ur'><sub class="gloss">ORD</sub>\g<'+str(capt_gr_index+5)+ur'>>\n</span>'
         capt_gr_index=capt_gr_index+5+1
       elif glose==u"VQ"       : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">vq</sub><\g<'+str(capt_gr_index+3)+ur'>>\n</span>'
@@ -952,7 +960,7 @@ else :
       elif glose==u"NPROPRE"      : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><\g<'+str(capt_gr_index+3)+ur'>>\n</span>'
         capt_gr_index=capt_gr_index+3+1
-      elif glose==u"NPROPREforcetop"      : 
+      elif glose==u"NPROPRENOMforcetop"      : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
         capt_gr_index=capt_gr_index+3+1
       elif glose==u"NPROPRENOMM"      : 
@@ -1221,25 +1229,29 @@ else :
           html1=daba.formats.glosstext_to_html(glose1,variant=False, encoding='utf-8')
           html1=re.sub(ur"\<\/span\>$",u"",html1)
           html2=daba.formats.glosstext_to_html(glose2,variant=True, encoding='utf-8')
-          wrepl=wrepl+u"<span class=\"w\" stage=\"0\">"+word+html1+html2+u"</span>\n</span>"
+          wrepl=wrepl+ur"<span class=\"w\" stage=\"0\">"+word+html1+html2+ur"</span>\n</span>"
         else :
           htmlgloss=daba.formats.glosstext_to_html(glose,variant=False, encoding='utf-8')
           #log.write("[] glosstext_to_html: "+glose+" -> "+htmlgloss+"\n")
-          wrepl=wrepl+u"<span class=\"w\" stage=\"0\">"+word+htmlgloss+u"\n</span>"
+          wrepl=wrepl+ur"<span class=\"w\" stage=\"0\">"+word+htmlgloss+ur"\n</span>"
+          # a note of warning : wrepl works as a string for re.subn, so ur"" is not strictly needed 
+          #       BUT when writing compiled rules ur"" is needed as regards \n, to conserve them as is in the file
+          #       number of lines in file should = number of rules printed by program
     
     nbreplok=nbreplok+1
     iprogress=nbreplok/float(nlignerepl)
     update_progress(iprogress)
-
+    # if liste_mots_orig=="kɛ́_NORV_yé" : print "\n\n"+liste_mots_orig+"\n\nwsearch\n\n"+wsearch+"\n\nwrepl:\n\n"+wrepl
+    # if liste_mots_orig=="kɛ́_AORN_yé" : print "\n\n"+liste_mots_orig+"\n\nwsearch\n\n"+wsearch+"\n\nwrepl:\n\n"+wrepl
     tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U+
 
     # écrire les formules compilées
 
-    wsearch=re.sub(ur"\n",u"¤¤",wsearch,0,re.U+re.MULTILINE)
-    wsearch=re.sub(ur"\\n",u"¤¤",wsearch,0,re.U+re.MULTILINE)  
+    #wsearch=re.sub(ur"\n",u"¤¤",wsearch,0,re.U+re.MULTILINE)
+    #wsearch=re.sub(ur"\\n",u"¤¤",wsearch,0,re.U+re.MULTILINE)  
     
-    wrepl=re.sub(ur"\n",u"¤¤",wrepl,0,re.U+re.MULTILINE)
-    wrepl=re.sub(ur"\\n",u"¤¤",wrepl,0,re.U+re.MULTILINE)
+    #wrepl=re.sub(ur"\n",u"¤¤",wrepl,0,re.U+re.MULTILINE)
+    #wrepl=re.sub(ur"\\n",u"¤¤",wrepl,0,re.U+re.MULTILINE)
     
     fileREPC.write(wsearch+u"==="+wrepl+u"\n")
 
@@ -1257,80 +1269,77 @@ else :
     
 # POST : systematic global replaces ###############################################
 
-# handle double pm   like dtm/prn 
-# simple cases (simple gloss)
+# handle double pm   like dtm/prn and force disambiguator to choose
 
-wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><sub class="gloss">([^<]*)</sub>(<span class="lemma var">|</span>)'
-wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub></span>\g<5>'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: ps double -> lemma/lemma var duplication
-if nombre>0 :
-  if notfast: 
+if notfast : # this is useful for manual disambiguation, it is not for Corpus ambiguity (-fast) as it increases ambiguity
+
+  # simple cases (simple gloss)
+
+  wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><sub class="gloss">([^<]*)</sub>(<span class="lemma var">|</span>)'
+  wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub></span>\g<5>'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: ps double -> lemma/lemma var duplication
+  if nombre>0 :
     msg="%i modifs ps double -> lemma/lemma var duplication " % nombre +"\n"
     log.write(msg.encode("utf-8"))
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre
 
-wsearch=ur'<span class="lemma var">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><sub class="gloss">([^<]*)</sub></span>'
-wrepl=ur'<span class="lemma var">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub></span>'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: double -> lemma var/lemma var duplication
-if nombre>0 :
-  if notfast: 
+  wsearch=ur'<span class="lemma var">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><sub class="gloss">([^<]*)</sub></span>'
+  wrepl=ur'<span class="lemma var">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub></span>'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: double -> lemma var/lemma var duplication
+  if nombre>0 :
     msg="%i modifs double -> lemma var/lemma var duplication " % nombre +"\n"
     log.write(msg.encode("utf-8"))
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre
 
-# how to handle complex gloss like dɔw ?
-# ONLY Complex gloss with two sub components (and no main gloss)
-wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span>'
-wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span></span>'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: ps double complexgloss -> lemma/lemma var duplication
-if nombre>0 :
-  if notfast: 
+  # how to handle complex gloss like dɔw ?
+  # ONLY Complex gloss with two sub components (and no main gloss)
+  wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span>'
+  wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span></span>'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: ps double complexgloss -> lemma/lemma var duplication
+  if nombre>0 :
     msg="%i modifs ps double complexgloss -> lemma/lemma var duplication " % nombre +"\n"
     log.write(msg.encode("utf-8"))
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre
 
 
-wsearch=ur'<span class="lemma var">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span></span>'
-wrepl=ur'<span class="lemma var">\g<1><sub class="ps">\g<2></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span></span>'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: double  complexgloss-> lemma var/lemma var duplication
-if nombre>0 :
-  if notfast: 
+  wsearch=ur'<span class="lemma var">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span></span>'
+  wrepl=ur'<span class="lemma var">\g<1><sub class="ps">\g<2></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><span class="m">\g<4><sub class="ps">\g<5></sub><sub class="gloss">\g<6></sub></span><span class="m">\g<7><sub class="ps">\g<8></sub><sub class="gloss">\g<9></sub></span></span>'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: double  complexgloss-> lemma var/lemma var duplication
+  if nombre>0 :
     msg="%i modifs double  complexgloss-> lemma var/lemma var duplication " % nombre +"\n"
     log.write(msg.encode("utf-8"))
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre
 
-# ONLY Complex gloss with two sub components (and explicit main gloss)
+  # ONLY Complex gloss with two sub components (and explicit main gloss)
 
-wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><sub class="gloss">([^<]*)</sub><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span>'
-wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span></span>'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: ps double complexgloss -> lemma/lemma var duplication
-if nombre>0 :
-  if notfast: 
+  wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><sub class="gloss">([^<]*)</sub><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span>'
+  wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span></span>'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: ps double complexgloss -> lemma/lemma var duplication
+  if nombre>0 :
     msg="%i modifs ps double complexgloss -> lemma/lemma var duplication " % nombre +"\n"
     log.write(msg.encode("utf-8"))
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre
 
 
-wsearch=ur'<span class="lemma var">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><sub class="gloss">([^<]*)</sub><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span></span>'
-wrepl=ur'<span class="lemma var">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span></span>'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: double  complexgloss-> lemma var/lemma var duplication
-if nombre>0 :
-  if notfast: 
+  wsearch=ur'<span class="lemma var">([^<]+)<sub class="ps">([^<\/]+)\/([^<]+)</sub><sub class="gloss">([^<]*)</sub><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span><span class="m">([^<]+)<sub class="ps">([^<]+)</sub><sub class="gloss">([^<]+)</sub></span></span>'
+  wrepl=ur'<span class="lemma var">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span></span><span class="lemma var">\g<1><sub class="ps">\g<3></sub><sub class="gloss">\g<4></sub><span class="m">\g<5><sub class="ps">\g<6></sub><sub class="gloss">\g<7></sub></span><span class="m">\g<8><sub class="ps">\g<9></sub><sub class="gloss">\g<10></sub></span></span>'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # FIN: double  complexgloss-> lemma var/lemma var duplication
+  if nombre>0 :
     msg="%i modifs double  complexgloss-> lemma var/lemma var duplication " % nombre +"\n"
     log.write(msg.encode("utf-8"))
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre
 
 # fin : decoration pour consultation dans le navigateur
 #  ambigüs
