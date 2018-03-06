@@ -120,6 +120,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u"uii",u"uli",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"ɛiɛ",u"ɛlɛ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"ɔiɔ",u"ɔlɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"ɔii",u"ɔli",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"iia",u"ila",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"iie",u"ile",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"oia",u"ola",tout,0,re.U|re.MULTILINE)
@@ -177,6 +178,8 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u"\,([^\s])",u", \g<1>",tout,0,re.U|re.MULTILINE)
 				# suppress space(s) before comma,
 				tout=re.sub(u"([\s]+)\,",u",",tout,0,re.U|re.MULTILINE)
+				# except in numbers (with decimals)
+				tout=re.sub(u" ([0-9\.]+), ([0-9]+)",u" \g<1>,\g<2>",tout,0,re.U|re.MULTILINE)
 
 				# suppress spaces and tabs after end of line
 				tout=re.sub(ur"[ \t]+\n",u"\n",tout,0,re.U|re.MULTILINE)
@@ -208,6 +211,9 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				
 				# enforce -nan ordinal to be attached to number
 				tout=re.sub(ur"([0-9])\snan",u"\g<1>nan",tout,0,re.U|re.MULTILINE)  
+
+				# enforce nospace before percent
+				tout=re.sub(ur"([0-9])\s\%",u"\g<1>%",tout,0,re.U|re.MULTILINE)  
 
 				# enforce simple list if only 2 or 3 items in list
 				# to be fixed : if line already starts with - 
@@ -291,11 +297,19 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur"jirala kɔ ",u"jirala ko ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"jatɛminɛ",u"jateminɛ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" wɛlɛ ",u" wele ",tout,0,re.U|re.MULTILINE)
-				
+				tout=re.sub(ur" kubaru ",u" kibaru ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" Kubaru ",u" Kibaru ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" bɛɛ layɛlen",u" bɛɛ lajɛlen",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"sɛnɛkelaw",u"sɛnɛkɛlaw",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"gɛleya",u"gɛlɛya",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"gelɛya",u"gɛlɛya",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɔlɔgirin",u" kologirin",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" siyakɛda",u" ciyakɛda",tout,0,re.U|re.MULTILINE)
+
 				# force duplicates to stick together
-				tout=re.sub(ur" (?P<stem>.+) \- (?P=stem) ", u" \g<1>-\g<1> ",tout,0,re.U|re.MULTILINE)
-				tout=re.sub(ur" (?P<stem>.+)\- (?P=stem) ", u" \g<1>-\g<1> ",tout,0,re.U|re.MULTILINE)
-				tout=re.sub(ur" (?P<stem>.+) \-(?P=stem) ", u" \g<1>-\g<1> ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" (?P<stem>.+)[\s]+\-[\s]+(?P=stem)", u" \g<1>-\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" (?P<stem>.+)\-[\s]+(?P=stem)", u" \g<1>-\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" (?P<stem>.+)[\s]+\-(?P=stem)", u" \g<1>-\g<1>",tout,0,re.U|re.MULTILINE)
 
 				#log.write("tout:'"+tout+"'\n")
 				try : 

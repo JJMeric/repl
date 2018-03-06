@@ -496,7 +496,7 @@ if nombre>0 :
 # mot non initial commençant par une majuscule
 # et ambigu :
 wsearch=ur"</span><span class=\"w\" stage=\"[0-9\-]+\">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-]+)<.*lemma var.*></span>\n"
-wrepl=u"</span><span class=\"w\" stage=\"0\">\g<1><span class=\"lemma\">\g<1><sub class=\"ps\">n.prop</sub><sub class=\"gloss\">NOM</sub></span>\n"
+wrepl=ur'</span><span class="w" stage="0">\g<1><span class="lemma">\g<1><sub class="ps">n.prop</sub><sub class="gloss">NOM</sub></span>\n'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
 if nombre>0 :
   if notfast: 
@@ -1229,11 +1229,11 @@ else :
           html1=daba.formats.glosstext_to_html(glose1,variant=False, encoding='utf-8')
           html1=re.sub(ur"\<\/span\>$",u"",html1)
           html2=daba.formats.glosstext_to_html(glose2,variant=True, encoding='utf-8')
-          wrepl=wrepl+ur"<span class=\"w\" stage=\"0\">"+word+html1+html2+ur"</span>\n</span>"
+          wrepl=wrepl+ur'<span class="w" stage="0">'+word+html1+html2+ur'</span>\n</span>'
         else :
           htmlgloss=daba.formats.glosstext_to_html(glose,variant=False, encoding='utf-8')
           #log.write("[] glosstext_to_html: "+glose+" -> "+htmlgloss+"\n")
-          wrepl=wrepl+ur"<span class=\"w\" stage=\"0\">"+word+htmlgloss+ur"\n</span>"
+          wrepl=wrepl+ur'<span class="w" stage="0">'+word+htmlgloss+ur'\n</span>'
           # a note of warning : wrepl works as a string for re.subn, so ur"" is not strictly needed 
           #       BUT when writing compiled rules ur"" is needed as regards \n, to conserve them as is in the file
           #       number of lines in file should = number of rules printed by program

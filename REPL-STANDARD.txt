@@ -6509,6 +6509,13 @@ kànâ_mɛ́ɛn===kànâ:pm:PROH_mɛ́ɛn:v:durer
 PERS_sìgilen_mɛ́ɛnna===PERS_sìgilen:ptcp: [sìgi:v:asseoir len:mrph:PTCP.RES]_mɛ́ɛnna:v: [mɛ́ɛn:v:durer na:mrph:PFV.INTR]
 mɛ́ɛnna===mɛ́ɛnna:v: [mɛ́ɛn:v:durer na:mrph:PFV.INTR]
 
+#
+#	míiri "penser"
+#
+PERS_bɛ_míiri_PERS_mà===PERS_bɛ:pm:IPFV.AFF_míiri:v:penser_PERS_mà:pp:ADR
+PERS_tɛ_míiri_PERS_mà===PERS_tɛ:pm:IPFV.NEG_míiri:v:penser_PERS_mà:pp:ADR
+PERS_ma_míiri_PERS_mà===PERS_ma:pm:PFV.NEG_míiri:v:penser_PERS_mà:pp:ADR
+PERS_mánà_míiri_PERS_mà===PERS_mánà:pm:COND.AFF_míiri:v:penser_PERS_mà:pp:ADR
 
 #
 #	mìn "boire"
@@ -21417,6 +21424,58 @@ kàmanaganbagatɔ===kàmanaganbagatɔ:n: [kàmanagàn:v:angoisser [kàmana:
 hɔ́rɔnden===hɔ́rɔnden:n: [hɔ́rɔn:n:libre dén:n:enfant]
 bɔ́lɔn-fɛ̀-dén===bɔ́lɔn-fɛ̀-dén:n: [bɔ́lɔn:n:rue fɛ̀:pp:par dén:n:efant]
 
+# new build unkowns
+animatɛri===animatɛri:n:animateur  # dans les signatures d'articles des lecteur de Kibaru, Jɛkabaara
+animatɛrɛ===animatɛri:n:animateur
+medayi===medayi:n:médaille
+ekipu===ekipu:n:équipe
+
+zozɛfu===Zozɛphu:n.prop:Joseph
+Zozɛfu===Zozɛphu:n.prop:Joseph
+aarɔn===Aarɔn:n.prop:Aaron
+zonatan===Zonatan:n.prop:Jonathan
+Zonatan===Zonatan:n.prop:Jonathan
+zozuwe===Zozuwe:n.prop:Josué
+bɛnzamɛn===Bɛnzamɛn:n.prop:Benjamin
+Bɛnzamɛn===Bɛnzamɛn:n.prop:Benjamin
+zeremi===Zeremi:n.prop:Jérémie
+Zeremi===Zeremi:n.prop:Jérémie
+zɔbu===Zɔbu:n.prop:Job
+Zɔbu===Zɔbu:n.prop:Job
+efarayimu===Efarayimu:n.prop:Ephraïm
+Efarayimu===Efarayimu:n.prop:Ephraïm
+amɛdu===Ámɛ̀du:n.prop:NOM.M   # variante de Àmídù   - cf. "amɛdu seku ture"
+Amɛdu===Ámɛ̀du:n.prop:NOM.M   # variante de Àmídù
+
+filisitikaw===filisitikaw:n: [Filisiti:n.prop:TOP ka:mrph:GENT w:mrph:PL]
+kalidekaw===kalidekaw:n: [Kalide:n.prop:TOP ka:mrph:GENT w:mrph:PL]
+
+zanpege===Zanpege:n.prop:NOM.M  # dans tarawele-batigemisi.
+Zanpege===Zanpege:n.prop:NOM.M  # dans tarawele-batigemisi.
+gɛnkuru===Gɛnkuru:n.prop:NOM.M # dans jabate-genkurunin.
+Gɛnkuru===Gɛnkuru:n.prop:NOM.M # dans jabate-genkurunin.
+gɛnkurunin===Gɛnkurunin:n.prop:NOM.M # dans jabate-genkurunin.
+Gɛnkurunin===Gɛnkurunin:n.prop:NOM.M # dans jabate-genkurunin.
+kotɛdimi===Kotɛdimi:n.prop:NOM.M # dans kibaru135_04tarawele-fanakekoro_ni.old
+fanakɛkɔrɔ===Fanakɛkɔrɔ:n.prop:NOM.M # dans kibaru135_04tarawele-fanakekoro_ni.old
+tabusire===Tabusire:n.prop:NOM.M # dans tarawele-tabusire1 et 2
+
+siyɔn===Siyɔn:n.prop:TOP  # dans LK-3hakilimaya23batodonkiliw
+Siyɔn===Siyɔn:n.prop:TOP  # dans LK-3hakilimaya23batodonkiliw
+babilɔni===Babilɔni:n.prop:TOP  # dans LK-3hakilimaya23batodonkiliw
+Babilɔni===Babilɔni:n.prop:TOP  # dans LK-3hakilimaya23batodonkiliw
+
+minisitiri===mínisiri:n:ministre
+farawɔn===farawɔn:n:pharaon # dans LK et rubrique histoire de Kibaru
+shɛki===shɛki:n:cheikh
+serubɛn===serubɛn:n:chérubin # dans LK
+desɛn===desɛn:n:dessin # rubrique "tulon" de Kibaru, ex: kibaru269_07tulon
+aw'===áwà:intj:bon
+ta'_a===táa:v:venir  # cf sar-poyi_ko_di.old. <<<<<<
+soza===soza:n:soja
+dɔ́rɔnpe===dɔ́rɔn:dtm:seulement_pé:dtm:seulement   # il n'y a pas que kelen pe !  >>>>>>
+díyɛnbɛɛtigi===díyɛnbɛɛtigi:n: [díyɛn:n:monde bɛ́ɛ:dtm:tout tìgi:n:maître]   # une façon de nommer Ala (Dieu) dans LK
+
 # fin Dico Annexe  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #
 
@@ -26351,6 +26410,18 @@ m'_PERS_ká_NAME_màra===m':pm:PFV.NEG_PERS_ka:pp:POSS_NAME_màra:v:garder
 tɛ́_NAME_mɛ́n===tɛ:pm:IPFV.NEG_NAME_mɛ́n:v:entendre
 n'_í_y'_à_mɛ́n_NAME_dá_kó===ní:conj:si_í:pers:2SG_ye:pm:PFV.TR_à:pers:3SG_mɛ́n:v:entendre_NAME_dá:n:bouche_kó:cop:QUOT
 N'_í_y'_à_mɛ́n_NAME_dá_kó===ní:conj:si_í:pers:2SG_ye:pm:PFV.TR_à:pers:3SG_mɛ́n:v:entendre_NAME_dá:n:bouche_kó:cop:QUOT
+
+#
+#	míiri "penser"  2
+#
+PERS_bɛ_míiri_NAME_mà===PERS_bɛ:pm:IPFV.AFF_míiri:v:penser_NAME_mà:pp:ADR
+PERS_tɛ_míiri_NAME_mà===PERS_tɛ:pm:IPFV.NEG_míiri:v:penser_NAME_mà:pp:ADR
+PERS_ma_míiri_NAME_mà===PERS_ma:pm:PFV.NEG_míiri:v:penser_NAME_mà:pp:ADR
+PERS_mánà_míiri_NAME_mà===PERS_mánà:pm:COND.AFF_míiri:v:penser_NAME_mà:pp:ADR
+PERS_bɛ_míiri_NPROPRE_mà===PERS_bɛ:pm:IPFV.AFF_míiri:v:penser_NPROPRE_mà:pp:ADR
+PERS_tɛ_míiri_NPROPRE_mà===PERS_tɛ:pm:IPFV.NEG_míiri:v:penser_NPROPRE_mà:pp:ADR
+PERS_ma_míiri_NPROPRE_mà===PERS_ma:pm:PFV.NEG_míiri:v:penser_NPROPRE_mà:pp:ADR
+PERS_mánà_míiri_NPROPRE_mà===PERS_mánà:pm:COND.AFF_míiri:v:penser_NPROPRE_mà:pp:ADR
 
 #
 #	mìn "boire" 2
