@@ -145,7 +145,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				if nauth_fn!=nauth_meta :
 					diffauth=" "+str(nauth_fn)+"/"+str(nauth_meta)+" ?"
 
-				toutout=toutout+titl+"; ; "+filename+"; ; "+word+"; "+auth+";"+diffauth+"\n"
+				toutout=toutout+titl+"; ; "+filename+"; ; "+word+"; "+auth+"; "+diffauth+"\n"
 			toutwords=toutwords+words
 
 	if toutout!="" :

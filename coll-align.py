@@ -215,6 +215,9 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				# enforce nospace before percent
 				tout=re.sub(ur"([0-9])\s\%",u"\g<1>%",tout,0,re.U|re.MULTILINE)  
 
+				# enforce no space aound hyphens in year sequences eg ; 1999 - 2001 kanpaɲi
+				tout=re.sub(ur"([0-9]+)\s\-\s([0-9]+)",u"\g<1>-\g<2>",tout,0,re.U|re.MULTILINE)
+				
 				# enforce simple list if only 2 or 3 items in list
 				# to be fixed : if line already starts with - 
 				tout=re.sub(ur"<ls>(.*)<br/>\n(.*)</ls>",u"- \g<1>\n\n- \g<2>",tout,0,re.U|re.MULTILINE)
@@ -237,6 +240,67 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				# eliminate extra empty lines before EOF
 				tout=re.sub(ur"(\s*\n)*\s*$(?![\r\n])",u"",tout,0,re.U|re.MULTILINE)
 
+				# do not allow region names after signatures (end of text)
+				# to be attached
+				tout=re.sub(ur"-Bamakɔ(\.*)$(?![\r\n])",u" - Bamakɔ\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Bamako(\.*)$(?![\r\n])",u" - Bamako\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Kati(\.*)$(?![\r\n])",u" - Kati\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Kita(\.*)$(?![\r\n])",u" - Kita\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Kayi(\.*)$(?![\r\n])",u" - Kayi\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Segu(\.*)$(?![\r\n])",u" - Segu\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Kulukɔrɔ(\.*)$(?![\r\n])",u" - Kulukɔrɔ\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Kolokani(\.*)$(?![\r\n])",u" - Kolokani\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Kɔlɔkani(\.*)$(?![\r\n])",u" - Kɔlɔkani\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Joyila(\.*)$(?![\r\n])",u" - Joyila\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Bananba(\.*)$(?![\r\n])",u" - Bananba\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Ɲamina(\.*)$(?![\r\n])",u" - Ɲamina\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Buguni(\.*)$(?![\r\n])",u" - Buguni\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Kucala(\.*)$(?![\r\n])",u" - Kucala\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-Sikaso(\.*)$(?![\r\n])",u" - Sikaso\g<1>",tout,0,re.U|re.MULTILINE)
+				
+				# dont leave names on separate lines
+				tout=re.sub(ur"Alayi Lamu\.\n\nBadama Dukure$(?![\r\n])",u"Alayi Lamu, Badama Dukure",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"A\. Lamu\.\n\nBadama Dukure$(?![\r\n])",u"A. Lamu, Badama Dukure",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Adama Jimide\.\n\nBadama Dukure$(?![\r\n])",u"Adama Jimide, Badama Dukure",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Adama Jimide\.\n\nBasiriki Ture$(?![\r\n])",u"Adama Jimide, Basiriki Ture",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"«UNESCO»\.\n\nBadama Dukure$(?![\r\n])",u"«UNESCO», Badama Dukure",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"«AFP»\.\n\nBadama Dukure$(?![\r\n])",u"«AFP», Badama Dukure",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"«OMS»\.\n\nBadama Dukure$(?![\r\n])",u"«OMS», Badama Dukure",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Bakari Kulubali\.\n\nBadama Dukure$(?![\r\n])",u"Bakari Kulubali, Badama Dukure",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Yusufu DUNBIYA\.\n\nBasiriki Ture$(?![\r\n])",u"Yusufu DUNBIYA, Basiriki Ture",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Amagirɛyi Ogobara Dolo\.\n\nBadama Dukure$(?![\r\n])",u"Amagirɛyi Ogobara Dolo, Badama Dukure",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Solomani Bobo Tunkara\.\n\nBadama Dukure$(?![\r\n])",u"Solomani Bobo Tunkara, Badama Dukure",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Amagirɛyi Ogobara Dolo\.\n\nBadama DUKURE$(?![\r\n])",u"Amagirɛyi Ogobara Dolo, Badama DUKURE",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Solomani Bobo Tunkara\.\n\nBadama DUKURE$(?![\r\n])",u"Solomani Bobo Tunkara, Badama DUKURE",tout,0,re.U|re.MULTILINE)
+				# more general, 2 parts name
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nBadama Dukure[\.]*$(?![\r\n])",u"\g<1>, Badama Dukure",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nBasiriki Ture[\.]*$(?![\r\n])",u"\g<1>, Basiriki Ture",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nBadama DUKURE[\.]*$(?![\r\n])",u"\g<1>, Badama DUKURE",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nBasiriki TURE[\.]*$(?![\r\n])",u"\g<1>, Basiriki TURE",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nMahamadu Kɔnta[\.]*$(?![\r\n])",u"\g<1>, Mahamadu Kɔnta",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nMahamadu KƆNTA[\.]*$(?![\r\n])",u"\g<1>, Mahamadu KƆNTA",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nMahamadu Konta[\.]*$(?![\r\n])",u"\g<1>, Mahamadu Konta",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nMahamadu KONTA[\.]*$(?![\r\n])",u"\g<1>, Mahamadu KONTA",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\n([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)[\.]*$(?![\r\n])",u"\g<1>, \g<2>",tout,0,re.U|re.MULTILINE)
+				# more general, 3 parts name
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nBadama Dukure[\.]*$(?![\r\n])",u"\g<1>, Badama Dukure",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nBasiriki Ture[\.]*$(?![\r\n])",u"\g<1>, Basiriki Ture",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nBadama DUKURE[\.]*$(?![\r\n])",u"\g<1>, Badama DUKURE",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nBasiriki TURE[\.]*$(?![\r\n])",u"\g<1>, Basiriki TURE",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nMahamadu Kɔnta[\.]*$(?![\r\n])",u"\g<1>, Mahamadu Kɔnta",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nMahamadu KƆNTA[\.]*$(?![\r\n])",u"\g<1>, Mahamadu KƆNTA",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nMahamadu Konta[\.]*$(?![\r\n])",u"\g<1>, Mahamadu Konta",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\nMahamadu KONTA[\.]*$(?![\r\n])",u"\g<1>, Mahamadu KONTA",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\n([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)[\.]*$(?![\r\n])",u"\g<1>, \g<2>",tout,0,re.U|re.MULTILINE)
+				
+				# isolated words in signatures
+				tout=re.sub(ur"([A-ZƝŊƐƆ][^\.\s]*)\.\n\n(B|b)alikukalankaramɔgɔ\.\n\n",u"\g<1>, \g<2>alikukalankaramɔgɔ, ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" ka bɔ\.\n\n([A-ZƝŊƐƆ][^\.\s]*\s[A-ZƝŊƐƆ\-])",u" ka bɔ \g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" ka bɔ\.\n\n([A-ZƝŊƐƆ][^\.\s]*\.)",u" ka bɔ \g<1>.",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"\.\n\nka bɔ ([A-ZƝŊƐƆ][^\.\s]*\s[A-ZƝŊƐƆ\-])",u" ka bɔ \g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"\.\n\nka bɔ ([A-ZƝŊƐƆ][^\.\s]*\.)",u" ka bɔ \g<1>.",tout,0,re.U|re.MULTILINE)
+				
+
 				# correct usual errors
 				# tout=re.sub(ur"eɛ([\s\,\.])",u"ɛ\g<1>",tout,0,re.U|re.MULTILINE)
 				# tout=re.sub(ur"oɔ([\s\,\.])",u"ɔ\g<1>",tout,0,re.U|re.MULTILINE)
@@ -247,6 +311,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur" bɛnkansebɛn",u" bɛnkansɛbɛn",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" bɛnkansɛben",u" bɛnkansɛbɛn",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" dukɔki",u" dulɔki",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" Dukɔki",u" Dulɔki",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" fen ",u" fɛn ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" fill",u" fili",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" fɔyi",u" foyi",tout,0,re.U|re.MULTILINE)
@@ -279,6 +344,11 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur"fɔlo",u"fɔlɔ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"Fɔlo",u"Fɔlɔ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"gofɛrenaman",u"gofɛrɛnaman",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"goferɛnaman",u"gofɛrɛnaman",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"goferenaman",u"gofɛrɛnaman",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"gɔfɛrenaman",u"gɔfɛrɛnaman",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"gɔferɛnaman",u"gɔfɛrɛnaman",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"gɔferenaman",u"gɔfɛrɛnaman",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"jiriwali",u"yiriwali",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"nnɛn([\s\,\.])",u"nnen\g<1>",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"nnɛnw ",u"nnenw ",tout,0,re.U|re.MULTILINE)
@@ -305,7 +375,23 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur"gelɛya",u"gɛlɛya",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" kɔlɔgirin",u" kologirin",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" siyakɛda",u" ciyakɛda",tout,0,re.U|re.MULTILINE)
-
+				tout=re.sub(ur" dɔgoya",u" dɔgɔya",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" dɔonin",u" dɔɔnin",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-dɔonin",u"-dɔɔnin",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" wɔɔro",u" wɔɔrɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sɛgɛre",u" sɛgɛrɛ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" nɔgɔnna",u" ɲɔgɔnna",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" selekɛ",u" seleke",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" nisɔngɔya",u" nisɔngoya",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" poroze",u" porozɛ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" jɔsɛn",u" jɔsen",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Minsiri",u"Minisiri",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" minsiri",u" minisiri",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" Sɛmudetɛ",u" Sɛmudete",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" Sɛmudɛte",u" Sɛmudete",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sinɛinni",u" sinsinni",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" waleɲumandon",u" waleɲumandɔn",tout,0,re.U|re.MULTILINE)
+				
 				# force duplicates to stick together
 				tout=re.sub(ur" (?P<stem>.+)[\s]+\-[\s]+(?P=stem)", u" \g<1>-\g<1>",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" (?P<stem>.+)\-[\s]+(?P=stem)", u" \g<1>-\g<1>",tout,0,re.U|re.MULTILINE)

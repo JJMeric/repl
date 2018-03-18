@@ -545,9 +545,71 @@ dictauth[u"ee44aa6e-1a01-45c2-9add-a1dad5026d62"]=u"Dunbiya, Solomani|||m|Bambar
 dictauth[u"6bc78d41-ccf8-4c78-9ff9-ed66f5b25acd"]=u"Kulubali, Zan|||m|Bambara||habite Ceseribugu/Ceserebugu Falajɛ Kati - kib346 2000 - kib349 2001 - kib366 2002"
 # "Jara, Ɲofan",,,,,Bambara,"Biɲan Mɛrijɛla, Banan - kib342-346-347 2000",661deb8b-649c-406b-9244-01d2674c003d
 dictauth[u"661deb8b-649c-406b-9244-01d2674c003d"]=u"Jara, Ɲofan||||Bambara||Biɲan Mɛrijɛla, Banan - kib342-346-347 2000"
+# "Dunbiya, Burama",,m,,,,kib341-346 2000 - kib 349-351 2001 - kib454 2009 ,ea10bbed-a078-460c-9874-02b1126a9323
+dictauth[u"ea10bbed-a078-460c-9874-02b1126a9323"]=u"Dunbiya, Burama|||m|Bambara||kib341-346 2000 - kib 349-351 2001 - kib454 2009"
+# "Jara, Fuseyini/Fuseni",,m,1966,,,"""Man IWE"" -Sanfili, Bamakɔ - kib350-351-353 2001",4bc8d117-344d-48c3-974e-49c5137abd82
+dictauth[u"4bc8d117-344d-48c3-974e-49c5137abd82"]=u'Jara, Fuseyini/Fuseni|||m|Bambara||"Man IWE" -Sanfili, Bamakɔ - kib350-351-353 2001'
+# "Togola, Dirisa",,m,,,,"Balikukalankaramɔgɔ, Bonwu - Bankɔ - Joyila. Kib337-341 2000, kib353 2001",67ad6f80-5eb9-43f4-a293-cdbbfefd5eaa
+dictauth[u"67ad6f80-5eb9-43f4-a293-cdbbfefd5eaa"]=u"Togola, Dirisa|||m|Bambara||Balikukalankaramɔgɔ, Bonwu - Bankɔ - Joyila. Kib337-341 2000, kib353 2001"
+# "Jara, Cɛmɔgɔ",,,,,,Jankara - Banko/Bankɔ-Joyila Sɛrikili. kib350-351-355 2001,706410a5-87d1-41e2-884a-39906854347c
+dictauth[u"706410a5-87d1-41e2-884a-39906854347c"]=u"Jara, Cɛmɔgɔ|||m|Bambara||Jankara - Banko/Bankɔ-Joyila Sɛrikili. kib350-351-355 2001"
+#"Jumide, Adama",,m,,,,Jimide ? habite Moti? 1998 - kib338-341 2000 - kib353-355 2001,f756fce8-0013-4b8d-b4cb-81bbf229038f
+dictauth[u"f756fce8-0013-4b8d-b4cb-81bbf229038f"]=u"Jumide, Adama|||m|Bambara||Jimide ? habite Moti? 1998 - kib338-341 2000 - kib353-355 2001"
+# "Sangare, Lasina",,m,,,Bambara,"Mɛmisala/Mɛmi Sala, Kiɲan, Sikaso. kib343 2000 - kib354-357 2001",baf2a7df-84fa-4c87-8e2b-a18d5bfe4a28
+dictauth[u"baf2a7df-84fa-4c87-8e2b-a18d5bfe4a28"]=u"Sangare, Lasina|||m|Bambara||Mɛmisala/Mɛmi Sala, Kiɲan, Sikaso. kib343 2000 - kib354-357 2001"
+# "Jara, Ɲofan",,,,,Bambara,"Biɲan Biɲan Bana Mɛrijɛla, Banan - kib342-346-347 2000 - kib357 2001",661deb8b-649c-406b-9244-01d2674c003d
+dictauth[u"661deb8b-649c-406b-9244-01d2674c003d"]=u"Jara, Ɲofan||||Bambara||Biɲan Bana Mɛrijɛla, Banan - kib342-346-347 2000 - kib357 2001"
+# "Sisoko, Bande Musa",,m,,,Bambara,kib346 2000 - kib350-357-358 2001,c5aa1749-fe5f-44d6-a464-89a4a0d11cc3
+dictauth[u"c5aa1749-fe5f-44d6-a464-89a4a0d11cc3"]=u"Sisoko, Bande Musa|||m|Bambara||kib346 2000 - kib350-357-358 2001"
+# "Koyita, Mamutu",,m,,,Bambara,"Balikukalankaramɔgɔ, Kɔminɛ Joro mara. kib341-343 2000 - kib354-358 2001",28d9c899-66f1-4df4-9dc2-d4b95f4d01f2
+dictauth[u"28d9c899-66f1-4df4-9dc2-d4b95f4d01f2"]=u"Koyita, Mamutu|||m|Bambara||Balikukalankaramɔgɔ, Kɔminɛ Joro mara. kib341-343 2000 - kib354-358 2001"
+# "Tarawele, Modibo Nama/Naman",,m,,,,kib346-347 2000 - kib355-357-358 2001,8442fe4a-3c33-4aa4-86d9-38f9283aea25
+dictauth[u"8442fe4a-3c33-4aa4-86d9-38f9283aea25"]=u"Tarawele, Modibo Nama/Naman|||m|Bambara||kib346-347 2000 - kib355-357-358 2001"
+# "Jara, Sɛbajan",,,,,,"Zanbugu Kɔjaladala, Nɔsɔnbugu, Kɔlɔkani / Zanbugu - Kɔjalandala. kib350-354 2001 - kib360 2002",505c14cf-0ae0-4af7-b525-36293c852291
+dictauth[u"505c14cf-0ae0-4af7-b525-36293c852291"]=u"Jara, Sɛbajan|||sex|Bambara||Zanbugu Kɔjaladala, Nɔsɔnbugu, Kɔlɔkani / Zanbugu - Kɔjalandala. kib350-354 2001 - kib360 2002"
+# "Bajaga, Salimu",Salumu,m,,,,"kib359-2001, kib366 2002, kib378 2003",8be10a14-a980-490e-9f1c-f5ae235c9d41
+dictauth[u"8be10a14-a980-490e-9f1c-f5ae235c9d41"]=u"Bajaga, Salimu|||m|Bambara||kib359-2001, kib366 2002, kib378 2003"
+#"Bangali, Abudulayi",,m,,,Bambara,"Balikukalankaramɔgɔ, Zerelani II Kilela, Sikaso - kib300 1997 - kib360-362 2002",7a8b829b-7746-4c99-8f71-7cca67af1c17
+dictauth[u"7a8b829b-7746-4c99-8f71-7cca67af1c17"]=u"Bangali, Abudulayi|||m|Bambara||Balikukalankaramɔgɔ, Zerelani II Kilela, Sikaso - kib300 1997 - kib360-362 2002"
+# "Kulubali, Bakari",,m,,,Bambara,"kib30 2000, kib351-357-359 2001, kib363-365-366 2002",89ed90eb-b923-4513-a856-1eecab6eed52
+dictauth[u"89ed90eb-b923-4513-a856-1eecab6eed52"]=u"Kulubali, Bakari|||m|Bambara||kib30 2000, kib351-357-359 2001, kib363-365-366 2002"
+# "Kulubali, Bubakari",,m,,,Bambara,kib 359 2001 - kib362-363-364 2002,2eaff45e-72e4-4a4f-9818-736066292cd7
+dictauth[u"2eaff45e-72e4-4a4f-9818-736066292cd7"]=u"Kulubali, Bubakari|||m|Bambara||kib 359 2001 - kib362-363-364 2002"
+# "Tarawele, Mohamɛdi",,m,,,Bambara,kib351-358 2001 - kib362 2002,433f9d52-4081-413a-bad8-56016c81686c
+dictauth[u"433f9d52-4081-413a-bad8-56016c81686c"]=u"Tarawele, Mohamɛdi|||m|Bambara||kib351-358 2001 - kib362 2002"
+# "Togola, Mamadu",,m,,,Bambara,"Kɔbala, Bankɔ, Joyila - kib 359 2001 - kib361-364 2002",99491b6b-e476-4c9d-8f1c-9a0e06cca324
+dictauth[u"99491b6b-e476-4c9d-8f1c-9a0e06cca324"]=u"Togola, Mamadu|||m|Bambara||Kɔbala, Bankɔ, Joyila - kib 359 2001 - kib361-364 2002"
+# "Ja, Sɛku Amadu",Sɛki,m,,,Bambara,"kib378 2003, kib453 2009, kib362 2002 (C=Cheik=Sɛku?) kib364 2002",30e70086-e12b-4963-8f23-0572b81775f2
+dictauth[u"30e70086-e12b-4963-8f23-0572b81775f2"]=u"Ja, Sɛku Amadu|||m|Bambara||kib378 2003, kib453 2009, kib362 2002 (C=Cheik=Sɛku?) kib364 2002"
+# "Tarawele, Jibirili",,m,,,,"Butɔrɔsi Butɔrɔsi Gali,  Lutana, commune de Kilela, Sikaso - kib360-364-367 2002",b3ef25a8-7188-40e1-9b55-c80d2ff16440
+dictauth[u"b3ef25a8-7188-40e1-9b55-c80d2ff16440"]=u"Tarawele, Jibirili|||m|Bambara||Butɔrɔsi Butɔrɔsi Gali,  Lutana, commune de Kilela, Sikaso - kib360-364-367 2002"
+# "Tarawele, Gasitan Cɛkɔrɔba",Gasitɔn / Gaston,m,,,Bambara,"ka bɔ Basabugu, Nɛgala mara la, Falajɛ, Kati - kib288 1996 - kib310 1997 - kib358 2001 - kib367 2002",9e1fe92a-f93a-4bf4-9b8d-5ed49b45392b
+dictauth[u"9e1fe92a-f93a-4bf4-9b8d-5ed49b45392b"]=u"Tarawele, Gasitan Cɛkɔrɔba|||m|Bambara||ka bɔ Basabugu, Nɛgala mara la, Falajɛ, Kati - kib288 1996 - kib310 1997 - kib358 2001 - kib367 2002"
+# "Kulubali, Musa",,m,,,Bambara,"(Kulibali) habite Tigina-Falo-Bila mara la - kib300 1997 -kib323, 1998 - kib369 2002",27e565c1-0842-4f0e-9294-b64892915a1e
+dictauth[u"27e565c1-0842-4f0e-9294-b64892915a1e"]=u"Kulubali, Musa|||m|Bambara||(Kulibali) habite Tigina-Falo-Bila mara la - kib300 1997 -kib323, 1998 - kib369 2002"
+# "Ture, Berehima",,m,,,Bambara,Tumutu ? kib 350 2001 - kib369 2002 - kib536 2016,c61a1d96-f14d-43dd-9d70-35b435a73bc8
+dictauth[u"c61a1d96-f14d-43dd-9d70-35b435a73bc8"]=u"Ture, Berehima|||m|Bambara||Tumutu ? kib 350 2001 - kib369 2002 - kib536 2016"
+# "Sakɔ, Bayini/Bayeni",,m,,,,"Balikukalankaramɔgɔ, Dogofiri Kaadɔkin na/Km 20. kib357 2001 - kib362-370 2002",bbe65bf3-159f-4512-846b-1fa091a53fe2
+dictauth[u"bbe65bf3-159f-4512-846b-1fa091a53fe2"]=u"Sakɔ, Bayini/Bayeni|||m|Bambara||Balikukalankaramɔgɔ, Dogofiri Kaadɔkin na/Km 20. kib357 2001 - kib362-370 2002"
+# "Buware, Kasumu/Kasimu",,m,,,Bambara,"Kalandenjolen,  sɛnɛkɛla, Siribala/Siribalakɔrɔ Ɲɔnɔ sɛrikili - Segu. kib349-354 2001 kib370 2002",05dc4cd4-becb-4023-a500-f264479d646f
+dictauth[u"05dc4cd4-becb-4023-a500-f264479d646f"]=u"Buware, Kasumu/Kasimu|||m|Bambara||Kalandenjolen,  sɛnɛkɛla, Siribala/Siribalakɔrɔ Ɲɔnɔ sɛrikili - Segu. kib349-354 2001 kib370 2002"
+# "Danbele, Lamini",,m,,,,"Mantura/Manlura, commune de Fiyon/Fiyo, San - kib362-363-370 2002",3a27a011-91c6-4007-9fec-a9884e791367
+dictauth[u"3a27a011-91c6-4007-9fec-a9884e791367"]=u"Danbele, Lamini|||m|Bambara||Mantura/Manlura, commune de Fiyon/Fiyo, San - kib362-363-370 2002"
+# "Jalo, Birama",,m,,,,"Ŋɔnɔnɔmɔn/Ŋɔnɔmɔn - Njila, Ɲɛna, Sikaso - kib360-370-371 2002",1523946b-357e-4363-81ac-80187f54da0a
+dictauth[u"1523946b-357e-4363-81ac-80187f54da0a"]=u"Jalo, Birama|||m|Bambara||Ŋɔnɔnɔmɔn/Ŋɔnɔmɔn - Njila, Ɲɛna, Sikaso - kib360-370-371 2002"
+# "Jara, Banba",,m,,,,"Sunukun/surukun/Sanuku/Surunkun!, Gangaran, Tukoto/Tukɔtɔ, Kita - kib363-367-371 2002",933dc36f-a46c-472b-9c4e-04747c214bdc
+dictauth[u"933dc36f-a46c-472b-9c4e-04747c214bdc"]=u"Jara, Banba|||m|Bambara||Sunukun/surukun/Sanuku/Surunkun!, Gangaran, Tukoto/Tukɔtɔ, Kita - kib363-367-371 2002"
+# "Jalo, Abudulayi Jari",,m,,,,1998 - kib341 2000 - kib349-350 2001 kib371 2002,7294c787-7930-4f11-91cf-b6c6105d98dc
+dictauth[u"7294c787-7930-4f11-91cf-b6c6105d98dc"]=u"Jalo, Abudulayi Jari|||m|Bambara||1998 - kib341 2000 - kib349-350 2001 kib371 2002"
+# "Boli, Pate/Patɛ",,,,,,"Arajo Sabali ɲɛmɔgɔba, Danbana/Danbanna, Kita - kib324 1999 - kib363 2002 - kib371 2003",612ef758-857a-40f9-a2e3-89bff9f739cb
+dictauth[u"612ef758-857a-40f9-a2e3-89bff9f739cb"]=u"Boli, Pate/Patɛ|||m|Bambara||Arajo Sabali ɲɛmɔgɔba, Danbana/Danbanna, Kita - kib324 1999 - kib363 2002 - kib371 2003"
+# "Jara, Karimu",,m,,,Bambara,"NGolobugu/Ɲolobugu , Masantola, Kolokani - kib302 1997 - kib351 2001 - kib373 2003",c98da45a-672e-497a-897a-ca110170cb2f
+dictauth[u"c98da45a-672e-497a-897a-ca110170cb2f"]=u"Jara, Karimu|||m|Bambara||NGolobugu/Ɲolobugu , Masantola, Kolokani - kib302 1997 - kib351 2001 - kib373 2003"
+# "Jalo, Madi Kaman/Kama",,m,,,,"Biriko Jaraji, commune de Makɔnɔn, Kita, balikukaramɔgɔ - kib359 2001 - kib 367 2002 - kib373 2003",681992e8-df83-47ac-9367-89e98d9035f7
+dictauth[u"681992e8-df83-47ac-9367-89e98d9035f7"]=u"Jalo, Madi Kaman/Kama|||m|Bambara||Biriko Jaraji, commune de Makɔnɔn, Kita, balikukaramɔgɔ - kib359 2001 - kib 367 2002 - kib373 2003"
 
 
-#modèle dictauth[u"uuid"]=u"Nom, Prénom|spelling|datebirth|sex|Bambara|native|comment"
+#modèle dictauth[u"uuid"]=u"NomPrénom|||sex|Bambara||comment"
 #modèle dictauth[u"uuid"]=u"Nom, Prénom|spelling|datebirth|sex|language|native|comment"
 #fileauth=open("C:\Documents and Settings\Jean-Jacques.Meric.PARLXP10059\My Documents\Bambara-INALCO\GIT\corbama\\authors.csv","r")
 # two problems : variable file location + reading a csv file with headers
@@ -828,13 +890,16 @@ for filename in filenames:
 			addauthor(ur"(Ibbo Daddy Abdoulaye|Ibo Daddy Abdoulaye|Ibo Dadi Abudulayi|Ibɔ Dadi Abudulayi)",u"29066936-48f5-4f69-829a-dfd0c8b8f4bf")
 		if "_alimuludu_" in authshort : addauthor(ur"(L. Alimudu|L. ALIMULUDU|Lugayi Alimuludu|Migayi Alimuludu)",u"ce4fa3c9-af99-4928-b6ab-40d91c2c1018")
 		if "_badou_" in authshort : addauthor(ur"(Zerɔmu Ajaku Badou|Jerome Badou|Zerɔmu Badou|Jerome Adjakou Badou)",u"1eed21cc-1fee-477f-b51c-433c93f117b2")
-		if "_badu_" in authshort : addauthor(ur"(Zerɔmu Ajaku Badu|Jerome Badu|Zerɔmu Badu|Jerome Adjaku Badu|J.A. Badu|J.A. BADU)",u"1eed21cc-1fee-477f-b51c-433c93f117b2")
+		if "_badu_" in authshort : addauthor(ur"(Zerɔmu Ajaku Badu|Zerɔmi Ajaku Badu|Jerome Badu|Zerɔmu Badu|Jerome Adjaku Badu|J.A. Badu|J.A. BADU)",u"1eed21cc-1fee-477f-b51c-433c93f117b2")
 		if "_bagayogo_" in authshort : addauthor(ur"(M. Bagayogo|M. BAGAYOGO|Mamadu Bagayogo|Mamadu BAGAYOGO)",u"6e83ebc8-10bf-42f7-a6f0-3ecebd79984f")
+		if "_bajaga_" in authshort : addauthor(ur"(Salimu Bajaga|Salimu BAJAGA|Salumu Bajaga|Salumu BAJAGA|S\. Bajaga|S\. BAJAGA|Salimi Bajaga|Salimi BAJAGA)",u"8be10a14-a980-490e-9f1c-f5ae235c9d41")
 		if "_balo_" in authshort : 
 			addauthor(ur"(faraban balo|Faraban Balo)",u"596d1365-a5b5-4aad-a3ec-937a2ec44035")
 			addauthor(ur"(Modɛsi Balo|Modɛsi BALO)",u"db8fbfc7-30be-4c52-a536-300dacfb2943")
 		if "_banba_" in authshort : addauthor(ur"(namori banba|Namori Banba)",u"c4c865cb-8ccd-4ff4-9761-7186683456ef")
-		if "_bangali_" in authshort : addauthor(ur"(Daramani Bangali|Daramani BANGALI)",u"e116e7c0-b8d4-445d-974b-afc33c2f45a8")
+		if "_bangali_" in authshort : 
+			addauthor(ur"(Daramani Bangali|Daramani BANGALI)",u"e116e7c0-b8d4-445d-974b-afc33c2f45a8")
+			addauthor(ur"(Abudulayi Bangali|Abudulayi BANGALI)",u"7a8b829b-7746-4c99-8f71-7cca67af1c17")
 		if "_bankali_" in authshort : addauthor(ur"(Daramani Bankali|Daramani BANKALI)",u"e116e7c0-b8d4-445d-974b-afc33c2f45a8")
 		if "_banyumanke_" in authshort:
 			addauthor(ur"(Baɲumankɛ|baɲumankɛ)",u"37fb14af-e1f9-4ba2-ba7c-5f67401f42fd")   # = TYS encore!!!
@@ -848,7 +913,10 @@ for filename in filenames:
 			addauthor(ur"(Pate Boli|Pate BOLI)",u"612ef758-857a-40f9-a2e3-89bff9f739cb")
 			addauthor(ur"(Musa Boli|Musa BOLI)",u"6c349568-0bc0-44ff-92aa-6c02e99a64ef")
 			addauthor(ur"(Hamadi Aturu Boli|Aturu Boli|Hamadi Aturu BOLI|Hamadi Afenu Boli)",u"e2c9c835-e468-4469-98c7-7be5a2e0c10d")
-		if "_buware_" in authshort : addauthor(ur"(Ŋolo A. Buware|Ŋolo Buware|Ɲolo A. Buware|Ɲolo Buware|ŋolo Buware|Ŋɔlɔ A. Buware|Ŋɔlɔ Buware|Ɲɔlɔ A. Buware|Ɲɔlɔ Buware|ŋɔlɔ Buware)",u"ad68f742-fa39-4cc8-bda6-db1f4a663e9f")
+			addauthor(ur"(Pate Boli|Pate BOLI|Patɛ Boli|Patɛ BOLI)",u"612ef758-857a-40f9-a2e3-89bff9f739cb")
+		if "_buware_" in authshort :
+			addauthor(ur"(Ŋolo A. Buware|Ŋolo Buware|Ɲolo A. Buware|Ɲolo Buware|ŋolo Buware|Ŋɔlɔ A. Buware|Ŋɔlɔ Buware|Ɲɔlɔ A. Buware|Ɲɔlɔ Buware|ŋɔlɔ Buware)",u"ad68f742-fa39-4cc8-bda6-db1f4a663e9f")
+			addauthor(ur"(Kasimu Buware|Kasimu BUWARE|Kasumu Buware|Kasumu BUWARE)",u"05dc4cd4-becb-4023-a500-f264479d646f")
 		if "_cero_" in authshort : addauthor(ur"(b. cero|B. Cero|B. Cɛro|B. CERO|B. CƐRO)",u"1f5a2623-ecc3-4dd6-81cf-ea6152562a3d")
 		if "_dadjo_" in authshort : addauthor(ur"(Crépin Hilaire Dadjo|Crépin Hilaire DADJO)",u"4aeabf7f-35f1-4745-bf54-02a345b6f6f1")
 		if "_damele_" in authshort : addauthor(ur"(Bakaribilen Danbele|Bakari Danbele|Bakari Damele|Bakaribilen Damele)",u"dda27c30-a372-4cdb-884b-2ac8667a1523")
@@ -859,15 +927,16 @@ for filename in filenames:
 			addauthor(ur"(ibɛrɛhima danbele|Ibɛrɛhima Danbele|Ibèrèhima Danbele)",u"a337a319-000c-43d3-91cf-f3364c45194a")
 			addauthor(ur"(Banuhun Danbɛlɛ|Banuhun DANBƐLƐ)",u"bede413a-a43f-4a5d-823c-cb208a12c96e")
 			addauthor(ur"(Bakaribilen Danbele|Bakari Bilen Danbele|Bakari Danbele|Bakari DANBELE|Bakari Damele|Bakaribilen Damele)",u"dda27c30-a372-4cdb-884b-2ac8667a1523")
+			addauthor(ur"(Lamini Danbele|Lamini DANBELE)",u"3a27a011-91c6-4007-9fec-a9884e791367")
 
 		if "_darabo_" in authshort : addauthor(ur"(Gawusu Darabo|Gawusu DARABO)",u"127f5500-c5db-4f87-8a33-d073d8430f02")
 		if "_dawo_" in authshort : addauthor(ur"(Dawuda Mace Dawo|Dawuda M\.Dawo|Dawuda M\. Dawo|Dawudi Mace Dawo)",u"f0c85c3c-17d5-4af6-ab3e-28b8fd906fe4")
 		if "_denba_" in authshort : addauthor(ur"(Bankɔ Denba|Bankɔ DENBA)",u"d2e216a8-bb57-48f9-90cc-be217d8872ef")
 		if "_drabo_" in authshort : addauthor(ur"(Gawusu Drabo|Gawusu DRABO)",u"127f5500-c5db-4f87-8a33-d073d8430f02")
 		if "_diko_" in authshort :
-			addauthor(ur"(Gamɛri A. Diko|G\.A\. Diko|G\. A\. Diko|Gamɛri A. DIKO|G.A. DIKO)",u"d9195f9f-890f-4a0b-9a2e-166d7ea52f03")
+			addauthor(ur"(Gamɛri Diko|Gamɛri DIKO|Gamɛri A. Diko|G\.A\. Diko|G\. A\. Diko|Gamɛri A. DIKO|G.A. DIKO)",u"d9195f9f-890f-4a0b-9a2e-166d7ea52f03")
 			addauthor(ur"(Mohamɛdi Diko|Mohamɛdi DIKO)",u"f9d5c2b6-6699-44ea-9a2f-1bca0aeaaa28")
-		if "_dolo_" in authshort : addauthor(ur"(Amagire Ogobara Dolo|Amagire Ogobara DOLO|Amagire O. Dolo|Amagire O. DOLO|A. O. Dolo|A. O. DOLO|Amagirɛyi O. DOLO|Amayigere Ogobara Dolo|Amagirɛyi Ogobara Dolo)",u"70301778-a09a-4593-ade3-7586f9588d30")
+		if "_dolo_" in authshort : addauthor(ur"(Amagire Ogobara Dolo|Amagire Ogobara DOLO|Amagire O. Dolo|Amagire O. DOLO|A. O. Dolo|A. O. DOLO|Amagirɛyi O. DOLO|Amayigere Ogobara Dolo|Amagirɛyi Ogobara Dolo|Amagirɛyi Ogobara DOLO|Amadu Ogobara Dolo|A\. Ogobara Dolo)",u"70301778-a09a-4593-ade3-7586f9588d30")
 		if "_dukure_" in authshort :
 			addauthor(ur"(badama dukure|Badama Dukure|Badama DUKURE|Dadama Dukure|Baadama Dukure|Baadame Dukure)",u"8929d366-cfb6-4da7-a02f-1edea162b6e5")
 			addauthor(ur"(Mamadu Dukure|Mamadu DUKURE)",u"c697fbc1-053d-476f-a523-ea55eaf2f986")
@@ -880,10 +949,12 @@ for filename in filenames:
 			addauthor(ur"(Mamadu Dunbiya)",u"1538e51f-7535-40c0-9bd4-e1bdafdfbec0")
 			addauthor(ur"(Seriba Dunbiya|Seriba DUNBIYA)",u"7c3721fa-23d6-41ae-ab97-5526106f8947")
 			addauthor(ur"(Solomani Dunbiya|Solomani DUNBIYA)",u"ee44aa6e-1a01-45c2-9add-a1dad5026d62")
+			addauthor(ur"(Burama Dunbiya|Burama DUNBIYA|B\. Dunbiya|B\. DUNBIYA|Burema Dunbiya|Burema DUNBIYA)",u"ea10bbed-a078-460c-9874-02b1126a9323")
 		if "_dunbuya_" in authshort:
 			addauthor(ur"(Amadu Tanba DUNBUYA|Amadu Tanba Dunbuya)",u"587fb4ba-1385-4a2c-ab47-d60ed68d321b")
 			addauthor(ur"(Yusufu Dunbuya|Yusu Dunbuya|Yusufu DUNBUYA|Yusu DUNBUYA)",ur"da8f0ed0-5365-4dd1-93f5-3f6afc0b7643")			
 			addauthor(ur"(Fabu Dunbuya)",u"b97e7e65-dfef-4b44-b7c8-d3e0d2a7d9ac")
+			addauthor(ur"(Burama Dunbuya|Burama DUNBUYA|B\. Dunbuya|B\. DUNBUYA|Burema Dunbuya|Burema DUNBUYA)",u"ea10bbed-a078-460c-9874-02b1126a9323")
 		if "_fane_" in authshort: 
 			addauthor(ur"(Mamadu Fane|Mamadu FANE|Mamadu Fanɛ)",u"4168de2f-8c3a-49bf-afd1-219d1ed04a1b")
 			addauthor(ur"(Yusufu F. Fanɛ|Yusufu Famori Fanɛ|Yusuf F. Fanɛ|Yusuf Famori Fanɛ|Yusufu Fanɛ|Yusufu FANƐ|Yusufu F. Fane|Yusufu Famori Fane|Yusufu - Famori Fane|Yusufu Fane|Yusuf F. Fane|Yusuf Famori Fane)",u"458db881-6de5-4039-b450-9914355c0130")
@@ -895,6 +966,7 @@ for filename in filenames:
 			addauthor(ur"(Zankɛ Ngolo Fɔnba|Zankɛ Ngolo FƆNBA|Zankɛ Ŋɔlɔ Fɔnba)",u"b4ee46bb-ec0f-417a-a5c5-397024592b62")
 
 		if "_gindo_" in authshort : addauthor(ur"(Usmani Gindo|usumani Gindo|Usumani Gindo|Usumani Guido)",u"f96014e9-6a24-4735-9ffb-c9cdda74fe65")
+		if "_ja_" in authshort : addauthor(ur"(Sɛku Amadu Ja|Sɛku Amadu JA|Sɛki Amadu Ja|Sɛki Amadu JA|Sɛku A\. Ja|Sɛku A\. JA|Sɛki A\. Ja|Sɛki A\. JA)",u"30e70086-e12b-4963-8f23-0572b81775f2")
 		if "_jabate_" in authshort : addauthor(ur"(Fuseni Jabate|Fuseni JABATE|Fuseyini Jabate|Fuseyini JABATE)",u"76c495a4-7706-4487-92c1-27be5fb4e943")
 		if "_jaabi_" in authshort : addauthor(ur"(Musa Jaabi|Musa JAABI)",u"51652320-a88e-4b50-87f2-fc1b465a20a6")
 		if "_jabate_" in authshort : addauthor(ur"(Fuseni Jabate|Fuseni Jabatɛ)",u"76c495a4-7706-4487-92c1-27be5fb4e943")
@@ -916,6 +988,10 @@ for filename in filenames:
 			addauthor(ur"(Yusufu Jalo|Yusufu JALO|Yusuf Jalo)",u"04e64a0f-70c8-47e7-b887-09f1c67ce911")
 			addauthor(ur"(Haji Jalo|Haji JALO)",u"48ed0991-742d-40ae-918f-89b6a872e0a4")
 			addauthor(ur"(Burame Jalo|Burama JALO)",u"23b3606e-dd0f-438c-9dd0-3b3a1c788263")
+			addauthor(ur"(Abudulayi Jari Jalo|Abudulayi Jari JALO)",u"7294c787-7930-4f11-91cf-b6c6105d98dc")
+			addauthor(ur"(Madi Jalo|Madi Kaman Jalo|Madi Kama Jalo|Madi JALO|Madi Kaman JALO|Madi Kama JALO)",u"681992e8-df83-47ac-9367-89e98d9035f7")
+			if len(re.findall(ur"(Ŋɔnɔ|Njila)",tout,re.I|re.U))>0 :
+				addauthor(ur"(Birama Jalo|Birama JALO|Burama Jalo|Burama JALO)",u"1523946b-357e-4363-81ac-80187f54da0a")
 		if "_jara_" in authshort : 
 			addauthor(ur"(Abudaramani Jara|Abudaramani JARA)",u"deebae43-7984-4c82-b092-d3573d0c34cc")
 			addauthor(ur"(Adama Jara|Adama JARA)",u"d32c72aa-3711-46d4-a1e0-ff045f797f3e")
@@ -925,7 +1001,7 @@ for filename in filenames:
 			addauthor(ur"(Dirisa Bakari Jara|Dirisa Bakari JARA)",u"266a0781-d80f-4f93-8885-fd28c4af344e")
 			addauthor(ur"(Dɔkala Yusufu Jara|Dɔkala Yusuf Jara|Dɔkala Yusufu JARA|Dɔkala Y. Jara|Dɔkala Y. JARA)",u"b5edd814-54dd-4058-bd8c-dae51a64427d")
 			addauthor(ur"(Fatumata Jara|Fatumata JARA)",u"178d8b60-2a1f-4de8-a7dc-5a0642fccd5b")
-			addauthor(ur"(Ibarahima Baba Jara|Ibarahima Jara|Ibarahima JARA|Ibarayima Jara|Ibarayima JARA)",u"3b24a2db-71cb-43db-bf14-59ad4a4dcde3")
+			addauthor(ur"(Ibarahima baba Jara|Ibarahima Baba Jara|Ibarahima Jara|Ibarahima JARA|Ibarayima Jara|Ibarayima JARA)",u"3b24a2db-71cb-43db-bf14-59ad4a4dcde3")
 			addauthor(ur"(Kɔnba Jara|Kɔnba JARA)",u"fc81ac64-408e-449b-85cd-8cd4ae2fab25")
 			addauthor(ur"(Mamadu Nyama Jara|mamadu nyama jara|Mamadu Ɲama Jara)",u"618af8da-1f81-414c-b049-a6a38c9d6c80")
 			addauthor(ur"(Mami Jara|Mami JARA)",u"0d4c13df-70b8-4683-a1f3-0c248b9d4cc7")
@@ -938,11 +1014,20 @@ for filename in filenames:
 			addauthor(ur"(Bancini Siriman Daa Jara|Bancini Siriman Daa JARA|Bancinin Siriman Daa Jara|Bancinin Siriman Daa JARA)",u"ef8647e3-6c42-4c45-bb08-736ce7267d4f")
 			addauthor(ur"(Kolankɔrɔ Faransuwa Jara|Kolankɔrɔ Faransuwa JARA|Kolankoro Faransuwa Jara|Kolankoro Farasuwa Jara)",u"08992fb1-cc75-4212-952e-39a5451dd68e")
 			addauthor(ur"(Cɛsama Jara|Cɛsama JARA)",u"293cd531-0f0a-4b20-8c52-757604ff52c5")
-			addauthor(ur"(Ɲofan Jara|Ɲofan JARA)",u"661deb8b-649c-406b-9244-01d2674c003d")
+			addauthor(ur"(Ɲofan Jara|Ɲofan JARA|Ɲɔfan Jara|Ɲɔfan JARA)",u"661deb8b-649c-406b-9244-01d2674c003d")
+			addauthor(ur"(Fuseni Jara|Fuseni JARA|Fuseyini Jara|Fuseyini JARA)",u"4bc8d117-344d-48c3-974e-49c5137abd82")
+			addauthor(ur"(Cɛmɔgɔ Jara|Cɛmɔgɔ JARA)",u"706410a5-87d1-41e2-884a-39906854347c")
+			addauthor(ur"(Sɛbajan Jara|Sɛbajan JARA)",u"505c14cf-0ae0-4af7-b525-36293c852291")
+			addauthor(ur"(Banba Jara|Banba JARA)",u"933dc36f-a46c-472b-9c4e-04747c214bdc")
+			addauthor(ur"(Karimu Jara|Karimu JARA)",u"c98da45a-672e-497a-897a-ca110170cb2f")
 			if re.findall(ur"(Nperesibugu|NPeresibugu|Npeseribugu|NPeseribugu|Masantola)",tout,re.I|re.U)!=None :
 				addauthor(ur"(Mamadu Jara|Mamadu JARA)",u"dc81e9f8-e04a-4675-b98c-3b33b4a818ea")
 
 		if "_jire_" in authshort : addauthor(ur"(Dusu Jire|Dusu JIRE)",u"d2f0a2c2-d202-47a9-877e-ec52cfc694b7")
+		if "_jumide_" in authshort : addauthor(ur"(Adama Jumide|Adama JUMIDE)",u"f756fce8-0013-4b8d-b4cb-81bbf229038f")
+		if "_junide_" in authshort : addauthor(ur"(Adama Junide|Adama JUNIDE)",u"f756fce8-0013-4b8d-b4cb-81bbf229038f")
+		if "_jimide_" in authshort : addauthor(ur"(Adama Jimide|Adama JIMIDE)",u"f756fce8-0013-4b8d-b4cb-81bbf229038f")
+		if "_jimude_" in authshort : addauthor(ur"(Adama Jimude|Adama JIMUDE)",u"f756fce8-0013-4b8d-b4cb-81bbf229038f")
 		if "_kaba_" in authshort : addauthor(ur"(Mamadi Kaba|Mamadu Kaba|Mamadu KABA)",u"45856259-2685-4d35-b650-c8db3d5ae2d8")
 		if "_kalanbiri_" in authshort : addauthor(ur"(Alɛkisi Kalanbiri|Alex Kalanbiri)",u"ccf1c399-9fa6-4ebc-8887-f99759915bab")
 		if "_kamara_" in authshort : addauthor(ur"(Usumani Kamara|Usumani KAMARA|Gigimasa)",u"5bb7d097-e967-4495-ab75-b71000624bcf")
@@ -983,6 +1068,7 @@ for filename in filenames:
 			addauthor(ur"(Musa Kɔnɛ|Musa KƆNƐ)",u"856e0687-0fb1-4469-8a46-0fa11fa9031d")
 
 		if "_konta_" in authshort : addauthor(ur"(Mahamadu Konta|Mahamadu Kɔnta|Mahamadu kɔnta|Mahamaddu Kɔnta|Mahamadu KONTA|Mahamadu KƆNTA)",u"c742b89a-fdfb-4d5c-9868-690d9935fa18")
+		if "_koyita_" in authshort : addauthor(ur"(Mamutu Koyita|Mamutu KOYITA)",u"28d9c899-66f1-4df4-9dc2-d4b95f4d01f2")
 		if "_kulibali_" in authshort:
 			addauthor(ur"(Nɛgɛta Kulibali|Nɛgɛta KULIBALI|Negeta Kulibali|nègèta kulibali|Negeta KULIBALI)",u"c6563397-b2fb-465b-8c84-98ff0740b9ca")
 			addauthor(ur"(basiru kulibali|Basiru Kulibali|Basiru KULIBALI)",u"b3d03481-2736-4a65-ae48-446097e97c31")
@@ -1022,11 +1108,18 @@ for filename in filenames:
 			addauthor(ur"(Sumayilakɛ Kulubali|Sumayilakɛ Majan Kulubali|Sumayilakɛ KULUBALI)",u"43ab5bcd-4d2d-4193-83d5-aa70499f20b2")
 			addauthor(ur"(Umaru Kulubali|Umaru KULUBALI)",u"f59418f3-ea40-42cb-a742-c128bcc2e4f6")
 			addauthor(ur"(Usumani Kulubali|Usumani kulubali|Usumani KULUBALI)",u"c8c9fe81-d9e1-4d6b-a328-39b0616c19cd")
-			addauthor(ur"(Wena Kulubali|Wena KULUBALI)",u"14709b7a-9e23-4d04-891e-53b8196b4ac3")
+			addauthor(ur"(Wena Kulubali|Wena KULUBALI|Wana Kulubali|Wana KULUBALI)",u"14709b7a-9e23-4d04-891e-53b8196b4ac3")
 			addauthor(ur"(Zan Kulubali|Zan KULUBALI)",u"6bc78d41-ccf8-4c78-9ff9-ed66f5b25acd")
-			if re.findall(ur"(Dɔribugu|Dɔribuguni|Dɔribugunin)",tout,re.I|re.U)!=None :
+			if len(re.findall(ur"(Dɔribugu|Dɔribuguni|Dɔribugunin)",tout,re.I|re.U))>0 :
 				addauthor(ur"(Solomani Kulubali|Solomani KULUBALI)",u"39c08e0e-557a-43b3-8c27-cc8a51b531d4")
-			
+			#testf=re.findall(ur"(Basiriki Ture|Basiriki TURE)",tout,re.I|re.U)
+			#print "testf (Basiriki Ture|Basiriki TURE) : ",testf,len(testf)
+			if len(re.findall(ur"(Basiriki Ture|Basiriki TURE)",tout,re.I|re.U))>0 :
+				addauthor(ur"(Bakari Kulubali|Bakari KULUBALI)",u"89ed90eb-b923-4513-a856-1eecab6eed52")
+			if len(re.findall(ur"(Basiriki Ture|Basiriki TURE)",tout,re.I|re.U))>0 :
+				addauthor(ur"(Bubakari Kulubali|Bubakari KULUBALI)",u"2eaff45e-72e4-4a4f-9818-736066292cd7")
+			if len(re.findall(ur"(Tigina|Falo)",tout,re.I|re.U))>0 :
+				addauthor(ur"(Musa Kulubali|Musa KULUBALI)",u"27e565c1-0842-4f0e-9294-b64892915a1e")
 		if "_kulubaly_" in authshort:
 			addauthor(ur"(Fanta Kulubaly|Fanta KULUBALY)",u"6018c6bd-cad4-4354-bcb9-6327a9d28f37")
 		if "_kumare_" in authshort :
@@ -1051,9 +1144,10 @@ for filename in filenames:
 		if "_sako_" in authshort : 
 			addauthor(ur"(Zan Sakɔ)",u"06083e70-ee05-42af-ba8e-410a3ed82a76")
 			addauthor(ur"(Dotege Sako|Dotigi Sako|Dotege SAKO)",u"b213ebbb-fcaa-48ec-9fb3-0a5cb50351da")
+			addauthor(ur"(Bayini Sakɔ|Bayini SAKƆ|Bayeni Sakɔ|Bayeni SAKƆ)",u"bbe65bf3-159f-4512-846b-1fa091a53fe2")
 		if "_sali_" in authshort : addauthor(ur"(Yoro Sali|Yɔrɔ Sali|Yɔrɔ SALI|Yoro SALI)",u"69db573b-4c1f-4962-b1f1-bdf133453214")
 		if "_samake_" in authshort : 
-			addauthor(ur"(Nanse Samake|Nanse SAMAKE|Ɲanse SAMAKE|Ɲanze SAMAKE|Ɲanze Samake|Zanze Samake)",u"2030b450-3a6b-49ed-83b9-5799e1c97c15")
+			addauthor(ur"(Nanse Samake|Nanse SAMAKE|Ɲanse SAMAKE|Ɲanze SAMAKE|Ɲanze Samake|Zanze Samake|Nanse Samakɛ|Nanse SAMAKƐ|Ɲanse SAMAKƐ|Ɲanze SAMAKƐ|Ɲanze Samakɛ|Zanze Samakɛ)",u"2030b450-3a6b-49ed-83b9-5799e1c97c15")
 			addauthor(ur"(Sidi Lamini Samake|Sidi Lamini Samakɛ)",u"e4cac73a-9de6-497a-b977-96a700bedf01")
 			addauthor(ur"(Zan Samake|Zan Samakɛ)",u"5851ab7f-f669-487c-9ba8-d03577181a1d")
 			addauthor(ur"(Dawuda Jinɛmusa Samake|Dawuda jinɛmusa Samake|Dawuda, ko jinɛmusa Samake)",u"2a32f60e-253f-49bf-ad87-02a261f6ed52")
@@ -1064,6 +1158,7 @@ for filename in filenames:
 			addauthor(ur"(Bakari Sangare|Bakari sangare|Bakari SANGARE|Bakary Sangare)",u"1cacb7c3-5fc9-4020-bffc-4f2f60bd30ef")
 			addauthor(ur"(Modibo Baru Sangare|Modibo Bawu Sangare|Modibo Baru SANGARE)",u"203fa76e-2dd6-45f0-abea-6ced563e62c8")
 			addauthor(ur"(Bubakari Sangare|Bubakari)",u"6db84d53-f9ac-472a-9926-2deb1fdfe0ca")
+			addauthor(ur"(Lasina Sangare|Lasina SANGARE)",u"baf2a7df-84fa-4c87-8e2b-a18d5bfe4a28")
 		if "_saya_" in authshort : addauthor(ur"(Mulayi Saya|Mulayi SAYA)",u"cae507d3-3764-4f88-8250-f10f65df1732")
 		if "_senu_" in authshort : addauthor(ur"(Idirisa Senu|Idirisa SENU|Idrisa SENU|Drisa Senu|Drisa SENU)",u"cd0ca0ae-0426-4ebc-bfd8-2390c291c98c")
 		if "_si_" in authshort : 
@@ -1088,6 +1183,7 @@ for filename in filenames:
 			addauthor(ur"(Seku Sise|Seku SISE)",u"5cad8db8-f718-4d77-9b00-6b98c1ba02e3")
 		if "_sisoko_" in authshort :
 			addauthor(ur"(mariyamumadi misoko|mariyamadi sisoko|mariyanmadi sisoko|Mariyanmadi sisoko|Mariyanmadi Sisoko|Mariyamumadi Sisoko|Mariyamadi Sisoko)",u"a5c6837b-e811-400b-8df4-1bd5accbaf81")
+			addauthor(ur"(Bande Musa Sisoko|Bande Musa SISOKO|Bande M\. Sisoko|Bande M\. SISOKO)",u"c5aa1749-fe5f-44d6-a464-89a4a0d11cc3")
 		if "_so_" in authshort : 
 			addauthor(ur"(Ibarahima SO|Ibarahima SƆ|Ibarahima So|Ibarahima Sɔ|ibarahima so)",u"8efb9f72-1f7f-45ef-88e2-63df76aa2766")
 			addauthor(ur"(Shɛki Madu SO|Shɛki Madu SƆ|Shɛki Madu So|Shɛki Madu Sɔ|shɛki madu so)",u"33bc2e39-335a-4d95-8014-2e15b52e2357")
@@ -1126,18 +1222,26 @@ for filename in filenames:
 			addauthor(ur"(Sungalo Tarawele|Sungalo TARAWELE|Sunkalo Tarawele)",u"db99321c-0d53-4eb3-aa86-7f14d99de21f")
 			addauthor(ur"(Usumani Tarawele|Usumani TARAWELE)",u"a1396798-4b28-48a1-b16d-c9679207cb7a")
 			addauthor(ur"(Mamadu Nuhun Tarawele|Mamadu Nuhun TARAWELE|M\. N\. Tarawele|M\. N\. TARAWELE)",u"fee62bbd-3e79-4c9c-a209-f7c8b55b24f1")
+			addauthor(ur"(Modibo Nama Tarawele|Modibo Nama TARAWELE|Modibo Naman Tarawele|Modibo Naman TARAWELE)",u"8442fe4a-3c33-4aa4-86d9-38f9283aea25")
+			addauthor(ur"(Jibirili Tarawele|Jibirili TARAWELE)",u"b3ef25a8-7188-40e1-9b55-c80d2ff16440")
+			addauthor(ur"(Gasitan Cɛkɔrɔba Tarawele|Gasitan Cɛkɔrɔba TARAWELE|Gasitɔn Tarawele|Gasitɔn TARAWELE|Gaston Tarawele|Bagasitɔn Tarawele|Bagasitɔn TARAWELE)",u"9e1fe92a-f93a-4bf4-9b8d-5ed49b45392b")
 
-			if re.findall(ur"(Ginyan|Giɲan|Bananba)",tout,re.I|re.U)!=None :
+			if len(re.findall(ur"(Ginyan|Giɲan|Bananba)",tout,re.I|re.U))>0 :
 				addauthor(ur"(Mama Tarawele|Mama TARAWELE)",u"1c559d5c-4e96-4ad9-85f8-130e4778f4fd")
-			if re.findall(ur"(Yelimane|YELIMANE)",tout,re.I|re.U)!=None :
+			if len(re.findall(ur"(Yelimane|YELIMANE)",tout,re.I|re.U))>0 :
 				addauthor(ur"(Bakari Tarawele|Bakari TARAWELE)",u"1a452538-37d1-4f83-8915-42bd524e309b")
-			
+			if len(re.findall(ur"(Badama Dukure|Badama DUKURE)",tout,re.I|re.U))>0 :
+				addauthor(ur"(Mohamɛdi Tarawele|Mohamɛdi TARAWELE)",u"433f9d52-4081-413a-bad8-56016c81686c")
+		if "_togola_" in authshort : 
+			addauthor(ur"(Dirisa Togola|Dirisa TOGOLA)",u"67ad6f80-5eb9-43f4-a293-cdbbfefd5eaa")
+			addauthor(ur"(Mamadu Togola|Mamadu TOGOLA)",u"99491b6b-e476-4c9d-8f1c-9a0e06cca324")
 		if "_tulema_" in authshort : addauthor(ur"(Hamidu Tulema|Hamidu TULEMA)",u"b5864f72-0d3d-4428-a2a3-13cca538f6e1")
-		if "_tunkara_" in authshort : addauthor(ur"(S. B. Tunkara|Solomani Bobo Tunkara|Solomani Bobo TUNKARA|Solomani B. Tunkara)",u"cd5292c9-93cc-494f-abd0-0a834bb677a2")
+		if "_tunkara_" in authshort : addauthor(ur"(S\. B\. Tunkara|Solomani Bobo Tunkara|Solomani Bobo TUNKARA|Solomani B\. Tunkara)",u"cd5292c9-93cc-494f-abd0-0a834bb677a2")
 		if "_ture_" in authshort : 
 			addauthor(ur"(B. Ture|B. TURE|Basiriki Ture|Basiriki TURE|BASIRIKI TURE|Basidiki Ture|Basidiki TURE)",u"60ba1311-ba33-4b5a-ab42-8fb1a6038263")
 			addauthor(ur"(sedu ture|sedu turè|seyidu ture|Seyidu Ture)",u"72559003-6529-4e84-b9c5-ef681d1b01dd")
 			addauthor(ur"(Berema Ture|Berema TURE)",u"51d73647-d28e-45cb-96b1-52c86a597f72")
+			addauthor(ur"(Berehima Ture|Berehima TURE)",u"c61a1d96-f14d-43dd-9d70-35b435a73bc8")
 			addauthor(ur"(Madu Ture|Madu TURE)",u"eca51900-8a0c-410b-a48b-8ce752447d1a")
 		if "_watara_" in authshort or "_ouattara_" in authshort :
 			addauthor(ur"(Suleyimani Watara|Suleyimani WATARA|Sulɛyimani WATARA|Suleyimani Ouattara|Suleymane Watara|Sulemani Watara)",u"4086d40b-cb3a-4b04-9688-b9e4f4a3e8c5")
