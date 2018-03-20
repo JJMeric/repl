@@ -495,6 +495,7 @@ if nombre>0 :
 #
 # mot non initial commençant par une majuscule
 # et ambigu :
+# remarque : ça pose problème pour Waraba, Suruku, Sonsannin... 
 wsearch=ur"</span><span class=\"w\" stage=\"[0-9\-]+\">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-]+)<.*lemma var.*></span>\n"
 wrepl=ur'</span><span class="w" stage="0">\g<1><span class="lemma">\g<1><sub class="ps">n.prop</sub><sub class="gloss">NOM</sub></span>\n'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
@@ -963,7 +964,7 @@ else :
         capt_gr_index=capt_gr_index+3+1
       elif glose==u"NPROPRENOMforcetop"      : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
-        capt_gr_index=capt_gr_index+3+1
+        capt_gr_index=capt_gr_index+2 # 2 seulement (on ne récupère ni ps ni gloss) pas de +1 : pas de !lemma var
       elif glose==u"NPROPRENOMM"      : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><sub class="gloss">NOM.M</sub></span>\n</span>'
         capt_gr_index=capt_gr_index+2 # 2 seulement (on ne récupère ni ps ni gloss) pas de +1 : pas de !lemma var
