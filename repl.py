@@ -779,7 +779,9 @@ else :
       elif mot==u"CONJPREP" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(prep/conj|conj/prep)</sub><(((?!lemma var).)*)>\n</span>'
       elif mot==u"CONJPOSS" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">conj</sub><sub class="gloss">POSS</sub></span>\n</span>'
       elif mot==u"NPROPRE"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><(((?!lemma var).)*)>\n</span>'
-      elif mot==u"NPROPRENOM"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM</sub></span>\n</span>'
+      elif mot==u"NPROPRENOM"  : 
+        lastnproprenom=ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM</sub></span>\n</span>'
+        wsearch=wsearch+lastnproprenom
       elif mot==u"NPROPRENOMM"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.M</sub></span>\n</span>'
       elif mot==u"NPROPRENOMF"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.F</sub></span>\n</span>'
       elif mot==u"NPROPRENOMMF"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.MF</sub></span>\n</span>'
@@ -797,7 +799,11 @@ else :
       elif mot==u"AMBIGUOUS": wsearch=wsearch+ur'<span class="w"(.*)lemma var(.*)\n</span>'
       else :
         if u"'" in mot: mot=re.sub(ur"\'",u"[\'\’]+",mot)   # satanées curly brackets
-        wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+mot+ur'<.*</span>\n</span>'
+        motsearch=mot
+        if tonal=="new":  # useful for Dumestre script tagged as "new" but not using ɲ (Baabu ni baabu etc.)
+          motsearch=re.sub(u"ɲ",ur"(?:ɲ|ny)",mot)
+          motsearch=re.sub(u"Ɲ",ur"(?:Ɲ|Ny)",motsearch)
+        wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+motsearch+ur'<.*</span>\n</span>'
       if sequence=="": sequence=mot
       else : sequence=sequence+" "+mot
     
@@ -963,7 +969,8 @@ else :
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><\g<'+str(capt_gr_index+3)+ur'>>\n</span>'
         capt_gr_index=capt_gr_index+3+1
       elif glose==u"NPROPRENOMforcetop"      : 
-        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
+        lastnproprenomforcetop=ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
+        wrepl=wrepl+lastnproprenomforcetop
         capt_gr_index=capt_gr_index+2 # 2 seulement (on ne récupère ni ps ni gloss) pas de +1 : pas de !lemma var
       elif glose==u"NPROPRENOMM"      : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><sub class="gloss">NOM.M</sub></span>\n</span>'
@@ -1258,6 +1265,10 @@ else :
     fileREPC.write(wsearch+u"==="+wrepl+u"\n")
 
     if nombre>0 :
+      if "NPROPRENOMforcetop" in liste_gloses: # make this new TOP name generic in all file!  # currently only handles one (or the last) TOP
+        tout,nombre2=re.subn(lastnproprenom,lastnproprenomforcetop,tout,0,re.U+re.MULTILINE)
+        nombre=nombre+nombre2
+        
       msg="%i modifs avec " % nombre +sequence+"\n"
       log.write(msg.encode("utf-8"))
       nbrulesapplied=nbrulesapplied+1
