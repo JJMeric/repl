@@ -222,6 +222,10 @@ if nargv>2 :
         # print "Compiled rules from : "+fileREPCname
       except :
         sys.exit("repl.py needs a REPL-C.txt file or a REPL-STANDARD-C.txt file in the current directory (or in REPL)")
+   # read all file in one go
+   replall=fileREPC.read()
+   fileREPC.close()
+   linereplall=replall.split("\n")
 
 if notfast:
   try:
@@ -515,20 +519,19 @@ if notfast : print "arg="+arg
 
 if arg=="fast" or arg=="-fast":
   nblinerepl=0
-  linerepl=fileREPC.readline()
+  #linerepl=fileREPC.readline()
   #linerepl=linerepl.decode('utf-8')
-  while linerepl :
-    linerepl=re.sub(ur"\n$",u"",linerepl,0,re.U+re.MULTILINE)    # strip trailing newline char
-    nblinerepl=nblinerepl+1
-    wsearch, wrepl = linerepl.split("===")
-    #wsearch = wsearch.replace(u"¤¤",ur"\n")
-    #wrepl = wrepl.replace(u"¤¤",u"\n")
-    
-    tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U+
-    if nombre>0 :
-      nbrulesapplied=nbrulesapplied+1
-      nbmodif=nbmodif+nombre
-    linerepl=fileREPC.readline()
+  #while linerepl :
+  for linerepl in linereplall:
+    #linerepl=re.sub(ur"\n$",u"",linerepl,0,re.U+re.MULTILINE)    # strip trailing newline char
+    if linerepl!="":
+      nblinerepl=nblinerepl+1
+      wsearch, wrepl = linerepl.split("===")
+      tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U+
+      if nombre>0 :
+        nbrulesapplied=nbrulesapplied+1
+        nbmodif=nbmodif+nombre
+      #linerepl=fileREPC.readline()
 
 else :
   fileREPCname="REPL-STANDARD-C.txt"
@@ -1265,9 +1268,10 @@ else :
     fileREPC.write(wsearch+u"==="+wrepl+u"\n")
 
     if nombre>0 :
-      if "NPROPRENOMforcetop" in liste_gloses: # make this new TOP name generic in all file!  # currently only handles one (or the last) TOP
-        tout,nombre2=re.subn(lastnproprenom,lastnproprenomforcetop,tout,0,re.U+re.MULTILINE)
-        nombre=nombre+nombre2
+      #if "NPROPRENOMforcetop" in liste_gloses: # make this new TOP name generic in all file!  # currently only handles one (or the last) TOP
+      #  tout,nombre2=re.subn(lastnproprenom,lastnproprenomforcetop,tout,0,re.U+re.MULTILINE)
+      #  nombre=nombre+nombre2
+      # too simplistic (will do all NOM), needs re function
         
       msg="%i modifs avec " % nombre +sequence+"\n"
       log.write(msg.encode("utf-8"))
