@@ -114,8 +114,9 @@ if nargv==1 :
   sys.exit
 if nargv>1 : filename= str(sys.argv[1])
 
-
-if ".pars.html" in filename :
+if ".dis.fra.html" in filename:
+  sys.exit("repl.py does not handle .dis.fra.html files")
+elif ".pars.html" in filename :
   i_pars=filename.find(".pars.html")
   filenametemp=filename[0:i_pars]
 # sauf si on donne en entrée un fichier dis
@@ -527,6 +528,7 @@ if arg=="fast" or arg=="-fast":
     if linerepl!="":
       nblinerepl=nblinerepl+1
       wsearch, wrepl = linerepl.split("===")
+      wsearch=ur""+wsearch  # this ensures wsearch is an re string!!!IMPORTANT!!!
       tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U+
       if nombre>0 :
         nbrulesapplied=nbrulesapplied+1
@@ -974,6 +976,7 @@ else :
       elif glose==u"NPROPRENOMforcetop"      : 
         lastnproprenomforcetop=ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
         wrepl=wrepl+lastnproprenomforcetop
+        lastnproprenomforcetopindex=capt_gr_index+1    # in order to collect all instances of that candidate TOP name
         capt_gr_index=capt_gr_index+2 # 2 seulement (on ne récupère ni ps ni gloss) pas de +1 : pas de !lemma var
       elif glose==u"NPROPRENOMM"      : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n.prop</sub><sub class="gloss">NOM.M</sub></span>\n</span>'
@@ -1253,25 +1256,28 @@ else :
     nbreplok=nbreplok+1
     iprogress=nbreplok/float(nlignerepl)
     update_progress(iprogress)
-    # if liste_mots_orig=="kɛ́_NORV_yé" : print "\n\n"+liste_mots_orig+"\n\nwsearch\n\n"+wsearch+"\n\nwrepl:\n\n"+wrepl
-    # if liste_mots_orig=="kɛ́_AORN_yé" : print "\n\n"+liste_mots_orig+"\n\nwsearch\n\n"+wsearch+"\n\nwrepl:\n\n"+wrepl
+
+    if "NPROPRENOMforcetop" in liste_gloses:  forcetopiterator=re.finditer(wsearch,tout,re.U+re.MULTILINE)
+
     tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U+
-
-    # écrire les formules compilées
-
-    #wsearch=re.sub(ur"\n",u"¤¤",wsearch,0,re.U+re.MULTILINE)
-    #wsearch=re.sub(ur"\\n",u"¤¤",wsearch,0,re.U+re.MULTILINE)  
-    
-    #wrepl=re.sub(ur"\n",u"¤¤",wrepl,0,re.U+re.MULTILINE)
-    #wrepl=re.sub(ur"\\n",u"¤¤",wrepl,0,re.U+re.MULTILINE)
     
     fileREPC.write(wsearch+u"==="+wrepl+u"\n")
 
     if nombre>0 :
-      #if "NPROPRENOMforcetop" in liste_gloses: # make this new TOP name generic in all file!  # currently only handles one (or the last) TOP
-      #  tout,nombre2=re.subn(lastnproprenom,lastnproprenomforcetop,tout,0,re.U+re.MULTILINE)
-      #  nombre=nombre+nombre2
-      # too simplistic (will do all NOM), needs re function
+
+      # detecting that a name is TOP should propagate to all instances of that name in the text 
+      if "NPROPRENOMforcetop" in liste_gloses: 
+        for forcetop in forcetopiterator :
+          topname=forcetop.group(lastnproprenomforcetopindex)
+          # print topname
+          lastnproprenom=ur'<span class="w" stage="[^>]+">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n\.prop</sub><sub class="gloss">NOM</sub></span>\n</span>'
+          lastnproprenomforcetop=ur'<span class="w" stage="[^>]+">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
+          tout,nombre2=re.subn(lastnproprenom,lastnproprenomforcetop,tout,0,re.U+re.MULTILINE)
+          nombre=nombre+nombre2
+          lastnproprenom=ur'<span class="annot"><span class="w" stage="[^>]+">'+topname+'<span class="lemma">'+topname.lower()+'<sub class="gloss">EMPR</sub></span>\n</span>'
+          lastnproprenomforcetop=ur'<span class="annot"><span class="w" stage="[^>]+">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
+          tout,nombre3=re.subn(lastnproprenom,lastnproprenomforcetop,tout,0,re.U+re.MULTILINE)
+          nombre=nombre+nombre3
         
       msg="%i modifs avec " % nombre +sequence+"\n"
       log.write(msg.encode("utf-8"))

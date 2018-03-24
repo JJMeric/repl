@@ -547,8 +547,8 @@ dictauth[u"6bc78d41-ccf8-4c78-9ff9-ed66f5b25acd"]=u"Kulubali, Zan|||m|Bambara||h
 dictauth[u"661deb8b-649c-406b-9244-01d2674c003d"]=u"Jara, Ɲofan||||Bambara||Biɲan Mɛrijɛla, Banan - kib342-346-347 2000"
 # "Dunbiya, Burama",,m,,,,kib341-346 2000 - kib 349-351 2001 - kib454 2009 ,ea10bbed-a078-460c-9874-02b1126a9323
 dictauth[u"ea10bbed-a078-460c-9874-02b1126a9323"]=u"Dunbiya, Burama|||m|Bambara||kib341-346 2000 - kib 349-351 2001 - kib454 2009"
-# "Jara, Fuseyini/Fuseni",,m,1966,,,"""Man IWE"" -Sanfili, Bamakɔ - kib350-351-353 2001",4bc8d117-344d-48c3-974e-49c5137abd82
-dictauth[u"4bc8d117-344d-48c3-974e-49c5137abd82"]=u'Jara, Fuseyini/Fuseni|||m|Bambara||"Man IWE" -Sanfili, Bamakɔ - kib350-351-353 2001'
+# "Jara, Fuseyini/Fuseni",,m,1966,,,"&quot;Man IWE&quot; -Sanfili, Bamakɔ - kib350-351-353 2001",4bc8d117-344d-48c3-974e-49c5137abd82
+dictauth[u"4bc8d117-344d-48c3-974e-49c5137abd82"]=u'Jara, Fuseyini/Fuseni|||m|Bambara||&quot;Man IWE&quot; -Sanfili, Bamakɔ - kib350-351-353 2001'
 # "Togola, Dirisa",,m,,,,"Balikukalankaramɔgɔ, Bonwu - Bankɔ - Joyila. Kib337-341 2000, kib353 2001",67ad6f80-5eb9-43f4-a293-cdbbfefd5eaa
 dictauth[u"67ad6f80-5eb9-43f4-a293-cdbbfefd5eaa"]=u"Togola, Dirisa|||m|Bambara||Balikukalankaramɔgɔ, Bonwu - Bankɔ - Joyila. Kib337-341 2000, kib353 2001"
 # "Jara, Cɛmɔgɔ",,,,,,Jankara - Banko/Bankɔ-Joyila Sɛrikili. kib350-351-355 2001,706410a5-87d1-41e2-884a-39906854347c

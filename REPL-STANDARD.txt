@@ -10135,6 +10135,7 @@ dú_kɔ́nɔ_yèn===dú:n:concession_kɔ́nɔ:pp:dans_yèn:adv:là-bas
 dú_wɛ́rɛ_kɔ́nɔ_PUNCT===dú:n:concession_wɛ́rɛ:dtm:autre_kɔ́nɔ:pp:dans_PUNCT
 dùgu_kɔ́nɔ===dùgu:n:terre_kɔ́nɔ:pp:dans
 Dùgu_kɔ́nɔ===dùgu:n:terre_kɔ́nɔ:pp:dans
+dùgu_kono_PUNCT===dùgu:n:terre_kɔ́nɔ:pp:dans_PUNCT   # erreur préquente
 lámini_kɔ́nɔ===lámini:n:alentours [lá:mrph:CAUS míni:v:enrouler]_kɔ́nɔ:pp:dans
 PERS_ká_dùgu_kɔ́nɔ===PERS_ka:pp:POSS_dùgu:n:terre_kɔ́nɔ:pp:dans
 dùguba_kɔ́nɔ===dùguba:n:gros.village [dùgu:n:terre ba:mrph:AUGM]_kɔ́nɔ:pp:dans
@@ -10174,6 +10175,7 @@ kúngo_kɔ́nɔ===kúngo:n:brousse_kɔ́nɔ:pp:dans
 sáhelikungo_kɔ́nɔ===sáhelikungo:n:Sahara [sáheli:n:Nord kúngo:n:brousse]_kɔ́nɔ:pp:dans
 làrabukan_kɔ́nɔ===làrabukan:n:langue.arabe [làrabu:n:arabe kán:n:cou]_kɔ́nɔ:pp:dans
 Màli_kɔ́nɔ===Màli:n.prop:TOP_kɔ́nɔ:pp:dans
+Màli_kono_PUNCT===Màli:n.prop:TOP_kɔ́nɔ:pp:dans_PUNCT
 Màli_yɛ̀rɛ̂_kɔ́nɔ===Màli:n.prop:TOP_yɛ̀rɛ̂:dtm:même_kɔ́nɔ:pp:dans
 màra_kɔ́nɔ===màra:n:garde_kɔ́nɔ:pp:dans
 ò_húkumu_kɔ́nɔ===ò:dtm:ce_húkumu:n:autorité_kɔ́nɔ:pp:dans
@@ -10216,6 +10218,7 @@ tìle_tɔ̀_kɔ́nɔ===tìle:n:soleil_tɔ̀:n:le.reste_kɔ́nɔ:pp:dans
 Tìle_tɔ̀_kɔ́nɔ===tìle:n:soleil_tɔ̀:n:le.reste_kɔ́nɔ:pp:dans
 sú_kɔ́nɔ===sú:n:nuit_kɔ́nɔ:pp:dans
 wúla_kɔ́nɔ===wúla:n:brousse_kɔ́nɔ:pp:dans
+wúla_kono_PUNCT===wúla:n:brousse_kɔ́nɔ:pp:dans_PUNCT  # erreur fréquente sar-poyi_ko_di
 wúlaw_kɔ́nɔ===wúlaw:n: [wúla:n:brousse w:mrph:PL]_kɔ́nɔ:pp:dans
 gɛ̀lɛya_kɔ́nɔ===gɛ̀lɛya:n:dureté [gɛ̀lɛn:vq:dur ya:mrph:DEQU]_kɔ́nɔ:pp:dans
 gɛ̀lɛya_mîn_kɔ́nɔ===gɛ̀lɛya:n:dureté [gɛ̀lɛn:vq:dur ya:mrph:DEQU]_mîn:dtm:REL_kɔ́nɔ:pp:dans
@@ -11123,6 +11126,7 @@ zánwiyekalo===zánwuyekalo:n: [zánwuye:n:janvier kálo:n:lune]    # Jɛkab
 féburuyekalo===féburuyekalo:n: [féburuye:n:février kálo:n:lune]
 féburiyekalo===féburuyekalo:n: [féburuye:n:février kálo:n:lune]    # Jɛkabaara
 féburuye-kalo===féburuyekalo:n: [féburuye:n:février kálo:n:lune]
+féwuruyekalo===féburuyekalo:n: [féburuye:n:février kálo:n:lune]
 
 márisikalo===márisikalo:n: [márisi:n:mars kálo:n:lune]
 áwirilikalo===áwirilikalo:n: [áwirili:n:avril kálo:n:lune]
@@ -21518,7 +21522,8 @@ Babilɔni===Babilɔni:n.prop:TOP  # dans LK-3hakilimaya23batodonkiliw
 
 minisitiri===mínisiri:n:ministre
 farawɔn===farawɔn:n:pharaon # dans LK et rubrique histoire de Kibaru
-shɛki===shɛki:n:cheikh
+shɛki_NPROPRE===shɛki:n:cheikh_NPROPRE   # sinon c'est chèque !!!
+Shɛki_NPROPRE===shɛki:n:cheikh_NPROPRE   # sinon c'est chèque !!!
 serubɛn===serubɛn:n:chérubin # dans LK
 desɛn===desɛn:n:dessin # rubrique "tulon" de Kibaru, ex: kibaru269_07tulon
 aw'===áwà:intj:bon
@@ -21533,6 +21538,17 @@ Sònsan===sònsan:n:lièvre
 Bàkɔrɔnin===bàkɔrɔnin:n:bouc [bàkɔrɔ:n:bouc [bà:n:chèvre kɔrɔ:adj:mâle] nin:mrph:DIM]
 Súruku===súruku:n:hyène
 Wáranìnkalan===wáranìnkalan:n:panthère [wára:n:fauve nin:mrph:DIM kála:vq:bariolé]
+desɛn===desɛn:n:dessin # rubrique Tulon dans Kibaru
+díyɛnbɛɛtigi===díyɛnbɛɛtigi:n: [díyɛn:n:monde bɛ́ɛ:dtm:tout tìgi:n:maître]   # épithète de Ala
+w===w:n:w  # revient souvent : foot, grammaire marque du PL
+b===b:n:b # dans les listes b)   # ATTENTION NE PAS METTRE a   !!! ni d dɔrɔmɛ !!!
+c===c:n:c
+dègekaramɔgɔ===dègekaramɔgɔ:n: [dège:v:enseigner kàramɔgɔ:n:maître [mɔ̀gɔ:n:homme]]   # foot : entraîneur
+Aarɔn===Aarɔn:n.prop:Aaron # Bible
+ke===kɛ́:v:faire    # sauf ke masina ?
+ɛsitadi===ɛsitadi:n:stade # et équipe de foot
+gɔfɛrɛnɛri===gɔfɛrɛnɛri:n:gouverneur
+gofɛrɛnɛri===gɔfɛrɛnɛri:n:gouverneur
 
 # fin Dico Annexe  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #
@@ -21664,6 +21680,7 @@ Bánin===Bánin:n.prop:TOP
 Àyá===Àyá:n.prop:NOM.F
 Làsení===Làsení:n.prop:NOM.M
 Kukukaw===Kukukaw:n: [Kuku:n.prop:TOP ka:mrph:GENT w:mrph:PL]
+
 
 # SALUTATIONS, BENEDICTIONS, PROVERBES ET SENTENCES ##################################################
 
@@ -29190,6 +29207,7 @@ NAME_tɔ́gɔ_yé===NAME_tɔ́gɔ:n:nom_yé:cop:EQU
 DTM_tɔ́gɔ_yé===DTM_tɔ́gɔ:n:nom_yé:cop:EQU
 PRONOM_tɔ́gɔ_yé===PRONOM_tɔ́gɔ:n:nom_yé:cop:EQU
 tɔ́gɔ_yé_kó_NPROPRE===tɔ́gɔ:n:nom_yé:cop:EQU_kó:cop:QUOT_NPROPRE
+tùn_yé_kó_NPROPRE===tùn:prt:PST_yé:cop:EQU_kó:cop:QUOT_NPROPRE
 
 
 yé_NAME_dàn_bɛ́ɛ_yé===yé:cop:EQU_NAME_dàn:n:limite_bɛ́ɛ:dtm:tout_yé:pp:PP
@@ -29778,8 +29796,18 @@ bɔ́ra_NPROPRENOM_PUNCT===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_NPROPREN
 bɔ́_NPROPRENOM_PUNCT===bɔ́:v:sortir_NPROPRENOMforcetop_PUNCT
 tágara_NPROPRENOM_PUNCT===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_NPROPRENOMforcetop_PUNCT
 tága_NPROPRENOM_PUNCT===tága:v:aller_NPROPRENOMforcetop_PUNCT
+táara_NPROPRENOM_TAG===táara:v: [táa:v:aller ra:mrph:PFV.INTR]_NPROPRENOMforcetop_TAG
+táa_NPROPRENOM_TAG===táa:v:aller_NPROPRENOMforcetop_TAG
+bɔ́ra_NPROPRENOM_TAG===bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]_NPROPRENOMforcetop_TAG
+bɔ́_NPROPRENOM_TAG===bɔ́:v:sortir_NPROPRENOMforcetop_TAG
+tágara_NPROPRENOM_TAG===tágara:v: [tága:v:aller ra:mrph:PFV.INTR]_NPROPRENOMforcetop_TAG
+tága_NPROPRENOM_TAG===tága:v:aller_NPROPRENOMforcetop_TAG
 NPROPRETOP_ni_NPROPRENOM_cɛ́_PUNCT===NPROPRETOP_ni:conj:et_NPROPRENOMforcetop_cɛ́:pp:entre_PUNCT
 NPROPRETOP_àní_NPROPRENOM_cɛ́_PUNCT===NPROPRETOP_àní:conj:ainsi.que_NPROPRENOMforcetop_cɛ́:pp:entre_PUNCT
+NPROPRENOM_ni_NPROPRETOP_cɛ́_PUNCT===NPROPRENOMforcetop_ni:conj:et_NPROPRETOP_cɛ́:pp:entre_PUNCT
+NPROPRENOM_àní_NPROPRETOP_cɛ́_PUNCT===NPROPRENOMforcetop_àní:conj:ainsi.que_NPROPRETOP_cɛ́:pp:entre_PUNCT
+NPROPRE_kà_bɔ́_NPROPRENOM===NPROPRE_kà:pm:INF_bɔ́:v:sortir_NPROPRENOMforcetop
+
 
 NORV_PRMRK===NORVname_PRMRK
 NORV_COPULE===NORVname_COPULE
