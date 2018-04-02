@@ -114,8 +114,8 @@ if nargv==1 :
   sys.exit
 if nargv>1 : filename= str(sys.argv[1])
 
-if ".dis.fra.html" in filename:
-  sys.exit("repl.py does not handle .dis.fra.html files")
+if ".dis.fra" in filename:
+  sys.exit("repl.py does not handle .dis.fra files")
 elif ".pars.html" in filename :
   i_pars=filename.find(".pars.html")
   filenametemp=filename[0:i_pars]
@@ -207,22 +207,34 @@ if nargv>2 :
    except : 
     try:
       fileREPCname="REPL-STANDARD-C.txt"
-      if filenametemp.endswith(".old") and "baabu_ni_baabu" not in filenametemp :
+      tonal="new"
+      if filenametemp.endswith(".old"):
+        if  filenametemp.startswith("baabu_ni_baabu") :
+          fileREPCname = "REPL-STANDARD-C-ny.txt"
+          tonal = "newny"
+        else:
           fileREPCname = "REPL-STANDARD-C.old.txt"
           tonal = "old"
-      else:
-          tonal = "new"
+
       fileREPC = open (fileREPCname,"r")
-      # print "Compiled rules from : "+fileREPCname
+      
     except:
       try:
         fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.txt")
-        if filenametemp.endswith(".old")  and "baabu_ni_baabu" not in filenametemp:
+        tonal="new"
+        if filenametemp.endswith(".old") :
+          if  filenametemp.startswith("baabu_ni_baabu") :
+            fileREPCname = "REPL-STANDARD-C-ny.txt"
+            tonal = "newny"
+          else :
             fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.old.txt")
+            tonal="old"
+
         fileREPC = open (fileREPCname,"r")
-        # print "Compiled rules from : "+fileREPCname
+
       except :
         sys.exit("repl.py needs a REPL-C.txt file or a REPL-STANDARD-C.txt file in the current directory (or in REPL)")
+
    # read all file in one go
    replall=fileREPC.read()
    fileREPC.close()
@@ -287,7 +299,13 @@ if script=="Ancien orthographe malien" : tonal="old"
 elif script=="Nouvel orthographe malien" : tonal="new"
 # elif script=="bailleul" : tonal="bailleul" # <---------- n'existe pas en réalité, vérifier arg !!!
 
-if "baabu_ni_baabu" in filename: tonal="new"
+if  filenametemp.startswith("baabu_ni_baabu") : tonal="newny"
+
+"""
+if tonal=="new":   # check if it's a Baabu style file
+  oldny=True
+  if re.search(ur'<span class="sent">[^<]*(ɲ|Ɲ)[^<]+<',tout,re.U+re.MULTILINE) : oldny=False
+"""
 
 if notfast: print "text:script="+script+    ",    tonal="+tonal
 
@@ -500,20 +518,92 @@ if nombre>0 :
 #
 # mot non initial commençant par une majuscule
 # et ambigu :
-# remarque : ça pose problème pour Waraba, Suruku, Sonsannin... 
-wsearch=ur"</span><span class=\"w\" stage=\"[0-9\-]+\">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-]+)<.*lemma var.*></span>\n"
-wrepl=ur'</span><span class="w" stage="0">\g<1><span class="lemma">\g<1><sub class="ps">n.prop</sub><sub class="gloss">NOM</sub></span>\n'
+# remarque : ça pose problème pour Waraba, Suruku, Sonsannin... pour l'instant fixés dans REPL-STANDARD
+
+# <span class="w" stage="0">Kati<span class="lemma">Kati<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub><span class="lemma var">káti<sub class="ps">n</sub><sub class="gloss">caractère</sub></span><span class="lemma var">káti<sub class="ps">adv</sub><sub class="gloss">très.fort</sub></span></span>\n</span>
+#wsearch=ur'</span><span class="w" stage="[0-9\-]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">(?P=w)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub>((<span class="lemma var">[^<]+<sub class="ps">[^<\.]+</sub><sub class="gloss">[^<]+</sub></span>)+)</span>\n</span>'
+#wsearch=ur'</span><span class="w" stage="[0-9\-]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">(?P=w)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*lemma var.*></span>\n</span>'
+#wrepl=ur'</span><span class="w" stage="0">\g<1><span class="lemma">\g<1><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
+wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*lemma var.*></span>\n</span>'
+wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
 if nombre>0 :
   if notfast: 
-    msg="%i modifs NOMPROPRE non-initial ambigu " % nombre +"\n"
+    msg="%i modifs autres NOMPROPRE non initial avec lemma TOP et lemmavar non n.prop " % nombre +"\n"
     log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
-# # ou inconnu (pas trouvé):
-#</span><span class="w" stage="[0-9\-]+">[A-ZƐƆƝŊ][a-zɛɔɲŋ\-]+<span class="lemma">([^<]+)</span>
+wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.CL</sub><.*lemma var.*></span>\n</span>'
+wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.CL</sub></span>\n</span>'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
+if nombre>0 :
+  if notfast: 
+    msg="%i modifs autres NOMPROPRE non initial avec lemma NOM.CL et lemmavar non n.prop " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
+wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.M</sub><.*lemma var.*></span>\n</span>'
+wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.M</sub></span>\n</span>'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
+if nombre>0 :
+  if notfast: 
+    msg="%i modifs autres NOMPROPRE non initial avec lemma NOM.M et lemmavar non n.prop " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
+wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.F</sub><.*lemma var.*></span>\n</span>'
+wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.F</sub></span>\n</span>'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
+if nombre>0 :
+  if notfast: 
+    msg="%i modifs autres NOMPROPRE non initial avec lemma NOM.F et lemmavar non n.prop " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
+# this should not screw valid ones like Eziputikaw
+#wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">(.+GENT.+)<span class="lemma var">(?P<lv>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n.prop</sub><sub class="gloss">(?P=lv)</sub></span></span>\n'
+wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">(.+GENT(((?!lemma var).)*))<span class="lemma var">[^\n]+</span></span>\n'
+wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3></span>\n'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
+if nombre>0 :
+  if notfast: 
+    msg="%i modifs NOMPROPRE non-initial ambigu total (lemma sans ps/gloss) " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
+# <span class="w" stage="-1">Pekosi<span class="lemma">pekosi<span class="lemma var">Pekosi<sub class="ps">n.prop</sub><sub class="gloss">Pekosi</sub></span></span>\n</span>
+wsearch=ur"(</span>|</span>\n)<span class=\"w\" stage=\"[0-9\-]+\">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class=\"lemma\">[^<]+<span class=\"lemma var\">(?P=w)<sub class=\"ps\">n.prop</sub><sub class=\"gloss\">(?P=w)</sub></span></span>\n</span>"
+wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<2><sub class="ps">n.prop</sub><sub class="gloss">NOM</sub></span>\n</span>'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
+if nombre>0 :
+  if notfast: 
+    msg="%i modifs autres NOMPROPRE non-initial ambigus " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
+wsearch=ur"(</span>|</span>\n)<span class=\"w\" stage=\"[0-9\-]+\">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<.+lemma var.+></span>\n"
+wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<2><sub class="ps">n.prop</sub><sub class="gloss">NOM</sub></span>\n'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
+if nombre>0 :
+  if notfast: 
+    msg="%i modifs NOMPROPRE non-initial ambigu total (lemma sans ps/gloss) " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
 
 # NOW THE BIG TASK     -go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!--
 if notfast : print "arg="+arg
@@ -537,7 +627,9 @@ if arg=="fast" or arg=="-fast":
 
 else :
   fileREPCname="REPL-STANDARD-C.txt"
-  if ".old" in filenametemp : fileREPCname="REPL-STANDARD-C.old.txt"
+  if filenametemp.endswith(".old") : fileREPCname="REPL-STANDARD-C.old.txt"
+  if tonal=="newny" : fileREPCname="REPL-STANDARD-C-ny.txt"
+
   fileREPC = open (fileREPCname,"wb")
 
   ###### replacement rules as per REPL.txt ######################################################################################################
@@ -597,10 +689,10 @@ else :
       liste_mots=re.sub(u"Ɔ","Ò",liste_mots)
       liste_mots=re.sub(u"ɲ","ny",liste_mots)
       liste_mots=re.sub(u"Ɲ","Ny",liste_mots)
-    #elif  tonal=="new" :    # or use a non-capturing alternative (?:ɲ|ny)   and (?:Ɲ|Ny)
-    #  liste_mots=re.sub(u"ɲ",ur"(?:ɲ|ny)",liste_mots)
-    #  liste_mots=re.sub(u"Ɲ",ur"(?:Ɲ|Ny)",liste_mots)
-    # above good idea but needs fixing : word is also replaced, aargh - ur ?
+    elif  tonal=="newny" :    
+      liste_mots=re.sub(u"ɲ",ur"ny",liste_mots)
+      liste_mots=re.sub(u"Ɲ",ur"Ny",liste_mots)
+
     liste_mots=re.sub(u"é","é",liste_mots)   # normaliser les caractères français éventuels (ETRG.FRA intégraux possibles)
     liste_mots=re.sub(u"è","è",liste_mots)
     liste_mots=re.sub(u"ë","ë",liste_mots)
@@ -804,11 +896,15 @@ else :
       elif mot==u"AMBIGUOUS": wsearch=wsearch+ur'<span class="w"(.*)lemma var(.*)\n</span>'
       else :
         if u"'" in mot: mot=re.sub(ur"\'",u"[\'\’]+",mot)   # satanées curly brackets
+        """
         motsearch=mot
         if tonal=="new":  # useful for Dumestre script tagged as "new" but not using ɲ (Baabu ni baabu etc.)
           motsearch=re.sub(u"ɲ",ur"(?:ɲ|ny)",mot)
           motsearch=re.sub(u"Ɲ",ur"(?:Ɲ|Ny)",motsearch)
         wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+motsearch+ur'<.*</span>\n</span>'
+        """
+        wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+mot+ur'<.*</span>\n</span>'
+
       if sequence=="": sequence=mot
       else : sequence=sequence+" "+mot
     
@@ -827,7 +923,7 @@ else :
       if glose==u"COMMA"      : wrepl=wrepl+ur'<span class="c">,</span>\n'
       elif glose==u"DOT"      : wrepl=wrepl+ur'<span class="c">.</span>\n'
       elif glose==u"DOTnone"  : wrepl=wrepl+ur"" # cas spécial où on élimine le DOT (uniquement pour dɔrɔmɛ ?)
-      elif glose==u"QUESTION" : wrepl=wrepl+ur'<span class="c">?</span>\n'
+      elif glose==u"QUESTION" : wrepl=wrepl+ur'<span class="c">\?</span>\n'
       elif glose==u"COLON"    : wrepl=wrepl+ur'<span class="c">:</span>\n'
       elif glose==u"SEMICOLON": wrepl=wrepl+ur'<span class="c">;</span>\n'
       elif glose==u"EXCLAM"   : wrepl=wrepl+ur'<span class="c">!</span>\n'
@@ -838,8 +934,8 @@ else :
       elif glose==u"DEGRE"    : wrepl=wrepl+ur'<span class="c">°</span>\n'
       elif glose==u"LAQUO"    : wrepl=wrepl+ur'<span class="c">«</span>\n'
       elif glose==u"RAQUO"    : wrepl=wrepl+ur'<span class="c">»</span>\n'
-      elif glose==u"PARO"     : wrepl=wrepl+ur'<span class="c">(</span>\n'
-      elif glose==u"PARF"     : wrepl=wrepl+ur'<span class="c">)</span>\n'
+      elif glose==u"PARO"     : wrepl=wrepl+ur'<span class="c">\(</span>\n'
+      elif glose==u"PARF"     : wrepl=wrepl+ur'<span class="c">\)</span>\n'
       elif glose==u"GUILLEMET"    : wrepl=wrepl+ur'<span class="c">"</span>\n'
       elif glose==u"PERCENT"  : wrepl=wrepl+ur'<span class="c">%</span>\n'
       elif glose==u"PUNCT"    :
@@ -915,6 +1011,9 @@ else :
         capt_gr_index=capt_gr_index+3+1
       elif glose==u"ADJECTIF" : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">adj</sub><\g<'+str(capt_gr_index+3)+ur'>>\n</span>'
+        capt_gr_index=capt_gr_index+3+1
+      elif glose==u"ADJECTIFforcen" :    # ex sabanan est adj dand Bamadaba mais parfois devient n
+        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">n</sub><\g<'+str(capt_gr_index+3)+ur'>>\n</span>'
         capt_gr_index=capt_gr_index+3+1
       elif glose==u"ADJN" : 
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">adj/n</sub><\g<'+str(capt_gr_index+4)+ur'>>\n</span>'
@@ -1045,6 +1144,7 @@ else :
           print "\nglose incorrecte (format lx:ps:gloss [sub]) non respecté, espaces mal placés :",glose
           log.write(u"glose incorrecte (format lx:ps:gloss [sub]) non respecté, espaces mal placés :"+glose+"\n")
           sys.exit("\n"+liste_gloses+"\n\narrêt de repl.")
+
         if lmots==lgloses :
           word=mots[imots]
           
@@ -1074,6 +1174,10 @@ else :
             word=re.sub(u"ɔɔ","òo",word)
             word=re.sub(u"ɔ","ò",word)
             word=re.sub(u"Ɔ","Ò",word)
+            word=re.sub(u"ɲ","ny",word)
+            word=re.sub(u"Ɲ","Ny",word)
+          elif tonal=="newny":
+            #if oldny :       # cas type Baabu ni baabu
             word=re.sub(u"ɲ","ny",word)
             word=re.sub(u"Ɲ","Ny",word)
         
@@ -1377,30 +1481,30 @@ if nombre>0 :
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 '''
-wsearch=ur'</style>'
-wrepl=ur'span.lemma.var {background-color:lightblue;}\n</style><title>'+filenametemp+ur'</title>'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  
-if nombre>0 :
-  if notfast: 
-    msg="%i  highlight ambiguous words left for better navigator visualisation" % nombre +"\n"
-    log.write(msg.encode("utf-8"))
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
-# inconnus
-wsearch=ur'<span class="lemma">([^<]+)</span>'
-wrepl=ur'<span class="lemma" style="background-color:red;">\g<1>\n</span>'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  
-if nombre>0 :
-  if notfast: 
-    msg="%i  highlight unkown words left for better navigator visualisation" % nombre +"\n"
-    log.write(msg.encode("utf-8"))
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
+if notfast:
+  wsearch=ur'</style>'
+  wrepl=ur'span.lemma.var {background-color:lightblue;}\n</style><title>'+filenametemp+ur'</title>'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  
+  if nombre>0 :
+    if notfast: 
+      msg="%i  highlight ambiguous words left for better navigator visualisation" % nombre +"\n"
+      log.write(msg.encode("utf-8"))
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre
+  # inconnus
+  wsearch=ur'<span class="lemma">([^<]+)</span>'
+  wrepl=ur'<span class="lemma" style="background-color:red;">\g<1>\n</span>'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  
+  if nombre>0 :
+    if notfast: 
+      msg="%i  highlight unkown words left for better navigator visualisation" % nombre +"\n"
+      log.write(msg.encode("utf-8"))
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre
 
-# FINISH
-if notfast: 
+  # FINISH
   msg="\n %i modifs au total" % nbmodif
   log.write(msg.encode('utf-8'))
   msg="\n %i mots modifies au total" % nbmots
