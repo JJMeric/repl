@@ -412,8 +412,8 @@ if nombre>0 :
 # <span class="w" stage="0">konyèw<span class="lemma">konyɛw<span class="lemma var">konyɛw<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub><span class="m">konyɛ<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">koɲɛw<sub class="ps">n</sub><span class="m">kóɲɛ<sub class="ps">n</sub><sub class="gloss">affaire</sub><span class="m">kó<sub class="ps">n</sub><sub class="gloss">affaire</sub></span><span class="m">ɲɛ́<sub class="ps">n</sub><sub class="gloss">fois</sub></span></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span>
 # </span>
 # revue de la formule complète le 16/2/18
-
-wsearch=ur'<span class="lemma">[^<]+<span class="lemma var">[^<]+<sub class="ps">n/adj/dtm/prn/ptcp/n\.prop/num</sub><span class="m">[^<]+<sub class="ps">n/adj/dtm/prn/ptcp/n\.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">(.+)</span></span>\n</span>'
+# retains only if the FIRST lemma var, other multiple lemma vars eliminated (TO BE RESOLVED!)
+wsearch=ur'<span class="lemma">[^<]+<span class="lemma var">[^<]+<sub class="ps">n/adj/dtm/prn/ptcp/n\.prop/num</sub><span class="m">[^<]+<sub class="ps">n/adj/dtm/prn/ptcp/n\.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">(((?!lemma var).)+)</span>((<span class="lemma var">[^\n]+</span>)*)</span>\n</span>'
 wrepl=ur'<span class="lemma">\g<1></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # Gloss vide en lemma et n/adj/dtm/prn/ptcp/n.prop/num
 if nombre>0 :
@@ -570,19 +570,29 @@ if nombre>0 :
 
 # this should not screw valid ones like Eziputikaw
 #wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">(.+GENT.+)<span class="lemma var">(?P<lv>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n.prop</sub><sub class="gloss">(?P=lv)</sub></span></span>\n'
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">(.+GENT(((?!lemma var).)*))<span class="lemma var">[^\n]+</span></span>\n'
+# but one extra span after ???
+# <span class="w" stage="1">Keyilakaw<span class="lemma">keyilakaw<span class="lemma var">keyilakaw<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub><span class="m">keyilaka<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">keyilakaw<sub class="ps">n/n.prop</sub><span class="m">keyi<sub class="ps">n/n.prop</sub></span><span class="m">la<sub class="ps">mrph</sub><sub class="gloss">LOC</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">keyilakaw<sub class="ps">n/n.prop</sub><span class="m">keyila<sub class="ps">n/n.prop</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span>\n</span>
+# pars <span class="w" stage="0">Keyilakaw<span class="lemma">keyilakaw<sub class="ps">n/n.prop</sub><span class="m">keyi<sub class="ps">n/n.prop</sub></span><span class="m">la<sub class="ps">mrph</sub><sub class="gloss">LOC</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span>\n</span>
+# exemple span en trop
+# <span class="w" stage="0">Horimakaw<span class="lemma">horimakaw<sub class="ps">n/n.prop</sub><span class="m">horima<sub class="ps">n/n.prop</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span>\n</span>
+# pars <span class="w" stage="1">Horimakaw<span class="lemma">horimakaw<span class="lemma var">horimakaw<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub><span class="m">horimaka<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">horimakaw<sub class="ps">n/n.prop</sub><span class="m">horima<sub class="ps">n/n.prop</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">horimakaw<sub class="ps">n</sub><span class="m">hori<sub class="ps">n</sub></span><span class="m">ma<sub class="ps">mrph</sub><sub class="gloss">COM</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">horimakaw<sub class="ps">n</sub><span class="m">hori<sub class="ps">n</sub></span><span class="m">ma<sub class="ps">mrph</sub><sub class="gloss">RECP.PRN</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span>\n</span>
+# another case: repl
+# <span class="w" stage="0">Timunakaw<span class="lemma">timunakaw<sub class="ps">n/n.prop</sub><span class="m">timu<sub class="ps">n/n.prop</sub></span><span class="m">na<sub class="ps">mrph</sub><sub class="gloss">LOC</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span>\n</span>
+# pars <span class="w" stage="1">Timunakaw<span class="lemma">timunakaw<span class="lemma var">timunakaw<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub><span class="m">timunaka<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">timunakaw<sub class="ps">n/n.prop</sub><span class="m">timu<sub class="ps">n/n.prop</sub></span><span class="m">na<sub class="ps">mrph</sub><sub class="gloss">LOC</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">timunakaw<sub class="ps">n/n.prop</sub><span class="m">timuna<sub class="ps">n/n.prop</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span>\n</span>
+#
+wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">((((?!lemma var).)+)GENT(((?!lemma var).)+))<span class="lemma var">[^\n]+</span></span>\n'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3></span>\n'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
 if nombre>0 :
   if notfast: 
-    msg="%i modifs NOMPROPRE non-initial ambigu total (lemma sans ps/gloss) " % nombre +"\n"
+    msg="%i modifs NOMPROPRE non-initial ambigu type -kaw GENT (lemma sans ps/gloss) " % nombre +"\n"
     log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
 # <span class="w" stage="-1">Pekosi<span class="lemma">pekosi<span class="lemma var">Pekosi<sub class="ps">n.prop</sub><sub class="gloss">Pekosi</sub></span></span>\n</span>
-wsearch=ur"(</span>|</span>\n)<span class=\"w\" stage=\"[0-9\-]+\">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class=\"lemma\">[^<]+<span class=\"lemma var\">(?P=w)<sub class=\"ps\">n.prop</sub><sub class=\"gloss\">(?P=w)</sub></span></span>\n</span>"
+wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-b]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">[^<]+<span class="lemma var">(?P=w)<sub class="ps">n.prop</sub><sub class="gloss">(?P=w)</sub></span></span>\n</span>'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<2><sub class="ps">n.prop</sub><sub class="gloss">NOM</sub></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
 if nombre>0 :
@@ -598,7 +608,7 @@ wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<2><sub class
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)
 if nombre>0 :
   if notfast: 
-    msg="%i modifs NOMPROPRE non-initial ambigu total (lemma sans ps/gloss) " % nombre +"\n"
+    msg="%i modifs NOMPROPRE non-initial ambigu total (lemma sans ps/gloss) -> NOM " % nombre +"\n"
     log.write(msg.encode("utf-8"))
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
@@ -610,20 +620,19 @@ if notfast : print "arg="+arg
 
 if arg=="fast" or arg=="-fast":
   nblinerepl=0
-  #linerepl=fileREPC.readline()
-  #linerepl=linerepl.decode('utf-8')
-  #while linerepl :
+
   for linerepl in linereplall:
     #linerepl=re.sub(ur"\n$",u"",linerepl,0,re.U+re.MULTILINE)    # strip trailing newline char
-    if linerepl!="":
-      nblinerepl=nblinerepl+1
+    #if linerepl!="" or linerepl!="\n":
+    if "===" in linerepl :
+      # nblinerepl=nblinerepl+1
       wsearch, wrepl = linerepl.split("===")
       wsearch=ur""+wsearch  # this ensures wsearch is an re string!!!IMPORTANT!!!
       tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U+re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U+
       if nombre>0 :
-        nbrulesapplied=nbrulesapplied+1
+      #  nbrulesapplied=nbrulesapplied+1
         nbmodif=nbmodif+nombre
-      #linerepl=fileREPC.readline()
+
 
 else :
   fileREPCname="REPL-STANDARD-C.txt"
@@ -647,9 +656,10 @@ else :
       continue
     if linerepl[0:1]==u"\n" or len(linerepl)<=2 :  # le premier test ne marche pas sur mac 
       continue
-    if u"===" not in linerepl :
-      log.write("erreur de === :"+str(nblinerepl)+" : "+linerepl+"\n len="+str(len(linerepl)))
-      sys.exit(linerepl+"\nil manque un === sur la ligne")
+    if (u"===" not in linerepl) :
+      if (u"=>=" not in linerepl) :
+        log.write("erreur de === :"+str(nblinerepl)+" : "+linerepl+"\n len="+str(len(linerepl)))
+        sys.exit(linerepl+"\nseparator === (or =>= ) is missing on line")
 
     if u"__" in linerepl :
       log.write("erreur de _ _: "+str(nblinerepl)+" : "+linerepl+"\n")
@@ -668,9 +678,14 @@ else :
       sys.exit(linerepl+"\n==== au lieu de === ?")
 
     linerepl=linerepl.strip()   # strips trailing spaces ?
-    elements=linerepl.split(u"===")
-    liste_mots=elements[0]
-    # liste_mots_orig=liste_mots
+   
+    if "===" in linerepl :
+      liste_mots,liste_gloses=linerepl.split(u"===")
+      ucase1=False
+    elif "=>=" in linerepl :
+      liste_mots,liste_gloses=linerepl.split(u"=>=")
+      ucase1=True
+
 
     if tonal=="bailleul" : 
       liste_mots=re.sub(u"́","",liste_mots)
@@ -705,8 +720,7 @@ else :
     liste_mots=re.sub(u"ï","ï",liste_mots)
     liste_mots=re.sub(u"ç","ç",liste_mots)
 
-    liste_gloses=elements[1]
-
+    
     #
     # PETITES VALIDATIONS
     #
@@ -903,7 +917,16 @@ else :
           motsearch=re.sub(u"Ɲ",ur"(?:Ɲ|Ny)",motsearch)
         wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+motsearch+ur'<.*</span>\n</span>'
         """
-        wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+mot+ur'<.*</span>\n</span>'
+        if wsearch==u"" and ucase1 :
+          winitial=mot[0:1]
+          wrest=mot[1:len(mot)]
+          # mot2=ur"(?:"+winitial.upper()+ur"|"+winitial+ur")"+wrest   # non-capturing group
+          mot2=ur"["+winitial.upper()+winitial+ur"]"+wrest    # character class supposedly faster, at least less verbose!
+          #print mot, mot2
+          wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+mot2+ur'<.*</span>\n</span>'
+
+        else:
+          wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+mot+ur'<.*</span>\n</span>'
 
       if sequence=="": sequence=mot
       else : sequence=sequence+" "+mot
@@ -923,7 +946,7 @@ else :
       if glose==u"COMMA"      : wrepl=wrepl+ur'<span class="c">,</span>\n'
       elif glose==u"DOT"      : wrepl=wrepl+ur'<span class="c">.</span>\n'
       elif glose==u"DOTnone"  : wrepl=wrepl+ur"" # cas spécial où on élimine le DOT (uniquement pour dɔrɔmɛ ?)
-      elif glose==u"QUESTION" : wrepl=wrepl+ur'<span class="c">\?</span>\n'
+      elif glose==u"QUESTION" : wrepl=wrepl+ur'<span class="c">?</span>\n'
       elif glose==u"COLON"    : wrepl=wrepl+ur'<span class="c">:</span>\n'
       elif glose==u"SEMICOLON": wrepl=wrepl+ur'<span class="c">;</span>\n'
       elif glose==u"EXCLAM"   : wrepl=wrepl+ur'<span class="c">!</span>\n'
@@ -934,8 +957,8 @@ else :
       elif glose==u"DEGRE"    : wrepl=wrepl+ur'<span class="c">°</span>\n'
       elif glose==u"LAQUO"    : wrepl=wrepl+ur'<span class="c">«</span>\n'
       elif glose==u"RAQUO"    : wrepl=wrepl+ur'<span class="c">»</span>\n'
-      elif glose==u"PARO"     : wrepl=wrepl+ur'<span class="c">\(</span>\n'
-      elif glose==u"PARF"     : wrepl=wrepl+ur'<span class="c">\)</span>\n'
+      elif glose==u"PARO"     : wrepl=wrepl+ur'<span class="c">(</span>\n'
+      elif glose==u"PARF"     : wrepl=wrepl+ur'<span class="c">)</span>\n'
       elif glose==u"GUILLEMET"    : wrepl=wrepl+ur'<span class="c">"</span>\n'
       elif glose==u"PERCENT"  : wrepl=wrepl+ur'<span class="c">%</span>\n'
       elif glose==u"PUNCT"    :
@@ -1528,9 +1551,10 @@ else :
   fileREPC.close()
 
 if nbmodif==0 : 
-  os.remove(logfilename)
-  os.remove(filenameout)
-  print "    yelemali si ma soro / pas de remplacements / no replacements\n    Baasi te! / Desole ! / Sorry!"
+  if notfast : 
+    os.remove(logfilename)
+    os.remove(filenameout)
+    print "    yelemali si ma soro / pas de remplacements / no replacements\n    Baasi te! / Desole ! / Sorry!"
 else: 
   if notfast : print ""
   filegiven=filenameout
