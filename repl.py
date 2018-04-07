@@ -115,8 +115,10 @@ if nargv==1 :
 if nargv>1 : filename= str(sys.argv[1])
 
 if ".dis.fra" in filename:
-  sys.exit("repl.py does not handle .dis.fra files")
-elif ".pars.html" in filename :
+  #sys.exit("repl.py does not handle .dis.fra files")
+  print "WARNING repl.py does not know how to handle .dis.fra files - results unclear"
+#elif ".pars.html" in filename :
+if ".pars.html" in filename :
   i_pars=filename.find(".pars.html")
   filenametemp=filename[0:i_pars]
 # sauf si on donne en entrée un fichier dis
@@ -215,7 +217,6 @@ if nargv>2 :
         else:
           fileREPCname = "REPL-STANDARD-C.old.txt"
           tonal = "old"
-
       fileREPC = open (fileREPCname,"r")
       
     except:
@@ -224,7 +225,7 @@ if nargv>2 :
         tonal="new"
         if filenametemp.endswith(".old") :
           if  filenametemp.startswith("baabu_ni_baabu") :
-            fileREPCname = "REPL-STANDARD-C-ny.txt"
+            fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C-ny.txt")
             tonal = "newny"
           else :
             fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.old.txt")
@@ -233,7 +234,7 @@ if nargv>2 :
         fileREPC = open (fileREPCname,"r")
 
       except :
-        sys.exit("repl.py needs a REPL-C.txt file or a REPL-STANDARD-C.txt file in the current directory (or in REPL)")
+        sys.exit(fileREPCname+" ? repl.py needs a REPL-C.txt file or a REPL-STANDARD-C.txt file in the current directory (or in "+scriptdir+" )")
 
    # read all file in one go
    replall=fileREPC.read()
