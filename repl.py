@@ -835,11 +835,12 @@ else :
       elif mot==u"SEMICOLON": wsearch=wsearch+ur'<span class="c">\;</span>\n'
       elif mot==u"EXCLAM"   : wsearch=wsearch+ur'<span class="c">\!</span>\n'
       elif mot==u"TIRET"    : wsearch=wsearch+ur'<span class="c">\-</span>\n'
-      elif mot==u"PUNCT"    : wsearch=wsearch+ur'<span class="c">([^<]+)</span>\n' 
+      #elif mot==u"PUNCT"    : wsearch=wsearch+ur'<span class="c">([^<]+)</span>\n' 
       # nb: le point, et autres séparateurs de sentence, n'a normalement pas d'effet ici ! cf DEBUT
       elif mot==u"COMMENT"  : wsearch=wsearch+ur'<span class="comment">([^<]+)</span>\n' 
       elif mot==u"TAG"      : wsearch=wsearch+ur'<span class="t">([^<]+)</span>\n' 
       # attention <st> n'est pas un tag !!! <span class="c">&lt;st&gt;</span>
+      elif mot==u"PUNCT"    : wsearch=wsearch+ur'<span class="([ct])">([^<]+)</span>\n' 
       elif mot==u"DEGRE"    : wsearch=wsearch+ur'<span class="c">\°</span>\n'
       elif mot==u"degremove": wsearch=wsearch+ur'<span class="c">\°</span>\n'
       # le même mais pas de vérif quil existe de l'autre côté de === : on veut l'éliminer!
@@ -922,7 +923,7 @@ else :
           winitial=mot[0:1]
           wrest=mot[1:len(mot)]
           # mot2=ur"(?:"+winitial.upper()+ur"|"+winitial+ur")"+wrest   # non-capturing group
-          mot2=ur"["+winitial.upper()+winitial+ur"]"+wrest    # character class supposedly faster, at least less verbose!
+          mot2=ur"(["+winitial.upper()+winitial+ur"]"+wrest+ur")"    # character class supposedly faster, at least less verbose!
           #print mot, mot2
           wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+mot2+ur'<.*</span>\n</span>'
 
@@ -963,8 +964,11 @@ else :
       elif glose==u"GUILLEMET"    : wrepl=wrepl+ur'<span class="c">"</span>\n'
       elif glose==u"PERCENT"  : wrepl=wrepl+ur'<span class="c">%</span>\n'
       elif glose==u"PUNCT"    :
-        wrepl=wrepl+ur'<span class="c">\g<'+str(capt_gr_index+1)+ur'></span>\n'
-        capt_gr_index=capt_gr_index+1
+        #wrepl=wrepl+ur'<span class="c">\g<'+str(capt_gr_index+1)+ur'></span>\n'
+        #capt_gr_index=capt_gr_index+1
+        # changed 2018-04-09 : can also be a tag!
+        wrepl=wrepl+ur'<span class="\g<'+str(capt_gr_index+1)+ur'>">\g<'+str(capt_gr_index+2)+ur'></span>\n'
+        capt_gr_index=capt_gr_index+2
       elif glose==u"COMMENT"    :
         wrepl=wrepl+ur'<span class="comment">\g<'+str(capt_gr_index+1)+ur'></span>\n'
         capt_gr_index=capt_gr_index+1
@@ -1376,7 +1380,12 @@ else :
         else :
           htmlgloss=daba.formats.glosstext_to_html(glose,variant=False, encoding='utf-8')
           #log.write("[] glosstext_to_html: "+glose+" -> "+htmlgloss+"\n")
-          wrepl=wrepl+ur'<span class="w" stage="0">'+word+htmlgloss+ur'\n</span>'
+          if wrepl=="" and ucase1:
+            wordrepl=ur"\g<1>"
+            wrepl=wrepl+ur'<span class="w" stage="0">'+wordrepl+htmlgloss+ur'\n</span>'
+            capt_gr_index=capt_gr_index+1      # or just =1 ?
+          else:
+            wrepl=wrepl+ur'<span class="w" stage="0">'+word+htmlgloss+ur'\n</span>'
           # a note of warning : wrepl works as a string for re.subn, so ur"" is not strictly needed 
           #       BUT when writing compiled rules ur"" is needed as regards \n, to conserve them as is in the file
           #       number of lines in file should = number of rules printed by program
