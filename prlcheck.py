@@ -15,7 +15,7 @@ if nargv>1 : filename= str(sys.argv[1])
 disname=filename+".dis.html"
 franame=filename+".dis.fra.txt"
 prlname=filename+".dis.bam-fra.prl"
-chkname=filename+".dis.csv"
+chkname=filename+".dis.bam-fra.csv"
 
 # open files
 disfile=open(disname,"rb")
