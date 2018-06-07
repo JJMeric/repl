@@ -56,7 +56,7 @@ for distxt in dislist :
 	distxt=re.sub(r"\n"," @ ",distxt)
 	dislist[i]=distxt
 	i=i+1
-	print distxt
+	# print distxt
 # print "_______________________________"
 fralist=[]
 for fratxt in fratup : 
@@ -67,7 +67,7 @@ for fratxt in fratup :
 #print fralist[1]
 
 for prlpair in prl :
-	print '"'+prlpair+'"'
+	# print '"'+prlpair+'"'
 	if prlpair=="" : break
 	lineout=re.sub(r"\t","   ",prlpair)+" ¤ "
 	bamln,fraln=prlpair.split("\t")
@@ -82,17 +82,17 @@ for prlpair in prl :
 			if (bamend-bambegin)!=(fraend-frabegin) : 
 				sys.exit("sequence problem in "+prlpair+" number of lines differ")
 			lineout=lineout+bamlnbegin+" ¤ "+dislist[bambegin]+" ¤ "+fralnbegin+" ¤ "+fralist[frabegin]
-			print lineout
+			# print lineout
 			chkfile.write(lineout+"\n")
 			j=frabegin+1
 			for i in xrange(bambegin+1,bamend+1):
 				lineout=" ¤ "+str(i)+" ¤ "+dislist[i]+" ¤ "+str(j)+" ¤ "+fralist[j]
 				j=j+1
-				print lineout
+				# print lineout
 				chkfile.write(lineout+"\n")
 		elif "," in fraln :
-			print "skip this 1B"  # should not occur ?
-		else :	print "skip this 1C"  # should not occur ?
+			print prlpair+" : skip this 1B"  # should not occur ?
+		else :	print prlpair+" : skip this 1C"  # should not occur ?
 
 	elif ","  in bamln:
 		# do something
@@ -101,19 +101,19 @@ for prlpair in prl :
 		bamend=int(bamlnend)
 		lineout=lineout+bamlnbegin+" ¤ "+dislist[bambegin]+" ¤ "
 		if ":" in fraln :
-			print "skip this 2A"
+			print prlpair+" : skip this 2A"
 		elif "," in fraln :
-			print "skip this 2B"
+			print prlpair+" : skip this 2B"
 		else :
 			fra=int(fraln)
 			fratxt=""
 			if fra>=0 : fratxt=fralist[fra]
 			lineout=lineout+fraln+" ¤ "+fratxt
-			print lineout
+			# print lineout
 			chkfile.write(lineout+"\n")
 			for i in xrange(bambegin+1, bamend+1):
 				lineout=" ¤ "+str(i)+" ¤ "+dislist[i]+" ¤  ¤"
-				print lineout
+				# print lineout
 				chkfile.write(lineout+"\n")
 
 	else:
@@ -126,32 +126,33 @@ for prlpair in prl :
 			frabegin=int(fralnbegin)
 			fraend=int(fralnend)
 			lineout=lineout+fralnbegin+" ¤ "+fralist[frabegin]
-			print lineout
+			# print lineout
 			chkfile.write(lineout+"\n")
 			for j in xrange(frabegin+1, fraend+1) :
 				lineout=" ¤ ¤ ¤ "+str(j)+" ¤ "+fralist[j]
-				print lineout
+				# print lineout
 				chkfile.write(lineout+"\n")
 		elif "," in fraln :
 			fralnbegin,fralnend=fraln.split(",")
 			frabegin=int(fralnbegin)
 			fraend=int(fralnend)
 			lineout=lineout+fralnbegin+" ¤ "+fralist[frabegin]
-			print lineout
+			# print lineout
 			chkfile.write(lineout+"\n")
 			for j in xrange(frabegin+1, fraend+1) :
 				lineout=" ¤ ¤ ¤ "+str(j)+" ¤ "+fralist[j]
-				print lineout
+				# print lineout
 				chkfile.write(lineout+"\n")
 		else :
 			fra=int(fraln)
 			fratxt=""
 			if fra>=0 : fratxt=fralist[fra]
 			lineout=lineout+fraln+" ¤ "+fratxt
-			print lineout
+			# print lineout
 			chkfile.write(lineout+"\n")
 #close files
 disfile.close()
 frafile.close()
 prlfile.close()
 chkfile.close()
+print chkname+ " is available "
