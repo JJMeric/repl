@@ -38,8 +38,8 @@ prl=prllines.split("\n")
 
 #build tables
 #dislist=re.findall(r"<span class=\"sent\">([^<]+)﻿",dislines,re.U+re.MULTILINE)
-dislist=re.findall(r'sent">([^<]+)',dislines,re.U+re.MULTILINE)
-fratup=re.findall(r'">(((?!</s>).)+)',fralines,re.U+re.MULTILINE)
+dislist=re.findall(r'sent">([^<]*)',dislines,re.U+re.MULTILINE)
+fratup=re.findall(r'[0-9"]>(((?!</s>)[^¤])*)',fralines,re.U+re.MULTILINE)
 
 #walk through prl lines
 
@@ -53,7 +53,7 @@ fratup=re.findall(r'">(((?!</s>).)+)',fralines,re.U+re.MULTILINE)
 
 i=0
 for distxt in dislist : 
-	distxt=re.sub(r"\n"," @ ",distxt)
+	distxt=re.sub(r"\n"," @ ",distxt,re.U+re.MULTILINE)
 	dislist[i]=distxt
 	i=i+1
 	# print distxt
@@ -61,11 +61,14 @@ for distxt in dislist :
 fralist=[]
 for fratxt in fratup : 
 	# print fratxt[0]
-	fratxt0=re.sub(r"\n"," @ ",fratxt[0])
+	fratxt0=re.sub(r"\n"," @ ",fratxt[0],re.U+re.MULTILINE)
 	fralist.append(fratxt0)
 #print "========================="
 #print fralist[1]
 
+ldislist=len(dislist)
+lfralist=len(fralist)
+print "dis: "+str(ldislist)+" sentences, fra: "+str(lfralist)+" sentences"
 for prlpair in prl :
 	# print '"'+prlpair+'"'
 	if prlpair=="" : break
