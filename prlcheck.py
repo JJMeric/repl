@@ -38,8 +38,8 @@ prl=prllines.split("\n")
 
 #build tables
 #dislist=re.findall(r"<span class=\"sent\">([^<]+)﻿",dislines,re.U+re.MULTILINE)
-dislist=re.findall(r'sent">([^<]*)',dislines,re.U+re.MULTILINE)
-fratup=re.findall(r'[0-9"]>(((?!</s>)[^¤])*)',fralines,re.U+re.MULTILINE)
+dislist=re.findall(ur'sent">([^<]*)',dislines,re.U+re.MULTILINE)
+fratup=re.findall(ur'[0-9"]>(((?!</s>)[^¤])*)',fralines,re.U+re.MULTILINE)
 
 #walk through prl lines
 
@@ -53,7 +53,7 @@ fratup=re.findall(r'[0-9"]>(((?!</s>)[^¤])*)',fralines,re.U+re.MULTILINE)
 
 i=0
 for distxt in dislist : 
-	distxt=re.sub(r"\n"," @ ",distxt,re.U+re.MULTILINE)
+	distxt=re.sub(ur"\n",u" ␤ ",distxt,re.U+re.MULTILINE)
 	dislist[i]=distxt
 	i=i+1
 	# print distxt
@@ -61,7 +61,7 @@ for distxt in dislist :
 fralist=[]
 for fratxt in fratup : 
 	# print fratxt[0]
-	fratxt0=re.sub(r"\n"," @ ",fratxt[0],re.U+re.MULTILINE)
+	fratxt0=re.sub(ur"\n",u" ␤ ",fratxt[0],re.U+re.MULTILINE)
 	fralist.append(fratxt0)
 #print "========================="
 #print fralist[1]
@@ -89,7 +89,9 @@ for prlpair in prl :
 			chkfile.write(lineout+"\n")
 			j=frabegin+1
 			for i in xrange(bambegin+1,bamend+1):
-				lineout=" ¤ "+str(i)+" ¤ "+dislist[i]+" ¤ "+str(j)+" ¤ "+fralist[j]
+				fraout=fralist[j].strip()
+				if fraout=="": fraout="(void)"
+				lineout=" ¤ "+str(i)+" ¤ "+dislist[i]+" ¤ "+str(j)+" ¤ "+fraout
 				j=j+1
 				# print lineout
 				chkfile.write(lineout+"\n")
@@ -110,12 +112,13 @@ for prlpair in prl :
 		else :
 			fra=int(fraln)
 			fratxt=""
-			if fra>=0 : fratxt=fralist[fra]
+			if fra>=0 : fratxt=fralist[fra].strip()
+			if fratxt=="": fratxt="(void)"
 			lineout=lineout+fraln+" ¤ "+fratxt
 			# print lineout
 			chkfile.write(lineout+"\n")
 			for i in xrange(bambegin+1, bamend+1):
-				lineout=" ¤ "+str(i)+" ¤ "+dislist[i]+" ¤  ¤"
+				lineout=" ¤ "+str(i)+" ¤ "+dislist[i]+" ¤  ¤ ↆ"
 				# print lineout
 				chkfile.write(lineout+"\n")
 
@@ -132,7 +135,9 @@ for prlpair in prl :
 			# print lineout
 			chkfile.write(lineout+"\n")
 			for j in xrange(frabegin+1, fraend+1) :
-				lineout=" ¤ ¤ ¤ "+str(j)+" ¤ "+fralist[j]
+				fraout=fralist[j].strip()
+				if fraout=="": fraout="(void)"
+				lineout=" ¤ ¤ ¤ "+str(j)+" ¤ "+fraout
 				# print lineout
 				chkfile.write(lineout+"\n")
 		elif "," in fraln :
@@ -143,13 +148,17 @@ for prlpair in prl :
 			# print lineout
 			chkfile.write(lineout+"\n")
 			for j in xrange(frabegin+1, fraend+1) :
-				lineout=" ¤ ¤ ¤ "+str(j)+" ¤ "+fralist[j]
+				fraout=fralist[j].strip()
+				if fraout=="": fraout="(void)"
+				lineout=" ¤ ¤ ¤ "+str(j)+" ¤ "+fraout
 				# print lineout
 				chkfile.write(lineout+"\n")
 		else :
 			fra=int(fraln)
 			fratxt=""
-			if fra>=0 : fratxt=fralist[fra]
+			if fra>=0 :
+				fratxt=fralist[fra].strip()
+			if fratxt=="": fratxt="(void)"
 			lineout=lineout+fraln+" ¤ "+fratxt
 			# print lineout
 			chkfile.write(lineout+"\n")
