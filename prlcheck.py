@@ -90,7 +90,9 @@ for prlpair in prl :
 			j=frabegin+1
 			for i in xrange(bambegin+1,bamend+1):
 				fraout=fralist[j].strip()
-				if fraout=="": fraout="(void)"
+				if fraout=="": 
+					fraout="(void)"
+					print "problem at prl "+prlpair+" : fra line empty :"+str(j)
 				lineout=" ¤ "+str(i)+" ¤ "+dislist[i]+" ¤ "+str(j)+" ¤ "+fraout
 				j=j+1
 				# print lineout
@@ -113,7 +115,9 @@ for prlpair in prl :
 			fra=int(fraln)
 			fratxt=""
 			if fra>=0 : fratxt=fralist[fra].strip()
-			if fratxt=="": fratxt="(void)"
+			if fratxt=="": 
+				fratxt="(void)"
+				print "problem at prl "+prlpair+" : fra line empty :"+fraln
 			lineout=lineout+fraln+" ¤ "+fratxt
 			# print lineout
 			chkfile.write(lineout+"\n")
@@ -136,7 +140,9 @@ for prlpair in prl :
 			chkfile.write(lineout+"\n")
 			for j in xrange(frabegin+1, fraend+1) :
 				fraout=fralist[j].strip()
-				if fraout=="": fraout="(void)"
+				if fraout=="":
+					fraout="(void)"
+					print "problem at prl "+prlpair+" : fra line empty :"+str(j)
 				lineout=" ¤ ¤ ¤ "+str(j)+" ¤ "+fraout
 				# print lineout
 				chkfile.write(lineout+"\n")
@@ -149,7 +155,9 @@ for prlpair in prl :
 			chkfile.write(lineout+"\n")
 			for j in xrange(frabegin+1, fraend+1) :
 				fraout=fralist[j].strip()
-				if fraout=="": fraout="(void)"
+				if fraout=="":
+					fraout="(void)"
+					print "problem at prl "+prlpair+" : fra line empty :"+str(j)
 				lineout=" ¤ ¤ ¤ "+str(j)+" ¤ "+fraout
 				# print lineout
 				chkfile.write(lineout+"\n")
@@ -158,7 +166,9 @@ for prlpair in prl :
 			fratxt=""
 			if fra>=0 :
 				fratxt=fralist[fra].strip()
-			if fratxt=="": fratxt="(void)"
+			if fratxt=="":
+				fratxt="(void)"
+				print "problem at prl "+prlpair+" : fra line empty :"+fraln
 			lineout=lineout+fraln+" ¤ "+fratxt
 			# print lineout
 			chkfile.write(lineout+"\n")
