@@ -1241,7 +1241,7 @@ else :
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">yé<sub class="ps">cop</sub><sub class="gloss">EQU</sub><span class="lemma var">yé<sub class="ps">pm</sub><sub class="gloss">PFV.TR</sub></span></span>\n</span>'
         capt_gr_index=capt_gr_index+1
       elif glose==u"YEUNDEFppvoir":
-        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">yé<sub class="ps">pp</sub><sub class="gloss">PP</sub></span><span class="lemma var">yé<sub class="ps">v</sub><sub class="gloss">voir</sub></span></span>\n</span>'
+        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">yé<sub class="ps">pp</sub><sub class="gloss">PP</sub><span class="lemma var">yé<sub class="ps">v</sub><sub class="gloss">voir</sub></span></span>\n</span>'
         capt_gr_index=capt_gr_index+1
 
       elif glose==u"NONVERBALGROUP":
