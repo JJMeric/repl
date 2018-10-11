@@ -59,10 +59,12 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 			print os.path.join(dirname, filename)
 			fileIN = open(os.path.join(dirname, filename), "r")
 			if toutmedianame=="":
-				toutmedianame=medianame.search(filename).group(1)
-				ismedianumber=medianumber.search(filename)
-				if ismedianumber!=[] :
-					toutmedianumber=ismedianumber.group(1)
+				mn=medianame.search(filename)
+				if mn :
+					toutmedianame=mn.group(1)
+					ismedianumber=medianumber.search(filename)
+					if ismedianumber!=[] :
+						toutmedianumber=ismedianumber.group(1)
 			#tout=fileIN.readlines()
 			line = fileIN.readline()
 			tout=u""
