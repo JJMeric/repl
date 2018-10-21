@@ -699,6 +699,12 @@ dictauth[u"412b4bf9-fb06-4a02-b95d-c3dbfe74b1ba"]=u"Si, Mamadu|||m|Bambara||kib5
 dictauth[u"002efa82-7a41-492e-8d7c-9a645d775275"]=u"Keyita, Anni Mari/Ani Mari|||f|Bambara||kib553-557-558 2018"
 # "Sise, Ahamadu/Ahamada/Amadu",,m,,,Bambara,Kib544 2017 - kib553-555-556-558 2018,faa6df67-3696-4010-930a-98d3c130b04a
 dictauth[u"faa6df67-3696-4010-930a-98d3c130b04a"]=u"Sise, Ahamadu/Ahamada/Amadu|||m|Bambara||Kib544 2017 - kib553-555-556-558 2018"
+#"Jara, Solomani",,m,,,Bambara,"ka bɔ Tomina, Sofara, Jɛnɛ fɛ, Moti - kib472-478-479 2011 - kib480 2012",2bc06452-9b5a-461b-ae0d-2504bde57dc6
+dictauth[u"2bc06452-9b5a-461b-ae0d-2504bde57dc6"]=u"Jara, Solomani|||m|Bambara||ka bɔ Tomina, Sofara, Jɛnɛ fɛ, Moti - kib472-478-479 2011 - kib480 2012"
+# "Kulubali, Ayisata",,f,,,Bambara," balikukalankaramɔgɔ don, Sokura Keseli, Moti - kib556-557-558-559 2018",20c3ff95-8ed5-44a6-82d0-ec144bba8342
+dictauth[u"20c3ff95-8ed5-44a6-82d0-ec144bba8342"]=u"Kulubali, Ayisata|||f|Bambara||balikukalankaramɔgɔ don, Sokura Keseli, Moti - kib556-557-558-559 2018"
+# "Jaabi, Laji M",,m,,,,"kib 545, 549 2017 - kib555-559 2018",2caf221a-1cac-403d-bc8d-5f9eedba920e
+dictauth[u"2caf221a-1cac-403d-bc8d-5f9eedba920e"]=u"Jaabi, Laji M|||m|Bambara||kib 545, 549 2017 - kib555-559 2018"
 
 #modèle dictauth[u"uuid"]=u"NomPrénom|||sex|Bambara||comment"
 #modèle dictauth[u"uuid"]=u"Nom, Prénom|spelling|datebirth|sex|language|native|comment"
@@ -1091,9 +1097,11 @@ for filename in filenames:
 		if "_gindo_" in authshort : addauthor(ur"(Usmani Gindo|usumani Gindo|Usumani Gindo|Usumani Guido)",u"f96014e9-6a24-4735-9ffb-c9cdda74fe65")
 		if "_ja_" in authshort : addauthor(ur"(Sɛku Amadu Ja|Seku Amadu Ja|Sɛku Amadu JA|Sɛki Amadu Ja|Sɛki Amadu JA|Sɛku A Ja|Seku A\. Ja||Sɛku A\. Ja|Sɛki A Ja|Sɛku A\. JA|Sɛki A\. Ja|Sɛki A\. JA)",u"30e70086-e12b-4963-8f23-0572b81775f2")
 		if "_jabate_" in authshort : addauthor(ur"(Fuseni Jabate|Fuseni JABATE|Fuseyini Jabate|Fuseyini JABATE|Fuseyini Jabatɛ|Fuseyini JABATE)",u"76c495a4-7706-4487-92c1-27be5fb4e943")
-		if "_jaabi_" in authshort : addauthor(ur"(Musa Jaabi|Musa JAABI)",u"51652320-a88e-4b50-87f2-fc1b465a20a6")
+		if "_jaabi_" in authshort :
+			addauthor(ur"(Musa Jaabi|Musa JAABI)",u"51652320-a88e-4b50-87f2-fc1b465a20a6")
+			addauthor(ur"(Laji M Jaabi|Laji M JAABI|Laji M\. Jaabi|Laji M\. JAABI)",u"2caf221a-1cac-403d-bc8d-5f9eedba920e")
 		if "_jabate_" in authshort : addauthor(ur"(Fuseni Jabate|Fuseni Jabatɛ)",u"76c495a4-7706-4487-92c1-27be5fb4e943")
-		if "_jabi_" in authshort : addauthor(ur"(Laji M. Jabi|Laji M. JABI)",u"4c8159cd-a0e7-410c-85a9-ba505666abe1")
+		if "_jabi_" in authshort : addauthor(ur"(Laji M\. Jabi|Laji M\. JABI|L\. M\. Jabi)",u"4c8159cd-a0e7-410c-85a9-ba505666abe1")
 		if "_jakite_" in authshort : 
 			addauthor(ur"(solomani jakite|Solomani Jakite)",u"33f55de3-c1d0-4365-a13f-05e6360b8ed1")
 			addauthor(ur"(mamadu jakite|Mamadu Jakite|Mamadu JAKITE)",u"0b692d2a-a0fa-4adb-869d-8249580da079")
@@ -1149,8 +1157,10 @@ for filename in filenames:
 			addauthor(ur"(Sumayila T. Jara|Sumayila T. JARA)",u"83db48cf-4e76-48c9-a3d0-24d06d56c8aa")
 			addauthor(ur"(Madujan Jara|Madujan JARA)",u"bbf0dd00-77bf-4e1e-b53a-d5f59ec73680")
 			addauthor(ur"(Balaba Arafayɛli Jara|Balaba Arafayɛli JARA)",u"c8759b9a-b8ce-4ae5-8722-e1b2d724b085")
+			if re.findall(ur"(Tomina|Sofara)",endoftext,re.I|re.U) is not None :
+				addauthor(ur"(Solomani|Solomani JARA)",u"2bc06452-9b5a-461b-ae0d-2504bde57dc6")
 			if re.findall(ur"(Nperesibugu|NPeresibugu|Npeseribugu|NPeseribugu|Masantola)",endoftext,re.I|re.U) is not None :
-				addauthor(ur"(Mamadu Jara|Mamadu JARA)",u"dc81e9f8-e04a-4675-b98c-3b33b4a818ea")
+				addauthor(ur"(Mamadu Jara|Mamadu JARA|Mamadou Jara)",u"dc81e9f8-e04a-4675-b98c-3b33b4a818ea")
 			if re.findall(ur"(Falo|Surakabugu|Bila)",endoftext,re.I|re.U) is not None :
 				addauthor(ur"(Daramani Jara|Daramani JARA)",u"04532ac2-8cd5-4b2b-a08a-25bdc3599a96")
 		if "_jawara_" in authshort : addauthor(ur"(Sɛkina Jawara|Sɛkina JAWARA)",u"6cf14142-7033-41a0-be64-86ca041058c0")
@@ -1257,6 +1267,7 @@ for filename in filenames:
 			addauthor(ur"(Zan Kulubali|Zan KULUBALI)",u"6bc78d41-ccf8-4c78-9ff9-ed66f5b25acd")
 			addauthor(ur"(Ɲankile Solomani Kulubali|Ɲankile Solomani KULUBALI)",u"cbf0128f-e8f4-4756-8198-d71beb940a27")
 			addauthor(ur"(Ibarahimu Sori Kulubali|Ibarahimu Sori KULUBALI|Iburahima Sori Kulubali|Ibarahima Sori Kulubali|Ibarahimu S\. Kulubali|Ibarahimu S Kulubali|Sori Ibarahimu Kulubali|Sori Ibarahima Kulubali|Sori Iburahima Kulubali|Sori I\. Kulubali|Sori I Kulubali|Sori Ibarahimu KULUBALI)",u"a489f1e4-c3dd-44ff-b7b0-16910e1e5708")
+			addauthor(ur"(Ayisata Kulubali|Ayisata KULUBALI)",u"20c3ff95-8ed5-44a6-82d0-ec144bba8342")
 			if len(re.findall(ur"(Dɔribugu|Dɔribuguni|Dɔribugunin)",endoftext,re.I|re.U))>0 :
 				addauthor(ur"(Solomani Kulubali|Solomani KULUBALI)",u"39c08e0e-557a-43b3-8c27-cc8a51b531d4")
 			#testf=re.findall(ur"(Basiriki Ture|Basiriki TURE)",endoftext,re.I|re.U)
@@ -1283,6 +1294,7 @@ for filename in filenames:
 			addauthor(ur"(Siyaka Kumarɛ|Siyaka Kumare|Siyaka kumare|Siyaka KUMARƐ)",u"9d1ff4e3-f4a1-4bf4-8362-cdded032939a")
 			addauthor(ur"(Saliya Kumare|Saliya KUMARE|Saliya Kumarɛ)",u"00c754da-7876-4f39-a637-104e43abe2db")
 		if "_labeyi_" in authshort : addauthor(ur"(Antuwani Labeyi|Antuwani Labɛyi|Antuwani LABEYI)",u"11d8a814-adbc-4ad6-892d-0e179d435575")
+		if "_lam_" in authshort : addauthor(ur"(A\. Lam|A Lam|A\. LAM|A LAM|Alayi Lam|Alayi LAM)",u"ebb0c747-5e5e-41e8-baa0-c780bab4598e")
 		if "_lamu_" in authshort : addauthor(ur"(A\. Lamu|A Lamu|A\. LAMU|A LAMU|Alayi Lamu|Alayi LAMU)",u"ebb0c747-5e5e-41e8-baa0-c780bab4598e")
 		if "_leplaideur_" in authshort : addauthor(ur"(Marie-Agnès Leplaideur|Marie Agnès Leplaideur|Marie Agnès Leplaideur)",u"2c0367fd-a997-4609-8806-000921e35d18")
 		if "_lepilederi_" in authshort : addauthor(ur"(Mari Aɲɛsi Lepiledɛri|Marie-Agnès Leplaideur|Marie Agnès Leplaideur|Marie Agnès Leplaideur)",u"2c0367fd-a997-4609-8806-000921e35d18")
@@ -1454,7 +1466,10 @@ for filename in filenames:
 				print "  -> in excess by "+str(ndiff)+" author(s)    <+++++++++++++++++++++++++++++++++++++++++\n"
 			else:
 				ndiff=nshort-naname
-				print "  -> missing "+str(ndiff)+" author(s)    <-----------------------------------------\n"
+				if ndiff==1: print 	"  -> missing "+str(ndiff)+" author(s)    <-----------------------------------------\n"
+				elif ndiff==2: print 	"  -> missing "+str(ndiff)+" author(s)    <========================\n"
+				elif ndiff==3: print 	"  -> missing "+str(ndiff)+" author(s)    <≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n"
+				else : 	print 		"  -> missing "+str(ndiff)+" author(s)    <########################\n"
 
 		authmetas=u""
 		if auuid!=u"" :

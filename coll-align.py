@@ -111,6 +111,11 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u"<h>»",u"<h>«",tout,0,re.U|re.MULTILINE) # erreur fréquente chez zup
 				tout=re.sub(u"<ill>»",u"<ill>«",tout,0,re.U|re.MULTILINE) # erreur fréquente chez zup
 
+				deuxmajs=re.findall(ur"[ \«\"]([A-ZƐƆƝŊ][A-ZƐƆƝŊ][a-zɛɔɲŋ]+)[ \,\;\.\:\!\?\'\»\"]",tout,re.U|re.MULTILINE)
+				for deuxmaj in deuxmajs:
+					deuxmajcorr=deuxmaj.capitalize()
+					tout=re.sub(deuxmaj,deuxmajcorr,tout,0,re.U|re.MULTILINE)
+
 				# frequent typos
 				tout=re.sub(u"aia",u"ala",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"aie",u"ale",tout,0,re.U|re.MULTILINE)
@@ -222,6 +227,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur"jira kɔ ",u"jira ko ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"jirala kɔ ",u"jirala ko ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"jatɛminɛ",u"jateminɛ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Jatɛminɛ",u"Jateminɛ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" wɛlɛ ",u" wele ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" kubaru ",u" kibaru ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" Kubaru ",u" Kibaru ",tout,0,re.U|re.MULTILINE)
@@ -234,6 +240,8 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur" dɔgoya",u" dɔgɔya",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" dɔonin",u" dɔɔnin",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"-dɔonin",u"-dɔɔnin",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" dɔɔin",u" dɔɔnin",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"-dɔɔin",u"-dɔɔnin",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" wɔɔro",u" wɔɔrɔ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" sɛgɛre",u" sɛgɛrɛ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" nɔgɔnna",u" ɲɔgɔnna",tout,0,re.U|re.MULTILINE)
@@ -373,6 +381,12 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur" mgɔ ",u" mɔgɔ ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" kɔlɔkɔ",u" kɔlɔlɔ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" ntɔla",u" ntola",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɔmiteri",u" kɔmitɛri",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" komiteri",u" komitɛri",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"bɔro ",u"bɔrɔ ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" jɛnsen",u" jɛnsɛn",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" bayɛlɛmɛ",u" bayɛlɛma",tout,0,re.U|re.MULTILINE)
+				
 				
 				# repeated consonants at beginning or end of word - handles only pairs: ddugu denww
 				tout=re.sub(ur"w[w]+([ \s\.\,\;\:\!\?\n]) ",u"w\g<1>",tout,0,re.U|re.MULTILINE)
@@ -392,6 +406,9 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur" kɛwal(l+)e",u" kɛwale",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" sɛnɛkɛl(l+)a",u" sɛnɛkɛla",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" hakilil(l+)a",u" hakilila",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" wul(l+)i",u" wuli",tout,0,re.U|re.MULTILINE)
+				
+
 				tout=re.sub(ur" nowan(n+)buru",u" nowanburu",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" denmisɛn(n+)nin",u" denmisɛnnin",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" komin(n+)i",u" komini",tout,0,re.U|re.MULTILINE)
@@ -399,6 +416,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur" kɔn(n+)ɔ",u" kɔnɔ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" minn(n+)u",u" minnu",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" ɲɔgɔn(n+)na",u" ɲɔgɔnna",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɛrɛnkɛrɛn(n+)nen",u" kɛrɛnkɛrɛnnen",tout,0,re.U|re.MULTILINE)
 				
 				# what abour wovels extra repetition?
 				tout=re.sub(ur" fɛɛ(ɛ+)rɛ",u" fɛɛrɛ",tout,0,re.U|re.MULTILINE)
@@ -454,7 +472,9 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur'"([A-ZƝŊƐƆ][A-ZƝŊƐƆ]+)"',u":«\g<1>»",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur'\'([A-ZƝŊƐƆ][A-ZƝŊƐƆ]+)\'',u":«\g<1>»",tout,0,re.U|re.MULTILINE)
 				
-
+				# suppress wrong use of <st> to end mark of paragraph  (zup)
+				tout=re.sub(ur"<st>\n\n",u".\n\n",tout,0,re.U|re.MULTILINE)
+				
 				# align hyphens
 				tout=re.sub(u"–",u"-",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"-",u"-",tout,0,re.U|re.MULTILINE)
@@ -471,6 +491,9 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u" ;",u";",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" \!",u"!",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" \?",u"?",tout,0,re.U|re.MULTILINE)
+
+				# suppress space after assimilation quote
+				tout=re.sub(u"([cdfgjklmnprstwyz])' ([aeiouɛɔ])",u"\g<1>'\g<2>",tout,0,re.U|re.MULTILINE)
 
 				# correct tag mismatches (on same line)
 				tout=re.sub(ur"<ill>([^<\n]+)</h>",u"<ill>\g<1></ill>",tout,0,re.U|re.MULTILINE)
@@ -656,9 +679,11 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\n([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*)[\.]*$(?![\r\n])",u"\g<1>, \g<2>",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\n([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*\, [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*)[\.]*$(?![\r\n])",u"\g<1>, \g<2>",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"^([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)\.\n\n([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*\, [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\s]*)[\.]*$(?![\r\n])",u"\g<1>, \g<2>",tout,0,re.U|re.MULTILINE)
+				#print "pass BEFORE even more general"
 				# even more general
-				tout=re.sub(ur"^((([A-ZƝŊƐƆ][^\s\n]+)*[ ,\/]*)*)\.\n\n((([A-ZƝŊƐƆ][^\s\n]+)*[ ,\/]*)*)$(?![\r\n])",u"\g<1>, \g<4>",tout,0,re.U|re.MULTILINE)
-				
+				# REMOVED 16/10/2018 : causes hang on kibaru489_08kani2013_kuluw-doz.txt
+				#        tout=re.sub(ur"^((([A-ZƝŊƐƆ][^\s\n]+)*[ ,\/]*)*)\.\n\n((([A-ZƝŊƐƆ][^\s\n]+)*[ ,\/]*)*)$(?![\r\n])",u"\g<1>, \g<4>",tout,0,re.U|re.MULTILINE)
+				#print "pass even more general"
 				# remove final dot after signatures - two names required - risk: possible end of legitimate sentence
 				tout=re.sub(ur"([A-ZƝŊƐƆ][^\s]*[\.]* [A-ZƝŊƐƆ][^\.\s]*)[\.]$(?![\r\n])",u"\g<1>",tout,0,re.U|re.MULTILINE)
 				
