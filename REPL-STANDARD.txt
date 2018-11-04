@@ -15597,6 +15597,8 @@ báloko_ɲùman===báloko:n: [bálo:n:nourriture kó:n:affaire]_ɲùman:ad
 bámanankan_jɔ́njɔn===bámanankan:n:langue.bambara [bámànan:n:bambara kán:n:cou]_jɔ́njɔn:adj:exact
 bánge_jɔ̀len===bánge:n:accouchement_jɔ̀len:ptcp: [jɔ̀:v:dresser len:mrph:PTCP.RES]   # ménopause ?	
 básigi_tílennen===básigi:n:sécurité [bá:n:base sìgi:v:asseoir]_tílennen:ptcp: [tílen:v:redresser nen:mrph:PTCP.RES]
+bere_uruzi=>=bere:n:ETRG.FRA_uruzi:adj:rouge
+bere_uruziw=>=bere:n:ETRG.FRA_uruziw:adj: [uruzi:adj:rouge w:mrph:PL]
 bín_fálennen===bín:n:herbe_fálennen:ptcp: [fálen:v:germer nen:mrph:PTCP.RES]
 bíriki_kɛnɛ===bíriki:n:brique_kɛ́nɛ:adj:sain
 bíriki_kɛnɛw===bíriki:n:brique_kɛnɛw:adj: [kɛ́nɛ:adj:sain w:mrph:PL]
@@ -17538,6 +17540,7 @@ ADP-Maliba===ADP-Maliba:n.prop:Alliance.Démocratique.pour.la.Paix-Maliba-parti
 AMALAN===AMALAN:n.prop:ABR    # reste nécessaire car glosé avec -lan INSTR
 AMAP===AMAP:n.prop:ABR
 AMAPU===AMAPU:n.prop:AMAP
+AMAPu===AMAPU:n.prop:AMAP   # erreur fréquente!
 Amapu===AMAPU:n.prop:AMAP
 AMID===AMID:n.prop:ABR     # politikitɔn - Mamadu Igɔri Jara
 anisete=>=anisete:n.prop:ANICT   # appui technique et financier aux collectivités territoriales www.anict.gouv.ml
@@ -17545,6 +17548,7 @@ Apekamu===Apekamu:n.prop:Assemblée.permanente.des.Chambres.d'agriculture.du.Mal
 Áfiriki_yíriwali_wáribonba===Áfiriki:n.prop:TOP_yíriwali:n:développement [yíriwa:v:accroître li:mrph:NMLZ]_wáribonba:n: [wáribon:n:banque [wári:n:argent bón:n:case] ba:mrph:AUGM]    # BAD
 Aseyi_Demili===Aseyi:n.prop:ACI_Demili:num:deux-mille    # ACI 2000
 Aseyi_demili===Aseyi:n.prop:ACI_Demili:num:deux-mille    # ACI 2000
+Ayedede===Ayedede:n.prop:AEDD
 BAKI===BAKI:n:Bac    # baccalauréat
 Beseye===Beseye:n.prop:BCE
 Beseyawo===Beseyawo:n.prop:BCEAO
@@ -17554,6 +17558,7 @@ CALAN-MALI===CALAN-Mali:n.prop:ABR [CALAN:n.prop:ABR Màli:n.prop:TOP]
 CALAN-Màli===CALAN-Mali:n.prop:ABR [CALAN:n.prop:ABR Màli:n.prop:TOP]
 CEDEAO===CEDEAO:n.prop:ABR
 CENI===CENI:n.prop:ABR
+Ceyɛnidere===Ceyɛnidere:n.prop:CNRDRE
 CMDT===CMDT:n.prop:ABR
 CMDT_màra===CMDT:n.prop:ABR_màra:n:garde
 Senidi===Senidi:n.prop:CNID
@@ -17569,6 +17574,8 @@ Deyɛnizeyɛmu===Deyɛnizeyɛmu:n.prop:DNGM     # Direction Nationale de la Géo
 díɲɛ_mɔ̀gɔfagalabaw_kíirisoba=>=díɲɛ:n:monde_mɔ̀gɔfagalabaw:n: [mɔ̀gɔ:n:homme fàga:v:tuer la:mrph:AG.PRM ba:mrph:AUGM w:mrph:PL]_kíirisoba:n: [kíiriso:n:tribunal [kíiri:n:jugement só:n:maison] ba:mrph:AUGM]   # TPI
 Díɲɛ_mɔ̀gɔfagalabaw_Kíirisoba===díɲɛ:n:monde_mɔ̀gɔfagalabaw:n: [mɔ̀gɔ:n:homme fàga:v:tuer la:mrph:AG.PRM ba:mrph:AUGM w:mrph:PL]_kíirisoba:n: [kíiriso:n:tribunal [kíiri:n:jugement só:n:maison] ba:mrph:AUGM]   # TPI
 díɲɛ_kójugubaw_kíirisoba=>=díɲɛ:n:monde_kójugubaw:n: [kó:n:affaire júgu:adj:mauvais ba:mrph:AUGM w:mrph:PL]_kíirisoba:n: [kíiriso:n:tribunal [kíiri:n:jugement só:n:maison] ba:mrph:AUGM]   # TPI
+Edɛmu===Edɛmu:n.prop:EDM
+Enerizidimali===Enerizidimali:n.prop:EDM
 Efɛmi===Efɛmi:n.prop:FMI
 Ekobanki===Ekobanki:n.prop:NOM
 Elefan_wɛri===Elefan:n:ETRG.FRA_wɛri:adj:ETRG.FRA  # Eléphant vert
@@ -17603,6 +17610,7 @@ Febaki===FEBAK:n.prop:FEBAK
 FIFA===FIFA:n.prop:ABR
 FIFA===FIFA:n.prop:ABR
 Filasi===Filasi:n.prop:FLASH
+Finiyapu===Finiyapu:n.prop:FNUAP
 FLASH===FLASH:n.prop:ABR
 FMI===FMI:n.prop:ABR
 díɲɛ_wáriko_mábɛnni_cákɛda=>=díɲɛ:n:monde_wáriko:n: [wári:n:argent kó:n:affaire]_màbɛnni:n: [màbɛ̀n:v:arranger [mà:mrph:SUPER bɛ̀n:v:se.rencontrer] ni:mrph:NMLZ]_cákɛda:n:lieu.de.travail [cá:n:travail kɛ́:v:faire dá:n:bouche]    # FMI
@@ -17614,6 +17622,7 @@ Global_Voices===Global:n:ETRG.ENG_Voices:n:ETRG.ENG
 huicoma=>=HUICOMA:n.prop:ABR
 HUICOMA===HUICOMA:n.prop:ABR   # Huilerie Cotonnière du Mali
 Iyɛridi===Iyɛridi:n.prop:URD
+Iyɛnisesede===Iyɛnisesede:n.prop:UNCDD
 Ifowa===Ifowa:n.prop:UFOA
 IFOWA===Ifowa:n.prop:UFOA
 Ikirizati===Ikirizati:n.prop:ICRISAT
@@ -17668,6 +17677,7 @@ ONU===ONU:n.prop:ABR
 CODEM===CODEM:n.prop:ABR   # parti de Huseyini Amiyɔn Gindo
 Opamu===Opamu:n.prop:OPAM    # Office des produits agricoles du Mali, ou Office des produits alimentaires maliens
 # OPAM===OPAM:n.prop:ABR
+Orɛtɛmu===Orɛtɛmu:n.prop:ORTM
 OSI===OSI:n.prop:OCI
 Ɔkisifamu===Ɔkisifamu:n.prop:OXFAM
 Oxfam===OXFAM:n.prop:ABR
@@ -17752,6 +17762,7 @@ Wizɔn_Mɔnjali===Wizɔn:n.prop:VISION_Mɔnjali:n.prop:MONDIALE
 Wɔridi_Wisɔni===Wɔridi:n.prop:WORLD_Wisɔni:n.prop:VISION
 zayɛri=>=zayɛri:n.prop:ZAER   # Zone d'animation et d'expansion rurale
 zayiri=>=zayɛri:n.prop:ZAER   # Zone d'animation et d'expansion rurale
+Zedete===Zedete:n.prop:GDT
 
 #
 # SEMENCES AGRICOLES
@@ -22446,6 +22457,9 @@ báyɛlɛmaniko=>=báyɛlɛmaniko:n: [báyɛ̀lɛma:v:transformer [bá:n:bas
 sènnasúmaya===sènnasúmaya:v:ralentir [sènnasuma:adj:lent sènna:n:allure sèn:n:jambe nan:mrph:dans súma:adj:lent ya:mrph:ABSTR]
 jírituru=>=jírituru:n: [jíri:n:arbre túru:v:planter]
 ɲɔ́gɔndafa===ɲɔ́gɔndafa:n: [ɲɔ́gɔn:prn:RECP dáfa:n:complément [dá:n:bouche fá:v:remplir]]
+papayisolo=>papayisolo:n:papaye.esp   # espèce/marque de papaye/manje
+papayisoloko=>=papayisoloko:n: [papayisolo:n:papaye.esp kó:n:affaire]
+ŋúnun=>=ŋúnu:n:ruche
 
 # fin Dico Annexe  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #

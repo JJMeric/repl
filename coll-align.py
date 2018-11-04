@@ -55,6 +55,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u"\r\n",u"\n",tout,0,re.U|re.MULTILINE)
 
 				# rectify doz strange typos (ru keyboard hazards)
+				tout=re.sub(u"ɑ",u"a",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"а",u"a",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"А",u"A",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"В",u"B",tout,0,re.U|re.MULTILINE)
@@ -203,6 +204,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur"gɔferɛnaman",u"gofɛrɛnaman",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"gɔferenaman",u"gofɛrɛnaman",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"gɔfɛrɛnaman",u"gofɛrɛnaman",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"gɔfɛnaman",u"gofɛrɛnaman",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"Gofɛrenaman",u"Gofɛrɛnaman",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"Goferɛnaman",u"Gofɛrɛnaman",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"Goferenaman",u"Gofɛrɛnaman",tout,0,re.U|re.MULTILINE)
@@ -327,6 +329,8 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur" cogɔya",u" cogoya",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"Kɛrɛnkɛren",u"Kɛrɛnkɛrɛn",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" kɛrɛnkɛren",u" kɛrɛnkɛrɛn",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɛrɛkɛrɛn",u" kɛrɛnkɛrɛn",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɛrɛnkɛnnenya",u" kɛrɛnkɛrɛnnenya",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" diyagɔya",u" diyagoya",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"Diyagɔya",u"Diyagoya",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" mangɔya",u" mangoya",tout,0,re.U|re.MULTILINE)
@@ -338,6 +342,10 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur" sɔgɔ dun",u" sogo dun",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" sɔgɔ jeni",u" sogo jeni",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" sɔgɔ tɔlɔ",u" sogo tɔlɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sɔgoma",u" sɔgɔma",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sogoma",u" sɔgɔma",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Sɔgoma",u"Sɔgɔma",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Sogoma",u"Sɔgɔma",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" ntolalatan",u" ntolatan",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" ntɔlatan",u" ntolatan",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" musɔya",u" musoya",tout,0,re.U|re.MULTILINE)
@@ -386,6 +394,34 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur"bɔro ",u"bɔrɔ ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" jɛnsen",u" jɛnsɛn",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" bayɛlɛmɛ",u" bayɛlɛma",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɔronfɛla",u" kɔrɔnfɛla",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɔrɔfɛla",u" kɔrɔnfɛla",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" yɛn([ \,\.\;])",u" yen\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sɔro([ \,\.\;])",u" sɔrɔ\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sorɔ([ \,\.\;])",u" sɔrɔ\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" tɔgo([ \,\.]\;)",u" tɔgɔ\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" togɔ([ \,\.\;])",u" tɔgɔ\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"D[^ɔ]kala",u"Dɔkala",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Dɔk[^a]la",u"Dɔkala",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Dɔkal[^a]",u"Dɔkala",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Yusuf[^u]",u"Yusufu",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Yus[^u]fu",u"Yusufu",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Y[^u]sufu",u"Yusufu",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Yusiifui",u"Yusufu",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Yusiifu",u"Yusufu",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sekɛretɛri",u" sekeretɛri",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" ma dɔgɔ mɔgɔ si la",u" ma dogo mɔgɔ si la",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" diɲe",u" diɲɛ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɔrolen",u" kɔrɔlen",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" korɔlen",u" kɔrɔlen",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɛmesarada",u" kɛmɛsarada",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kurinafoni",u" kunnafoni",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" dugukolono",u" dugukolonɔ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Kɔsiwari",u"Kɔdiwari",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" koɲyman",u" koɲuman",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Afirirki",u"Afiriki",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kuɲudimɔni",u" kupudimɔni",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Kuɲudimɔni",u"Kupudimɔni",tout,0,re.U|re.MULTILINE)
 				
 				
 				# repeated consonants at beginning or end of word - handles only pairs: ddugu denww
@@ -417,8 +453,10 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur" minn(n+)u",u" minnu",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" ɲɔgɔn(n+)na",u" ɲɔgɔnna",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" kɛrɛnkɛrɛn(n+)nen",u" kɛrɛnkɛrɛnnen",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" labɛn(n+)nen",u" labɛnnen",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kun(n+)nafoni",u" kunnafoni",tout,0,re.U|re.MULTILINE)
 				
-				# what abour wovels extra repetition?
+				# what about wovels extra repetition?
 				tout=re.sub(ur" fɛɛ(ɛ+)rɛ",u" fɛɛrɛ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" nɛgɛ(ɛ+)",u" nɛgɛ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"([ '])a(a+) ",u"\g<1>a ",tout,0,re.U|re.MULTILINE)
@@ -442,6 +480,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur"ɲɔ(ɔ+)gɔn ",u"ɲɔgɔn ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" baa(a+)ra",u" baara",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" taa(a+)ri",u" taari",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" waa(a+)ti",u" waati",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" taa(a+)ra",u" taara",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" cogo(o+)",u" cogo",tout,0,re.U|re.MULTILINE)
 				
@@ -472,8 +511,13 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur'"([A-ZƝŊƐƆ][A-ZƝŊƐƆ]+)"',u":«\g<1>»",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur'\'([A-ZƝŊƐƆ][A-ZƝŊƐƆ]+)\'',u":«\g<1>»",tout,0,re.U|re.MULTILINE)
 				
+				# spaces required after « and before »
+				tout=re.sub(ur'«([^\s])',u"« \g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur'([^\s])»',u"\g<1> »",tout,0,re.U|re.MULTILINE)
+				
 				# suppress wrong use of <st> to end mark of paragraph  (zup)
 				tout=re.sub(ur"<st>\n\n",u".\n\n",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"<st>$(?![\r\n])",u".",tout,0,re.U|re.MULTILINE)
 				
 				# align hyphens
 				tout=re.sub(u"–",u"-",tout,0,re.U|re.MULTILINE)
@@ -495,6 +539,12 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				# suppress space after assimilation quote
 				tout=re.sub(u"([cdfgjklmnprstwyz])' ([aeiouɛɔ])",u"\g<1>'\g<2>",tout,0,re.U|re.MULTILINE)
 
+				# correct incomplete tags
+				tout=re.sub(ur"([^\<\/])h>",u"\g<1><h>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"([^\<])/h>",u"\g<1></h>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"<h([^\>])",u"<h>\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"</h([^\>])",u"</h>\g<1>",tout,0,re.U|re.MULTILINE)
+				
 				# correct tag mismatches (on same line)
 				tout=re.sub(ur"<ill>([^<\n]+)</h>",u"<ill>\g<1></ill>",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"<ill>([^<\n]+)<ill>",u"<ill>\g<1></ill>",tout,0,re.U|re.MULTILINE)

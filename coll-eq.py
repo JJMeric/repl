@@ -103,6 +103,21 @@ for dirname, dirnames, files in os.walk('.'):
 
 						file1.close()
 						file2.close()
+						# check for top-titles in zup : poyi, kalankɛnɛ...
+						toptitle=re.search(ur" (Kalankɛnɛ[ \.]*[^\:]*\:[ \n]*|Poyi[ ]*\:[ \n]*|Dukɛnɛ [^\:]+\:[ \n]*|Maakɔrɔbaro:[ \n]*)<h>",tout2,re.U|re.MULTILINE)
+						if toptitle is not None:
+							toptitletext=toptitle.group(1)
+							toptitletextn=re.sub(ur"\n",u"",toptitletext).strip()
+							tout2=re.sub(ur" "+toptitletext+ur"<h>",u"\n<h>"+toptitletextn+u" ",tout2,1,re.U|re.MULTILINE)
+							tout1=re.sub(ur"<h>",u"<h>"+toptitletextn+u" ",tout1,1,re.U|re.MULTILINE)
+							file1=open(os.path.join("./"+dir, filename), "wb")
+							file1.write(tout1)
+							file1.close
+							file2=open(os.path.join("./"+dirzup, filezup), "wb")
+							file2.write(tout2)
+							file2.close
+							print "   aligned on :", toptitletextn
+
 						if tout1==tout2:
 							print "    =égalité="
 							pathdone="../colldone/"+dirkib
@@ -195,13 +210,21 @@ for dirname, dirnames, files in os.walk('.'):
 								# but we may have above title mentions, and pre-title ... Poyi, Maakɔrɔbaro, Dukɛnɛ...
 								# more general :  ([^¤]*\n[^¤]*<h>[^<]+</h>\.\n\n)(<ill>[^<]+</ill>\.\n\n)([^¤<]*)$(?![\r\n])
 								# and                    ([^¤]*\n[^¤]*<h>[^<]+</h>\.\n\n)([^¤<]*)$(?![\r\n])
-								match1=re.search(ur"([^¤]*\n[^¤]*<h>[^<]+</h>\.\n\n)(<ill>[^<]+</ill>\.\n\n)([^¤<]*)$(?![\r\n])",tout1,re.U|re.MULTILINE)
-								match2=re.search(ur"([^¤]*\n[^¤]*<h>[^<]+</h>\.\n\n)(<ill>[^<]+</ill>\.\n\n)([^¤<]*)$(?![\r\n])",tout2,re.U|re.MULTILINE)
+								#   match1=re.search(ur"(\n+<h>[^<]+</h>\.\n\n)(<ill>[^<]+</ill>\.\n\n)([^¤<]*)$(?![\r\n])",tout1,re.U|re.MULTILINE)
+								#   match2=re.search(ur"(\n+<h>[^<]+</h>\.\n\n)(<ill>[^<]+</ill>\.\n\n)([^¤<]*)$(?![\r\n])",tout2,re.U|re.MULTILINE)
 								#print match1
+								match1=re.search(ur"(\n+<h>[^<]+</h>\.\n\n)(<ill>[^<]+</ill>\.\n\n)([^¤]*)$(?![\r\n])",tout1,re.U|re.MULTILINE)
+								match2=re.search(ur"(\n+<h>[^<]+</h>\.\n\n)(<ill>[^<]+</ill>\.\n\n)([^¤]*)$(?![\r\n])",tout2,re.U|re.MULTILINE)
+								
 								if  match1 is not None:
-									if  match2 is None:
+									ills1=re.findall(ur"<ill>[^<]+</ill>",tout1,re.U|re.MULTILINE)
+									nbills1=len(ills1)
+									if  nbills1==1 and match2 is None:
+									      ills2=re.findall(ur"<ill>[^<]+</ill>",tout2,re.U|re.MULTILINE)
+									      nbills2=len(ills2)
+									      if nbills2==0 :
 										ill=match1.group(2)
-										tout2n=re.sub(ur"([^¤]*\n[^¤]*<h>[^<]+</h>\.\n\n)([^¤<]*)$(?![\r\n])",u"\g<1>"+ill+u"\g<2>",tout2,0,re.U|re.MULTILINE)
+										tout2n=re.sub(ur"(\n+<h>[^<]+</h>\.\n\n)([^¤]*)$(?![\r\n])",u"\g<1>"+ill+u"\g<2>",tout2,0,re.U|re.MULTILINE)
 										if tout2n!=tout2:
 											file2=open(os.path.join("./"+dirzup, filezup), "wb")
 											file2.write(tout2n)
@@ -225,14 +248,42 @@ for dirname, dirnames, files in os.walk('.'):
 											os.remove(os.path.join(path, filename))
 											os.remove(os.path.join("./"+dirzup, filezup))
 									# only an inversion of <ill> ?
-									match2=re.search(ur"[^¤]*\n[^¤]*<h>[^<]+</h>\.\n\n[^¤<]*<ill>[^<]+</ill>\.\n\n[^\n]*$(?![\r\n])",tout2,re.U|re.MULTILINE)
+									# <ill> before signatures
+									match2=re.search(ur"\n+<h>[^<]+</h>\.\n\n[^¤]*<ill>[^<]+</ill>\.\n\n[^\n]*$(?![\r\n])",tout2,re.U|re.MULTILINE)
+									ills2=re.findall(ur"<ill>[^<]+</ill>",tout2,re.U|re.MULTILINE)
+									nbills2=len(ills2)
 									#print match2
-									if  match2 is not None:
-										tout2=re.sub(ur"([^¤]*\n[^¤]*<h>[^<]+</h>\.\n\n)([^¤<]*)(<ill>[^<]+</ill>\.\n\n)([^\n]*)$(?![\r\n])","\g<1>\g<3>\g<2>\g<4>",tout2,0,re.U|re.MULTILINE)
+									if  match2 is not None and nbills2==1:
+										tout2=re.sub(ur"(\n+<h>[^<]+</h>\.\n\n)([^¤]*)(<ill>[^<]+</ill>\.\n\n)([^\n]*)$(?![\r\n])","\g<1>\g<3>\g<2>\g<4>",tout2,0,re.U|re.MULTILINE)
 										file2=open(os.path.join("./"+dirzup, filezup), "wb")
 										file2.write(tout2)
 										file2.close
-										print "<ill> aligned to top"
+										print "     <ill> aligned to top"
+										tout2flat=re.sub("\n\n"," ",tout2,0,re.U|re.MULTILINE)
+										if tout1flat==tout2flat:
+											print "   =++ égalité ++="
+											pathdone="../colldone/"+dirkib
+											if not os.path.exists(pathdone):
+												os.mkdir(pathdone)
+												print " * ",pathdone
+											filedone=open(os.path.join(pathdone+"/"+fileroot+".txt"),"wb")
+											if len(tout1)<len(tout2) :
+												filedone.write(tout1)
+											else :
+												filedone.write(tout2)
+											filedone.close()
+											print " =++> ",fileroot+".txt"
+											os.remove(os.path.join(path, filename))
+											os.remove(os.path.join("./"+dirzup, filezup))
+									# <ill> at very end
+									match2=re.search(ur"\n+<h>[^<]+</h>\.\n\n[^¤]*<ill>[^<]+</ill>$(?![\r\n])",tout2,re.U|re.MULTILINE)
+									#print match2
+									if  match2 is not None and nbills2==1:
+										tout2=re.sub(ur"(\n+<h>[^<]+</h>\.\n\n)([^¤]*)(<ill>[^<]+</ill>)$(?![\r\n])","\g<1>\g<3>\n\n\g<2>",tout2,0,re.U|re.MULTILINE)
+										file2=open(os.path.join("./"+dirzup, filezup), "wb")
+										file2.write(tout2)
+										file2.close
+										print "     <ill> aligned to top"
 										tout2flat=re.sub("\n\n"," ",tout2,0,re.U|re.MULTILINE)
 										if tout1flat==tout2flat:
 											print "   =++ égalité ++="
