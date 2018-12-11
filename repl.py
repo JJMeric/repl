@@ -336,13 +336,13 @@ if notfast:
     print nbpsambs, " ps ambigues ( "+psambslist+")", 100*nbpsambs/totalmots, "%"
 
 psvalides="|adj|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers|pm|pp|prep|prn|prt|ptcp|v|vq|"
-valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_YEUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_"
+valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_YEUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_"
 # toujours commencer et finir par _
 # autres mots utilisés, traitements spéciaux : NUMnan, degremove, ADVNforcen, ADVNforceadv, CONJPREPforceconj, CONJPREPforceprep
-gvalides=u"NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_BE_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
+gvalides=u"NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_BE_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
 #  ANAPH, ANAPH.PL, ART, OPT, OPT2, PTCP.PROG removed
 #  CFA à cause de la glose de dɔrɔmɛ qui finit par franc.CFA !!!
-fixevalides="_ETRG_ETRG.FRA_ETRG.ENG_ETRG.GER_CHNT_Q_PREV_"
+fixevalides="_ETRG_ETRG.FRA_ETRG.USA_ETRG.ENG_ETRG.GER_CHNT_Q_PREV_"
 # cf kàmana:n:PREV de kamanagan
 pmlist=u"bɛ́nà:pm:FUT_bɛ́n':pm:FUT_bɛ:pm:IPFV.AFF_b':pm:IPFV.AFF_be:pm:IPFV.AFF_bi:pm:IPFV.AFF_bɛ́kà:pm:PROG.AFF_bɛ́k':pm:PROG.AFF_bɛ́ka:pm:INFR_bága:pm:INFR_bìlen:pm:COND.NEG_kà:pm:INF_k':pm:INF_ka:pm:SBJV_k':pm:SBJV_ka:pm:QUAL.AFF_mán:pm:QUAL.NEG_kànâ:pm:PROH_kàn':pm:PROH_ma:pm:PFV.NEG_m':pm:PFV.NEG_mánà:pm:COND.AFF_mán':pm:COND.AFF_máa:pm:COND.AFF_nà:pm:CERT_n':pm:CERT_tɛ:pm:IPFV.NEG_te:pm:IPFV.NEG_ti:pm:IPFV.NEG_t':pm:IPFV.NEG_tɛ́kà:pm:PROG.NEG_tɛ́k':pm:PROG.NEG_tɛ́ka:pm:INFR.NEG_tɛ́k':pm:INFR.NEG_tɛ́nà:pm:FUT.NEG_tɛ́n':pm:FUT.NEG_ye:pm:PFV.TR_y':pm:PFV.TR_yé:pm:IPFV_yé:pm:IMP_y':pm:IMP_yékà:pm:RCNT_màa:pm:DES_mà:pm:DES_m':pm:DES_"
 coplist=u"bɛ́:cop:être_b':cop:être_b':cop:être_yé:cop:être_yé:cop:BE_kó:cop:QUOT_k':cop:QUOT_dòn:cop:ID_dò:cop:ID_tɛ́:cop:COP.NEG_té:cop:COP.NEG_t':cop:COP.NEG_yé:cop:EQU_y':cop:EQU_bé:cop:être_"
@@ -949,6 +949,7 @@ else :
       elif mot==u"PFVTR"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(ye|y\')<span class="lemma">[^\n]+</span>\n</span>'
       elif mot==u"PFVNEG"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(ma|m\')<span class="lemma">[^\n]+</span>\n</span>'
       elif mot==u"PMINF"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(ka|k\'|Ka|K\'|kà|Kà)<span class="lemma">[^\n]+</span>\n</span>'
+      elif mot==u"PMSBJV"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(ka|k\'|Ka|K\'|ká|Ká)<span class="lemma">[^\n]+</span>\n</span>'
       
       elif mot==u"MONTH" : 
         if tonal=="new" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mɛkalo|zuwɛnkalo|zuluyekalo|zuliyekalo|utikalo|sɛtanburukalo|sɛtamburukalo|ɔkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span>\n</span>'
@@ -957,8 +958,9 @@ else :
       elif mot==u"YEUNDEF"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(yé|ye|y\')<[^\n]+lemma var[^\n]+</span>\n</span>'
 
       # elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" stage="0">[^<]+<span class="lemma">[^<]+<sub class="ps">(?!v|vq|cop|pm)</sub>(((?!lemma var).)*)</span>\n</span>)+)'
-      elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|pp|ptcp|n\.prop|num|dtm|prn|pers|conj)</sub>(((?!lemma var).)*)</span>\n</span>)+)'
-      
+      # elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|pp|ptcp|n\.prop|num|dtm|prn|pers|conj)</sub>(((?!lemma var).)*)</span>\n</span>)+)'
+      elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|ptcp|n\.prop|num|dtm|prn|pers)</sub>(((?!lemma var).)*)</span>\n</span>|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ka|k\')<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span>\n</span>|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ni|n\')<sub class="ps">conj</sub><sub class="gloss">et</sub></span>\n</span>|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:àní|àn\')<sub class="ps">conj</sub><sub class="gloss">ainsi.que</sub></span>\n</span>)+)'
+
       elif mot==u"AMBIGUOUS": wsearch=wsearch+ur'<span class="w"(.*)lemma var(.*)\n</span>'
       else :
         if u"'" in mot: mot=re.sub(ur"\'",u"[\'\’]+",mot)   # satanées curly brackets
@@ -1248,6 +1250,10 @@ else :
         # temp fix : lemma for ka has tone: kà !!! and no capital letters ... - how to replace (ka|k'|Ka|K') by (kà|k'|kà|k') ???
         # will need correction in POST for k' and K'
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">kà<sub class="ps">pm</sub><sub class="gloss">INF</sub></span>\n</span>'
+        capt_gr_index=capt_gr_index+1
+      elif glose==u"PMSBJV":
+        # will need correction in POST for k' and K'
+        wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">ka<sub class="ps">pm</sub><sub class="gloss">SBJV</sub></span>\n</span>'
         capt_gr_index=capt_gr_index+1
       elif glose==u"MONTH":
         wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'></span>\n</span>'
@@ -1661,6 +1667,33 @@ if notfast:
     nbrulesapplied=nbrulesapplied+1
     nbmodif=nbmodif+nombre
     nbmots=nbmots+nombre
+
+  # PMSBJV POST correction for k' and K'
+  wsearch=ur'<span class="w" stage="0">(k\'|K\')<span class="lemma">ka<sub class="ps">pm</sub><sub class="gloss">SBJV</sub></span>\n</span>'
+  wrepl=ur"""<span class="w" stage="0">\g<1><span class="lemma">k'<sub class="ps">pm</sub><sub class="gloss">SBJV</sub></span>\n</span>"""
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    if notfast: 
+      msg="%i  PMSBJV POST correction(s) for k' and K'" % nombre +"\n"
+      log.write(msg.encode("utf-8"))
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre
+
+  # "halibi" POST correction
+  wsearch=ur'<span class="w" stage="0">halibi<span class="lemma">hálì<sub class="ps">prt</sub><sub class="gloss">même</sub></span>\n</span>'
+  wrepl=ur"""<span class="w" stage="0">hali<span class="lemma">hálì<sub class="ps">prt</sub><sub class="gloss">même</sub></span>\n</span>"""
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    # correct halibi in original sentence (all sentences)
+    nb2=0
+    tout,nb2=re.subn(ur" halibi([ \.\;\,\:\!\?\)\(\n])",u" hali bi\g<1>",tout,0,re.U|re.MULTILINE)
+    if notfast: 
+      msg="%i  halibi POST correction(s) as hali bi" % nombre +"\n"
+      log.write(msg.encode("utf-8"))
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre+nb2
 
   # IPFVAFF POST correction for b'
   wsearch=ur'<span class="w" stage="0">b\'<span class="lemma">bɛ<sub class="ps">pm</sub><sub class="gloss">IPFV.AFF</sub></span>\n</span>'

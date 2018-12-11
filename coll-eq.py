@@ -21,6 +21,10 @@ def valign(t1,t2):   # aligns paragraphs breaks in text1 with paragraphs break s
 			# protect against invalid expression due to imbalanced parenthesis (+?)
 			para=para.replace(")","\)")
 			para=para.replace("(","\(")
+			# other characters ?
+			para=para.replace("*","\*")
+			para=para.replace("+","\+")
+			
 			paranl=re.sub(u"\n\n",u"\n",para,0,re.U|re.MULTILINE)
 			parasp=re.sub(u"\n\n",u" ",para,0,re.U|re.MULTILINE)
 			#print parasp
@@ -28,10 +32,14 @@ def valign(t1,t2):   # aligns paragraphs breaks in text1 with paragraphs break s
 				if re.search(u""+paranl+u"",t2,re.U|re.MULTILINE) is not None:
 					paranl2=paranl.replace("\)",")")
 					paranl2=paranl2.replace("\(","(")
+					paranl2=paranl2.replace("\*","*")
+					paranl2=paranl2.replace("\+","+")
 					t1=re.sub(u""+para+u"",paranl2,t1)
 				elif re.search(u""+parasp+u"",t2,re.U|re.MULTILINE) is not None:
 					parasp2=parasp.replace("\)",")")
 					parasp2=parasp2.replace("\(","(")
+					parasp2=parasp2.replace("\*","*")
+					parasp2=parasp2.replace("\+","+")
 					t1=re.sub(u""+para+u"",parasp2,t1)
 				# else : unknown situation
 	return t1
@@ -53,6 +61,7 @@ for dirname, dirnames, files in os.walk('.'):
 				print "- ",dirzup,"\n"
 
 				# print path to all filenames.
+				nfiledif=0   # nb of files with name mismatch
 				folder_path='./'+dir
 				for path, dirs, filenames in os.walk(folder_path):
 					for filename in sorted(filenames):
@@ -68,6 +77,7 @@ for dirname, dirnames, files in os.walk('.'):
 						except: 
 							file1.close()
 							print " !!! file missing or name different :",filezup
+							nfiledif=nfiledif+1
 							continue
 						# tout1=file1.read()
 						tout1=u""
@@ -104,12 +114,20 @@ for dirname, dirnames, files in os.walk('.'):
 						file1.close()
 						file2.close()
 						# check for top-titles in zup : poyi, kalankɛnɛ...
-						toptitle=re.search(ur" (Kalankɛnɛ[ \.]*[^\:]*\:[ \n]*|Poyi[ ]*\:[ \n]*|Dukɛnɛ [^\:]+\:[ \n]*|Maakɔrɔbaro:[ \n]*)<h>",tout2,re.U|re.MULTILINE)
+						toptitle=re.search(ur"[ ]*([kK]alankɛnɛ[ \.]*[^\:\.]*[\:\.][ \n]*|[kK]ɔrɔnfɛla kunnafɔniw[ ]*[\:\.][ \n]*|[sS]ariya[ ]*[\:\.][ \n]*|[lL]awalebaro[ ]*[\:\.][ \n]*|LAWALEBARO[ ]*[\:\.][ \n]*|[nN]siiri[n]*[ ]*[\:\.][ \n]*|[pP]oyi[ ]*[\:\.][ \n]*|[dD]ukɛnɛ [^\:\.]+[\:\.][ \n]*|[mM]aakɔrɔbaro[ ]*[\:\.][ \n]*)<h>",tout2,re.U|re.MULTILINE)
 						if toptitle is not None:
 							toptitletext=toptitle.group(1)
 							toptitletextn=re.sub(ur"\n",u"",toptitletext).strip()
 							tout2=re.sub(ur" "+toptitletext+ur"<h>",u"\n<h>"+toptitletextn+u" ",tout2,1,re.U|re.MULTILINE)
-							tout1=re.sub(ur"<h>",u"<h>"+toptitletextn+u" ",tout1,1,re.U|re.MULTILINE)
+							if toptitletextn not in tout1:
+								tout1=re.sub(ur"<h>",u"<h>"+toptitletextn+u" ",tout1,1,re.U|re.MULTILINE)
+							# si poème, raccrocher les lignes commençant par une minuscule à la ligne précédente (sensée commencer par une majuscule)
+							if "<h>Poyi" in tout1 : 
+								tout1=re.sub(ur"<br/>\n([a-zɛɔɲŋ])",u" \g<1>",tout1,0,re.U|re.MULTILINE)
+								tout1=re.sub(ur"  ",u" ",tout1,0,re.U|re.MULTILINE)
+							if "<h>Poyi" in tout2 : 
+								tout2=re.sub(ur"<br/>\n([a-zɛɔɲŋ])",u" \g<1>",tout2,0,re.U|re.MULTILINE)
+								tout2=re.sub(ur"  ",u" ",tout2,0,re.U|re.MULTILINE)
 							file1=open(os.path.join("./"+dir, filename), "wb")
 							file1.write(tout1)
 							file1.close
@@ -302,3 +320,4 @@ for dirname, dirnames, files in os.walk('.'):
 											os.remove(os.path.join("./"+dirzup, filezup))
 
 								# elif <ill> at bottom in tout1 ?
+		if nfiledif>0 : print nfiledif," file names mismatch, please check !"
