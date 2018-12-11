@@ -16871,6 +16871,12 @@ Mulayi_Ahamɛdi_Bùbákàri===Mùláyì:n.prop:NOM.M_Ahamadi:n.prop:NOM.M_
 Múntàga_Tali===Múntàga:n.prop:NOM.M_Tali:n.prop:NOM.CL
 Músà_Mara===Músà:n.prop:NOM.M_Mara:n.prop:NOM.CL
 Músà_Tàrawéle===Músà:n.prop:NOM.M_Tàrawele:n.prop:NOM.CL
+MÚSÀ_TÀRAWÉLE===Músà:n.prop:NOM.M_Tàrawele:n.prop:NOM.CL
+zènerali_Músà_Tàrawéle===zènerali:n:général_Músà:n.prop:NOM.M_Tàrawele:n.prop:NOM.CL
+Zènerali_Músà_Tàrawéle===zènerali:n:général_Músà:n.prop:NOM.M_Tàrawele:n.prop:NOM.CL
+Zènerali_Músà_TÀRAWÉLE===zènerali:n:général_Músà:n.prop:NOM.M_Tàrawele:n.prop:NOM.CL
+músà_tàrawéle===Músà:n.prop:NOM.M_Tàrawele:n.prop:NOM.CL
+zènerali_músà_tàrawéle===zènerali:n:général_Músà:n.prop:NOM.M_Tàrawele:n.prop:NOM.CL
 Músà_Sinko_Kúlubàli===Músà:n.prop:NOM.M_Sinko:n.prop:NOM.ETRG_Kúlubàli:n.prop:NOM.CL
 Músà_Sinkɔ_Kúlubàli===Músà:n.prop:NOM.M_Sinko:n.prop:NOM.ETRG_Kúlubàli:n.prop:NOM.CL
 Mɛtiri_Babɛri_Gano===mɛtiri:n:maître_Babɛri:n.prop:NOM.ETRG_Gano:n.prop:NOM.ETRG

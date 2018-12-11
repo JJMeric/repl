@@ -23,6 +23,10 @@ def addtheme(old,metatag,conditions) :
 		conditions=re.sub(ur"ɲ",u"ny", conditions)
 		conditions=re.sub(ur"Ɲ",u"Ny", conditions)
 	l=0
+	# conditions=re.sub(r"\|","[ \.\,\;\?\!\:]| ",conditions)   # forces exact match
+	conditions=re.sub(r"\|","| ",conditions)   # words begining with
+	conditions=re.sub(r"\(","( ",conditions)
+	#conditions=re.sub(r"\)","[ \.\,\;\?\!\:])",conditions)
 	m=re.findall(conditions,tout,re.I|re.U)
 	if m!=None :
 		l=len(m)
@@ -35,6 +39,10 @@ def addtheme(old,metatag,conditions) :
 def addgenre(metatag,conditions,inwhat,nb) :
 	global genre
 	l=0
+	# conditions=re.sub(r"\|","[ \.\,\;\?\!\:]| ",conditions)   # forces exact match
+	conditions=re.sub(r"\|","| ",conditions)   # words begining with
+	conditions=re.sub(r"\(","( ",conditions)
+	# conditions=re.sub(r"\)","[ \.\,\;\?\!\:])",conditions)
 	m=re.findall(conditions,inwhat,re.I|re.U)
 	if m!=None :
 		l=len(m)
@@ -823,18 +831,33 @@ filenames=sorted(filenames)
 for filename in filenames:
 	if ".txt" in filename :
 		print  "\n"+filename
-		find_in_name=re.search(r"(kibaru|jekabaara)([0-9\-]*)\_",filename)
+		find_in_name=re.search(r"(kibaru|jekabaara|faso_kumakan)([0-9\-]*)\_",filename)
 		periodique=find_in_name.group(1)
+
 		if periodique=="jekabaara" :
 			metasstub=re.sub('<meta content="Kibaru" name="source:title" />','<meta content="Jɛkabaara" name="source:title" />',metasstub)
 			metasstub=re.sub('<meta content="AMAP" name="source:editor" />','<meta content="Jamana" name="source:editor" />',metasstub)
 			metasstub=re.sub('<meta content="Kibarudiso" name="source:publisher" />','<meta content="ODIPAC / CMDT / ODIMO" name="source:publisher" />',metasstub)
+
 		numero=find_in_name.group(2)
+
+		if periodique=="faso_kumakan":
+			metasstub=re.sub('<meta content="Kibaru" name="source:title" />','<meta content="Faso kumakan" name="source:title" />',metasstub)
+			metasstub=re.sub('<meta content="AMAP" name="source:editor" />','<meta content="L\'Essor" name="source:editor" />',metasstub)
+			metasstub=re.sub('<meta content="Kibarudiso" name="source:publisher" />','<meta content="L\'Essor" name="source:publisher" />',metasstub)
+			year=numero
+			find_in_name=re.search(r"faso_kumakan"+year+"_([0-9]+)_([0-9]+)",filename)
+			month=find_in_name.group(1)
+			day=find_in_name.group(2)
+			numero=year+month+day
+
 		numerosource=numero
 		if "-" in numero :
 			numeros=numero.split("-")
 			numerosource=numeros[0]  # meta.py n'accepte pas les - dans les numéros, on en choisi un seul, le premier...
 		page=re.search(r"[0-9\-]*\_([0-9]*)",filename).group(1)
+		if periodique=="faso_kumakan":
+			page=re.search(r"faso_kumakan"+year+"_"+month+"_"+day+"_([0-9]+)",filename).group(1)
 		metas=metasstub
 		metas=re.sub(r"\"(XXX)\" name=\"source\:number\"","\""+numerosource+"\" name=\"source:number\"",metas)
 		metas=re.sub(r"\"(XX)\" name=\"text\:pages\"","\""+page+"\" name=\"text:pages\"",metas)
@@ -958,29 +981,29 @@ for filename in filenames:
 
 		# <meta content="XXX" name="text:theme" />
 		theme=""
-
+		# appropriate spaces will be added in addtheme: all words beginning with - Case independant !
 		addtheme(old,"&#201;ducation",ur"(balikukalan|kalanso|kalanden|kalanbaliya|karamɔgɔ|lakɔli|Lakɔli|unesco|lɛkɔli|kalanjɛ)")
 		addtheme(old,"Administration",ur"(ciyakɛda|mɛri|komini|minisiri|Minisiri|forobakɛsu|nisɔngɔ|lɛnpo|takisi sarali|takisiw sarali|gɔfɛrɛnɛri|gɔfɛrɛnora|gɔfɛrɛnɛrɛ| kɔnsɛyi|arɔndisiman|erezɔn|sɛriwusida|baarada)")
-		addtheme(old,"Agriculture",ur"(koperatifu|bɛnɛsɛnɛ|kabasɛnɛ|sɔsɛnɛ|fantɔrɔso|sisɛmara|kamifan|sisɛfan|ɔtiwale|forokurabɔ|jiritigɛ|kolokolo|pipiɲɛri|basikili|fantɔrɔmansin|malokisɛ|maloforo|hɛkitari|sayijirinin|Sayijirinin|jirituru|jiriden|jiribulu|jiridili|sɛnɛkɛ|Sɛnɛkɛ|cikɛko|cikɛla|Cikɛla|bagan|mɔnni|nakɔ|sanji|bulukuli|shyɛnni|turuli|saribilennin|dabakurunin|danni|jiri turu|ɲɔforo|kɔɔri|kabaforo|malosɛnɛ|saɲɔ|keninge|suman|jiginɛ|misi|shɛmara|syɛmara|sagagɛn|jɛgɛ|taari|kɔrɔshiyɛn|nɔgɔdon|Ofisidinizɛri|pɔmutɛri|tigasɛnɛ)")
+		addtheme(old,"Agriculture",ur"(fɛnɲɛnamafagalan|koperatifu|bɛnɛsɛnɛ|kabasɛnɛ|sɔsɛnɛ|fantɔrɔso|sisɛmara|kamifan|sisɛfan|ɔtiwale|forokurabɔ|jiritigɛ|kolokolo|pipiɲɛri|basikili|fantɔrɔmansin|malokisɛ|maloforo|hɛkitari|sayijirinin|Sayijirinin|jirituru|jiriden|jiribulu|jiridili|sɛnɛkɛ|Sɛnɛkɛ|cikɛko|cikɛla|Cikɛla|bagan|mɔnni|nakɔ|sanji|bulukuli|shyɛnni|turuli|saribilennin|dabakurunin|danni|jiri turu|ɲɔforo|kɔɔri|kabaforo|malosɛnɛ|saɲɔ|keninge|suman|jiginɛ|misi|shɛmara|syɛmara|sagagɛn|jɛgɛ|taari|kɔrɔshiyɛn|nɔgɔdon|Ofisidinizɛri|pɔmutɛri|tigasɛnɛ)")
 		addtheme(old,"Arm&#233;e et Guerre",ur"(maramafɛn|burudamɛkɛlɛ|binkanni|burudamɛ murutilenw|kɛlɛbansɛbɛn|sɔrɔdasi|marifatigi|binnkannikɛla|binkannikɛla|binnkanikɛla|Minusima|kojugubakɛla|dagayɔrɔ|basigibaliya|maramafɛn)")
 		addtheme(old,"Chasse",ur"(donsokɛ|donsoya|kungo sogo)")
 		addtheme(old,"Christianisme", ur"(kerecɛndiinɛ|kerecɛn|kereciyɛn|Kereciyɛn|mɔnsɛɲɛri|Mɔnsɛɲɛri|tubabumori|egilizi|Mishɔn|mishɔn|papu|Papu|Watikan)")
-		addtheme(old,"Communication",ur"(kunnafonidila|kibaru|amap|jɛkabaara|arajo|tele|jabaranin|ORTM|nɛgɛjurusira|SOTƐLIMA|KABAARU|kabaaru)")
-		addtheme(old,"Economie et Finances",ur"(sanuɲinina|damanda|yuruguyurugu|kɛmɛbiye|biye|dewaliyasɔn|Dewaliyasɔnkɔlɔnsen|BCEAO|SUKALA|CMDT|KOMATƐKISI|SOTELMA|SEPAMA|OTER|OPAM|F.M.I|FARANSEFA|FARANSƐFA|FARANFARANSƐ|Faran Sefa|SEFAKO|forobakɛsu|foroba kɛsu|foroba wariko|dɔrɔmɛ|dugujukɔrɔfɛn|babili|izini|taji sɔngɔ|tajijago|tajifeere|sanbaga|nafolo|musaka|lɛnpo|wusuru|sefawari|warikodɛmɛ|sanubɔ|BNDA|banki|warimaraso|BDI)")
+		addtheme(old,"Communication",ur"(kunnafonidila|kibaru|amap|jɛkabaara|arajo|tele|jabaranin|ORTM|nɛgɛjurusira|SOTƐLIMA|kabaaru|Essor|Faso Kumakan)")
+		addtheme(old,"Economie et Finances",ur"(sanuɲinina|sanu bɔ|sanubɔ|damanda|yuruguyurugu|kɛmɛbiye|biye|dewaliyasɔn|Dewaliyasɔnkɔlɔnsen|CEAO|BCEAO|SUKALA|CMDT|KOMATƐKISI|SOTELMA|SEPAMA|OTER|OPAM|F.M.I|FARANSEFA|FARANSƐFA|FARANFARANSƐ|Faran Sefa|SEFAKO|forobakɛsu|foroba kɛsu|foroba wariko|dɔrɔmɛ|dugujukɔrɔfɛn|babili|izini|taji sɔngɔ|tajijago|tajifeere|sanbaga|nafolo|musaka|lɛnpo|wusuru|sefawari|warikodɛmɛ|sanubɔ|BNDA|banki|warimaraso|BDI|donfini|donfini|jagokɛla)")
 		addtheme(old,"Environnement",ur"(dugukoloyɛrɛyɛ|bajiko|Bajiko|Bajoliba|Selɛnge|Manantali|dugukolonɔn|lakanani|kungodaw yiriwali ni sigiyɔrɔw lakanali|Kɔlɔnsen|pɔnpu|pɔnpekɔlɔn|Pɔnpekɔlɔn|jikodɛsɛ|jikomako|sanjiba|tasuma don kungo|sigiyɔrɔ lakana|sigida lakana|sigidaw lakana|sanjiko|jakɔngɔ|sanji hakɛ|sanji mumɛ|sigida|lamini|sanya|ɲamanton)")
-		addtheme(old,"G&#233;ographie",ur"(koɲɛɲinitaama|sigi cogo|sigicogo|SIGICOGO|sigi cogo|ye dugu ye a bɛ)")
+		addtheme(old,"G&#233;ographie",ur"(koɲɛɲinitaama|sigi cogo|sigicogo|faaba|ye dugu ye a bɛ)")
 		addtheme(old,"Histoire",ur"(koɲɛɲinitaama|tubabu-bilen|tubabubilen|Fɔlɔ-fɔlɔ|Fɔlɔfɔlɔ|tariki|TARIKI|sigi cogo|sigicogo|tariku|Tariku|jɔnfeere|Jɔnfeere|Eziputi|farawona|farawuna|lawale|Lawale|tubabutile|Samori|Bakarijan|Bakari Jan|Kanku Musa|Sunjata Keyita)")
 		addtheme(old,"Islam", ur"(hiji|hijita|Makan|silamɛ|Silamɛ|hijitaa|silamɛ|makantaa|misiri|sunkalo|sunbagatɔ|morikɛ|kuranɛ|garibu)")
 		addtheme(old,"Linguistique",ur"(angilekan|diɲɛ kɔnɔ kanw|Diɲɛ kɔnɔ kanw|wolokan|bamanankan|sinminkan|kanw sɛbɛnni|mabɛn|fasokan|Fasokan|mabɛnnidaɲɛ|kawaleyalan|kamankutulan|dɛmɛnan|kɔbila|sinsinnan|sɛbɛncogo|Mandenkan|kanbolofara|daɲɛgafe|siginiden|kumasen)")
 		addtheme(old,"Loi",ur"(OMAFES|yɛrɛwolodenyasɛbɛn|sariya|Sariya|sariyasen|Sariyasen|ɲangilisariya|sariyatigi|kiiri|kiri|kiritigɛla|kaso)")
 		addtheme(old,"Loisirs", ur"(fɔlikɛla|dɔnkili|EREGE|erege|arasita|cd kasɛti|«O.R.T.M» sigidoolo|gintan|filimu|FESPACO|Shɛki Umaru SISOKO|Sulɛyimani SISE|jadilala|Solomani Sise|Etalɔn Yenɛnga|folisen|jeli|dɔnkilidala|tarikitigi|siniman|Siniman|Eliwisi Pɛrɛsili|Mayikɔli Jakison|Salifu Keyita|Umu Sangare|Ali Farika Ture)")
-		addtheme(old,"M&#233;decine et sant&#233;",ur"(lasiritɔ|sigarɛti|kɔnɔboli|dɔlɔmin|farigan|tɔgɔtɔgɔnin|O.M.S|kunfilatu|kunfilanitu|kunfilanintu|sida|kɛnɛya|bana|fura|dɔgɔtɔrɔ|dɔkɔtɔrɔ|ɲɛdimi|kɔnɔdimi|dusukundimi|boloci|sumaya|furakisɛ|pilili|fugula nafama|ɲɔnin|ɲɔnisan|muso kɔnɔma|bolokolo|senkolo|bolotuguda)")
+		addtheme(old,"M&#233;decine et sant&#233;",ur"(fiyentɔ|lasiritɔ|sigarɛti|kɔnɔboli|dɔlɔmin|farigan|tɔgɔtɔgɔnin|O\.M\.S|OMS|kunfilatu|kunfilanitu|kunfilanintu|sida|kɛnɛya|bana|fura|dɔgɔtɔrɔ|dɔkɔtɔrɔ|ɲɛdimi|kɔnɔdimi|dusukundimi|boloci|sumaya|furakisɛ|pilili|fugula nafama|ɲɔnin|ɲɔnisan|muso kɔnɔma|bolokolo|senkolo|bolotuguda)")
 		addtheme(old,"Philosophie", ur"(saya|limaniya|mɔnɛbɔ|miiri|faamuya)")
-		addtheme(old,"Politique",ur"(kalafili|Kalafili|fangaso|jɛkakuma kunbɛn|Amadu Tumani TURE|Musa Tarawele|Musa TARAWELE|UDPM|UNFM|politiki|pariti|sɛkisɔn|kalata|yɛrɛta|wote|peresidan|jamanaɲɛmɔgɔ|jamanakuntigi|gɔfɛrɛnaman|bɛɛya|bɛɛjɛfanga|demokarasi|forobaya|depitew|mɛriw|yɛrɛmahɔrɔnya|Musa TARAWELE)")
+		addtheme(old,"Politique",ur"(bolonɔ bila|bolonɔbila|kelenya|kalafili|Kalafili|fangaso|jɛkakuma kunbɛn|Amadu Tumani TURE|Musa Tarawele|UDPM|UNFM|politiki|pariti|sɛkisɔn|kalata|yɛrɛta|wote|peresidan|jamanaɲɛmɔgɔ|jamanakuntigi|gɔfɛrɛnama|bɛɛya|bɛɛjɛfanga|demokarasi|forobaya|depitew|mɛriw|yɛrɛmahɔrɔnya)")
 		addtheme(old,"Soci&#233;t&#233;",ur"(sirabakankasaara|mɔgɔkɔrɔbabonya|danbetiɲɛ|sanuɲinina|damanda|kafoɲɔgɔnya|densɔrɔjoona|kɛrɛfɛmɔgɔ|sigiɲɔgɔn|yɛrɛsagokɛ|lamɔko|hadamaden|biden|jɔyɔrɔ|sonyali|seliba|Seliba|cɛganaya|nson|ciyɛnta|laada|funankɛ|dutigi|duden|polisi|kaso|fatɔ|Fatɔ|duguba|musocamanfuru|tungafɛtaala|Tungafɛtaala|yɛrɛwolodenya|binkanni|tungalataa|UNFM|dɔrɔgu|furujoona|furusa|furusiri|boloko|karadante|dennadon|tɔgɔladon|jɔyɔrɔ|musotɔn|jɛkulu|jɛkafɔ|jɛkabaara|jɛkakɛ|senenkunya|sinankunya|dɛsɛbagatɔ|baloko|kɔngɔ kunbɛnniko|musofuru|sigiɲɔgɔnya|denmisɛnw ka donba|denmisɛnw ka seliba|denmisɛnw tɔgɔladon|musow ka donba|musow ka seliba|musow tɔgɔladon|Musocamanfuru|musocamanfuru|furuko|denko|denladon|furu kɔnɔ|garibu|warikogɛlɛya|balokogɛlɛya|jɔnya)")
 		addtheme(old,"Sport",ur"(karidefinali|demifinali|finali|Karidefinali|Demifinali|Finali|penaliti|kupu tanko|bi kelen don|kurunboli|Kurunboli|balontan|ntolatan|Ntolatan|ladegebaga|farikoloɲɛnajɛ|bidonna|ziɲɔri|kade|ɲɛfɛmɔgɔ|bololantola|basikɛti|kupu|kupudafiriki|Kupudafiriki|kupudimɔndi|Kupudimɔndi|KUPUDIMƆNDI|KUPU DI MALI|kupu di Mali|baarita|bolokuru|soboli|balɔntan|samatasɛgɛ|Samatasɛgɛ)")
 		addtheme(old,"Technologie", ur"(mansin|ɔridinatɛri)")
-		addtheme(old,"Transport",ur"(gitɔrɔn|sofɛri|mɔbilibolila|sirabakankasaara|sisikurun|nɛgɛsira|sira dilanni|siraba|sirantanya|Siraba|bolifɛnko|pɔn jɔra|mobilibolila|mobilitigi|kamyɔn|kamyon|Dugumabolifɛnkow|dugumabolifɛnkow|jikanta|awiyɔn|pankurun|Pankurun)")
+		addtheme(old,"Transport",ur"(taransipɔrɔ|gitɔrɔn|sofɛri|mɔbilibolila|sirabakankasaara|sisikurun|nɛgɛsira|sira dilanni|siraba|sirantanya|Siraba|bolifɛnko|pɔn jɔra|mobilibolila|mobilitigi|kamyɔn|kamyon|Dugumabolifɛnkow|dugumabolifɛnkow|jikanta|awiyɔn|pankurun|Pankurun)")
 		
 		if theme!="" :
 			metas=re.sub(r"\"(XXX)\" name=\"text\:theme\"","\""+theme+"\" name=\"text:theme\"",metas)
@@ -1012,6 +1035,8 @@ for filename in filenames:
 
 		authshort=u""
 		fileauth=re.search(r"[0-9\-]*\_[0-9]*([a-z\_]*)\-",filename)
+		if periodique=="faso_kumakan":
+			fileauth=re.search(r"faso_kumakan"+year+"_"+month+"_"+day+"_"+page+"([a-z\_]*)\-",filename)
 		nshort=0
 		if fileauth : 
 			nshort=1
