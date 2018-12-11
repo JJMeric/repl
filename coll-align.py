@@ -97,6 +97,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u"ï",u"i",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"˚",u"°",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"З",u"3",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"j̀",u"j",tout,0,re.U|re.MULTILINE)
 
 				# enforce space between the ° of N° and the number that follows
 				tout=re.sub(u"°([0-9])",u"° \g<1>",tout,0,re.U|re.MULTILINE)
@@ -161,6 +162,8 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				# correct usual errors
 				# tout=re.sub(ur"eɛ([\s\,\.])",u"ɛ\g<1>",tout,0,re.U|re.MULTILINE)
 				# tout=re.sub(ur"oɔ([\s\,\.])",u"ɔ\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" ian ",u" jan ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" iira ",u" jira ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" anl ",u" ani ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" bugo ",u" bugɔ ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" bɔgo ",u" bɔgɔ ",tout,0,re.U|re.MULTILINE)

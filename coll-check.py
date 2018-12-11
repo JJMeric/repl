@@ -2,7 +2,22 @@
 # -*- coding: utf-8 -*-
 
 # checks that files in *this* directory have a collationed version in ../colldone
-
+#
+# for collation work, the recommended directory structure is
+# /collations         (download place for rar, zip, pdf files
+# /collations/colltodo    (pairs of directories of pre-collated texts, there is always one -zup), for instance
+# /collations/colltodo/kibaru570-doz
+# /collations/colltodo/kibaru570-zup
+# /collations/colldone   (directories of collated texts - result of collation work) for instance
+# /collations/colldone/kibaru570        (this will later on sent to VV, be placed on GIT, /corbama/kibaru/kibaru570, then archived...)
+# /collations/archives   (this is were the pre-collated texts move when work is finished), for instance
+# /collations/archives/kibaru569-doz
+# /collations/archives/kibaru569-zup
+# /collations/archives/kibaru569
+#
+# this program : checks that all files in colltodo/xxx-zup exist with same name in colldone/xxx
+#                          then moves collated texts in colltodo/xxx-zup & xxx-doz to archives/xxx-zup & xxx-doz
+#
 import os
 import re
 import shutil
@@ -63,18 +78,20 @@ else :
       	# check if refdir empty
       	if len(os.listdir(refdir))==0 :
       		os.rmdir(refdir)
-      		print topdir+"colltodo/"+refcurr," moved to ",archdir
+      		print refcurr," moved to ",archdir
       	extdoz="-doz"
       	# refdoz=topdir+"/colltodo/"+refdone+extdoz
-      	refdoz=donedir+extdoz
+      	refdoz=refdone+extdoz
       	if not os.path.isdir(refdoz):
       		extdoz="-gedz"
-      		refdoz=topdir+"colltodo/"+refdone+extdoz
+      		#refdoz=topdir+"colltodo/"+refdone+extdoz
+      		refdoz=refdone+extdoz
       	if not os.path.isdir(refdoz):
        		extdoz="-kot"
-      		refdoz=topdir+"colltodo/"+refdone+extdoz
+      		#refdoz=topdir+"colltodo/"+refdone+extdoz
+      		refdoz=refdone+extdoz
       	if not os.path.isdir(refdoz):
-      		sys.exit("other typist dir not found, tried -doz, -gedz, -kot")	
+      		sys.exit("other typist dir "+refdoz+"not found, tried -doz, -gedz, -kot: "+refdone+"-xxx ?")	
       	archdir=topdir+"archives"+"/"+refdone+extdoz
 	if not os.path.isdir(archdir): 
 		os.mkdir(archdir)
