@@ -24,22 +24,33 @@ def valign(t1,t2):   # aligns paragraphs breaks in text1 with paragraphs break s
 			# other characters ?
 			para=para.replace("*","\*")
 			para=para.replace("+","\+")
+			para=para.replace("?","\?")
+			para=para.replace("[","\[")
+			para=para.replace("]","\]")
 			
 			paranl=re.sub(u"\n\n",u"\n",para,0,re.U|re.MULTILINE)
 			parasp=re.sub(u"\n\n",u" ",para,0,re.U|re.MULTILINE)
-			#print parasp
+			# print parasp
 			if re.search(u""+para+u"",t2,re.U|re.MULTILINE) is None:
 				if re.search(u""+paranl+u"",t2,re.U|re.MULTILINE) is not None:
 					paranl2=paranl.replace("\)",")")
 					paranl2=paranl2.replace("\(","(")
 					paranl2=paranl2.replace("\*","*")
 					paranl2=paranl2.replace("\+","+")
+					paranl2=paranl2.replace("\?","?")
+					paranl2=paranl2.replace("\[","[")
+					paranl2=paranl2.replace("\]","]")
+					
 					t1=re.sub(u""+para+u"",paranl2,t1)
 				elif re.search(u""+parasp+u"",t2,re.U|re.MULTILINE) is not None:
 					parasp2=parasp.replace("\)",")")
 					parasp2=parasp2.replace("\(","(")
 					parasp2=parasp2.replace("\*","*")
 					parasp2=parasp2.replace("\+","+")
+					parasp2=parasp2.replace("\?","?")
+					parasp2=parasp2.replace("\[","[")
+					parasp2=parasp2.replace("\]","]")
+					
 					t1=re.sub(u""+para+u"",parasp2,t1)
 				# else : unknown situation
 	return t1
@@ -194,8 +205,14 @@ for dirname, dirnames, files in os.walk('.'):
 								for comment in allcomments:
 									comment=re.sub("é","é",comment)  # doz, gez use monoliths
 									comment=re.sub("è","è",comment)
+									comment=comment.replace("(","\(")
+									comment=comment.replace(")","\)")
+									
+									#print comment
 									if re.search("<c>"+comment+"</c>",tout1n,re.U|re.MULTILINE) is None:
-										tout1n=re.sub(comment,"<c>"+comment+"</c>",tout1n,0,re.U|re.MULTILINE)
+										commentr=comment.replace("\(","(")
+										commentr=commentr.replace("\)",")")
+										tout1n=re.sub(comment,"<c>"+commentr+"</c>",tout1n,0,re.U|re.MULTILINE)
 								tout1flat=re.sub("\n\n"," ",tout1n,0,re.U|re.MULTILINE)
 								tout2flat=re.sub("\n\n"," ",tout2,0,re.U|re.MULTILINE)
 								if tout1flat==tout2flat:

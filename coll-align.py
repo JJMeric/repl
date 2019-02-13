@@ -13,9 +13,10 @@ import os
 log =  open ("collation-align-errors.log","w")
 nerr=0
 
-old=False
 nargv=len(sys.argv)
+argument=""
 if nargv>1 : argument= str(sys.argv[1])
+old=False
 if argument=="old" or argument=="-old": old=True
 
 for dirname, dirnames, filenames in sorted(os.walk('.')):
@@ -107,7 +108,9 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u"°([0-9])",u"° \g<1>",tout,0,re.U|re.MULTILINE)
 
 				#align …  and ...
-				tout=re.sub(u"…",u"...",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"\.\.\.\.\.\.",u"…",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"\.\.\.",u"…",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"……",u"…",tout,0,re.U|re.MULTILINE)
 
 				# align braquets
 				tout=re.sub(u"’",u"'",tout,0,re.U|re.MULTILINE)
@@ -170,9 +173,24 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				# tout=re.sub(ur"oɔ([\s\,\.])",u"ɔ\g<1>",tout,0,re.U|re.MULTILINE)
 
 				if old :
+					tout=re.sub(ur"ò",u"ò",tout,0,re.U|re.MULTILINE) # doz typo
+					tout=re.sub(ur"è",u"è",tout,0,re.U|re.MULTILINE) # doz typo
 					tout=re.sub(ur"ê",u"è",tout,0,re.U|re.MULTILINE) # doz typo
+					tout=re.sub(ur"ë",u"è",tout,0,re.U|re.MULTILINE) # doz typo
+					tout=re.sub(ur"èè",u"èe",tout,0,re.U|re.MULTILINE) # doz typo
+					tout=re.sub(ur"eè",u"èe",tout,0,re.U|re.MULTILINE) # doz typo
+					tout=re.sub(ur"òò",u"òo",tout,0,re.U|re.MULTILINE) # doz typo
+					tout=re.sub(ur"oò",u"òo",tout,0,re.U|re.MULTILINE) # doz typo
+					tout=re.sub(ur" konò ",u" kònò ",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+					tout=re.sub(ur" kòno ",u" kònò ",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+					tout=re.sub(ur" nyèmògo ",u" nyèmògò ",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+					tout=re.sub(ur" nyèmogò ",u" nyèmògò ",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+					tout=re.sub(ur" nyèmògoya",u" nyèmògòya",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+					tout=re.sub(ur" wòoro ",u" wòorò ",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
 					tout=re.sub(ur" bolonɔ̀",u" bolonò",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
 					tout=re.sub(ur" bolonɔw",u" bolonòw",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+					tout=re.sub(ur"ɔ([^̀])",u"ò\g<1>",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+					tout=re.sub(ur"ɛ([^̀])",u"è\g<1>",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
 					tout=re.sub(ur" dantigecogo",u" dantigècogo",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
 					tout=re.sub(ur" baarakela",u" baarakèla",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
 					tout=re.sub(ur"Baarakela",u"Baarakèla",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
@@ -195,7 +213,9 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					tout=re.sub(ur" minenw",u" minènw",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" nyògònyè",u" nyògònye",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur"Nyògònyè",u"Nyògònye",tout,0,re.U|re.MULTILINE)
-					
+					tout=re.sub(ur" laben",u" labèn",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" sèn fɛ̀",u" sen fɛ̀",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" dògòtòròse ",u"  dògòtòròso ",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
 					tout=re.sub(ur" bògo ",u" bògò ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" beè ",u" bèe ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" bènkansebèn",u" bènkansèbèn",tout,0,re.U|re.MULTILINE)
@@ -478,6 +498,8 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					tout=re.sub(ur" sebɛn",u" sɛbɛn",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" sorɔ",u" sɔrɔ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" sɔro",u" sɔrɔ",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" sɔngo ",u" sɔngɔ ",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" songɔ ",u" sɔngɔ ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" sɛben",u" sɛbɛn",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" sɛn kan",u" sen kan",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" sɛnfɛ",u" senfɛ",tout,0,re.U|re.MULTILINE)
@@ -708,8 +730,27 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					tout=re.sub(ur" watiyɛlɛma",u" waatiyɛlɛma",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" kɔlɔlɔlɔ",u" kɔlɔlɔ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" sɔrocogo",u" sɔrɔcogo",tout,0,re.U|re.MULTILINE)
-					
+					tout=re.sub(ur" gelen",u" gɛlɛn",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" dɔron",u" dɔrɔn",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" politimɔgɔw",u" politikimɔgɔw",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+				
 				# common to .old. and new orthography:
+				tout=re.sub(ur" amadaden",u" adamaden",tout,0,re.U|re.MULTILINE)	
+				tout=re.sub(ur" hamadaden",u" hadamaden",tout,0,re.U|re.MULTILINE)	
+				tout=re.sub(ur" polotiki",u" politiki",tout,0,re.U|re.MULTILINE)	
+				tout=re.sub(ur" Polotiki",u" Politiki",tout,0,re.U|re.MULTILINE)	
+				tout=re.sub(ur" tie ",u" tle ",tout,0,re.U|re.MULTILINE)	
+				tout=re.sub(ur" jamama ",u" jamana ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" tasumaden",u" tasumadon",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" miisiri",u" minisiri",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" minisirise ",u"  minisiriso ",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+				tout=re.sub(ur" depitese ",u"  depiteso ",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+				tout=re.sub(ur" fangase ",u"  fangaso ",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+				tout=re.sub(ur" fase ",u"  faso ",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+				tout=re.sub(ur" kalanse ",u"  kalanso ",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+				tout=re.sub(ur" Burukina Fase ",u"  Burukina Faso",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+				tout=re.sub(ur" parity",u" pariti",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
+				tout=re.sub(ur" politikow",u" politikikow",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
 				tout=re.sub(ur" hamadaden",u" hadamaden",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
 				tout=re.sub(ur" janana",u" jamana",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
 				tout=re.sub(ur"Musa TARAWEL[^E]",u"Musa TARAWELE",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
@@ -1184,7 +1225,10 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					tout=re.sub(ur'(<ls>|</ls>)',u'',tout)
 					tout=re.sub(ur'<br/>[\n]*',u' ',tout)
 					tout=re.sub(ur'<h>Jaabi.</h>',u'Jaabi.',tout)
-
+				
+				# re-enforce NO SPACE at beginning of paragraphs
+				tout=re.sub(u"\n[ ]+([^\s])",u"\n\g<1>",tout,0,re.U|re.MULTILINE)
+				
 				#log.write("tout:'"+tout+"'\n")
 				try : 
 					fileOUT = open(os.path.join(dirname, filename), "w")
