@@ -54,8 +54,8 @@ kúrunbaw===kúrunbaw:n: [kúrunba:n: [kúrun:n:pirogue ba:mrph:AUGM] w:mrph
 # kibaru548_06jara-dadimi_sababu
 sùmu=>=sùmu:n:carie
 # kibaru548_06konta-nyindimi_tooro
-ɲín=>=ɲín:n:dent
-ɲínw=>=ɲ́nw:n: [ɲín:n:dent w:mrph:PL]
+#ɲín=>=ɲín:n:dent
+
 # 								kibaru549_02jire_jara-jintanya
 jí=>=jí:n:eau
 # bá===bá:n:fleuve
