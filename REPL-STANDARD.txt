@@ -3561,7 +3561,7 @@ bɛ́_dàn_ò_má===bɛ:pm:IPFV.AFF_dàn:v:s'arrêter_ò:prn:ce_mà:pp:ADR
 tɛ́_dàn_ò_má===tɛ:pm:IPFV.NEG_dàn:v:s'arrêter_ò:prn:ce_mà:pp:ADR
 má_dàn_ò_má===ma:pm:PFV.NEG_dàn:v:s'arrêter_ò:prn:ce_mà:pp:ADR
 kùntaala_bɛ́_dàn===kùntaala:n:durée [kùn:n:tête táa:v:aller la:mrph:LOC]_bɛ:pm:IPFV.AFF_dàn:v:s'arrêter
-má_sé_PMINF_PERS_dàn===ma:pm:PFV.NEG_sé:v:arriver_PMINF_PERS_dàn:v:s'arrêter$$dán:n:compter
+má_sé_PMINF_PERS_dàn===ma:pm:PFV.NEG_sé:v:arriver_PMINF_PERS_dàn:v:s'arrêter§§dán:n:compter
 dàn_PMINF_PERS_mìnɛ_à_lá===dàn:v:s'arrêter_PMINF_PERS_mìnɛ:v:attraper_à:pers:3SG_lá:pp:à
 dàn_hàkɛ_lá===dàn:v:s'arrêter_hákɛ:n:mesure_lá:pp:à
 dàn_PMINF_PERS_mìnɛ===dàn:v:s'arrêter_PMINF_PERS_mìnɛ:v:attraper
@@ -25693,8 +25693,8 @@ ká_kán_kà_NORV_PRT_ADV===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_NORVver
 ká_kán_kà_NORV_PUNCT===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_NORVverbe_PUNCT
 ká_kán_kà_VERBE===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_VERBE
 ká_kán_NICONJ_ò_yé===ka:pm:QUAL.AFF_kán:vq:égal_NICONJet_ò:prn:ce_yé:pp:PP
-ká_kán_ní_mîn_yé===ka:pm:QUAL.AFF_kán:vq:égal_ni:conjet_mîn:prn:REL_yé:pp:PP
-ká_kán_ní_mínnu_yé===ka:pm:QUAL.AFF_kán:vq:égal_ni:conjet_mínnu:prn:REL.PL2 [mîn:prn:REL nu:mrph:PL2]_yé:pp:PP
+ká_kán_ní_mîn_yé===ka:pm:QUAL.AFF_kán:vq:égal_ni:conj:et_mîn:prn:REL_yé:pp:PP
+ká_kán_ní_mínnu_yé===ka:pm:QUAL.AFF_kán:vq:égal_ni:conj:et_mínnu:prn:REL.PL2 [mîn:prn:REL nu:mrph:PL2]_yé:pp:PP
 ká_kán_NICONJ_NONVERBALGROUP_yé===ka:pm:QUAL.AFF_kán:vq:égal_NICONJet_NONVERBALGROUP_yé:pp:PP
 ká_kɔ̀rɔ_ní_AMBIGUOUS_bɛ́ɛ_yé===ka:pm:QUAL.AFF_kɔ̀rɔ:vq:vieux_ni:conj:et_AMBIGUOUS_bɛ́ɛ:dtm:tout_yé:pp:PP
 ká_kɔ̀rɔ_ní_NONVERBALGROUP_bɛ́ɛ_yé===ka:pm:QUAL.AFF_kɔ̀rɔ:vq:vieux_ni:conj:et_NONVERBALGROUP_bɛ́ɛ:dtm:tout_yé:pp:PP
@@ -28572,9 +28572,9 @@ kɛ́len_b'_NONVERBALGROUP_yé===kɛ́len:ptcp: [kɛ́:v:faire len:mrph:PTCP.RE
 kɛ́len_b'_PERS_ká_NAME_yé===kɛ́len:ptcp: [kɛ́:v:faire len:mrph:PTCP.RES]_b':cop:être_PERS_ka:pp:POSS_NAME_yé:pp:PP
 kɛ́len_b'_PERS_DTM_PARTICIPE_ká_NAME_yé===kɛ́len:ptcp: [kɛ́:v:faire len:mrph:PTCP.RES]_b':cop:être_PERS_DTM_PARTICIPE_ka:pp:POSS_NAME_yé:pp:PP  # a bɛɛ lajɛlen
 
-kɛ́_NONVERBALGROUP_yé_PU NCT===kɛ́:v:faire_NONVERBALGROUP_yé:pp:PP_PUNCT
+kɛ́_NONVERBALGROUP_yé_PUNCT===kɛ́:v:faire_NONVERBALGROUP_yé:pp:PP_PUNCT
 kɛ́_NONVERBALGROUP_yé_ADV===kɛ́:v:faire_NONVERBALGROUP_yé:pp:PP_ADV
-kɛ́ra_NONVERBALGROUP_yé_PU NCT===kɛ́ra:v: [kɛ́:v:faire ra:mrph:PFV.INTR]_NONVERBALGROUP_yé:pp:PP_PUNCT
+kɛ́ra_NONVERBALGROUP_yé_PUNCT===kɛ́ra:v: [kɛ́:v:faire ra:mrph:PFV.INTR]_NONVERBALGROUP_yé:pp:PP_PUNCT
 kɛ́ra_NONVERBALGROUP_yé_ADV===kɛ́ra:v: [kɛ́:v:faire ra:mrph:PFV.INTR]_NONVERBALGROUP_yé:pp:PP_ADV
 
 kɛ́_NONVERBALGROUP_yé_PMINF_PERS_tó===kɛ́:v:faire_NONVERBALGROUP_yé:pp:PP_PMINF_PERS_tó:v:rester
@@ -30175,8 +30175,8 @@ sú_jí_NONVERBALGROUP_ná===sú:v:tremper_jí:n:eau_NONVERBALGROUP_ná:pp
 #
 #	súmaya "rafraîchir, ralentir, retarder..."
 #
-kànâ_súmaya_NONVERBALGROUP_lá===kànâ:pm:PROH_súmaya:v:rafraîchir [súma:vq:lent ya:mrph:DEQU]_NONVERBALGROUP_lá:pp:PP
-kànâ_súmaya_NONVERBALGROUP_ná===kànâ:pm:PROH_súmaya:v:rafraîchir [súma:vq:lent ya:mrph:DEQU]_NONVERBALGROUP_ná:pp:PP
+kànâ_súmaya_NONVERBALGROUP_lá===kànâ:pm:PROH_súmaya:v:rafraîchir [súma:vq:lent ya:mrph:DEQU]_NONVERBALGROUP_lá:pp:à
+kànâ_súmaya_NONVERBALGROUP_ná===kànâ:pm:PROH_súmaya:v:rafraîchir [súma:vq:lent ya:mrph:DEQU]_NONVERBALGROUP_ná:pp:à
 
 
 #
