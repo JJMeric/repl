@@ -1006,10 +1006,12 @@ for linerepl in toutrepllines :
       
       # build prefixes for the search and replace expressions 
     liste_mots_spaced=liste_mots.replace("_"," ")
-    liste_mots_spaced=re.sub(ur"[\s]*[A-Z]+[\s]*","",liste_mots_spaced)  # eliminated capitalized keywords after/before
+    liste_mots_spaced=re.sub(ur"([A-Z]+[\s])*","",liste_mots_spaced)  # eliminated capitalized keywords after/before
+    liste_mots_spaced=re.sub(ur"([\s][A-Z]+)*","",liste_mots_spaced)  # eliminated capitalized keywords after/before
     # relookahead=ur">"+liste_mots_spaced.replace(" ","<|>")+ur"<"   #  "1 lɔ" → ">1<|>lɔ<"   as found in <span class="lemma">lɔ< ...
     if liste_mots_spaced=="1 lɔ": liste_mots_spaced="1lɔ"  # workaround gparser trick
     prefsearch=ur'<span class="sent">([^<]*)'+liste_mots_spaced+'([^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
+    if liste_mots_spaced[0:1].isupper(): liste_gloseslx=liste_gloseslx[0:1].upper()+liste_gloseslx[1:len(liste_gloseslx)]
     prefrepl=u'<span class="sent">\g<1>'+liste_gloseslx+'\g<2><span class="annot">\g<3>'
     # don't forget to advance the index !
     capt_gr_index=capt_gr_index+3+1

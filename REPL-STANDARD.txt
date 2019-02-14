@@ -1343,6 +1343,7 @@ ká_kán_à===ka:pm:QUAL.AFF_kán:vq:égal_à:pers:3SG
 ká_kán_kà_kɛ́===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_kɛ́:v:faire
 ká_kán_kà_táa===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_táa:v:aller
 ká_kán_kà_sé===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_sé:v:arriver
+ká_kán_kà_tó_PMINF===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_tó:v:rester_PMINF
 ká_kán_kà_bàto===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_bàto:v:adorer
 ká_kán_kà_lábàto===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_lábàto:v:respecter.les.règles [lá:mrph:CAUS bàto:v:adorer]
 ká_kán_kà_dí===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_dí:v:donner # danger avec dí raser : kùn ...
@@ -13199,10 +13200,14 @@ bìlen_túgun===bìlen:adv:encore_túgen:adv:encore
 bilèn_túgun===blèn:adv:encore_túgen:adv:encore
 
 kà_bìlen_PUNCT===kà:pm:INF_bìlen:v:rougir_PUNCT
+PMINF_PERS_bìlen_PUNCT===PMINF_PERS_bìlen:v:rougir_PUNCT
 bɛ́_bìlen_PUNCT===bɛ:pm:IPFV.AFF_bìlen:v:rougir_PUNCT
+IPFVAFF_PERS_bìlen_PUNCT===IPFVAFF_PERS_bìlen:v:rougir_PUNCT
+IPFVNEG_PERS_bìlen_PUNCT===IPFVNEG_PERS_bìlen:v:rougir_PUNCT
 tɛ́_bìlen_PUNCT===tɛ:pm:IPFV.NEG§§tɛ́:cop:COP.NEG_bìlen:v:rougir§§bìlen:adv:encore_PUNCT   # difficile de trancher !
 # má_bìlen_PUNCT===ma:pm:PFV.NEG_bìlen:v:rougir_PUNCT   # pb avec la PP : u tɛ jɛ fosi ma bilen.
 mánà_bìlen_PUNCT===mánà:pm:COND.AFF_bìlen:v:rougir_PUNCT
+mánà_PERS_bìlen_PUNCT===mánà:pm:COND.AFF_PERS_bìlen:v:rougir_PUNCT
 PMINF_PERS_ɲɛ́_bílen===PMINF_PERS_ɲɛ́:n:oeil_bìlen:v:rougir
 
 dɔ́rɔn_COMMA===dɔ́rɔn:adv:seulement_COMMA
@@ -16398,7 +16403,6 @@ mùso_kɔ̀rɔbalen_ka_só===mùso:n:femme_kɔ̀rɔbalen:n:le.plus.vieux [kɔ
 mùsow_ká_dɛ̀mɛ===mùsow:n: [mùso:n:femme w:mrph:PL]_ka:pp:POSS_dɛ̀mɛ:n:aide
 mùsow_ká_sényɛrɛkɔrɔ===mùsow:n: [mùso:n:femme w:mrph:PL]_ka:pp:POSS_sényɛrɛkɔrɔ:n:autosuffisance [sé:v:arriver ń:pers:1SG yɛ̀rɛ̂:dtm:même kɔ́rɔ:pp:sous]
 mùsow_ká_ɲɛ́taa===mùsow:n: [mùso:n:femme w:mrph:PL]_ka:pp:POSS_ɲɛ́taa:n:progrès [ɲɛ́:n:oeil táa:n:départ]
-mùsomanninw_ka_kúpu=>=mùsomanninw:n: [mùsomannin:n:jeune.fille [mùsoman:adj:féminin mùso:n:femme man:mrph:ADJ nin:mrph:DIM] w:mrph:PL]_ka:pp:POSS_kúpu:n:coupe
 nê_ká_fòli=>=nê:pers:1SG.EMPH_ka:pp:POSS_fòli:n:salutation [fò:v:saluer li:mrph:NMLZ]
 ń_ká_cɛ̀=>=ń:pers:1SG_ka:pp:POSS_cɛ̀:n:mâle    # attention avec le SBJV de "ramasser"
 ń_ká_fòli=>=ń:pers:1SG_ka:pp:POSS_fòli:n:salutation [fò:v:saluer li:mrph:NMLZ]
@@ -16688,6 +16692,8 @@ fìla_wɛ́rɛw=>=fìla:num:deux_wɛ́rɛw:dtm: [wɛ́rɛ:dtm:autre w:mrph:PL]
 fìni_dònta=>=fìni:n:tissu_dònta:ptcp: [dòn:v:entrer ta:mrph:PTCP.POT]
 fìni_dòntaw=>=fìni:n:tissu_dòntaw:ptcp: [dònta:ptcp: [dòn:v:entrer ta:mrph:PTCP.POT] w:mrph:PL]
 fìni_jɛ́man=>=fìni:n:tissu_jɛ́man:adj:blanc [jɛ́:vq:blanc man:mrph:ADJ]
+fìni_jɛ́len=>=fìni:n:tissu_jɛ́len:ptcp: [jɛ́:v:blanchir len:mrph:PTCP.RES]
+fìni_jɛ́lenw=>=fìni:n:tissu_jɛ́lenw:ptcp: [jɛ́len:ptcp: [jɛ́:v:blanchir len:mrph:PTCP.RES] w:mrph:PL]
 fìni_kɔ̀rɔ=>=fìni:n:tissu_kɔ̀rɔ:adj:vieux
 fìni_ɲùman=>=fìni:n:tissu_ɲùman:adj:bon [man:mrph:ADJ]
 fìni_sánuman=>=fìni:n:tissu_sánuman:adj:sain [sánu:vq:propre man:mrph:ADJ]
@@ -16863,6 +16869,8 @@ jòlikɛnɛ=>=jòlikɛnɛ:n: [jòli:n:sang kɛ́nɛ:adj:sain]
 jógo_júgu=>=jógo:n:conduite_júgu:adj:mauvais
 jógo_júgu=>=jógo:n:conduite_júgu:adj:mauvais
 jógo_ɲùman=>=jógo:n:conduite_ɲùman:adj:bon [man:mrph:ADJ]
+jóli_mínnu===jóli:n:plaie_mínnu:dtm:REL.PL2 [mîn:dtm:REL nu:mrph:PL2]
+jóli_nìnnú===jóli:n:plaie_nìnnú:dtm:DEM.PL [nìn:dtm:DEM nu:mrph:PL2]
 júgu_kùnkelen=>=júgu:n:ennemi_kùnkelen:adj:franc [kùn:n:tête kélen:num:un]
 jùru_júgu=>=jùru:n:corde_júgu:adj:mauvais
 jùru_júguw=>=jùru:n:corde_júguw:adj: [júgu:adj:mauvais w:mrph:PL]
@@ -17115,6 +17123,8 @@ mɔ̀gɔ_ɲùman=>=mɔ̀gɔ:n:homme_ɲùman:adj:bon [man:mrph:ADJ]
 mɔ̀gɔ_ɲɛ́natigɛ=>=mɔ̀gɔ:n:homme_ɲɛ́natigɛ:n:grand [ɲɛ́:n:oeil ná:mrph:CAUS tìgɛ:v:couper]   # adulte
 náalo_tàlen=>=náalo:n:esprit_tàlen:ptcp: [tà:v:prendre len:mrph:PTCP.RES]        # bouleversé  # 1GADn
 nàfa_wɛ́rɛ=>=nàfa:n:profit_wɛ́rɛ:dtm:autre
+nákɔfɛn_kɛ́nɛ=>=nákɔfɛn:n:plante.potagère [nákɔ:n:jardin fɛ́n:n:chose]_kɛ́nɛ:adj:sain
+nákɔfɛn_kɛ́nɛw=>=nákɔfɛn:n:plante.potagère [nákɔ:n:jardin fɛ́n:n:chose]_kɛ́nɛw:adj: [kɛ́nɛ:adj:sain w:mrph:PL]
 nálo_tàlen=>=náalo:n:esprit_tàlen:ptcp: [tà:v:prendre len:mrph:PTCP.RES]
 nànsara_fɔ́lɔ=>=nànsara:n:européen_fɔ́lɔ:adj:premier
 ná_dúman=>=ná:n:sauce_dúman:adj:agréable [man:mrph:ADJ]
@@ -19344,7 +19354,6 @@ Mísìrajamana===Mísìrajamana:n: [Mísìra:n.prop:TOP jàmana:n:pays]
 Mùso===mùso:n:femme
 mùso_sidatɔ===mùso:n:femme_sídatɔ:adj: [sída:n:sida tɔ:mrph:ST]
 mùsolajiginnaw=>=mùsolajiginnaw:n: [mùso:n:femme lájìgin:v:faire.descendre [lá:mrph:CAUS jìgin:v:descendre] na:mrph:AG.PRM w:mrph:PL]
-mùsomanninw===mùsomanninw:n: [mùsomannin:n:jeune.fille [mùsoman:adj:féminin mùso:n:femme man:mrph:ADJ nin:mrph:DIM] w:mrph:PL]
 múgucila===múgucila:n: [múgu:n:poudre cì:v:frapper la:mrph:AG.PRM]
 múgucilaw===múgucilaw:n: [múgu:n:poudre cì:v:frapper la:mrph:AG.PRM w:mrph:PL]
 mɔ̀gɔkɔkɔba===mɔ̀gɔkɔkɔba:n: [mɔ̀gɔ:n:homme kɔ̀rɔ:adj:vieux ba:mrph:AUGM]
@@ -20539,8 +20548,6 @@ sínjisamaminɛnw===sínjisamaminɛnw:n: [sínjisamaminɛn:n: [sínji:n:lait
 sògokisɛ===sògokisɛ:n: [sògo:n:viande kìsɛ:n:grain]   # cellules de la chair
 sàmaniminɛn===sàmaniminɛn:n: [sàma:v:tirer.à.soi ni:mrph:NMLZ mìnɛn:n:outils]     # glandes ?
 sàmaniminɛnw===sàmaniminɛnw:n: [sàmaniminɛn:n: [sàma:v:tirer.à.soi ni:mrph:NMLZ mìnɛn:n:outils] w:mrph:PL]
-mùsomannin===mùsomannin:n:jeune.fille [mùsoman:adj:féminin [mùso:n:femme man:mrph:ADJ] nin:mrph:DIM]
-mùsomanin===mùsomannin:n:jeune.fille [mùsoman:adj:féminin [mùso:n:femme man:mrph:ADJ] nin:mrph:DIM]  # erreur occasionnelle
 mùsokɔrɔba===mùsokɔrɔba:n:vieille.femme [mùsokɔrɔ:n:vieille.femme [mùso:n:femme kɔ̀rɔ:vq/adj:vieux] ba:mrph:AUGM]
 fàrinafajimisɛn===fàrinafajimisɛn:n: [fàri:n:corps nàfa:n:profit jí:n:eau mìsɛn:adj:petit]
 fàrinafajimisɛnw===fàrinafajimisɛnw:n: [fàrinafajimisɛn:n: [fàri:n:corps nàfa:n:profit jí:n:eau mìsɛn:adj:petit] w:mrph:PL]   # sécrétions (petits fluides corporels profitables)
@@ -21191,6 +21198,7 @@ kánko===kánko:n: [kán:n:cou kó:n:affaire]
 
 mambaranin===mambaranin:n:ETRG.FRA   # membrane
 dénkisɛ===dénkisɛ:n: [dén:n:enfant kìsɛ:n:graine]   # spermatozoïde
+súgunɛkɛ===súgunɛkɛ:n: [súgunɛ:n:urine kɛ́:v:faire]§§súgunɛkɛ:v: [súgunɛ:n:urine kɛ́:v:faire]
 súgunɛkɛbanbali===súgunɛkɛbanbali:n: [súgunɛ:n:urine kɛ́:v:faire bánbali:ptcp:infini [bán:v:terminer bali:mrph:PTCP.PRIV]]
 kàfoɲɔgɔnya===kàfoɲɔgɔnya:n:relations.sexuelles [kàfo:v:rassembler ɲɔ́gɔn:prn:RECP ya:mrph:ABSTR]
 dúnbana===dúnbana:n: [dún:n:cancer bàna:n:maladie]
@@ -21297,7 +21305,6 @@ kólofara===kólofara:n: [kólo:n:os fàra:n:écorce]
 ɲínfurakɛla===ɲínfurakɛla:n: [ɲín:n:dent fúrakɛla:n:infirmier [fúra:n:feuille kɛ́:v:faire la:mrph:AG.PRM]]     # dentiste
 súgaroma===súkaroma:adj: [súkaro:n:sucre ma:mrph:COM]
 súgaromaw===súkaromaw:adj: [súkaroma:adj: [súkaro:n:sucre ma:mrph:COM] w:mrph:PL]
-filiyɔri===filiyɔri:n:ETRG.FRA    # fluor
 júguyacogo===júguyacogo:n: [júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU] cógo:n:manière]
 dákɔnɔɲin===dákɔnɔɲin:n: [dá:n:bouche kɔ́nɔ:pp:dans ɲín:n:dent]
 porotɛsi===porotɛsi:n:ETRG.FRA    # prothèse
@@ -21310,7 +21317,7 @@ cɛ̀bana===cɛ̀bana:n: [cɛ̀:n:mâle bàna:n:maladie]
 yɛ̀rɛ_yɛ̀rɛ===yɛ̀rɛyɛ̀rɛ:adj:véritable
 yɛ̀rɛ-yɛ̀rɛ===yɛ̀rɛyɛ̀rɛ:adj:véritable
 fàrilaji=>=fàrilaji:n: [fàri:n:corps lá:pp:à jí:n:eau]   # fluides corporels
-nɔ́nɔkumu===nɔ́nɔkumu:n: [nɔ́nɔ:n:lait kùmu:adj:aigre]
+nɔ́nɔkumu>>=nɔ́nɔkumu:n: [nɔ́nɔ:n:lait kùmu:adj:aigre]
 bólominɛn===bólominɛn:n: [bólo:n:bras mìnɛn:n:outils]
 bólominɛnw===bólominɛnw:n: [bólominɛn:n: [bólo:n:bras mìnɛn:n:outils] w:mrph:PL]
 
@@ -22259,7 +22266,8 @@ kɔ́nɔda===kɔ́nɔda:n: [kɔ́nɔ:n:ventre dá:v:poser]
 wàlimusofurusa===wàlimusofurusa:n: [wálimuso:n:femme.d'autrui [wáli:n:autrui mùso:n:femme] fúrusà:v:divorcer [fúru:n:mariage sà:n:mort]]
 amour===kànu:n:amour
 journal===kùnnafonisɛbɛn:n:journal [kùnnafoni:n:information kùn:n:tête ná:pp:à fóni:v:détacher sɛbɛn:n:écrit]
-bólokolikɛ===bólokolikɛ:n: [bólokoli:n:circoncision [bólokò:v:circoncire li:mrph:NMLZ] kɛ́:v:faire]
+bólokolikɛ===bólokolikɛ:n: [bólokoli:n:circoncision [bólokò:v:circoncire li:mrph:NMLZ] kɛ́:v:faire]§§bólokolikɛ:v: [bólokoli:n:circoncision [bólokò:v:circoncire li:mrph:NMLZ] kɛ́:v:faire]
+bólokolikɛla>>=bólokolikɛla:n: [bólokoli:n:circoncision [bólokò:v:circoncire li:mrph:NMLZ] kɛ́:v:faire la:mrph:AG.PRM]
 jàmayɔrɔ===jàmayɔrɔ:n: [jàma:n:foule yɔ́rɔ:n:lieu]
 bólokolibaliya===bólokolibaliya:n: [bólokoli:n:circoncision [bólokò:v:circoncire li:mrph:NMLZ] bali:mrph:PTCP.PRIV ya:mrph:ABSTR]
 Jebilen===Jebilen:n.prop:TOP
@@ -23751,7 +23759,6 @@ sànduurufanga=>=sànduurufanga:n: [sàn:n:année dúuru:num:cinq fànga:n:
 kíiribulonba=>=kíiribulonba:n: [kíiri:n:jugement bùlonba:n:case.à.palabres [bùlon:n:antichambre ba:mrph:AUGM]]   # haute cour?
 kàlikasiɲɛ=>=kàlikasiɲɛ:n: [kàli:v:jurer kà:pm:INF síɲɛ:v:jurer]   # prêter serment
 kɔ́rɔnfɛkɛlɛ=>=kɔ́rɔnfɛkɛlɛ:n: [kɔ́rɔn:n:orient fɛ̀:pp:par kɛ̀lɛ:n:querelle]   # le conflit du "Nord"
-cɛ̀manninw=>=cɛ̀manninw:n: [cɛ̀man:n:garçon [cɛ̀:n:mâle man:mrph:ADJ] nin:mrph:DIM w:mrph:PL]
 tɛ́gɛrɛfɔ=>=tɛ́gɛrɛfɔ:n: [tɛ́gɛrɛ:n:applaudissement fɔ́:n:action.de.dire]
 màakɔrɔbabonya=>=màakɔrɔbabonya:n: [màa.kɔrɔ.ba:n:vieux [màa:n:homme kɔ̀rɔ:adj:vieux ba:mrph:AUGM] bònya:v:grossir [bòn:vq:grand ya:mrph:DEQU]]
 wárigana=>=wárigana:n: [wári:n:argent gána:adj:célibataire]
@@ -23910,8 +23917,6 @@ bànamisɛn>>=bànamisɛn:n: [bàna:n:maladie mìsɛn:adj:petit]
 bànamisɛnni>>=bànamisɛnnin:n: [bàna:n:maladie mìsɛnnin:adj: [mìsɛn:adj:petit nin:mrph:DIM]]
 bànamisɛnnin>>=bànamisɛnnin:n: [bàna:n:maladie mìsɛnnin:adj: [mìsɛn:adj:petit nin:mrph:DIM]]
 
-mùsomanni>>=mùsomannin:n:jeune.fille [mùsoman:adj:féminin [mùso:n:femme man:mrph:ADJ] nin:mrph:DIM]
-mùsomani>>=mùsomannin:n:jeune.fille [mùsoman:adj:féminin [mùso:n:femme man:mrph:ADJ] nin:mrph:DIM]
 mùsoyabana>>=mùsoyabanaw:n: [mùsoya:n:état.de.femme [mùso:n:femme ya:mrph:ABSTR] bàna:n:maladie]
 
 nimero===nimɔrɔ:n:numéro
@@ -23983,16 +23988,35 @@ dùgumisɛnni=>=dùgumisɛnnin:n: [dùgu:n:terre mìsɛn:vq/adj:petit nin:mr
 jàdilanbagaw=>=jàdilanbagaw:n: [jà:n:ombre dílan:v:fabriquer baga:mrph:AG.OCC w:mrph:PL]   # illustrateurs, dessinateurs
 kàlanjan=>=kàlanjan:n: [kàlan:n:lecture jàn:adj:long]   # longues études
 fàkan>>=fàkan:n: [fà:n:père kán:n:cou]   # langue mpaternelle
-fúrakɛlicogow=>=fúrakɛlicogow:n: [fúrakɛli:n:traitement [fúra:n:feuille kɛ́:v:faire li:mrph:NMLZ] cógo:n:manière w:mrph:PL]
-ɲɛ́gɛnɛsiraw=>=ɲɛ́gɛnɛsiraw:n: [ɲɛ́gɛnɛ:n:urine síra:n:chemin w:mrph:PL]   # voies urinaires
+fúrakɛlicogo>>=fúrakɛlicogo:n: [fúrakɛli:n:traitement [fúra:n:feuille kɛ́:v:faire li:mrph:NMLZ] cógo:n:manière]
+ɲɛ́gɛnɛsira>>=ɲɛ́gɛnɛsira:n: [ɲɛ́gɛnɛ:n:urine síra:n:chemin]   # voies urinaires
 ɲɛ́gɛnɛsiralabana>>=ɲɛ́gɛnɛsiralabana:n: [ɲɛ́gɛnɛ:n:urine síra:n:chemin lá:pp:à bàna:n:maladie]
+ɲɛ́gɛnɛbaranin>>=ɲɛ́gɛnɛbaranin:n: [ɲɛ́gɛnɛ:n:urine bàra:n:calebasse nin:mrph:DIM]   # vessie
+ɲɛ́gɛnɛbarani>>=ɲɛ́gɛnɛbaranin:n: [ɲɛ́gɛnɛ:n:urine bàra:n:calebasse nin:mrph:DIM]   # vessie
+ɲɛ́gɛnɛkɛ===ɲɛ́gɛnɛkɛ:n: [ɲɛ́gɛnɛ:n:urine kɛ́:v:faire]§§ɲɛ́gɛnɛkɛ:v: [ɲɛ́gɛnɛ:n:urine kɛ́:v:faire]
+Ɲɛ́gɛnɛkɛ===ɲɛ́gɛnɛkɛ:n: [ɲɛ́gɛnɛ:n:urine kɛ́:v:faire]
+ɲɛ́gɛnɛbilennikɛ>>=ɲɛ́gɛnɛbilennikɛ:n: [ɲɛ́gɛnɛ:n:urine bìlenni:n: [bìlen:v:rougir ni:mrph:NMLZ] kɛ́:v:faire]
+ɲɛ́gɛnɛbana>>=ɲɛ́gɛnɛbana:n: [ɲɛ́gɛnɛ:n:urine bàna:n:maladie]
+ɲɛ́gɛnɛkɛbana>>=ɲɛ́gɛnɛkɛbana:n: [ɲɛ́gɛnɛ:n:urine kɛ́:v:faire bàna:n:maladie]
+ɲɛ́gɛnɛbaralabana>>=ɲɛ́gɛnɛbaralabana:n: [ɲɛ́gɛnɛ:n:urine bàra:n:calebasse lá:pp:à bàna:n:maladie]
+
 dògoyɔrɔ>>=dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu]
-dògoyɔrɔbanaw=>=dògoyɔrɔbanaw:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] bàna:n:maladie w:mrph:PL]
-dògoyɔrɔlabanaw=>=dògoyɔrɔlabanaw:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à bàna:n:maladie w:mrph:PL]
-dògoyɔrɔlajoliw=>=dògoyɔrɔlajoliw:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à jóli:n:plaie w:mrph:PL]
-dògoyɔrɔlagorow=>=dògoyɔrɔlagorow:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] la:pp:à góro:n:bouton w:mrph:PL]
+dògoyɔrɔla=>=dògoyɔrɔla:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] la:mrph:LOC]
+dògoyɔrɔbana>>=dògoyɔrɔbana:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] bàna:n:maladie]
+dògoyɔrɔlabana>>=dògoyɔrɔlabana:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à bàna:n:maladie]
+dògoyɔrɔlagoro>>=dògoyɔrɔlagoro:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à góro:n:bouton]
+#   dògoyɔrɔla_goro===dògoyɔrɔlagoro:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à góro:n:bouton]
+#   dògoyɔrɔla_gorow===dògoyɔrɔlagorow:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à góro:n:bouton w:mrph:PL]
+#   Dògoyɔrɔla_gorow===dògoyɔrɔlagorow:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à góro:n:bouton w:mrph:PL]
+dògoyɔrɔlajoli>>=dògoyɔrɔlajoli:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à jóli:n:plaie]
+dògoyɔrɔlajolimisɛnnin>>=dògoyɔrɔlajolimisɛnnin:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à jóli:n:plaie mìsɛn:adj:petit nin:mrph:DIM]
+dògoyɔrɔlajolimisɛnni>>=dògoyɔrɔlajolimisɛnnin:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à jóli:n:plaie mìsɛn:adj:petit nin:mrph:DIM]
+#   dògoyɔrɔla_jolimisɛnni===dògoyɔrɔlajolimisɛnnin:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à jóli:n:plaie mìsɛn:adj:petit nin:mrph:DIM]
+#   Dògoyɔrɔla_jolimisɛnni===dògoyɔrɔlajolimisɛnnin:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à jóli:n:plaie mìsɛn:adj:petit nin:mrph:DIM]
+dògoyɔrɔlagoro>>=dògoyɔrɔlagoro:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] la:pp:à góro:n:bouton]
 dògoyɔrɔlakuru>>=dògoyɔrɔlakuru:n:verrues.génitales [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] lá:pp:à kùru:n:boule]
 dògoyɔrɔdimi=>=dògoyɔrɔdimi:n: [dògoyɔrɔ:n:parties.génitales [dògo:v:cacher yɔ́rɔ:n:lieu] dími:n:souffrance]
+
 fàrilafunteni=>=fàrilafunteni:n: [fàri:n:corps lá:pp:à fùnteni:n:chaleur]   # température corporelle
 tántanni>==tántanni:n: [tán:v:donner.coup.de.pied tán:v:donner.coup.de.pied ni:mrph:NMLZ] # dusukun ... : rythme cardiaque, battements du coeur (coeur qui cogne)
 tántanbaliya===tántanbaliya:n: [tán:v:donner.coup.de.pied tán:v:donner.coup.de.pied bali:mrph:PTCP.PRIV ya:mrph:ABSTR]   # arrêt cardiaque
@@ -24062,7 +24086,7 @@ bìlenni===bìlennin:adj: [bìlen:adj:rougir nin:mrph:DIM]
 ɲɛ́nasumuni=>=ɲɛ́nasumuni:n:orgelet [ɲɛ́:n:oeil ná:pp:à súmuni:n:furoncle]
 tàngacogo===tàngacogo:n: [tànga:v:protéger cógo:n:manière]
 ɲíntaradimi=>=ɲíntaradimi:n:pyorrhée [ɲín.tàra:n:gencive [ɲín:n:dent tàra:n:forteresse] dími:n:souffrance]
-dílannabanaw=>=dílannabanaw:n: [dílan:n:lit ná:pp:à bàna:n:maladie w:mrph:PL]   # maladies sexuellement transmissibles
+dílannabana>>=dílannabana:n: [dílan:n:lit ná:pp:à bàna:n:maladie]   # maladies sexuellement transmissibles
 dɔ́gɔmanninw===dɔ́gɔmanninw:n: [dɔ́gɔman:adj:petit [dɔ́gɔ:vq:étroit man:mrph:ADJ] nin:mrph:DIM w:mrph:PL]
 dɔ́gɔmanniw===dɔ́gɔmanninw:n: [dɔ́gɔman:adj:petit [dɔ́gɔ:vq:étroit man:mrph:ADJ] nin:mrph:DIM w:mrph:PL]
 kùrumisɛnninw===kùrumisɛnninw:n: [kùru:n:boule mìsɛn:vq/adj:petit nin:mrph:DIM w:mrph:PL]
@@ -24685,8 +24709,8 @@ nyɛsinnen===ɲɛ́sinnen:v: [ɲɛ́sin:v:s'orienter [ɲɛ́:n:oeil sín:v:diri
 suufi>>=suufi:n:soufi
 suufiya=>=suufiya:n: [suufi:n:soufi ya:mrph:ABSTR]
 unn=>=ún-ùn:intj:non
-sídabanabagatɔ=>=sídabanabagatɔ:n: [sída:n:sida bànabagatɔ:n:malade [bàna:n:maladie baga:mrph:AG.OCC tɔ:mrph:ST]]
-sídabanabagatɔw=>=sídabanabagatɔw:n: [sídabanabagatɔ:n: [sída:n:sida bànabagatɔ:n:malade [bàna:n:maladie baga:mrph:AG.OCC tɔ:mrph:ST]] w:mrph:PL]
+sídabanabagatɔ>>=sídabanabagatɔ:n: [sída:n:sida bànabagatɔ:n:malade [bàna:n:maladie baga:mrph:AG.OCC tɔ:mrph:ST]]
+sídabanatɔ>>=sídabanatɔ:n: [sída:n:sida bànabagatɔ:n:malade [bàna:n:maladie tɔ:mrph:ST]]
 sɔ̀gɔsɔgɔninjɛbagatɔ=>=sɔ̀gɔsɔgɔninjɛbagatɔ:n: [sɔ̀gɔsɔgɔninjɛ:n:tuberculose [sɔ̀gɔsɔgɔ:n:toux nin:mrph:DIM jɛ́:adj:blanc] baga:mrph:AG.OCC tɔ:mrph:ST]
 fàngadɔgɔya=>=fàngadɔgɔya:n: [fànga:n:force dɔ́gɔya:n:petitesse [dɔ́gɔ:vq:étroit ya:mrph:DEQU]]
 jírifɛrɛn=>=jírifɛrɛn:n: [jíri:n:arbre fɛ́rɛn:n:morceau]   # écharde, copeau
@@ -24718,6 +24742,8 @@ síndimi>>=síndimi:n: [sín:n:sein dími:n:souffrance]
 bálodɛsɛbana=>=bálodɛsɛbana:n: [bálodɛsɛ:n:pénurie [bálo:v:vivre dɛ́sɛ:v:échouer] bàna:n:maladie]
 kùrukurunin>>=kùrukurunin:n: [kùrukuru:n:grumeau nin:mrph:DIM]
 kùrukuruni>>=kùrukurunin:n: [kùrukuru:n:grumeau nin:mrph:DIM]
+kùrukurumisɛnnin>>=kùrukurumisɛnnin:n: [kùrukuru:n:grumeau mìsɛn:vq/adj:petit nin:mrph:DIM]
+kùrukurumisɛnni>>=kùrukurumisɛnnin:n: [kùrukuru:n:grumeau mìsɛn:vq/adj:petit nin:mrph:DIM]
 kìsɛkisɛninw===kìsɛkisɛninw:n: [kìsɛkisɛ:n:bourbouille [kìsɛ:v:grener kìsɛ:v:grener] nin:mrph:DIM w:mrph:PL]
 kìsɛkisɛniw===kìsɛkisɛninw:n: [kìsɛkisɛ:n:bourbouille [kìsɛ:v:grener kìsɛ:v:grener] nin:mrph:DIM w:mrph:PL]
 kàfoɲɔgɔnyaw=>=kàfoɲɔgɔnyaw:n: [kàfoɲɔgɔnya:n:relations.sexuelles [kàfo:v:rassembler ɲɔ́gɔn:prn:RECP ya:mrph:ABSTR] w:mrph:PL]
@@ -24799,6 +24825,9 @@ jíkankulun>>=jíkankurun:n:pirogue [jí:n:eau kàn:pp:sur kúrun:n:pirogue
 ɲínju>>=ɲínju:n: [ɲín:n:dent jù:n:derrière]
 ɲíndili>>=ɲíndili:n: [ɲín:n:dent díli:n:racine]
 ɲínlili>>=ɲínlili:n: [ɲín:n:dent líli:n:racine]
+yɛrɛfeerela>>=yɛ̀rɛfeerela:n: [yɛ̀rɛ̂:dtm:même fèere:v:vendre la:mrph:AG.PRM]
+cɛ̀misɛnni>>=cɛ̀misɛnnin:n: [cɛ̀misɛn:n:jeune.homme [cɛ̀:n:mâle mìsɛn:vq:petit] nin:mrph:DIM]
+jòlikuru>>=jòlikuru:n: [jòli:n:sang kùru:n:boule]   # caillots de sang
 
 # fin Dico Annexe  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #
@@ -24925,7 +24954,15 @@ Má===má:n:Dieu
 Métewo===métewo:n:météo
 Mùsokɔrɔnin===mùsokɔrɔnin:n:vieille.femme [mùsokɔrɔ:n:vieille.femme [mùso:n:femme kɔ̀rɔ:adj:vieux] nin:mrph:DIM]
 Mùsolu===mùsolu:n: [mùso:n:femme lu:mrph:PL2]
-Mùsomannin===mùsomannin:n:jeune.fille [mùsoman:adj:féminin [mùso:n:femme man:mrph:ADJ] nin:mrph:DIM]
+mùsomannin>>=mùsomannin:n:jeune.fille [mùsoman:adj:féminin [mùso:n:femme man:mrph:ADJ] nin:mrph:DIM]
+mùsomanni>>=mùsomannin:n:jeune.fille [mùsoman:adj:féminin [mùso:n:femme man:mrph:ADJ] nin:mrph:DIM]
+mùsomanin>>=mùsomannin:n:jeune.fille [mùsoman:adj:féminin [mùso:n:femme man:mrph:ADJ] nin:mrph:DIM]
+mùsomani>>=mùsomannin:n:jeune.fille [mùsoman:adj:féminin [mùso:n:femme man:mrph:ADJ] nin:mrph:DIM]
+mùsomanninw_ka_kúpu=>=mùsomanninw:n: [mùsomannin:n:jeune.fille [mùsoman:adj:féminin mùso:n:femme man:mrph:ADJ nin:mrph:DIM] w:mrph:PL]_ka:pp:POSS_kúpu:n:coupe
+cɛ̀mannin>>=cɛ̀mannin:n: [cɛ̀man:n:garçon [cɛ̀:n:mâle man:mrph:ADJ] nin:mrph:DIM]
+cɛ̀manni>>=cɛ̀mannin:n: [cɛ̀man:n:garçon [cɛ̀:n:mâle man:mrph:ADJ] nin:mrph:DIM]
+cɛ̀manin>>=cɛ̀mannin:n: [cɛ̀man:n:garçon [cɛ̀:n:mâle man:mrph:ADJ] nin:mrph:DIM]
+cɛ̀mani>>=cɛ̀mannin:n: [cɛ̀man:n:garçon [cɛ̀:n:mâle man:mrph:ADJ] nin:mrph:DIM]
 Mɔ̀gɔya===mɔ̀gɔya:n:humanité [mɔ̀gɔ:n:homme ya:mrph:ABSTR]
 Nara_sɛ́rɛkili===Nara:n.prop:TOP_sɛ́rɛkili:n:cercle
 Nàna===Nàna:n.prop:NOM.F
@@ -26711,6 +26748,7 @@ bɛ̀nna_NICONJ_NONVERBALGROUP_yé===bɛ̀nna:v: [bɛ̀n:v:se.rencontrer na:mrp
 bɛ̀n_ní_NAME_wɛ́rɛ_yé===bɛ̀n:v:se.rencontrer_ni:conj:et_NAME_wɛ́rɛ:dtm:autre_yé:pp:PP
 
 bɛ́_bɛ̀n_NONVERBALGROUP_mà===bɛ:pm:IPFV.AFF_bɛ̀n:v:se.rencontrer_NONVERBALGROUP_mà:pp:ADR
+bɛ́_bɛ̀n_hákɛ_NONVERBALGROUP_mà===bɛ:pm:IPFV.AFF_bɛ̀n:v:se.rencontrer_hákɛ:n:mesure_NONVERBALGROUP_mà:pp:ADR
 bɛ̀n_NONVERBALGROUP_hákɛ_mà===bɛ̀n:v:se.rencontrer_NONVERBALGROUP_hákɛ:n:mesure_mà:pp:ADR
 bɛ̀nna_NONVERBALGROUP_mà===bɛ̀nna:v: [bɛ̀n:v:se.rencontrer na:mrph:PFV.INTR]_NONVERBALGROUP_mà:pp:ADR
 bɛ̀nna_NAME_NUM_mà===bɛ̀nna:v: [bɛ̀n:v:se.rencontrer na:mrph:PFV.INTR]_NAME_NUM_mà:pp:ADR
@@ -28991,8 +29029,10 @@ láse_NORV_mà===láse:v:transmettre [lá:mrph:CAUS sé:v:arriver]_NORVname
 #
 #	màbɔ "éloigner" 2
 #
-PERS_màbɔ_NAME_lá===PERS_màbɔ:v:éloigner [mà:mrph:SUPER bɔ́:v:sortir]_NAME_lá:pp:à
-í_màbɔ_NAME_lá===í:pers:REFL_màbɔ:v:éloigner [mà:mrph:SUPER bɔ́:v:sortir]_NAME_lá:pp:à
+PERS_màbɔ_NONVERBALGROUP_lá===PERS_màbɔ:v:éloigner [mà:mrph:SUPER bɔ́:v:sortir]_NONVERBALGROUP_lá:pp:à
+PERS_màbɔ_NONVERBALGROUP_ná===PERS_màbɔ:v:éloigner [mà:mrph:SUPER bɔ́:v:sortir]_NONVERBALGROUP_ná:pp:à
+í_màbɔ_NONVERBALGROUP_lá===í:pers:REFL_màbɔ:v:éloigner [mà:mrph:SUPER bɔ́:v:sortir]_NONVERBALGROUP_lá:pp:à
+í_màbɔ_NONVERBALGROUP_ná===í:pers:REFL_màbɔ:v:éloigner [mà:mrph:SUPER bɔ́:v:sortir]_NONVERBALGROUP_ná:pp:à
 
 #
 #	màga "toucher" ... à lá 2
@@ -31026,6 +31066,7 @@ IPFVAFF_PERS_jà_yé_à_lá===IPFVAFF_PERS_jà:n:ombre_yé:v:voir_à:pers
 IPFVAFF_í_jà_yé_jí_lá===IPFVAFF_í:pers:REFL_jà:n:ombre_yé:v:voir_jí:n:eau_lá:pp:à
 
 PRMRK_NONVERBALGROUP_yé_PMINF_PERS_tó===PRMRK_NONVERBALGROUP_yé:v:voir_PMINF_PERS_tó:v:rester
+PFVTR_NONVERBALGROUP_yé_PMINF_PERS_tó===PFVTR_NONVERBALGROUP_yé:v:voir_PMINF_PERS_tó:v:rester
 
 #
 #	yɛ́lɛ "rire" 2

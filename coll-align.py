@@ -918,7 +918,10 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur'\<ill\>"([^\n\"]+)"',u"<ill>«\g<1>»",tout,0,re.U|re.MULTILINE)
 				# - or beginning of <ls>
 				tout=re.sub(ur'\<ls\>"([^\n\"]+)"',u"<ls>«\g<1>»",tout,0,re.U|re.MULTILINE)
-				
+
+				# replace leading dot by bullet as this would cause empty sentence with dot (cf. nyè kènèya)
+				tout=re.sub(ur'\n([ ]*)\. ',u"\n\g<1>• ",tout,0,re.U|re.MULTILINE)
+
 				# remove extra spaces before </h> or after <h>
 				tout=re.sub(ur'[\s]+\<\/h\>',u"</h>",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur'\<h\>[\s]+',u"<h>",tout,0,re.U|re.MULTILINE)
@@ -1039,7 +1042,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				# to be fixed : if line already starts with - 
 				tout=re.sub(ur"<ls>([^<]*)<br/>\n([^<]*)</ls>",u"- \g<1>\n\n- \g<2>",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"<ls>([^<]*)<br/>\n([^<]*)<br/>\n([^<]*)</ls>",u"- \g<1>\n- \g<2>\n- \g<3>",tout,0,re.U|re.MULTILINE)
-				tout=re.sub(ur"<ls>([^<]*)<br/>\n([^<]*)<br/>\n([^<]*)<br/>\n([^<]*)</ls>",u"- \g<1>\n- \g<2>\n- \g<3>\n- \g<3>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"<ls>([^<]*)<br/>\n([^<]*)<br/>\n([^<]*)<br/>\n([^<]*)</ls>",u"- \g<1>\n- \g<2>\n- \g<3>\n- \g<4>",tout,0,re.U|re.MULTILINE)
 				# dirty fix
 				tout=re.sub(ur"\n- - ","\n- ",tout,0,re.U|re.MULTILINE)
 				# suppress extra line between list items
