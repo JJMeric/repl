@@ -5565,6 +5565,9 @@ júguya_à_kɔ̀rɔlen_yé===júguya:v:être.méchant [júgu:vq:mauvais ya:
 sánì_bàna_ká_júguya===sánì:conj:avant.de_bàna:n:maladie_ka:pm:SBJV_júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]
 
 PMINF_à_júguya_dɔ́rɔn===PMINF_à:pers:3SG_júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]_dɔ́rɔn:adv:seulement
+júguya_PMINF_à_dàmatɛmɛ===júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]_PMINF_à:pers:3SG_dàmatɛ̀mɛ:v:exagérer [dàma:n:limite tɛ̀mɛ:v:passer]
+júguya_PMINF_à_dàntɛmɛ===júguya:v:être.méchant [júgu:vq:mauvais ya:mrph:DEQU]_PMINF_à:pers:3SG_dàntɛ̀mɛ:v:exagérer [dàn:n:limite tɛ̀mɛ:v:passer]
+
 
 #
 #	kàfo "rassembler"
@@ -7797,6 +7800,8 @@ PERS_bɛ́_fòli_sé_PERS_mà===PERS_bɛ:pm:IPFV.AFF_fòli:n:salutation [fo�
 PERS_bɛ́_fòli_sé_PERS_yɛ̀rɛ̂_mà===PERS_bɛ:pm:IPFV.AFF_fòli:n:salutation [fò:v:saluer li:mrph:NMLZ]_sé:v:arriver_PERS_yɛ̀rɛ̂:dtm:même_mà:pp:ADR
 
 sánga_NUM_kà_sé_sánga_NUM_mà===sánga:n:temps_NUM_kà:pm:INF_sé:v:arriver_sánga:n:temps_NUM_mà:pp:ADR
+
+PMINF_PERS_dá_sé_dɔ́_mà_kà_dɔ́_tó===PMINF_PERS_dá:n:bouche_sé:v:arriver_dɔ́:prn:certain_mà:pp:ADR_kà:pm:INF_dɔ́:prn:certain_tó:v:rester   # to tell apart / faire la différence
 
 #
 #	séereya "témoigner"
@@ -13571,7 +13576,6 @@ gɛ̀lɛya_wúlila===gɛ̀lɛya:n:dureté [gɛ̀lɛn:vq:dur ya:mrph:DEQU]_wúl
 jà_nàna===jà:n:sécheresse_nàna:v: [nà:v:venir na:mrph:PFV.INTR]
 jà_IPFVAFF_à_jìra===jà:n:ombre_IPFVAFF_à:pers:3SG_jìra:v:montrer
 jà_ìn_IPFVAFF_à_jìra===jà:n:ombre_ìn:dtm:DEF_IPFVAFF_à:pers:3SG_jìra:v:montrer
-
 jáabi_díyara===jáabi:n:réponse_díyara:v: [díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] ra:mrph:PFV.INTR]
 jàma_wúlila===jàma:n:foule_wúlila:v: [wúli:v:se.lever la:mrph:PFV.INTR]
 jòli_bɔ̀nna===jòli:n:sang_bɔ̀nna:v: [bɔ̀n:v:répandre na:mrph:PFV.INTR]
@@ -13583,6 +13587,8 @@ kàsa_cìra===kása:n:odeur_cìra:v: [cì:v:frapper ra:mrph:PFV.INTR]
 kàsa_wúlila===kása:n:odeur_wúlila:v: [wúli:v:se.lever la:mrph:PFV.INTR]
 kìbaruya_séra===kìbaruya:n:nouvelle [kìbaru:n:nouvelle ya:mrph:ABSTR]_séra:v: [sé:v:arriver ra:mrph:PFV.INTR]
 kíiri_tìgɛra=>=kíiri:n:jugement_tìgɛra:v: [tìgɛ:v:couper ra:mrph:PFV.INTR]
+kɔ́nɔ_bɛ́_tíɲɛ===kɔ́nɔ:n:ventre_bɛ:pm:IPFV.AFF_tíɲɛ:v:gâter
+kɔ́nɔ_yɛ̀rɛ̂_bɛ́_tíɲɛ===kɔ́nɔ:n:ventre_yɛ̀rɛ̂:dtm:même_bɛ:pm:IPFV.AFF_tíɲɛ:v:gâter
 kùnnafoni_bɔ́ra===kùnnafoni:n:information [kùn:n:tête ná:pp:à fóni:v:détacher]_bɔ́ra:v: [bɔ́:v:sortir ra:mrph:PFV.INTR]
 kùnnafoni_dɔ́_sɔ̀rɔla=>=kùnnafoni:n:information [kùn:n:tête ná:pp:à fóni:v:détacher]_dɔ́:dtm:certain_sɔrɔla:v: [sɔ̀rɔ:v:obtenir la:mrph:PFV.INTR]
 kùnnafoni_sɔ̀rɔla=>=kùnnafoni:n:information [kùn:n:tête ná:pp:à fóni:v:détacher]_sɔrɔla:v: [sɔ̀rɔ:v:obtenir la:mrph:PFV.INTR]
@@ -23960,8 +23966,10 @@ súgunɛbilennin=>=súgunɛbilennin:n: [súgunɛbilen:n:bilharziose [súgun�
 súgunɛbilenni=>=súgunɛbilennin:n: [súgunɛbilen:n:bilharziose [súgunɛ:n:urine bìlen:vq/adj:rouge] nin:mrph:DIM]
 súgunɛbileni=>=nùgulasugunɛbilennin:n:bilharziose.intestinale [nùgu:n:intestin lá:pp:à súgunɛbilen:n:bilharziose [súgunɛ:n:urine bìlen:vq/adj:rouge] nin:mrph:DIM]
 nùgulasugunɛbileni=>=nùgulasugunɛbilennin:n: [nùgu:n:intestin lá:pp:à súgunɛbilen:n:bilharziose [súgunɛ:n:urine bìlen:vq/adj:rouge] nin:mrph:DIM]   # La bilharziose intestinale
-bànakisɛfagalan=>=bànakisɛfagalan:n:antibiotique [bànakisɛ:n:microbe [bàna:n:maladie kìsɛ:n:grain] fàga:v:tuer lan:mrph:INSTR]   # ou bien désinfectant ou bien antiseptique ?
-bànakisɛfagalanw=>=bànakisɛfagalanw:n: [bànakisɛfagalan:n:antibiotique [bànakisɛ:n:microbe [bàna:n:maladie kìsɛ:n:grain] fàga:v:tuer lan:mrph:INSTR] w:mrph:PL]
+bànakisɛfagalan>>=bànakisɛfagalan:n:antibiotique [bànakisɛ:n:microbe [bàna:n:maladie kìsɛ:n:grain] fàga:v:tuer lan:mrph:INSTR]   # ou bien désinfectant ou bien antiseptique ?
+bànakisɛfagafura>>=bànakisɛfagafura:n: [bànakisɛ:n:microbe [bàna:n:maladie kìsɛ:n:grain] fàga:v:tuer fúra:n:feuille]
+bànakisɛfagasafinɛ>>=bànakisɛfagasafinɛ:n: [bànakisɛ:n:microbe [bàna:n:maladie kìsɛ:n:grain] fàga:v:tuer sàfinɛ:n:savon]
+bànakisɛfagatulu>>=bànakisɛfagatulu:n: [bànakisɛ:n:microbe [bàna:n:maladie kìsɛ:n:grain] fàga:v:tuer túlu:n:huile]    # pommade antibiotique
 bàgafagalan=>=bàgafagalan:n:immunoglobulines [bàga:n:poison fàga:v:tuer lan:mrph:INSTR]
 bàgafagafura=>=bàgafagafura:n: [bàga:n:poison fàga:v:tuer fúra:n:feuille]
 shàribɔn=>=sàribɔn:n:charbon
@@ -24304,8 +24312,6 @@ kɛ́nɛyaji=>=kɛ́nɛyaji:n: [kɛ́nɛya:n:bonne.santé [kɛ́nɛ:vq:sain ya:m
 sɔ̀rɔmuji=>=sɔ̀rɔmuji:n: [sɔ̀rɔmu:n:sérum jí:n:eau]
 sɔ̀rɔmujiw=>=sɔ̀rɔmujiw:n: [sɔ̀rɔmu:n:sérum jí:n:eau w:mrph:PL]
 ɲɛ́gɛnɛbana=>=ɲɛ́gɛnɛbana:n: [ɲɛ́gɛnɛ:n:urine bàna:n:maladie]
-bànakisɛfagafura=>=bànakisɛfagafura:n: [bànakisɛ:n:microbe [bàna:n:maladie kìsɛ:n:grain] fàga:v:tuer fúra:n:feuille]
-bànakisɛfagafuraw=>=bànakisɛfagafuraw:n: [bànakisɛfagafura:n: [bànakisɛ:n:microbe [bàna:n:maladie kìsɛ:n:grain] fàga:v:tuer fúra:n:feuille] w:mrph:PL]
 kèteketeni=>=kèteketenin:n:coqueluche [kètekete:v:frémir nin:mrph:DIM]
 fàrilakisɛkisɛni=>=fàrilakisɛkisɛni:n:impétigo [fàrila:n:teint [fàri:n:corps la:mrph:LOC] kìsɛkisɛ:v:être.couvert.de.petits.boutons [kìsɛ:v:grener kìsɛ:v:grener] ni:mrph:NMLZ]
 fàrilakisɛkisɛniw=>=fàrilakisɛkisɛniw:n: [fàrilakisɛkisɛni:n:impétigo [fàrila:n:teint [fàri:n:corps la:mrph:LOC] kìsɛkisɛ:v:être.couvert.de.petits.boutons [kìsɛ:v:grener kìsɛ:v:grener] ni:mrph:NMLZ] w:mrph:PL]
@@ -24828,6 +24834,11 @@ jíkankulun>>=jíkankurun:n:pirogue [jí:n:eau kàn:pp:sur kúrun:n:pirogue
 yɛrɛfeerela>>=yɛ̀rɛfeerela:n: [yɛ̀rɛ̂:dtm:même fèere:v:vendre la:mrph:AG.PRM]
 cɛ̀misɛnni>>=cɛ̀misɛnnin:n: [cɛ̀misɛn:n:jeune.homme [cɛ̀:n:mâle mìsɛn:vq:petit] nin:mrph:DIM]
 jòlikuru>>=jòlikuru:n: [jòli:n:sang kùru:n:boule]   # caillots de sang
+mùnitulu>>=mùnitulu:n: [mù:v:enduire ni:mrph:NMLZ túlu:n:huile]
+mùnnitulu>>=mùnnitulu:n: [mùn:v:enduire ni:mrph:NMLZ túlu:n:huile]
+bángekɔlɔsifurakisɛ>>=bángekɔlɔsifurakisɛ:n: [bánge:n:accouchement kɔ̀lɔsi:v:surveiller fúrakisɛ:n:comprimé [fúra:n:feuille kìsɛ:n:grain]]
+mùsoyalabana>>=mùsoyalabana:n: [mùsoya:n:état.de.femme [mùso:n:femme ya:mrph:ABSTR] lá:pp:à bàna:n:maladie]
+kɔ́nɔta===kɔ́nɔta:n:grossesse [kɔ́nɔ:n:ventre tà:n:action.de.prendre]§§kɔ́nɔta:v: [kɔ́nɔ:n:ventre tà:v:prendre]
 
 # fin Dico Annexe  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #
