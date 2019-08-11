@@ -18,6 +18,11 @@
 # this program : checks that all files in colltodo/xxx-zup exist with same name in colldone/xxx
 #                          then moves collated texts in colltodo/xxx-zup & xxx-doz to archives/xxx-zup & xxx-doz
 #
+# use:
+#     cd collations/colltodo
+#     python ~/GIT/repl/coll-check.py kibaruXXX
+#
+
 import os
 import re
 import shutil

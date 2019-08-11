@@ -747,6 +747,12 @@ dictauth[u"b4933759-38fd-46bd-b7f5-6c5ab6faeb1e"]=u"Keyita, Bobo||||Bambara||Kal
 dictauth[u"fc1dc8e6-531e-415b-a3e0-a69ffb6f1f5d"]=u"Kuyate, Seku Umaru|||m|Bambara||Kunnafonisɛbɛnbaga « Kalamɛnɛ la » - Kalamɛnɛ02 1992"
 #"Soke, Gongoloma",,,,,,Kalamɛnɛ01-02 1992,c3bf974e-7d29-482f-bee4-c4e3f53358c9
 dictauth[u"c3bf974e-7d29-482f-bee4-c4e3f53358c9"]=u"Soke, Gongoloma||||Bambara||Kalamɛnɛ01-02 1992"
+# "Fɔnba, Dajigi",,m,,,Bambara,"habite Jamanzana / Jumanzana / Jumansana (Fana) - kib 195 1988, kib272 1994, 1995",24b38883-3d2d-48d5-b9a4-a15db70c919f
+dictauth[u"24b38883-3d2d-48d5-b9a4-a15db70c919f"]=u"Fɔnba, Dajigi|||m|Bambara||habite Jamanzana / Jumanzana / Jumansana (Fana) - kib 195 1988, kib272 1994, 1995"	
+# "Kɔnɛ, Mohamɛdi",,m,,,Bambara, Lakòlikaramògò LPK - kib196-197-198-199 1988,9aa67a0a-c57a-40f2-b3ad-ff5c89579f30
+dictauth[u"9aa67a0a-c57a-40f2-b3ad-ff5c89579f30"]=u"Kɔnɛ, Mohamɛdi|||m|Bambara||Lakòlikaramògò LPK - kib196-197-198-199 1988"
+# "Danbele, Asimi Sulemani",,m,,,Bambara,"Komandan, Sòròdasi balikukalanden, ka bò sòròdasi ciyakèsoba la, BAMAKO - kib196-197-199 1988",be3ded31-1088-438d-a691-7be6a5050071
+dictauth[u"be3ded31-1088-438d-a691-7be6a5050071"]=u"Danbele, Asimi Sulemani|||m|Bambara||Komandan, Sòròdasi balikukalanden, ka bò sòròdasi ciyakèsoba la, BAMAKO - kib196-197-199 1988"
 
 #modèle dictauth[u"uuid"]=u"NomPrénom|||sex|Bambara||comment"
 #modèle dictauth[u"uuid"]=u"Nom, Prénom|spelling|datebirth|sex|language|native|comment"
@@ -862,7 +868,7 @@ filenames=sorted(filenames)
 for filename in filenames:
 	if ".txt" in filename :
 		print  "\n"+filename
-		find_in_name=re.search(r"(kibaru|jekabaara|faso_kumakan|jama|irisila_kunnafoniseben|kalamene)([0-9\-]*)\_",filename)
+		find_in_name=re.search(r"(kibaru|jekabaara|faso_kumakan|jama|irisila_kunnafoniseben|kalamene)([0-9\-]*[a-z]*)\_",filename)
 		periodique=find_in_name.group(1)
 
 		if periodique=="jekabaara" :
@@ -965,6 +971,8 @@ for filename in filenames:
 		titl=title.search(tout).group(1)
 		titl=re.sub(u"\"","",titl)   # was &quot; but this is converted back to " and causes problems in build
 		# print "titl="+titl
+		titl=re.sub("\<c\>"," - ",titl)  # comments '< brackets' in metas cause problems in build mparser - 21/5/19
+		titl=re.sub("\<\/c\>"," - ",titl)
 		metas=re.sub(r"\"(XXX)\" name=\"text\:title\"","\""+titl+"\" name=\"text:title\"",metas)
 		
 		tout=re.sub(ur"\&",u"&amp;",tout,0,re.U|re.MULTILINE)  
@@ -1008,6 +1016,13 @@ for filename in filenames:
 			addgenre("Belles-Lettres : Po&#233;sie moderne",ur"poyi_",filename,1)
 			addgenre("Belles-Lettres : Po&#233;sie moderne",ur"(&lt;po&gt;)",tout,1)
 			## trop dangereux (autres longue listes de noms) : addgenre("Belles-Lettres : Po&#233;sie moderne",ur"(&lt;br/&gt;)",tout,12)
+			nb_br=len(re.findall(ur"(&lt;br/&gt;)",tout,re.I|re.U|re.MULTILINE))
+			nb_nl=len(re.findall(ur"(\n)",tout,re.I|re.U|re.MULTILINE))
+			if 1.0*nb_br/nb_nl >= 0.8 :
+				if "Belles-Lettres : Po&#233;sie moderne" not in genre : 
+					if genre=="": 	genre="Belles-Lettres : Po&#233;sie moderne"
+					else: 		genre=genre+";"+"Belles-Lettres : Po&#233;sie moderne"
+					print "nb_br/nb_nl=",1.0*nb_br/nb_nl, "  -> genre=",genre
 		else :
 			addgenre("Litt&#233;rature orale : Contes populaires",ur"(nsiirin|Nsiirin)",titl,1)
 			addgenre("Litt&#233;rature orale : Contes populaires",ur"(nin kɛra cɛ dɔ ye|nin kɛra cɛ fila ye|nin kɛra cɛ saba ye|nin kɛra muso dɔ ye|nin kɛra muso ye|Nin kɛra cɛ dɔ ye|Nin kɛra cɛ fila ye|Nin kɛra cɛ saba ye|Nin kɛra muso dɔ ye|Nin kɛra muso ye)",tout,1)
@@ -1153,6 +1168,7 @@ for filename in filenames:
 			addauthor(ur"(Bakaribilen Danbele|Bakari Bilen Danbele|Bakari Danbele|Bakari DANBELE|Bakari Damele|Bakaribilen Damele)",u"dda27c30-a372-4cdb-884b-2ac8667a1523")
 			addauthor(ur"(Lamini Danbele|Lamini DANBELE)",u"3a27a011-91c6-4007-9fec-a9884e791367")
 			addauthor(ur"(Isa Danbɛlɛ|Isa DANBƐLƐ)",u"de2efafa-1e5b-4c9b-914d-fb876b7d40ba")
+			addauthor(ur"(Asimi Sulemani Danbele|Asimi Danbele|Asimi Sulemani DANBELE|Asimi DANBELE)",u"be3ded31-1088-438d-a691-7be6a5050071")
 			if len(re.findall(ur"(Tɛnenkun|Tɛnɛnkun|Tɛnɛkun|Moti)",tout,re.I|re.U))>0 :
 				addauthor(ur"(Musa Danbɛlɛ|Musa DANBƐLƐ)",u"0eb31712-30da-40fd-b5d5-de0fd7206d57")
 		if "_darabo_" in authshort : addauthor(ur"(Gawusu Darabo|Gawusu DARABO)",u"127f5500-c5db-4f87-8a33-d073d8430f02")
@@ -1198,6 +1214,7 @@ for filename in filenames:
 			addauthor(ur"(Daramani Fɔnba|Daramani FƆNBA)",u"ea0a1dc6-84e8-4b7c-9a6d-20749c228103")
 			addauthor(ur"(Zankɛ Ngolo Fɔnba|Zankɛ Ngolo FƆNBA|Zankɛ Ŋɔlɔ Fɔnba)",u"b4ee46bb-ec0f-417a-a5c5-397024592b62")
 			addauthor(ur"(Seyidu Fɔnba|Seyidu FƆNBA)",u"c293de22-e96c-49f2-b87a-19e4a5e3f24d")
+			addauthor(ur"(Dajigi Fɔnba|Dajigi FƆNBA)",u"24b38883-3d2d-48d5-b9a4-a15db70c919f")
 		if "_gindo_" in authshort : addauthor(ur"(Usmani Gindo|usumani Gindo|Usumani Gindo|Usumani Guido)",u"f96014e9-6a24-4735-9ffb-c9cdda74fe65")
 		if "_ja_" in authshort : addauthor(ur"(Sɛku Amadu Ja|Seku Amadu Ja|Sɛku Amadu JA|Sɛki Amadu Ja|Sɛki Amadu JA|Sɛku A Ja|Seku A[\.]* Ja||Sɛku A[\.]* Ja|Sɛki A Ja|Sɛku A[\.]* JA|Sɛki A[\.]* Ja|Sɛki A[\.]* JA)",u"30e70086-e12b-4963-8f23-0572b81775f2")
 		if "_jabate_" in authshort : addauthor(ur"(Fuseni Jabate|Fuseni JABATE|Fuseyini Jabate|Fuseyini JABATE|Fuseyini Jabatɛ|Fuseyini JABATE)",u"76c495a4-7706-4487-92c1-27be5fb4e943")
@@ -1324,11 +1341,15 @@ for filename in filenames:
 			addauthor(ur"(Aba Konate|Abu Konate|Aba KONATE|Abu KONATE)",u"e571c226-1abd-4125-9466-ec5eea8465e7")
 		if "_kone_" in authshort : 
 			addauthor(ur"(Alu Kɔnɛ|Alu KƆNƐ|alu kɔnɛ|alu kònè)",u"2246823e-f72a-48b5-b593-f215a321b963")
-			addauthor(ur"(Mohamɛdi Kɔnɛ|Mohamɛdi KƆNƐ|Mohamɛdi KONƐ|Mohamɛdi KONE|M ohamɛdi kɔnɛ|mohamɛdi kɔnɛ|mohamèdi kònè)",u"17e50ef6-e4ef-4373-a3bc-6b9fa536bfea")
 			addauthor(ur"(Bakari Kɔnɛ|Bakari KƆNƐ)",u"cb16231a-ac28-474d-b82d-075d4e254e76")
 			addauthor(ur"(Sisela Mayimuna Kɔnɛ|Sisela Mayimuna KƆNƐ)",u"aa1a73cb-f9a9-497b-82a5-c33feee93bf5")
 			addauthor(ur"(Musa Kɔnɛ|Musa KƆNƐ)",u"856e0687-0fb1-4469-8a46-0fa11fa9031d")
 			addauthor(ur"(Mariyamu Kɔnɛ|Mariyamu KƆNƐ)",u"41022526-703d-417b-b547-8633f27b34fa")
+			# "Kɔnɛ, Mohamɛdi",,m,,,Bambara, Lakòlikaramògò LPK - kib196-197-198-199 1988,9aa67a0a-c57a-40f2-b3ad-ff5c89579f30
+			if len(re.findall(ur"(LPK)",endoftext,re.I|re.U))>0 :
+				addauthor(ur"(Mohamɛdi Kɔnɛ|Mohamɛdi KƆNƐ)",u"9aa67a0a-c57a-40f2-b3ad-ff5c89579f30")
+			elif len(re.findall(ur"(Ɲɔrɔn)",endoftext,re.I|re.U))>0 :
+				addauthor(ur"(Mohamɛdi Kɔnɛ|Mohamɛdi KƆNƐ|Mohamɛdi KONƐ|Mohamɛdi KONE|M ohamɛdi kɔnɛ|mohamɛdi kɔnɛ|mohamèdi kònè)",u"17e50ef6-e4ef-4373-a3bc-6b9fa536bfea")
 		if "_konta_" in authshort : addauthor(ur"(Mahamadu Konta|Mahamadu Kɔnta|Mamadu Kɔnta|Mohamadu Kɔnta|Mahamadu kɔnta|Mahamaddu Kɔnta|Mahamadu KONTA|Mahamadu KƆNTA|M[\.]* Kɔnta)",u"c742b89a-fdfb-4d5c-9868-690d9935fa18")
 		if "_koyita_" in authshort : addauthor(ur"(Mamutu Koyita|Mamutu KOYITA)",u"28d9c899-66f1-4df4-9dc2-d4b95f4d01f2")
 		if "_kulibali_" in authshort:
@@ -1474,7 +1495,7 @@ for filename in filenames:
 		if "_sidibe_" in authshort : 
 			addauthor(ur"(M. Sidibe|M. SIDIBE)",u"d382c276-cb63-42f3-9ec8-4cc7f6e79a76")
 			addauthor(ur"(Masa Sidibe|Masa SIDIBE)",u"2ba135bb-49f6-4f69-bf72-d35cb7195c45")
-			addauthor(ur"(tumani yalamu sidibe|tumani yalame sidibe|Tumani Sidibe|Tuya Sidibe|Ti Yalam Si|Tumani Yalam Sidibe|Tumani Y Sidibe|Tumani yalam Sidibe|Tumani Yalam SIDIBE|Tumani Yalamu Sidibe|Tumani Yalamu SIDIBE|Tumani Y. Sidibe|Tumani Y. SIDIBE|T. Y. Sidibe|T. Y. SIDIBE|Toumani Yalam Sidibe|Toumani Yalam SIDIBE)",u"37fb14af-e1f9-4ba2-ba7c-5f67401f42fd")
+			addauthor(ur"(tumani yalamu sidibe|tumani yalame sidibe|Tumani Sidibe|Tuya Sidibe|Ti Yalam Si|Tumani Yalam Sidibe|Tumani Y Sidibe|Tumani yalam Sidibe|Tumani Yalam SIDIBE|Tumani Y SIDIBE|Tumani Yalamu Sidibe|Tumani Yalamu SIDIBE|Tumani Y. Sidibe|Tumani Y. SIDIBE|T. Y. Sidibe|T. Y. SIDIBE|Toumani Yalam Sidibe|Toumani Yalam SIDIBE)",u"37fb14af-e1f9-4ba2-ba7c-5f67401f42fd")
 			addauthor(ur"(Burama Sidibe|Burama SIDIBE)",u"7ef74ea3-7846-46f1-ba22-ff113b2a40e8")
 			addauthor(ur"(Isaka Sidibe|Isaka SIDIBE|Isiyaka Sidibe|Isiyaka SIDIBE)",u"c40b5a51-94ee-48fb-a425-1a7ac752f2f8")
 			addauthor(ur"(Yusufu Jime Sidibe|Yusufu Jime SIDIBE|Yusuf Jime Sidibe|Yusufu Jimɛ Sidibe|Yusufu Jimɛ SIDIBE|Yusuf Jimɛ Sidibe)",u"c26122ec-de4d-49a9-81b8-ce5899ae0474")

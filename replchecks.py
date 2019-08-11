@@ -129,10 +129,10 @@ nligne=1
 nbreplok=0
 
 psvalides="|adj|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers|pm|pp|prep|prn|prt|ptcp|v|vq|"
-valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_NICONJ_YEUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_"
+valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_NORADJ_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_NICONJ_YEUNDEF_NIUNDEF_NAUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_ACTION_"
 # toujours commencer et finir par _
 # autres mots utilisés, traitements spéciaux : NUMnan, degremove, ADVNforcen, ADVNforceadv, CONJPREPforceconj, CONJPREPforceprep
-gvalides=u"NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_BE_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
+gvalides=u"NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_NMLZ2_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_BE_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_OPT2_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
 #  ANAPH, ANAPH.PL, ART, OPT, OPT2, PTCP.PROG removed
 #  CFA à cause de la glose de dɔrɔmɛ qui finit par franc.CFA !!!
 fixevalides="_ETRG_ETRG.FRA_ETRG.USA_ETRG.ENG_ETRG.GER_CHNT_Q_PREV_"
@@ -141,18 +141,18 @@ pmlist=u"bɛ́nà:pm:FUT_bɛ́n':pm:FUT_bɛ:pm:IPFV.AFF_b':pm:IPFV.AFF_be:pm:IP
 coplist=u"bɛ́:cop:être_b':cop:être_b':cop:être_yé:cop:être_yé:cop:BE_kó:cop:QUOT_k':cop:QUOT_dòn:cop:ID_dò:cop:ID_tɛ́:cop:COP.NEG_té:cop:COP.NEG_t':cop:COP.NEG_yé:cop:EQU_y':cop:EQU_bé:cop:être_"
 prnlist=u"ɲɔ́gɔn:prn:RECP_ɲɔ́ɔn:prn:RECP_mîn:prn:REL_mínnu:prn:REL.PL2_nìnnú:prn:DEM.PL_mín:prn:REL_nìn:prn:DEM_"
 dtmlist=u"ìn:dtm:DEF_mîn:dtm:REL_nìn:dtm:DEM_nìn:dtm/prn:DEM_mín:dtm:REL_mínnu:dtm:REL.PL2_nìnnú:dtm:DEM.PL_nìnnú:dtm/prn:DEM.PL_"
-perslist=u"ń:pers:1SG_nê:pers:1SG.EMPH_í:pers:2SG_í:pers:REFL_ê:pers:2SG.EMPH_à:pers:3SG_àlê:pers:3SG.EMPH_án:pers:1PL_ánw:pers:1PL.EMPH_a':pers:2PL_á:pers:2PL_á':pers:2PL_áw:pers:2PL.EMPH_ù:pers:3PL_òlû:pers:ce.PL2_"
+perslist=u"ń:pers:1SG_nê:pers:1SG.EMPH_í:pers:2SG_í:pers:REFL_ê:pers:2SG.EMPH_à:pers:3SG_àlê:pers:3SG.EMPH_án:pers:1PL_ánw:pers:1PL.EMPH_a':pers:2PL_á:pers:2PL_á':pers:2PL_áw:pers:2PL.EMPH_ù:pers:3PL_òlû:pers:ce.PL2_ra:mrph:OPT2_la:mrph:OP2_na:mrph:OPT2_"
 pplist=u"ka:pp:POSS_lá:pp:POSS_bólo:pp:CNTRL_yé:pp:PP_y':pp:PP_lɔ́:pp:IN_nɔ́:pp:IN_rɔ́:pp:IN_mà:pp:ADR_"   # c'est tout ??? oui car les autres ont des gloses en minuscules, cf besoin de "check"
 conjlist=u"ô:conj:DISTR_ôo:conj:DISTR_"
 prtlist=u"dè:prt:FOC_dùn:prt:TOP.CNTR_dún:prt:TOP.CNTR_kɔ̀ni:prt:TOP.CNTR2_tùn:prt:PST_wà:prt:Q_"
-mrphlist=u"lá:mrph:CAUS_la:mrph:CAUS_ná:mrph:CAUS_mà:mrph:SUPER_rɔ́:mrph:IN_lu:mrph:PL2_nu:mrph:PL2_ba:mrph:AUGM_baa:mrph:AG.OCC_baga:mrph:AG.OCC_bali:mrph:PTCP.PRIV_ka:mrph:GENT_la:mrph:AG.PRM_na:mrph:AG.PRM_la:mrph:LOC_na:mrph:LOC_la:mrph:PRIX_na:mrph:PRIX_la:mrph:MNT1_na:mrph:MNT1_lata:mrph:MNT2_nata:mrph:MNT2_la:mrph:PROG_na:mrph:PROG_la:mrph:PFV.INTR_na:mrph:PFV.INTR_n':mrph:PFV.INTR_ra:mrph:PFV.INTR_rá:mrph:IN_rɔ́:mrph:IN_w:mrph:PL_"
-mrphlist=mrphlist+u"lama:mrph:STAT_nama:mrph:STAT_lan:mrph:INSTR_nan:mrph:INSTR_len:mrph:PTCP.RES_nen:mrph:PTCP.RES_li:mrph:NMLZ_ni:mrph:NMLZ_ma:mrph:COM_ma:mrph:RECP.PRN_man:mrph:ADJ_ntan:mrph:PRIV_"
-mrphlist=mrphlist+u"ma:mrph:DIR_nan:mrph:ORD_nin:mrph:DIM_bali:mrph:PRIV_nci:mrph:AG.EX_ɲɔgɔn:mrph:RECP_ɲwan:mrph:RECP_ta:mrph:PTCP.POT_tɔ:mrph:CONV_tɔla:mrph:CONV_tɔ:mrph:ST_baatɔ:mrph:ST_bagatɔ:mrph:ST_ya:mrph:DEQU_yɛ:mrph:DEQU_ya:mrph:ABSTR_lá:mrph:CAUS_ná:mrph:CAUS_mà:mrph:SUPER_màn:mrph:SUPER_sɔ̀:mrph:EN_"
+mrphlist=u"lá:mrph:CAUS_la:mrph:CAUS_ná:mrph:CAUS_mà:mrph:SUPER_màn:mrph:SUPER_rɔ́:mrph:IN_lu:mrph:PL2_nu:mrph:PL2_ba:mrph:AUGM_baa:mrph:AG.OCC_baga:mrph:AG.OCC_bali:mrph:PTCP.PRIV_ka:mrph:GENT_la:mrph:AG.PRM_na:mrph:AG.PRM_la:mrph:LOC_na:mrph:LOC_la:mrph:PRIX_na:mrph:PRIX_la:mrph:MNT1_na:mrph:MNT1_lata:mrph:MNT2_nata:mrph:MNT2_la:mrph:PROG_na:mrph:PROG_la:mrph:PFV.INTR_na:mrph:PFV.INTR_n':mrph:PFV.INTR_ra:mrph:PFV.INTR_rá:mrph:IN_rɔ́:mrph:IN_w:mrph:PL_"
+mrphlist=mrphlist+u"lama:mrph:STAT_nama:mrph:STAT_lan:mrph:INSTR_nan:mrph:INSTR_len:mrph:PTCP.RES_nen:mrph:PTCP.RES_li:mrph:NMLZ_ni:mrph:NMLZ_\:mrph:NMLZ2_ma:mrph:COM_ma:mrph:RECP.PRN_man:mrph:ADJ_ntan:mrph:PRIV_"
+mrphlist=mrphlist+u"ma:mrph:DIR_nan:mrph:ORD_nin:mrph:DIM_bali:mrph:PRIV_nci:mrph:AG.EX_ɲɔgɔn:mrph:RECP_ɲwan:mrph:RECP_ta:mrph:PTCP.POT_tɔ:mrph:CONV_tɔla:mrph:CONV_tɔ:mrph:ST_baatɔ:mrph:ST_bagatɔ:mrph:ST_ya:mrph:DEQU_yɛ:mrph:DEQU_ya:mrph:ABSTR_lá:mrph:CAUS_lán:mrph:CAUS_ná:mrph:CAUS_rɔ́:mrph:CAUS_ma:mrph:SUPER_man:mrph:SUPER_sɔ̀:mrph:EN_"
 # restent u"ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_"
 lxpsgvalides=pmlist+coplist+prnlist+dtmlist+perslist+pplist+conjlist+prtlist+mrphlist
 lxpsg=re.compile(ur"[\_\[\s]([^:\[\_0-9]+:[a-z\/\.]+:[A-Z0-9][A-Z0-9\.\'\|]*)[\_\s\]]",re.U)   # ne vérifie que les gloses spéciales en majuscules, par ex. pas les pp comme lá:pp:à
 
-
+mmcchecked=0
 ###### replacement rules as per REPL.txt ######################################################################################################
 nblinerepl=0
   
@@ -295,7 +295,8 @@ for linerepl in toutrepllines :
       if (lxpsgloss_ps!="n.prop" and lxpsgloss_gloss+u"_" not in fixevalides) :
         if  lxpsgloss+u"_" not in lxpsgvalides:
           log.write(lxpsgloss_gloss+" : problème avec la glose ?standard? "+lxpsgloss+"\n"+"Valides:"+lxpsgvalides+"\n")
-          sys.exit("\n"+liste_gloses+"\n"+lxpsgloss_gloss+" : Glose ?standard? non valide a gauche de ===\nVoir le log : "+logfilename)
+          print "\n"+liste_gloses+"\n"+lxpsgloss_gloss+" : Glose ?standard? non valide a gauche de ===\nVoir le log : "+logfilename
+          break
 
   # nombre de gloses de part et d'autre de ===
   
@@ -332,16 +333,45 @@ for linerepl in toutrepllines :
     if topl or ucase1 : sys.exit("\n> forbidden for force-plural or uppercase-test : the numbers of elements differ\n"+linerepl)
 
   # only check lx:ps:gloss forms 
-  liste_gloses2=re.sub(ur"([A-Z]+[\_])*","",liste_gloses)  # eliminated capitalized keywords after/before
-  liste_gloses2=re.sub(ur"([\_][A-Z]+)*","",liste_gloses2)  # eliminated capitalized keywords after/before
-  
-  gloses2=liste_gloses2.split(u"_")
+  liste_gloses2=re.sub(ur"(?:_[A-Z]+)_","_",liste_gloses,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"_[A-Z]+$","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"^[A-Z]+_","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"(?:_[A-Z]+[a-z]+)_","_",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"_[A-Z]+[a-z]+$","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"^[A-Z]+[a-z]+_","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"§§","_",liste_gloses2,re.U)  # eliminate double gloss problem in order to check each element separately
+  #print "liste_glose2 g: ",liste_gloses2
+  # repeat as there is always one remaining (non overlapping problem ?)
+  liste_gloses2=re.sub(ur"(?:_[A-Z]+)_","_",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"_[A-Z]+$","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"^[A-Z]+_","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"(?:_[A-Z]+[a-z]+)_","_",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"_[A-Z]+[a-z]+$","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"^[A-Z]+[a-z]+_","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  #liste_gloses2=re.sub(ur"§§","_",liste_gloses2,re.U)  # eliminate double gloss problem in order to check each element separately
+  # repeat as there is always one remaining (non overlapping problem ?)
+  liste_gloses2=re.sub(ur"(?:_[A-Z]+)_","_",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"_[A-Z]+$","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"^[A-Z]+_","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"(?:_[A-Z]+[a-z]+)_","_",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"_[A-Z]+[a-z]+$","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  liste_gloses2=re.sub(ur"^[A-Z]+[a-z]+_","",liste_gloses2,re.U)  # eliminate capitalized keywords after/before
+  #liste_gloses2=re.sub(ur"§§","_",liste_gloses2,re.U)  # eliminate double gloss problem in order to check each element separately
 
+  gloses2=[]
+  if "_" not in liste_gloses2:
+    liste_gloses3=re.sub(ur"^[A-Z]+[a-z]*$","",liste_gloses2,re.U)
+    #print "lg2:",liste_gloses2,"   → lg3: ",liste_gloses3
+    if liste_gloses3!="":gloses2.append(liste_gloses3)
+    else: 
+      continue
+  else: gloses2=liste_gloses2.split(u"_")
   for glose in gloses2:
+    mmcchecked=mmcchecked+1
     docheck=True
     #if    u": [" in glose : docheck=False
     #elif u"§§" in glose : docheck=False
-    if u"§§" in glose : docheck=False
+    if u"§§" in glose : docheck=False  # ne devrait plus arriver (split)
     elif u"nan:adj:ORDINAL" in glose : docheck=False
     elif u":num:CARDINAL" in glose : docheck=False
     elif u":conv.n:" in glose : docheck=False
@@ -359,6 +389,9 @@ for linerepl in toutrepllines :
     elif u":n.prop:NOM.RUS" in glose : docheck=False
     elif u":n.prop:NOM.FUL" in glose : docheck=False
     elif u":n.prop:TOP" in glose : docheck=False
+    elif glose=="NUMnan" : docheck=False
+    
+    """
     elif glose==u"bà:num:mille" : docheck=False
     elif glose==u"bàa:num:mille" : docheck=False
     elif glose==u"nìnnú:prn:DEM.PL [nìn:prn:DEM nu:mrph:PL2]" : docheck=False
@@ -427,10 +460,13 @@ for linerepl in toutrepllines :
     elif glose==u"báyɛlɛmani===báyɛlɛmani:n:transformation [báyɛ̀lɛma:v:transformer [bá:n:base yɛ̀lɛma:v:changer] li:mrph:NMLZ]" : docheck=False
     elif glose==u"kásadiyalan:n:parfum [kása:n:odeur díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] lan:mrph:INSTR]" : docheck=False
     elif glose==u"jòlimangoya:n:antipathie [jòlimango:adj:antipathique [jòliman:n:sang.actif [jòli:n:sang màn:mrph:SUPER] gó:adj:désagréable] ya:mrph:ABSTR]" : docheck=False
-
+    """
     if docheck==True and glose not in mmc :
       derivation=False
-      print "glose avant split: "+glose
+      # print "glose avant split: "+glose
+      if ":" not in glose:
+        print "pas de : =",glose, " sur la ligne: ",liste_gloses, " liste_gloses2: ",liste_gloses2
+        break
       gloselist=glose.split(u":",2)
       gloselx=gloselist[0]
       gloseps=gloselist[1]
@@ -466,11 +502,25 @@ for linerepl in toutrepllines :
       
       if derivation==False :
         if  nmmcquestion<20 : print 'sample glose not in mmc : "'+glose+'"'
+        glose2=""
+        glose3=""
         if gloseps!="n.prop" and re.search(ur"^[A-ZƐƆƝŊ]+",gloselx) :
-          glose2=gloselx.lower()+gloseps+glosegloss
+          glose2=gloselx.lower()+":"+gloseps+":"+glosegloss
           if glose2 not in mmc:
-            log.write("?_ "+glose+"\n")
-            nmmcquestion=nmmcquestion+1
+              log.write("?_ "+glose+"\n")
+              nmmcquestion=nmmcquestion+1
+        elif gloseps=="prep":
+            glose3=re.sub("\:prep\:",":conj:",glose)
+            print "prep check :",glose3
+            if glose3 not in mmc:
+              log.write("? "+glose+"\n")
+              nmmcquestion=nmmcquestion+1
+        elif gloseps=="prn":
+            glose3=re.sub("\:prn\:",":dtm:",glose)
+            print "prn check :",glose3
+            if glose3 not in mmc:
+              log.write("? "+glose+"\n")
+              nmmcquestion=nmmcquestion+1
         else:
           if not re.search(ur"^[0-9]+",gloselx) : # ne pas traiter CARDINAL et ORDINAL
             log.write("? "+glose+"\n")
@@ -508,7 +558,7 @@ for mmcitem in mmc :
 log.write("------------fin mmc------------\n")
 log.close()
 
-print "    check : mots absents de Bamadaba : ", nmmcquestion
+print "    check : mots absents de Bamadaba : ", nmmcquestion, " sur ", mmcchecked," mots vérifiés"
 
 # print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
 timeend=time.time()

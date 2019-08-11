@@ -20,6 +20,16 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 #import daba.formats
+
+import psutil
+pid=os.getpid()
+#print "pid : ",pid
+p=psutil.Process(pid)
+#print "psutil.Process(pid) : p = ",p
+p.cpu_num()
+ncpu=p.cpu_num()
+#print "p.cpu_num : ",ncpu
+
 #import unicodedata as u
 from time import gmtime, strftime, time
 # print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
@@ -286,4 +296,4 @@ nbambs=len(ambs)
 timeend=time.time()
 timeelapsed=timeend-timestart
 # en minutes, approximativement
-print filenameout+" ; ",totalmots," ; ",nbambs," ; ",int(timeelapsed)
+print ncpu," ; ",filenameout+" ; ",totalmots," ; ",nbambs," ; ",int(timeelapsed)
