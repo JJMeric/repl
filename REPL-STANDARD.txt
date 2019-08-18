@@ -3642,6 +3642,7 @@ bɛ́_síran_dámìnɛ===bɛ:pm:IPFV.AFF_síran:n:crainte_dámìnɛ:v:comm
 dáminɛtɔ===dáminɛtɔ:ptcp: [dámìnɛ:v:commencer [dá:n:bouche mìnɛ:v:attraper] tɔ:mrph:CONV]
 yé_ntòlatan_dámìnɛ===ye:pm:PFV.TR_ntòlatan:n:football [ntòla:n:balle tán:v:donner.coup.de.pied]_dámìnɛ:v:commencer [dá:n:bouche mìnɛ:v:attraper]
 dámìnɛ_kúra_yé===dámìnɛ:v:commencer [dá:n:bouche mìnɛ:v:attraper]_kúra:n:nouveau_yé:pp:PP
+dáminɛra===dáminɛna:v: [dámìnɛ:v:commencer [dá:n:bouche mìnɛ:v:attraper] na:mrph:PFV.INTR]
 
 #
 #	dàn "s'arrêter"   "dépasser"
@@ -4578,9 +4579,15 @@ fárala_kà_bɔ́===fárala:v: [fára:v:diviser la:mrph:PFV.INTR]_kà:pm:IN
 #	fàra ... kàn "ajouter"
 #
 bɛ́_dɔ́_fàra_à_kàn===bɛ:pm:IPFV.AFF_dɔ́:prn:certain_fàra:v:ajouter_à:pers:3SG_kàn:pp:sur
-yé_dɔ́_fàra===ye:pm:PFV.TR_dɔ́:prn:certain_fàra:v:ajouter
 yé_dɔ́_fàra_à_kàn===ye:pm:PFV.TR_dɔ́:prn:certain_fàra:v:ajouter_à:pers:3SG_kàn:pp:sur
 yé_dɔ́_fàra_à_ká_báara_kàn===ye:pm:PFV.TR_dɔ́:prn:certain_fàra:v:ajouter_à:pers:3SG_ka:pp:POSS_báara:n:travail_kàn:pp:sur
+#avec élision
+bɛ́_dɔ́_fàr'_à_kàn===bɛ:pm:IPFV.AFF_dɔ́:prn:certain_fàra:v:ajouter_à:pers:3SG_kàn:pp:sur
+yé_dɔ́_fàr'_à_kàn===ye:pm:PFV.TR_dɔ́:prn:certain_fàra:v:ajouter_à:pers:3SG_kàn:pp:sur
+yé_dɔ́_fàr'_à_ká_báara_kàn===ye:pm:PFV.TR_dɔ́:prn:certain_fàra:v:ajouter_à:pers:3SG_ka:pp:POSS_báara:n:travail_kàn:pp:sur
+
+yé_dɔ́_fàra===ye:pm:PFV.TR_dɔ́:prn:certain_fàra:v:ajouter
+
 PUNCT_kà_dɔ́_fàra===PUNCT_kà:pm:INF_dɔ́:prn:certain_fàra:v:ajouter
 bɛ́_kà_dɔ́_fàra===bɛ́:cop:être_kà:pm:INF_dɔ́:prn:certain_fàra:v:ajouter
 fàra_ɲɔ́gɔn_kàn===fàra:v:ajouter_ɲɔ́gɔn:prn:RECP_kàn:pp:sur
@@ -4600,6 +4607,9 @@ fàr'_à_kàn===fàr':v:ajouter_à:pers:3SG_kàn:pp:sur
 fàrala_PERS_kàn===fàrala:v: [fàra:v:ajouter la:mrph:PFV.INTR]_PERS_kàn:pp:sur
 fàrala_ò_kàn===fàrala:v: [fàra:v:ajouter la:mrph:PFV.INTR]_ò:prn:ce_kàn:pp:sur
 fàrala_à_kàn===fàrala:v: [fàra:v:ajouter la:mrph:PFV.INTR]_à:pers:3SG_kàn:pp:sur
+fàral'_PERS_kàn===fàrala:v: [fàra:v:ajouter la:mrph:PFV.INTR]_PERS_kàn:pp:sur
+fàral'_ò_kàn===fàrala:v: [fàra:v:ajouter la:mrph:PFV.INTR]_ò:prn:ce_kàn:pp:sur
+fàral'_à_kàn===fàrala:v: [fàra:v:ajouter la:mrph:PFV.INTR]_à:pers:3SG_kàn:pp:sur
 Kà_fàra_ò_kàn===kà:pm:INF_fàra:v:ajouter_ò:prn:ce_kàn:pp:sur
 PUNCT_kà_fàra_nìn_kàn===PUNCT_kà:pm:INF_fàra:v:ajouter_nìn:prn:ceci_kàn:pp:sur
 PUNCT_kà_fàra_ò_kàn===PUNCT_kà:pm:INF_fàra:v:ajouter_ò:prn:ce_kàn:pp:sur
@@ -5378,6 +5388,7 @@ PFVTR_à_jàtemìnɛ===PFVTR_à:pers:3SG_jàtemìnɛ:v:calculer [jàte:n:
 PFVTR_à_jàtemìnɛ_k'===PFVTR_à:pers:3SG_jàtemìnɛ:v:calculer [jàte:n:compte mìnɛ:v:attraper]_k':cop:QUOT
 PFVTR_à_jàtemìnɛ_kó===PFVTR_à:pers:3SG_jàtemìnɛ:v:calculer [jàte:n:compte mìnɛ:v:attraper]_kó:cop:QUOT
 PFVTR_à_jàtemìnɛ_NICONJ===PFVTR_à:pers:3SG_jàtemìnɛ:v:calculer [jàte:n:compte mìnɛ:v:attraper]_NICONJsi
+jàteminɛra===jàteminɛna:v: [jàtemìnɛ:v:calculer [jàte:n:compte mìnɛ:v:attraper] na:mrph:PFV.INTR]
 
 #
 #	jɛ́ "blanchir"
@@ -6856,6 +6867,8 @@ kɛ̀rɛnkɛrɛn_kà_màra===kɛ́rɛnkɛrɛn:v:être.à.part_kà:pm:INF_mà
 #	màsɔ̀rɔ "obtenir"
 #
 PERS_t'_à_màsɔ̀rɔ===PERS_t':pm:IPFV.NEG_à:pers:3SG_màsɔ̀rɔ:v:obtenir [mà:mrph:SUPER sɔ̀rɔ:v:obtenir]  # je n'ai pas le temps
+kà_masɔ̀rɔ===kà:pm:INF_màsɔ̀rɔ:v:obtenir [mà:mrph:SUPER sɔ̀rɔ:v:obtenir]
+kà_masɔ̀r'===kà:pm:INF_màsɔ̀rɔ:v:obtenir [mà:mrph:SUPER sɔ̀rɔ:v:obtenir]
 
 #
 #	mɛ́n  "entendre"    (transitif, à la différence de "durer")
@@ -7406,6 +7419,13 @@ IPFVAFF_à_ɲɛ́fɔ_PERS_yé===IPFVAFF_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲ
 IPFVNEG_à_ɲɛ́fɔ_PERS_yé===IPFVNEG_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_PERS_yé:pp:PP
 PFVNEG_à_ɲɛ́fɔ_PERS_yé===PFVNEG_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_PERS_yé:pp:PP
 PFVTR_à_ɲɛ́fɔ_PERS_yé===PFVTR_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_PERS_yé:pp:PP
+
+#avec élision
+PMINF_à_ɲɛ́f'_PERS_yé===PMINF_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_PERS_yé:pp:PP
+IPFVAFF_à_ɲɛ́f'_PERS_yé===IPFVAFF_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_PERS_yé:pp:PP
+IPFVNEG_à_ɲɛ́f'_PERS_yé===IPFVNEG_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_PERS_yé:pp:PP
+PFVNEG_à_ɲɛ́f'_PERS_yé===PFVNEG_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_PERS_yé:pp:PP
+PFVTR_à_ɲɛ́f'_PERS_yé===PFVTR_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_PERS_yé:pp:PP
 
 PFVNEG_ò_ɲɛ́fɔ_jàma_yé===PFVNEG_ò:prn:ce_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_jàma:n:foule_yé:pp:PP
 
@@ -8422,6 +8442,14 @@ sòli_kà_wíli===sòli:v:être.matinal_kà:pm:INF_wíli:v:se.lever
 sòlila_kà_wíli===solila:v: [sòli:v:être.matinal la:mrph:PFV.INTR]_kà:pm:INF_wíli:v:se.lever
 
 #
+#	sònya / sònyɛ "dérober", "voler"
+#
+
+sòɲɛ=sònyɛ:v:dérober [sòn:n:voleur ya:mrph:ABSTR]
+sòɲɛna=sònyɛna:v: [sònyɛ:v:dérober [sòn:n:voleur ya:mrph:ABSTR] na:mrph:PFV.INTR]
+sòɲɛra=sònyɛna:v: [sònyɛ:v:dérober [sòn:n:voleur ya:mrph:ABSTR] na:mrph:PFV.INTR]
+
+#
 #	sɔ̀mi
 #
 sɔ̀mi_kó===sɔ̀mi:v:soupçonner_kó:cop:QUOT
@@ -8582,6 +8610,19 @@ má_sɔ̀rɔ_ò_bólo===ma:pm:PFV.NEG_sɔ̀rɔ:v:obtenir_ò:prn:ce_bólo:pp
 mánà_sɔ̀rɔ_ò_bólo===mánà:pm:COND.AFF_sɔ̀rɔ:v:obtenir_ò:prn:ce_bólo:pp:CNTRL
 sɔ̀rɔ_ò_bólo===sɔ̀rɔ:v:obtenir_ò:prn:ce_bólo:pp:CNTRL
 
+#avec élision
+bɛ́_sɔ̀r'_PERS_bólo===bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_PERS_bólo:pp:CNTRL
+tɛ́_sɔ̀r'_PERS_bólo===tɛ:pm:IPFV.NEG_sɔ̀rɔ:v:obtenir_PERS_bólo:pp:CNTRL
+má_sɔ̀r'_PERS_bólo===ma:pm:PFV.NEG_sɔ̀rɔ:v:obtenir_PERS_bólo:pp:CNTRL
+mánà_sɔ̀r'_PERS_bólo===mánà:pm:COND.AFF_sɔ̀rɔ:v:obtenir_PERS_bólo:pp:CNTRL
+sɔ̀r'_PERS_bólo===sɔ̀rɔ:v:obtenir_PERS_bólo:pp:CNTRL
+
+bɛ́_sɔ̀r'_ò_bólo===bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_ò:prn:ce_bólo:pp:CNTRL
+tɛ́_sɔ̀r'_ò_bólo===tɛ:pm:IPFV.NEG_sɔ̀rɔ:v:obtenir_ò:prn:ce_bólo:pp:CNTRL
+má_sɔ̀r'_ò_bólo===ma:pm:PFV.NEG_sɔ̀rɔ:v:obtenir_ò:prn:ce_bólo:pp:CNTRL
+mánà_sɔ̀r'_ò_bólo===mánà:pm:COND.AFF_sɔ̀rɔ:v:obtenir_ò:prn:ce_bólo:pp:CNTRL
+sɔ̀r'_ò_bólo===sɔ̀rɔ:v:obtenir_ò:prn:ce_bólo:pp:CNTRL
+
 # bɛ́_sɔ̀rɔ===bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir # peut être suivi d'un autre verbe, ex, kɛ́
 # tɛ́_sɔ̀rɔ===tɛ:pm:IPFV.NEG_sɔ̀rɔ:v:obtenir
 kà_sɔ̀rɔ_PUNCT===kà:pm:INF_sɔ̀rɔ:v:obtenir_PUNCT
@@ -8703,6 +8744,8 @@ sɔ̀rɔla_òlú_lá===sɔ̀rɔla:v: [sɔ̀rɔ:v:obtenir la:mrph:PFV.INTR]_o�
 tɔ́ni_NUM_sɔ̀rɔla===tɔ́ni:n:tonne_NUM_sɔ̀rɔla:v: [sɔ̀rɔ:v:obtenir la:mrph:PFV.INTR]
 IPFVAFF_PERS_tá_sɔ̀rɔ_ò_lá===IPFVAFF_PERS_tá:n:propriété_sɔ̀rɔ:v:obtenir_ò:prn:ce_lá:pp:à
 IPFVAFF_PERS_tá_sɔ̀rɔ_à_lá===IPFVAFF_PERS_tá:n:propriété_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
+IPFVAFF_PERS_tá_sɔ̀r'_ò_lá===IPFVAFF_PERS_tá:n:propriété_sɔ̀rɔ:v:obtenir_ò:prn:ce_lá:pp:à
+IPFVAFF_PERS_tá_sɔ̀r'_à_lá===IPFVAFF_PERS_tá:n:propriété_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
 ɲɛ́_bɛ́_sɔ̀rɔ_à_kó_lá===ɲɛ́:n:oeil_bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_à:pers:3SG_kó:n:affaire_lá:pp:à
 
 kàna_síra_sɔ̀rɔ===kànâ:pm:PROH_síra:n:chemin_sɔ̀rɔ:v:obtenir
@@ -19762,6 +19805,7 @@ Ìrisijamana_kàn===Ìrisijamana:n: [Ìrisi:n.prop:TOP jàmana:n:pays]_kà
 
 
 # communes, cercles, régions, villes, toponymes
+Rayida===Àrayida:n.prop:TOP
 Sokura_Keseli===Sokura:n.prop:TOP_Keseli:n.prop:TOP  # près de Mopti
 Sɛribi===Sɛribi:n.prop:TOP 
 Uro-Modi===Uro-Modi:n.prop:TOP
@@ -27510,6 +27554,13 @@ PFVTR_ò_NAME_dábìla_ADV===PFVTR_ò:dtm:ce_NAME_dábìla:v:cesser [dá:
 PFVNEG_ò_NAME_dábìla_PUNCT===PFVNEG_ò:dtm:ce_NAME_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]_PUNCT
 PFVNEG_ò_NAME_dábìla_ADV===PFVNEG_ò:dtm:ce_NAME_dábìla:v:cesser [dá:n:bouche bìla:v:mettre]_ADV
 
+
+#
+#	dábɔ "commencer", "faire exprès"
+#
+y'_à_dábɔ_à_kámà===y':pm:PFV.TR_à:pers:3SG_dábɔ:v:commencer [dá:n:bouche bɔ́:v:sortir]_à:pers:3SG_kámà:pp:pour [kán:n:cou mà:pp:ADR]
+y'_à_dáb'_à_kámà===y':pm:PFV.TR_à:pers:3SG_dábɔ:v:commencer [dá:n:bouche bɔ́:v:sortir]_à:pers:3SG_kámà:pp:pour [kán:n:cou mà:pp:ADR]
+
 #
 #	dáfa "compléter" 2
 #
@@ -28363,6 +28414,16 @@ fɔ́_PERS_yé_ò_kàn===fɔ́:v:dire_PERS_yé:pp:PP_ò:prn:ce_kàn:pp:sur
 fɔ́_PERS_yé_nìn_kàn===fɔ́:v:dire_PERS_yé:pp:PP_nìn:prn:ceci_kàn:pp:sur
 fɔ́_PERS_yé_PUNCT===fɔ́:v:dire_PERS_yé:pp:PP_PUNCT
 fɔ́_ò_yé_PUNCT===fɔ́:v:dire_ò:prn:ce_yé:pp:PP_PUNCT
+
+#avec élision
+f'_NONVERBALGROUP_yé===fɔ́:v:dire_NONVERBALGROUP_yé:pp:PP
+f'_NONVERBALGROUP_yé_kó===fɔ́:v:dire_NONVERBALGROUP_yé:pp:PP_kó:cop:QUOT
+f'_PRONOM_yé_PUNCT===fɔ́:v:dire_PRONOM_yé:pp:PP_PUNCT
+f'_PERS_yé_à_kàn===fɔ́:v:dire_PERS_yé:pp:PP_à:pers:3SG_kàn:pp:sur
+f'_PERS_yé_ò_kàn===fɔ́:v:dire_PERS_yé:pp:PP_ò:prn:ce_kàn:pp:sur
+f'_PERS_yé_nìn_kàn===fɔ́:v:dire_PERS_yé:pp:PP_nìn:prn:ceci_kàn:pp:sur
+f'_PERS_yé_PUNCT===fɔ́:v:dire_PERS_yé:pp:PP_PUNCT
+f'_ò_yé_PUNCT===fɔ́:v:dire_ò:prn:ce_yé:pp:PP_PUNCT
 
 fɔ́ra_NONVERBALGROUP_yé===fɔ́ra:v: [fɔ́:v:dire ra:mrph:PFV.INTR]_NONVERBALGROUP_yé:pp:PP
 fɔ́ra_NONVERBALGROUP_yé_kó===fɔ́ra:v: [fɔ́:v:dire ra:mrph:PFV.INTR]_NONVERBALGROUP_yé:pp:PP_kó:cop:QUOT
@@ -29848,6 +29909,13 @@ IPFVNEG_à_ɲɛ́fɔ_NONVERBALGROUP_yé===IPFVNEG_à:pers:3SG_ɲɛ́fɔ:v:exp
 PFVNEG_à_ɲɛ́fɔ_NONVERBALGROUP_yé===PFVNEG_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_NONVERBALGROUP_yé:pp:PP
 PFVTR_à_ɲɛ́fɔ_NONVERBALGROUP_yé===PFVTR_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_NONVERBALGROUP_yé:pp:PP
 
+#avec élision
+PMINF_à_ɲɛ́f'_NONVERBALGROUP_yé===PMINF_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_NONVERBALGROUP_yé:pp:PP
+IPFVAFF_à_ɲɛ́f'_NONVERBALGROUP_yé===IPFVAFF_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_NONVERBALGROUP_yé:pp:PP
+IPFVNEG_à_ɲɛ́f'_NONVERBALGROUP_yé===IPFVNEG_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_NONVERBALGROUP_yé:pp:PP
+PFVNEG_à_ɲɛ́f'_NONVERBALGROUP_yé===PFVNEG_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_NONVERBALGROUP_yé:pp:PP
+PFVTR_à_ɲɛ́f'_NONVERBALGROUP_yé===PFVTR_à:pers:3SG_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]_NONVERBALGROUP_yé:pp:PP
+
 bɛ́_NAME_ɲɛ́fɔ===bɛ:pm:IPFV.AFF_NAME_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
 nà_NAME_ɲɛ́fɔ===nà:pm:CERT_NAME_ɲɛ́fɔ:v:expliquer [ɲɛ́:n:oeil fɔ́:v:dire]
 
@@ -30490,18 +30558,33 @@ PFVNEG_sɔ̀rɔ_NONVERBALGROUP_ná===PFVNEG_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_n
 sɔ̀rɔla_NONVERBALGROUP_lá===sɔ̀rɔla:v: [sɔ̀rɔ:v:obtenir la:mrph:PFV.INTR]_NONVERBALGROUP_lá:pp:à
 sɔ̀rɔla_NONVERBALGROUP_ná===sɔ̀rɔla:v: [sɔ̀rɔ:v:obtenir la:mrph:PFV.INTR]_NONVERBALGROUP_ná:pp:à
 
+#avec élision
+PMINF_sɔ̀r'_NONVERBALGROUP_lá===PMINF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_lá:pp:à
+PMINF_sɔ̀r'_NONVERBALGROUP_ná===PMINF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_ná:pp:à
+IPFVAFF_sɔ̀r'_NONVERBALGROUP_lá===IPFVAFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_lá:pp:à
+IPFVAFF_sɔ̀r'_NONVERBALGROUP_ná===IPFVAFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_ná:pp:à
+IPFVNEG_sɔ̀r'_NONVERBALGROUP_lá===IPFVNEG_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_lá:pp:à
+IPFVNEG_sɔ̀r'_NONVERBALGROUP_ná===IPFVNEG_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_ná:pp:à
+PFVNEG_sɔ̀r'_NONVERBALGROUP_lá===PFVNEG_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_lá:pp:à
+PFVNEG_sɔ̀r'_NONVERBALGROUP_ná===PFVNEG_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_ná:pp:à
+
 PRMRK_NONVERBALGROUP_sɔ̀rɔ===PRMRK_NONVERBALGROUP_sɔ̀rɔ:v:obtenir
 PRMRK_mîn_sɔ̀rɔ===PRMRK_mîn:prn:REL_sɔ̀rɔ:v:obtenir
 NAME_sɔ̀rɔla===NAME_sɔ̀rɔla:v: [sɔ̀rɔ:v:obtenir la:mrph:PFV.INTR]
 NONVERBALGROUP_sɔ̀rɔla===NONVERBALGROUP_sɔ̀rɔla:v: [sɔ̀rɔ:v:obtenir la:mrph:PFV.INTR]
 PRMRK_sɔ̀rɔ_à_lá===PRMRK_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
 PRMRK_sɔ̀rɔ_ò_lá===PRMRK_sɔ̀rɔ:v:obtenir_ò:prn:ce_lá:pp:à
+PRMRK_sɔ̀r'_à_lá===PRMRK_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
+PRMRK_sɔ̀r'_ò_lá===PRMRK_sɔ̀rɔ:v:obtenir_ò:prn:ce_lá:pp:à
 PRMRK_sɔ̀rɔ_nìn_ná===PRMRK_sɔ̀rɔ:v:obtenir_nìn:prn:ceci_ná:pp:à
 PRMRK_sɔ̀rɔ_NONVERBALGROUP_lá===PRMRK_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_lá:pp:à
 PRMRK_sɔ̀rɔ_NONVERBALGROUP_ná===PRMRK_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_ná:pp:à
 NAME_sɔ̀rɔ_à_lá===NAME_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
 ADJECTIF_sɔ̀rɔ_à_lá===ADJECTIF_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
 DTM_sɔ̀rɔ_à_lá===DTM_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
+NAME_sɔ̀r'_à_lá===NAME_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
+ADJECTIF_sɔ̀r'_à_lá===ADJECTIF_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
+DTM_sɔ̀r'_à_lá===DTM_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
 PARTICIPE_sɔ̀rɔ_à_lá===PARTICIPE_sɔ̀rɔ:v:obtenir_à:pers:3SG_lá:pp:à
 PRONOM_k'_à_sɔ̀rɔ===PRONOM_k':pm:SBJV_à:pers:3SG_sɔ̀rɔ:v:obtenir
 NONVERBALGROUP_k'_à_sɔ̀rɔ===NONVERBALGROUP_k':pm:SBJV_à:pers:3SG_sɔ̀rɔ:v:obtenir
@@ -30525,6 +30608,14 @@ bɛ́_sɔ̀rɔ_NPROPRETOP===bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_NPROPRETOP
 
 mánà_sɔ̀rɔ_NONVERBALGROUP_lá===mánà:pm:COND.AFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_lá:pp:à
 mánà_sɔ̀rɔ_NONVERBALGROUP_ná===mánà:pm:COND.AFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_ná:pp:à
+
+bɛ́_sɔ̀r'_NONVERBALGROUP_kɔ́nɔ_PUNCT===bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_kɔ́nɔ:pp:dans_PUNCT
+bɛ́_sɔ̀r'_NONVERBALGROUP_POSTP===bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_POSTP
+bɛ́_sɔ̀r'_ò_NAME_POSTP===bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_ò:dtm:ce_NAME_POSTP
+bɛ́_sɔ̀r'_NPROPRETOP===bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_NPROPRETOP
+
+mánà_sɔ̀r'_NONVERBALGROUP_lá===mánà:pm:COND.AFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_lá:pp:à
+mánà_sɔ̀r'_NONVERBALGROUP_ná===mánà:pm:COND.AFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_ná:pp:à
 
 PERS_ká_NONVERBALGROUP_sɔ̀rɔ_PUNCT===PERS_ka:pm:SBJV_NONVERBALGROUP_sɔ̀rɔ:v:obtenir_PUNCT
 PERS_ká_NONVERBALGROUP_sɔ̀rɔ_PRT_PUNCT===PERS_ka:pm:SBJV_NONVERBALGROUP_sɔ̀rɔ:v:obtenir_PRT_PUNCT
@@ -31302,16 +31393,17 @@ tùgur_PERS_nɔ̀fɛ̀===tùgura:v: [tùgu:v:rabouter ra:mrph:PFV.INTR]_PERS_
 tùgura_NONVERBALGROUP_nɔ̀_fɛ̀===tùgura:v: [tùgu:v:rabouter ra:mrph:PFV.INTR]_NONVERBALGROUP_nɔ̀fɛ̀:pp:derrière [nɔ̀:n:trace fɛ̀:pp:par]
 tùgur'_PERS_nɔ̀_fɛ̀===tùgura:v: [tùgu:v:rabouter ra:mrph:PFV.INTR]_PERS_nɔ̀fɛ̀:pp:derrière [nɔ̀:n:trace fɛ̀:pp:par]
 
-tùgu_NAME_lá_PUNCT===tùgu:v:rabouter_NAME_lá:pp:à_PUNCT
-tùgu_NAME_ná_PUNCT===tùgu:v:rabouter_NAME_ná:pp:à_PUNCT
+tùgu_NONVERBALGROUP_lá_PUNCT===tùgu:v:rabouter_NONVERBALGROUP_lá:pp:à_PUNCT
+tùgu_NONVERBALGROUP_ná_PUNCT===tùgu:v:rabouter_NONVERBALGROUP_ná:pp:à_PUNCT
+tùgura_NONVERBALGROUP_lá===tùgura:v: [tùgu:v:rabouter ra:mrph:PFV.INTR]_NONVERBALGROUP_lá:pp:à
+tùgura_NONVERBALGROUP_ná===tùgura:v: [tùgu:v:rabouter ra:mrph:PFV.INTR]_NONVERBALGROUP_ná:pp:à
 tùgu_ò_lá===tùgu:v:rabouter_ò:prn:ce_lá:pp:à
-tùgu_PERS_lá_PUNCT===tùgu:v:rabouter_PERS_lá:pp:à_PUNCT
-tùgu_PERS_ná_PUNCT===tùgu:v:rabouter_PERS_ná:pp:à_PUNCT
 tùgura_ò_lá===tùgura:v: [tùgu:v:rabouter ra:mrph:PFV.INTR]_ò:prn:ce_lá:pp:à
-tùgu_PERS_lá===tùgu:v:rabouter_PERS_lá:pp:à
-tùgura_PERS_lá===tùgura:v: [tùgu:v:rabouter ra:mrph:PFV.INTR]_PERS_lá:pp:à
-tùgura_NAME_lá===tùgura:v: [tùgu:v:rabouter ra:mrph:PFV.INTR]_NAME_lá:pp:à
-tùgura_NAME_DTM_lá===tùgura:v: [tùgu:v:rabouter ra:mrph:PFV.INTR]_NAME_DTM_lá:pp:à
+
+#avec élision
+tùg'_NONVERBALGROUP_lá_PUNCT===tùgu:v:rabouter_NONVERBALGROUP_lá:pp:à_PUNCT
+tùg'_NONVERBALGROUP_ná_PUNCT===tùgu:v:rabouter_NONVERBALGROUP_ná:pp:à_PUNCT
+
 
 NPROPRE_tùgulen===NPROPRE_tùgulen:ptcp: [tùgu:v:rabouter len:mrph:PTCP.RES]
 
@@ -35758,12 +35850,19 @@ kànâ_nà_NONVERBALGROUP_VERBE===kànâ:pm:PROH_nà:v:venir_NONVERBALGROU
 POSTP_kà_sɔ̀rɔ_PMINF===POSTP_kà:pm:INF_sɔ̀rɔ:v:obtenir_PMINF
 ADV_kà_sɔ̀rɔ_PMINF===ADV_kà:pm:INF_sɔ̀rɔ:v:obtenir_PMINF
 
+sɔ̀rɔla_NONVERBALGROUP_POSTP===sɔ̀rɔla:v: [sɔ̀rɔ:v:obtenir la:mrph:PFV.INTR]_NONVERBALGROUP_POSTP
+
 bɛ́_sɔ̀rɔ_NONVERBALGROUP_POSTP===bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_POSTP
 tɛ́_sɔ̀rɔ_NONVERBALGROUP_POSTP===tɛ:pm:IPFV.NEG_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_POSTP
 má_sɔ̀rɔ_NONVERBALGROUP_POSTP===ma:pm:PFV.NEG_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_POSTP
-sɔ̀rɔla_NONVERBALGROUP_POSTP===sɔ̀rɔla:v: [sɔ̀rɔ:v:obtenir la:mrph:PFV.INTR]_NONVERBALGROUP_POSTP
 mánà_sɔ̀rɔ_NONVERBALGROUP_POSTP===mánà:pm:COND.AFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_POSTP
 kànâ_sɔ̀rɔ_NONVERBALGROUP_POSTP===kànâ:pm:PROH_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_POSTP
+
+bɛ́_sɔ̀r'_NONVERBALGROUP_POSTP===bɛ:pm:IPFV.AFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_POSTP
+tɛ́_sɔ̀r'_NONVERBALGROUP_POSTP===tɛ:pm:IPFV.NEG_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_POSTP
+má_sɔ̀r'_NONVERBALGROUP_POSTP===ma:pm:PFV.NEG_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_POSTP
+mánà_sɔ̀r'_NONVERBALGROUP_POSTP===mánà:pm:COND.AFF_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_POSTP
+kànâ_sɔ̀r'_NONVERBALGROUP_POSTP===kànâ:pm:PROH_sɔ̀rɔ:v:obtenir_NONVERBALGROUP_POSTP
 
 #
 #	táa "aller"   3

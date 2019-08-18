@@ -753,6 +753,9 @@ dictauth[u"24b38883-3d2d-48d5-b9a4-a15db70c919f"]=u"Fɔnba, Dajigi|||m|Bambara||
 dictauth[u"9aa67a0a-c57a-40f2-b3ad-ff5c89579f30"]=u"Kɔnɛ, Mohamɛdi|||m|Bambara||Lakòlikaramògò LPK - kib196-197-198-199 1988"
 # "Danbele, Asimi Sulemani",,m,,,Bambara,"Komandan, Sòròdasi balikukalanden, ka bò sòròdasi ciyakèsoba la, BAMAKO - kib196-197-199 1988",be3ded31-1088-438d-a691-7be6a5050071
 dictauth[u"be3ded31-1088-438d-a691-7be6a5050071"]=u"Danbele, Asimi Sulemani|||m|Bambara||Komandan, Sòròdasi balikukalanden, ka bò sòròdasi ciyakèsoba la, BAMAKO - kib196-197-199 1988"
+#"Konate/Konatɛ, Mamari",,m,,,Bambara,"habite Konu, Joro - animatɛri, duguyiriwatɔn ɲɛmɔgɔ 1993 - kib 190-191 1987",0d6ecc27-bedd-421b-ab01-24dbffa6ba58
+dictauth[u"0d6ecc27-bedd-421b-ab01-24dbffa6ba58"]=u"Konate/Konatɛ, Mamari|||m|Bambara||habite Konu, Joro - animatɛri, duguyiriwatɔn ɲɛmɔgɔ 1993 - kib 190-191 1987 - kib252 1993"
+
 
 #modèle dictauth[u"uuid"]=u"NomPrénom|||sex|Bambara||comment"
 #modèle dictauth[u"uuid"]=u"Nom, Prénom|spelling|datebirth|sex|language|native|comment"
@@ -1310,7 +1313,7 @@ for filename in filenames:
 			addauthor(ur"(Kaka Kanɛ|Kakɔ Kanɛ|Kakɔ KANƐ|Kakɔ kanɛ)",u"be3d7843-4ab1-4dfc-aa8c-583953f819de")
 			addauthor(ur"(Andere Kanɛ|Andere KANƐ)",u"56620715-802f-47d5-8fa1-73e3d9fe4960")
 		if "_kante_" in authshort : 
-			addauthor(ur"(amadu ganyi kante|amadu ganyi kantè|Amadu Gaɲi Kantɛ|A. GAƝI Kante|A.G. Kante|A. G. Kante|A.G. KANTE|A.G.KANTE|A. G. KANTE|Amadu GANI Kante|Amadu GAƝI Kante|Amadu GAƝi Kante|Amadu GAƝI KANTE|Amadu Gaɲi Kante|Amadou Gaɲi Kante|Amadu G. Kante|Amadu G. KANTE|Amadu GANYI Kante|Amadu GAGNY Kante|Amadu Gagny Kante|Amadu Ganyi Kante|Amadu Gagny Kante|Amadu Gaɲi KANTE)",u"797f3350-5147-480b-9ec5-4f7ccfe35139")
+			addauthor(ur"(amadu ganyi kante|amadu ganyi kantè|Amadu Gaɲi Kantɛ|A. GAƝI Kante|A.G. Kante|A. G. Kante|A.G. KANTE|A.G.KANTE|A. G. KANTE|Amadu GANI Kante|Amadu GAƝI Kante|Amadu GAƝi Kante|Amadu GAƝI KANTE|Amadu Gaɲi Kante|Amadou Gaɲi Kante|Amadu G. Kante|Amadu G. KANTE|Amadu GANYI Kante|Amadu GAGNY Kante|Amadu Gagny Kante|Amadu Ganyi Kante|Amadu Gagny Kante|Amadu Gaɲi KANTE|Amadu G Kantɛ|Amadu G Kante|Amadu G KANTE)",u"797f3350-5147-480b-9ec5-4f7ccfe35139")
 			addauthor(ur"(Solomani Kantɛ|Solomani kantɛ|Solomani KANTƐ|solomani kantè)",u"dd718913-98f3-47aa-bce2-2fbffb72e317")
 			addauthor(ur"(Ibarahima Kante|Ibarahima KANTE)",u"40310b23-7d3e-4f67-98ba-8e48cbae36da")
 			addauthor(ur"(Mamadu Kanute|Mamadu Lamini Kanute|Mamadu KANUTE)",u"690f4a15-86cc-4381-9e81-f75dd9d6616d")
@@ -1339,6 +1342,7 @@ for filename in filenames:
 			addauthor(ur"(Hamidu Konate|Hamidu KONATE)",u"c7fa01a9-6428-4d30-bfed-426ea69618ba")
 			addauthor(ur"(Bafa Konate|Bafa KONATE)",u"810eea23-edfc-43e6-be9f-6996061f86da")
 			addauthor(ur"(Aba Konate|Abu Konate|Aba KONATE|Abu KONATE)",u"e571c226-1abd-4125-9466-ec5eea8465e7")
+			addauthor(ur"(Mamari Konate|Mamari KONATE|Mamari Konatɛ)",u"0d6ecc27-bedd-421b-ab01-24dbffa6ba58")
 		if "_kone_" in authshort : 
 			addauthor(ur"(Alu Kɔnɛ|Alu KƆNƐ|alu kɔnɛ|alu kònè)",u"2246823e-f72a-48b5-b593-f215a321b963")
 			addauthor(ur"(Bakari Kɔnɛ|Bakari KƆNƐ)",u"cb16231a-ac28-474d-b82d-075d4e254e76")
