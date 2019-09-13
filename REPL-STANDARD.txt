@@ -19492,6 +19492,7 @@ Hikoma===Hikoma:n.prop:HUICOMA
 Idepeyɛmu===Idepeyɛmu:n.prop:UDPM
 Iyɛridi===Iyɛridi:n.prop:URD
 Iyɛnisesede===Iyɛnisesede:n.prop:UNCDD
+Iyɛnitɛmu===Iyɛnitɛmu:n.prop:UNTM
 Ifowa===Ifowa:n.prop:UFOA
 IFOWA===Ifowa:n.prop:UFOA
 Ikirizati===Ikirizati:n.prop:ICRISAT
@@ -19593,6 +19594,7 @@ SAHEL21===SAHEL21:n.prop:ABR
 SANI===SANI:n.prop:SHAN  # une coupe de football
 Sahɛli_21===Sahɛli21:n.prop:SAHEL21
 Sedeyawo===SEDEYAWO:n.prop:CEDEAO
+Sedeteyemu===Sedeteyemu:n.prop:CDTM
 Semɔsi===Semɔsi:n.prop:SEMOS   # entreprise minière à Sadiola
 Semudete===Semudete:n.prop:CMDT
 SEDEYAWO===SEDEYAWO:n.prop:CEDEAO
@@ -19621,9 +19623,11 @@ SETEYɛSl===SETEYƐSI:n.prop:CTS
 SETEYƐMUSE===SETEYƐMUSE:n.prop:CTMS
 SETEYƐMUSI===SETEYƐMUSE:n.prop:CTMS
 SETEYƐMUSl===SETEYƐMUSE:n.prop:CTMS
+Seyɛmute===Seyɛmute:n.prop:CMT
 Seyɛripe===Seyɛripe:n.prop:CRP
 SEYƐSIYA===SEYƐSIYA:n.prop:CSA
 SEYƐSYA===SEYƐSIYA:n.prop:CSA
+Seyɛsitɛmu===Seyɛsitɛmu:n.prop:CSTM
 SEYI===OSEYI:n.prop:OCI
 Seyiseyɛri===Seyiseyɛri:n.prop:CICR   # Croix-Rouge / Kuruwa Uruzi
 Seyiya===Seyiya:n.prop:CIA

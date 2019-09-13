@@ -533,6 +533,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					tout=re.sub(ur" kɔɲɛ",u" koɲɛ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" kɛle ",u" kɛlɛ ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" kɛnyɛrɛyw",u" kɛnyɛrɛyew",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" kɛnyɛrɛyɛw",u" kɛnyɛrɛyew",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" mogo",u" mɔgɔ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" mɔgo",u" mɔgɔ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" ɲɛmɔgo",u" ɲɛmɔgɔ",tout,0,re.U|re.MULTILINE)
@@ -776,12 +777,18 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					tout=re.sub(ur" dɔron",u" dɔrɔn",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" politimɔgɔw",u" politikimɔgɔw",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
 					tout=re.sub(ur" ɲɛsinnnen",u"  ɲɛsinnen",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" ɲɛsinen",u"  ɲɛsinnen",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" sɛrɛkili",u"  sɛrikili",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" sabau kɛ",u"  sababu kɛ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" Pɔtirigali",u"  Pɔritigali",tout,0,re.U|re.MULTILINE) 
+					tout=re.sub(ur" jɛkafo",u"  jɛkafɔ",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" lakɔlidɛn",u"  lakɔliden",tout,0,re.U|re.MULTILINE)
 					
 				
 				# common to .old. and new orthography:
+				tout=re.sub(ur" musomannnin",u"  musomannin",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sinsinnnen",u"  sinsinnen",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" lyemowa",u"  Iyemowa",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" Misirijamana",u"  Misirajamana",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" Misiri jamana",u"  Misira jamana",tout,0,re.U|re.MULTILINE)	
 				tout=re.sub(ur" amadaden",u" adamaden",tout,0,re.U|re.MULTILINE)	
@@ -914,6 +921,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur"Minn(n+)u",u"Minnu",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" ɲɔgɔn(n+)na",u" ɲɔgɔnna",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" kɛrɛnkɛrɛn(n+)nen",u" kɛrɛnkɛrɛnnen",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kɛrɛnkɛrɛnen",u" kɛrɛnkɛrɛnnen",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" labɛn(n+)nen",u" labɛnnen",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" kun(n+)nafoni",u" kunnafoni",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" nin(n+)nu",u" ninnu",tout,0,re.U|re.MULTILINE)
