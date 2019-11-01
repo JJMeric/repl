@@ -557,6 +557,42 @@ if nombre>0 :
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
+# handling NUMnan type not handled well in gparser (bamana.gram rules no longer works)
+prefsearch=ur'<span class="sent">([^<]*)(?P<stem>[0-9]+)(?P<stemnan>nan|NAN|n)([\s\.\;\:\?\!\)\""][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
+nextsearch=ur'<span class="w" stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span>\n</span><span class="w" stage="2">(?P=stemnan)<span class="lemma">(?:nan|ń)<sub class="ps">(?:num|pers)</sub><sub class="gloss">(?:ORD|1SG)</sub></span>\n</span>'
+prefrepl=u'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
+nextrepl=u'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n</span>'
+wsearch=prefsearch+nextsearch
+wrepl=prefrepl+nextrepl
+#print "\nNUMnan wsearch:",wsearch
+nombre=1
+while nombre>0:
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
+  if nombre>0 :
+    msg="%i modifs to handle NUMnan type words like 78nan " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre
+
+# handling NUM nan types not handled well in gparser
+prefsearch=ur'<span class="sent">([^<]*)(?P<stem>[0-9]+) (?P<stemnan>nan|NAN)([\s\.\;\:\?\!\)\"][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
+nextsearch=ur'<span class="w" stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span>\n</span><span class="w" stage="2">(?P=stemnan)<span class="lemma">nan<sub class="ps">num</sub><sub class="gloss">ORD</sub></span>\n</span>'
+prefrepl=u'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
+nextrepl=u'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n</span>'
+wsearch=prefsearch+nextsearch
+wrepl=prefrepl+nextrepl
+#print "\nNUMnan wsearch:",wsearch
+nombre=1
+while nombre>0:
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
+  if nombre>0 :
+    msg="%i modifs to handle NUM nan type words like 78 nan " % nombre +"\n"
+    log.write(msg.encode("utf-8"))
+    nbrulesapplied=nbrulesapplied+1
+    nbmodif=nbmodif+nombre
+    nbmots=nbmots+nombre
+
 
 # NOW THE BIG TASK     -go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!--
 print "arg="+arg
@@ -1100,7 +1136,7 @@ for linerepl in toutrepllines :
     elif glose==u"NUMANNEE"      : 
       wrepl=wrepl+ur'<span class="w" stage="tokenizer">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">num</sub><\g<'+str(capt_gr_index+3)+ur'>>\n</span>'
       capt_gr_index=capt_gr_index+3+1
-    elif glose==u"NUMnan"      : 
+    elif glose==u"NUMnan"      :   # this is deprecated with the new PRE handlings - oct 2019
       wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'>nan<span class="lemma">\g<'+str(capt_gr_index+1)+ur'>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<'+str(capt_gr_index+1)+ur'><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n</span>'
       capt_gr_index=capt_gr_index+3+1
     elif glose==u"ADV"      : 
@@ -1390,7 +1426,8 @@ for linerepl in toutrepllines :
     fileREPC.write(wsearch+u"==="+wrepl+u"\n")
 
   if nombre>0 :
-
+    # print "\nwsearch:",wsearch
+    # print "wrepl:",wrepl
     # detecting that a name is TOP should propagate to all instances of that name in the text 
     if "NPROPRENOMforcetop" in liste_gloses: 
       for forcetop in forcetopiterator :

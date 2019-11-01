@@ -765,6 +765,10 @@ dictauth[u"ab3cda13-7007-4c2e-bd4b-570594555bbe"]=u"Dunbiya, Bɛnbabilen|||m|Bam
 dictauth[u"8182a385-8bc0-4c42-8537-ee8f493bc967"]=u"Jawara, Mohamɛdi D.|||m|Bambara||kib559-562-563 2018 - kib565 2019"
 # "Jawara, Mohamɛdi Z.",,m,,,Bambara,kib562-563 2018 - kib566 2015,451b08fe-05a4-42b6-b1f8-e3b0a1f6bfae
 dictauth[u"451b08fe-05a4-42b6-b1f8-e3b0a1f6bfae"]=u"Jawara, Mohamɛdi Z.|||m|Bambara||kib562-563 2018 - kib566 2015"
+# "Kante, Bubakari",,m,,,Bambara,Dibifara n°1 2001,7b682019-edc9-4f84-a86c-b033464bc882
+dictauth[u"7b682019-edc9-4f84-a86c-b033464bc882"]=u"Kante, Bubakari|||m|Bambara||Dibifara n°1 2001"
+# "Kɔnɛ, Mamadu",,m,,,Bambara,Dibifara n°2-3 2001,f006e0f5-2ef1-4fd5-bf0b-0d1bfc707bd1
+dictauth[u"f006e0f5-2ef1-4fd5-bf0b-0d1bfc707bd1"]=u"Kɔnɛ, Mamadu|||m|Bambara||Dibifara n°2-3 2001"
 
 #modèle dictauth[u"uuid"]=u"NomPrénom|||sex|Bambara||comment"
 #modèle dictauth[u"uuid"]=u"Nom, Prénom|spelling|datebirth|sex|language|native|comment"
@@ -880,7 +884,7 @@ filenames=sorted(filenames)
 for filename in filenames:
 	if ".txt" in filename :
 		print  "\n"+filename
-		find_in_name=re.search(r"(kibaru|jekabaara|faso_kumakan|jama|irisila_kunnafoniseben|kalamene)([0-9\-]*[a-z]*)\_",filename)
+		find_in_name=re.search(r"(kibaru|jekabaara|faso_kumakan|jama|irisila_kunnafoniseben|kalamene|dibifara)([0-9\-]*[a-z]*)\_",filename)
 		periodique=find_in_name.group(1)
 
 		if periodique=="jekabaara" :
@@ -895,6 +899,10 @@ for filename in filenames:
 			metasstub=re.sub('<meta content="Kibaru" name="source:title" />','<meta content="Kalamɛnɛ" name="source:title" />',metasstub)
 			metasstub=re.sub('<meta content="AMAP" name="source:editor" />','<meta content="Seyibane Kulibali" name="source:editor" />',metasstub)
 			metasstub=re.sub('<meta content="Kibarudiso" name="source:publisher" />','<meta content="CAURIS/Animare/IMRAD" name="source:publisher" />',metasstub)
+		elif periodique=="dibifara" :
+			metasstub=re.sub('<meta content="Kibaru" name="source:title" />','<meta content="Dibifara" name="source:title" />',metasstub)
+			metasstub=re.sub('<meta content="AMAP" name="source:editor" />','<meta content="Yusufu Jalo" name="source:editor" />',metasstub)
+			metasstub=re.sub('<meta content="Kibarudiso" name="source:publisher" />','<meta content="AMAP/Kibaru" name="source:publisher" />',metasstub)
 
 		numero=find_in_name.group(2)
 
@@ -1336,6 +1344,7 @@ for filename in filenames:
 			addauthor(ur"(Ibarahima Kante|Ibarahima KANTE)",u"40310b23-7d3e-4f67-98ba-8e48cbae36da")
 			addauthor(ur"(Mamadu Kanute|Mamadu Lamini Kanute|Mamadu KANUTE)",u"690f4a15-86cc-4381-9e81-f75dd9d6616d")
 			addauthor(ur"(Sitan Kante|Sitan KANTE)",ur"5ed900fb-aa35-44ea-b2dd-01c114a61b12")
+			addauthor(ur"(Bubakari Kante|Bubakari KANTE)",u"7b682019-edc9-4f84-a86c-b033464bc882")
 		if "_kanute" in authshort:
 			addauthor(ur"(Mamadu Lamini Kanute|Mamadu Laminn Kanute|M L Kanute|M L Kanutɛ|M L KANUTE|M-L\. KANUTE|Mamadu Laminn KANUTE|MAMADU LAMINI KANUTE|Mamadu L\. Kanute|Mamadu L Kanute|Mamadu Lamini KANUTE|Mamadu L\. KANUTE|Mamadu L KANUTE)",u"690f4a15-86cc-4381-9e81-f75dd9d6616d")
 		if "_katile_" in authshort :
@@ -1367,7 +1376,7 @@ for filename in filenames:
 			addauthor(ur"(Sisela Mayimuna Kɔnɛ|Sisela Mayimuna KƆNƐ)",u"aa1a73cb-f9a9-497b-82a5-c33feee93bf5")
 			addauthor(ur"(Musa Kɔnɛ|Musa KƆNƐ)",u"856e0687-0fb1-4469-8a46-0fa11fa9031d")
 			addauthor(ur"(Mariyamu Kɔnɛ|Mariyamu KƆNƐ)",u"41022526-703d-417b-b547-8633f27b34fa")
-			# "Kɔnɛ, Mohamɛdi",,m,,,Bambara, Lakòlikaramògò LPK - kib196-197-198-199 1988,9aa67a0a-c57a-40f2-b3ad-ff5c89579f30
+			addauthor(ur"(Mamadu Kɔnɛ|Mamadu KƆNƐ)",u"f006e0f5-2ef1-4fd5-bf0b-0d1bfc707bd1")
 			if len(re.findall(ur"(LPK)",endoftext,re.I|re.U))>0 :
 				addauthor(ur"(Mohamɛdi Kɔnɛ|Mohamɛdi KƆNƐ)",u"9aa67a0a-c57a-40f2-b3ad-ff5c89579f30")
 			elif len(re.findall(ur"(Ɲɔrɔn)",endoftext,re.I|re.U))>0 :

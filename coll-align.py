@@ -679,6 +679,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					tout=re.sub(ur" kɛrenkɛrɛn",u" kɛrɛnkɛrɛn",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" kɛrɛkɛrɛn",u" kɛrɛnkɛrɛn",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" kɛrɛnkɛnnenya",u" kɛrɛnkɛrɛnnenya",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" kɛrɛnkɛnneya",u" kɛrɛnkɛrɛnnenya",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" diyagɔya",u" diyagoya",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur"Diyagɔya",u"Diyagoya",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" mangɔya",u" mangoya",tout,0,re.U|re.MULTILINE)
