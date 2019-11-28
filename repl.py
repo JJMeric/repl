@@ -234,7 +234,7 @@ tout=re.sub(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
 #Added oct 2019:
 # handling NUMnan type not handled well in gparser (bamana.gram rules no longer works)
 prefsearch=ur'<span class="sent">([^<]*)(?P<stem>[0-9]+)(?P<stemnan>nan|NAN|n)([\s\.\;\:\?\!\)\""][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
-nextsearch=ur'<span class="w" stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span>\n</span><span class="w" stage="2">(?P=stemnan)<span class="lemma">(?:nan|ń)<sub class="ps">(?:num|pers)</sub><sub class="gloss">(?:ORD|1SG)</sub></span>\n</span>'
+nextsearch=ur'<span class="w" stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span>\n</span><span class="w" stage="[^\"]">(?P=stemnan)<span class="lemma">(?:nan|ń)<sub class="ps">(?:num|pers)</sub><sub class="gloss">(?:ORD|1SG)</sub></span>\n</span>'
 prefrepl=u'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
 nextrepl=u'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n</span>'
 wsearch=prefsearch+nextsearch
