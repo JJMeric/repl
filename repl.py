@@ -40,6 +40,13 @@ scriptdir = os.path.dirname(os.path.realpath(__file__))
 
 textscript=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"text\:script\" \/\>',re.U)
 ambiguous=re.compile(ur'\<span class\=\"w\".*lemma var.*\n\<\/span\>')
+allwords=re.compile(ur'\<span class\=\"w\"\ stage=\"[a-z0-9\.\-]*\">([^\<]*)<')
+allpuncts=re.compile(ur'\<span class\=\"c\">([^\<]*)\</span\>')
+alltags=re.compile(ur'\<span class\=\"t\">([^\<]*)\</span\>')
+
+valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VERBENMOD_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_VQORADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_NORADJ_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_NICONJ_YEUNDEF_YEPP_NIUNDEF_NAUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_COPQUOT_COPNEG_ACTION_CONSONNE_LANA_"
+ucase1=False
+topl=False
 
 nargv=len(sys.argv)
 if nargv==1 : 
@@ -52,6 +59,7 @@ if ".dis.fra" in filename:
   print "WARNING repl.py does not know how to handle .dis.fra files - results unclear"
 #elif ".pars.html" in filename :
 if ".pars.html" in filename :
+  filenamein=filename
   i_pars=filename.find(".pars.html")
   filenametemp=filename[0:i_pars]
 else : # nom donné sans extension (défaut recommandé)
@@ -63,40 +71,53 @@ filenameout=filenametemp+".repl.html"
 fileIN = open(filenamein, "rb")
 fileOUT = open (filenameout,"wb")
 tonal=""
-
+"""
 try:
     fileREPC= open ("REPL-C.txt","r")
     print "using REPL-C.txt"
 except : 
   try:
-    fileREPCname="REPL-STANDARD-C.txt"
+    fileREPCname="REPL-STANDARD-C"+str(ncpu)+".txt"
     tonal="new"
     if filenametemp.endswith(".old"):
       if  filenametemp.startswith("baabu_ni_baabu") :
-        fileREPCname = "REPL-STANDARD-C-ny.txt"
+        fileREPCname = "REPL-STANDARD-C-ny"+str(ncpu)+".txt"
         tonal = "newny"
       else:
-        fileREPCname = "REPL-STANDARD-C.old.txt"
+        fileREPCname = "REPL-STANDARD-C.old"+str(ncpu)+".txt"
         tonal = "old"
     fileREPC = open (fileREPCname,"r")
       
   except:
     try:
-      fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.txt")
+      fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C"+str(ncpu)+".txt")
       tonal="new"
       if filenametemp.endswith(".old") :
         if  filenametemp.startswith("baabu_ni_baabu") :
-          fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C-ny.txt")
+          fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C-ny"+str(ncpu)+".txt")
           tonal = "newny"
         else :
-          fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.old.txt")
+          fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.old"+str(ncpu)+".txt")
           tonal="old"
 
       fileREPC = open (fileREPCname,"r")
 
     except :
-      sys.exit(fileREPCname+" ? repl.py needs a REPL-C.txt file or a REPL-STANDARD-C.txt file in the current directory (or in "+scriptdir+" )")
-
+      sys.exit(fileREPCname+" ? repl.py needs a REPL-C.txt file or a REPL-STANDARD-C"+str(ncpu)+".txt file in the current directory (or in "+scriptdir+" )")
+"""
+try:
+  fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C"+str(ncpu)+".txt")
+  tonal="new"
+  if filenametemp.endswith(".old") :
+    if  filenametemp.startswith("baabu_ni_baabu") :
+      fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C-ny"+str(ncpu)+".txt")
+      tonal = "newny"
+    else :
+      fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.old"+str(ncpu)+".txt")
+      tonal="old"
+  fileREPC = open (fileREPCname,"r")
+except :
+  sys.exit(fileREPCname+" ? repl.py needs a REPL-C.txt file or a REPL-STANDARD-C"+str(ncpu)+".txt file in the current directory (or in "+scriptdir+" )")
 # read all file in one go
 replall=fileREPC.read()
 fileREPC.close()
@@ -135,6 +156,29 @@ totalmots = tout.count("class=\"w\"")   # is needed in the final message to comp
 # normalize single quotes to avoid pop-up messages in gdisamb complaining that k' is not the same as k’
 # tilted quote (word) to straight quotes (as in Bamadaba)
 tout=re.sub(u"’",u"'",tout,0,re.U|re.MULTILINE)
+
+# inconnus : normaliser sinon REPL ne peut rien faire avec ce \n au milieu
+wsearch=ur'<span class="lemma">([^<\n]+)\n+</span>'
+wrepl=ur'<span class="lemma">\g<1></span>'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+
+# propre names with initial CAPITAL letter please !
+# >([A-Za-z])([^<]+)<sub class="ps">n.prop
+# >\u$1$2<sub class="ps">n.prop
+wsearch=ur'>([A-Za-z])([^<]+)<sub class="ps">n.prop'
+#FAILS wrepl=ur'>\u\g<1>\g<2><sub class="ps">n.prop'
+#FAILS wrepl=ur'>\U1\g<2><sub class="ps">n.prop'
+def npropucase(m):
+  first=m.groups()[0].upper()
+  second=m.groups()[1]
+  return '>'+first+second+'<sub class="ps">n.prop'
+
+tout,nombre=re.subn(wsearch,npropucase,tout,0,re.U|re.MULTILINE)
+
+# idem pour Ala !!!
+wsearch=ur'>ála<sub class="ps">n<'
+wrepl=ur'>Ála<sub class="ps">n<'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # eliminer EMPR ex: ONI::EMPR
 
 # eliminer EMPR ex: ONI::EMPR
 # see last section of bamana.gram
@@ -182,10 +226,11 @@ wsearch=ur'<span class="lemma">([^<]+)<sub class="ps">(?P<stemps>[^<]+)</sub><su
 wrepl=ur'<span class="lemma">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<3></sub>\g<4></span>\n</span>'
 tout=re.sub(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # Gloss doubles lemma/lemma var
 
-# éliminer les gloses bizarres des ordinaux : <span class="lemma">39nan<span class="lemma var">39nan<
+"""# VOIR PLUS BAS //éliminer les gloses bizarres des ordinaux : <span class="lemma">39nan<span class="lemma var">39nan<
 wsearch=ur'<span class="lemma">(?P<stem>[0-9]+)nan<span class="lemma var">(?P=stem)nan<sub class="ps">adj</sub><span class="m">(?P=stem)<sub class="ps">num</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
 wrepl=ur'<span class="lemma">\g<1>nan<sub class="ps">adj</sub><span class="m">\g<1><sub class="ps">num</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n'
 tout=re.sub(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # Gloss doubles lemma/lemma var
+"""
 
 # remettre dans l'ordre n/v les doublons dictionnaire v/n pour les détections NORV
 
@@ -205,16 +250,16 @@ tout=re.sub(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # Gloss doubles lemma/lemma
 # et ambigu :
 # remarque : ça pose problème pour Waraba, Suruku, Sonsannin... pour l'instant fixés dans REPL-STANDARD
 
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*lemma var.*></span>\n</span>'
+wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*"ps">(?!n\.prop).*></span>\n</span>'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
 tout=re.sub(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.CL</sub><.*lemma var.*></span>\n</span>'
+wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.CL</sub><.*"ps">(?!n\.prop).*></span>\n</span>'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.CL</sub></span>\n</span>'
 tout=re.sub(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.M</sub><.*lemma var.*></span>\n</span>'
+wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.M</sub><.*"ps">(?!n\.prop).*></span>\n</span>'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.M</sub></span>\n</span>'
 tout=re.sub(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.F</sub><.*lemma var.*></span>\n</span>'
+wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.F</sub><.*"ps">(?!n\.prop).*></span>\n</span>'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.F</sub></span>\n</span>'
 tout=re.sub(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
 wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">((((?!lemma var).)+)GENT(((?!lemma var).)+))<span class="lemma var">[^\n]+</span></span>\n'
@@ -232,8 +277,9 @@ wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<2><sub class
 tout=re.sub(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
 
 #Added oct 2019:
-# handling NUMnan type not handled well in gparser (bamana.gram rules no longer works)
-prefsearch=ur'<span class="sent">([^<]*)(?P<stem>[0-9]+)(?P<stemnan>nan|NAN|n)([\s\.\;\:\?\!\)\""][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
+# handling NUMnan type not handled well in gparser - case "23nan"
+# (bamana.gram rules no longer works)
+prefsearch=ur'<span class="sent">([^<]*)(?P<stem>[0-9]+)(?P<stemnan>nan|NAN|n)([\s\.\,\;\:\?\!\)\""][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
 nextsearch=ur'<span class="w" stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span>\n</span><span class="w" stage="[^\"]">(?P=stemnan)<span class="lemma">(?:nan|ń)<sub class="ps">(?:num|pers)</sub><sub class="gloss">(?:ORD|1SG)</sub></span>\n</span>'
 prefrepl=u'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
 nextrepl=u'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n</span>'
@@ -244,8 +290,8 @@ nombre=1
 while nombre>0:
   tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
 
-# handling NUM nan types not handled well in gparser
-prefsearch=ur'<span class="sent">([^<]*)(?P<stem>[0-9]+) (?P<stemnan>nan|NAN)([\s\.\;\:\?\!\)\"][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
+# handling NUM nan types not handled well in gparser - case "23 nan"
+prefsearch=ur'<span class="sent">([^<]*)(?P<stem>[0-9]+) (?P<stemnan>nan|NAN)([\s\.\,\;\:\?\!\)\"][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
 nextsearch=ur'<span class="w" stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span>\n</span><span class="w" stage="2">(?P=stemnan)<span class="lemma">nan<sub class="ps">num</sub><sub class="gloss">ORD</sub></span>\n</span>'
 prefrepl=u'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
 nextrepl=u'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n</span>'
@@ -258,15 +304,138 @@ while nombre>0:
 
 
 # NOW THE BIG TASK     -go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!--
+allwordslist=allwords.findall(tout,re.U|re.MULTILINE)
+
+allwordsshortlist=[]
+ndigits=0
+for thisword in allwordslist:
+  if thisword not in allwordsshortlist: 
+    allwordsshortlist.append(thisword)
+    if re.match(r"^[0-9]+$",thisword): ndigits=ndigits+1
+allpunctslist=allpuncts.findall(tout,re.U|re.MULTILINE)
+allpunctsshortlist=[]
+for thispunct in allpunctslist:
+  if thispunct not in allpunctsshortlist: allpunctsshortlist.append(thispunct)
+
+alltagslist=alltags.findall(tout,re.U|re.MULTILINE)
+ntags=len(alltagslist)
+
 
 nblinerepl=0
 
 for linerepl in linereplall:
   if "===" in linerepl :
-    wsearch, wrepl = linerepl.split("===")
+    liste_mots, sucase1, stopl, wsearch, wrepl = linerepl.split("===")
     wsearch=ur""+wsearch  # this ensures wsearch is an re string!!!IMPORTANT!!!
-    tout=re.sub(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U|
+    mots=liste_mots.split(u"_")
+    ucase1=False
+    if sucase1=="True": ucase1=True
+    topl=False
+    if stopl=="True": topl=True
+    applicable=True
+    for mot in mots:
+      if "_"+mot+"_" not in valides :
+        if ucase1 and topl:
+            if (mot not in allwordsshortlist) and (mot+"w" not in allwordsshortlist) and (mot.title() not in allwordsshortlist) and (mot.title()+"w" not in allwordsshortlist):
+              applicable=False
+              break
+        elif ucase1:
+            if (mot not in allwordsshortlist) and (mot.title() not in allwordsshortlist):
+              applicable=False
+              break
+        elif topl:
+            if (mot not in allwordsshortlist) and (mot+"w" not in allwordsshortlist):
+              applicable=False
+              break
+        elif mot not in allwordsshortlist:
+            applicable=False
+            break
+      else:
+        if mot=="EXCLAM":
+          if "!" not in allpunctsshortlist:
+            applicable=False
+            break
+        elif mot=="QUESTION":
+          if "?" not in allpunctsshortlist:
+            applicable=False
+            break
+        elif mot=="COMMA":
+          if "," not in allpunctsshortlist:
+            applicable=False
+            break
+        elif mot=="COLON":
+          if ":" not in allpunctsshortlist:
+            applicable=False
+            break
+        elif mot=="SEMICOLON":
+          if ":" not in allpunctsshortlist:
+            applicable=False
+            break
+        elif mot=="DOT":
+          if "." not in allpunctsshortlist:
+            applicable=False
+            break
+        elif mot=="LANA":
+          if ("la" or "na" or "lá" or "ná")  not in allwordsshortlist: 
+            applicable=False
+            break
+        elif mot=="NUM":
+          if ndigits==0 and not ("kelen" or "fila" or "saba" or "naani" or "duuru" or "wɔɔrɔ" or "wolonwula" or "wolonfila" or "segin" or "seegin" or "kɔnɔntɔn" or "kélen" or "fìla" or "sàba" or "náani" or "dúuru" or "wɔ́ɔrɔ" or "wólonwula" or "wólonfila" or "ségin" or "séegin" or "kɔ́nɔntɔn" or "wòorò" or "kònòntòn" or "tan" or "bi" or "mugan" or "dɛbɛ" or "kɛmɛ" or "silameyakɛmɛ" or "tán" or "bî" or "mùgan" or "dɛ̀bɛ" or "kɛ̀mɛ" or "sìlameyakɛmɛ"or "dèbè" or "kèmè" or "silameyakèmè") in allwordsshortlist: 
+            applicable=False
+            break
+        elif mot=="PFVNEG":
+          if ("ma" or "m'" or "má")  not in allwordsshortlist: 
+            applicable=False
+            break
+        elif mot=="IPFVNEG":
+          if ("tɛ" or "t'" or "tè" or "tɛ́" or "ti")  not in allwordsshortlist: 
+            applicable=False
+            break
+        elif mot=="COPNEG":
+          if ("tɛ" or "t'" or "tè"or "tɛ́")  not in allwordsshortlist: 
+            applicable=False
+            break
+        elif mot=="NICONJ":
+          if ("ni" or "n'" or "ní")  not in allwordsshortlist: 
+            applicable=False
+            break
+        elif mot=="TAG":
+          if ntags==0 :
+            applicable=False
+            break
 
+    if not applicable: continue  # skips the rest of the bigger loop of REPL rules
+
+    tout=re.sub(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U|
+  else :
+    if linerepl != "" : sys.exit("Critical problem on this compiled line : '"+linerepl+"'")
+
+# POST
+
+# handle distributed groups type mɔgɔ ô mɔgɔ
+# 22/5/20 ajouté restriction sur \' car il ne faut pas le faite pour des cas comme : k' o k'      ou b' o b'
+# 24/5/20 ATTENTION IL NE FAUT PAS LE FAIRE POUR : ye o ye     -> filter 
+wsearch=ur'<span class="w" stage="[^>]+">(?P<WORDA>[^\<\']+)<([^\n]+)\n</span>'   # peut être nom, verbe ou n'importe quoi, même inconnu et ambigu
+wsearch=wsearch+ur'<span class="w" stage="[^>]+">o<([^\n]+)\n</span>'   # peut être n'importe quel "o", même déjà défini comme DISTR
+wsearch=wsearch+ur'<span class="w" stage="[^>]+">((?i)(?P=WORDA))<([^\n]+)\n</span>'  # on le capture au cas où il y ait une différence majuscule/minuscule avec le premier
+
+def filterrepl(m):
+  worda=m.groups()[0]
+  defa=m.groups()[1]
+  defo=m.groups()[2]
+  wordb=m.groups()[3]
+  defb=m.groups()[4]
+  if worda=="ye":
+    wrepl=ur'<span class="w" stage="0">'+worda+'<'+defa+'\n</span>'
+    wrepl=wrepl+ur'<span class="w" stage="0">o<'+defo+'\n</span>'
+    wrepl=wrepl+ur'<span class="w" stage="0">'+wordb+'<'+defb+'\n</span>'
+  else:
+    wrepl=ur'<span class="w" stage="0">'+worda+'<'+defa+'\n</span>'
+    wrepl=wrepl+ur'<span class="w" stage="0">o<span class="lemma">ô<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span>\n</span>'
+    wrepl=wrepl+ur'<span class="w" stage="0">'+wordb+'<'+defa+'\n</span>'
+  return wrepl
+
+tout,nombre=re.subn(wsearch,filterrepl,tout,0,re.U|re.MULTILINE)  
 
 # PMINF POST correction for k' and K'
 wsearch=ur'<span class="w" stage="0">(k\'|K\')<span class="lemma">kà<sub class="ps">pm</sub><sub class="gloss">INF</sub></span>\n</span>'

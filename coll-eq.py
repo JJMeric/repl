@@ -62,7 +62,7 @@ for dirname, dirnames, files in os.walk('.'):
 		if dir in dirdone  : continue
 		else:
 			dirdone.append(dir)
-			dirkib,dirtypist=dir.split("-")
+			dirkib,dirtypist=dir.split("-")   # caveat : must be the only hyphen in dir name !!!
 			if dirtypist=="zup" : 
 				print "    (skip)","\n"
 				continue
