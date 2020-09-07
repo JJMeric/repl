@@ -301,7 +301,7 @@ dtmlist=u"ìn:dtm:DEF_mîn:dtm:REL_nìn:dtm:DEM_nìn:dtm/prn:DEM_mín:dtm:R
 perslist=u"ń:pers:1SG_nê:pers:1SG.EMPH_í:pers:2SG_í:pers:REFL_ê:pers:2SG.EMPH_à:pers:3SG_àlê:pers:3SG.EMPH_án:pers:1PL_ánw:pers:1PL.EMPH_a':pers:2PL_á:pers:2PL_á':pers:2PL_áw:pers:2PL.EMPH_ù:pers:3PL_òlû:pers:ce.PL2_ra:mrph:OPT2_la:mrph:OP2_na:mrph:OPT2_"
 pplist=u"ka:pp:POSS_lá:pp:POSS_bólo:pp:CNTRL_yé:pp:PP_y':pp:PP_lɔ́:pp:IN_nɔ́:pp:IN_rɔ́:pp:IN_mà:pp:ADR_mɔ̀:pp:ADR_"   # c'est tout ??? oui car les autres ont des gloses en minuscules, cf besoin de "check"
 conjlist=u"ô:conj:DISTR_ôo:conj:DISTR__wô:conj:DISTR_"
-prtlist=u"dè:prt:FOC_dùn:prt:TOP.CNTR_dún:prt:TOP.CNTR_kɔ̀ni:prt:TOP.CNTR2_tùn:prt:PST_wà:prt:Q_"
+prtlist=u"dè:prt:FOC_dùn:prt:TOP.CNTR_dún:prt:TOP.CNTR_kɔ̀ni:prt:TOP.CNTR2_tùn:prt:PST_kùn:prt:PST_wà:prt:Q_"
 mrphlist=u"lá:mrph:CAUS_la:mrph:CAUS_ná:mrph:CAUS_mà:mrph:SUPER_màn:mrph:SUPER_rɔ́:mrph:IN_lu:mrph:PL2_nu:mrph:PL2_ba:mrph:AUGM_baa:mrph:AG.OCC_baga:mrph:AG.OCC_bali:mrph:PTCP.PRIV_ka:mrph:GENT_la:mrph:AG.PRM_na:mrph:AG.PRM_la:mrph:LOC_na:mrph:LOC_la:mrph:PRIX_na:mrph:PRIX_la:mrph:MNT1_na:mrph:MNT1_lata:mrph:MNT2_nata:mrph:MNT2_la:mrph:PROG_na:mrph:PROG_la:mrph:PFV.INTR_na:mrph:PFV.INTR_n':mrph:PFV.INTR_ra:mrph:PFV.INTR_rá:mrph:IN_rɔ́:mrph:IN_w:mrph:PL_"
 mrphlist=mrphlist+u"lama:mrph:STAT_nama:mrph:STAT_lan:mrph:INSTR_nan:mrph:INSTR_len:mrph:PTCP.RES_nen:mrph:PTCP.RES_li:mrph:NMLZ_ni:mrph:NMLZ_\:mrph:NMLZ2_ma:mrph:COM_ma:mrph:RECP.PRN_man:mrph:ADJ_ntan:mrph:PRIV_"
 mrphlist=mrphlist+u"ma:mrph:DIR_nan:mrph:ORD_nin:mrph:DIM_bali:mrph:PRIV_nci:mrph:AG.EX_ɲɔgɔn:mrph:RECP_ɲwan:mrph:RECP_ta:mrph:PTCP.POT_tɔ:mrph:CONV_tɔ:mrph:ST_ya:mrph:DEQU_yɛ:mrph:DEQU_ya:mrph:ABSTR_lá:mrph:CAUS_lán:mrph:CAUS_ná:mrph:CAUS_rɔ́:mrph:CAUS_ma:mrph:SUPER_man:mrph:SUPER_sɔ̀:mrph:EN_"
@@ -725,9 +725,9 @@ for linerepl in toutrepllines :
     continue
   if linerepl[0:1]==u"\n" or len(linerepl)<=2 :  # le premier test ne marche pas sur mac 
     continue
-  if (u"===" not in linerepl) and (u"=>=" not in linerepl) and (u">>=" not in linerepl) and (u">==" not in linerepl):
+  if (u"===" not in linerepl) and (u"=>=" not in linerepl) and (u">>=" not in linerepl) and (u">==" not in linerepl) and (u"=*=" not in linerepl):
       log.write("erreur de === :"+str(nblinerepl)+" : "+linerepl+"\n len="+str(len(linerepl)))
-      sys.exit(linerepl+"\nseparator === (or >== ) (or =>= )  (or >>= ) is missing on line")
+      sys.exit(linerepl+"\nseparator === (or >== ) (or =>= )  (or >>= ) (or =*= ) is missing on line")
 
   if ((u">==" in linerepl) or (u">>=" in linerepl)) and (u"_" in linerepl) :
       log.write("erreur sep >== ou >>= et plusieurs mots:"+str(nblinerepl)+" : "+linerepl+"\n len="+str(len(linerepl)))
@@ -757,18 +757,27 @@ for linerepl in toutrepllines :
     liste_mots,liste_gloses=linerepl.split(u"===")
     ucase1=False
     topl=False
+    differ=False
   elif ">==" in linerepl :
     liste_mots,liste_gloses=linerepl.split(u">==")
     ucase1=False
     topl=True
+    differ=False
   elif "=>=" in linerepl :
     liste_mots,liste_gloses=linerepl.split(u"=>=")
     ucase1=True
     topl=False
+    differ=False
   elif ">>=" in linerepl :
     liste_mots,liste_gloses=linerepl.split(u">>=")
     ucase1=True
     topl=True
+    differ=False
+  elif "=*=" in linerepl :
+    liste_mots,liste_gloses=linerepl.split(u"=*=")
+    ucase1=False
+    topl=False
+    differ=True
     
   if tonal=="bailleul" : 
     liste_mots=re.sub(u"́","",liste_mots)
@@ -904,10 +913,21 @@ for linerepl in toutrepllines :
         log.write(u"il n'y a pas le même nombre de '_"+element+u"' de part et d'autre de ===\n")
         sys.exit("\n"+liste_mots+"\n"+liste_gloses+"\nErreur de syntaxe! pas le meme nombre de '"+element+"' de part et d'autre de ===\nvoir le log : "+logfilename)
 
-  # autres validations à ajouter ici ?
-  
   mots=liste_mots.split(u"_")
   gloses=liste_gloses.split(u"_")
+  nbmots=len(mots)
+  nbgloses=len(gloses)
+
+  if not differ:
+    if nbmots!=nbgloses:
+      log.write(u"il n'y a pas le même nombre d'éléments de part et d'autre (ou alors spécifier =*= comme séparateur)\n")
+      sys.exit("\n"+liste_mots+"\n"+liste_gloses+"\nErreur de syntaxe! pas le meme nombre d'éléments de part et d'autre (ou alors spécifier =*= comme séparateur)\nvoir le log : "+logfilename)
+  
+  if differ:
+    if nbmots==nbgloses:
+      log.write(u"il y a le même nombre d'éléments de part et d'autre, alors que =*= est spécifié)\n")
+      sys.exit("\n"+liste_mots+"\n"+liste_gloses+"\nErreur de syntaxe! il y a le même nombre d'éléments de part et d'autre, alors que =*= est spécifié\nvoir le log : "+logfilename)
+  # autres validations à ajouter ici ?
   
   # tests d'applicabilité - si pas applicable, sortir de la boucle de test: break et passer à la règle suivante: continue
   applicable=True
@@ -1117,6 +1137,7 @@ for linerepl in toutrepllines :
     # elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" stage="0">[^<]+<span class="lemma">[^<]+<sub class="ps">(?!v|vq|cop|pm)</sub>(((?!lemma var).)*)</span>\n</span>)+)'
     # elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|pp|ptcp|n\.prop|num|dtm|prn|pers|conj)</sub>(((?!lemma var).)*)</span>\n</span>)+)'
     elif mot==u"NONVERBALGROUP": 
+      """
       wsearch=wsearch+ur'((<span class="w" stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|ptcp|n\.prop|num|dtm|prn|pers)</sub>(((?!lemma var).)*)</span>\n</span>'
       wsearch=wsearch+ur'''|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ka|k')<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span>\n</span>'''
       wsearch=wsearch+ur'''|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ni|n')<sub class="ps">conj</sub><sub class="gloss">et</sub></span>\n</span>'''
@@ -1126,7 +1147,26 @@ for linerepl in toutrepllines :
       wsearch=wsearch+ur'|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:dè)<sub class="ps">prt</sub><sub class="gloss">FOC</sub></span>\n</span>'
       wsearch=wsearch+ur'|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:kɔ̀ni)<sub class="ps">prt</sub><sub class="gloss">TOP.CNTR2</sub></span>\n</span>'
       wsearch=wsearch+ur'|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:fána)<sub class="ps">prt</sub><sub class="gloss">aussi</sub></span>\n</span>)+)'
-
+      """
+      # inconvénient : le NVG peut être réduit à une seule conj isolée ou une seule prt isolée ???!!!
+      # chercher à corriger avec une formule du style : N|PRT+ CONJ*
+      # essayer GN | GN CONJ | GN PRT | GN PRT CONJ 
+      # modif 15/6/2020
+      
+      NOMINAL=ur'<span class="w" stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|ptcp|n\.prop|num|dtm|prn|pers)</sub>(((?!lemma var).)*)</span>\n</span>'
+      wsearch=wsearch+ur'(('+NOMINAL
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ka|k')<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ni|n')<sub class="ps">conj</sub><sub class="gloss">et</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:àní|àn')<sub class="ps">conj</sub><sub class="gloss">ainsi.que</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:wàlímà)<sub class="ps">conj</sub><sub class="gloss">ou.bien</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ô)<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:dè)<sub class="ps">prt</sub><sub class="gloss">FOC</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:kɔ̀ni)<sub class="ps">prt</sub><sub class="gloss">TOP.CNTR2</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:fána)<sub class="ps">prt</sub><sub class="gloss">aussi</sub></span>\n</span>'''
+      wsearch=wsearch+ur')+)'
+      
+      #print "new NOMINAL wsearch:\n",wsearch
+      
     elif mot==u"AMBIGUOUS": wsearch=wsearch+ur'<span class="w"(.*)lemma var(.*)\n</span>'
     else :
       if u"'" in mot: mot=re.sub(ur"\'",u"[\'\’]+",mot)   # satanées curly brackets
@@ -1553,7 +1593,8 @@ for linerepl in toutrepllines :
 
     elif glose==u"NONVERBALGROUP":
       wrepl=wrepl+ur'\g<'+str(capt_gr_index+1)+ur'>'
-      capt_gr_index=capt_gr_index+4  # ou bien autant de fois que de matches et difficile à prévoir : 2 par word x nb de words
+      # capt_gr_index=capt_gr_index+4  # ou bien autant de fois que de matches et difficile à prévoir : 2 par word x nb de words
+      capt_gr_index=capt_gr_index+20  # nouvele formule 15-06-2020 !!
 
     elif glose==u"AMBIGUOUS":
       wrepl=wrepl+ur'<span class="w" \g<'+str(capt_gr_index+1)+ur'>lemma var\g<'+str(capt_gr_index+2)+ur'>\n</span>'
@@ -1636,8 +1677,9 @@ for linerepl in toutrepllines :
         #       number of lines in file should = number of rules printed by program
   
   nbreplok=nbreplok+1
-  iprogress=nbreplok/float(nlignerepl)
-  update_progress(iprogress)
+  if nlignerepl!=0: 
+    iprogress=nbreplok/float(nlignerepl)
+    update_progress(iprogress)
 
   if "NPROPRENOMforcetop" in liste_gloses:  forcetopiterator=re.finditer(wsearch,tout,re.U|re.MULTILINE)
   
@@ -1647,11 +1689,21 @@ for linerepl in toutrepllines :
   
   #print "\nwsearch :",wsearch
   #print "\nwrepl :",wrepl
+  # test 15062020
+  #   wgroups=re.findall(wsearch, tout,re.U|re.MULTILINE)
+  #   if len(wgroups)>0: print wgroups
+  # test 15062020
 
   tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U|
 
   if replcompile:
     fileREPC.write(liste_mots+u"==="+str(ucase1)+u"==="+str(topl)+u"==="+wsearch+u"==="+wrepl+u"\n")
+
+  if prefsearch!=ur"":   # modif 15/6/2020 - updating words in sent and glosses creates an OVERLAP 
+    nombre_replay=nombre
+    while nombre_replay!=0:
+      tout,nombre_replay=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)      # pour éviter les problèmes de NON OVERLAP capability of re
+      nombre=nombre+nombre_replay
 
   if topl : 
     if ucase1:
@@ -1726,13 +1778,13 @@ def filterrepl(m):
   wordb=m.groups()[3]
   defb=m.groups()[4]
   if worda=="ye":
-    wrepl=ur'<span class="w" stage="0">'+worda+'<'+defa+'\n</span>'
-    wrepl=wrepl+ur'<span class="w" stage="0">o<'+defo+'\n</span>'
-    wrepl=wrepl+ur'<span class="w" stage="0">'+wordb+'<'+defb+'\n</span>'
+    wrepl=u'<span class="w" stage="0">'+worda+'<'+defa+u'\n</span>'
+    wrepl=wrepl+u'<span class="w" stage="0">o<'+defo+u'\n</span>'
+    wrepl=wrepl+u'<span class="w" stage="0">'+wordb+'<'+defb+u'\n</span>'
   else:
-    wrepl=ur'<span class="w" stage="0">'+worda+'<'+defa+'\n</span>'
-    wrepl=wrepl+ur'<span class="w" stage="0">o<span class="lemma">ô<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span>\n</span>'
-    wrepl=wrepl+ur'<span class="w" stage="0">'+wordb+'<'+defa+'\n</span>'
+    wrepl=u'<span class="w" stage="0">'+worda+u'<'+defa+u'\n</span>'
+    wrepl=wrepl+u'<span class="w" stage="0">o<span class="lemma">ô<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span>\n</span>'
+    wrepl=wrepl+u'<span class="w" stage="0">'+wordb+u'<'+defa+u'\n</span>'
   return wrepl
 
 tout,nombre=re.subn(wsearch,filterrepl,tout,0,re.U|re.MULTILINE)  

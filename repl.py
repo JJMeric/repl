@@ -426,13 +426,13 @@ def filterrepl(m):
   wordb=m.groups()[3]
   defb=m.groups()[4]
   if worda=="ye":
-    wrepl=ur'<span class="w" stage="0">'+worda+'<'+defa+'\n</span>'
-    wrepl=wrepl+ur'<span class="w" stage="0">o<'+defo+'\n</span>'
-    wrepl=wrepl+ur'<span class="w" stage="0">'+wordb+'<'+defb+'\n</span>'
+    wrepl=u'<span class="w" stage="0">'+worda+'<'+defa+'\n</span>'
+    wrepl=wrepl+u'<span class="w" stage="0">o<'+defo+'\n</span>'
+    wrepl=wrepl+u'<span class="w" stage="0">'+wordb+'<'+defb+'\n</span>'
   else:
-    wrepl=ur'<span class="w" stage="0">'+worda+'<'+defa+'\n</span>'
-    wrepl=wrepl+ur'<span class="w" stage="0">o<span class="lemma">ô<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span>\n</span>'
-    wrepl=wrepl+ur'<span class="w" stage="0">'+wordb+'<'+defa+'\n</span>'
+    wrepl=u'<span class="w" stage="0">'+worda+'<'+defa+'\n</span>'
+    wrepl=wrepl+u'<span class="w" stage="0">o<span class="lemma">ô<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span>\n</span>'
+    wrepl=wrepl+u'<span class="w" stage="0">'+wordb+'<'+defa+'\n</span>'
   return wrepl
 
 tout,nombre=re.subn(wsearch,filterrepl,tout,0,re.U|re.MULTILINE)  

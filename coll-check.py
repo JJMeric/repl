@@ -62,10 +62,11 @@ reflist=os.listdir(refcurr)
 donelist=os.listdir(donedir)
 
 for ref in reflist :
-	donelookup=re.sub(r"-zup\.txt",".txt",ref)
-	if donelookup not in donelist:
-		missing=missing+1
-		print donelookup
+                        donelookup=re.sub(r"-zup\.txt",".txt",ref)
+                        donelookupold=re.sub(r"-zup\.txt",".old.txt",ref)
+                        if donelookup not in donelist and donelookupold not in donelist:
+                              missing=missing+1
+                              print donelookup
 if missing>0 : print "\n",missing," files missing in ",donedir ,"\n"
 else : 
 	print "\nOK"
