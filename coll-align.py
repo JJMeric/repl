@@ -112,6 +112,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u"˚",u"°",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"З",u"3",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"j̀",u"j",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"Л",u"Ɲ",tout,0,re.U|re.MULTILINE)
 
 				# utilisation de majuscules accent grave par zup
 				tout=re.sub(u"È",u"È",tout,0,re.U|re.MULTILINE)
@@ -170,6 +171,12 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur"all([\s\.\,\;\:\!\?])",u"ali\g<1>",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"aua",u"aya",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" ia([\s\.\,\;\:\!\?])",u" la\g<1>",tout,0,re.U|re.MULTILINE)
+				# 1 instead of l
+				tout=re.sub(ur" 1a([\s\.\,\;\:\!\?])",u" la\g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" 1a([a-z])",u" la\g<1>",tout,0,re.U|re.MULTILINE)      # en début de mot : lajɛlen
+				# I instead of l
+				tout=re.sub(ur" Ia([\s\.\,\;\:\!\?])",u" la\g<1>",tout,0,re.U|re.MULTILINE)
+				
 				
 				# enforce dɔrɔmɛ "d." attached to numbers
 				tout=re.sub(ur"([^a-zɛɔA-Z])d\s*\.\s+([0-9]+)",u"\g<1>d.\g<2>",tout,0,re.U|re.MULTILINE)
@@ -188,6 +195,10 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				# tout=re.sub(ur"oɔ([\s\,\.])",u"ɔ\g<1>",tout,0,re.U|re.MULTILINE)
 
 				if old :
+					# l instead of i (doz!)
+					tout=re.sub(ur"([aeiouèòyAEIOUÈÒ\s][^aeiouèò])l([^aeiouèò][aeiouèòy])",u"\g<1>i\g<2>",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur"([aeiouèòyAEIOUÈÒ\s][^aeiouèò])l([^aeiouèò])l",u"\g<1>i\g<2>i",tout,0,re.U|re.MULTILINE)
+					
 					# titres
 					tout=re.sub(ur"KA BO ",u"KA BÒ ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" SORO ",u" SÒRÒ ",tout,0,re.U|re.MULTILINE)
@@ -531,6 +542,10 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					tout=re.sub(ur" nofè",u"  nòfè",tout,0,re.U|re.MULTILINE)
 					
 				else:
+					# l instead of i (doz!)
+					tout=re.sub(ur"([aeiouɛɔyAEIOUƐƆ\s][^aeiouɛɔ])l([^aeiouɛɔ][aeiouɛɔy])",u"\g<1>i\g<2>",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur"([aeiouɛɔyAEIOUƐƆ\s][^aeiouɛɔ])l([^aeiouɛɔ])l",u"\g<1>i\g<2>i",tout,0,re.U|re.MULTILINE)
+					
 					tout=re.sub(ur" bɔgo ",u" bɔgɔ ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" bɛe ",u" bɛɛ ",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" bɛnkansebɛn",u" bɛnkansɛbɛn",tout,0,re.U|re.MULTILINE)

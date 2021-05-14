@@ -13,16 +13,25 @@ parser = HTMLParser()
 ambiguous=re.compile(ur'\<span class\=\"w\".*lemma var.*\n\<\/span\>')
 unknown=re.compile(ur'\<span class\=\"w\ stage\=\"\-1\"')
 sentence=re.compile(ur'\<span class\=\"sent\"\>([^<]*)\<')
-title=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"text\:title\" \/\>',re.U)
-author=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"author\:name\" \/\>',re.U)
-wordssearch=re.compile(ur'\<meta content\=\"([0-9]*)\" name\=\"\_auto\:words\" \/\>',re.U)
+# title=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"text\:title\" \/\>|\<meta name\=\"text\:title\" content\=\"([^\"]*)\" \/\>',re.U)  # as of daba 0.9.0 dec 2020 meta format order changed!
+title=re.compile(ur'(?:\<meta content\=\"|\<meta name\=\"text\:title\" content\=\")([^\"]*)(?:\" name\=\"text\:title\" \/\>|\" \/\>)',re.U)
+
+#author=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"author\:name\" \/\>|\<meta name\=\"author\:name\" content\=\"([^\"]*)\" \/\>',re.U)
+author=re.compile(ur'(?:\<meta content\=\"|\<meta name\=\"author\:name\" content\=\")([^\"]*)(?:\" name\=\"author\:name\" \/\>|\" \/\>)',re.U)
+
+#wordssearch=re.compile(ur'\<meta content\=\"([0-9]*)\" name\=\"\_auto\:words\" \/\>|\<meta name\=\"\_auto\:words\" content\=\"([0-9]*)\" \/\>',re.U)
+wordssearch=re.compile(ur'(?:\<meta content\=\"|\<meta name\=\"\_auto\:words\" content\=\")([0-9]*)(?:\" name\=\"\_auto\:words\" \/\>|\" \/\>)',re.U)
+
 parsedwords=re.compile(ur'\<span class\=\"w\"',re.U)
 extraittxt=re.compile(ur'<body><p>([^£]*)</p></body>',re.U)   #  ^< ne marche plus ?
 searchwords=re.compile(ur'([a-zɛɔɲŋA-ZƐƆƝŊ\-́̀̌̂]+)',re.U)
 medianame=re.compile(ur'^([a-zA-Z\-\_]+)[0-9]*\_',re.U)
 medianumber=re.compile(ur'^[a-zA-Z\-\_]+([0-9]*)\_',re.U)
-date=re.compile(ur'\<meta content\=\"[0-9]+\.([0-9\.]*)\" name\=\"text\:date\" \/\>',re.U)
-datesource=re.compile(ur'\<meta content\=\"[0-9]+\.([0-9\.]*)\" name\=\"source\:date\" \/\>',re.U)
+#date=re.compile(ur'\<meta content\=\"[0-9]+\.([0-9\.]*)\" name\=\"text\:date\" \/\>|\<meta name\=\"text\:date\" content\=\"[0-9]+\.([0-9\.]*)\" \/\>',re.U)
+date=re.compile(ur'(?:\<meta content\=\"[0-9]+\.|\<meta name\=\"text\:date\" content\=\"[0-9]+\.)([0-9\.]*)(?:\" name\=\"text\:date\" \/\>|\" \/\>)',re.U)
+
+#datesource=re.compile(ur'\<meta content\=\"[0-9]+\.([0-9\.]*)\" name\=\"source\:date\" \/\>|\<meta name\=\"source\:date\" content\=\"[0-9]+\.([0-9\.]*)\" \/\>',re.U)
+datesource=re.compile(ur'(?:\<meta content\=\"[0-9]+\.|\<meta name\=\"source\:date\" content\=\"[0-9]+\.)([0-9\.]*)(?:\" name\=\"source\:date\" \/\>|\" \/\>)',re.U)
 
 import os
 # log=open("repertoire.log","w")
@@ -86,6 +95,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 
 			
 			titl=title.search(tout).group(1)
+			#print title.search(tout).group(2)
 			# log.write("\n"+filename+"\ntitle-1: "+titl+"\n")
 			titl=re.sub(ur"\"","",titl)
 			# log.write("title-2: "+titl+"\n")

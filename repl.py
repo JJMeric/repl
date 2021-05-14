@@ -38,7 +38,8 @@ timestart=time.time()
 # directory where this script resides
 scriptdir = os.path.dirname(os.path.realpath(__file__))
 
-textscript=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"text\:script\" \/\>',re.U)
+textscript=re.compile(ur'(?:\<meta content\=\"|\<meta name\=\"text\:script\" content\=\")([^\"]*)(?:\" name\=\"text\:script\" \/\>|\" \/\>)',re.U) # as of daba 0.9.0 dec 2020 meta format order changed!
+
 ambiguous=re.compile(ur'\<span class\=\"w\".*lemma var.*\n\<\/span\>')
 allwords=re.compile(ur'\<span class\=\"w\"\ stage=\"[a-z0-9\.\-]*\">([^\<]*)<')
 allpuncts=re.compile(ur'\<span class\=\"c\">([^\<]*)\</span\>')
@@ -179,6 +180,16 @@ tout,nombre=re.subn(wsearch,npropucase,tout,0,re.U|re.MULTILINE)
 wsearch=ur'>ála<sub class="ps">n<'
 wrepl=ur'>Ála<sub class="ps">n<'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # eliminer EMPR ex: ONI::EMPR
+
+# non Majuscules non parsés et mis en majuscules!
+wsearch=ur'>([A-ZƐƆƝŊ])([^<]+)<span class="lemma">[a-zɛɔɲŋ][^<]+</span>\n'
+wrepl=ur'>\g<1>\g<2><span class="lemma">\g<1>\g<2><sub class="ps">n.prop</sub></span>\n'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
+
+# idem pour les emprunts
+wsearch=ur'>([A-ZƐƆƝŊ])([^<]+)<span class="lemma">[a-zɛɔɲŋ][^<]+<sub class="gloss">EMPR</sub></span>\n'
+wrepl=ur'>\g<1>\g<2><span class="lemma">\g<1>\g<2><sub class="ps">n.prop</sub><sub class="gloss">EMPR</sub></span>\n'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
 
 # eliminer EMPR ex: ONI::EMPR
 # see last section of bamana.gram
@@ -335,21 +346,40 @@ for linerepl in linereplall:
     applicable=True
     for mot in mots:
       if "_"+mot+"_" not in valides :
-        if ucase1 and topl:
-            if (mot not in allwordsshortlist) and (mot+"w" not in allwordsshortlist) and (mot.title() not in allwordsshortlist) and (mot.title()+"w" not in allwordsshortlist):
+        if "̀*" not in mot :
+          if ucase1 and topl:
+              if (mot not in allwordsshortlist) and (mot+"w" not in allwordsshortlist) and (mot.title() not in allwordsshortlist) and (mot.title()+"w" not in allwordsshortlist):
+                applicable=False
+                break
+          elif ucase1:
+              if (mot not in allwordsshortlist) and (mot.title() not in allwordsshortlist):
+                applicable=False
+                break
+          elif topl:
+              if (mot not in allwordsshortlist) and (mot+"w" not in allwordsshortlist):
+                applicable=False
+                break
+          elif mot not in allwordsshortlist:
               applicable=False
               break
-        elif ucase1:
-            if (mot not in allwordsshortlist) and (mot.title() not in allwordsshortlist):
+        else:
+          mottonal=re.sub(r"\*","",mot)
+          motsanston=re.sub(r"̀\*","",mot)
+          if ucase1 and topl:
+              if (mottonal not in allwordsshortlist) and (mottonal+"w" not in allwordsshortlist) and (mottonal.title() not in allwordsshortlist) and (mottonal.title()+"w" not in allwordsshortlist) and (motsanston not in allwordsshortlist) and (motsanston+"w" not in allwordsshortlist) and (motsanston.title() not in allwordsshortlist) and (motsanston.title()+"w" not in allwordsshortlist)  :
+                applicable=False
+                break
+          elif ucase1:
+              if (mottonal not in allwordsshortlist) and (mottonal.title() not in allwordsshortlist) and (motsanston not in allwordsshortlist) and (motsanston.title() not in allwordsshortlist):
+                applicable=False
+                break
+          elif topl:
+              if (mottonal not in allwordsshortlist) and (mottonal+"w" not in allwordsshortlist) and (motsanston not in allwordsshortlist) and (motsanston+"w" not in allwordsshortlist):
+                applicable=False
+                break
+          elif mottonal not in allwordsshortlist and motsanston not in allwordsshortlist:
               applicable=False
               break
-        elif topl:
-            if (mot not in allwordsshortlist) and (mot+"w" not in allwordsshortlist):
-              applicable=False
-              break
-        elif mot not in allwordsshortlist:
-            applicable=False
-            break
       else:
         if mot=="EXCLAM":
           if "!" not in allpunctsshortlist:
@@ -380,7 +410,7 @@ for linerepl in linereplall:
             applicable=False
             break
         elif mot=="NUM":
-          if ndigits==0 and not ("kelen" or "fila" or "saba" or "naani" or "duuru" or "wɔɔrɔ" or "wolonwula" or "wolonfila" or "segin" or "seegin" or "kɔnɔntɔn" or "kélen" or "fìla" or "sàba" or "náani" or "dúuru" or "wɔ́ɔrɔ" or "wólonwula" or "wólonfila" or "ségin" or "séegin" or "kɔ́nɔntɔn" or "wòorò" or "kònòntòn" or "tan" or "bi" or "mugan" or "dɛbɛ" or "kɛmɛ" or "silameyakɛmɛ" or "tán" or "bî" or "mùgan" or "dɛ̀bɛ" or "kɛ̀mɛ" or "sìlameyakɛmɛ"or "dèbè" or "kèmè" or "silameyakèmè") in allwordsshortlist: 
+          if ndigits==0 and not ("kelen" or "fila" or "fla" or "saba" or "naani" or "duuru" or "wɔɔrɔ" or "wolonwula" or "wolonfila" or "segin" or "seegin" or "kɔnɔntɔn" or "kélen" or "fìla" or "flà" or "sàba" or "náani" or "dúuru" or "wɔ́ɔrɔ" or "wólonwula" or "wólonfila" or "ségin" or "séegin" or "kɔ́nɔntɔn" or "wòorò" or "kònòntòn" or "tan" or "bi" or "mugan" or "dɛbɛ" or "kɛmɛ" or "silameyakɛmɛ" or "tán" or "bî" or "mùgan" or "dɛ̀bɛ" or "kɛ̀mɛ" or "sìlameyakɛmɛ"or "dèbè" or "kèmè" or "silameyakèmè") in allwordsshortlist: 
             applicable=False
             break
         elif mot=="PFVNEG":

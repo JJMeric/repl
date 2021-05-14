@@ -87,6 +87,8 @@ import unicodedata as u
 from time import gmtime, strftime, time
 # print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
 import time
+import collections
+
 timestart=time.time()
 # directory where this script resides
 scriptdir = os.path.dirname(os.path.realpath(__file__))
@@ -117,8 +119,8 @@ def update_progress(progress):
 # 4) variables, par ex PERS=(ń|í|à|án|áw|ù|né|àle|ále|òlu)
 # ------------------------------------------------------------------------------
 
-wordsearch=re.compile(ur'\<span class\=\"w\"\ stage=\"([a-z0-9\.\-]*)\">([^\<]*)\<')
-allwords=re.compile(ur'\<span class\=\"w\"\ stage=\"[a-z0-9\.\-]*\">([^\<]*)<')
+wordsearch=re.compile(ur'\<span class\=\"w\"\ +stage=\"([a-z0-9\.\-]*)\">([^\<]*)\<')
+allwords=re.compile(ur'\<span class\=\"w\"\ +stage=\"[a-z0-9\.\-]*\">([^\<]*)<')
 allpuncts=re.compile(ur'\<span class\=\"c\">([^\<]*)\</span\>')
 alltags=re.compile(ur'\<span class\=\"t\">([^\<]*)\</span\>')
 
@@ -135,7 +137,8 @@ assimsearch=re.compile(ur'\'$')
 assimilation=0
 glosssearch=re.compile(ur'\<sub class\=\"gloss\"\>([^\<]*)\<')
 ambiguous=re.compile(ur'\<span class\=\"w\".*lemma var.*\n\<\/span\>')
-textscript=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"text\:script\" \/\>',re.U)
+#textscript=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"text\:script\" \/\>|\<meta name\=\"text\:script\" content\=\"([^\"]*)\" \/\>',re.U)
+textscript=re.compile(ur'(?:\<meta content\=\"|\<meta name\=\"text\:script\" content\=\")([^\"]*)(?:\" name\=\"text\:script\" \/\>|\" \/\>)',re.U) # as of daba 0.9.0 dec 2020 meta format order changed!
 
 nmmcquestion=0
 
@@ -286,7 +289,7 @@ if nb_unparsed >0 :
 
 
 psvalides="|adj|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers|pm|pp|prep|prn|prt|ptcp|v|vq|"
-valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VERBENMOD_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_VQORADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_NORADJ_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_NICONJ_YEUNDEF_YEPP_NIUNDEF_NAUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_COPQUOT_COPNEG_ACTION_CONSONNE_LANA_"
+valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VERBENMOD_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_APOSTROPHE_GUILLEMET_PRMRKQUAL_VQADJ_VQORADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_NORADJ_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_NICONJ_YEUNDEF_YEPP_NIUNDEF_NAUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_COPQUOT_COPNEG_ACTION_CONSONNE_LANA_LETTRE_"
 # toujours commencer et finir par _
 # autres mots utilisés, traitements spéciaux : NUMnan, degremove, ADVNforcen, ADVNforceadv, CONJPREPforceconj, CONJPREPforceprep
 gvalides=u"NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_NMLZ2_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_OPT2_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
@@ -329,10 +332,47 @@ if nombre>0 :
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
+"""# Dukure ---------------------------------------------------
+# normaliser les Ɲ
+wsearch=ur'<span class="w" stage="([^\"]+)">Л([^\<\n]+)<span class="lemma">л([^<\n]+)<'
+wrepl=ur'<span class="w" stage="\g<1>">Ɲ\g<2><span class="lemma">ɲ\g<3><'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+if nombre>0 :
+  msg="%i  DUK normalise Л->Ɲ " % nombre +"\n"
+  log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
+#  normaliser les ʃ - !!! suppose qu'il n'y en a qu'un par mot !!!
+wsearch=ur'<span class="w" stage="([^\"]+)">([^\<\ʃ]*)ʃ([^\<]+)<span class="lemma">([^\<\ʃ]*)ʃ([^\<]+)<'
+wrepl=ur'<span class="w" stage="\g<1>">\g<2>sh\g<3><span class="lemma">\g<4>sh\g<5><'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+if nombre>0 :
+  msg="%i  DUK normalise ʃ->sh " % nombre +"\n"
+  log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
+# on est sensé être en non tonal (attention dans kà c'est le dernier!)
+wsearch=ur'<span class="w" stage="([^\"]+)">([^\<\̀]*)\̀([^\<]*)<span class="lemma">([^\<\̀]*)\̀([^\<]*)<'
+wrepl=ur'<span class="w" stage="\g<1>">\g<2>\g<3><span class="lemma">\g<4>\g<5><'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+if nombre>0 :
+  msg="%i  DUK normalise supprimer le premier ton bas " % nombre +"\n"
+  log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
+# ------------------------------ fin Dukure
+"""
+
 # propre names with initial CAPITAL letter please !
 # >([A-Za-z])([^<]+)<sub class="ps">n.prop
 # >\u$1$2<sub class="ps">n.prop
-wsearch=ur'>([A-Za-z])([^<]+)<sub class="ps">n.prop'
+wsearch=ur'>([A-Za-z])([^<]+)<sub class="ps">n\.prop'
 #FAILS wrepl=ur'>\u\g<1>\g<2><sub class="ps">n.prop'
 #FAILS wrepl=ur'>\U1\g<2><sub class="ps">n.prop'
 def npropucase(m):
@@ -359,10 +399,32 @@ if nombre>0 :
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
+# non Majuscules non parsés et mis en majuscules!
+wsearch=ur'>([A-ZƐƆƝŊ])([^<]+)<span class="lemma">[a-zɛɔɲŋ][^<]+</span>\n'
+wrepl=ur'>\g<1>\g<2><span class="lemma">\g<1>\g<2><sub class="ps">n.prop</sub></span>\n'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
+if nombre>0 :
+  msg="%i modifs NPropre-npropre -> NPropre-NPropre-n.prop " % nombre +"\n"
+  log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
+# idem pour les emprunts
+# <span class="w" stage="6">Marakèsh<span class="lemma">marakɛsh<sub class="gloss">EMPR</sub></span>
+wsearch=ur'>([A-ZƐƆƝŊ])([^<]+)<span class="lemma">[a-zɛɔɲŋ][^<]+<sub class="gloss">EMPR</sub></span>\n'
+wrepl=ur'>\g<1>\g<2><span class="lemma">\g<1>\g<2><sub class="ps">n.prop</sub><sub class="gloss">EMPR</sub></span>\n'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
+if nombre>0 :
+  msg="%i modifs NPropre-npropre-EMPR -> NPropre-NPropre-n.prop-EMPR " % nombre +"\n"
+  log.write(msg.encode("utf-8"))
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
 
 # eliminer EMPR ex: ONI::EMPR
 # see last section of bamana.gram
-wsearch=ur'<span class="w" stage="[^\"]+">([A-Z\-]+)<span class="lemma">[a-z\-]+<sub class="gloss">EMPR</sub></span>\n</span>'
+wsearch=ur'<span class="w" +stage="[^\"]+">([A-Z\-]+)<span class="lemma">[a-z\-]+<sub class="gloss">EMPR</sub></span>\n</span>'
 wrepl=ur'<span class="w" stage="repl">\g<1><span class="lemma">\g<1><sub class="ps">n.prop</sub><sub class="gloss">ABR</sub></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # eliminer EMPR ex: ONI::EMPR
 if nombre>0 :
@@ -397,7 +459,7 @@ if nombre>0 :
 
 # autres ABR possibles
 # exemple : <span class="w" stage="-1">TPI<span class="lemma">tpi</span>\n</span>
-wsearch=ur'<span class="w" stage="-1">([A-Z\-0-9]+)<span class="lemma">[a-zA-Z\-0-9]+</span>\n</span>'
+wsearch=ur'<span class="w" +stage="-1">([A-Z\-0-9]+)<span class="lemma">[a-zA-Z\-0-9]+</span>\n</span>'
 wrepl=ur'<span class="w" stage="repl">\g<1><span class="lemma">\g<1><sub class="ps">n.prop</sub><sub class="gloss">ABR</sub></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # autres ABR possibles
 if nombre>0 :
@@ -496,7 +558,7 @@ if nombre>0 :
 #   </span>
 #4 = <sub class="gloss">expliquer</sub><span class="m">ɲɛ́<sub class="ps">n</sub><sub class="gloss">oeil</sub></span><span class="m">fɔ́<sub class="ps">v</sub><sub class="gloss">dire</sub></span>
 #6 = <sub class="gloss">explication</sub><span class="m">ɲɛ́<sub class="ps">n</sub><sub class="gloss">oeil</sub></span><span class="m">fɔ́<sub class="ps">v</sub><sub class="gloss">dire</sub></span>
-wsearch=ur'<span class="w" stage="([^>]+)">([^<]+)<span class="lemma">([^<]+)<sub class="ps">v</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)></span></span>\n</span>'
+wsearch=ur'<span class="w" +stage="([^>]+)">([^<]+)<span class="lemma">([^<]+)<sub class="ps">v</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)></span></span>\n</span>'
 #                                                                           1        2                                                  3                                                                      4                                                                       5                                                                6                                                                                              
 wrepl=ur'<span class="w" stage="\g<1>">\g<2><span class="lemma">\g<6><sub class="ps">n</sub><\g<7>><span class="lemma var">\g<3><sub class="ps">v</sub><\g<4>></span></span>\n</span>'
 # attention décalage $5 $6 -> $6 $7 à cause de la formule (((?!lemma var).)*)
@@ -536,7 +598,7 @@ if nombre>0 :
 #wsearch=ur'</span><span class="w" stage="[0-9\-]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">(?P=w)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*lemma var.*></span>\n</span>'
 #wrepl=ur'</span><span class="w" stage="0">\g<1><span class="lemma">\g<1><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
 #wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*lemma var.*></span>\n</span>'
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*"ps">(?!n\.prop).*></span>\n</span>'
+wsearch=ur'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*"ps">(?!n\.prop).*></span>\n</span>'
 # the above fails in sublime text editor ? works ok with \< after non capturing group
 #wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*"ps">(?:n|v|adj|vq|pers|prn|dtm|conj|prep|prt|adv|adv.p|pp|pm|cop|intj|onomat)<.*></span>\n</span>'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
@@ -548,7 +610,7 @@ if nombre>0 :
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.CL</sub><.*"ps">(?!n\.prop).*></span>\n</span>'
+wsearch=ur'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.CL</sub><.*"ps">(?!n\.prop).*></span>\n</span>'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.CL</sub></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
 if nombre>0 :
@@ -558,7 +620,7 @@ if nombre>0 :
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.M</sub><.*"ps">(?!n\.prop).*></span>\n</span>'
+wsearch=ur'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.M</sub><.*"ps">(?!n\.prop).*></span>\n</span>'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.M</sub></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
 if nombre>0 :
@@ -568,7 +630,7 @@ if nombre>0 :
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.F</sub><..*"ps">(?!n\.prop).*></span>\n</span>'
+wsearch=ur'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.F</sub><..*"ps">(?!n\.prop).*></span>\n</span>'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.F</sub></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
 if nombre>0 :
@@ -590,7 +652,7 @@ if nombre>0 :
 # <span class="w" stage="0">Timunakaw<span class="lemma">timunakaw<sub class="ps">n/n.prop</sub><span class="m">timu<sub class="ps">n/n.prop</sub></span><span class="m">na<sub class="ps">mrph</sub><sub class="gloss">LOC</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span>\n</span>
 # pars <span class="w" stage="1">Timunakaw<span class="lemma">timunakaw<span class="lemma var">timunakaw<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub><span class="m">timunaka<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">timunakaw<sub class="ps">n/n.prop</sub><span class="m">timu<sub class="ps">n/n.prop</sub></span><span class="m">na<sub class="ps">mrph</sub><sub class="gloss">LOC</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">timunakaw<sub class="ps">n/n.prop</sub><span class="m">timuna<sub class="ps">n/n.prop</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span>\n</span>
 #
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">((((?!lemma var).)+)GENT(((?!lemma var).)+))<span class="lemma var">[^\n]+</span></span>\n'
+wsearch=ur'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">((((?!lemma var).)+)GENT(((?!lemma var).)+))<span class="lemma var">[^\n]+</span></span>\n'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3></span>\n'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
 if nombre>0 :
@@ -601,7 +663,7 @@ if nombre>0 :
   nbmots=nbmots+nombre
 
 # <span class="w" stage="-1">Pekosi<span class="lemma">pekosi<span class="lemma var">Pekosi<sub class="ps">n.prop</sub><sub class="gloss">Pekosi</sub></span></span>\n</span>
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-b]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">[^<]+<span class="lemma var">(?P=w)<sub class="ps">n.prop</sub><sub class="gloss">(?P=w)</sub></span></span>\n</span>'
+wsearch=ur'(</span>|</span>\n)<span class="w" +stage="[0-9\-b]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">[^<]+<span class="lemma var">(?P=w)<sub class="ps">n.prop</sub><sub class="gloss">(?P=w)</sub></span></span>\n</span>'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<2><sub class="ps">n.prop</sub><sub class="gloss">NOM</sub></span>\n</span>'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
 if nombre>0 :
@@ -616,7 +678,7 @@ if nombre>0 :
 #  wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">\g<4></sub><sub class="gloss">\g<5></sub></span>\n</span>'
 
 # essai avec sous-structure : (((?!<span class="lemma var">).)+)
-wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-b]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">(((?!<span class="lemma var">).)+)<span class="lemma var">(?P=w)<sub class="ps">n.prop</sub><sub class="gloss">(?P=w)</sub></span></span>\n</span>'
+wsearch=ur'(</span>|</span>\n)<span class="w" +stage="[0-9\-b]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">(((?!<span class="lemma var">).)+)<span class="lemma var">(?P=w)<sub class="ps">n.prop</sub><sub class="gloss">(?P=w)</sub></span></span>\n</span>'
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3></span>\n</span>'
 
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
@@ -629,7 +691,7 @@ if nombre>0 :
 
 
 # wsearch=ur"(</span>|</span>\n)<span class=\"w\" stage=\"[0-9\-]+\">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<.+lemma var.+></span>\n"
-wsearch=ur"(</span>|</span>\n)<span class=\"w\" stage=\"[0-9\-]+\">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class=\"lemma\">[^<]+<span class=\"lemma var\">.+></span>\n"
+wsearch=ur"(</span>|</span>\n)<span class=\"w\" +stage=\"[0-9\-]+\">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class=\"lemma\">[^<]+<span class=\"lemma var\">.+></span>\n"
 wrepl=ur'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<2><sub class="ps">n.prop</sub><sub class="gloss">NOM</sub></span>\n'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
 if nombre>0 :
@@ -642,7 +704,7 @@ if nombre>0 :
 # handling NUMnan type not handled well in gparser  - CASE   "23nan"
 # (bamana.gram rules no longer works)
 prefsearch=ur'<span class="sent">([^<]*)(?P<stem>[0-9]+)(?P<stemnan>nan|NAN|n)([\s\.\,\;\:\?\!\)\"][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
-nextsearch=ur'<span class="w" stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span>\n</span><span class="w" stage="[^\"]">(?P=stemnan)<span class="lemma">(?:nan|ń)<sub class="ps">(?:num|pers)</sub><sub class="gloss">(?:ORD|1SG)</sub></span>\n</span>'
+nextsearch=ur'<span class="w" +stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span>\n</span><span class="w" +stage="[^\"]">(?P=stemnan)<span class="lemma">(?:nan|ń)<sub class="ps">(?:num|pers)</sub><sub class="gloss">(?:ORD|1SG)</sub></span>\n</span>'
 prefrepl=u'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
 nextrepl=u'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n</span>'
 wsearch=prefsearch+nextsearch
@@ -660,7 +722,7 @@ while nombre>0:
 
 # handling NUM nan types not handled well in gparser - CASE   "23 nan"
 prefsearch=ur'<span class="sent">([^<]*)(?P<stem>[0-9]+) (?P<stemnan>nan|NAN)([\s\.\,\;\:\?\!\)\"][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
-nextsearch=ur'<span class="w" stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span>\n</span><span class="w" stage="2">(?P=stemnan)<span class="lemma">nan<sub class="ps">num</sub><sub class="gloss">ORD</sub></span>\n</span>'
+nextsearch=ur'<span class="w" +stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span>\n</span><span class="w" stage="2">(?P=stemnan)<span class="lemma">nan<sub class="ps">num</sub><sub class="gloss">ORD</sub></span>\n</span>'
 prefrepl=u'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
 nextrepl=u'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n</span>'
 wsearch=prefsearch+nextsearch
@@ -695,7 +757,10 @@ allpunctslist=allpuncts.findall(tout,re.U|re.MULTILINE)
 allpunctsshortlist=[]
 for thispunct in allpunctslist:
   if thispunct not in allpunctsshortlist: allpunctsshortlist.append(thispunct)
-print "ponctuations uniques:", len(allpunctsshortlist), allpunctsshortlist
+allpunctdisplay=""
+for thispunct in allpunctsshortlist : allpunctdisplay=allpunctdisplay+thispunct+" "
+print len(allpunctsshortlist),"ponctuations uniques:", allpunctdisplay
+
 
 alltagslist=alltags.findall(tout,re.U|re.MULTILINE)
 ntags=len(alltagslist)
@@ -783,10 +848,12 @@ for linerepl in toutrepllines :
     liste_mots=re.sub(u"́","",liste_mots)
     liste_mots=re.sub(u"̂","",liste_mots)
   elif tonal!="tonal" :  
-    liste_mots=re.sub(u"́","",liste_mots)
-    liste_mots=re.sub(u"̀","",liste_mots)
-    liste_mots=re.sub(u"̌","",liste_mots)
-    liste_mots=re.sub(u"̂","",liste_mots)
+    # ne pas faire pour les mots ETRG.FRA dans les définitions uniques (les tons haut bas et descendants sont utilisés pour simuler les accents français)
+    if not ((u"_" not in liste_mots) and (u"ETRG.FRA" in liste_gloses)):
+      liste_mots=re.sub(u"́","",liste_mots)
+      liste_mots=re.sub(u"̀","̀*",liste_mots)   # DUKure : les tons bas ----- à enlever pour word
+      liste_mots=re.sub(u"̌","",liste_mots)
+      liste_mots=re.sub(u"̂","",liste_mots)
   if tonal=="old" : # dans ce cas, les tons sont éliminés mais on revient à l'ancienne écriture
     liste_mots=re.sub(u"ɛɛ","èe",liste_mots)
     liste_mots=re.sub(u"ɛ","è",liste_mots)
@@ -909,7 +976,7 @@ for linerepl in toutrepllines :
       nbelement=re.findall("_"+element,"_"+liste_mots)
       nbelementg=re.findall("_"+element,"_"+liste_gloses)
       # if element=='TIRET': print "TIRET nbelement=",len(nbelement), " nbelementg=", len(nbelementg)
-      if (len(nbelement)!=len(nbelementg)) and not (len(nbelementg)==0 and element in "_TIRET_"):
+      if not differ and (len(nbelement)!=len(nbelementg)) and not (len(nbelementg)==0 and element in "_TIRET_"):
         log.write(u"il n'y a pas le même nombre de '_"+element+u"' de part et d'autre de ===\n")
         sys.exit("\n"+liste_mots+"\n"+liste_gloses+"\nErreur de syntaxe! pas le meme nombre de '"+element+"' de part et d'autre de ===\nvoir le log : "+logfilename)
 
@@ -932,23 +999,136 @@ for linerepl in toutrepllines :
   # tests d'applicabilité - si pas applicable, sortir de la boucle de test: break et passer à la règle suivante: continue
   applicable=True
   if not replcompile : # dans ce cas, on applique les tests d'applicabilité pour accélérer le traitement
+    indexmot=-1
     for mot in mots:
+      indexmot=indexmot+1
       if "_"+mot+"_" not in valides :
         if ucase1 and topl:
+          if "*" in mot or "(" in mot or "[" in mot:
+            lmots=ur"("+mot+ur"|"+mot+u"w"+ur"|"+mot.title()+ur"|"+mot.title()+u"w"+ur")"
+            r=re.compile(ur""+lmots)  # mot brut ou mots de la forme bà*na ou (?:b|B)ana
+            newlist=filter(r.match,allwordsshortlist)
+            #if mot not in allwordsshortlist:
+            if len(newlist)==0:
+              applicable=False
+              break
+          else:
             if (mot not in allwordsshortlist) and (mot+"w" not in allwordsshortlist) and (mot.title() not in allwordsshortlist) and (mot.title()+"w" not in allwordsshortlist):
               applicable=False
               break
         elif ucase1:
-            if (mot not in allwordsshortlist) and (mot.title() not in allwordsshortlist):
+          if "*" in mot or "(" in mot or "[" in mot:
+            lmots=ur"("+mot+ur"|"+mot.title()+ur")"
+            r=re.compile(ur""+lmots)  # mot brut ou mots de la forme bà*na ou (?:b|B)ana
+            newlist=filter(r.match,allwordsshortlist)
+            #if mot not in allwordsshortlist:
+            if len(newlist)==0:
               applicable=False
               break
+          else:
+            if (mot not in allwordsshortlist) and (mot.title() not in allwordsshortlist):
+              applicable=False
+              break    
         elif topl:
+          if "*" in mot or "(" in mot or "[" in mot:
+            lmots=ur"("+mot+ur"|"+mot+u"w"+ur")"
+            r=re.compile(ur""+lmots)  # mot brut ou mots de la forme bà*na ou (?:b|B)ana
+            newlist=filter(r.match,allwordsshortlist)
+            #if mot not in allwordsshortlist:
+            if len(newlist)==0:
+              applicable=False
+              break
+          else:
             if (mot not in allwordsshortlist) and (mot+"w" not in allwordsshortlist):
               applicable=False
               break
-        elif mot not in allwordsshortlist:
-            applicable=False
-            break
+            
+        else:
+          # ajouter ici le code pour les transf Ɲ et verbes Majusc
+          # modifs DUKure ---------------
+          """"
+          if mot[0]=="ɲ" : 
+            mot=ur"(?:ɲ|л|Л)"+mot[1:]  # majuscule en cas (no testé) de verbe
+            #print "mot: ",mot
+          elif mot[0]=="Ɲ" :
+            mot=ur"(?:Ɲ|Л)"+mot[1:]
+            #print "mot: ",mot
+          else:
+            if not differ:
+
+              motglose=gloses[indexmot]
+              if "§§" in motglose:
+                motglose1,motglose2=motglose.split(u"§§")  # sont supposés être des vraies gloses::
+                motglose1_elements=motglose1.split(u":")
+                motglose2_elements=motglose2.split(u":")
+                if motglose1_elements[1]=="v" :
+                  #print "§§ mot/glose :",mot,motglose1
+                  firstl=mot[0].upper()
+                  mot=ur"(?:"+mot[0]+ur"|"+firstl+ur")"+mot[1:]
+                  #print "§§ mot verbe:",mot
+                elif motglose2_elements[1]=="v" :
+                  #print "§§ mot/glose :",mot,motglose2
+                  firstl=mot[0].upper()
+                  mot=ur"(?:"+mot[0]+ur"|"+firstl+ur")"+mot[1:]
+                  #print "§§ mot verbe:",mot
+              else:
+                if u":" in motglose:
+                  motglose_elements=motglose.split(u":")
+                else: 
+                  print "\n",linerepl
+                  sys.exit(mot+" -> erreur: pas de glose pour cet élément?")
+                if motglose_elements[1]=="v" :
+                  #print "mot/glose :",mot,motglose
+                  firstl=mot[0].upper()
+                  mot=ur"(?:"+mot[0]+ur"|"+firstl+ur")"+mot[1:]
+                  #print "mot verbe:",mot
+          #fin modifs DUKure -------------
+          """
+          # modifs Duk pour les verbes capitalisés
+          if not differ:
+
+            motglose=gloses[indexmot]
+            if "§§" in motglose:
+              motglose1,motglose2=motglose.split(u"§§")  # sont supposés être des vraies gloses::
+              motglose1_elements=motglose1.split(u":")
+              motglose2_elements=motglose2.split(u":")
+              if motglose1_elements[1]=="v" :
+                #print "§§ mot/glose :",mot,motglose1
+                firstl=mot[0].upper()
+                if firstl!=mot[0] :
+                  mot=ur"["+mot[0]+firstl+ur"]"+mot[1:]
+                #print "§§ mot verbe:",mot
+              elif motglose2_elements[1]=="v" :
+                #print "§§ mot/glose :",mot,motglose2
+                firstl=mot[0].upper()
+                if firstl!=mot[0] :
+                  mot=ur"["+mot[0]+firstl+ur"]"+mot[1:]
+                #print "§§ mot verbe:",mot
+            else:
+              if u":" in motglose:
+                motglose_elements=motglose.split(u":")
+              else: 
+                print "\n",linerepl
+                sys.exit(mot+" -> erreur: pas de glose pour cet élément?")
+              if motglose_elements[1]=="v" :
+                #print "mot/glose :",mot,motglose
+                firstl=mot[0].upper()
+                if firstl!=mot[0] :
+                  mot=ur"["+mot[0]+firstl+ur"]"+mot[1:]
+                #print "mot verbe:",mot
+        #fin modifs DUKure -------------
+
+          if "*" in mot or "(" in mot or "[" in mot:
+            r=re.compile(ur""+mot)  # mot brut ou mots de la forme bà*na ou (?:b|B)ana
+            newlist=filter(r.match,allwordsshortlist)
+            if len(newlist)==0:
+              applicable=False
+              break
+          else:
+            if mot not in allwordsshortlist:
+              applicable=False
+              break
+
       else:
         if mot=="EXCLAM":
           if "!" not in allpunctsshortlist:
@@ -979,7 +1159,7 @@ for linerepl in toutrepllines :
             applicable=False
             break
         elif mot=="NUM":
-          if ndigits==0 and not ("kelen" or "fila" or "saba" or "naani" or "duuru" or "wɔɔrɔ" or "wolonwula" or "wolonfila" or "segin" or "seegin" or "kɔnɔntɔn" or "kélen" or "fìla" or "sàba" or "náani" or "dúuru" or "wɔ́ɔrɔ" or "wólonwula" or "wólonfila" or "ségin" or "séegin" or "kɔ́nɔntɔn" or "wòorò" or "kònòntòn" or "tan" or "bi" or "mugan" or "dɛbɛ" or "kɛmɛ" or "silameyakɛmɛ" or "tán" or "bî" or "mùgan" or "dɛ̀bɛ" or "kɛ̀mɛ" or "sìlameyakɛmɛ"or "dèbè" or "kèmè" or "silameyakèmè") in allwordsshortlist: 
+          if ndigits==0 and not ("kelen" or "fila" or "fla" or "saba" or "naani" or "duuru" or "wɔɔrɔ" or "wolonwula" or "wolonfila" or "segin" or "seegin" or "kɔnɔntɔn" or "kélen" or "fìla" or "flà" or "sàba" or "náani" or "dúuru" or "wɔ́ɔrɔ" or "wólonwula" or "wólonfila" or "ségin" or "séegin" or "kɔ́nɔntɔn" or "wòorò" or "kònòntòn" or "tan" or "bi" or "mugan" or "dɛbɛ" or "kɛmɛ" or "silameyakɛmɛ" or "tán" or "bî" or "mùgan" or "dɛ̀bɛ" or "kɛ̀mɛ" or "sìlameyakɛmɛ"or "dèbè" or "kèmè" or "silameyakèmè") in allwordsshortlist: 
             applicable=False
             break
         elif mot=="PFVNEG":
@@ -991,7 +1171,7 @@ for linerepl in toutrepllines :
             applicable=False
             break
         elif mot=="COPNEG":
-          if ("tɛ" or "t'" or "tè"or "tɛ́")  not in allwordsshortlist: 
+          if ("tɛ" or "t'" or "tè" or "tɛ́" or "Tɛ" or "Tɛ́")  not in allwordsshortlist: 
             applicable=False
             break
         elif mot=="NICONJ":
@@ -1003,11 +1183,16 @@ for linerepl in toutrepllines :
             applicable=False
             break
 
-  if not applicable: continue  # skips the rest of the bigger loop of REPL rules
+  if not applicable: 
+    log.write(u"NON APPLICABLE : "+liste_mots+u" -> mot absent : "+mot+u"\n")
+    continue  # skips the rest of the bigger loop of REPL rules
   # si on arrive là c'est que c'est applicable
   napplicable=napplicable+1
 
+  indexmot=-1
+  
   for mot in mots :
+    indexmot=indexmot+1
     if mot==u"COMMA"      : wsearch=wsearch+ur'<span class="c">,</span>\n'
     elif mot==u"DOT"      : wsearch=wsearch+ur'<span class="c">\.</span>\n'
     elif mot==u"QUESTION" : wsearch=wsearch+ur'<span class="c">\?</span>\n'
@@ -1030,11 +1215,12 @@ for linerepl in toutrepllines :
     elif mot==u"PARO"    : wsearch=wsearch+ur'<span class="c">\(</span>\n'
     elif mot==u"PARF"    : wsearch=wsearch+ur'<span class="c">\)</span>\n'
     elif mot==u"GUILLEMET"    : wsearch=wsearch+ur'<span class="c">\"</span>\n'
+    elif mot==u"APOSTROPHE"    : wsearch=wsearch+ur'''<span class="c">(?:\'|\‘)</span>\n'''
     elif mot==u"PERCENT"  : wsearch=wsearch+ur'<span class="c">\%</span>\n'
     elif mot==u"DEBUT"    : wsearch=wsearch+ur'<span class="annot">'
     elif mot==u"FIN"      : wsearch=wsearch+ur'</span>\n</span>\n'
     elif mot==u"BREAK"    : wsearch=wsearch+ur'<span class="t">\&lt\;br\/\&gt\;</span>\n'  # t = tag 
-    elif mot==u"LETTRE"    : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([a-zA-ZɛɔɲŋƐƆƝŊ])<[^\n]+\n</span>'  # pour mettrre cette lettre en tag
+    elif mot==u"LETTRE"    : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([a-zA-ZɛɔɲŋƐƆƝŊ])<[^\n]+\n</span>'  # pour mettrre cette lettre en tag
     
     # cette formule marche pour les composés, excluants ceux qui sont ambigus, à essayer !
     # <span class="w" stage="0">[^<]*<span class="lemma">[^<]*<sub class="ps">n</sub><(((?!lemma var).)*)>\n</span>
@@ -1044,60 +1230,60 @@ for linerepl in toutrepllines :
     # pour mémoire, formule précédente (uniquement non composés):
     # <span class="w" stage="0">([^<]*)<span class="lemma">([^<]*)<sub class="ps">n</sub><sub class="gloss">([^<]*)</sub></span>\n</span>
     # finalement une formule qui marche :...
-    elif mot==u"NAME"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"ACTION"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)><sub class="gloss">NMLZ</sub></span></span>\n</span>'
-    elif mot==u"PERS"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pers</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"PRONOM"      : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">prn</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"PRT"      : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">prt</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"INTJ"      : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">intj</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"VERBE"    : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">v</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"VPERF"    : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">v</sub><(((?!lemma var).)*)PFV\.INTR(((?!lemma var).)*)>\n</span>'
-    elif mot==u"VNONPERF"    : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">v</sub><(((?!lemma var|PFV\.INTR).)*)>\n</span>'
-    elif mot==u"VERBENMOD"    : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(((?!na|nana|nà|nàna|taa|taga|taara|tagara|táa|tága|táara|tágara).)*)<span class="lemma">([^<]+)<sub class="ps">v</sub><(((?!lemma var).)*)>\n</span>'   # verbe non modal: pas taa ni na
+    elif mot==u"NAME"     : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"ACTION"     : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)><sub class="gloss">NMLZ</sub></span></span>\n</span>'
+    elif mot==u"PERS"     : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pers</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"PRONOM"      : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">prn</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"PRT"      : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">prt</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"INTJ"      : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">intj</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"VERBE"    : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">v</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"VPERF"    : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">v</sub><(((?!lemma var).)*)PFV\.INTR(((?!lemma var).)*)>\n</span>'
+    elif mot==u"VNONPERF"    : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">v</sub><(((?!lemma var|PFV\.INTR).)*)>\n</span>'
+    elif mot==u"VERBENMOD"    : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">(((?!na|nana|nà|nàna|taa|taga|taara|tagara|táa|tága|táara|tágara).)*)<span class="lemma">([^<]+)<sub class="ps">v</sub><(((?!lemma var).)*)>\n</span>'   # verbe non modal: pas taa ni na
     # CAVEAT : this expression will not match if verb starts with na e.g. naminɛ !!!!!!!!!!!!!!!!!!!!!! Negating exact match impossible in REGEXP???
-    elif mot==u"ADJORD"    : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)<sub class="gloss">ORD</sub>(((?!lemma var).)*)>\n</span>'
-    elif mot==u"VQ"       : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">vq</sub><(((?!lemma var).)*)>\n</span>'
-    #elif mot==u"VQADJ"    : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">vq/adj</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"DTM"      : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">dtm</sub><(((?!lemma var).)*)>\n</span>'
-    #elif mot==u"PRNDTM"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(prn/dtm|dtm/prn)</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"POSTP"    : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pp</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"PRMRK"       : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pm</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"PRMRKQUAL"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pm</sub><sub class="gloss">(QUAL.AFF|QUAL.NEG)</sub></span>\n</span>'
-    elif mot==u"COPULE"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">cop</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"ADJECTIF" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)>\n</span>'
-    #elif mot==u"ADJN"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(adj/n|n/adj)</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"PARTICIPE": wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">ptcp</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"NUM"      : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">num</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"NUMORD"    : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)ORDINAL(((?!lemma var).)*)>\n</span>'
-    elif mot==u"NUMANNEE"      : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([1-2][0-9][0-9][0-9])<span class="lemma">([1-2][0-9][0-9][0-9])<sub class="ps">num</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"ADV"      : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adv</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"ADVP"      : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adv\.p</sub><(((?!lemma var).)*)>\n</span>'
-    #elif mot==u"ADVN"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adv/n</sub><(((?!lemma var).)*)>\n</span>'
-    #elif mot==u"VN"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(?:v/n|n/v)</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"CONJ"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(conj|prep/conj|conj/prep)</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"PREP"     : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(prep|prep/conj|conj/prep)</sub><(((?!lemma var).)*)>\n</span>'
-    #elif mot==u"CONJPREP" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(prep/conj|conj/prep)</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"CONJPOSS" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">conj</sub><sub class="gloss">POSS</sub></span>\n</span>'
-    elif mot==u"PPPOSS" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span>\n</span>'
-    elif mot==u"COPEQU" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">cop</sub><sub class="gloss">EQU</sub></span>\n</span>'
-    elif mot==u"COPQUOT" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">cop</sub><sub class="gloss">QUOT</sub></span>\n</span>'
-    elif mot==u"NPROPRE"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"ADJORD"    : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)<sub class="gloss">ORD</sub>(((?!lemma var).)*)>\n</span>'
+    elif mot==u"VQ"       : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">vq</sub><(((?!lemma var).)*)>\n</span>'
+    #elif mot==u"VQADJ"    : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">vq/adj</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"DTM"      : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">dtm</sub><(((?!lemma var).)*)>\n</span>'
+    #elif mot==u"PRNDTM"   : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(prn/dtm|dtm/prn)</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"POSTP"    : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pp</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"PRMRK"       : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pm</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"PRMRKQUAL"   : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pm</sub><sub class="gloss">(QUAL.AFF|QUAL.NEG)</sub></span>\n</span>'
+    elif mot==u"COPULE"   : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">cop</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"ADJECTIF" : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)>\n</span>'
+    #elif mot==u"ADJN"     : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(adj/n|n/adj)</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"PARTICIPE": wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">ptcp</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"NUM"      : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">num</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"NUMORD"    : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)ORDINAL(((?!lemma var).)*)>\n</span>'
+    elif mot==u"NUMANNEE"      : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([1-2][0-9][0-9][0-9])<span class="lemma">([1-2][0-9][0-9][0-9])<sub class="ps">num</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"ADV"      : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adv</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"ADVP"      : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adv\.p</sub><(((?!lemma var).)*)>\n</span>'
+    #elif mot==u"ADVN"     : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adv/n</sub><(((?!lemma var).)*)>\n</span>'
+    #elif mot==u"VN"     : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(?:v/n|n/v)</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"CONJ"     : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(conj|prep/conj|conj/prep)</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"PREP"     : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(prep|prep/conj|conj/prep)</sub><(((?!lemma var).)*)>\n</span>'
+    #elif mot==u"CONJPREP" : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">(prep/conj|conj/prep)</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"CONJPOSS" : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">conj</sub><sub class="gloss">POSS</sub></span>\n</span>'
+    elif mot==u"PPPOSS" : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span>\n</span>'
+    elif mot==u"COPEQU" : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">cop</sub><sub class="gloss">EQU</sub></span>\n</span>'
+    elif mot==u"COPQUOT" : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">cop</sub><sub class="gloss">QUOT</sub></span>\n</span>'
+    elif mot==u"NPROPRE"  : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><(((?!lemma var).)*)>\n</span>'
     elif mot==u"NPROPRENOM"  : 
-      lastnproprenom=ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM</sub></span>\n</span>'
+      lastnproprenom=ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM</sub></span>\n</span>'
       wsearch=wsearch+lastnproprenom
-    elif mot==u"NPROPRENOMM"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.M</sub></span>\n</span>'
-    elif mot==u"NPROPRENOMF"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.F</sub></span>\n</span>'
-    elif mot==u"NPROPRENOMMF"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.MF</sub></span>\n</span>'
-    elif mot==u"NPROPRENOMCL"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.CL</sub></span>\n</span>'
-    elif mot==u"NPROPRETOP"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub>(((?!lemma var).)*)</span>\n</span>'
-    elif mot==u"DOONIN"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">dɔ́ɔnin<sub class="ps">adj/n</sub><(((?!lemma var).)*)>\n</span>'
-    elif mot==u"NORV"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">v</sub><(((?!lemma var).)*)></span></span>\n</span>'
-    elif mot==u"NORADJ"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)></span></span>\n</span>'
-    elif mot==u"VQORADJ"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">vq</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)></span></span>\n</span>'
-    elif mot==u"PMORCOP"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pm</sub><sub class="gloss">([^<]+)</sub><span class="lemma var">([^<]+)<sub class="ps">cop</sub><sub class="gloss">([^<]+)</sub></span></span>\n</span>'
-    elif mot==u"AORN"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)></span></span>\n</span>'
-    elif mot==u"DORP"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">dtm</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">prn</sub><(((?!lemma var).)*)></span></span>\n</span>'
-    elif mot==u"DTMORADV"   : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">dtm</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">adv</sub><(((?!lemma var).)*)></span></span>\n</span>'
+    elif mot==u"NPROPRENOMM"  : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.M</sub></span>\n</span>'
+    elif mot==u"NPROPRENOMF"  : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.F</sub></span>\n</span>'
+    elif mot==u"NPROPRENOMMF"  : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.MF</sub></span>\n</span>'
+    elif mot==u"NPROPRENOMCL"  : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.CL</sub></span>\n</span>'
+    elif mot==u"NPROPRETOP"  : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub>(((?!lemma var).)*)</span>\n</span>'
+    elif mot==u"DOONIN"   : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">dɔ́ɔnin<sub class="ps">adj/n</sub><(((?!lemma var).)*)>\n</span>'
+    elif mot==u"NORV"   : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">v</sub><(((?!lemma var).)*)></span></span>\n</span>'
+    elif mot==u"NORADJ"   : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)></span></span>\n</span>'
+    elif mot==u"VQORADJ"   : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">vq</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)></span></span>\n</span>'
+    elif mot==u"PMORCOP"   : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">pm</sub><sub class="gloss">([^<]+)</sub><span class="lemma var">([^<]+)<sub class="ps">cop</sub><sub class="gloss">([^<]+)</sub></span></span>\n</span>'
+    elif mot==u"AORN"   : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)></span></span>\n</span>'
+    elif mot==u"DORP"   : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">dtm</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">prn</sub><(((?!lemma var).)*)></span></span>\n</span>'
+    elif mot==u"DTMORADV"   : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">([^<]+)<sub class="ps">dtm</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">adv</sub><(((?!lemma var).)*)></span></span>\n</span>'
     # to be implemented : GNMEMBER
     # <span class="lemma">([^<]+)<sub class="ps">(n|n.prop|pers|prn|dtm|adj|ptcp|prt)</sub><sub class="gloss">([^<]+)</sub>|<span class="lemma">([^<]+)<sub class="ps">(conj|prep\/conj|pp)</sub><sub class="gloss">(POSS|et|ainsi\.que)</sub>
     # add around this class="w" and not lemma var
@@ -1105,65 +1291,68 @@ for linerepl in toutrepllines :
 
     # PM and COPs - ajouter bi à IPFVAFF ??? ATTENTION bi : peut être bî dizaine! - enlevé le 14/12/19
     elif mot==u"IPFVAFF"     : 
-      if tonal=="new" : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(bɛ|be|b')<span class="lemma">[^\n]+</span>\n</span>'''
-      elif tonal=="newny" : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(bɛ|be|b')<span class="lemma">[^\n]+</span>\n</span>'''
-      elif tonal=="old" : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(bè|be|b')<span class="lemma">[^\n]+</span>\n</span>'''
-      elif tonal=="tonal" : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(bɛ|bɛ́|be|b')<span class="lemma">[^\n]+</span>\n</span>'''  
+      if tonal=="new" : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(bɛ|be|b')<span class="lemma">[^\n]+</span>\n</span>'''
+      elif tonal=="newny" : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(bɛ|be|b')<span class="lemma">[^\n]+</span>\n</span>'''
+      elif tonal=="old" : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(bè|be|b')<span class="lemma">[^\n]+</span>\n</span>'''
+      elif tonal=="tonal" : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(bɛ|bɛ́|be|b')<span class="lemma">[^\n]+</span>\n</span>'''  
     elif mot==u"IPFVNEG"     : 
-      if tonal=="new" : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(tɛ|te|ti|t')<span class="lemma">[^\n]+</span>\n</span>'''
-      elif tonal=="newny" : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(tɛ|te|ti|t')<span class="lemma">[^\n]+</span>\n</span>'''
-      elif tonal=="old" : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(tè|te|ti|t')<span class="lemma">[^\n]+</span>\n</span>'''
-      elif tonal=="tonal" : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(tɛ|tɛ́|te|ti|t')<span class="lemma">[^\n]+</span>\n</span>'''
-    elif mot==u"COPNEG"     : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(tɛ|tɛ́|t')<span class="lemma">[^\n]+</span>\n</span>'''
-    elif mot==u"PFVTR"     : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(ye|y')<span class="lemma">[^\n]+</span>\n</span>'''
-    elif mot==u"PFVNEG"     : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(ma|m')<span class="lemma">[^\n]+</span>\n</span>'''
-    elif mot==u"PMINF"     : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(ka|k'|Ka|K'|kà|Kà)<span class="lemma">[^\n]+</span>\n</span>'''
-    elif mot==u"PMSBJV"     : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(ka|k'|ká)<span class="lemma">[^\n]+</span>\n</span>'''
-    elif mot==u"NICONJ"     : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(ni|n'|ní)<span class="lemma">[^\n]+</span>\n</span>'''
-    elif mot==u"LANA"     : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(l|n)(a|á)<[^\n]+\n</span>'''
+      if tonal=="new" : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(tɛ|te|ti|t')<span class="lemma">[^\n]+</span>\n</span>'''
+      elif tonal=="newny" : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(tɛ|te|ti|t')<span class="lemma">[^\n]+</span>\n</span>'''
+      elif tonal=="old" : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(tè|te|ti|t')<span class="lemma">[^\n]+</span>\n</span>'''
+      elif tonal=="tonal" : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(tɛ|tɛ́|te|ti|t')<span class="lemma">[^\n]+</span>\n</span>'''
+    elif mot==u"COPNEG"     : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(tɛ|tɛ́|t'|Tɛ|T')<span class="lemma">[^\n]+</span>\n</span>'''
+    elif mot==u"PFVTR"     : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(ye|y')<span class="lemma">[^\n]+</span>\n</span>'''
+    elif mot==u"PFVNEG"     : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(ma|m')<span class="lemma">[^\n]+</span>\n</span>'''
+    elif mot==u"PMINF"     : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(ka|k'|Ka|K'|kà|Kà)<span class="lemma">[^\n]+</span>\n</span>'''
+    elif mot==u"PMSBJV"     : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(ka|k'|ká)<span class="lemma">[^\n]+</span>\n</span>'''
+    elif mot==u"NICONJ"     : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(ni|n'|ní)<span class="lemma">[^\n]+</span>\n</span>'''
+    elif mot==u"LANA"     : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(l|n)(a|á)<[^\n]+\n</span>'''
 
-    elif mot==u"CONSONNE"     : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">([^AEIOUƐƆaeiouɛɔ][^\n\<]*)<span class="lemma">([^\n]+)</span>\n</span>'''
+    elif mot==u"CONSONNE"     : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">([^AEIOUƐƆaeiouɛɔ][^\n\<]*)<span class="lemma">([^\n]+)</span>\n</span>'''
     
     elif mot==u"MONTH" : 
-      if tonal=="new" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mɛkalo|zuwɛnkalo|zuluyekalo|zuliyekalo|utikalo|sɛtanburukalo|sɛtamburukalo|ɔkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span>\n</span>'
-      elif tonal=="newny" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mɛkalo|zuwɛnkalo|zuluyekalo|zuliyekalo|utikalo|sɛtanburukalo|sɛtamburukalo|ɔkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span>\n</span>'
-      elif tonal=="old" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mèkalo|zuwènkalo|zuluyekalo|zuliyekalo|utikalo|sètanburukalo|sètamburukalo|òkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span>\n</span>'
-      elif tonal=="tonal" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(zánwuyekalo|zánwiyekalo|féburuyekalo|féburiyekalo|féburuye-kalo|féwuruyekalo|márisikalo|áwirilikalo|mɛ̀kalo|zùwɛnkalo|zùluyekalo|zùliyekalo|ùtikalo|sɛ́tanburukalo|sɛ́tamburukalo|ɔ́kutɔburukalo|nòwanburukalo|nòwamburukalo|désanburukalo|désamburukalo)<span class="lemma">([^\n]+)</span>\n</span>'  
-    elif mot==u"YEUNDEF"  : wsearch=wsearch+ur'''<span class="w" stage="[^>]+">(yé|ye|y')<[^\n]+lemma var[^\n]+</span>\n</span>'''
-    elif mot==u"YEPP" : wsearch=wsearch+ur'<span class="w" stage="[^>]+">([^<]+)<span class="lemma">yé<sub class="ps">pp</sub><sub class="gloss">PP</sub></span>\n</span>'
-    elif mot==u"NIUNDEF"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(ní|ni)<[^\n]+lemma var[^\n]+</span>\n</span>'
-    elif mot==u"NAUNDEF"  : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(ná|na)<[^\n]+lemma var[^\n]+</span>\n</span>'
+      if tonal=="new" : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mɛkalo|zuwɛnkalo|zuluyekalo|zuliyekalo|utikalo|sɛtanburukalo|sɛtamburukalo|ɔkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span>\n</span>'
+      elif tonal=="newny" : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mɛkalo|zuwɛnkalo|zuluyekalo|zuliyekalo|utikalo|sɛtanburukalo|sɛtamburukalo|ɔkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span>\n</span>'
+      elif tonal=="old" : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mèkalo|zuwènkalo|zuluyekalo|zuliyekalo|utikalo|sètanburukalo|sètamburukalo|òkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span>\n</span>'
+      elif tonal=="tonal" : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">(zánwuyekalo|zánwiyekalo|féburuyekalo|féburiyekalo|féburuye-kalo|féwuruyekalo|márisikalo|áwirilikalo|mɛ̀kalo|zùwɛnkalo|zùluyekalo|zùliyekalo|ùtikalo|sɛ́tanburukalo|sɛ́tamburukalo|ɔ́kutɔburukalo|nòwanburukalo|nòwamburukalo|désanburukalo|désamburukalo)<span class="lemma">([^\n]+)</span>\n</span>'  
+    elif mot==u"YEUNDEF"  : wsearch=wsearch+ur'''<span class="w" +stage="[^>]+">(yé|ye|y')<[^\n]+lemma var[^\n]+</span>\n</span>'''
+    elif mot==u"YEPP" : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">yé<sub class="ps">pp</sub><sub class="gloss">PP</sub></span>\n</span>'
+    elif mot==u"NIUNDEF"  : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">(ní|ni)<[^\n]+lemma var[^\n]+</span>\n</span>'
+    elif mot==u"NAUNDEF"  : wsearch=wsearch+ur'<span class="w" +stage="[^>]+">(ná|na)<[^\n]+lemma var[^\n]+</span>\n</span>'
 
-    # elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" stage="0">[^<]+<span class="lemma">[^<]+<sub class="ps">(?!v|vq|cop|pm)</sub>(((?!lemma var).)*)</span>\n</span>)+)'
-    # elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|pp|ptcp|n\.prop|num|dtm|prn|pers|conj)</sub>(((?!lemma var).)*)</span>\n</span>)+)'
+    # elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" +stage="0">[^<]+<span class="lemma">[^<]+<sub class="ps">(?!v|vq|cop|pm)</sub>(((?!lemma var).)*)</span>\n</span>)+)'
+    # elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|pp|ptcp|n\.prop|num|dtm|prn|pers|conj)</sub>(((?!lemma var).)*)</span>\n</span>)+)'
     elif mot==u"NONVERBALGROUP": 
       """
-      wsearch=wsearch+ur'((<span class="w" stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|ptcp|n\.prop|num|dtm|prn|pers)</sub>(((?!lemma var).)*)</span>\n</span>'
-      wsearch=wsearch+ur'''|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ka|k')<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span>\n</span>'''
-      wsearch=wsearch+ur'''|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ni|n')<sub class="ps">conj</sub><sub class="gloss">et</sub></span>\n</span>'''
-      wsearch=wsearch+ur'''|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:àní|àn')<sub class="ps">conj</sub><sub class="gloss">ainsi.que</sub></span>\n</span>'''
-      wsearch=wsearch+ur'|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:wàlímà)<sub class="ps">conj</sub><sub class="gloss">ou.bien</sub></span>\n</span>'
-      wsearch=wsearch+ur'|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ô)<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span>\n</span>'
-      wsearch=wsearch+ur'|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:dè)<sub class="ps">prt</sub><sub class="gloss">FOC</sub></span>\n</span>'
-      wsearch=wsearch+ur'|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:kɔ̀ni)<sub class="ps">prt</sub><sub class="gloss">TOP.CNTR2</sub></span>\n</span>'
-      wsearch=wsearch+ur'|<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:fána)<sub class="ps">prt</sub><sub class="gloss">aussi</sub></span>\n</span>)+)'
+      wsearch=wsearch+ur'((<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|ptcp|n\.prop|num|dtm|prn|pers)</sub>(((?!lemma var).)*)</span>\n</span>'
+      wsearch=wsearch+ur'''|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ka|k')<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span>\n</span>'''
+      wsearch=wsearch+ur'''|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ni|n')<sub class="ps">conj</sub><sub class="gloss">et</sub></span>\n</span>'''
+      wsearch=wsearch+ur'''|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:àní|àn')<sub class="ps">conj</sub><sub class="gloss">ainsi.que</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:wàlímà)<sub class="ps">conj</sub><sub class="gloss">ou.bien</sub></span>\n</span>'
+      wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ô)<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span>\n</span>'
+      wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:dè)<sub class="ps">prt</sub><sub class="gloss">FOC</sub></span>\n</span>'
+      wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:kɔ̀ni)<sub class="ps">prt</sub><sub class="gloss">TOP.CNTR2</sub></span>\n</span>'
+      wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:fána)<sub class="ps">prt</sub><sub class="gloss">aussi</sub></span>\n</span>)+)'
       """
       # inconvénient : le NVG peut être réduit à une seule conj isolée ou une seule prt isolée ???!!!
       # chercher à corriger avec une formule du style : N|PRT+ CONJ*
       # essayer GN | GN CONJ | GN PRT | GN PRT CONJ 
       # modif 15/6/2020
       
-      NOMINAL=ur'<span class="w" stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|ptcp|n\.prop|num|dtm|prn|pers)</sub>(((?!lemma var).)*)</span>\n</span>'
-      wsearch=wsearch+ur'(('+NOMINAL
-      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ka|k')<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span>\n</span>'''
-      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ni|n')<sub class="ps">conj</sub><sub class="gloss">et</sub></span>\n</span>'''
-      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:àní|àn')<sub class="ps">conj</sub><sub class="gloss">ainsi.que</sub></span>\n</span>'''
-      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:wàlímà)<sub class="ps">conj</sub><sub class="gloss">ou.bien</sub></span>\n</span>'''
-      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:ô)<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span>\n</span>'''
-      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:dè)<sub class="ps">prt</sub><sub class="gloss">FOC</sub></span>\n</span>'''
-      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:kɔ̀ni)<sub class="ps">prt</sub><sub class="gloss">TOP.CNTR2</sub></span>\n</span>'''
-      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" stage="[^\"]+">[^<]+<span class="lemma">(?:fána)<sub class="ps">prt</sub><sub class="gloss">aussi</sub></span>\n</span>'''
+      NOMINAL=ur'<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|ptcp|n\.prop|num|dtm|prn|pers)</sub>(((?!lemma var).)*)</span>\n</span>'
+      #wsearch=wsearch+ur'(('+NOMINAL  #  <- il faut FINIR par ça
+      wsearch=wsearch+ur'(('+NOMINAL+ur'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ka|k')<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ni|n')<sub class="ps">conj</sub><sub class="gloss">et</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:àní|àn')<sub class="ps">conj</sub><sub class="gloss">ainsi.que</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:wàlímà)<sub class="ps">conj</sub><sub class="gloss">ou.bien</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ô)<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:dè)<sub class="ps">prt</sub><sub class="gloss">FOC</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:kɔ̀ni)<sub class="ps">prt</sub><sub class="gloss">TOP.CNTR2</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:fána)<sub class="ps">prt</sub><sub class="gloss">aussi</sub></span>\n</span>'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="c">(?:«|»|\"|\'|\‘|\(|\))</span>\n'''
+      wsearch=wsearch+ur'|'+NOMINAL
       wsearch=wsearch+ur')+)'
+      # added 17/11/2020: <span class="c">«</span>
       
       #print "new NOMINAL wsearch:\n",wsearch
       
@@ -1175,18 +1364,68 @@ for linerepl in toutrepllines :
       if tonal=="new":  # useful for Dumestre script tagged as "new" but not using ɲ (Baabu ni baabu etc.)
         motsearch=re.sub(u"ɲ",ur"(?:ɲ|ny)",mot)
         motsearch=re.sub(u"Ɲ",ur"(?:Ɲ|Ny)",motsearch)
-      wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+motsearch+ur'<.*</span>\n</span>'
+      wsearch=wsearch+ur'<span class="w" +stage="[a-z0-9\.\-]+">'+motsearch+ur'<.*</span>\n</span>'
       """
       if wsearch==u"" and ucase1 :
         winitial=mot[0:1]
         wrest=mot[1:len(mot)]
         # mot2=ur"(?:"+winitial.upper()+ur"|"+winitial+ur")"+wrest   # non-capturing group
-        mot2=ur"(["+winitial.upper()+winitial+ur"]"+wrest+ur")"    # character class supposedly faster, at least less verbose!
+        #mot2=ur"(["+winitial.upper()+winitial+ur"]"+wrest+ur")"    # character class supposedly faster, at least less verbose!
         #print mot, mot2
-        wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+mot2+ur'<.*</span>\n</span>'
+        #wsearch=wsearch+ur'<span class="w" +stage="[a-z0-9\.\-]+">'+mot2+ur'<.*</span>\n</span>'
+        mot=ur"(["+winitial.upper()+winitial+ur"]"+wrest+ur")"    # character class supposedly faster, at least less verbose!
+        #print mot, mot2
+        mot2=mot # pour compatibilité avec le code pour topl+ucase1
+        wsearch=wsearch+ur'<span class="w" +stage="[a-z0-9\.\-]+">'+mot+ur'<.*</span>\n</span>'
 
       else:
-        wsearch=wsearch+ur'<span class="w" stage="[a-z0-9\.\-]+">'+mot+ur'<.*</span>\n</span>'
+        # modifs DUKure ---------------
+        """
+        if mot[0]=="ɲ" : 
+          mot=ur"(?:ɲ|л|Л)"+mot[1:]  # majuscule en cas (no testé) de verbe
+          print "mot: ",mot
+        elif mot[0]=="Ɲ" :
+          mot=ur"(?:Ɲ|Л)"+mot[1:]
+          print "mot: ",mot
+        else:
+          """
+        if not differ:
+
+          motglose=gloses[indexmot]
+          if "§§" in motglose:
+            motglose1,motglose2=motglose.split(u"§§")  # sont supposés être des vraies gloses::
+            motglose1_elements=motglose1.split(u":")
+            motglose2_elements=motglose2.split(u":")
+            if motglose1_elements[1]=="v" :
+              #print "§§ mot/glose :",mot,motglose1
+              firstl=mot[0].upper()
+              if firstl!=mot[0]: 
+                mot=ur"["+mot[0]+firstl+ur"]"+mot[1:]
+              #print "§§ mot verbe:",mot
+            elif motglose2_elements[1]=="v" :
+              #print "§§ mot/glose :",mot,motglose2
+              firstl=mot[0].upper()
+              if firstl!=mot[0]:
+                mot=ur"["+mot[0]+firstl+ur"]"+mot[1:]
+              #print "§§ mot verbe:",mot
+          else:
+            if u":" in motglose:
+              motglose_elements=motglose.split(u":")
+            else: 
+              print "\n",linerepl
+              sys.exit("erreur: pas de glose pour cet élément?")
+            if motglose_elements[1]=="v" :
+              #print "mot/glose :",mot,motglose
+              firstl=mot[0].upper()
+              if firstl!=mot[0]:
+                mot=ur"["+mot[0]+firstl+ur"]"+mot[1:]
+              #print "mot verbe:",mot
+        #fin modifs DUKure -------------
+
+        if "*" in mot or "(" in mot or "[" in mot :
+          wsearch=wsearch+ur'<span class="w" +stage="[a-z0-9\.\-]+">('+mot+ur')<.*</span>\n</span>' # WORD CAPTURE
+        else: 
+          wsearch=wsearch+ur'<span class="w" +stage="[a-z0-9\.\-]+">'+mot+ur'<.*</span>\n</span>'
 
     if sequence=="": sequence=mot
     else : sequence=sequence+" "+mot
@@ -1194,6 +1433,7 @@ for linerepl in toutrepllines :
   
   lmots=len(mots)
   lgloses=len(gloses)
+  motscapt=sequence.split(" ")   # assumes mot cannot contain space!
 
   imots=-1
   capt_gr_index=0   # capturing group index (si on a plusieurs symboles)
@@ -1276,6 +1516,7 @@ for linerepl in toutrepllines :
     elif glose==u"PARO"     : wrepl=wrepl+ur'<span class="c">(</span>\n'
     elif glose==u"PARF"     : wrepl=wrepl+ur'<span class="c">)</span>\n'
     elif glose==u"GUILLEMET"    : wrepl=wrepl+ur'<span class="c">"</span>\n'
+    elif glose==u"APOSTROPHE"    : wrepl=wrepl+ur'<span class="c">\'</span>\n'
     elif glose==u"PERCENT"  : wrepl=wrepl+ur'<span class="c">%</span>\n'
     elif glose==u"PUNCT"    :
       #wrepl=wrepl+ur'<span class="c">\g<'+str(capt_gr_index+1)+ur'></span>\n'
@@ -1594,7 +1835,8 @@ for linerepl in toutrepllines :
     elif glose==u"NONVERBALGROUP":
       wrepl=wrepl+ur'\g<'+str(capt_gr_index+1)+ur'>'
       # capt_gr_index=capt_gr_index+4  # ou bien autant de fois que de matches et difficile à prévoir : 2 par word x nb de words
-      capt_gr_index=capt_gr_index+20  # nouvele formule 15-06-2020 !!
+      # capt_gr_index=capt_gr_index+20  # nouvelle formule 15-06-2020 !!
+      capt_gr_index=capt_gr_index+22  # nouvelle formule 17-11-2020
 
     elif glose==u"AMBIGUOUS":
       wrepl=wrepl+ur'<span class="w" \g<'+str(capt_gr_index+1)+ur'>lemma var\g<'+str(capt_gr_index+2)+ur'>\n</span>'
@@ -1619,8 +1861,10 @@ for linerepl in toutrepllines :
         sys.exit("\n"+liste_gloses+"\n\narrêt de repl.")
 
       if lmots==lgloses :
-        word=mots[imots]
+        word=motscapt[imots]
+        # word=re.sub(u"̀\*","",word)   # remove trick for optionnal low tone: remove diacritic and star  <- NOT IF CAPTURED
         
+
       else:  # try the old method
       
         # attention : résout la plupart des cas
@@ -1662,20 +1906,42 @@ for linerepl in toutrepllines :
         html1=daba.formats.glosstext_to_html(glose1,variant=False, encoding='utf-8')
         html1=re.sub(ur"\<\/span\>$",u"",html1)
         html2=daba.formats.glosstext_to_html(glose2,variant=True, encoding='utf-8')
-        wrepl=wrepl+ur'<span class="w" stage="0">'+word+html1+html2+ur'</span>\n</span>'
+        if "*" in word or "(" in word or "[" in word:   # main concern is quote/apostrophe here but may also be loaw tone/ capital on verbs (not handled for §§?)
+          wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur">"+html1+html2+ur'</span>\n</span>'
+          capt_gr_index=capt_gr_index+1
+          #print "- capturé"
+        else:
+          wrepl=wrepl+ur'<span class="w" stage="0">'+word+html1+html2+ur'</span>\n</span>'
       else :
+        # if "'" in glose: glose=re.sub(ur"\'","\'",glose)  # scared about fó:conj:jusqu'à
         htmlgloss=daba.formats.glosstext_to_html(glose,variant=False, encoding='utf-8')
         #log.write("[] glosstext_to_html: "+glose+" -> "+htmlgloss+"\n")
+        """ ancien code
         if wrepl=="" and ucase1:
           wordrepl=ur"\g<1>"
           wrepl=wrepl+ur'<span class="w" stage="0">'+wordrepl+htmlgloss+ur'\n</span>'
           capt_gr_index=capt_gr_index+1      # or just =1 ?
         else:
+          print "word=",word
+          if "*" in word or "(" in word or "[" in word:
+            wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur">"+htmlgloss+ur'\n</span>'
+            capt_gr_index=capt_gr_index+1
+          else:
+            wrepl=wrepl+ur'<span class="w" stage="0">'+word+htmlgloss+ur'\n</span>'
+        """
+        #print "word=",word
+        if "*" in word or "(" in word or "[" in word:   # includes ucase1 = true (word has [)
+          wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur">"+htmlgloss+ur'\n</span>'
+          capt_gr_index=capt_gr_index+1
+          #print "- capturé"
+        else:
           wrepl=wrepl+ur'<span class="w" stage="0">'+word+htmlgloss+ur'\n</span>'
+          #print "- basique"
+       
         # a note of warning : wrepl works as a string for re.subn, so ur"" is not strictly needed 
         #       BUT when writing compiled rules ur"" is needed as regards \n, to conserve them as is in the file
         #       number of lines in file should = number of rules printed by program
-  
+    
   nbreplok=nbreplok+1
   if nlignerepl!=0: 
     iprogress=nbreplok/float(nlignerepl)
@@ -1693,11 +1959,14 @@ for linerepl in toutrepllines :
   #   wgroups=re.findall(wsearch, tout,re.U|re.MULTILINE)
   #   if len(wgroups)>0: print wgroups
   # test 15062020
+  if replcompile:
+    #liste_mots_compile=re.sub(ur"\s","_",sequence)
+    liste_mots_compile=liste_mots   # 13/5/2021 ignore modifs Dukure, tant pis pour ces textes
+    fileREPC.write(liste_mots_compile+u"==="+str(ucase1)+u"==="+str(topl)+u"==="+wsearch+u"==="+wrepl+u"\n")
 
   tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U|
-
-  if replcompile:
-    fileREPC.write(liste_mots+u"==="+str(ucase1)+u"==="+str(topl)+u"==="+wsearch+u"==="+wrepl+u"\n")
+  # TESTED : |re.IGNORECASE ADDED 14/03/2021 - dropped : too slow!!! + rules with caps
+  # if nombre >0 : print "updated",wsearch
 
   if prefsearch!=ur"":   # modif 15/6/2020 - updating words in sent and glosses creates an OVERLAP 
     nombre_replay=nombre
@@ -1705,25 +1974,42 @@ for linerepl in toutrepllines :
       tout,nombre_replay=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)      # pour éviter les problèmes de NON OVERLAP capability of re
       nombre=nombre+nombre_replay
 
-  if topl : 
+  if topl and nombre==0 : # only action IF main updater did not work !!!
     if ucase1:
-      mot2=re.sub("\)","w)",mot2)
-      wsearch=ur'<span class="w" stage="[a-z0-9\.\-]+">'+mot2+ur'<.*</span>\n</span>'
+      mot2=re.sub("\)","w)",mot2)   # mot2 = ([kK]à*lanw)
+      wsearch=ur'<span class="w" +stage="[a-z0-9\.\-]+">'+mot2+ur'<.*</span>\n</span>'
     else : 
-      wsearch=re.sub(word+"\<",word+"w<",wsearch)   # wsearch contains only one word, just add w
+      #print "topl not ucase AVANT:",wsearch
+      #print "topl not ucase AVANT word:",word
+      # word may contain re sensitive characters like * wsearch=re.sub(ur""+word+ur"\)\<",word+"w)<",wsearch)   # wsearch contains only one word, just add w
+      # it is anyway the first )<  
+      wsearch=re.sub(ur"\)\<","w)<",wsearch)
+      #print "topl not ucase APRES:",wsearch
     gloseelems=glose.split(":",2)
     gloselx=gloseelems[0]
     gloseps=gloseelems[1]
     glose=gloselx+"w:"+gloseps+": ["+glose+" w:mrph:PL]"
     htmlgloss=daba.formats.glosstext_to_html(glose,variant=False, encoding='utf-8')
+    
+    """
+    if "*" in word or "(" in word or "[" in word:
+      wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur">"+htmlgloss+ur'\n</span>'
+      capt_gr_index=capt_gr_index+1
+    """
+    """
     if ucase1:
       wordrepl=ur"\g<1>"
       wrepl=ur'<span class="w" stage="0">'+wordrepl+htmlgloss+ur'\n</span>'
       capt_gr_index=capt_gr_index+1      # or just =1 ?
     else:
       wrepl=ur'<span class="w" stage="0">'+word+"w"+htmlgloss+ur'\n</span>'
+    """
+    
+    wrepl=ur'<span class="w" stage="0">\g<1>'+htmlgloss+ur'\n</span>'
+    capt_gr_index=capt_gr_index+1      # or just =1 ?
       
-    tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE) 
+    tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
+    # if nombre >0 : print "topl updated",wsearch
     
     if replcompile:
       fileREPC.write(liste_mots+u"==="+str(ucase1)+u"==="+str(topl)+u"==="+wsearch+u"==="+wrepl+u"\n")
@@ -1736,11 +2022,11 @@ for linerepl in toutrepllines :
       for forcetop in forcetopiterator :
         topname=forcetop.group(lastnproprenomforcetopindex)
         # print topname
-        lastnproprenom=ur'<span class="w" stage="[^>]+">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n\.prop</sub><sub class="gloss">NOM</sub></span>\n</span>'
+        lastnproprenom=ur'<span class="w" +stage="[^>]+">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n\.prop</sub><sub class="gloss">NOM</sub></span>\n</span>'
         lastnproprenomforcetop=ur'<span class="w" stage="[^>]+">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
         tout,nombre2=re.subn(lastnproprenom,lastnproprenomforcetop,tout,0,re.U|re.MULTILINE)
         nombre=nombre+nombre2
-        lastnproprenom=ur'<span class="annot"><span class="w" stage="[^>]+">'+topname+'<span class="lemma">'+topname.lower()+'<sub class="gloss">EMPR</sub></span>\n</span>'
+        lastnproprenom=ur'<span class="annot"><span class="w" +stage="[^>]+">'+topname+'<span class="lemma">'+topname.lower()+'<sub class="gloss">EMPR</sub></span>\n</span>'
         lastnproprenomforcetop=ur'<span class="annot"><span class="w" stage="[^>]+">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span>\n</span>'
         tout,nombre3=re.subn(lastnproprenom,lastnproprenomforcetop,tout,0,re.U|re.MULTILINE)
         nombre=nombre+nombre3
@@ -1763,9 +2049,9 @@ for linerepl in toutrepllines :
 #    elif mot==u"WORDB"    : wsearch=wsearch+ur'<span class="w" stage="[^>]+">(?P=WORDA)<[^\n]+\n</span>'
 # 22/5/20 ajouté restriction sur \' car il ne faut pas le faite pour des cas comme : k' o k'      ou b' o b'
 # ATTENTION IL NE FAUT PAS LE FAIRE POUR : ye o ye     ????????????????    HOW HOW HOW !!!
-wsearch=ur'<span class="w" stage="[^>]+">(?P<WORDA>[^\<\']+)<([^\n]+)\n</span>'   # peut être nom, verbe ou n'importe quoi, même inconnu et ambigu
-wsearch=wsearch+ur'<span class="w" stage="[^>]+">o<([^\n]+)\n</span>'   # peut être n'importe quel "o", même déjà défini comme DISTR
-wsearch=wsearch+ur'<span class="w" stage="[^>]+">((?i)(?P=WORDA))<([^\n]+)\n</span>'  # on le capture au cas où il y ait une différence majuscule/minuscule avec le premier
+wsearch=ur'<span class="w" +stage="[^>]+">(?P<WORDA>[^\<\']+)<([^\n]+)\n</span>'   # peut être nom, verbe ou n'importe quoi, même inconnu et ambigu
+wsearch=wsearch+ur'<span class="w" +stage="[^>]+">o<([^\n]+)\n</span>'   # peut être n'importe quel "o", même déjà défini comme DISTR
+wsearch=wsearch+ur'<span class="w" +stage="[^>]+">((?i)(?P=WORDA))<([^\n]+)\n</span>'  # on le capture au cas où il y ait une différence majuscule/minuscule avec le premier
 # ATTENTION: il faut capturer et restitruer correctement le 2ème WORD car il peut y avoir une différence de majuscule: Maa o maa
 #wrepl=ur'<span class="w" stage="0">\g<1><\g<2>\n</span>'
 #wrepl=wrepl+ur'<span class="w" stage="0">o<span class="lemma">ô<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span>\n</span>'
@@ -2075,7 +2361,29 @@ else:
   ambs=ambiguous.findall(tout)
   nbambs=len(ambs)
   print "   ",nbambs, " mots ambigüs restants  / ambiguous words left ", 100*nbambs/totalmots, "%"
-   
+  # mettres ces mots dans un dictionnaire avec décompte, trier par décompte, afficher les plus fréquents (10?)
+  ambsdict={}
+  ambword=re.compile(ur'<span class="w"\s+stage="[^\"]+">([^<]+)<')
+  for ambg in ambs:
+    amb1=ambword.search(ambg)
+    if amb1:
+      amb=amb1.group(1)
+      if ambsdict.has_key(amb) : ambsdict[amb]=ambsdict[amb]+1
+      else : ambsdict[amb]=1
+    else : print "ambg problem:",ambg
+  print "mots ambigüs uniques", len(ambsdict), ":"
+  #ambsord=collections.OrderedDict(sorted(ambsdict.items()))
+  ambsord=sorted(ambsdict.items(), key=lambda item: item[1], reverse=True)
+  nitems=0
+  nmax=int(len(ambsdict)/10)  # display 1/10th of the ambiguouis words
+  ambsdisplay=""
+  for k, v in ambsord : 
+    #print k, v
+    ambsdisplay=ambsdisplay+k+" : "+str(v)+", "
+    nitems=nitems+1
+    if nitems >nmax : break
+  print ambsdisplay[:-2]
+
   psambs=psambsearch.findall(tout)
   nbpsambs=len(psambs)
   psambslist=""
@@ -2083,6 +2391,7 @@ else:
     for psamb in psambs:
       if psamb+" " not in psambslist: psambslist=psambslist+psamb+" "
   print "   ",nbpsambs, " ps ambigües restantes / remaining ambiguous ps ( "+psambslist+")", 100*nbpsambs/totalmots, "%"
+
 
   unknownwords=unknownsearch.findall(tout)
   nb_unknown=len(unknownwords)

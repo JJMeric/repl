@@ -176,7 +176,7 @@ if currdir.startswith("faso_kumakan"):
 else:
 	nargv=len(sys.argv)
 	if nargv==2 : 
-  		sys.exit("entrer la date et le nombre de pages du numéro de Kibaru/Jekabaara: metakin.py 01.MM.AAAA N ")
+  		sys.exit("entrer la date et le nombre de pages du numéro de Kibaru/Jekabaara: metakib.py 01.MM.AAAA N ")
 	else : 
 		datenum= str(sys.argv[1])
 		pagestotal= str(sys.argv[2])
@@ -210,7 +210,7 @@ filenames=sorted(filenames)
 for filename in filenames:
 	if ".txt" in filename :
 		print  "\n"+filename
-		find_in_name=re.search(r"(kibaru|jekabaara|faso_kumakan|jama|irisila_kunnafoniseben|kalamene|dibifara|koteba_kura|kote|kalanso|nafarinma|ntuloma|nyetaa|saheli|sankore)([0-9\-]*[a-z]*)\_",filename)
+		find_in_name=re.search(r"(kibaru|kibarufb|ankaso|jekabaara|faso_kumakan|jama|irisila_kunnafoniseben|kalamene|dibifara|koteba_kura|kote|kalanso|nafarinma|ntuloma|nyetaa|saheli|sankore|fakan)([0-9\-]*[a-z]*)\_",filename)
 		periodique=find_in_name.group(1)
 		#print "periodique=",periodique
 
@@ -258,7 +258,19 @@ for filename in filenames:
 			metasstub=re.sub('<meta content="Kibaru" name="source:title" />','<meta content="Sankore" name="source:title" />',metasstub)
 			metasstub=re.sub('<meta content="AMAP" name="source:editor" />','<meta content="Mamadu Sar" name="source:editor" />',metasstub) 
 			metasstub=re.sub('<meta content="Kibarudiso" name="source:publisher" />','<meta content="Institut des Sciences Humaines" name="source:publisher" />',metasstub)
-
+		elif periodique=="kibarufb" :
+			metasstub=re.sub('<meta content="" name="source:url" />','<meta content="https://www.facebook.com/kibaru.kibaru.31" name="source:url" />',metasstub)
+		elif periodique=="ankaso" :
+			metasstub=re.sub('<meta content="Kibaru" name="source:title" />','<meta content="An Ka So" name="source:title" />',metasstub)
+			metasstub=re.sub('<meta content="AMAP" name="source:editor" />','<meta content="@farafinna  · Site web culture et société" name="source:editor" />',metasstub) 
+			metasstub=re.sub('<meta content="Kibarudiso" name="source:publisher" />','<meta content="internet-Facebook" name="source:publisher" />',metasstub)
+			metasstub=re.sub('<meta content="" name="source:url" />','<meta content="https://www.facebook.com/farafinna/" name="source:url" />',metasstub)
+		elif periodique=="fakan" :
+			metasstub=re.sub('<meta content="Kibaru" name="source:title" />','<meta content="Fakan" name="source:title" />',metasstub)
+			metasstub=re.sub('<meta content="AMAP" name="source:editor" />','<meta content="Isiyaka Baalo" name="source:editor" />',metasstub) 
+			metasstub=re.sub('<meta content="Kibarudiso" name="source:publisher" />','<meta content="internet" name="source:publisher" />',metasstub)
+			metasstub=re.sub('<meta content="" name="source:url" />','<meta content="https://www.fakan.ml" name="source:url" />',metasstub)
+		
 		numero=find_in_name.group(2)
 		
 		if periodique=="faso_kumakan":
@@ -287,6 +299,21 @@ for filename in filenames:
 			find_in_name=re.search(r"koteba_kura([0-9]+)",filename)
 			numero=find_in_name.group(1)
 
+		elif periodique=="kibarufb" or periodique=="ankaso" or periodique=="fakan":
+			find_in_name=re.search(r"(?:kibarufb|ankaso|fakan)([0-9]{4})([0-9]{2})([0-9]{2})",filename)
+			year=find_in_name.group(1)
+			month=find_in_name.group(2)
+			day=find_in_name.group(3)
+			# leave numero as is: YYYYMMDD
+			"""print "datenum:",datenum
+			print "filename:",filename
+			print "day:",day
+			print "month:",month
+			print "year:",year
+			"""
+
+			metasstub=re.sub(r"\"("+datenum+")\" name=\"text\:date\"","\""+day+u"."+month+u"."+year+"\" name=\"text:date\"",metasstub)
+
 		numerosource=numero
 		if "-" in numero :
 			numeros=numero.split("-")
@@ -297,6 +324,8 @@ for filename in filenames:
 			page=re.search(r"faso_kumakan"+year+"_"+month+"_"+day+"_([0-9]+)",filename).group(1)
 		elif periodique=="irisila_kunnafoniseben":
 			page=re.search(r"irisila_kunnafoniseben"+year+"_"+month+"_([0-9]+)",filename).group(1)
+		elif periodique=="kibarufb" or periodique=="ankaso" or periodique=="fakan":
+			page="1"  # no notion of page on internet facebook unique page
 		
 		if numero==""  :  # essayer  ex: nyetaa_kerenkerennen_02...
 			numeropage=re.search(r""+periodique+r"_([a-z]*)_([0-9]+)",filename)
@@ -592,6 +621,7 @@ for filename in filenames:
 			addauthor(ur"(Solomani Dunbiya|Solomani DUNBIYA)",u"ee44aa6e-1a01-45c2-9add-a1dad5026d62")
 			addauthor(ur"(Bɛnbabilen Dunbiya|Bɛnbabilen DUNBIYA|Dɛnbabilen Dunbiya)",u"ab3cda13-7007-4c2e-bd4b-570594555bbe")
 			addauthor(ur"(Ayisata Jara Dunbiya|Ayisata JARA DUNBIYA|Ayisata Jara DUNBIYA)",u"ea8cc8b7-3fd3-4785-a8a0-9bb2361cb68b")
+			addauthor(ur"(Fantɔ Dunbiya|Fantò Dunbiya|Fantɔ DUNBIYA|Fantò DUNBIYA)",u"b14c2549-2cdc-44d0-9110-72e48bf5bd03")
 			if periodique == "nyetaa":
 				addauthor(ur"(Berehima Dunbiya|Berehima DUNBIYA|berehima dunbiya|Berehima dunbiya|berehima Dunbiya)",u"b6e6aefc-a069-48d9-a166-039274684f50")
 				addauthor(ur"(B\. Dunbiya|B\. DUNBIYA|b\. dunbiya|B\. dunbiya|b\. Dunbiya)",u"b6e6aefc-a069-48d9-a166-039274684f50")
@@ -765,6 +795,7 @@ for filename in filenames:
 			addauthor(ur"(Gabukɔrɔ Keyita|Gabukòrò Keyita)",u"84a8d118-b713-41a4-9ed5-16a51f4aba6f")
 			addauthor(ur"(Ani Mari Keyita|Ani Mari KEYITA|Ani-Mari Keyita|Ani-Mari KEYITA|Anni Mari Keyita|Anni Mari KEYITA)",u"002efa82-7a41-492e-8d7c-9a645d775275")
 			addauthor(ur"(Fatumata Keyita|Fatumata KEYITA)",u"3b81d000-6833-49c5-8ab4-5c8062f8b6fc")
+			addauthor(ur"(Siyaka Keyita|Siyaka KEYITA|Lawale S\. Keyita|Lawale S\. KEYITA)",u"c1b4b374-8939-4257-a10f-0d67b1321e68")
 			if len(re.findall(ur"(Kucala|Akademi|Poyi)",tout,re.I|re.U))>0 :
 				addauthor(ur"(Burema Keyita|Burema KEYITA|Burama Keyita|Burama KEYITA)",u"4dedc8fc-cc66-4982-b24b-851d31e7b315")
 			
@@ -826,6 +857,7 @@ for filename in filenames:
 			addauthor(ur"(Dose KULUBALI|Dose Kulubali)",u"6b1e6f70-06ab-4735-a8f6-4ce52795bcc1")
 			addauthor(ur"(Fanta Kulubali|Fanta KULUBALI)",u"6018c6bd-cad4-4354-bcb9-6327a9d28f37")
 			addauthor(ur"(Fode Kulubali|Fode KULUBALI)",u"e4ff0b2e-48d8-4b8e-82b4-f097469f2a1a")
+			addauthor(ur"(Ishaka Kulubali|Ishaka KULUBALI)",u"da6c2aee-5407-414e-a5e4-55d38a3422de")
 			addauthor(ur"(Kamatigi Kulubali|Kamatigi KULUBALI)",u"db7cdd2a-d0bf-4008-885a-e97338a91b83")
 			addauthor(ur"(Kasumu Kulubali|Kasumu KULUBALI)",u"ff4425e9-b500-48aa-95e8-a07691395e72")
 			addauthor(ur"(mamadu kulubali|Mamadu Kulubali|M. KULUBALI|M. Kulubali)",u"b21d1a28-e4a2-4f91-b1d8-33cff629718e")
@@ -951,6 +983,7 @@ for filename in filenames:
 		if "_sise_" in authshort : 
 			addauthor(ur"(Amadu M[\.]* Sise|Amadu M[\.]* SISE|Amadu M Sise|Amadu M SISE|A[\.]* M[\.]* Sise|A\.M Sise|A[\.]* M[\.]* SISE|A M Sise|A M SISE)",u"f38c8a39-329b-4916-8c7f-5b889e87523b")
 			addauthor(ur"(Amara Sise|Amara SISE)",u"d1c5691b-f597-43fc-8812-de0973007697")
+			addauthor(ur"(Bakɔrɔba Sise|Bakɔrɔba SISE)",u"8fdb8060-3664-41f2-9b8f-036e269d8c92")
 			addauthor(ur"(Daramani Sise|Darammani Sise|Daramani SISE)",u"3a8dcd18-7ff6-40d4-ad7f-67b2ee4b8537")
 			addauthor(ur"(Lamini Sise|Lamini SISE|Lamine Sise)",u"ac9b1cd8-7480-49ec-b9b5-314e4ee5cf85")
 			addauthor(ur"(Mahamadu B. Sise|Mahamadu B. SISE|M. B. SISE)", u"f394dedd-9131-4b1c-8456-06b06aae98a7")
@@ -973,7 +1006,7 @@ for filename in filenames:
 			addauthor(ur"(Shɛki Madu SO|Shɛki Madu SƆ|Shɛki Madu So|Shɛki Madu Sɔ|shɛki madu so)",u"33bc2e39-335a-4d95-8014-2e15b52e2357")
 		if "_sogo_" in authshort: addauthor(ur"(Amadu Sogo|Amadu SOGO)",u"a2ad789a-16c5-4d00-95f4-8595126a411b")
 		if "_sogoba_" in authshort : 
-			addauthor(ur"(Shaka Sogoba|ʃaka Sogoba|Siyaka Sogoba)",u"8c54b573-5ba9-4558-a828-354afef8ee5e")
+			addauthor(ur"(Shaka Sogoba|ʃaka Sogoba|Siyaka Sogoba|Siyaka SOGOBA)",u"8c54b573-5ba9-4558-a828-354afef8ee5e")
 			addauthor(ur"(Bala Sogoba|Bala SOGOBA)",u"638507fe-69e0-40c2-ad36-8337730f927f")
 		if "_soke_" in authshort: addauthor(ur"(Gongoloma Soke|Gongoloma SOKE)",u"c3bf974e-7d29-482f-bee4-c4e3f53358c9")
 		if "_sukuna_" in authshort: addauthor(ur"(Mamayi Sukuna|Mamayi SUKUNA)",u"5ca24c05-96f6-4332-906e-8bd1f9125015")
