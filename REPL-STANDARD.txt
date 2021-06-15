@@ -5132,12 +5132,12 @@ sɛŋɛnabɔ===sɛ̀gɛnnabɔ́:v:se.reposer [sɛ̀gɛn:n:fatigue lá:mrph:CAUS
 #??sɛ̀gɛnbagatɔ>>=sɛ̀gɛnbagatɔ:adj:pauvre [sɛ̀gɛn:v:fatiguer baga:mrph:AG.OCC tɔ:mrph:ST]
 sɛ̀gɛnbagatɔ_caya===sɛ̀gɛnbagatɔ:n:pauvre [sɛ̀gɛn:v:fatiguer baa:mrph:AG.OCC tɔ:mrph:ST]_cáya:v:multiplier [cá:vq:nombreux ya:mrph:DEQU]
 sɛ̀gɛnlafiɲɛbɔ===sɛ̀gɛnlafiɲɛbɔ:n: [sɛ̀gɛnlafiɲɛ:n: [sɛ̀gɛn:n:fatigue lá:mrph:CAUS fíyɛn:v:sécher] bɔ́:v:sortir]
-sɛ̀gɛnnafiyɛbɔ===sɛ̀gɛnnafiɲɛbɔ:n:repos [sɛ̀gɛn:n:fatique náfiɲɛbɔ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher bɔ́:v:sortir]]
-Sɛ̀gɛnnafiɲɛ===sɛ̀gɛnnafiɲɛ:n:repos [sɛ̀gɛn:n:fatique náfiɲɛ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher]]
-sɛ̀gɛnnafiɲɛ===sɛ̀gɛnnafiɲɛ:n:repos [sɛ̀gɛn:n:fatique náfiɲɛ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher]]§§sɛ̀gɛnnafiɲɛ:v:se.reposer [sɛ̀gɛn:n:fatique náfiɲɛ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher]]
-sɛ̀gɛnnafiɲɛ_bɔ́===sɛ̀gɛnnafiɲɛ:n:repos [sɛ̀gɛn:n:fatique náfiɲɛ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher]]_bɔ́:v:sortir
-Sɛ̀gɛnnafiɲɛbɔ===sɛ̀gɛnnafiɲɛbɔ:n:repos [sɛ̀gɛn:n:fatique náfiɲɛbɔ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher bɔ́:v:sortir]]
-sɛ̀gɛnnafiɲɛbɔ===sɛ̀gɛnnafiɲɛbɔ:n:repos [sɛ̀gɛn:n:fatique náfiɲɛbɔ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher bɔ́:v:sortir]]§§sɛ̀gɛnnafiɲɛbɔ:v:se.reposer [sɛ̀gɛn:n:fatique náfiɲɛbɔ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher bɔ́:v:sortir]]
+sɛ̀gɛnnafiyɛbɔ===sɛ̀gɛnnafiɲɛbɔ:n:repos [sɛ̀gɛn:n:fatigue náfiɲɛbɔ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher bɔ́:v:sortir]]
+Sɛ̀gɛnnafiɲɛ===sɛ̀gɛnnafiɲɛ:n:repos [sɛ̀gɛn:n:fatigue náfiɲɛ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher]]
+sɛ̀gɛnnafiɲɛ===sɛ̀gɛnnafiɲɛ:n:repos [sɛ̀gɛn:n:fatigue náfiɲɛ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher]]§§sɛ̀gɛnnafiɲɛ:v:se.reposer [sɛ̀gɛn:n:fatigue náfiɲɛ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher]]
+sɛ̀gɛnnafiɲɛ_bɔ́===sɛ̀gɛnnafiɲɛ:n:repos [sɛ̀gɛn:n:fatigue náfiɲɛ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher]]_bɔ́:v:sortir
+Sɛ̀gɛnnafiɲɛbɔ===sɛ̀gɛnnafiɲɛbɔ:n:repos [sɛ̀gɛn:n:fatigue náfiɲɛbɔ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher bɔ́:v:sortir]]
+sɛ̀gɛnnafiɲɛbɔ===sɛ̀gɛnnafiɲɛbɔ:n:repos [sɛ̀gɛn:n:fatigue náfiɲɛbɔ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher bɔ́:v:sortir]]§§sɛ̀gɛnnafiɲɛbɔ:v:se.reposer [sɛ̀gɛn:n:fatigue náfiɲɛbɔ:v:se.reposer [lá:mrph:CAUS fíɲɛ:v:sécher bɔ́:v:sortir]]
 sɛ̀nɛ===sɛ̀nɛ:n:culture§§sɛ̀nɛ:v:cultiver
 Sɛ̀nɛ===sɛ̀nɛ:n:culture
 #sɛ̀nɛbaga>==sɛ̀nɛbaga:n: [sɛ̀nɛ:v:cultiver baga:mrph:AG.OCC]
