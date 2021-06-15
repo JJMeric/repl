@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# quick memo re processor number
+# quick memo re processor number - jjm
 """
 import os
 import psutil
