@@ -1975,6 +1975,7 @@ for linerepl in toutrepllines :
       nombre=nombre+nombre_replay
 
   if topl and nombre==0 : # only action IF main updater did not work !!!
+    """
     if ucase1:
       mot2=re.sub("\)","w)",mot2)   # mot2 = ([kK]à*lanw)
       wsearch=ur'<span class="w" +stage="[a-z0-9\.\-]+">'+mot2+ur'<.*</span>\n</span>'
@@ -1982,9 +1983,16 @@ for linerepl in toutrepllines :
       #print "topl not ucase AVANT:",wsearch
       #print "topl not ucase AVANT word:",word
       # word may contain re sensitive characters like * wsearch=re.sub(ur""+word+ur"\)\<",word+"w)<",wsearch)   # wsearch contains only one word, just add w
-      # it is anyway the first )<  
+      # it is anyway the first )< 
       wsearch=re.sub(ur"\)\<","w)<",wsearch)
       #print "topl not ucase APRES:",wsearch
+    """
+    if not ucase1:   # if ucase1 mot2 is already set
+      if mot[0]!="(": mot2="("+mot+")" # for compatibility with wrepl \g<1>
+      else : mot2=mot
+    mot2=re.sub("\)","w)",mot2)   # mot2 = ([kK]à*lanw)
+    wsearch=ur'<span class="w" +stage="[a-z0-9\.\-]+">'+mot2+ur'<.*</span>\n</span>'
+    
     gloseelems=glose.split(":",2)
     gloselx=gloseelems[0]
     gloseps=gloseelems[1]

@@ -101,6 +101,53 @@ while linemmc:
   linemmc=fileMMC.readline()
 fileMMC.close()
 print "check : mmc loaded "+str(len(mmc))+" words"
+
+
+# replchecks-additions-repl.txt
+
+try:
+  fileMMC=open("replchecks-additions-repl.txt")
+except : sys.exit ("arg 'check' needs file replchecks-additions-repl.txt in current directory")
+linemmc=fileMMC.readline()
+while linemmc:
+  entrymmc=linemmc[0:len(linemmc)-1] # strip trailing linefeed
+  mmc.append(entrymmc)
+  mmclist=entrymmc.split(u":",2)
+  mmclx=mmclist[0]
+  mmcps=mmclist[1]
+  mmcgloss=mmclist[2]   # au sens large avec les sous gloses
+  mmcgloss1=mmcgloss
+  if u"[" in mmcgloss: 
+    mmcgloss=mmcgloss[0:mmcgloss.find(u"[")].strip()
+  mmcshort.append(mmclx+u":"+mmcps+u":"+mmcgloss)
+  if u"|" in mmclx :
+    mmclxlist=mmclx.split(u"|")
+    for mmclxel in mmclxlist:
+      mmc.append(mmclxel+u":"+mmcps+u":"+mmcgloss1)
+      if u"[" in mmcgloss: 
+        mmcgloss=mmcgloss[0:mmcgloss.find(u"[")].strip()
+      mmcshort.append(mmclx+u":"+mmcpsel+u":"+mmcgloss)
+      if u"/" in mmcps:
+        mmcpslist=mmcps.split(u"/")
+        for mmcpsel in mmcpslist:
+          mmc.append(mmclxel+u":"+mmcpsel+u":"+mmcgloss1)
+          if u"[" in mmcgloss: 
+            mmcgloss=mmcgloss[0:mmcgloss.find(u"[")].strip()
+          mmcshort.append(mmclx+u":"+mmcpsel+u":"+mmcgloss)
+
+  if u"/" in mmcps:
+    mmcpslist=mmcps.split(u"/")
+    for mmcpsel in mmcpslist:
+      mmc.append(mmclx+u":"+mmcpsel+u":"+mmcgloss1)
+      if u"[" in mmcgloss: 
+        mmcgloss=mmcgloss[0:mmcgloss.find(u"[")].strip()
+      mmcshort.append(mmclx+u":"+mmcpsel+u":"+mmcgloss)
+
+  linemmc=fileMMC.readline()
+fileMMC.close()
+print "check : mmc loaded 2 "+str(len(mmc))+" words"
+
+
   
 try:
   fileREP = open ("REPL.txt","rb")
@@ -129,25 +176,25 @@ nligne=1
 nbreplok=0
 
 psvalides="|adj|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers|pm|pp|prep|prn|prt|ptcp|v|vq|"
-valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_GUILLEMET_PRMRKQUAL_VQADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_NORADJ_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_NICONJ_YEUNDEF_NIUNDEF_NAUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_ACTION_"
+valides=u"_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VERBENMOD_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_APOSTROPHE_GUILLEMET_PRMRKQUAL_VQADJ_VQORADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_NORADJ_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_NICONJ_YEUNDEF_YEPP_NIUNDEF_NAUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_COPQUOT_COPNEG_ACTION_CONSONNE_LANA_LETTRE_"
 # toujours commencer et finir par _
 # autres mots utilisés, traitements spéciaux : NUMnan, degremove, ADVNforcen, ADVNforceadv, CONJPREPforceconj, CONJPREPforceprep
-gvalides=u"NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_NMLZ2_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_BE_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_OPT2_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
+gvalides=u"NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_NMLZ2_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_OPT2_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
 #  ANAPH, ANAPH.PL, ART, OPT, OPT2, PTCP.PROG removed
 #  CFA à cause de la glose de dɔrɔmɛ qui finit par franc.CFA !!!
 fixevalides="_ETRG_ETRG.FRA_ETRG.USA_ETRG.ENG_ETRG.GER_CHNT_Q_PREV_"
 # cf kàmana:n:PREV de kamanagan
 pmlist=u"bɛ́nà:pm:FUT_bɛ́n':pm:FUT_bɛ:pm:IPFV.AFF_b':pm:IPFV.AFF_be:pm:IPFV.AFF_bi:pm:IPFV.AFF_bɛ́kà:pm:PROG.AFF_bɛ́k':pm:PROG.AFF_bɛ́ka:pm:INFR_bága:pm:INFR_bìlen:pm:COND.NEG_kà:pm:INF_k':pm:INF_ka:pm:SBJV_k':pm:SBJV_ka:pm:QUAL.AFF_man:pm:QUAL.NEG_kànâ:pm:PROH_kàn':pm:PROH_ma:pm:PFV.NEG_m':pm:PFV.NEG_mánà:pm:COND.AFF_mán':pm:COND.AFF_máa:pm:COND.AFF_nà:pm:CERT_n':pm:CERT_tɛ:pm:IPFV.NEG_te:pm:IPFV.NEG_ti:pm:IPFV.NEG_t':pm:IPFV.NEG_tɛ́kà:pm:PROG.NEG_tɛ́k':pm:PROG.NEG_tɛ́ka:pm:INFR.NEG_tɛ́k':pm:INFR.NEG_tɛ́nà:pm:FUT.NEG_tɛ́n':pm:FUT.NEG_ye:pm:PFV.TR_y':pm:PFV.TR_yé:pm:IPFV_yé:pm:IMP_y':pm:IMP_yékà:pm:RCNT_màa:pm:DES_mà:pm:DES_m':pm:DES_"
-coplist=u"bɛ́:cop:être_b':cop:être_b':cop:être_yé:cop:être_yé:cop:BE_kó:cop:QUOT_k':cop:QUOT_dòn:cop:ID_dò:cop:ID_tɛ́:cop:COP.NEG_té:cop:COP.NEG_t':cop:COP.NEG_yé:cop:EQU_y':cop:EQU_bé:cop:être_"
-prnlist=u"ɲɔ́gɔn:prn:RECP_ɲɔ́ɔn:prn:RECP_mîn:prn:REL_mínnu:prn:REL.PL2_nìnnú:prn:DEM.PL_mín:prn:REL_nìn:prn:DEM_"
+coplist=u"bɛ́:cop:être_b':cop:être_b':cop:être_yé:cop:être_kó:cop:QUOT_k':cop:QUOT_dòn:cop:ID_dò:cop:ID_tɛ́:cop:COP.NEG_té:cop:COP.NEG_t':cop:COP.NEG_yé:cop:EQU_y':cop:EQU_bé:cop:être_"
+prnlist=u"ɲɔ́gɔn:prn:RECP_ɲwán:prn:RECP_ɲɔ́ɔn:prn:RECP_mîn:prn:REL_mínnu:prn:REL.PL2_nìnnú:prn:DEM.PL_mín:prn:REL_nìn:prn:DEM_"
 dtmlist=u"ìn:dtm:DEF_mîn:dtm:REL_nìn:dtm:DEM_nìn:dtm/prn:DEM_mín:dtm:REL_mínnu:dtm:REL.PL2_nìnnú:dtm:DEM.PL_nìnnú:dtm/prn:DEM.PL_"
 perslist=u"ń:pers:1SG_nê:pers:1SG.EMPH_í:pers:2SG_í:pers:REFL_ê:pers:2SG.EMPH_à:pers:3SG_àlê:pers:3SG.EMPH_án:pers:1PL_ánw:pers:1PL.EMPH_a':pers:2PL_á:pers:2PL_á':pers:2PL_áw:pers:2PL.EMPH_ù:pers:3PL_òlû:pers:ce.PL2_ra:mrph:OPT2_la:mrph:OP2_na:mrph:OPT2_"
-pplist=u"ka:pp:POSS_lá:pp:POSS_bólo:pp:CNTRL_yé:pp:PP_y':pp:PP_lɔ́:pp:IN_nɔ́:pp:IN_rɔ́:pp:IN_mà:pp:ADR_"   # c'est tout ??? oui car les autres ont des gloses en minuscules, cf besoin de "check"
-conjlist=u"ô:conj:DISTR_ôo:conj:DISTR_"
-prtlist=u"dè:prt:FOC_dùn:prt:TOP.CNTR_dún:prt:TOP.CNTR_kɔ̀ni:prt:TOP.CNTR2_tùn:prt:PST_wà:prt:Q_"
+pplist=u"ka:pp:POSS_lá:pp:POSS_bólo:pp:CNTRL_yé:pp:PP_y':pp:PP_lɔ́:pp:IN_nɔ́:pp:IN_rɔ́:pp:IN_mà:pp:ADR_mɔ̀:pp:ADR_"   # c'est tout ??? oui car les autres ont des gloses en minuscules, cf besoin de "check"
+conjlist=u"ô:conj:DISTR_ôo:conj:DISTR__wô:conj:DISTR_"
+prtlist=u"dè:prt:FOC_dùn:prt:TOP.CNTR_dún:prt:TOP.CNTR_kɔ̀ni:prt:TOP.CNTR2_tùn:prt:PST_kùn:prt:PST_wà:prt:Q_"
 mrphlist=u"lá:mrph:CAUS_la:mrph:CAUS_ná:mrph:CAUS_mà:mrph:SUPER_màn:mrph:SUPER_rɔ́:mrph:IN_lu:mrph:PL2_nu:mrph:PL2_ba:mrph:AUGM_baa:mrph:AG.OCC_baga:mrph:AG.OCC_bali:mrph:PTCP.PRIV_ka:mrph:GENT_la:mrph:AG.PRM_na:mrph:AG.PRM_la:mrph:LOC_na:mrph:LOC_la:mrph:PRIX_na:mrph:PRIX_la:mrph:MNT1_na:mrph:MNT1_lata:mrph:MNT2_nata:mrph:MNT2_la:mrph:PROG_na:mrph:PROG_la:mrph:PFV.INTR_na:mrph:PFV.INTR_n':mrph:PFV.INTR_ra:mrph:PFV.INTR_rá:mrph:IN_rɔ́:mrph:IN_w:mrph:PL_"
 mrphlist=mrphlist+u"lama:mrph:STAT_nama:mrph:STAT_lan:mrph:INSTR_nan:mrph:INSTR_len:mrph:PTCP.RES_nen:mrph:PTCP.RES_li:mrph:NMLZ_ni:mrph:NMLZ_\:mrph:NMLZ2_ma:mrph:COM_ma:mrph:RECP.PRN_man:mrph:ADJ_ntan:mrph:PRIV_"
-mrphlist=mrphlist+u"ma:mrph:DIR_nan:mrph:ORD_nin:mrph:DIM_bali:mrph:PRIV_nci:mrph:AG.EX_ɲɔgɔn:mrph:RECP_ɲwan:mrph:RECP_ta:mrph:PTCP.POT_tɔ:mrph:CONV_tɔla:mrph:CONV_tɔ:mrph:ST_baatɔ:mrph:ST_bagatɔ:mrph:ST_ya:mrph:DEQU_yɛ:mrph:DEQU_ya:mrph:ABSTR_lá:mrph:CAUS_lán:mrph:CAUS_ná:mrph:CAUS_rɔ́:mrph:CAUS_ma:mrph:SUPER_man:mrph:SUPER_sɔ̀:mrph:EN_"
+mrphlist=mrphlist+u"ma:mrph:DIR_nan:mrph:ORD_nin:mrph:DIM_bali:mrph:PRIV_nci:mrph:AG.EX_ɲɔgɔn:mrph:RECP_ɲwan:mrph:RECP_ta:mrph:PTCP.POT_tɔ:mrph:CONV_tɔ:mrph:ST_ya:mrph:DEQU_yɛ:mrph:DEQU_ya:mrph:ABSTR_lá:mrph:CAUS_lán:mrph:CAUS_ná:mrph:CAUS_rɔ́:mrph:CAUS_ma:mrph:SUPER_man:mrph:SUPER_sɔ̀:mrph:EN_"
 # restent u"ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_"
 lxpsgvalides=pmlist+coplist+prnlist+dtmlist+perslist+pplist+conjlist+prtlist+mrphlist
 lxpsg=re.compile(ur"[\_\[\s]([^:\[\_0-9]+:[a-z\/\.]+:[A-Z0-9][A-Z0-9\.\'\|]*)[\_\s\]]",re.U)   # ne vérifie que les gloses spéciales en majuscules, par ex. pas les pp comme lá:pp:à
@@ -167,7 +214,7 @@ for linerepl in toutrepllines :
     continue
   if linerepl[0:1]==u"\n" or len(linerepl)<=2 :  # le premier test ne marche pas sur mac 
     continue
-  if (u"===" not in linerepl) and (u"=>=" not in linerepl) and (u">>=" not in linerepl) and (u">==" not in linerepl):
+  if (u"===" not in linerepl) and (u"=>=" not in linerepl) and (u">>=" not in linerepl) and (u">==" not in linerepl) and (u"=*=" not in linerepl):
       log.write("erreur de === :"+str(nblinerepl)+" : "+linerepl+"\n len="+str(len(linerepl)))
       sys.exit(linerepl+"\nseparator === (or >== ) (or =>= )  (or >>= ) is missing on line")
 
@@ -192,22 +239,34 @@ for linerepl in toutrepllines :
     sys.exit(linerepl+"\n==== au lieu de === ?")
 
   linerepl=linerepl.strip()   # strips trailing spaces ?
+   
+  # setting ucase1 - also try capitalising initial word
+  # setting topl - also try the plural form in -w
   if "===" in linerepl :
     liste_mots,liste_gloses=linerepl.split(u"===")
     ucase1=False
     topl=False
+    differ=False
   elif ">==" in linerepl :
     liste_mots,liste_gloses=linerepl.split(u">==")
     ucase1=False
     topl=True
+    differ=False
   elif "=>=" in linerepl :
     liste_mots,liste_gloses=linerepl.split(u"=>=")
     ucase1=True
     topl=False
+    differ=False
   elif ">>=" in linerepl :
     liste_mots,liste_gloses=linerepl.split(u">>=")
     ucase1=True
     topl=True
+    differ=False
+  elif "=*=" in linerepl :
+    liste_mots,liste_gloses=linerepl.split(u"=*=")
+    ucase1=False
+    topl=False
+    differ=True
 
   #
   # PETITES VALIDATIONS
@@ -306,7 +365,7 @@ for linerepl in toutrepllines :
       nbelement=re.findall("_"+element,"_"+liste_mots)
       nbelementg=re.findall("_"+element,"_"+liste_gloses)
       # if element=='TIRET': print "TIRET nbelement=",len(nbelement), " nbelementg=", len(nbelementg)
-      if (len(nbelement)!=len(nbelementg)) and not (len(nbelementg)==0 and element in "_TIRET_"):
+      if not differ and (len(nbelement)!=len(nbelementg)) and not (len(nbelementg)==0 and element in "_TIRET_"):
         log.write(u"il n'y a pas le même nombre de '_"+element+u"' de part et d'autre de ===\n")
         sys.exit("\n"+liste_mots+"\n"+liste_gloses+"\nErreur de syntaxe! pas le meme nombre de '"+element+"' de part et d'autre de ===\nvoir le log : "+logfilename)
 
@@ -319,6 +378,18 @@ for linerepl in toutrepllines :
 
   lmots=len(mots)
   lgloses=len(gloses)
+  nbmots=len(mots)
+  nbgloses=len(gloses)
+
+  if not differ:
+    if nbmots!=nbgloses:
+      log.write(u"il n'y a pas le même nombre d'éléments de part et d'autre (ou alors spécifier =*= comme séparateur)\n")
+      sys.exit("\n"+liste_mots+"\n"+liste_gloses+"\nErreur de syntaxe! pas le meme nombre d'éléments de part et d'autre (ou alors spécifier =*= comme séparateur)\nvoir le log : "+logfilename)
+  
+  if differ:
+    if nbmots==nbgloses:
+      log.write(u"il y a le même nombre d'éléments de part et d'autre, alors que =*= est spécifié)\n")
+      sys.exit("\n"+liste_mots+"\n"+liste_gloses+"\nErreur de syntaxe! il y a le même nombre d'éléments de part et d'autre, alors que =*= est spécifié\nvoir le log : "+logfilename)
 
   imots=-1
   capt_gr_index=0   # capturing group index (si on a plusieurs symboles)
@@ -500,7 +571,7 @@ for linerepl in toutrepllines :
           elif re.search(ur"ta$",gloselx) and re.search(ur"\:PTCP\.POT\]$",glosegloss) : derivation=True
           elif re.search(ur"bali$",gloselx) and re.search(ur"\:PTCP\.PRIV\]$",glosegloss) : derivation=True
       
-      if derivation==False :
+      if derivation==False and maingloss!="" :
         if  nmmcquestion<20 : print 'sample glose not in mmc : "'+glose+'"'
         glose2=""
         glose3=""
@@ -525,7 +596,7 @@ for linerepl in toutrepllines :
           if not re.search(ur"^[0-9]+",gloselx) : # ne pas traiter CARDINAL et ORDINAL
             log.write("? "+glose+"\n")
             nmmcquestion=nmmcquestion+1
-      else :
+      else :  # si c'est une dérivation ou bien si il n'y a pas de maingloss, vérifier seulement les composants
         subglose=re.sub(ur"\[|\]","",glosegloss)
         subglose=re.sub(ur"  ","",subglose)
         subgloses=subglose.split(" ")
