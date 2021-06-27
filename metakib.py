@@ -389,6 +389,8 @@ for filename in filenames:
 		# print "titl="+titl
 		titl=re.sub("\<c\>"," - ",titl)  # comments '< brackets' in metas cause problems in build mparser - 21/5/19
 		titl=re.sub("\<\/c\>"," - ",titl)
+		titl=re.sub("\&","-et-",titl)  # amperstand causes problem in build mparser
+
 		metas=re.sub(r"\"(XXX)\" name=\"text\:title\"","\""+titl+"\" name=\"text:title\"",metas)
 		
 		tout=re.sub(ur"\&",u"&amp;",tout,0,re.U|re.MULTILINE)  

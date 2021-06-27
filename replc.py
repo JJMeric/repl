@@ -748,10 +748,15 @@ for thisword in allwordslist:
   if thisword not in allwordsshortlist: 
     allwordsshortlist.append(thisword)
     if re.match(r"^[0-9]+$",thisword): ndigits=ndigits+1
+allwordsshortlist=sorted(allwordsshortlist)
+allwordsset=set(allwordsshortlist)
 
 print "nombre de mots uniques:", len(allwordsshortlist)
 print "nombre de nombres: ",ndigits
 # print allwordsshortlist
+log.write(u"allwordsshortlist :\n")
+for x in allwordsshortlist: log.write(x+u"\n")
+log.write(u"--------------- fin de allwordsshortlist :\n")
 
 allpunctslist=allpuncts.findall(tout,re.U|re.MULTILINE)
 allpunctsshortlist=[]
@@ -1005,7 +1010,7 @@ for linerepl in toutrepllines :
       if "_"+mot+"_" not in valides :
         if ucase1 and topl:
           if "*" in mot or "(" in mot or "[" in mot:
-            lmots=ur"("+mot+ur"|"+mot+u"w"+ur"|"+mot.title()+ur"|"+mot.title()+u"w"+ur")"
+            lmots=ur"("+mot+ur"|"+mot+u"w"+ur"|"+mot[0].upper()+mot[1:]+ur"|"+mot[0].upper()+mot[1:]+u"w"+ur")"
             r=re.compile(ur""+lmots)  # mot brut ou mots de la forme bà*na ou (?:b|B)ana
             newlist=filter(r.match,allwordsshortlist)
             #if mot not in allwordsshortlist:
@@ -1013,12 +1018,13 @@ for linerepl in toutrepllines :
               applicable=False
               break
           else:
-            if (mot not in allwordsshortlist) and (mot+"w" not in allwordsshortlist) and (mot.title() not in allwordsshortlist) and (mot.title()+"w" not in allwordsshortlist):
+            if (mot not in allwordsset) and (mot+"w" not in allwordsset) and (mot[0].upper()+mot[1:] not in allwordsset) and (mot[0].upper()+mot[1:]+"w" not in allwordsset):
               applicable=False
               break
         elif ucase1:
           if "*" in mot or "(" in mot or "[" in mot:
-            lmots=ur"("+mot+ur"|"+mot.title()+ur")"
+            lmots=ur"("+mot+ur"|"+mot[0].upper()+mot[1:]+ur")"
+            #print "lmots:",lmots
             r=re.compile(ur""+lmots)  # mot brut ou mots de la forme bà*na ou (?:b|B)ana
             newlist=filter(r.match,allwordsshortlist)
             #if mot not in allwordsshortlist:
@@ -1026,7 +1032,7 @@ for linerepl in toutrepllines :
               applicable=False
               break
           else:
-            if (mot not in allwordsshortlist) and (mot.title() not in allwordsshortlist):
+            if (mot not in allwordsset) and (mot[0].upper()+mot[1:] not in allwordsset):
               applicable=False
               break    
         elif topl:
@@ -1039,7 +1045,7 @@ for linerepl in toutrepllines :
               applicable=False
               break
           else:
-            if (mot not in allwordsshortlist) and (mot+"w" not in allwordsshortlist):
+            if (mot not in allwordsset) and (mot+"w" not in allwordsset):
               applicable=False
               break
             
@@ -1125,7 +1131,7 @@ for linerepl in toutrepllines :
               applicable=False
               break
           else:
-            if mot not in allwordsshortlist:
+            if mot not in allwordsset:
               applicable=False
               break
 
@@ -1185,6 +1191,7 @@ for linerepl in toutrepllines :
 
   if not applicable: 
     log.write(u"NON APPLICABLE : "+liste_mots+u" -> mot absent : "+mot+u"\n")
+
     continue  # skips the rest of the bigger loop of REPL rules
   # si on arrive là c'est que c'est applicable
   napplicable=napplicable+1
@@ -1349,7 +1356,7 @@ for linerepl in toutrepllines :
       wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:dè)<sub class="ps">prt</sub><sub class="gloss">FOC</sub></span>\n</span>'''
       wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:kɔ̀ni)<sub class="ps">prt</sub><sub class="gloss">TOP.CNTR2</sub></span>\n</span>'''
       wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:fána)<sub class="ps">prt</sub><sub class="gloss">aussi</sub></span>\n</span>'''
-      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="c">(?:«|»|\"|\'|\‘|\(|\))</span>\n'''
+      wsearch=wsearch+ur'|'+NOMINAL+ur'''<span class="c">(?:«|»|\"|\'|\‘|\(|\)|\/)</span>\n'''
       wsearch=wsearch+ur'|'+NOMINAL
       wsearch=wsearch+ur')+)'
       # added 17/11/2020: <span class="c">«</span>
@@ -1974,7 +1981,7 @@ for linerepl in toutrepllines :
       tout,nombre_replay=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)      # pour éviter les problèmes de NON OVERLAP capability of re
       nombre=nombre+nombre_replay
 
-  if topl and nombre==0 : # only action IF main updater did not work !!!
+  if topl :  # NOOOO! and nombre==0 : # only action IF main updater did not work !!!
     """
     if ucase1:
       mot2=re.sub("\)","w)",mot2)   # mot2 = ([kK]à*lanw)
