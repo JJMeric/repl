@@ -11,7 +11,7 @@ from HTMLParser import HTMLParser
 parser = HTMLParser()
 
 ambiguous=re.compile(ur'\<span class\=\"w\".*lemma var.*\n\<\/span\>')
-unknown=re.compile(ur'\<span class\=\"w\ stage\=\"\-1\"')
+unknown=re.compile(ur'<span class="w" stage="-1">[^<]+<span class="lemma">[^<]+</span>')
 sentence=re.compile(ur'\<span class\=\"sent\"\>([^<]*)\<')
 # title=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"text\:title\" \/\>|\<meta name\=\"text\:title\" content\=\"([^\"]*)\" \/\>',re.U)  # as of daba 0.9.0 dec 2020 meta format order changed!
 title=re.compile(ur'(?:\<meta content\=\"|\<meta name\=\"text\:title\" content\=\")([^\"]*)(?:\" name\=\"text\:title\" \/\>|\" \/\>)',re.U)
@@ -130,9 +130,10 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					#for iword in swords :
 					#	outf.write(": "+iword+"\n")
 
-			if select!=".html": 
+			if select!=".html": # càd : = dis.html ou = pars.html
 				ambs=len(ambiguous.findall(tout))
 				unkn=len(unknown.findall(tout))
+				print "ambs, unkn",ambs, unkn
 				nambigus=u""
 				if ambs!=0 : nambigus="ambigus: "+str(ambs)+" "
 				ninconnus=u""

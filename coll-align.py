@@ -113,6 +113,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(u"З",u"3",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"j̀",u"j",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(u"Л",u"Ɲ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(u"∫",u"ʃ",tout,0,re.U|re.MULTILINE)
 
 				# utilisation de majuscules accent grave par zup
 				tout=re.sub(u"È",u"È",tout,0,re.U|re.MULTILINE)

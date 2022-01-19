@@ -560,7 +560,7 @@ for filename in filenames:
 		if "_bankali_" in authshort : addauthor(ur"(Daramani Bankali|Daramani BANKALI)",u"e116e7c0-b8d4-445d-974b-afc33c2f45a8")
 		if "_banyumanke_" in authshort:
 			addauthor(ur"(Baɲumankɛ|baɲumankɛ)",u"37fb14af-e1f9-4ba2-ba7c-5f67401f42fd")   # = TYS encore!!!
-		if "_bari_" in authshort : addauthor(ur"(Abdulayi Bari|A\. Bari|A Bari|A\. BARI|A BARI|Ablay Bari|Abdulayi BARI|Abdulay BARI|Abdoulaye Barry|Abdoulaye BARRY)",u"02fd28a2-e96c-48d3-844f-2e35b3157bfa")
+		if "_bari_" in authshort : addauthor(ur"(Abdulayi Bari|Abdulaye Bari|A\. Bari|A Bari|A\. BARI|A BARI|Ablay Bari|Abdulayi BARI|Abdulay BARI|Abdoulaye Barry|Abdoulaye BARRY)",u"02fd28a2-e96c-48d3-844f-2e35b3157bfa")
 		if "_beligasemu_" in authshort : addauthor(ur"(Malika Bɛligasɛmu|Malika BƐLIGASƐMU)",u"cecaf637-40f6-4743-a6e7-20de9092d772")
 		if "_belikasemu_" in authshort : addauthor(ur"(Malika Bɛlikasɛmu|Malika BƐLIKASƐMU)",u"cecaf637-40f6-4743-a6e7-20de9092d772")
 		if "_berete_" in authshort or "_berte_" in authshort : 
@@ -598,6 +598,7 @@ for filename in filenames:
 			addauthor(ur"(Dawuda Mace Dawo|Dawuda M\.Dawo|Dawuda M[\.]* Dawo|Dawudi Mace Dawo)",u"f0c85c3c-17d5-4af6-ab3e-28b8fd906fe4")
 			addauthor(ur"(Mori Dawo|Mori DAWO)",u"f76aed26-91f2-4ada-ba3d-5675ae3089aa")
 		if "_denba_" in authshort : addauthor(ur"(Bankɔ Denba|Bankɔ DENBA)",u"d2e216a8-bb57-48f9-90cc-be217d8872ef")
+		if "_derilon_" in authshort: addauthor(ur"(Zan-Piyɛri Dɛrilon|Zan-Piyɛri Dɛrilɔn|Zan Piyɛri Dɛrilon|Zan Piyɛri Dɛrilɔn)",u"3ac58000-b537-4e67-99f4-0c2e2a8606ce")
 		if "_desoleri_" in authshort : addauthor(ur"(Emanuwɛli Desolɛri|Emanuyɛli Desolɛri)",u"019284d6-dd4c-44ae-8bcf-ccfcbf7fa69a")
 		if "_drabo_" in authshort : addauthor(ur"(Gawusu Drabo|Gawusu DRABO)",u"127f5500-c5db-4f87-8a33-d073d8430f02")
 		if "_dicko_" in authshort :
@@ -680,7 +681,7 @@ for filename in filenames:
 		if "_jakite_" in authshort : 
 			addauthor(ur"(solomani jakite|Solomani Jakite)",u"33f55de3-c1d0-4365-a13f-05e6360b8ed1")
 			addauthor(ur"(mamadu jakite|Mamadu Jakite|Mamadu JAKITE)",u"0b692d2a-a0fa-4adb-869d-8249580da079")
-			addauthor(ur"(Siyaka Jakite|Siyaka JAKITE|Saka Jakite)",u"285fddae-a8f3-4d7d-b9b2-96e446ed57b2")
+			addauthor(ur"(Siyaka Jakite|Siyaka JAKITE|Saka Jakite|Shaka Jakite)",u"285fddae-a8f3-4d7d-b9b2-96e446ed57b2")
 			addauthor(ur"(Kalifa Jakite|Kalifa JAKITE|Kafila Jakite)",u"d28a755e-2674-4155-868e-97252d1c1b93")
 			addauthor(ur"(yɔrɔ mɛnkɔrɔ jakite|Yɔrɔ Mɛnkɔrɔ Jakite|Yòrò Mènkòrò Jakite)",u"62918880-44b0-416b-a3d4-41f9e3261560")
 			addauthor(ur"(Jibirilu Kaba Jakite|Jibirili Kaba Jakite|Jibirilu Kaba JAKITE|Jibirili Kaba JAKITE)",u"2f06ff7f-30b8-44e8-a557-334c92c7aa56")
@@ -1029,6 +1030,7 @@ for filename in filenames:
 		if "_trawele_" in authshort: 
 			addauthor(ur"(Umu Amar Trawele)",u"14e31872-e90f-48ae-b008-ff4e325fccee")
 			addauthor(ur"(Daramani Trawele|Daramane Trawele|Daraman Trawele|Daramani TRAWELE|Daramane TRAWELE|Daraman TRAWELE)",u"2da173f5-f2f0-4af0-a413-3ca3c6ee7a88")
+			addauthor(ur"(Sungalo Trawele|Sungalo TRAWELE|Sunkalo Trawele)",u"db99321c-0d53-4eb3-aa86-7f14d99de21f")
 		if "_tarawele_" in authshort : 
 			addauthor(ur"(Ali Tarawele|Ali TARAWELE)",u"d59805d4-e334-4005-86c4-5523fa59ac6e")
 			addauthor(ur"(Alujan Tarawele|Alujan TARAWELE)",u"258e2d7f-e4f4-4803-ba72-518f66f18f2d")
