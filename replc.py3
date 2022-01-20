@@ -725,13 +725,13 @@ if nombre>0 :
 
 # handling NUMnan type not handled well in gparser  - CASE   "23nan"
 # (bamana.gram rules no longer works)
-prefsearch=r'<span class="sent">([^<]*)(?P<stem>[0-9]+)(?P<stemnan>nan|NAN|n)([\s\.\,\;\:\?\!\)\"][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
+prefsearch=r'<span class="sent">([^<]*)(?P<stem>[0-9]+)(?P<stemnan>nan|NAN|n)([\s\.\,\;\:\?\!\)\"\&][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
 nextsearch=r'<span class="w" +stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span></span>\n<span class="w" +stage="[^\"]">(?P=stemnan)<span class="lemma">(?:nan|ń)<sub class="ps">(?:num|pers)</sub><sub class="gloss">(?:ORD|1SG)</sub></span></span>\n'
 prefrepl='<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
 nextrepl='<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
 wsearch=prefsearch+nextsearch
 wrepl=prefrepl+nextrepl
-#print "\nNUMnan wsearch:",wsearch
+#print ("\nNUMnan wsearch:",wsearch)
 nombre=1
 while nombre>0:
   tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
@@ -742,14 +742,14 @@ while nombre>0:
     nbmodif=nbmodif+nombre
     nbmots=nbmots+nombre
 
-# handling NUM nan types not handled well in gparser - CASE   "23 nan"
-prefsearch=r'<span class="sent">([^<]*)(?P<stem>[0-9]+) (?P<stemnan>nan|NAN)([\s\.\,\;\:\?\!\)\"][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
+# handling NUM nan types not handled well in gparser - CASE   "23 nan" - case where the original text splits 23 & nan
+prefsearch=r'<span class="sent">([^<]*)(?P<stem>[0-9]+) (?P<stemnan>nan|NAN)([\s\.\,\;\:\?\!\)\"\&][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
 nextsearch=r'<span class="w" +stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span></span>\n<span class="w" stage="2">(?P=stemnan)<span class="lemma">nan<sub class="ps">num</sub><sub class="gloss">ORD</sub></span></span>\n'
 prefrepl='<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
 nextrepl='<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
 wsearch=prefsearch+nextsearch
 wrepl=prefrepl+nextrepl
-#print "\nNUMnan wsearch:",wsearch
+# print ("\nNUMnan wsearch:",wsearch)
 nombre=1
 while nombre>0:
   tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)
@@ -1025,6 +1025,12 @@ for linerepl in toutrepllines :
   
   # tests d'applicabilité - si pas applicable, sortir de la boucle de test: break et passer à la règle suivante: continue
   applicable=True
+  def testapplic(klist):
+    test=False
+    for x in klist:
+      if x in allwordsshortlist:
+        test=True
+    return test
   if not replcompile : # dans ce cas, on applique les tests d'applicabilité pour accélérer le traitement
     indexmot=-1
     for mot in mots:
@@ -1182,30 +1188,48 @@ for linerepl in toutrepllines :
           if "." not in allpunctsshortlist:
             applicable=False
             break
+        elif mot=="LAQUO":
+          if "«" not in allpunctsshortlist:
+            applicable=False
+            break
+        elif mot=="RAQUO":
+          if "»" not in allpunctsshortlist:
+            applicable=False
+            break
+        elif mot=="PARO":
+          if "(" not in allpunctsshortlist:
+            applicable=False
+            break
+        elif mot=="PARF":
+          if ")" not in allpunctsshortlist:
+            applicable=False
+            break
+
         elif mot=="LANA":
-          if ("la" or "na" or "lá" or "ná")  not in allwordsshortlist: 
-            applicable=False
-            break
+          applicable=testapplic(["la","na","lá","ná"])
+          if not applicable: break
         elif mot=="NUM":
-          if ndigits==0 and not ("kelen" or "fila" or "fla" or "saba" or "naani" or "duuru" or "wɔɔrɔ" or "wolonwula" or "wolonfila" or "segin" or "seegin" or "kɔnɔntɔn" or "kélen" or "fìla" or "flà" or "sàba" or "náani" or "dúuru" or "wɔ́ɔrɔ" or "wólonwula" or "wólonfila" or "ségin" or "séegin" or "kɔ́nɔntɔn" or "wòorò" or "kònòntòn" or "tan" or "bi" or "mugan" or "dɛbɛ" or "kɛmɛ" or "silameyakɛmɛ" or "tán" or "bî" or "mùgan" or "dɛ̀bɛ" or "kɛ̀mɛ" or "sìlameyakɛmɛ"or "dèbè" or "kèmè" or "silameyakèmè") in allwordsshortlist: 
+          if ndigits==0 and not testapplic(["kelen","fila","fla","saba","naani","duuru","wɔɔrɔ","wolonwula","wolonfila","segin","seegin","kɔnɔntɔn","kélen","fìla","flà","sàba","náani","dúuru","wɔ́ɔrɔ","wólonwula","wólonfila","ségin","séegin","kɔ́nɔntɔn","wòorò","kònòntòn","tan","bi","mugan","dɛbɛ","kɛmɛ","silameyakɛmɛ","tán","bî","mùgan","dɛ̀bɛ","kɛ̀mɛ","sìlameyakɛmɛ"or "dèbè","kèmè","silameyakèmè"]): 
             applicable=False
             break
+        elif mot=="PFVTR":
+          applicable=testapplic(["ye","y'","yé"])
+          if not applicable: break
         elif mot=="PFVNEG":
-          if ("ma" or "m'" or "má")  not in allwordsshortlist: 
-            applicable=False
-            break
+          applicable=testapplic(["ma","m'","má"])
+          if not applicable: break
         elif mot=="IPFVNEG":
-          if ("tɛ" or "t'" or "tè" or "tɛ́" or "ti")  not in allwordsshortlist: 
-            applicable=False
-            break
+          applicable=testapplic(["tɛ","t'","tè","tɛ́","ti"])
+          if not applicable: break
+        elif mot=="IPFVAFF":
+          applicable=testapplic(["bɛ","b'","bè","bɛ́","bi"])
+          if not applicable: break
         elif mot=="COPNEG":
-          if ("tɛ" or "t'" or "tè" or "tɛ́" or "Tɛ" or "Tɛ́")  not in allwordsshortlist: 
-            applicable=False
-            break
-        elif mot=="NICONJ":
-          if ("ni" or "n'" or "ní")  not in allwordsshortlist: 
-            applicable=False
-            break
+          applicable=testapplic(["tɛ","t'","tè","tɛ́","Tɛ","Tɛ́"])
+          if not applicable: break
+        elif mot=="NICONJ" or mot=="NIUNDEF":
+          applicable=testapplic(["ni","n'","ní"])
+          if not applicable: break
         elif mot=="TAG":
           if ntags==0 :
             applicable=False
@@ -1937,6 +1961,7 @@ for linerepl in toutrepllines :
         html1=re.sub(r"\<\/span\>$","",html1)
         #html2=daba.formats.glosstext_to_html(glose2,variant=True, encoding='utf-8').decode('utf-8')
         html2=daba.formats.glosstext_to_html(glose2,variant=False, encoding='unicode')
+        html2=html2.replace("lemma","lemma var")
         if "*" in word or "(" in word or "[" in word:   # main concern is quote/apostrophe here but may also be loaw tone/ capital on verbs (not handled for §§?)
           wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r">"+html1+html2+r'</span></span>\n'
           capt_gr_index=capt_gr_index+1
