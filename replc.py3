@@ -293,7 +293,7 @@ valides="_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENO
 gvalides="NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_NMLZ2_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_OPT2_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
 #  ANAPH, ANAPH.PL, ART, OPT, OPT2, PTCP.PROG removed
 #  CFA à cause de la glose de dɔrɔmɛ qui finit par franc.CFA !!!
-fixevalides="_ETRG_ETRG.FRA_ETRG.USA_ETRG.ENG_ETRG.GER_CHNT_Q_PREV_"
+fixevalides="_ETRG_ETRG.FRA_ETRG.USA_ETRG.ENG_ETRG.GER_ETRG.ARB_CHNT_Q_PREV_"
 # cf kàmana:n:PREV de kamanagan
 # --- liste des auxiliaires dont les gloses sont des mot-clefs en majuscules
 pmlist="bɛ́nà:pm:FUT_bɛ́n':pm:FUT_bɛ:pm:IPFV.AFF_b':pm:IPFV.AFF_be:pm:IPFV.AFF_bi:pm:IPFV.AFF_bɛ́kà:pm:PROG.AFF_bɛ́k':pm:PROG.AFF_bɛ́ka:pm:INFR_bága:pm:INFR_bìlen:pm:COND.NEG_kà:pm:INF_k':pm:INF_ka:pm:SBJV_k':pm:SBJV_ka:pm:QUAL.AFF_man:pm:QUAL.NEG_kànâ:pm:PROH_kàn':pm:PROH_ma:pm:PFV.NEG_m':pm:PFV.NEG_mánà:pm:COND.AFF_mán':pm:COND.AFF_máa:pm:COND.AFF_nà:pm:CERT_n':pm:CERT_tɛ:pm:IPFV.NEG_te:pm:IPFV.NEG_ti:pm:IPFV.NEG_t':pm:IPFV.NEG_tɛ́kà:pm:PROG.NEG_tɛ́k':pm:PROG.NEG_tɛ́ka:pm:INFR.NEG_tɛ́k':pm:INFR.NEG_tɛ́nà:pm:FUT.NEG_tɛ́n':pm:FUT.NEG_ye:pm:PFV.TR_y':pm:PFV.TR_yé:pm:IPFV_yé:pm:IMP_y':pm:IMP_yékà:pm:RCNT_màa:pm:DES_mà:pm:DES_m':pm:DES_"
@@ -878,7 +878,9 @@ for linerepl in toutrepllines :
     # ne pas faire pour les mots ETRG.FRA dans les définitions uniques (les tons haut bas et descendants sont utilisés pour simuler les accents français)
     if not (("_" not in liste_mots) and ("ETRG.FRA" in liste_gloses)):
       liste_mots=re.sub("́","",liste_mots)
-      liste_mots=re.sub("̀","̀*",liste_mots)   # DUKure : les tons bas ----- à enlever pour word
+      #liste_mots=re.sub("̀","̀*",liste_mots)   # DUKure : les tons bas ----- à enlever pour word
+      # cette ligne ci-dessus est très dangereuse car fò* peut être à la fois fo "saluer" et fɔ "dire" A REVOIR
+      liste_mots=re.sub("̀","",liste_mots)  # cas normal
       liste_mots=re.sub("̌","",liste_mots)
       liste_mots=re.sub("̂","",liste_mots)
   if tonal=="old" : # dans ce cas, les tons sont éliminés mais on revient à l'ancienne écriture
@@ -2025,10 +2027,30 @@ for linerepl in toutrepllines :
     liste_mots_compile=liste_mots   # 13/5/2021 ignore modifs Dukure, tant pis pour ces textes
     fileREPC.write(liste_mots_compile+"==="+str(ucase1)+"==="+str(topl)+"==="+wsearch+"==="+wrepl+"\n")
 
+  # to log track special cases
+  # (last done 20/1/22 - fò confusion fo / fɔ due to "low tone"* in liste_glose after Dukure-fixes)
+  """
+  if "saluer" in wrepl:
+    logsearch=re.finditer(wsearch,tout,re.U|re.MULTILINE)
+    logtext=""
+    for match in logsearch:
+      # logtext==logtext+match.group(0)+"\n"
+      s = match.start()
+      e = match.end()
+      logtext=logtext+tout[s:e]+"\n"
+  """
+
   tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U|
   # TESTED : |re.IGNORECASE ADDED 14/03/2021 - dropped : too slow!!! + rules with caps
   # if nombre >0 : print "updated",wsearch
 
+  # to log track special cases
+  """
+  if nombre>0:
+    if "saluer" in wrepl:
+      log.write("track info for 'saluer' looking for "+liste_mots+"\n"+logtext+"\n")
+  """
+  
   if prefsearch!=r"":   # modif 15/6/2020 - updating words in sent and glosses creates an OVERLAP 
     nombre_replay=nombre
     while nombre_replay!=0:
