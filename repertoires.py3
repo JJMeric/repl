@@ -5,33 +5,32 @@ import os
 import re
 import sys
 import sys
-reload(sys)
-sys.setdefaultencoding("utf-8")
-from HTMLParser import HTMLParser
-parser = HTMLParser()
+#from html.parser import HTMLParser
+#parser = HTMLParser()
+import html
 
-ambiguous=re.compile(ur'\<span class\=\"w\".*lemma var.*\n\<\/span\>')
-unknown=re.compile(ur'<span class="w" stage="-1">[^<]+<span class="lemma">[^<]+</span>')
-sentence=re.compile(ur'\<span class\=\"sent\"\>([^<]*)\<')
+ambiguous=re.compile(r'\<span class\=\"w\".*lemma var.*\n\<\/span\>')
+unknown=re.compile(r'<span class="w" stage="-1">[^<]+<span class="lemma">[^<]+</span>')
+sentence=re.compile(r'\<span class\=\"sent\"\>([^<]*)\<')
 # title=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"text\:title\" \/\>|\<meta name\=\"text\:title\" content\=\"([^\"]*)\" \/\>',re.U)  # as of daba 0.9.0 dec 2020 meta format order changed!
-title=re.compile(ur'(?:\<meta content\=\"|\<meta name\=\"text\:title\" content\=\")([^\"]*)(?:\" name\=\"text\:title\" \/\>|\" \/\>)',re.U)
+title=re.compile(r'(?:\<meta content\=\"|\<meta name\=\"text\:title\" content\=\")([^\"]*)(?:\" name\=\"text\:title\" \/\>|\" \/\>)',re.U)
 
 #author=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"author\:name\" \/\>|\<meta name\=\"author\:name\" content\=\"([^\"]*)\" \/\>',re.U)
-author=re.compile(ur'(?:\<meta content\=\"|\<meta name\=\"author\:name\" content\=\")([^\"]*)(?:\" name\=\"author\:name\" \/\>|\" \/\>)',re.U)
+author=re.compile(r'(?:\<meta content\=\"|\<meta name\=\"author\:name\" content\=\")([^\"]*)(?:\" name\=\"author\:name\" \/\>|\" \/\>)',re.U)
 
 #wordssearch=re.compile(ur'\<meta content\=\"([0-9]*)\" name\=\"\_auto\:words\" \/\>|\<meta name\=\"\_auto\:words\" content\=\"([0-9]*)\" \/\>',re.U)
-wordssearch=re.compile(ur'(?:\<meta content\=\"|\<meta name\=\"\_auto\:words\" content\=\")([0-9]*)(?:\" name\=\"\_auto\:words\" \/\>|\" \/\>)',re.U)
+wordssearch=re.compile(r'(?:\<meta content\=\"|\<meta name\=\"\_auto\:words\" content\=\")([0-9]*)(?:\" name\=\"\_auto\:words\" \/\>|\" \/\>)',re.U)
 
-parsedwords=re.compile(ur'\<span class\=\"w\"',re.U)
-extraittxt=re.compile(ur'<body><p>([^£]*)</p></body>',re.U)   #  ^< ne marche plus ?
-searchwords=re.compile(ur'([a-zɛɔɲŋA-ZƐƆƝŊ\-́̀̌̂]+)',re.U)
-medianame=re.compile(ur'^([a-zA-Z\-\_]+)[0-9]*\_',re.U)
-medianumber=re.compile(ur'^[a-zA-Z\-\_]+([0-9]*)\_',re.U)
+parsedwords=re.compile(r'\<span class\=\"w\"',re.U)
+extraittxt=re.compile(r'<body><p>([^£]*)</p></body>',re.U)   #  ^< ne marche plus ?
+searchwords=re.compile(r'([a-zɛɔɲŋA-ZƐƆƝŊ0-9\-́̀̌̂]+)',re.U)
+medianame=re.compile(r'^([a-zA-Z\-\_]+)[0-9]*\_',re.U)
+medianumber=re.compile(r'^[a-zA-Z\-\_]+([0-9]*)\_',re.U)
 #date=re.compile(ur'\<meta content\=\"[0-9]+\.([0-9\.]*)\" name\=\"text\:date\" \/\>|\<meta name\=\"text\:date\" content\=\"[0-9]+\.([0-9\.]*)\" \/\>',re.U)
-date=re.compile(ur'(?:\<meta content\=\"[0-9]+\.|\<meta name\=\"text\:date\" content\=\"[0-9]+\.)([0-9\.]*)(?:\" name\=\"text\:date\" \/\>|\" \/\>)',re.U)
+date=re.compile(r'(?:\<meta content\=\"[0-9]+\.|\<meta name\=\"text\:date\" content\=\"[0-9]+\.)([0-9\.]*)(?:\" name\=\"text\:date\" \/\>|\" \/\>)',re.U)
 
 #datesource=re.compile(ur'\<meta content\=\"[0-9]+\.([0-9\.]*)\" name\=\"source\:date\" \/\>|\<meta name\=\"source\:date\" content\=\"[0-9]+\.([0-9\.]*)\" \/\>',re.U)
-datesource=re.compile(ur'(?:\<meta content\=\"[0-9]+\.|\<meta name\=\"source\:date\" content\=\"[0-9]+\.)([0-9\.]*)(?:\" name\=\"source\:date\" \/\>|\" \/\>)',re.U)
+datesource=re.compile(r'(?:\<meta content\=\"[0-9]+\.|\<meta name\=\"source\:date\" content\=\"[0-9]+\.)([0-9\.]*)(?:\" name\=\"source\:date\" \/\>|\" \/\>)',re.U)
 
 import os
 # log=open("repertoire.log","w")
@@ -50,7 +49,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 	#break
 	#if select=="" : break #sys.exit("no relevant file (.dis.html, .pars.html, .html) in current directory")
 	# filenames=os.listdir(".")
-	toutout=u""
+	toutout=""
 	toutwords=0
 	toutmedianame=""
 	toutmedianumber=""
@@ -65,7 +64,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 			select=".pars.html"
 		
 		if select in filename :
-			print os.path.join(dirname, filename)
+			print(os.path.join(dirname, filename))
 			fileIN = open(os.path.join(dirname, filename), "r")
 			if toutmedianame=="":
 				mn=medianame.search(filename)
@@ -76,9 +75,9 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 						toutmedianumber=ismedianumber.group(1)
 			#tout=fileIN.readlines()
 			line = fileIN.readline()
-			tout=u""
+			tout=""
 			while line:
-				tout=tout+line.decode("utf-8")
+				tout=tout+line     # py2: .decode("utf-8")
 				line = fileIN.readline()
 			fileIN.close()
 
@@ -94,15 +93,18 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 						toutdate="23.09.2016"
 
 			
-			titl=title.search(tout).group(1)
+			titlefound=title.search(tout)
+			titl=""
+			if titlefound:
+				titl=titlefound.group(1)
+			else: print("no tile")
 			#print title.search(tout).group(2)
 			# log.write("\n"+filename+"\ntitle-1: "+titl+"\n")
-			titl=re.sub(ur"\"","",titl)
-			# log.write("title-2: "+titl+"\n")
-			titl=re.sub(ur"\;",",",titl)  # dangereux pour un comma-separated-values
-			# log.write("title-3: "+titl+"\n")
-			titl=parser.unescape(titl)
-			# log.write("title-4: "+titl+"\n")
+			if titl!="":
+				titl=re.sub(r"\"","",titl)
+				titl=re.sub(r"\;",",",titl)  # dangereux pour un comma-separated-values
+				titl=html.unescape(titl)
+			
 			auth=""
 			authors=author.search(tout)
 			if authors :
@@ -114,16 +116,21 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				words=len(parsedwords.findall(tout))
 				word=str(words)
 			elif select==".html"      : 
-				touttxt=extraittxt.search(tout).group(1)
-
-				touttxt=re.sub(r"&lt;c&gt;.*&lt;/c&gt;"," ",touttxt,re.U)  # enlever les <c>...</c>
-				touttxt=re.sub(r"&lt;n&gt;.*&lt;/n&gt;"," ",touttxt,re.U)  # enlever les <n>...</n>
-				touttxt=re.sub(r"&lt;h&gt;|&lt;/h&gt;"," ",touttxt,re.U)  # enlever les <h> ou </h>
-				touttxt=re.sub(r"&lt;ill&gt;|&lt;/ill&gt;"," ",touttxt,re.U)  # enlever les <ill> ou </ill>
-				touttxt=re.sub(r"&lt;ls&gt;|&lt;/ls&gt;"," ",touttxt,re.U)  # enlever les <ls> ou </ls>
-				touttxt=re.sub(r"&lt;br/&gt;"," ",touttxt,re.U)  # enlever les <br/>
-			
+				touttxt=tout
+				touttxt=re.sub(r"&lt;c&gt;.*&lt;/c&gt;"," ",touttxt,0,re.U|re.MULTILINE)  # enlever les <c>...</c>
+				touttxt=re.sub(r"&lt;n&gt;.*&lt;/n&gt;"," ",touttxt,0,re.U|re.MULTILINE)  # enlever les <n>...</n>
+				touttxt=re.sub(r"&lt;h&gt;|&lt;/h&gt;"," ",touttxt,0,re.U|re.MULTILINE)  # enlever les <h> ou </h>
+				touttxt=re.sub(r"&lt;ill&gt;|&lt;/ill&gt;"," ",touttxt,0,re.U|re.MULTILINE)  # enlever les <ill> ou </ill>
+				touttxt=re.sub(r"&lt;ls&gt;|&lt;/ls&gt;"," ",touttxt,0,re.U|re.MULTILINE)  # enlever les <ls> ou </ls>
+				touttxt=re.sub(r"&lt;br/&gt;"," ",touttxt,0,re.U|re.MULTILINE)  # enlever les <br/>
+				touttxt=re.sub(r"<p>|</p>","",touttxt,0,re.U|re.MULTILINE) # enlever les marques de paragraphes
+				touttxt=re.sub(r"^ *- ","",touttxt,0,re.U|re.MULTILINE)       # enlever les tirets
+				touttxt=re.sub(r" - ","",touttxt,0,re.U|re.MULTILINE)       # enlever les tirets isolés
+				touttxt=re.sub(r"<head>[^¤]*</head>","",touttxt,0,re.U|re.MULTILINE)       # enlever la section header
+				touttxt=re.sub(r"</*body>|</*html>","",touttxt,0,re.U|re.MULTILINE) # enlever les tags bidy et html
+				
 				swords=searchwords.findall(touttxt)
+				# rappel : searchwords=re.compile(ur'([a-zɛɔɲŋA-ZƐƆƝŊ0-9\-́̀̌̂]+)',re.U)
 				if swords :
 					words=len(swords)
 					word=str(words)
@@ -133,10 +140,10 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 			if select!=".html": # càd : = dis.html ou = pars.html
 				ambs=len(ambiguous.findall(tout))
 				unkn=len(unknown.findall(tout))
-				print "ambs, unkn",ambs, unkn
-				nambigus=u""
+				print("ambs, unkn",ambs, unkn)
+				nambigus=""
 				if ambs!=0 : nambigus="ambigus: "+str(ambs)+" "
-				ninconnus=u""
+				ninconnus=""
 				if unkn!=0 : ninconnus="inconnus: "+str(unkn)
 				toutout=toutout+titl+"; ; "+filename+"; ; "+word+"; "+auth+"; "+nambigus+ninconnus+"\n"
 			else:
