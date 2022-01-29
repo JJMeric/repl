@@ -26687,7 +26687,7 @@ mùso_ká_báaraw=>=mùso:n:femme_ka:pp:POSS_báaraw:n: [báara:n:travail 
 mùsow_ká_báara=>=mùsow:n: [mùso:n:femme w:mrph:PL]_ka:pp:POSS_báara:n:travail
 mùsow_ká_báaraw=>=mùsow:n: [mùso:n:femme w:mrph:PL]_ka:pp:POSS_báaraw:n: [báara:n:travail w:mrph:PL]
 mùso_ka_bálokisɛ=>=mùso:n:femme_ka:pp:POSS_bálokisɛ:n: [bálo:v:vivre kìsɛ:n:grain]
-mùso_ka_bálokisɛw=>=mùso:n:femme_ka:pp:POSS_bálokisɛw:n: [bálokisɛ:n: [bálo:v:vivre kìsɛ:n:grain] w:mrph:PL]+
+mùso_ka_bálokisɛw=>=mùso:n:femme_ka:pp:POSS_bálokisɛw:n: [bálokisɛ:n: [bálo:v:vivre kìsɛ:n:grain] w:mrph:PL]
 mùsow_ká_gɛ̀lɛyaw=>=mùsow:n: [mùso:n:femme w:mrph:PL]_ka:pp:POSS_gɛ̀lɛyaw:n: [gɛ̀lɛya:n:dureté [gɛ̀lɛn:vq:dur ya:mrph:DEQU] w:mrph:PL]
 mùso_ká_gɛ̀lɛyaw=>=mùso:n:femme_ka:pp:POSS_gɛ̀lɛyaw:n: [gɛ̀lɛya:n:dureté [gɛ̀lɛn:vq:dur ya:mrph:DEQU] w:mrph:PL]
 mùso_ka_kɛ́nɛya=>=mùso:n:femme_ka:pp:POSS_kɛ́nɛya:n:bonne.santé [kɛ́nɛ:vq:sain ya:mrph:DEQU]
