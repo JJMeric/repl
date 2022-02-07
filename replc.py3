@@ -1870,6 +1870,9 @@ for linerepl in toutrepllines :
     elif glose=="YEUNDEFpp":
       wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">yé<sub class="ps">pp</sub><sub class="gloss">PP</sub></span></span>\n'
       capt_gr_index=capt_gr_index+1
+    elif glose=="YEUNDEFvoir":
+      wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">yé<sub class="ps">v</sub><sub class="gloss">voir</sub></span></span>\n'
+      capt_gr_index=capt_gr_index+1
     elif glose=="YEUNDEFequ":
       wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">yé<sub class="ps">cop</sub><sub class="gloss">EQU</sub></span></span>\n'
       capt_gr_index=capt_gr_index+1

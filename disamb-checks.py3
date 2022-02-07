@@ -46,12 +46,21 @@ def listerr3(re_key):
   allerr=re.finditer(re_key,disamb,re.U|re.MULTILINE)
   for match in allerr: 
     err_match=match.group(1)
+    #print("listerr3 (1)", err_match)
     err_match2=match.group(2)  # if NG there is html<> and there are spaces - oops ?
+    if "<span" in err_match2:
+      allng=re.finditer(r'<span class="w" stage="[^"]+">([^<\n]+)<',err_match2,re.U|re.MULTILINE)
+      ng=""
+      for ngmatch in allng:
+        ng=ng+ngmatch.group(1)+"¤"
+      err_match2="{"+ng[:-1]+"}"  
+
     err_match3=match.group(3)
     if err_match!="": err_msg=err_msg+err_match+"_"+err_match2+"_"+err_match3
   if err_msg!="":
     err_msg,nerr=re.subn(r' ',', ',err_msg.strip())
     err_msg=err_msg.replace("_"," ")
+    if "¤" in err_msg: err_msg=err_msg.replace("¤"," ")
     nerr=nerr+1
   return nerr, err_msg
 
@@ -83,6 +92,7 @@ AMBIGUOUS =r'<span class="w" stage="[^"]+">([^<\n]+)<.*lemma var.*</span>\n'
 UNKNOWN   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+</span>'
 VERB      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">v</sub>.*</span></span>\n'
 ADJ       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">adj</sub>.*</span></span>\n'
+NUM       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">num</sub>.*</span></span>\n'
 NAME      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:n|n\.prop)</sub>.*</span></span>\n'
 PP        =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pp</sub>.*</span></span>\n'
 PM        =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub>.*</span></span>\n'
@@ -93,6 +103,12 @@ DTM       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 PRN       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:prn|pers)</sub>.*</span></span>\n'
 CONJ      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:conj|prep)</sub>.*</span></span>\n'
 # ... tbc ...
+
+# punctuations
+START     =r'^'
+END       =r'$'
+PUNCT     =r'<span class="[ct]">([^<]+)</span>\n'  # all punctuations, tags included
+
 # specifics
 KAINF     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n'
 KASBJV    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">SBJV</sub></span></span>\n'
@@ -102,6 +118,8 @@ YEIMP     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 YEEQU     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">cop</sub><sub class="gloss">EQU</sub></span></span>\n'
 MAPFV     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">PFV\.NEG</sub></span></span>\n'
 A3SG      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pers</sub><sub class="gloss">3SG</sub></span></span>\n'
+VERB1     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">v</sub><sub class="gloss">(?:(?!aller|venir).*)</sub>.*</span></span>\n'
+
 
 # forbidden sequences
 VERB_PP   =VERB+PP
@@ -122,6 +140,10 @@ KAPOSS_VQ =KAPOSS+VQ
 MAPFV_VQ  =MAPFV+VQ
 COP_VERB  =COP+VERB
 A3SG_YEIMP=A3SG+YEIMP
+VERB1_VERB=VERB1+VERB
+PP_PP     =PP+PP
+PM_PM     =PM+PM
+COP_COP   =COP+COP
 
 # ...tbc...
 # implement : NG (nominal group) NAME+ADJ*+DTM*+POSS*+AND*+... see NONVERBALGROUP in replc
@@ -133,24 +155,29 @@ NAME_     =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<su
 DTM_      =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">dtm</sub>.*</span></span>\n'
 PRN_      =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">(?:prn|pers)</sub>.*</span></span>\n'
 KAPOSS_   =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span></span>\n'
-
-PP1       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">(?!POSS)</sub>.*</span></span>\n'
+NUM_      =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">num</sub>.*</span></span>\n'
 
 # manque pour l'instant les groupes avec ni et etc.
 
-NG  = r'((?:'+NAME_+r'|'+PRN_+r'|'+DTM_+r')'+r'(?:'+NAME_+r'|'+ADJ_+r'|'+DTM_+r'|'+KAPOSS_+r')*)'
-#print(NG)
+NG  = r'((?:'+NAME_+r'|'+PRN_+r'|'+DTM_+r')'+r'(?:'+NAME_+r'|'+ADJ_+r'|'+DTM_+r'|'+NUM_+r'|'+KAPOSS_+r')*)'
+# print(NG)
 
-PP1       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">(?!POSS)</sub>.*</span></span>\n'
+PP1       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">(?:(?!POSS).*)</sub>.*</span></span>\n'
 #   =pp sans ka POSS
 PM_NG_PP  =PM+NG+PP1
-
+PM_NG_ADV =PM+NG+ADV
+PM_NG_VQ  =PM+NG+VQ
+PM_NG_PUNCT=PM+NG+PUNCT
+# print(PM_NG_PUNCT)
+PM_NG_END =PM+NG+END   # only if missing final punctuation
 
 nsent=0
+nsenterr=0
+
 for sentence in sentences:
   nsent=nsent+1
   #print nsent,"---",sentence
-  sentence=sentence+"</span>"   # close last lemma or punct or tag
+  sentence=sentence+"</span>\n"   # close last lemma or punct or tag
   
   if '<span class="annot">' not in sentence: continue
   orig,disamb=sentence.split('<span class="annot">')
@@ -177,6 +204,22 @@ for sentence in sentences:
   if nerr+nerr2!=0 :
     errors=errors+"    skipping other checks...\n"
   else:
+
+    nerr,err_msg=listerr2(VERB1_VERB)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" VERB VERB ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(PP_PP)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" PP PP ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(PM_PM)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" PM PM ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(COP_COP)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" COP COP ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(VERB_PP)
     if nerr>0:
@@ -250,7 +293,30 @@ for sentence in sentences:
     if nerr>0:
       errors=errors+"    "+str(nerr)+" PM_NG_PP (devrait être une copule) ? "+err_msg+"\n"
 
+    nerr,err_msg=listerr3(PM_NG_ADV)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" PM_NG_ADV (pas de verbe avant l'adverbe) ? "+err_msg+"\n"
 
-  if errors!="" : fileOUT.write(str(nsent)+" "+original+"\n"+errors+'\n')
+    nerr,err_msg=listerr3(PM_NG_VQ)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" PM_NG_VQ (pas de verbe avant le VQ) ? "+err_msg+"\n"
 
-print("done, check output as "+fileINnameshort+"-checks.txt")
+    nerr,err_msg=listerr3(PM_NG_PUNCT)
+    # print(original, "PM_NG_PUNCT", nerr, err_msg)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" PM_NG_PUNCT (pas de verbe avant la ponctuation) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr3(PM_NG_END)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" PM_NG_END (pas de verbe avant la fin de phrase) ? "+err_msg+"\n"
+
+  if errors!="" : 
+    fileOUT.write(str(nsent)+" "+original+"\n"+errors+'\n')
+    nsenterr=nsenterr+1
+
+fileOUT.close()
+if nsenterr>0:
+  print(nsenterr,"sentences with errors\ncheck output as "+fileINnameshort+"-checks.txt")
+else :
+  os.remove(fileINnameshort+"-checks.txt")
+  print("no error found, "+fileINnameshort+"-checks.txt NOT created")

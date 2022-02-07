@@ -18698,9 +18698,9 @@ nìn_ɲɔ̀gɔn_yé_fɔ́lɔ===nìn:prn:ceci_ɲɔ̀gɔn:n:pareil_yé:v:voir_
 
 à_yéra_PMINF_PERS_fɔ́_kó=>=à:pers:3SG_yéra:v: [yé:v:voir ra:mrph:PFV.INTR]_PMINF_PERS_fɔ́:v:dire_kó:cop:QUOT
 à_yéra_PMINF_PERS_fɔ́_k'=>=à:pers:3SG_yéra:v: [yé:v:voir ra:mrph:PFV.INTR]_PMINF_PERS_fɔ́:v:dire_k':cop:QUOT
-IPFVAFF_PERS_yé_PMINF_PERS_fɔ́_kó===IPFVAFF_PERS_yé:v:voir_PMINF_PERS_fɔ́:v:dire_kó:cop:QUOT
-IPFVAFF_PERS_yé_PMINF_PERS_fɔ́_k'===IPFVAFF_PERS_yé:v:voir_PMINF_PERS_fɔ́:v:dire_k':cop:QUOT
-IPFVAFF_PERS_yé_PMINF_PERS_fɔ́===IPFVAFF_PERS_yé:v:voir_PMINF_PERS_fɔ́:v:dire
+IPFVAFF_PERS_YEUNDEF_PMINF_PERS_fɔ́_kó===IPFVAFF_PERS_YEUNDEFvoir_PMINF_PERS_fɔ́:v:dire_kó:cop:QUOT
+IPFVAFF_PERS_YEUNDEF_PMINF_PERS_fɔ́_k'===IPFVAFF_PERS_YEUNDEFvoir_PMINF_PERS_fɔ́:v:dire_k':cop:QUOT
+IPFVAFF_PERS_YEUNDEF_PMINF_PERS_fɔ́===IPFVAFF_PERS_YEUNDEFvoir_PMINF_PERS_fɔ́:v:dire
 mána_ò_yé===mánà:pm:COND.AFF_ò:prn:ce_yé:v:voir
 mána_PERS_yé===mánà:pm:COND.AFF_PERS_yé:v:voir
 mán'_ò_yé===mán':pm:COND.AFF_ò:prn:ce_yé:v:voir
@@ -18723,8 +18723,8 @@ tɛ́_yé_ɲɛ́_LANA===tɛ:pm:IPFV.NEG_yé:v:voir_ɲɛ́:n:oeil_LANA
 kà_yé_ɲɛ́_LANA===kà:pm:INF_yé:v:voir_ɲɛ́:n:oeil_LANA
 PERS_ma_yé_bìlen===PERS_ma:pm:PFV.NEG_yé:v:voir_bìlen:adv:encore   # on ne l'a plus revu
 
-IPFVAFF_PERS_yé_PUNCT===IPFVAFF_PERS_yé:v:voir_PUNCT
-IPFVNEG_PERS_yé_PUNCT===IPFVNEG_PERS_yé:v:voir_PUNCT
+IPFVAFF_PERS_YEUNDEF_PUNCT===IPFVAFF_PERS_YEUNDEFvoir_PUNCT   # défini + haut sé bɛ PERS yé (COP PP)
+IPFVNEG_PERS_YEUNDEF_PUNCT===IPFVNEG_PERS_YEUNDEFvoir_PUNCT   
 
 PMINF_PERS_kɛ́tɔ_yé===PMINF_PERS_kɛ́tɔ:ptcp: [kɛ́:v:faire tɔ:mrph:CONV]_yé:v:voir
 IPFVAFF_PERS_kɛ́tɔ_yé===IPFVAFF_PERS_kɛ́tɔ:ptcp: [kɛ́:v:faire tɔ:mrph:CONV]_yé:v:voir
@@ -18848,8 +18848,9 @@ tɛ́_Yé_ɲɛ́_LANA===tɛ:pm:IPFV.NEG_yé:v:voir_ɲɛ́:n:oeil_LANA
 kà_Yé_ɲɛ́_LANA===kà:pm:INF_yé:v:voir_ɲɛ́:n:oeil_LANA
 PERS_ma_Yé_bìlen===PERS_ma:pm:PFV.NEG_yé:v:voir_bìlen:adv:encore   # on ne l'a plus revu
 
-IPFVAFF_PERS_Yé_PUNCT===IPFVAFF_PERS_yé:v:voir_PUNCT
-IPFVNEG_PERS_Yé_PUNCT===IPFVNEG_PERS_yé:v:voir_PUNCT
+# attention avec se bɛ PERS ye...
+#IPFVAFF_PERS_Yé_PUNCT===IPFVAFF_PERS_yé:v:voir_PUNCT
+#IPFVNEG_PERS_Yé_PUNCT===IPFVNEG_PERS_yé:v:voir_PUNCT
 
 PMINF_PERS_kɛ́tɔ_Yé===PMINF_PERS_kɛ́tɔ:ptcp: [kɛ́:v:faire tɔ:mrph:CONV]_yé:v:voir
 IPFVAFF_PERS_kɛ́tɔ_Yé===IPFVAFF_PERS_kɛ́tɔ:ptcp: [kɛ́:v:faire tɔ:mrph:CONV]_yé:v:voir
@@ -37632,8 +37633,10 @@ PUNCT_kà_NONVERBALGROUP_yé_PUNCT===PUNCT_kà:pm:INF_NONVERBALGROUP_yé:v:v
 PUNCT_kà_NONVERBALGROUP_yé_ADV===PUNCT_kà:pm:INF_NONVERBALGROUP_yé:v:voir_ADV
 VERBE_kà_NONVERBALGROUP_yé_PUNCT===VERBE_kà:pm:INF_NONVERBALGROUP_yé:v:voir_PUNCT
 VERBE_kà_NONVERBALGROUP_yé_ADV===VERBE_kà:pm:INF_NONVERBALGROUP_yé:v:voir_ADV
-IPFVAFF_NONVERBALGROUP_yé_PUNCT===IPFVAFF_NONVERBALGROUP_yé:v:voir_PUNCT
-IPFVAFF_NONVERBALGROUP_yé_ADV===IPFVAFF_NONVERBALGROUP_yé:v:voir_ADV
+IPFVAFF_NONVERBALGROUP_YEUNDEF_PUNCT===IPFVAFF_NONVERBALGROUP_YEUNDEFvoir_PUNCT
+IPFVAFF_NONVERBALGROUP_YEUNDEF_ADV===IPFVAFF_NONVERBALGROUP_YEUNDEFvoir_ADV
+IPFVNEG_NONVERBALGROUP_YEUNDEF_PUNCT===IPFVNEG_NONVERBALGROUP_YEUNDEFvoir_PUNCT
+IPFVNEG_NONVERBALGROUP_YEUNDEF_ADV===IPFVNEG_NONVERBALGROUP_YEUNDEFvoir_ADV
 má_NONVERBALGROUP_yé===ma:pm:PFV.NEG_NONVERBALGROUP_yé:v:voir
 má_NONVERBALGROUP_yé_ò_kɔ́===ma:pm:PFV.NEG_NONVERBALGROUP_yé:v:voir_ò:prn:ce_kɔ́:pp:après
 má_NONVERBALGROUP_yé_nìn_kɔ́===ma:pm:PFV.NEG_NONVERBALGROUP_yé:v:voir_nìn:prn:ceci_kɔ́:pp:après
@@ -37648,11 +37651,11 @@ kànâ_NONVERBALGROUP_yé===kànâ:pm:PROH_NONVERBALGROUP_yé:v:voir
 #PRMRK_PRONOM_yé===PRMRK_PRONOM_yé:v:voir
 # contrexemple "X minnu ka baara ye X ye" si ka est mal identifié
 # soyons plus restrictifs - attention danger avec par ex: kɛlen bɛ X yé  (normalement COPULE, mais...)
-PRMRK_NONVERBALGROUP_yé_PUNCT===PRMRK_NONVERBALGROUP_yé:v:voir_PUNCT
+PRMRK_NONVERBALGROUP_YEUNDEF_PUNCT===PRMRK_NONVERBALGROUP_YEUNDEFvoir_PUNCT
 PRMRK_NONVERBALGROUP_ɲɔ̀gɔn_yé_PUNCT===PRMRK_NONVERBALGROUP_ɲɔ̀gɔn:n:pareil_yé:v:voir_PUNCT
-PRMRK_NONVERBALGROUP_yé_ADV===PRMRK_NONVERBALGROUP_yé:v:voir_ADV
-PRMRK_NONVERBALGROUP_yé_CONJ===PRMRK_NONVERBALGROUP_yé:v:voir_CONJ
-PRMRK_NONVERBALGROUP_yé_NONVERBALGROUP_POSTP===PRMRK_NONVERBALGROUP_yé:v:voir_NONVERBALGROUP_POSTP
+PRMRK_NONVERBALGROUP_YEUNDEF_ADV===PRMRK_NONVERBALGROUP_YEUNDEFvoir_ADV
+PRMRK_NONVERBALGROUP_YEUNDEF_CONJ===PRMRK_NONVERBALGROUP_YEUNDEFvoir_CONJ
+PRMRK_NONVERBALGROUP_YEUNDEF_NONVERBALGROUP_POSTP===PRMRK_NONVERBALGROUP_YEUNDEFvoir_NONVERBALGROUP_POSTP
 PRMRK_yé_NONVERBALGROUP_POSTP===PRMRK_yé:v:voir_NONVERBALGROUP_POSTP
 PRMRK_PERS_yé_kó===PRMRK_PERS_yé:v:voir_kó:cop:QUOT
 # dans une conditionnelle, moins de risques (?) ave la pm yé
