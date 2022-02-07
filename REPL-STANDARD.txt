@@ -1960,6 +1960,7 @@ fɔ́kan===fɔ́kan:n: [fɔ́:n:action.de.dire kán:n:cou]
 #fɔ́ko===fɔ́ko:n: [fɔ́:v:dire kó:n:affaire]
 fɔ́kun===fɔ́kun:n: [fɔ́:v:dire kùn:n:tête]
 #fɔ́lɔ-fɔlɔ=>=fɔ́lɔfɔlɔ:n:autrefois [fɔ́lɔ:n:autrefois fɔ́lɔ:n:autrefois]
+fɔ́lɔfɔ́lɔ=>=fɔ́lɔfɔlɔ:adv:autrefois [fɔ́lɔ:n:autrefois fɔ́lɔ:n:autrefois]§§fɔ́lɔfɔlɔ:adj:tout.premier [fɔ́lɔ:n:autrefois fɔ́lɔ:n:autrefois]   # problem in bamana.gram with reduplication giving unique n:autrefois ???
 #fɔ́lɔmɔgɔ>>=fɔ́lɔmɔgɔ:n:homme.préhistorique [fɔ́lɔ:n:autrefois mɔ̀gɔ:n:homme]
 #fɔ́lɔfɔlɔmɔgɔ>>=fɔ́lɔfɔlɔmɔgɔ:n: [fɔ́lɔ:n:premier fɔ́lɔmɔgɔ:n:homme.préhistorique [fɔ́lɔ:n:autrefois mɔ̀gɔ:n:homme]]
 fɔ́nfɔnni=>=fɔ́nfɔnnin:n:serpent.Causus.rhombeatus
@@ -5527,7 +5528,7 @@ tùbabukanfɔjamana>>=tùbabukanfɔjamana:n: [tùbabukan:n:langue.française 
 #tùbabukanko===tùbabukanko:n: [tùbabukan:n:langue.française [tùbabu:n:Européen kán:n:cou] kó:n:affaire]
 tùbabukanmɛnna>>=tùbabukanmɛnna:n: [tùbabukan:n:langue.française [tùbabu:n:Européen kán:n:cou] mɛ́n:v:entendre la:mrph:AG.PRM]
 tùbabukɛ>>=tùbabukɛ:n: [tùbabu:n:Européen cɛ̀:n:mâle]
-#tùbabumuso>>=tùbabumuso:n: [tùbabumu:n:Européen ̀so:adj:femme]
+#tùbabumuso>>=tùbabumuso:n: [tùbabumu:n:Européen mùso:adj:femme]
 tùbabunɔgɔdon===tùbabunɔgɔdon:n: [tùbabunɔgɔ:n:engrais [tùbabu:n:Européen nɔ́gɔ:n:saleté] dòn:v:entrer]
 tùbabusɛgɛ=>=tùbabusɛgɛ:n: [tùbabu:n:Européen sɛ́gɛ:n:salpêtre] # produits chimiques dangereux en général
 tùgu-tùgu===tùgu-tùgu:v: [tùgu:v:rabouter tùgu:v:rabouter]
@@ -5539,6 +5540,8 @@ tùmufura>>=ntùmufura:n: [ntùmu:n:ver fúra:n:feuille]
 tùmumisɛnni>>=ntùmumisɛnnin:n: [ntùmu:n:ver mìsɛnnin:adj: [mìsɛn:adj:petit nin:mrph:DIM]]
 Túba===Túba:n.prop:NOM.MF
 túbalakɔnɔ=>=túbalakɔnɔ:n: [tú:n:touffe ba:mrph:AUGM lá:pp:à kɔ̀nɔ:n:oiseau] #chanson éponyme d'Amadou & Maryam
+túgunin===túguni:adv:encore
+túgunni===túguni:adv:encore
 túlobilen>>=túlobilen:n: [túlo:n:oreille bìlen:adj:rouge]
 #túlogerenko===túlogerenko:n: [túlogeren:n:sourd [túlo:n:oreille géren:adj:bouché] kó:n:affaire] # surdité?
 #túlojalandimi===túlojalandimi:n:otite [túlo:n:oreille jàlan:adj:sec dími:n:souffrance] # otite
@@ -23117,6 +23120,7 @@ báara_mîn_kɛ́===báara:n:travail_mîn:dtm:REL_kɛ́:v:faire
 báara_ɲùman_kɛ́===báara:n:travail_ɲùman:adj:bon [man:mrph:ADJ]_kɛ́:v:faire
 báara_ɲùmanw_kɛ́===báara:n:travail_ɲùmanw:adj: [ɲùman:adj:bon w:mrph:PL]_kɛ́:v:faire
 bó_kɛ́===bò:n:excrément_kɛ́:v:faire
+bɔ́li_kɛ́===bɔ́li:n:sortie [bɔ́:v:sortir li:mrph:NMLZ]_kɛ́:v:faire   # satisfaire, rassasier
 bɔ̀nɛ_kɛ́===bɔ̀nɛ:n:malheur_kɛ́:v:faire
 bɛ́_júgumanw_kɛ́===bɛ:pm:IPFV.AFF_júgumanw:n: [júguman:n:méchanceté [júgu:vq:méchant man:mrph:ADJ] w:mrph:PL]_kɛ́:v:faire
 bɛ́_ɲùman_kɛ́===bɛ:pm:IPFV.AFF_ɲùman:n:bienfait [man:mrph:ADJ]_kɛ́:v:faire
@@ -24334,6 +24338,7 @@ sɔ̀sɔli_dábìla===sɔ̀sɔli:n:discussion [sɔ̀sɔ:v:contredire li:mrph:N
 sɛ́bɛn_cí===sɛ́bɛn:n:écrit_cí:v:envoyer
 sɛ́bɛn_tù===sɛ́bɛn:n:écrit_tù:v:garnir.de.cuir
 sɛ́bɛnw_tù===sɛ́bɛnw:n: [sɛ́bɛn:n:écrit w:mrph:PL]_tù:v:garnir.de.cuir
+sɛ́gɛ_fìli===sɛ́gɛ:n:considération_fìli:v:jeter  # faire grand cas de, faire peu de cas de, faire attention à
 sɛ̀gɛn_làfiyɛn_bɔ́===sɛ̀gɛn:n:fatigue_làfiɲɛ:n:repos [lá:mrph:CAUS fíɲɛ:v:sécher \:mrph:NMLZ2]_bɔ́:v:sortir
 sɛ̀gɛn_láfiyɛnbɔ===sɛ̀gɛn:n:fatigue_láfiyɛnbɔ:v: [làfiɲɛ:n:repos [lá:mrph:CAUS fíɲɛ:v:sécher \:mrph:NMLZ2] bɔ́:v:sortir]
 sɛ̀gɛn_làfiɲɛ_bɔ́===sɛ̀gɛn:n:fatigue_làfiɲɛ:n:repos [lá:mrph:CAUS fíɲɛ:v:sécher \:mrph:NMLZ2]_bɔ́:v:sortir
@@ -26015,6 +26020,7 @@ cɛ́siri_ní_tíminandiya===cɛ́siri:n:ardeur.au.travail [cɛ́:n:milieu si�
 # 1GNId
 #
 dá_ní_dá_PUNCT===dá:n:bouche_ni:conj:et_dá:n:bouche_PUNCT
+dàba_ni_fálo===dàba:n:houe_ni:conj:et_fálo:n:pioche.à.lame.large
 dàamu_ni_nísɔndiya===dàamu:n:bonheur_ni:conj:et_nísɔndiya:n:joie [nísɔn:n:humeur [ní:n:âme sɔ̀n:n:coeur] díya:n:bon.goût [dí:vq:agréable ya:mrph:DEQU]]
 dàamu_ni_nísɔndiyako===dàamu:n:bonheur_ni:conj:et_nísɔndiyako:n: [nísɔndiya:n:joie [nísɔn:n:humeur [ní:n:âme sɔ̀n:n:coeur] díya:n:bon.goût [dí:vq:agréable ya:mrph:DEQU]] kó:n:affaire]
 dàbali_júgu_ni_kɔ̀rɔti===dàbali:n:moyen_júgu:adj:méchant_ni:conj:et_kɔ̀rɔti:n:poison.magique
@@ -26081,6 +26087,7 @@ fàama_ní_fàantanw===fàama:n:roi_ni:conj:et_fàantanw:n: [fàantan:n:pa
 fàantan_ní_fàama===fàantan:n:pauvre [fànga:n:force ntan:mrph:PRIV]_ni:conj:et_fàama:n:roi
 fàneni_ní_báneni===fàneni:n: [fà:n:père nèni:v:insulter]_ni:conj:et_báneni:n: [bá:n:mère nèni:v:insulter]
 fàrigan_ni_súmaya===fàrigan:n:fièvre [fàri:n:corps gàn:n:fièvre]_ni:conj:et_súmaya:n:froid [súma:vq:frais ya:mrph:DEQU]
+fálo_ni_bèse===fálo:n:pioche.à.lame.large_ni:conj:et_bèse:n:machette
 fárinya_ní_dánnaya===fárinya:n:effet.vigoureux [fárin:vq:ardent ya:mrph:DEQU]_ni:conj:et_dánnaya:n:foi [dánna:n:foi [dá:v:poser ń:pers:1SG lá:pp:à] ya:mrph:ABSTR]
 fàrikolo_ní_dònfini===fàrikolo:n:corps [fàri:n:corps kólo:n:os]_ni:conj:et_dònfini:n:vêtement [dòn:v:entrer fìni:n:tissu]
 féere_ni_dén===féere:n:fleur_ni:conj:et_dén:n:enfant
@@ -37177,6 +37184,10 @@ PFVTR_NONVERBALGROUP_tìgɛ===PFVTR_NONVERBALGROUP_tìgɛ:v:couper
 PFVNEG_NONVERBALGROUP_tìgɛ===PFVNEG_NONVERBALGROUP_tìgɛ:v:couper
 mánà_NONVERBALGROUP_tìgɛ===mánà:pm:COND.AFF_NONVERBALGROUP_tìgɛ:v:couper
 kànâ_NONVERBALGROUP_tìgɛ===kànâ:pm:PROH_NONVERBALGROUP_tìgɛ:v:couper
+
+í_tìgɛ_PMINF_í_VERBE===í:pers:REFL_tìgɛ:v:couper_PMINF_í:pers:REFL_VERBE     # avec bin, fili, bɔ, jan, da
+í_tìgɛ_PMINF_í_NORV===í:pers:REFL_tìgɛ:v:couper_PMINF_í:pers:REFL_NORVverbe
+
 
 #
 #	tíla "diviser" 2

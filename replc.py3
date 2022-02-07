@@ -1241,7 +1241,7 @@ for linerepl in toutrepllines :
 
   if not applicable: 
     log.write("NON APPLICABLE : "+liste_mots+" -> mot absent : "+mot+"\n")
-
+    nbreplok=nbreplok+1  # on fait quand même avancer le curseur sur la ligne de progress
     continue  # skips the rest of the bigger loop of REPL rules
   # si on arrive là c'est que c'est applicable
   napplicable=napplicable+1
@@ -2399,7 +2399,7 @@ for match in fixtones:
     print(lemma+":"+ps+": -> no tone in ",slemma," ???")
   else:
     fixedlist.append(fixeditem)
-    lemma_tones=lemma.replace(slemma_notone,slemma)
+    lemma_tones=lemma.replace(slemma_notone,slemma,1)
     # print("->",lemma_tones)
     wsearch=r'<span class="'+lemmaclass+r'">'+lemma      +r'<sub class="ps">'+ps+r'</sub><span class="m">'+slemma+r'<'
     wrepl  =r'<span class="'+lemmaclass+r'">'+lemma_tones+r'<sub class="ps">'+ps+r'</sub><span class="m">'+slemma+r'<'

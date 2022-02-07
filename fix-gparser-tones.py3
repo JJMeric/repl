@@ -9,10 +9,13 @@ nargv=len(sys.argv)
 if nargv==1 : 
   print("repl.py needs -at least- one argument : file name")
   sys.exit
-if nargv>1 : filename= str(sys.argv[1])
+if nargv>1 : filenamein= str(sys.argv[1])
 
-fileIN = open(filename, "r")   # w+ = read-write mode
-fileOUT = open(filename.replace(".dis.html","-fixed.dis.html"), "w")
+filenameout=filenamein.replace(".dis.html","-fixed.dis.html")
+filenameold=filenamein.replace(".dis.html","-before-tones-fix.dis.html")
+
+fileIN = open(filenamein, "r")   # w+ = read-write mode
+fileOUT = open(filenameout, "w")
 
 tout=fileIN.read()
 #print("tout = ",len(tout)," characters")
@@ -38,7 +41,7 @@ for match in fixtones:
     print(lemma+":"+ps+": -> no tone in ",slemma," ???")
   else:
     fixedlist.append(fixeditem)
-    lemma_tones=lemma.replace(slemma_notone,slemma)
+    lemma_tones=lemma.replace(slemma_notone,slemma,1)  # only 1st occurence: avoid nànà
     print("->",lemma_tones)
     wsearch=r'<span class="'+lemmaclass+r'">'+lemma      +r'<sub class="ps">'+ps+r'</sub><span class="m">'+slemma+r'<'
     wrepl  =r'<span class="'+lemmaclass+r'">'+lemma_tones+r'<sub class="ps">'+ps+r'</sub><span class="m">'+slemma+r'<'
@@ -53,3 +56,6 @@ fileOUT.write(tout)
 
 fileIN.close()
 fileOUT.close()
+
+os.rename(filenamein, filenameold)
+os.rename(filenameout, filenamein)

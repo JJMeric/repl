@@ -541,6 +541,26 @@ body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 wsearch=r'<span class="w" stage="0">ti<span class="lemma">tɛ<sub class="ps">pm</sub><sub class="gloss">IPFV.NEG</sub></span></span>\n'
 wrepl=r'<span class="w" stage="0">ti<span class="lemma">ti<sub class="ps">pm</sub><sub class="gloss">IPFV.NEG</sub></span></span>\n'
 body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)  
+
+# tones on gparser generated derivations and flexions lacking tones
+fixsearch=re.compile(r'<span class="(lemma|lemma var)">([^<́̀̌̂]+)<sub class="ps">([^<]+)</sub><span class="m">([^<]+)<')
+fixtones=fixsearch.finditer(body,re.U|re.MULTILINE)
+fixedlist=[]
+for match in fixtones:
+  lemmaclass=match.group(1)
+  lemma=match.group(2)
+  ps=match.group(3)
+  slemma=match.group(4)
+  fixeditem=lemmaclass+':'+lemma+':'+ps+':'+slemma
+  if fixeditem in fixedlist: continue
+  slemma_notone,ntones=re.subn(r'[́̀̌̂]','',slemma)
+  if ntones>0:
+    fixedlist.append(fixeditem)
+    lemma_tones=lemma.replace(slemma_notone,slemma,1)
+    wsearch=r'<span class="'+lemmaclass+r'">'+lemma      +r'<sub class="ps">'+ps+r'</sub><span class="m">'+slemma+r'<'
+    wrepl  =r'<span class="'+lemmaclass+r'">'+lemma_tones+r'<sub class="ps">'+ps+r'</sub><span class="m">'+slemma+r'<'
+    body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  
+
 # FINISH
 
 fileOUT.write(head+"<body>"+body)
