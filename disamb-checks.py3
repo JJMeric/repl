@@ -107,7 +107,8 @@ CONJ      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 # punctuations
 START     =r'^'
 END       =r'$'
-PUNCT     =r'<span class="[ct]">([^<]+)</span>\n'  # all punctuations, tags included
+PUNCT     =r'<span class="[ct]">([^<]+)</span>\n'  # any punctuations, tags included
+HPUNCT    =r'<span class="[c]">([\.\;\:\!\?]+)</span>\n'  # hard punctuation marking sentence end
 
 # specifics
 KAINF     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n'
@@ -119,6 +120,7 @@ YEEQU     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 MAPFV     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">PFV\.NEG</sub></span></span>\n'
 A3SG      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pers</sub><sub class="gloss">3SG</sub></span></span>\n'
 VERB1     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">v</sub><sub class="gloss">(?:(?!aller|venir).*)</sub>.*</span></span>\n'
+COP1       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">cop</sub><sub class="gloss">(?:(?!QUOT).*)</sub>.*</span></span>\n'
 
 
 # forbidden sequences
@@ -143,7 +145,7 @@ A3SG_YEIMP=A3SG+YEIMP
 VERB1_VERB=VERB1+VERB
 PP_PP     =PP+PP
 PM_PM     =PM+PM
-COP_COP   =COP+COP
+COP1_COP1  =COP1+COP1   # nb ye ko EQU QUOT accepté et ko ko QUOT QUOT accepté
 
 # ...tbc...
 # implement : NG (nominal group) NAME+ADJ*+DTM*+POSS*+AND*+... see NONVERBALGROUP in replc
@@ -167,7 +169,7 @@ PP1       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 PM_NG_PP  =PM+NG+PP1
 PM_NG_ADV =PM+NG+ADV
 PM_NG_VQ  =PM+NG+VQ
-PM_NG_PUNCT=PM+NG+PUNCT
+PM_NG_HPUNCT=PM+NG+HPUNCT
 # print(PM_NG_PUNCT)
 PM_NG_END =PM+NG+END   # only if missing final punctuation
 
@@ -186,6 +188,7 @@ for sentence in sentences:
   original=original.replace("&lt;","<")
   original=original.replace("&gt;",">")
   original=original.replace("\n"," ")
+  original=re.sub(r' +', ' ',original)
 
   errors=""
 
@@ -217,7 +220,7 @@ for sentence in sentences:
     if nerr>0:
       errors=errors+"    "+str(nerr)+" PM PM ? "+err_msg+"\n"
 
-    nerr,err_msg=listerr2(COP_COP)
+    nerr,err_msg=listerr2(COP1_COP1)
     if nerr>0:
       errors=errors+"    "+str(nerr)+" COP COP ? "+err_msg+"\n"
 
@@ -291,7 +294,7 @@ for sentence in sentences:
 
     nerr,err_msg=listerr3(PM_NG_PP)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM_NG_PP (devrait être une copule) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM_NG_PP (pas de verbe avant la postposition) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr3(PM_NG_ADV)
     if nerr>0:
@@ -301,8 +304,8 @@ for sentence in sentences:
     if nerr>0:
       errors=errors+"    "+str(nerr)+" PM_NG_VQ (pas de verbe avant le VQ) ? "+err_msg+"\n"
 
-    nerr,err_msg=listerr3(PM_NG_PUNCT)
-    # print(original, "PM_NG_PUNCT", nerr, err_msg)
+    nerr,err_msg=listerr3(PM_NG_HPUNCT)
+    # print(original, "PM_NG_HPUNCT", nerr, err_msg)
     if nerr>0:
       errors=errors+"    "+str(nerr)+" PM_NG_PUNCT (pas de verbe avant la ponctuation) ? "+err_msg+"\n"
 
