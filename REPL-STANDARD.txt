@@ -1960,7 +1960,8 @@ fɔ́kan===fɔ́kan:n: [fɔ́:n:action.de.dire kán:n:cou]
 #fɔ́ko===fɔ́ko:n: [fɔ́:v:dire kó:n:affaire]
 fɔ́kun===fɔ́kun:n: [fɔ́:v:dire kùn:n:tête]
 #fɔ́lɔ-fɔlɔ=>=fɔ́lɔfɔlɔ:n:autrefois [fɔ́lɔ:n:autrefois fɔ́lɔ:n:autrefois]
-fɔ́lɔfɔ́lɔ=>=fɔ́lɔfɔlɔ:adv:autrefois [fɔ́lɔ:n:autrefois fɔ́lɔ:n:autrefois]§§fɔ́lɔfɔlɔ:adj:tout.premier [fɔ́lɔ:n:autrefois fɔ́lɔ:n:autrefois]   # problem in bamana.gram with reduplication giving unique n:autrefois ???
+fɔ́lɔfɔ́lɔ===fɔ́lɔfɔlɔ:adv:autrefois [fɔ́lɔ:n:autrefois fɔ́lɔ:n:autrefois]§§fɔ́lɔfɔlɔ:adj:tout.premier [fɔ́lɔ:n:autrefois fɔ́lɔ:n:autrefois]   # problem in bamana.gram with reduplication giving unique n:autrefois ???
+Fɔ́lɔfɔ́lɔ===fɔ́lɔfɔlɔ:adv:autrefois [fɔ́lɔ:n:autrefois fɔ́lɔ:n:autrefois]§§fɔ́lɔfɔlɔ:adj:tout.premier [fɔ́lɔ:n:autrefois fɔ́lɔ:n:autrefois]
 #fɔ́lɔmɔgɔ>>=fɔ́lɔmɔgɔ:n:homme.préhistorique [fɔ́lɔ:n:autrefois mɔ̀gɔ:n:homme]
 #fɔ́lɔfɔlɔmɔgɔ>>=fɔ́lɔfɔlɔmɔgɔ:n: [fɔ́lɔ:n:premier fɔ́lɔmɔgɔ:n:homme.préhistorique [fɔ́lɔ:n:autrefois mɔ̀gɔ:n:homme]]
 fɔ́nfɔnni=>=fɔ́nfɔnnin:n:serpent.Causus.rhombeatus
@@ -8234,6 +8235,7 @@ NPROPRETOP_dɔ́gɔ_ká_dí===NPROPRETOP_dɔ́gɔ:n:marché_ka:pm:QUAL.AFF_di�
 sèn_ká_dí=>=sèn:n:jambe_ka:pm:QUAL.AFF_dí:vq:agréable
 cɛ̀ko_ká_dí===cɛ̀ko:n:affaire.entre.hommes [cɛ̀:n:mâle kó:n:affaire]_ka:pm:QUAL.AFF_dí:vq:agréable
 ká_dí_kójugu===ka:pm:QUAL.AFF_dí:vq:agréable_kójugu:adv:trop [kó:n:affaire júgu:adj:méchant]
+ká_dí_kósɛbɛ===ka:pm:QUAL.AFF_dí:vq:agréable_kósɛbɛ:adv:très.bien [kó:n:affaire sɛ̀bɛ:adj:sérieux]
 # avec une action : facile
 yɛ̀lɛma_ká_dí===yɛ̀lɛma:n:changement_ka:pm:QUAL.AFF_dí:vq:agréable # facile
 kɛ́nɛya_ká_dí===kɛ́nɛya:n:bonne.santé [kɛ́nɛ:vq:sain ya:mrph:DEQU]_ka:pm:QUAL.AFF_dí:vq:agréable # facile
@@ -8937,6 +8939,10 @@ tɛ́_PERS_ɲɛ́_ná===tɛ́:cop:COP.NEG_PERS_ɲɛ́:n:oeil_ná:pp:à
 t'_PERS_ɲɛ́_ná===t':cop:COP.NEG_PERS_ɲɛ́:n:oeil_ná:pp:à
 bɛ́_PERS_ɲɛ́_ná_kó===bɛ́:cop:être_PERS_ɲɛ́:n:oeil_ná:pp:à_kó:cop:QUOT
 bɛ́_PERS_yɛ̀rɛ̂_ɲɛ́_ná_kó===bɛ́:cop:être_PERS_yɛ̀rɛ̂:dtm:même_ɲɛ́:n:oeil_ná:pp:à_kó:cop:QUOT
+
+bɛ́_PERS_dísi_lá===bɛ́:cop:être_PERS_dísi:n:poitrine_lá:pp:à
+b'_PERS_dísi_lá===b':cop:être_PERS_dísi:n:poitrine_lá:pp:à
+# autres parties du corps ?
 
 PERS_ɲɛ́_bɛ́_PERS_LANA===PERS_ɲɛ́:n:oeil_bɛ́:cop:être_PERS_LANA
 PERS_ɲɛ́_tɛ́_PERS_LANA===PERS_ɲɛ́:n:oeil_tɛ́:cop:COP.NEG_PERS_LANA
@@ -9777,8 +9783,13 @@ PMINF_PERS_bìla===PMINF_PERS_bìla:v:mettre
 PMINF_ò_bìla===PMINF_ò:prn:ce_bìla:v:mettre
 IPFVAFF_PERS_bìla===IPFVAFF_PERS_bìla:v:mettre
 IPFVAFF_ò_bìla===IPFVAFF_ò:prn:ce_bìla:v:mettre
+
 IPFVNEG_PERS_bìla===IPFVNEG_PERS_bìla:v:mettre
 IPFVNEG_ò_bìla===IPFVNEG_ò:prn:ce_bìla:v:mettre
+# mais attention t' taa:
+kà_t'_PERS_bìla===kà:pm:INF_t':v:aller_PERS_bìla:v:mettre
+kà_t'_ò_bìla===kà:pm:INF_t':v:aller_ò:prn:ce_bìla:v:mettre
+
 PFVTR_PERS_bìla===PFVTR_PERS_bìla:v:mettre
 PFVTR_ò_bìla===PFVTR_ò:prn:ce_bìla:v:mettre
 PFVNEG_PERS_bìla===PFVNEG_PERS_bìla:v:mettre
@@ -16828,8 +16839,10 @@ kàn'_PERS_sɔ̀rɔ===kàn':pm:PROH_PERS_sɔ̀rɔ:v:obtenir
 kànâ_PERS_sɔ̀rɔ===kànâ:pm:PROH_PERS_sɔ̀rɔ:v:obtenir
 mán'_PERS_sɔ̀rɔ===mán':pm:COND.AFF_PERS_sɔ̀rɔ:v:obtenir
 mánà_PERS_sɔ̀rɔ===mánà:pm:COND.AFF_PERS_sɔ̀rɔ:v:obtenir
-n'_PERS_sɔ̀rɔ===n':pm:CERT_PERS_sɔ̀rɔ:v:obtenir
-nà_PERS_sɔ̀rɔ===nà:pm:CERT_PERS_sɔ̀rɔ:v:obtenir
+n'_PERS_sɔ̀rɔ===n':pm:CERT§§nà:v:venir_PERS_sɔ̀rɔ:v:obtenir
+nà_PERS_sɔ̀rɔ===nà:pm:CERT§§nà:v:venir_PERS_sɔ̀rɔ:v:obtenir
+PRMRK_n'_PERS_sɔ̀rɔ===PRMRK_n':v:venir_PERS_sɔ̀rɔ:v:obtenir
+PRMRK_nà_PERS_sɔ̀rɔ===PRMRK_nà:v:venir_PERS_sɔ̀rɔ:v:obtenir
 PFVNEG_PERS_sɔ̀rɔ===PFVNEG_PERS_sɔ̀rɔ:v:obtenir
 PFVTR_PERS_sɔ̀rɔ===PFVTR_PERS_sɔ̀rɔ:v:obtenir
 PMINF_PERS_sɔ̀rɔ===PMINF_PERS_sɔ̀rɔ:v:obtenir
@@ -27236,6 +27249,7 @@ jàmana_cáman=>=jàmana:n:pays_cáman:adj:nombreux [cá:vq:nombreux man:mr
 jàmana_dúuru=>=jàmana:n:pays_dúuru:num:cinq     # cf G5 sahel
 G5_sahel===G5:n.prop:ABR_sahel:n.prop:TOP
 jàmana_fàn_wɛ́rɛ=>=jàmana:n:pays_fàn:n:côté_wɛ́rɛ:dtm:autre
+jàmana_jàn=>=jàmana:n:pays_jàn:adj:long   # pays lointains (éloignés)
 jàmana_hɔ́rɔnyalenw=>=jàmana:n:pays_hɔ́rɔnyalenw:ptcp: [hɔ́rɔnya:v:libérer [hɔ́rɔn:adj:libre ya:mrph:ABSTR] len:mrph:PTCP.RES w:mrph:PL]
 jàmana_ìn===jàmana:n:pays_ìn:dtm:DEF
 jàmanaba_ìn===jàmanaba:n: [jàmana:n:pays ba:mrph:AUGM]_ìn:dtm:DEF
@@ -40220,6 +40234,26 @@ POSTP_dɔ́rɔn===POSTP_dɔ́rɔn:adv:seulement
 ADV_dɔ́rɔn===ADV_dɔ́rɔn:adv:seulement
 VQ_dɔ́rɔn===VQ_dɔ́rɔn:adv:seulement
 
+VERBE_ɲɛ́fɛ̀===VERBE_ɲɛ́fɛ̀:adv:en.avant [ɲɛ́:n:oeil fɛ̀:pp:par]
+POSTP_ɲɛ́fɛ̀===POSTP_ɲɛ́fɛ̀:adv:en.avant [ɲɛ́:n:oeil fɛ̀:pp:par]
+ADV_ɲɛ́fɛ̀===ADV_ɲɛ́fɛ̀:adv:en.avant [ɲɛ́:n:oeil fɛ̀:pp:par]
+VQ_ɲɛ́fɛ̀===VQ_ɲɛ́fɛ̀:adv:en.avant [ɲɛ́:n:oeil fɛ̀:pp:par]
+
+VERBE_kɔ́fɛ̀===VERBE_kɔ́fɛ̀:adv:puis [kɔ́:n:dos fɛ̀:pp:par]
+POSTP_kɔ́fɛ̀===POSTP_kɔ́fɛ̀:adv:puis [kɔ́:n:dos fɛ̀:pp:par]
+ADV_kɔ́fɛ̀===ADV_kɔ́fɛ̀:adv:puis [kɔ́:n:dos fɛ̀:pp:par]
+VQ_kɔ́fɛ̀===VQ_kɔ́fɛ̀:adv:puis [kɔ́:n:dos fɛ̀:pp:par]
+
+VERBE_sánfɛ̀===VERBE_sánfɛ̀:adv:en.haut [sán:n:ciel fɛ̀:pp:par]
+POSTP_sánfɛ̀===POSTP_sánfɛ̀:adv:en.haut [sán:n:ciel fɛ̀:pp:par]
+ADV_sánfɛ̀===ADV_sánfɛ̀:adv:en.haut [sán:n:ciel fɛ̀:pp:par]
+VQ_sánfɛ̀===VQ_sánfɛ̀:adv:en.haut [sán:n:ciel fɛ̀:pp:par]
+
+VERBE_kɔ́===VERBE_kɔ́:adv:en.arrière
+POSTP_kɔ́===POSTP_kɔ́:adv:en.arrière
+ADV_kɔ́===ADV_kɔ́:adv:en.arrière
+VQ_kɔ́===VQ_kɔ́:adv:en.arrière
+
 VERBE_fɔ́lɔ===VERBE_fɔ́lɔ̀:adv:autrefois§§fɔ́lɔ:prt:d'abord
 POSTP_fɔ́lɔ===POSTP_fɔ́lɔ̀:adv:autrefois§§fɔ́lɔ:prt:d'abord
 ADV_fɔ́lɔ===ADV_fɔ́lɔ̀:adv:autrefois§§fɔ́lɔ:prt:d'abord
@@ -40292,7 +40326,10 @@ yàn_VERBE===yàn:n:cet.endroit_VERBE
 
 VERBE_sísàn===VERBE_sísàn:adv:maintenant
 POSTP_sísàn===POSTP_sísàn:adv:maintenant
-
+sísan_POSTP_PUNCT===sísàn:n:maintenant_POSTP_PUNCT
+sísan_POSTP_ADV===sísàn:n:maintenant_POSTP_ADV
+sísan_POSTP_PMINF===sísàn:n:maintenant_POSTP_PMINF
+sísan_POSTP_NPROPRETOP===sísàn:n:maintenant_POSTP_NPROPRETOP
 
 POSTP_kàban_PUNCT===POSTP_kàbán:prt:déjà [kà:pm:INF bán:v:terminer]_PUNCT
 ADV_kàban_PUNCT===ADV_kàbán:prt:déjà [kà:pm:INF bán:v:terminer]_PUNCT
@@ -40851,6 +40888,8 @@ tɛ́_NORV_VERBE_PUNCT===tɛ:pm:IPFV.NEG_NORVname_VERBE_PUNCT
 tɛ́_NAME_NORV_VERBE_PUNCT===tɛ:pm:IPFV.NEG_NAME_NORVname_VERBE_PUNCT
 IPFVAFF_ò_VERBE===IPFVAFF_ò:prn:ce_VERBE
 IPFVNEG_ò_VERBE===IPFVNEG_ò:prn:ce_VERBE
+# attention t' taa
+kà_t'_ò_VERBE===kà:pm:INF_t':v:aller_ò:prn:ce_VERBE     # ex: kà t' o bila
 IPFVAFF_ò_NAME_VERBE===IPFVAFF_ò:dtm:ce_NAME_VERBE
 IPFVNEG_ò_NAME_VERBE===IPFVNEG_ò:dtm:ce_NAME_VERBE
 
@@ -42124,6 +42163,11 @@ NONVERBALGROUP_ka_NONVERBALGROUP_POSTP===NONVERBALGROUP_ka:pp:POSS_NONVERBALGROU
 NONVERBALGROUP_ní_ɲɔ́gɔn_cɛ́===NONVERBALGROUP_ni:conj:et_ɲɔ́gɔn:prn:RECP_cɛ́:pp:entre
 NONVERBALGROUP_ní_tɔ̀w_cɛ́===NONVERBALGROUP_ni:conj:et_tɔ̀w:n: [tɔ̀:n:le.reste w:mrph:PL]_cɛ́:pp:entre
 
+# fɛ̀
+bɛ́_NONVERBALGROUP_fɛ̀_PUNCT===bɛ́:cop:être_NONVERBALGROUP_fɛ̀:pp:par_PUNCT
+b'_NONVERBALGROUP_fɛ̀_PUNCT===b':cop:être_NONVERBALGROUP_fɛ̀:pp:par_PUNCT
+tɛ́_NONVERBALGROUP_fɛ̀_PUNCT===tɛ́:cop:COP.NEG_NONVERBALGROUP_fɛ̀:pp:par_PUNCT
+t'_NONVERBALGROUP_fɛ̀_PUNCT===t':cop:COP.NEG_NONVERBALGROUP_fɛ̀:pp:par_PUNCT
 
 # lá/ná
 ɲɛ́_ná_ADV===ɲɛ́:n:oeil_ná:pp:à_ADV

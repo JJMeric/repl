@@ -147,10 +147,10 @@ KAINF_VQ  =KAINF+VQ
 KASBJV_VQ =KASBJV+VQ
 KAPOSS_VQ =KAPOSS+VQ
 MAPFV_VQ  =MAPFV+VQ
-COP_VERB  =COP+VERB
+COP1_VERB  =COP1+VERB   # ok avec ko QUOT : a ko na n'a ye
 A3SG_YEIMP=A3SG+YEIMP
 VERB1_VERB=VERB1+VERB
-PP_PP     =PP+PP
+PP_PP     =PP+PP        # pas mal d'exceptions avec 2ème PP=yé comme fin d'équative
 PM_PM     =PM+PM
 COP1_COP1  =COP1+COP1   # nb ye ko EQU QUOT accepté et ko ko QUOT QUOT accepté
 KAQUAL_NONVQ=KAQUAL+NONVQ
@@ -294,7 +294,7 @@ for sentence in sentences:
     if nerr>0:
       errors=errors+"    "+str(nerr)+" KAPOSS VQ ? "+err_msg+"\n"
 
-    nerr,err_msg=listerr2(COP_VERB)
+    nerr,err_msg=listerr2(COP1_VERB)
     if nerr>0:
       errors=errors+"    "+str(nerr)+" COP VERB ? "+err_msg+"\n"
 
