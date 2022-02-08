@@ -98,6 +98,7 @@ PP        =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 PM        =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub>.*</span></span>\n'
 COP       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">cop</sub>.*</span></span>\n'
 VQ        =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">vq</sub>.*</span></span>\n'
+NONVQ     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!vq).*)</sub>.*</span></span>\n'
 ADV       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">adv</sub>.*</span></span>\n'
 DTM       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">dtm</sub>.*</span></span>\n'
 PRN       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:prn|pers)</sub>.*</span></span>\n'
@@ -114,6 +115,9 @@ HPUNCT    =r'<span class="[c]">([\.\;\:\!\?]+)</span>\n'  # hard punctuation mar
 KAINF     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n'
 KASBJV    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">SBJV</sub></span></span>\n'
 KAPOSS    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span></span>\n'
+KAQUAL    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">QUAL\.AFF</sub></span></span>\n'
+MANQUAL   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">QUAL\.NEG</sub></span></span>\n'
+NONQUAL   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">[^<\n]+</sub><sub class="gloss">(?:(?!QUAL\.AFF|QUAL\.NEG).*)</sub></span></span>\n'
 YEPFV     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">PFV\.TR</sub></span></span>\n'
 YEIMP     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">IMP</sub></span></span>\n'
 YEEQU     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">cop</sub><sub class="gloss">EQU</sub></span></span>\n'
@@ -146,6 +150,9 @@ VERB1_VERB=VERB1+VERB
 PP_PP     =PP+PP
 PM_PM     =PM+PM
 COP1_COP1  =COP1+COP1   # nb ye ko EQU QUOT accepté et ko ko QUOT QUOT accepté
+KAQUAL_NONVQ=KAQUAL+NONVQ
+MANQUAL_NONVQ=MANQUAL+NONVQ
+NONQUAL_VQ  =NONQUAL+VQ
 
 # ...tbc...
 # implement : NG (nominal group) NAME+ADJ*+DTM*+POSS*+AND*+... see NONVERBALGROUP in replc
@@ -291,6 +298,18 @@ for sentence in sentences:
     nerr,err_msg=listerr2(A3SG_YEIMP)
     if nerr>0:
       errors=errors+"    "+str(nerr)+" A3SG YEIMP (devrait être á' 2PL) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(KAQUAL_NONVQ)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" KAQUAL NONVQ (groupe qualificatif ou pas?) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(MANQUAL_NONVQ)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" MANQUAL NONVQ (groupe qualificatif ou pas?) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(NONQUAL_VQ)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" NONQUAL VQ (groupe qualificatif ou pas?) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr3(PM_NG_PP)
     if nerr>0:
