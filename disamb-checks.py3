@@ -20,7 +20,8 @@ def listerr(re_key):
   allerr=re.finditer(re_key,disamb,re.U|re.MULTILINE)
   for match in allerr: 
     err_match=match.group(1)
-    if err_match!="": err_msg=err_msg+err_match+" "
+    if err_match!="":
+      err_msg=err_msg+err_match+" "
   if err_msg!="":
     err_msg,nerr=re.subn(r' ',', ',err_msg.strip())
     nerr=nerr+1
@@ -33,7 +34,8 @@ def listerr2(re_key):
   for match in allerr: 
     err_match=match.group(1)
     err_match2=match.group(2)
-    if err_match!="": err_msg=err_msg+err_match+"_"+err_match2
+    if err_match!="": 
+      err_msg=err_msg+err_match+"_"+err_match2+" "
   if err_msg!="":
     err_msg,nerr=re.subn(r' ',', ',err_msg.strip())
     err_msg=err_msg.replace("_"," ")
@@ -56,7 +58,8 @@ def listerr3(re_key):
       err_match2="{"+ng[:-1]+"}"  
 
     err_match3=match.group(3)
-    if err_match!="": err_msg=err_msg+err_match+"_"+err_match2+"_"+err_match3
+    if err_match!="": 
+      err_msg=err_msg+err_match+"_"+err_match2+"_"+err_match3+" "
   if err_msg!="":
     err_msg,nerr=re.subn(r' ',', ',err_msg.strip())
     err_msg=err_msg.replace("_"," ")
