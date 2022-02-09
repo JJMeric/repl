@@ -332,6 +332,9 @@ lxpsg=re.compile(r"[\_\[\s]([^:\[\_0-9]+:[a-z\/\.]+:[A-Z0-9][A-Z0-9\.\'\|]*)[\_\
 replcompile=False
 if arg=="-c" or arg3=="-c" : replcompile=True
 
+logdetails=False
+if arg=="-d" or arg3=="-d" : logdetails=True
+
 # PRE : systematic global replaces  #################################################################
 
 # check if file is new format nov 2021
@@ -2044,6 +2047,7 @@ for linerepl in toutrepllines :
       e = match.end()
       logtext=logtext+body[s:e]+"\n"
   """
+  if logdetails : wmatches=re.finditer(wsearch,body,re.U|re.MULTILINE)
 
   body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U|
   # TESTED : |re.IGNORECASE ADDED 14/03/2021 - dropped : too slow!!! + rules with caps
@@ -2129,6 +2133,14 @@ for linerepl in toutrepllines :
       
     msg="%i modifs avec " % nombre +sequence+"\n"
     log.write(msg)
+    if logdetails:
+      for wmatch in wmatches:
+        wwords=allwords.findall(wmatch.group(0))
+        wfragment=""
+        for w in wwords:
+          wfragment=wfragment+" "+w
+        log.write("     →→→ "+wfragment+"\n")
+
     nbrulesapplied=nbrulesapplied+1
     nbmodif=nbmodif+nombre
     # recalculer lmots, enlever les ponctuations

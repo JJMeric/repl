@@ -18558,7 +18558,7 @@ PERS_yɛ̀rɛ̂_wúlila===PERS_yɛ̀rɛ̂:dtm:même_wúlila:v: [wúli:v:se.le
 
 bɛ́_wíli===bɛ:pm:IPFV.AFF_wúli:v:se.lever
 tɛ́_wíli===tɛ:pm:IPFV.NEG_wúli:v:se.lever
-mána_wíli===mánà:pm:COND.AFF_sé:v:arriver
+mána_wíli===mánà:pm:COND.AFF_wúli:v:se.lever
 fà_wílila_PERS_lá===fà:n:folie_wúlila:v: [wúli:v:se.lever la:mrph:PFV.INTR]_PERS_lá:pp:à
 fà_wílila_ò_lá===fà:n:folie_wúlila:v: [wúli:v:se.lever la:mrph:PFV.INTR]_ò:prn:ce_lá:pp:à
 fà_wílila_PERS_LANA===fà:n:folie_wúlila:v: [wúli:v:se.lever la:mrph:PFV.INTR]_PERS_LANA
