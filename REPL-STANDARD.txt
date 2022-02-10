@@ -8339,8 +8339,9 @@ ká_kán_kà_dɔ́n_k'===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_dɔ́n:v:c
 ká_kán_kà_dɔ́n_kó===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_dɔ́n:v:connaître_kó:cop:QUOT
 ká_kán_kà_kɛ́===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_kɛ́:v:faire
 ká_kán_kà_lábàto===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_lábàto:v:respecter [lá:mrph:CAUS bàto:v:adorer]
-ká_kán_kà_mìn===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_mìn:v:boire
+ká_kán_kà_mìn_PUNCT===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_mìn:v:boire_PUNCT
 ká_kán_kà_mîn_kɛ́===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_mîn:prn:REL_kɛ́:v:faire
+ká_kán_kà_mîn_dɔ́n===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_mîn:prn:REL_dɔ́n:v:connaître
 ká_kán_kà_sé===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_sé:v:arriver
 ká_kán_kà_sìgi===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_sìgi:v:asseoir
 ká_kán_kà_sɔ̀rɔ===ka:pm:QUAL.AFF_kán:vq:égal_kà:pm:INF_sɔ̀rɔ:v:obtenir
@@ -22565,10 +22566,10 @@ bìlen_túgun===bìlen:adv:encore_túgun:adv:encore
 bilèn_túgun===bìlen:adv:encore_túgun:adv:encore
 
 kà_bìlen_PUNCT===kà:pm:INF_bìlen:v:rougir_PUNCT
-PMINF_PERS_bìlen_PUNCT===PMINF_PERS_bìlen:v:rougir_PUNCT
+PMINF_NONVERBALGROUP_bìlen_PUNCT===PMINF_NONVERBALGROUP_bìlen:v:rougir_PUNCT
 bɛ́_bìlen_PUNCT===bɛ:pm:IPFV.AFF_bìlen:v:rougir_PUNCT
-IPFVAFF_PERS_bìlen_PUNCT===IPFVAFF_PERS_bìlen:v:rougir_PUNCT
-IPFVNEG_PERS_bìlen_PUNCT===IPFVNEG_PERS_bìlen:v:rougir_PUNCT
+IPFVAFF_NONVERBALGROUP_bìlen_PUNCT===IPFVAFF_NONVERBALGROUP_bìlen:v:rougir_PUNCT
+IPFVNEG_NONVERBALGROUP_bìlen_PUNCT===IPFVNEG_NONVERBALGROUP_bìlen:v:rougir_PUNCT
 tɛ́_bìlen_PUNCT===tɛ:pm:IPFV.NEG§§tɛ́:cop:COP.NEG_bìlen:v:rougir§§bìlen:adv:encore_PUNCT   # difficile de trancher !
 # má_bìlen_PUNCT===ma:pm:PFV.NEG_bìlen:v:rougir_PUNCT   # pb avec la PP : u tɛ jɛ fosi ma bilen.
 mánà_bìlen_PUNCT===mánà:pm:COND.AFF_bìlen:v:rougir_PUNCT
@@ -40254,6 +40255,11 @@ POSTP_kɔ́===POSTP_kɔ́:adv:en.arrière
 ADV_kɔ́===ADV_kɔ́:adv:en.arrière
 VQ_kɔ́===VQ_kɔ́:adv:en.arrière
 
+VERBE_ɲɛ́===VERBE_ɲɛ́:adv:en.avant
+POSTP_ɲɛ́===POSTP_ɲɛ́:adv:en.avant
+ADV_ɲɛ́===ADV_ɲɛ́:adv:en.avant
+VQ_ɲɛ́===VQ_ɲɛ́:adv:en.avant
+
 VERBE_fɔ́lɔ===VERBE_fɔ́lɔ̀:adv:autrefois§§fɔ́lɔ:prt:d'abord
 POSTP_fɔ́lɔ===POSTP_fɔ́lɔ̀:adv:autrefois§§fɔ́lɔ:prt:d'abord
 ADV_fɔ́lɔ===ADV_fɔ́lɔ̀:adv:autrefois§§fɔ́lɔ:prt:d'abord
@@ -40335,8 +40341,8 @@ POSTP_kàban_PUNCT===POSTP_kàbán:prt:déjà [kà:pm:INF bán:v:terminer]_
 ADV_kàban_PUNCT===ADV_kàbán:prt:déjà [kà:pm:INF bán:v:terminer]_PUNCT
 VERBE_kàban_PUNCT===VERBE_kàbán:prt:déjà [kà:pm:INF bán:v:terminer]_PUNCT
 
-bìlen_PRT_PUNCT===bìlen:adv:encore_PRT_PUNCT   # danger avec rougir
-bìlen_ADV_PUNCT===bìlen:adv:encore_ADV_PUNCT
+VPERF_bìlen_PRT_PUNCT===VPERF_bìlen:adv:encore_PRT_PUNCT # VERBE=danger avec na/taa et rougir
+VPERF_bìlen_ADV_PUNCT===VPERF_bìlen:adv:encore_ADV_PUNCT
 
 POSTP_bìlen===POSTP_bìlen:adv:encore
 
@@ -40630,6 +40636,7 @@ COPQUOT_PMINF===COPQUOT_PMINF
 
 VQ_kà_VERBE===VQ_kà:pm:INF_VERBE
 VQ_kà_NONVERBALGROUP_VERBE===VQ_kà:pm:INF_NONVERBALGROUP_VERBE
+VQ_kà_mîn_VERBE===VQ_kà:pm:INF_mîn:prn:REL_VERBE
 
 VQ_kà_AMBIGUOUS_VERBE===VQ_kà:pm:INF_AMBIGUOUS_VERBE
 VQ_k'_VERBE===VQ_k':pm:INF_VERBE
@@ -42167,7 +42174,9 @@ NONVERBALGROUP_ní_tɔ̀w_cɛ́===NONVERBALGROUP_ni:conj:et_tɔ̀w:n: [tɔ̀:n:
 bɛ́_NONVERBALGROUP_fɛ̀_PUNCT===bɛ́:cop:être_NONVERBALGROUP_fɛ̀:pp:par_PUNCT
 b'_NONVERBALGROUP_fɛ̀_PUNCT===b':cop:être_NONVERBALGROUP_fɛ̀:pp:par_PUNCT
 tɛ́_NONVERBALGROUP_fɛ̀_PUNCT===tɛ́:cop:COP.NEG_NONVERBALGROUP_fɛ̀:pp:par_PUNCT
-t'_NONVERBALGROUP_fɛ̀_PUNCT===t':cop:COP.NEG_NONVERBALGROUP_fɛ̀:pp:par_PUNCT
+t'_NONVERBALGROUP_fɛ̀_PUNCT===t':cop:COP.NEG_NONVERBALGROUP_fɛ̀:pp:par_PUNCT  # attentikon avec táa !
+kà_t'_NONVERBALGROUP_fɛ̀_PUNCT===kà:pm:INF_táa:v:aller_NONVERBALGROUP_fɛ̀:pp:par_PUNCT
+PRMRK_t'_NONVERBALGROUP_fɛ̀_PUNCT===PRMRK_táa:v:aller_NONVERBALGROUP_fɛ̀:pp:par_PUNCT
 
 # lá/ná
 ɲɛ́_ná_ADV===ɲɛ́:n:oeil_ná:pp:à_ADV

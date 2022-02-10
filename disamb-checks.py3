@@ -112,7 +112,8 @@ CONJ      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 START     =r'^'
 END       =r'$'
 PUNCT     =r'<span class="[ct]">([^<]+)</span>\n'  # any punctuations, tags included
-HPUNCT    =r'<span class="[c]">([\.\;\:\!\?]+)</span>\n'  # hard punctuation marking sentence end
+HPUNCT    =r'<span class="c">([\.\;\:\!\?]+)</span>\n'  # hard punctuation marking sentence end
+COMMA     =r'<span class="c">,</span>\n'  
 
 # specifics
 KAINF     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n'
@@ -127,8 +128,11 @@ YEEQU     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 MAPFV     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">PFV\.NEG</sub></span></span>\n'
 A3SG      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pers</sub><sub class="gloss">3SG</sub></span></span>\n'
 VERB1     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">v</sub><sub class="gloss">(?:(?!aller|venir).*)</sub>.*</span></span>\n'
-COP1       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">cop</sub><sub class="gloss">(?:(?!QUOT).*)</sub>.*</span></span>\n'
-
+COP1      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">cop</sub><sub class="gloss">(?:(?!QUOT).*)</sub>.*</span></span>\n'
+NIet      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:conj|prep)</sub><sub class="gloss">et</sub></span></span>\n'
+PMnon_ka  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">(?:(?!INF).*)</sub></span></span>\n'
+PPnon_ye  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">(?:(?!PP).*)</sub></span></span>\n'
+PPFINAL   =PP+PUNCT
 
 # forbidden sequences
 VERB_PP   =VERB+PP
@@ -150,12 +154,23 @@ MAPFV_VQ  =MAPFV+VQ
 COP1_VERB  =COP1+VERB   # ok avec ko QUOT : a ko na n'a ye
 A3SG_YEIMP=A3SG+YEIMP
 VERB1_VERB=VERB1+VERB
-PP_PP     =PP+PP        # pas mal d'exceptions avec 2ème PP=yé comme fin d'équative
+PP_PPnon_ye     =PP+PPnon_ye    # pas mal d'exceptions avec 2ème PP=yé comme fin d'équative
 PM_PM     =PM+PM
 COP1_COP1  =COP1+COP1   # nb ye ko EQU QUOT accepté et ko ko QUOT QUOT accepté
 KAQUAL_NONVQ=KAQUAL+NONVQ
 MANQUAL_NONVQ=MANQUAL+NONVQ
 NONQUAL_VQ  =NONQUAL+VQ
+CONJ_COP1 =CONJ+COP1    # ko autorisé
+CONJ_PMnonka   =CONJ+PMnon_ka   # autorisés avec kà INF : ni ka (rare, mais...), fo ka, janko ka ... ?
+CONJ_VERB =CONJ+VERB
+CONJ_ADV  =CONJ+ADV
+CONJ_PP   =CONJ+PP
+# COP1_CONJ =COP1_CONJ    # ko autorisé - NON a kɔnnen don n'o tɛ...
+PM_CONJ   =PM+CONJ
+# VERB_CONJ =VERBE_CONJ   # phrases avec absence de virgule derrière le verbe
+# ADV_CONJ                # phrases avec absence de virgule derrière le verbe
+
+
 
 # ...tbc...
 # implement : NG (nominal group) NAME+ADJ*+DTM*+POSS*+AND*+... see NONVERBALGROUP in replc
@@ -168,20 +183,25 @@ DTM_      =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<su
 PRN_      =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">(?:prn|pers)</sub>.*</span></span>\n'
 KAPOSS_   =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span></span>\n'
 NUM_      =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">num</sub>.*</span></span>\n'
+NIet_     =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">(?:conj|prep)</sub><sub class="gloss">et</sub></span></span>\n'
+PP_       =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">pp</sub>.*</span></span>\n'
 
 # manque pour l'instant les groupes avec ni et etc.
 
-NG  = r'((?:'+NAME_+r'|'+PRN_+r'|'+DTM_+r')'+r'(?:'+NAME_+r'|'+ADJ_+r'|'+DTM_+r'|'+NUM_+r'|'+KAPOSS_+r')*)'
+NG  = r'((?:'+NAME_+r'|'+PRN_+r'|'+DTM_+r')'+r'(?:'+NAME_+r'|'+ADJ_+r'|'+DTM_+r'|'+NUM_+r'|'+PP_+NAME_+r'|'+NIet_+NAME_+r'|'+COMMA+r')*)'
 # print(NG)
 
 PP1       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">(?:(?!POSS).*)</sub>.*</span></span>\n'
 #   =pp sans ka POSS
-PM_NG_PP  =PM+NG+PP1
+PM_NG_PPFINAL  =PM+NG+PPFINAL    # difficulty with split orthography : a be dugu kɔnɔ mɔgɔw ɲɔgɔri - only ka POSS accepted in NG/NG1
 PM_NG_ADV =PM+NG+ADV
 PM_NG_VQ  =PM+NG+VQ
 PM_NG_HPUNCT=PM+NG+HPUNCT
 # print(PM_NG_PUNCT)
 PM_NG_END =PM+NG+END   # only if missing final punctuation
+PM_NG_PM  =PM+NG+PM
+VERB1_NG_VERB=VERB1+NG+VERB
+
 
 nsent=0
 nsenterr=0
@@ -220,83 +240,83 @@ for sentence in sentences:
 
     nerr,err_msg=listerr2(VERB1_VERB)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" VERB VERB ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" VERB VERB (deux verbes qui se suivent) ? "+err_msg+"\n"
 
-    nerr,err_msg=listerr2(PP_PP)
+    nerr,err_msg=listerr2(PP_PPnon_ye)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PP PP ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PP PP (deux postpositions successives? voir adverbes ou pp composées) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(PM_PM)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM PM ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM PM (deux marques prédicatives qui se suivent) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(COP1_COP1)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" COP COP ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" COP COP (deux copulesqui se suivent) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(VERB_PP)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" VERB PP ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" VERB PP (verbe suivi d'une postpositions - voir adverbes possibles) ? "+err_msg+"\n"
     
     nerr,err_msg=listerr2(ADV_PP)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" ADV PP ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" ADV PP (adverbe suivi d'une postposition) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(PP_VERB)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PP VERB ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PP VERB (postposition avent un verbe) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(VERB_ADJ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" VERB ADJ ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" VERB ADJ (verbe suivi d'un adjectif) ? "+err_msg+"\n"
     
     nerr,err_msg=listerr2(ADV_VERB)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" ADV VERB ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" ADV VERB (adverbe précédent un verbe mais pas adv.p) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(COP_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" COP VQ ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" COP VQ (copule avant un verbe qualitatif) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(ADV_ADJ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" ADV ADJ ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" ADV ADJ (adverbe suivi d'un adjectif) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(PM_COP)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM_COP ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM COP (marque prédicative suivie d'une copule) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(NAME_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" NAME VQ ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" NAME VQ (nom devant un verbe qualitatif) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(PP_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PP VQ ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PP VQ (postposition deveant un verbe qualitatif) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(ADJ_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" ADJ VQ ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" ADJ VQ (adjectif devant un verbe qualitatif) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(MAPFV_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" MAPFV VQ ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" MAPFV VQ (ma devant un verbe qualitatif - au lieu de man? )? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(KAINF_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" KAINF VQ ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" KAINF VQ (kà infinitif devant un verbe qualitatif - au lieu de ka QUAL.AFF) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(KASBJV_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" KASBJV VQ ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" KASBJV VQ (ka subjonctof devant un verbe qualitatif - au lieu de ka QUAL.AFF) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(KAPOSS_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" KAPOSS VQ ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" KAPOSS VQ (ka POSS devant un verba qualitatif - au lieu de ka QUAL?AFF) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(COP1_VERB)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" COP VERB ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" COP VERB (copule devant un verbe - au lieu d'une marque prédicative)? "+err_msg+"\n"
 
     nerr,err_msg=listerr2(A3SG_YEIMP)
     if nerr>0:
@@ -314,26 +334,57 @@ for sentence in sentences:
     if nerr>0:
       errors=errors+"    "+str(nerr)+" NONQUAL VQ (groupe qualificatif ou pas?) ? "+err_msg+"\n"
 
-    nerr,err_msg=listerr3(PM_NG_PP)
+    nerr,err_msg=listerr2(CONJ_COP1)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM_NG_PP (pas de verbe avant la postposition) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" CONJ COP1 (conjonction devant une copule) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(CONJ_PMnonka)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" CONJ PM (conjonction devant une marque prédicative) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(PM_CONJ)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" PM CONJ (marque prédicative devant une conjonction) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(CONJ_VERB)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" CONJ VERB (conjonction devant un verbe) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(CONJ_PP)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" CONJ PP (conjonction devant une postposition) ? "+err_msg+"\n"
+
+#------------------- 3 terms, NG middle
+
+    nerr,err_msg=listerr3(PM_NG_PPFINAL)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" PM_NG_PPfinal (pas de verbe avant la postposition) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr3(PM_NG_ADV)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM_NG_ADV (pas de verbe avant l'adverbe) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM NG ADV (pas de verbe avant l'adverbe) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr3(PM_NG_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM_NG_VQ (pas de verbe avant le VQ) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM NG VQ (pas de verbe avant le VQ) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr3(PM_NG_HPUNCT)
     # print(original, "PM_NG_HPUNCT", nerr, err_msg)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM_NG_PUNCT (pas de verbe avant la ponctuation) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM NG PUNCT (pas de verbe avant la ponctuation) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr3(PM_NG_END)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM_NG_END (pas de verbe avant la fin de phrase) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM NG END (pas de verbe avant la fin de phrase) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr3(PM_NG_PM)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" PM NG PM (deux marques prédicatives successives - verbe mal identifié?) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr3(VERB1_NG_VERB)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" VERBE NG VERBE (deux verbes successifs) ? "+err_msg+"\n"
+
 
   if errors!="" : 
     fileOUT.write(str(nsent)+" "+original+"\n"+errors+'\n')

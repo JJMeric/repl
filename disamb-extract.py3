@@ -55,7 +55,7 @@ for sentence in sentences:
   original=original.replace("&lt;","<")
   original=original.replace("&gt;",">")
 
-  lemmaspuncts=re.findall('<span class="(?:lemma|c|t)">([^<]*)',sentence,re.U|re.MULTILINE)
+  lemmaspuncts=re.findall('<span class="(?:lemma|c|t|comment)">([^<]*)',sentence,re.U|re.MULTILINE)
   #print len(lemmaspuncts),"lemma ou c"
   disamb=""
   itemprec=" "
@@ -68,17 +68,24 @@ for sentence in sentences:
     if nitem==1:
       if item[:1]!="<":
         item=item.title()
-    elif nitem==2:
+    #elif nitem==2:
+    else: 
       if itemprec[:1]=="<":
-        item=item.title()
-    if item==";" or item=="?" or item==":" or item=="!": item=" "+item+" "
-    elif item=="," or item=="." : item=item
+        item=" "+item.title()
+    """if item==";" or item=="?" or item==":" or item=="!": item=" "+item+" "
+    #elif item=="," or item=="." : item=item
     elif itemprec[-1:]!="'" and item[:1]!="<" and itemprec[:1]!="<" : item=" "+item
     elif item=="<br/>": item=item+"\n"
-    disamb=disamb+item
+    elif item=="a'" or item=="A'": item=item+" "
+    """
+    disamb=disamb+item+" "
     itemprec=item
   disamb=disamb.strip()
+  disamb=re.sub(r"([^aA])' ","\g<1>'",disamb) # suppress space after assimilation quote (except for a' 2PL)
+  disamb=re.sub(r" ([\,\.])","\g<1>",disamb)  # suppress space before comma and point
+  disamb=re.sub(r' +',' ', disamb)
   original=original.strip()
+  original=re.sub(r' +',' ',original)
   disamb=disamb.replace('"','""')
   original=original.replace('"','""')
   #print original,"¤",disamb
