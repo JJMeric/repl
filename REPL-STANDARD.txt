@@ -22285,10 +22285,10 @@ fó_lɛ́ri_NUM===fó:conj:jusqu'à_lɛ́ri:n:heure_NUM
 fó_dón_dɔ́_PUNCT===fó:prep:jusqu'à_dón:n:jour_dɔ́:dtm:certain_PUNCT
 fó_yɔ́rɔ_jàn_PUNCT===fó:prep:jusqu'à_yɔ́rɔ:n:lieu_jàn:adj:long_PUNCT
 fó_sàn_NUM_PUNCT===fó:prep:jusqu'à_sàn:n:année_NUM_PUNCT
-sàn_NUM_fó_sàn_NUM=>=sàn:n:année_NUM_fó:prep:jusqu'à_sàn:n:année_NUM_PUNCT
-sàn_NUM_fó_PERS_sàn_NUM=>=sàn:n:année_NUM_fó:prep:jusqu'à_PERS_sàn:n:année_NUM_PUNCT
+sàn_NUM_fó_sàn_NUM_PUNCT=>=sàn:n:année_NUM_fó:prep:jusqu'à_sàn:n:année_NUM_PUNCT
+sàn_NUM_fó_PERS_sàn_NUM_PUNCT=>=sàn:n:année_NUM_fó:prep:jusqu'à_PERS_sàn:n:année_NUM_PUNCT
 fó_kálo_NUM_PUNCT===fó:prep:jusqu'à_kálo:n:lune_NUM_PUNCT
-kálo_NUM_fó_kálo_NUM=>=kálo:n:lune_NUM_fó:prep:jusqu'à_kálo:n:lune_NUM_PUNCT
+kálo_NUM_fó_kálo_NUM_PUNCT=>=kálo:n:lune_NUM_fó:prep:jusqu'à_kálo:n:lune_NUM_PUNCT
 fó_tìle_NUM_PUNCT===fó:prep:jusqu'à_tìle:n:soleil_NUM_PUNCT
 fó_dɔ́gɔkun_NUM_PUNCT===fó:prep:jusqu'à_dɔ́gɔkun:n:semaine [dɔ́gɔ:n:marché kùn:n:tête]_NUM_PUNCT
 fó_lɛ́rɛ_NUM_PUNCT===fó:prep:jusqu'à_lɛ́rɛ:n:heure_NUM_PUNCT
