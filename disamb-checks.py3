@@ -34,12 +34,20 @@ def listerr2(re_key):
   for match in allerr: 
     err_match=match.group(1)
     err_match2=match.group(2)
+    if "<span" in err_match2:
+      allng=re.finditer(r'<span class="w" stage="[^"]+">([^<\n]+)<',err_match2,re.U|re.MULTILINE)
+      ng=""
+      for ngmatch in allng:
+        ng=ng+ngmatch.group(1)+"¤"
+      err_match2="["+ng[:-1]+"]"  
+
     if err_match!="": 
       err_msg=err_msg+err_match+"_"+err_match2+" "
   if err_msg!="":
     err_msg,nerr=re.subn(r' ',', ',err_msg.strip())
     err_msg=err_msg.replace("_"," ")
     nerr=nerr+1
+  if "¤" in err_msg: err_msg=err_msg.replace("¤"," ")
   return nerr, err_msg
 
 def listerr3(re_key):
@@ -129,7 +137,7 @@ MAPFV     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 MAPP      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">ADR</sub></span></span>\n'
 A3SG      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pers</sub><sub class="gloss">3SG</sub></span></span>\n'
 VERB1     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">v</sub><sub class="gloss">(?:(?!aller|venir).*)</sub>.*</span></span>\n'
-VNONPERF  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">v</sub><sub class="gloss"><((?!PFV\.INTR).)*></sub>.*</span></span>\n'
+VNONPERF  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">v</sub><sub class="gloss">((?!PFV\.INTR).)*</sub>.*</span></span>\n'
 COP1      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">cop</sub><sub class="gloss">(?:(?!QUOT).*)</sub>.*</span></span>\n'
 NIet      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:conj|prep)</sub><sub class="gloss">et</sub></span></span>\n'
 NIsi      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">conj</sub><sub class="gloss">si</sub></span></span>\n'
@@ -177,7 +185,6 @@ PM_CONJ   =PM+CONJ
 # VERB_CONJ =VERBE_CONJ   # phrases avec absence de virgule derrière le verbe
 # ADV_CONJ                # phrases avec absence de virgule derrière le verbe
 FOprep_KAINF=FOprep+KAINF
-print(FOprep_KAINF)
 FOprep_NIsi =FOprep+NIsi
 
 # ...tbc...
@@ -211,10 +218,16 @@ PM_NG_PM  =PM+NG+PM
 VERB1_NG_VNONPERF=VERB1+NG+VNONPERF  # VPERF peut se trouver légitimement après : i n'a fɔ... / o y'a sɔro ... et VPERF
 FOconj_NG_MAPP=FOconj+NG+MAPP
 
-
 # it would be interesting to define a VERBALGROUP, or "proposition/verbal clause"
 # for instance ( NG PM NG* VNONPERF|VQ)  | ( NG VPERF )
 # ignoring for now adverbs and postposition following the verb
+PM_       =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">pm</sub>.*</span></span>\n'
+VNONPERF_ =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">v</sub><sub class="gloss">((?!PFV\.INTR).)*</sub>.*</span></span>\n'
+VQ_       =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">vq</sub>.*</span></span>\n'
+
+VG = r'((?:'+NG+PM_+NG+r'*(?:'+VNONPERF_+r'|'+VQ_+r')))'
+FOprep_VG =FOprep+VG
+#print(FOprep_VG)
 
 
 nsent=0
@@ -375,6 +388,11 @@ for sentence in sentences:
     nerr,err_msg=listerr2(FOprep_NIsi)
     if nerr>0:
       errors=errors+"    "+str(nerr)+" FOprep NIsi (devrait être fó/fɔ́ conj) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(FOprep_VG)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" FOprep VerbalGroup (devrait être fó/fɔ́ conj) ? "+err_msg+"\n"
+
 
 #------------------- 3 terms, NG middle
 
