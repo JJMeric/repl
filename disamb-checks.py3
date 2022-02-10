@@ -126,13 +126,20 @@ YEPFV     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 YEIMP     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">IMP</sub></span></span>\n'
 YEEQU     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">cop</sub><sub class="gloss">EQU</sub></span></span>\n'
 MAPFV     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">PFV\.NEG</sub></span></span>\n'
+MAPP      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">ADR</sub></span></span>\n'
 A3SG      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pers</sub><sub class="gloss">3SG</sub></span></span>\n'
 VERB1     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">v</sub><sub class="gloss">(?:(?!aller|venir).*)</sub>.*</span></span>\n'
+VNONPERF  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">v</sub><sub class="gloss"><((?!PFV\.INTR).)*></sub>.*</span></span>\n'
 COP1      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">cop</sub><sub class="gloss">(?:(?!QUOT).*)</sub>.*</span></span>\n'
 NIet      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:conj|prep)</sub><sub class="gloss">et</sub></span></span>\n'
+NIsi      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">conj</sub><sub class="gloss">si</sub></span></span>\n'
 PMnon_ka  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pm</sub><sub class="gloss">(?:(?!INF).*)</sub></span></span>\n'
 PPnon_ye  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">(?:(?!PP).*)</sub></span></span>\n'
 PPFINAL   =PP+PUNCT
+FOprep    =r'''<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">prep</sub><sub class="gloss">jusqu'à</sub></span></span>\n'''
+FOconj    =r'''<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">conj</sub><sub class="gloss">jusqu'à</sub></span></span>\n'''
+
+
 
 # forbidden sequences
 VERB_PP   =VERB+PP
@@ -169,8 +176,9 @@ CONJ_PP   =CONJ+PP
 PM_CONJ   =PM+CONJ
 # VERB_CONJ =VERBE_CONJ   # phrases avec absence de virgule derrière le verbe
 # ADV_CONJ                # phrases avec absence de virgule derrière le verbe
-
-
+FOprep_KAINF=FOprep+KAINF
+print(FOprep_KAINF)
+FOprep_NIsi =FOprep+NIsi
 
 # ...tbc...
 # implement : NG (nominal group) NAME+ADJ*+DTM*+POSS*+AND*+... see NONVERBALGROUP in replc
@@ -200,7 +208,13 @@ PM_NG_HPUNCT=PM+NG+HPUNCT
 # print(PM_NG_PUNCT)
 PM_NG_END =PM+NG+END   # only if missing final punctuation
 PM_NG_PM  =PM+NG+PM
-VERB1_NG_VERB=VERB1+NG+VERB
+VERB1_NG_VNONPERF=VERB1+NG+VNONPERF  # VPERF peut se trouver légitimement après : i n'a fɔ... / o y'a sɔro ... et VPERF
+FOconj_NG_MAPP=FOconj+NG+MAPP
+
+
+# it would be interesting to define a VERBALGROUP, or "proposition/verbal clause"
+# for instance ( NG PM NG* VNONPERF|VQ)  | ( NG VPERF )
+# ignoring for now adverbs and postposition following the verb
 
 
 nsent=0
@@ -354,6 +368,14 @@ for sentence in sentences:
     if nerr>0:
       errors=errors+"    "+str(nerr)+" CONJ PP (conjonction devant une postposition) ? "+err_msg+"\n"
 
+    nerr,err_msg=listerr2(FOprep_KAINF)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" FOprep KAINF (devrait être fó/fɔ́ conj) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr2(FOprep_NIsi)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" FOprep NIsi (devrait être fó/fɔ́ conj) ? "+err_msg+"\n"
+
 #------------------- 3 terms, NG middle
 
     nerr,err_msg=listerr3(PM_NG_PPFINAL)
@@ -381,9 +403,15 @@ for sentence in sentences:
     if nerr>0:
       errors=errors+"    "+str(nerr)+" PM NG PM (deux marques prédicatives successives - verbe mal identifié?) ? "+err_msg+"\n"
 
-    nerr,err_msg=listerr3(VERB1_NG_VERB)
+    nerr,err_msg=listerr3(VERB1_NG_VNONPERF)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" VERBE NG VERBE (deux verbes successifs) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" VERBE NG VnonPERF (deux verbes successifs) ? "+err_msg+"\n"
+
+    nerr,err_msg=listerr3(FOconj_NG_MAPP)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" FOconj_NG_MAPP (devrait être fó/fɔ́ conj) ? "+err_msg+"\n"
+
+
 
 
   if errors!="" : 
