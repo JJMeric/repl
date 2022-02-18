@@ -16020,7 +16020,8 @@ bɛ́_sé_í_kɔ́rɔ===bɛ:pm:IPFV.AFF_sé:v:arriver_í:pers:REFL_kɔ́rɔ:
 
 PUNCT_sí_tɛ́_sé_sí_mà===PUNCT_sí:prn:aucun_tɛ:pm:IPFV.NEG_sé:v:arriver_sí:prn:aucun_mà:pp:ADR
 PUNCT_sí_tɛ́_sé_sí_lá===PUNCT_sí:prn:aucun_tɛ:pm:IPFV.NEG_sé:v:arriver_sí:prn:aucun_lá:pp:à
-sé_bì===sé:v:arriver_bì:adv:aujourd'hui
+sé_bì_PUNCT===sé:v:arriver_bì:adv:aujourd'hui_PUNCT
+sé_bì_mà===sé:v:arriver_bì:n:aujourd'hui_mà:pp:ADR
 
 kà_sé_PERS_yɛ̀rɛ̂_kɔ́rɔ===kà:pm:INF_sé:v:arriver_PERS_yɛ̀rɛ̂:dtm:même_kɔ́rɔ:pp:sous
 bɛ́_sé_PERS_yɛ̀rɛ̂_kɔ́rɔ===bɛ:pm:IPFV.AFF_sé:v:arriver_PERS_yɛ̀rɛ̂:dtm:même_kɔ́rɔ:pp:sous
@@ -27252,6 +27253,8 @@ jùru_jànba=>=jùru:n:corde_jànba:adj: [jàn:adj:long ba:mrph:AUGM]
 jíri_jànba=>=jíri:n:arbre_jànba:adj: [jàn:adj:long ba:mrph:AUGM]
 wáati_jànba=>=wáati:n:moment_jànba:adj: [jàn:adj:long ba:mrph:AUGM]
 mɔ̀gɔ_jànba=>=mɔ̀gɔ:n:homme_jànba:adj: [jàn:adj:long ba:mrph:AUGM]
+jí_mìnni===jí:n:eau_mìnni:n: [mìn:v:boire li:mrph:NMLZ]
+
 
 # 1GADj par ordre alphabétique du premier terme:
 jáabi_fósì=>=jáabi:n:réponse_fósì:dtm:aucun
@@ -30415,6 +30418,8 @@ sìgi_tɛ_mɔ̀gɔ_sɔ́n=>=sìgi:n:position.assise_tɛ:pm:IPFV.NEG_mɔ̀gɔ:n
 ɲɛ́_túgu_NICONJ_PERS_yɛlɛ_cɛ́===ɲɛ́:n:oeil_túgu:conv.n:fermer_NICONJet_PERS_yɛ̀lɛn:conv.n:ouvrir_cɛ́:pp:entre
 ò_tá_fìla_ni_cɛ́tigɛ===ò:prn:ce_tá:n:propriété_fìla:num:deux_ni:conj:et_cɛ́tigɛ:n:poutre.maîtresse [cɛ́:n:milieu tìgɛ:v:couper]  # gare à toi (à toi deux coups et demi)
 à_tá_fìla_ni_cɛ́tigɛ===à:pers:3SG_tá:n:propriété_fìla:num:deux_ni:conj:et_cɛ́tigɛ:n:poutre.maîtresse [cɛ́:n:milieu tìgɛ:v:couper]
+tá_fìla_ni_cɛ́-tigɛ===tá:n:propriété_fìla:num:deux_ni:conj:et_cɛ́tigɛ:n:poutre.maîtresse [cɛ́:n:milieu tìgɛ:v:couper]
+tá_fìla_ni_cɛ́_tigɛ=*=tá:n:propriété_fìla:num:deux_ni:conj:et_cɛ́tigɛ:n:poutre.maîtresse [cɛ́:n:milieu tìgɛ:v:couper]
 
 #################################################################################################################
 #
