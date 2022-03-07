@@ -295,19 +295,19 @@ valides="_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENO
 gvalides="NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_NMLZ2_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_OPT2_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
 #  ANAPH, ANAPH.PL, ART, OPT, OPT2, PTCP.PROG removed
 #  CFA à cause de la glose de dɔrɔmɛ qui finit par franc.CFA !!!
-fixevalides="_ETRG_ETRG.FRA_ETRG.USA_ETRG.ENG_ETRG.GER_ETRG.ARB_CHNT_Q_PREV_"
+fixevalides="_ETRG_ETRG.FRA_ETRG.USA_ETRG.ENG_ETRG.GER_ETRG.ARB_CHNT_Q_PREV_INCOGN_"
 # cf kàmana:n:PREV de kamanagan
 # --- liste des auxiliaires dont les gloses sont des mot-clefs en majuscules
 pmlist="bɛ́nà:pm:FUT_bɛ́n':pm:FUT_bɛ:pm:IPFV.AFF_b':pm:IPFV.AFF_be:pm:IPFV.AFF_bi:pm:IPFV.AFF_bɛ́kà:pm:PROG.AFF_bɛ́k':pm:PROG.AFF_bɛ́ka:pm:INFR_bága:pm:INFR_bìlen:pm:COND.NEG_kà:pm:INF_k':pm:INF_ka:pm:SBJV_k':pm:SBJV_ka:pm:QUAL.AFF_man:pm:QUAL.NEG_kànâ:pm:PROH_kàn':pm:PROH_ma:pm:PFV.NEG_m':pm:PFV.NEG_mánà:pm:COND.AFF_mán':pm:COND.AFF_máa:pm:COND.AFF_nà:pm:CERT_n':pm:CERT_tɛ:pm:IPFV.NEG_te:pm:IPFV.NEG_ti:pm:IPFV.NEG_t':pm:IPFV.NEG_tɛ́kà:pm:PROG.NEG_tɛ́k':pm:PROG.NEG_tɛ́ka:pm:INFR.NEG_tɛ́k':pm:INFR.NEG_tɛ́nà:pm:FUT.NEG_tɛ́n':pm:FUT.NEG_ye:pm:PFV.TR_y':pm:PFV.TR_yé:pm:IPFV_yé:pm:IMP_y':pm:IMP_yékà:pm:RCNT_màa:pm:DES_mà:pm:DES_m':pm:DES_"
 coplist="bɛ́:cop:être_b':cop:être_b':cop:être_yé:cop:être_kó:cop:QUOT_k':cop:QUOT_dòn:cop:ID_dò:cop:ID_tɛ́:cop:COP.NEG_té:cop:COP.NEG_t':cop:COP.NEG_yé:cop:EQU_y':cop:EQU_bé:cop:être_"
 prnlist="ɲɔ́gɔn:prn:RECP_ɲwán:prn:RECP_ɲɔ́ɔn:prn:RECP_mîn:prn:REL_mínnu:prn:REL.PL2_nìnnú:prn:DEM.PL_mín:prn:REL_nìn:prn:DEM_"
 dtmlist="ìn:dtm:DEF_mîn:dtm:REL_nìn:dtm:DEM_nìn:dtm/prn:DEM_mín:dtm:REL_mínnu:dtm:REL.PL2_nìnnú:dtm:DEM.PL_nìnnú:dtm/prn:DEM.PL_"
-perslist="ń:pers:1SG_nê:pers:1SG.EMPH_í:pers:2SG_í:pers:REFL_ê:pers:2SG.EMPH_à:pers:3SG_àlê:pers:3SG.EMPH_án:pers:1PL_ánw:pers:1PL.EMPH_a':pers:2PL_á:pers:2PL_á':pers:2PL_áw:pers:2PL.EMPH_ù:pers:3PL_òlû:pers:ce.PL2_ra:mrph:OPT2_la:mrph:OP2_na:mrph:OPT2_"
-pplist="ka:pp:POSS_lá:pp:POSS_bólo:pp:CNTRL_yé:pp:PP_y':pp:PP_lɔ́:pp:IN_nɔ́:pp:IN_rɔ́:pp:IN_mà:pp:ADR_mɔ̀:pp:ADR_"   # c'est body ??? oui car les autres ont des gloses en minuscules, cf besoin de "check"
+perslist="ń:pers:1SG_nê:pers:1SG.EMPH_í:pers:2SG_í:pers:REFL_ê:pers:2SG.EMPH_à:pers:3SG_àlê:pers:3SG.EMPH_án:pers:1PL_ánw:pers:1PL.EMPH_a':pers:2PL_á:pers:2PL_á':pers:2PL_áw:pers:2PL.EMPH_ù:pers:3PL_òlû:pers:ce.PL2_"
+pplist="ka:pp:POSS_lá:pp:POSS_bólo:pp:CNTRL_yé:pp:PP_y':pp:PP_lɔ́:pp:IN_nɔ́:pp:IN_rɔ́:pp:IN_mà:pp:ADR_mɔ̀:pp:ADR_"   # c'est tout ??? oui car les autres ont des gloses en minuscules, cf besoin de "check"
 conjlist="ô:conj:DISTR_ôo:conj:DISTR_wô:conj:DISTR_"
 prtlist="dè:prt:FOC_dùn:prt:TOP.CNTR_dún:prt:TOP.CNTR_kɔ̀ni:prt:TOP.CNTR2_tùn:prt:PST_kùn:prt:PST_wà:prt:Q_"
 mrphlist="lá:mrph:CAUS_la:mrph:CAUS_ná:mrph:CAUS_mà:mrph:SUPER_màn:mrph:SUPER_rɔ́:mrph:IN_lu:mrph:PL2_nu:mrph:PL2_ba:mrph:AUGM_baa:mrph:AG.OCC_baga:mrph:AG.OCC_bali:mrph:PTCP.PRIV_ka:mrph:GENT_la:mrph:AG.PRM_na:mrph:AG.PRM_la:mrph:LOC_na:mrph:LOC_la:mrph:PRIX_na:mrph:PRIX_la:mrph:MNT1_na:mrph:MNT1_lata:mrph:MNT2_nata:mrph:MNT2_la:mrph:PROG_na:mrph:PROG_la:mrph:PFV.INTR_na:mrph:PFV.INTR_n':mrph:PFV.INTR_ra:mrph:PFV.INTR_rá:mrph:IN_rɔ́:mrph:IN_w:mrph:PL_"
-mrphlist=mrphlist+"lama:mrph:STAT_nama:mrph:STAT_lan:mrph:INSTR_nan:mrph:INSTR_len:mrph:PTCP.RES_nen:mrph:PTCP.RES_li:mrph:NMLZ_ni:mrph:NMLZ_\:mrph:NMLZ2_ma:mrph:COM_ma:mrph:RECP.PRN_man:mrph:ADJ_ntan:mrph:PRIV_"
+mrphlist=mrphlist+"lama:mrph:STAT_nama:mrph:STAT_lan:mrph:INSTR_nan:mrph:INSTR_len:mrph:PTCP.RES_nen:mrph:PTCP.RES_li:mrph:NMLZ_ni:mrph:NMLZ_\:mrph:NMLZ2_ma:mrph:COM_ma:mrph:RECP.PRN_man:mrph:ADJ_ntan:mrph:PRIV_ra:mrph:OPT2_la:mrph:OP2_na:mrph:OPT2_"
 mrphlist=mrphlist+"ma:mrph:DIR_nan:mrph:ORD_nin:mrph:DIM_bali:mrph:PRIV_nci:mrph:AG.EX_ɲɔgɔn:mrph:RECP_ɲwan:mrph:RECP_ta:mrph:PTCP.POT_tɔ:mrph:CONV_tɔ:mrph:ST_ya:mrph:DEQU_yɛ:mrph:DEQU_ya:mrph:ABSTR_lá:mrph:CAUS_lán:mrph:CAUS_ná:mrph:CAUS_rɔ́:mrph:CAUS_ma:mrph:SUPER_man:mrph:SUPER_sɔ̀:mrph:EN_"
 # restent u"ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_"
 lxpsgvalides=pmlist+coplist+prnlist+dtmlist+perslist+pplist+conjlist+prtlist+mrphlist
@@ -764,6 +764,121 @@ while nombre>0:
     nbrulesapplied=nbrulesapplied+1
     nbmodif=nbmodif+nombre
     nbmots=nbmots+nombre
+
+# handling assimilation on derived verbs PFV.INTR - replace ' by a in lx and in mrph   07 mar 2022
+wsearch=r'''>([^\<]+)'<sub class="ps">v</sub><span class="m">([^\<]+)<sub class="ps">v</sub><sub class="gloss">([^\<]+)</sub></span><span class="m">([rln])'<sub class="ps">mrph</sub><sub class="gloss">PFV.INTR'''
+wrepl='>\g<1>a<sub class="ps">v</sub><span class="m">\g<2><sub class="ps">v</sub><sub class="gloss">\g<3></sub></span><span class="m">\g<4>a<sub class="ps">mrph</sub><sub class="gloss">PFV.INTR'
+body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+if nombre>0 :
+  msg="%i modifs to handle assimilation on derived verbs PFV.INTR - replace ' by a " % nombre +"\n"
+  log.write(msg)
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
+# handling non derived verbs not handled by gparser \ve 
+shortv=0
+# wsearch=r'''<span class="lemma">b'</span></span>\n'''
+wsearch=r'''<span class="lemma">b'<sub class="ps">pm</sub><sub class="gloss">IPFV\.AFF<([^\n]+)</span></span>\n'''
+wrepl='''<span class="lemma">b'<sub class="ps">pm</sub><sub class="gloss">IPFV.AFF<\g<1>'''
+wrepl=wrepl+'<span class="lemma var">bɔ́<sub class="ps">v</sub><sub class="gloss">sortir</sub></span>'
+wrepl=wrepl+'<span class="lemma var">bù<sub class="ps">v</sub><sub class="gloss">triturer</sub></span>'
+wrepl=wrepl+'<span class="lemma var">bɔ̀<sub class="ps">v</sub><sub class="gloss">arracher</sub></span>'
+wrepl=wrepl+'</span></span>\n'
+body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+shortv=shortv+nombre
+
+wsearch=r'''<span class="lemma">c'</span></span>\n'''
+wrepl='<span class="lemma">cí<sub class="ps">v</sub><sub class="gloss">envoyer</sub>'
+wrepl=wrepl+'<span class="lemma var">cì<sub class="ps">v</sub><sub class="gloss">frapper</sub></span>'
+wrepl=wrepl+'<span class="lemma var">cɛ̀<sub class="ps">v</sub><sub class="gloss">ramasser</sub></span>'
+wrepl=wrepl+'</span></span>\n'
+body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+shortv=shortv+nombre
+
+wsearch=r'''<span class="lemma">d'</span></span>\n'''
+wrepl='<span class="lemma">dá<sub class="ps">v</sub><sub class="gloss">poser</sub>'
+wrepl=wrepl+'<span class="lemma var">dá<sub class="ps">v</sub><sub class="gloss">créer</sub></span>'
+wrepl=wrepl+'<span class="lemma var">dè<sub class="ps">v</sub><sub class="gloss">se.taire</sub></span>'
+wrepl=wrepl+'<span class="lemma var">dí<sub class="ps">v</sub><sub class="gloss">donner</sub></span>'
+wrepl=wrepl+'<span class="lemma var">dí<sub class="ps">v</sub><sub class="gloss">raser</sub></span>'
+wrepl=wrepl+'</span></span>\n'
+body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+shortv=shortv+nombre
+
+#wsearch=r'''<span class="lemma">f'</span></span>\n'''
+wsearch=r'''<span class="lemma">f'<sub class="ps">prep</sub><sub class="gloss">jusqu'à<([^\n]+)</span></span>\n'''
+wrepl='''<span class="lemma">f'<sub class="ps">prep</sub><sub class="gloss">jusqu'à<\g<1>'''
+wrepl=wrepl+'<span class="lemma var">fɔ́<sub class="ps">v</sub><sub class="gloss">dire</sub></span>'
+wrepl=wrepl+'<span class="lemma var">fɔ́<sub class="ps">v</sub><sub class="gloss">rater</sub></span>'
+wrepl=wrepl+'<span class="lemma var">fá<sub class="ps">v</sub><sub class="gloss">remplir</sub></span>'
+wrepl=wrepl+'<span class="lemma var">fò<sub class="ps">v</sub><sub class="gloss">saluer</sub></span>'
+wrepl=wrepl+'<span class="lemma var">fó<sub class="ps">v</sub><sub class="gloss">évacuer</sub></span>'
+wrepl=wrepl+'<span class="lemma var">fó<sub class="ps">v</sub><sub class="gloss">frôler</sub></span>'
+wrepl=wrepl+'<span class="lemma var">fàa<sub class="ps">v</sub><sub class="gloss">tuer</sub></span>'
+wrepl=wrepl+'</span></span>\n'
+body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+shortv=shortv+nombre
+
+wsearch=r'''<span class="lemma">j'</span></span>\n'''
+wrepl='<span class="lemma">jɔ̀<sub class="ps">v</sub><sub class="gloss">dresser</sub>'
+wrepl=wrepl+'<span class="lemma var">jɛ̀<sub class="ps">v</sub><sub class="gloss">assembler</sub></span>'
+wrepl=wrepl+'<span class="lemma var">jɛ́<sub class="ps">v</sub><sub class="gloss">blanchir</sub></span>'
+wrepl=wrepl+'<span class="lemma var">jà<sub class="ps">v</sub><sub class="gloss">sécher</sub></span>'
+wrepl=wrepl+'<span class="lemma var">jà<sub class="ps">v</sub><sub class="gloss">héberger</sub></span>'
+wrepl=wrepl+'<span class="lemma var">jí<sub class="ps">v</sub><sub class="gloss">boire</sub></span>'
+wrepl=wrepl+'<span class="lemma var">jó<sub class="ps">v</sub><sub class="gloss">donner.raison</sub></span>'
+wrepl=wrepl+'<span class="lemma var">jó<sub class="ps">v</sub><sub class="gloss">laver</sub></span>'
+wrepl=wrepl+'<span class="lemma var">jó<sub class="ps">v</sub><sub class="gloss">être.en.pleine.forme</sub></span>'
+wrepl=wrepl+'</span></span>\n'
+body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+shortv=shortv+nombre
+
+# wsearch=r'''<span class="lemma">k'</span></span>\n'''
+wsearch=r'''<span class="lemma">k'<sub class="ps">pp</sub><sub class="gloss">POSS<([^\n]+)</span></span>\n'''
+wrepl='''<span class="lemma">k'<sub class="ps">pp</sub><sub class="gloss">POSS<\g<1>'''
+wrepl=wrepl+'<span class="lemma var">kɛ́<sub class="ps">v</sub><sub class="gloss">faire</sub></span>'
+wrepl=wrepl+'<span class="lemma var">kà<sub class="ps">v</sub><sub class="gloss">nier</sub></span>'
+wrepl=wrepl+'<span class="lemma var">kò<sub class="ps">v</sub><sub class="gloss">laver</sub></span>'
+wrepl=wrepl+'<span class="lemma var">kò<sub class="ps">v</sub><sub class="gloss">arriver</sub></span>'
+wrepl=wrepl+'<span class="lemma var">kú<sub class="ps">v</sub><sub class="gloss">former.des.tubercules</sub></span>'
+wrepl=wrepl+'</span></span>\n'
+body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+shortv=shortv+nombre
+
+wsearch=r'''<span class="lemma">s'</span></span>\n'''
+wrepl='<span class="lemma">sé<sub class="ps">v</sub><sub class="gloss">arriver</sub>'
+wrepl=wrepl+'<span class="lemma var">sà<sub class="ps">v</sub><sub class="gloss">mourir</sub></span>'
+wrepl=wrepl+'<span class="lemma var">sì<sub class="ps">v</sub><sub class="gloss">passer.la.nuit</sub></span>'
+wrepl=wrepl+'<span class="lemma var">sú<sub class="ps">v</sub><sub class="gloss">soûler</sub></span>'
+wrepl=wrepl+'<span class="lemma var">sú<sub class="ps">v</sub><sub class="gloss">tremper</sub></span>'
+wrepl=wrepl+'</span></span>\n'
+body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+shortv=shortv+nombre
+
+# wsearch=r'''<span class="lemma">t'</span></span>\n'''
+wsearch=r'''<span class="lemma">t'<sub class="ps">pm</sub><sub class="gloss">IPFV\.NEG<([^\n]+)</span></span>\n'''
+wrepl='''<span class="lemma">t'<sub class="ps">pm</sub><sub class="gloss">IPFV.NEG<\g<1>'''
+wrepl=wrepl+'<span class="lemma var">táa<sub class="ps">v</sub><sub class="gloss">aller</sub></span>'
+wrepl=wrepl+'<span class="lemma var">tà<sub class="ps">v</sub><sub class="gloss">prendre</sub></span>'
+wrepl=wrepl+'<span class="lemma var">tó<sub class="ps">v</sub><sub class="gloss">rester</sub></span>'
+wrepl=wrepl+'<span class="lemma var">tú<sub class="ps">v</sub><sub class="gloss">cracher</sub></span>'
+wrepl=wrepl+'<span class="lemma var">tù<sub class="ps">v</sub><sub class="gloss">garnir.de.cuir</sub></span>'
+wrepl=wrepl+'<span class="lemma var">tù<sub class="ps">v</sub><sub class="gloss">heurter</sub></span>'
+wrepl=wrepl+'<span class="lemma var">tù<sub class="ps">v</sub><sub class="gloss">couper</sub></span>'
+wrepl=wrepl+'<span class="lemma var">tɔ̀<sub class="ps">v</sub><sub class="gloss">attendre</sub></span>'
+wrepl=wrepl+'</span></span>\n'
+body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+shortv=shortv+nombre
+
+nombre=shortv
+if nombre>0 :
+  msg="%i modifs to handle assimilation on short verbs b' c' d' f' k'... " % nombre +"\n"
+  log.write(msg)
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
 
 
 # NOW THE BIG TASK     -go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!---go!--
@@ -1503,7 +1618,7 @@ for linerepl in toutrepllines :
     if "§§" in liste_gloses:
       if topl or ucase1 : sys.exit("\n§§ alternate gloss cannot use > for uppercase-test or force-plural:\n"+linerepl)
   else :
-    log.write("!= NB ELEM DIFFERENTS:  ("+str(lmots)+") !=  ("+str(lgloses)+")\n")
+    if not differ: log.write("!= NB ELEM DIFFERENTS:  ("+str(lmots)+") !=  ("+str(lgloses)+")\n")
 
     if topl or ucase1 : sys.exit("\n> forbidden for force-plural or uppercase-test : the numbers of elements differ\n"+linerepl)
     # dans ce cas il devrait être possible de modifier aussi la "sentence":
@@ -1548,6 +1663,7 @@ for linerepl in toutrepllines :
     liste_mots_spaced=re.sub(r"([\s][A-Z]+)*","",liste_mots_spaced)  # eliminated capitalized keywords after/before
     # relookahead=ur">"+liste_mots_spaced.replace(" ","<|>")+ur"<"   #  "1 lɔ" → ">1<|>lɔ<"   as found in <span class="lemma">lɔ< ...
     if liste_mots_spaced=="1 lɔ": liste_mots_spaced="1lɔ"  # workaround gparser trick
+    elif "' " in liste_mots_spaced : liste_mots_spaced=liste_mots_spaced.replace("' ","'") # par exemple "N'Baru" (et pas "N' Baru")
     prefsearch=r'<span class="sent">([^<]*)'+liste_mots_spaced+'([^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
     if liste_mots_spaced[0:1].isupper(): liste_gloseslx=liste_gloseslx[0:1].upper()+liste_gloseslx[1:len(liste_gloseslx)]
     prefrepl='<span class="sent">\g<1>'+liste_gloseslx+'\g<2><span class="annot">\g<3>'
@@ -2024,7 +2140,7 @@ for linerepl in toutrepllines :
       wsearch=prefsearch+wsearch
       wrepl=prefrepl+wrepl
   
-  #print "\nwsearch :",wsearch
+  #if differ : print("\ndiffer wsearch :",wsearch)
   #print "\nwrepl :",wrepl
   # test 15062020
   #   wgroups=re.findall(wsearch, body,re.U|re.MULTILINE)
@@ -2410,9 +2526,7 @@ for match in fixtones:
   if fixeditem in fixedlist: continue
   # print(lemma, ps, slemma)
   slemma_notone,ntones=re.subn(r'[́̀̌̂]','',slemma)
-  if ntones==0:
-    print(lemma+":"+ps+": -> no tone in ",slemma," ???")
-  else:
+  if ntones>0:
     fixedlist.append(fixeditem)
     lemma_tones=lemma.replace(slemma_notone,slemma,1)
     # print("->",lemma_tones)
@@ -2460,7 +2574,7 @@ else:
       indexfile=indexfile+1
       filenameinrename=filenamein+str(indexfile)
     os.rename(filenamein, filenameinrename)
-    print("\n   !",filenamein, "a été renommé / has been renamed \n->",filenameinrename,"\n")
+    print("\n   !!! l'ancien fichier ",filenamein, "a été renommé / has been renamed ... ->",filenameinrename,"\n")
     os.rename(filenameout, filenamein)
     filegiven=filenamein
   else :

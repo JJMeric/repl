@@ -41,70 +41,11 @@ def listerr(re_key):
     err_msg=err_msg.replace("_"," ")
     nerr=nerr+1
   if "¤" in err_msg: err_msg=err_msg.replace("¤"," ")
+  err_msg=err_msg.replace("&lt;","<")
+  err_msg=err_msg.replace("&gt;",">")
 
-  return nerr, err_msg
+  return nerr, err_msg.strip()
 
-"""def listerr1(re_key):
-  err_msg=""
-  nerr=0
-  allerr=re.finditer(re_key,disamb,re.U|re.MULTILINE)
-  for match in allerr: 
-    err_match=match.group(1)
-    if err_match!="":
-      err_msg=err_msg+err_match+" "
-  if err_msg!="":
-    err_msg,nerr=re.subn(r' ',', ',err_msg.strip())
-    nerr=nerr+1
-  return nerr, err_msg
-
-def listerr2(re_key):
-  err_msg=""
-  nerr=0
-  allerr=re.finditer(re_key,disamb,re.U|re.MULTILINE)
-  for match in allerr: 
-    err_match=match.group(1)
-    err_match2=match.group(2)
-    if "<span" in err_match2:
-      allng=re.finditer(r'<span class="w" stage="[^"]+">([^<\n]+)<',err_match2,re.U|re.MULTILINE)
-      ng=""
-      for ngmatch in allng:
-        ng=ng+ngmatch.group(1)+"¤"
-      err_match2="["+ng[:-1]+"]"  
-
-    if err_match!="": 
-      err_msg=err_msg+err_match+"_"+err_match2+" "
-  if err_msg!="":
-    err_msg,nerr=re.subn(r' ',', ',err_msg.strip())
-    err_msg=err_msg.replace("_"," ")
-    nerr=nerr+1
-  if "¤" in err_msg: err_msg=err_msg.replace("¤"," ")
-  return nerr, err_msg
-
-def listerr3(re_key):
-  err_msg=""
-  nerr=0
-  allerr=re.finditer(re_key,disamb,re.U|re.MULTILINE)
-  for match in allerr: 
-    err_match=match.group(1)
-    #print("listerr (1)", err_match)
-    err_match2=match.group(2)  # if NG there is html<> and there are spaces - oops ?
-    if "<span" in err_match2:
-      allng=re.finditer(r'<span class="w" stage="[^"]+">([^<\n]+)<',err_match2,re.U|re.MULTILINE)
-      ng=""
-      for ngmatch in allng:
-        ng=ng+ngmatch.group(1)+"¤"
-      err_match2="{"+ng[:-1]+"}"  
-
-    err_match3=match.group(3)
-    if err_match!="": 
-      err_msg=err_msg+err_match+"_"+err_match2+"_"+err_match3+" "
-  if err_msg!="":
-    err_msg,nerr=re.subn(r' ',', ',err_msg.strip())
-    err_msg=err_msg.replace("_"," ")
-    if "¤" in err_msg: err_msg=err_msg.replace("¤"," ")
-    nerr=nerr+1
-  return nerr, err_msg
-"""
 
 fileINname= str(sys.argv[1])
 INext=fileINname.find(".dis.html")
@@ -279,6 +220,9 @@ TEST_KASBJV=r'(?:'+START+r'|'+PUNCT+r')'+NG+KAnon_SBJV+VG
 
 nsent=0
 nsenterr=0
+fileOUT.write("Légende :\nGn: Groupe nominal,\nPM: Marque prédicative,\nCOP: Copule,\nPP: Postposition,\nADV: Adverbe,\nADJ: Adjectif,\nCONJ: Conjonction\n")
+fileOUT.write("Ces vérifications ne sont ni toujours pertinentes, ni exhaustives...\nEn espérant que cela reste malgré tout utile !\n\n")
+
 
 for sentence in sentences:
   nsent=nsent+1
@@ -296,25 +240,25 @@ for sentence in sentences:
 
   errors=""
 
-  nerr,err_msg=listerr1(AMBIGUOUS)
+  nerr,err_msg=listerr(AMBIGUOUS)
   if nerr>0:
     plural="s"
     if nerr==1: plural=""
-    errors=errors+"    "+str(nerr)+" ambiguous word"+plural+": "+err_msg+"\n"
+    errors=errors+"    "+str(nerr)+" mot"+plural+" ambigu"+plural+": "+err_msg+"\n"
 
-  nerr2,err_msg=listerr1(UNKNOWN)
+  nerr2,err_msg=listerr(UNKNOWN)
   if nerr2>0:
     plural="s"
     if nerr2==1: plural=""
-    errors=errors+"    "+str(nerr2)+" unknown word"+plural+": "+err_msg+"\n"
+    errors=errors+"    "+str(nerr2)+" mot"+plural+" inconnu"+plural+": "+err_msg+"\n"
 
   if nerr+nerr2!=0 :
-    errors=errors+"    skipping other checks...\n"
+    errors=errors+"    j'ignore les autres tests...\n"
   else:
 
     nerr,err_msg=listerr(VERB1_VERB)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" VERB VERB (deux verbes qui se suivent) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" VERBE VERBE (deux verbes qui se suivent) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr(PP_PPnon_PP)
     if nerr>0:
@@ -332,7 +276,7 @@ for sentence in sentences:
 
     nerr,err_msg=listerr(VERB_PP)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" VERB PP (verbe suivi d'une postpositions - voir adverbes possibles) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" VERBE PP (verbe suivi d'une postposition - voir adverbes possibles) ? "+err_msg+"\n"
     
     nerr,err_msg=listerr(ADV_PP)
     if nerr>0:
@@ -344,15 +288,15 @@ for sentence in sentences:
     if nerr>0:
       avis="(postposition avant un verbe [ignorer si impératif/ponctuation défectueuse]) ? "
       if "ma " in err_msg: avis=avis+" [peut-être est-ce ma:pm:PFV.NEG] "
-      errors=errors+"    "+str(nerr)+" PP VERB "+avis+": "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PP VERBE "+avis+": "+err_msg+"\n"
 
     nerr,err_msg=listerr(VERB_ADJ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" VERB ADJ (verbe suivi d'un adjectif) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" VERBE ADJ (verbe suivi d'un adjectif) ? "+err_msg+"\n"
     
     nerr,err_msg=listerr(ADV_VERB)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" ADV VERB (adverbe précédent un verbe mais pas adv.p) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" ADV VERBE (adverbe précédent un verbe mais pas adv.p) ? "+err_msg+"\n"
 
     nerr,err_msg=listerr(COP_VQ)
     if nerr>0:
@@ -372,7 +316,7 @@ for sentence in sentences:
     if nerr>0:
       avis="(nom devant un verbe qualitatif)"
       avis=avis+"[le vq peut-il être une adjectif?]"
-      errors=errors+"    "+str(nerr)+" NAME VQ "+avis+" : "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" NOM VQ "+avis+" : "+err_msg+"\n"
 
     nerr,err_msg=listerr(PP_VQ)
     if nerr>0:
@@ -386,38 +330,38 @@ for sentence in sentences:
 
     nerr,err_msg=listerr(MAPFV_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" MAPFV VQ (ma PFV devant un vq) [devrait être man:pm:QUAL.NEG] : "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" ma(PFV) VQ (ma PFV devant un vq) [devrait être man:pm:QUAL.NEG] : "+err_msg+"\n"
 
     nerr,err_msg=listerr(KAINF_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" KAINF VQ (kà infinitif devant un vq) [devrait être ka:pm:QUAL.AFF] : "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" ka(INF) VQ (kà infinitif devant un vq) [devrait être ka:pm:QUAL.AFF] : "+err_msg+"\n"
 
     nerr,err_msg=listerr(KASBJV_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" KASBJV VQ (ka subjonctif devant un vq) [devrait être ka:pm:QUAL.AFF) : "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" ka(SBJV) VQ (ka subjonctif devant un vq) [devrait être ka:pm:QUAL.AFF) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(KAPOSS_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" KAPOSS VQ (ka POSS devant un vq) [devrait être ka:pm:QUAL.AFF) : "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" ka(POSS) VQ (ka POSS devant un vq) [devrait être ka:pm:QUAL.AFF) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(COP1_VERB)
     if nerr>0:
       avis="(copule devant un verbe - au lieu d'une marque prédicative) "
       if "bɛ " in err_msg : avis=avis+"[devrait être pm:IPFV.AFF]"
       if "tɛ " in err_msg : avis=avis+"[devrait être pm:IPFV.NEG]"
-      errors=errors+"    "+str(nerr)+" COP VERB "+avis+" : "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" COP VERBE "+avis+" : "+err_msg+"\n"
 
     nerr,err_msg=listerr(A3SG_YEIMP)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" A3SG YEIMP (devrait être á' 2PL) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" a(3SG) ye(IMP) (devrait être á' 2PL) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(KAQUAL_NONVQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" KAQUAL NONVQ (groupe qualificatif ou pas?) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" ka(QUAL) NONVQ (groupe qualificatif ou pas?) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(MANQUAL_NONVQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" MANQUAL NONVQ (groupe qualificatif ou pas?) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" man(QUAL) NONVQ (groupe qualificatif ou pas?) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(NONQUAL_VQ)
     avis="(groupe qualificatif ou pas?)"
@@ -427,15 +371,15 @@ for sentence in sentences:
 
     nerr,err_msg=listerr(CONJ_COP1)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" CONJ COP1 (conjonction devant une copule) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" CONJ COP (conjonction devant une copule) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(CONJ_PMnon_INF)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" CONJ PMnon_INF (conjonction devant une marque prédicative) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" CONJ PM(non_INF) (conjonction devant une marque prédicative) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(PM_CONJ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM CONJ (marque prédicative devant une conjonction) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM CONJ (marque prédicative devant une conjonction) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(CONJ_VERB)
     if nerr>0:
@@ -444,23 +388,24 @@ for sentence in sentences:
         avis=avis+"[ignorer si ó:conj:DISTR]"
       else:
         avis=avis+"[ignorer si impératif]"
-      errors=errors+"    "+str(nerr)+" CONJ VERB "+avis+": "+err_msg+"\n"
+      if err_msg!="o mɛɛn":  # construction acceptée mɛɛn o mɛɛn avec v au lieu de conv.n ...
+        errors=errors+"    "+str(nerr)+" CONJ VERBE "+avis+": "+err_msg+"\n"
 
     nerr,err_msg=listerr(CONJ_PP)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" CONJ PP (conjonction devant une postposition) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" CONJ PP (conjonction devant une postposition) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(FOprep_KAINF)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" FOprep KAINF (devrait être fó/fɔ́ conj) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" fo(prep) ka(INF) (devrait être fó/fɔ́ conj) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(FOprep_NIsi)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" FOprep NIsi (devrait être fó/fɔ́ conj) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" fo(prep) NIsi (devrait être fó/fɔ́ conj) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(FOprep_VG)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" FOprep VerbalGroup (devrait être fó/fɔ́ conj) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" fo(prep) GroupeVerbal (devrait être fó/fɔ́ conj) : "+err_msg+"\n"
 
 
 #------------------- 3 terms, NG middle
@@ -469,43 +414,43 @@ for sentence in sentences:
     if nerr>0:
       avis="(pas de verbe avant la postposition)"
       if " ye" in err_msg and ("ye " in err_msg or "y' " in err_msg): avis=avis+" [le 1er ye devrait être cop:EQU?]"
-      errors=errors+"    "+str(nerr)+" PM_NG_PPfinal "+avis+" : "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM Gn PPfinale "+avis+" : "+err_msg+"\n"
 
     nerr,err_msg=listerr(PM_NG_ADV)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM NG ADV (pas de verbe avant l'adverbe) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM Gn ADV (pas de verbe avant l'adverbe) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(PM_NG_VQ)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM NG VQ (pas de verbe avant le VQ) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM Gn VQ (un intru avant le VQ) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(PM_NG_HPUNCT)
     # print(original, "PM_NG_HPUNCT", nerr, err_msg)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM NG PUNCT (pas de verbe avant la ponctuation) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM Gn Ponct. (pas de verbe avant la ponctuation) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(PM_NG_END)  # caution : END does not return a word match : not listerr
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" PM NG END (pas de verbe avant la fin de phrase) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM Gn Fin (pas de verbe avant la fin de phrase) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(PM_NG_PM)
     if nerr>0:
       avis="(deux marques prédicatives qui se suivent)"
       if "k' " in err_msg : avis=avis+" [k'=ko QUOT ?]"
       else : avis=avis+" [verbe mal identifié?]"
-      errors=errors+"    "+str(nerr)+" PM NG PM "+avis+" : "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" PM Gn PM "+avis+" : "+err_msg+"\n"
 
     nerr,err_msg=listerr(VERB1_NG_VNONPERF)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" VERBE NG VnonPERF (deux verbes successifs [ignorer si impératifs]) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" VERBE Gn V(non PERF) (deux verbes successifs [ignorer si impératifs]) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(FOconj_NG_MAPP)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" FOconj NG MAPP (devrait être fó/fɔ́ conj) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" fo(conj) Gn ma(PP) (devrait être fó/fɔ́ conj) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(TEST_KASBJV)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" TEST_KASBJV (devrait ka:pm:SBJV) ? "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" ka(non SBJV) (devrait être ka:pm:SBJV) : "+err_msg+"\n"
 
   if errors!="" : 
     fileOUT.write(str(nsent)+" "+original+"\n"+errors+'\n')

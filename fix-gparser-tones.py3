@@ -7,7 +7,7 @@ import sys
 
 nargv=len(sys.argv)
 if nargv==1 : 
-  print("repl.py needs -at least- one argument : file name")
+  print("fix-gparser-tones.py needs -at least- one argument : file name complete with .dis.html")
   sys.exit
 if nargv>1 : filenamein= str(sys.argv[1])
 
