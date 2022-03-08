@@ -24,17 +24,20 @@ def listerr(re_key):
   nerr=0
   allerr=re.finditer(re_key,disamb,re.U|re.MULTILINE)
   for match in allerr: 
+    #print("match in allerr, match.lastindex",match.groups,match.lastindex)
     for n in range(1,match.lastindex+1):
-      err_match=match.group(n)
-      if "<span" in err_match:
-        allng=re.finditer(r'<span class="w" stage="[^"]+">([^<\n]+)<',err_match,re.U|re.MULTILINE)
-        ng=""
-        for ngmatch in allng:
-          ng=ng+ngmatch.group(1)+"¤"
-        err_match="["+ng[:-1]+"]"  
+      #print("match.group(",n,") =", match.group(n))
+      if match.group(n)!=None:
+        err_match=match.group(n)
+        if "<span" in err_match:
+          allng=re.finditer(r'<span class="w" stage="[^"]+">([^<\n]+)<',err_match,re.U|re.MULTILINE)
+          ng=""
+          for ngmatch in allng:
+            ng=ng+ngmatch.group(1)+"¤"
+          err_match="["+ng[:-1]+"]"  
 
-      if err_match!="": 
-        err_msg=err_msg+err_match+"_"
+        if err_match!="": 
+          err_msg=err_msg+err_match+"_"
 
   if err_msg!="":
     err_msg,nerr=re.subn(r' ',', ',err_msg.strip())
@@ -185,10 +188,13 @@ KAPOSS_   =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<su
 NUM_      =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">num</sub>.*</span></span>\n'
 NIet_     =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">(?:conj|prep)</sub><sub class="gloss">et</sub></span></span>\n'
 PP_       =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">pp</sub>.*</span></span>\n'
+CONJ_     =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">(?:conj|prep)</sub>.*</span></span>\n'
 
 # manque pour l'instant les groupes avec ni et etc.
 
 NG  = r'((?:'+NAME_+r'|'+PRN_+r'|'+DTM_+r')'+r'(?:'+NAME_+r'|'+ADJ_+r'|'+DTM_+r'|'+NUM_+r'|'+PP_+NAME_+r'|'+NIet_+NAME_+r'|'+COMMA+r')*)'
+NG2 = r'((?:'+NAME_+r'|'+PRN_+r'|'+DTM_+r')'+r'(?:'+NAME_+r'|'+ADJ_+r'|'+DTM_+r'|'+NUM_+r'|'+PP_+NAME_+r'|'+NIet_+NAME_+r')*)'
+
 # print(NG)
 
 PP1       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">pp</sub><sub class="gloss">(?:(?!POSS).*)</sub>.*</span></span>\n'
@@ -211,12 +217,14 @@ PM_       =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<su
 VNONPERF_ =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">v</sub><sub class="gloss">((?!PFV\.INTR).)*</sub>.*</span></span>\n'
 VQ_       =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">vq</sub>.*</span></span>\n'
 
-VG = r'('+NG+PM_+NG+r'*(?:'+VNONPERF_+r'|'+VQ_+r'))'
+VG = r'('+NG2+PM_+NG2+r'*(?:'+VNONPERF_+r'|'+VQ_+r'))'
+VG2= r'('+NG2+r'*(?:'+VNONPERF_+r'))'
+
 FOprep_VG =FOprep+VG
 #print(FOprep_VG)
 
 # larger sequences
-TEST_KASBJV=r'(?:'+START+r'|'+PUNCT+r')'+NG+KAnon_SBJV+VG
+TEST_KASBJV=r'(?:'+START+r'|'+PUNCT+r'|'+CONJ_+r')'+NG2+KAnon_SBJV+VG2
 
 nsent=0
 nsenterr=0

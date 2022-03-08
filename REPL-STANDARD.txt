@@ -553,7 +553,7 @@ bálofɛnko>>=bálofɛnko:n: [bálo:n:nourriture fɛ́n:n:chose kó:n:affair
 bálokisɛ>>=bálokisɛ:n: [bálo:v:vivre kìsɛ:n:grain]   # spermatozoïde ou ovule
 #báloko=>=báloko:n: [bálo:n:nourriture kó:n:affaire]
 bálokodɛmɛ=>=bálokodɛmɛ:n: [bálo:n:nourriture kó:n:affaire dɛ̀mɛ:n:aide] # aide alimentaire
-bálokodɛsɛ=>=bálokodɛsɛ:n: [bálo:n:nourriture kó:n:affaire dɛ́sɛ:v:échouer] # malnutrition
+bálokodɛsɛ>>=bálokodɛsɛ:n: [bálo:n:nourriture kó:n:affaire dɛ́sɛ:v:échouer] # malnutrition
 bálokogɛlɛya>>=bálokogɛlɛya:n: [bálo:n:nourriture kó:n:affaire gɛ̀lɛya:n:dureté [gɛ̀lɛn:vq:dur ya:mrph:DEQU]]
 bálokojuguya>>=bálokojuguya:n: [bálo:n:nourriture kó:n:affaire júguya:n:méchanceté [júgu:vq:méchant ya:mrph:DEQU]]
 #bálokun>>=bálokun:n: [bálo:n:nourriture kùn:n:tête] # besoin de nourriture (Jɛkabaara)
@@ -996,6 +996,8 @@ cɛ́mancɛkolo=>=cɛ́mancɛkolo:n: [cɛ́mancɛ:n:milieu kólo:n:os] # colonn
 cɛ́mancɛɲin>>=cɛ́mancɛɲin:n: [cɛ́mancɛ:n:milieu ɲín:n:dent]
 #cɛ̀ɲɛ===cɛ̀ɲɛ:n:beauté [cɛ̀:n:aspect ya:mrph:ABSTR]§§cɛ̀ɲɛ:v:être.beau [cɛ̀:n:aspect ya:mrph:ABSTR]
 Cɛ̀ɲɛ===cɛ̀ɲɛ:n:beauté [cɛ̀:n:aspect ya:mrph:ABSTR]
+cɛ̀ɲumanba>==cɛ̀ɲumanba:adj: [cɛ̀:n:aspect ɲùman:adj:bon [man:mrph:ADJ] ba:mrph:AUGM]
+cɛ̀ɲuman>==cɛ̀ɲumanba:n: [cɛ̀:n:aspect ɲùman:adj:bon [man:mrph:ADJ]]§§cɛ̀ɲumanba:adj: [cɛ̀:n:aspect ɲùman:adj:bon [man:mrph:ADJ]]
 
 #ANNd
 d'===dá:v:poser§§dí:v:donner
@@ -1967,6 +1969,7 @@ fúrusirila=>=fúrusirila:n: [fúrusìri:v:épouser [fúru:n:mariage sìri
 fúruwari===fúruwari:n: [fúru:n:mariage wári:n:argent]
 #fúruɲɔgɔnya=>=fúruɲɔgɔnya:n:alliance.matrimoniale.traditionnelle [fúruɲɔgɔn:n:conjoint [fúru:n:mariage ɲɔ́gɔn:prn:RECP] ya:mrph:ABSTR]
 #fúruɲɔgɔnyasira===fúruɲɔgɔnyasira:n: [fúruɲɔgɔnya:n:alliance.matrimoniale.traditionnelle [fúruɲɔgɔn:n:conjoint [fúru:n:mariage ɲɔ́gɔn:prn:RECP] ya:mrph:ABSTR] síra:n:chemin]
+fùsaya===fìsaya:n:amélioration [fìsa:vq:mieux ya:mrph:DEQU]§§fìsaya:v:améliorer [fìsa:vq:mieux ya:mrph:DEQU]
 fúsugu===fúsuku:v:chiffonner
 fúuru=>=fúru:n:mariage
 fyɛ́rɛbɔ===fɛ́ɛrɛbɔ:v:habiller [fɛ́ɛrɛ:n:guenilles bɔ́:v:sortir] # aussi utilisé comme nom
@@ -11184,6 +11187,8 @@ kànâ_PERS_díyagoya===kànâ:pm:PROH_PERS_díyagoya:v:contraindre [díy
 kàn'_PERS_díyagoya===kàn':pm:PROH_PERS_díyagoya:v:contraindre [díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] gó:vq:désagréable ya:mrph:DEQU]
 díyagoya_mɔ̀gɔ_kàn===díyagoya:v:contraindre [díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] gó:vq:désagréable ya:mrph:DEQU]_mɔ̀gɔ:n:homme_kàn:pp:sur
 díyagoyara_mɔ̀gɔ_kàn===díyagoyara:v: [díyagoya:v:contraindre [díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] gó:vq:désagréable ya:mrph:DEQU] ra:mrph:PFV.INTR]_mɔ̀gɔ:n:homme_kàn:pp:sur
+jágoyalen===díyagoyalen:ptcp: [díyagoya:v:contraindre [díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] gó:vq:désagréable ya:mrph:DEQU] len:mrph:PTCP.RES]
+
 
 #	dògo "cacher"
 #
