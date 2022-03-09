@@ -5426,6 +5426,7 @@ tántanko>==tántanko:n: [tán:v:donner.coup.de.pied tán:v:donner.coup.de.p
 tán-tanni>==tántanni:n: [tán:v:donner.coup.de.pied tán:v:donner.coup.de.pied li:mrph:NMLZ] # dusukun ...: rythme cardiaque, batements du coeur (coeur qui cogne)
 tántanni>==tántanni:n: [tán:v:donner.coup.de.pied tán:v:donner.coup.de.pied li:mrph:NMLZ] # dusukun ...: rythme cardiaque, batements du coeur (coeur qui cogne)
 tántanniko>==tántanniko:n: [tán:v:donner.coup.de.pied tán:v:donner.coup.de.pied li:mrph:NMLZ kó:n:affaire]  # un batement de coeur
+Tàrawele===Tàrawele:n.prop:NOM.CL
 Tàrawore===Tàrawele:n.prop:NOM.CL
 tásumadon===tásumadon:n: [tásuma:n:feu [tá:n:feu súma:n:odeur] dòn:v:entrer]
 tásumadonna>>=tásumadonna:n: [tásuma:n:feu [tá:n:feu súma:n:odeur] dòn:v:entrer la:mrph:AG.PRM]
@@ -5627,6 +5628,9 @@ túngalataa===túngalataa:n: [túnga:n:pays.étranger lá:pp:à táa:n:dép
 #túngasira>==túngasira:n: [túnga:n:pays.étranger síra:n:chemin]
 tuŋa===túnga:n:pays.étranger
 tungun===túgun:adv:encore
+túnunen===túnunnen:ptcp: [túnun:v:perdre nen:mrph:PTCP.RES]
+túnuna===túnunna:v: [túnun:v:perdre na:mrph:PFV.INTR]
+túnu===túnun:v:perdre
 túr'===túru:v:planter
 #télé===jàbaranin:n:télévision [jà:n:ombre bàra:n:calebasse nin:mrph:DIM]
 télévision===jàbaranin:n:télévision [jà:n:ombre bàra:n:calebasse nin:mrph:DIM]
@@ -5994,6 +5998,8 @@ yɛ̀rɛmara===yɛ̀rɛmara:n: [yɛ̀rɛ̂:dtm:même màra:v:garder]
 yɛ̀rɛmagoɲɛ===yɛ̀rɛmagoɲɛ:n: [yɛ̀rɛ̂:dtm:même màgo:n:besoin ɲɛ̀:v:réussir]
 yɛ̀rɛmakoɲɛ===yɛ̀rɛmakoɲɛ:n: [yɛ̀rɛ̂:dtm:même màko:n:besoin ɲɛ̀:v:réussir]
 yɛ̀rɛmahɔrɔɲa===yɛ̀rɛmahɔrɔnya:n:liberté [yɛ̀rɛmahɔrɔn:n:homme.libre [yɛ̀rɛ̂:dtm:même mà:pp:ADR hɔ́rɔn:adj:libre] ya:mrph:ABSTR]
+yɛ̀rɛmahɔrɔya===yɛ̀rɛmahɔrɔnya:n:liberté [yɛ̀rɛmahɔrɔn:n:homme.libre [yɛ̀rɛ̂:dtm:même mà:pp:ADR hɔ́rɔn:adj:libre] ya:mrph:ABSTR]
+yɛ̀rɛmahɔrɔyalen>==yɛ̀rɛmahɔrɔnyalen:ptcp: [yɛ̀rɛmahɔrɔnya:v:devenir.libre [yɛ̀rɛmahɔrɔn:n:homme.libre [yɛ̀rɛ̂:dtm:même mà:pp:ADR hɔ́rɔn:adj:libre] ya:mrph:ABSTR] len:mrph:PTCP.RES]
 yɛ̀rɛnafaɲini=>=yɛ̀rɛnafaɲini:n: [yɛ̀rɛ̂:dtm:même nàfa:n:profit ɲíni:v:chercher]
 yɛ̀rɛsagobaara=>=yɛ̀rɛsagobaara:n: [yɛ̀rɛ̂:dtm:même sàgo:n:volonté báara:n:travail]
 #yɛ̀rɛsagokɛ=>=yɛ̀rɛsagokɛ:n:qui.agit.à.sa.tête [yɛ̀rɛ̂:dtm:même sàgo:n:volonté kɛ́:v:faire]
@@ -6104,6 +6110,7 @@ tàŋanen===tànganen:ptcp: [tànga:v:protéger len:mrph:PTCP.RES]
 
 #ANNɲ
 ɲàganmusofura===ɲàganmusofura:n: [ɲàgan:n:sorcier.bienfaisant mùso:adj:féminin fúra:n:feuille]
+ɲàginni===ɲàngini:n: [ɲàngi:v:punir ni:mrph:NMLZ]
 ɲàmanton===ɲàmanton:n:tas.d'ordures [ɲàman:n:ordure tòn:n:tas]
 ɲàmaden===ɲàmaaden:n:bâtard [ɲàmaa:n:amant [ɲɛ̀:n:réussite màa:n:homme] dén:n:enfant]
 ɲàmancɛla>>=ɲàmancɛla:n: [ɲàman:n:ordure cɛ̀:v:ramasser la:mrph:AG.PRM]
@@ -18335,6 +18342,7 @@ tó_tèn_PMINF===tó:v:rester_tèn:adv:ainsi_PMINF
 
 PMINF_PERS_sì_hákɛ_tó_sàn_NUM_LANA===PMINF_PERS_sì:n:vie_hákɛ:n:mesure_tó:v:rester_sàn:n:année_NUM_LANA
 PMINF_PERS_sì_tó_sàn_NUM_LANA===PMINF_PERS_sì:n:vie_tó:v:rester_sàn:n:année_NUM_LANA
+PMINF_PERS_sì_tó_sàn_NUM_DTM_LANA===PMINF_PERS_sì:n:vie_tó:v:rester_sàn:n:année_NUM_DTM_LANA   # par ex dɔrɔn
 
 hàkɛ_tó=>=hàkɛ:n:tort_tó:v:rester
 bɛ́_tó_síni_nà===bɛ:pm:IPFV.AFF_tó:v:rester_síni:n:demain_ná:pp:à
@@ -28515,6 +28523,8 @@ Màmadú_Isumayila_Kònate===Màmadú:n.prop:NOM.M_Sùmayíla:n.prop:NOM.
 Màmadú_Igɔri_Jàra===Màmadú:n.prop:NOM.M_Igɔri:n.prop:NOM.ETRG_Jàra:n.prop:NOM.CL
 Mamari===Mamari:n.prop:NOM.M
 Mandela===Mandela:n.prop:NOM.ETRG
+Nɛlisɔni===Nɛlisɔni:n.prop:NOM.ETRG  # prénom de Mandela
+Rolihlahla===Rolihlahla:n.prop:NOM.ETRG  # vrai prénom de Mandela
 Winni===Winni:n.prop:NOM.ETRG
 Mao_Tse-tung===Mao:n.prop:NOM.CHI_Tse-tung:n.prop:NOM.CHI
 Mariki_Kirisitiyan_Kabore===Mariki:n.prop:NOM.FRA_Kirisitiyan:n.prop:NOM.FRA_Kabore:n.prop:NOM
@@ -38221,6 +38231,16 @@ NORV_mà_PUNCT===NORVname_mà:pp:ADR_PUNCT
 VERBE_NAME_ɲɛ́na===VERBE_NAME_ɲɛ́na:pp:devant [ɲɛ́:n:oeil lá:pp:à]
 VERBE_PERS_NAME_ɲɛ́na===VERBE_PERS_NAME_ɲɛ́na:pp:devant [ɲɛ́:n:oeil lá:pp:à]
 bɛ_NAME_ɲɛ́na_PUNCT===bɛ́:cop:être_NAME_ɲɛ́na:pp:devant [ɲɛ́:n:oeil lá:pp:à]_PUNCT
+
+bɛ́_PERS_ɲɛ́na===bɛ́:cop:être_PERS_ɲɛ́na:pp:devant [ɲɛ́:n:oeil lá:pp:à]   # de mon point de vue
+b'_PERS_ɲɛ́na===b':cop:être_PERS_ɲɛ́na:pp:devant [ɲɛ́:n:oeil lá:pp:à]
+tɛ́_PERS_ɲɛ́na===tɛ́:cop:COP.NEG_PERS_ɲɛ́na:pp:devant [ɲɛ́:n:oeil lá:pp:à]
+t'_PERS_ɲɛ́na===t':cop:COP.NEG_PERS_ɲɛ́na:pp:devant [ɲɛ́:n:oeil lá:pp:à]
+bɛ́_PERS_ɲɛ́na_kó===bɛ́:cop:être_PERS_ɲɛ́na:pp:devant [ɲɛ́:n:oeil lá:pp:à]_kó:cop:QUOT
+bɛ́_PERS_yɛ̀rɛ̂_ɲɛ́na_kó===bɛ́:cop:être_PERS_yɛ̀rɛ̂:dtm:même_ɲɛ́na:pp:devant [ɲɛ́:n:oeil lá:pp:à]_kó:cop:QUOT
+bɛ́_PERS_ɲɛ́na_k'===bɛ́:cop:être_PERS_ɲɛ́na:pp:devant [ɲɛ́:n:oeil lá:pp:à]_k':cop:QUOT
+bɛ́_PERS_yɛ̀rɛ̂_ɲɛ́na_k'===bɛ́:cop:être_PERS_yɛ̀rɛ̂:dtm:même_ɲɛ́na:pp:devant [ɲɛ́:n:oeil lá:pp:à]_k':cop:QUOT
+
 
 #
 #	sánfɛ̀

@@ -38,14 +38,15 @@ def listerr(re_key):
 
         if err_match!="": 
           err_msg=err_msg+err_match+"_"
-
+    err_msg=err_msg+" "
+    
   if err_msg!="":
-    err_msg,nerr=re.subn(r' ',', ',err_msg.strip())
+    err_msg,nerr=re.subn(r' ',' ‖ ',err_msg.strip())
     err_msg=err_msg.replace("_"," ")
     nerr=nerr+1
-  if "¤" in err_msg: err_msg=err_msg.replace("¤"," ")
-  err_msg=err_msg.replace("&lt;","<")
-  err_msg=err_msg.replace("&gt;",">")
+    if "¤" in err_msg: err_msg=err_msg.replace("¤"," ")
+    err_msg=err_msg.replace("&lt;","<")
+    err_msg=err_msg.replace("&gt;",">")
 
   return nerr, err_msg.strip()
 
@@ -87,6 +88,25 @@ print(len(sentences), "sentences")
 # define keywords
 AMBIGUOUS =r'<span class="w" stage="[^"]+">([^<\n]+)<.*lemma var.*</span>\n'
 UNKNOWN   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+</span>'
+UNPARSED  =r'>([^<]+)<span class="lemma">[^<]+<span class="lemma var">[^<]+<'
+INCOMPLETE=r'<span class="lemma">([^<\n]+)<sub class="ps">[^<\n]+</sub><span class="m">[^<\n]+<sub class="ps">[^<\n]+</sub></span>(?:<span class="m">[^<\n]+<sub class="ps">mrph</sub><sub class="gloss">[^<\n]+</sub></span>)+</span></span>'
+
+
+#validate derivations - check with bamana.gram.txt - 
+BADpl     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n|adj|ptcp).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">(?:n|adj|ptcp)</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span>'
+BADnmlz   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:li|ni)<sub class="ps">mrph</sub><sub class="gloss">NMLZ</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+BADagprm  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:la|na)<sub class="ps">mrph</sub><sub class="gloss">AG\.PRM</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+BADagocc  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:baga|baa)<sub class="ps">mrph</sub><sub class="gloss">AG\.OCC</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+
+BADpfvintr=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!v).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:la|na|ra)<sub class="ps">mrph</sub><sub class="gloss">PFV\.INTR</sub></span></span></span>'
+BADprog   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!v).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:la|na)<sub class="ps">mrph</sub><sub class="gloss">PROG</sub></span></span></span>'
+
+BADptcp   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!ptcp).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:len|nen)<sub class="ps">mrph</sub><sub class="gloss">PTCP\.RES</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+
+#... tbc ... 
+
+
+
 VERB      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">v</sub>.*</span></span>\n'
 ADJ       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">adj</sub>.*</span></span>\n'
 NUM       =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">num</sub>.*</span></span>\n'
@@ -103,8 +123,8 @@ CONJ      =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 # ... tbc ...
 
 # punctuations
-START     =r'^'
-END       =r'$'
+START     =r'\^'
+END       =r'\$'
 PUNCT     =r'<span class="[ct]">([^<]+)</span>\n'  # any punctuations, tags included
 HPUNCT    =r'<span class="c">([\.\;\:\!\?]+)</span>\n'  # hard punctuation marking sentence end
 COMMA     =r'<span class="c">,</span>\n'  
@@ -189,6 +209,7 @@ NUM_      =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<su
 NIet_     =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">(?:conj|prep)</sub><sub class="gloss">et</sub></span></span>\n'
 PP_       =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">pp</sub>.*</span></span>\n'
 CONJ_     =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">(?:conj|prep)</sub>.*</span></span>\n'
+CONJSBJV_ =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">(?:sánì|sánnì|sànní|yànní|wálasa|sànkó|fɔ́|yálasa|yáasa)<sub class="ps">(?:conj)</sub>.*</span></span>\n'
 
 # manque pour l'instant les groupes avec ni et etc.
 
@@ -224,8 +245,8 @@ FOprep_VG =FOprep+VG
 #print(FOprep_VG)
 
 # larger sequences
-TEST_KASBJV=r'(?:'+START+r'|'+PUNCT+r'|'+CONJ_+r')'+NG2+KAnon_SBJV+VG2
-
+TEST_KASBJV=r'(?:'+START+r'|'+PUNCT+r'|'+CONJSBJV_+r')'+NG2+KAnon_SBJV+VG2
+#print ("TEST_KASBJV:\n",TEST_KASBJV)
 nsent=0
 nsenterr=0
 fileOUT.write("Légende :\nGn: Groupe nominal,\nPM: Marque prédicative,\nCOP: Copule,\nPP: Postposition,\nADV: Adverbe,\nADJ: Adjectif,\nCONJ: Conjonction\n")
@@ -239,6 +260,8 @@ for sentence in sentences:
   if '<span class="annot">' not in sentence: continue
   #print("\nSentence # ",nsent,"\n",sentence,"\n")
   orig,disamb=sentence.split('<span class="annot">')
+
+  disamb="\^"+disamb+"\$"
   originalsent=re.search('<span class="sent">([^<]*)',orig,re.U|re.MULTILINE)
   original=originalsent.group(1)
   original=original.replace("&lt;","<")
@@ -247,6 +270,10 @@ for sentence in sentences:
   original=re.sub(r' +', ' ',original)
 
   errors=""
+  nerr=0
+  nerr2=0
+  nerr3=0
+  nerr4=0
 
   nerr,err_msg=listerr(AMBIGUOUS)
   if nerr>0:
@@ -259,8 +286,74 @@ for sentence in sentences:
     plural="s"
     if nerr2==1: plural=""
     errors=errors+"    "+str(nerr2)+" mot"+plural+" inconnu"+plural+": "+err_msg+"\n"
+    nerr=nerr+nerr2
 
-  if nerr+nerr2!=0 :
+  nerr3,err_msg=listerr(UNPARSED)
+  if nerr3>0:
+    plural="s"
+    if nerr3==1: plural=""
+    errors=errors+"    "+str(nerr3)+" mot"+plural+" mal parsé (gparser) : "+err_msg+"\n"
+    nerr=nerr+nerr3
+
+  nerr4,err_msg=listerr(INCOMPLETE)
+  if nerr4>0:
+    plural="s"
+    if nerr4==1: plural=""
+    errors=errors+"    "+str(nerr4)+" mot"+plural+" incomplet (seulement une ou des dérivations) : "+err_msg+"\n"
+    nerr=nerr+nerr4
+
+  nerr5,err_msg=listerr(BADpl)
+  if nerr5>0:
+    plural="s"
+    if nerr5==1: plural=""
+    errors=errors+"    "+str(nerr5)+" mot"+plural+" pluriel mais pas n, adj ou ptcp ?) : "+err_msg+"\n"
+    nerr=nerr+nerr5
+
+  nerr6,err_msg=listerr(BADnmlz)
+  if nerr6>0:
+    plural="s"
+    if nerr6==1: plural=""
+    errors=errors+"    "+str(nerr6)+" mot"+plural+" NMLZ mais pas n ?) : "+err_msg+"\n"
+    nerr=nerr+nerr6
+
+  nerr7,err_msg=listerr(BADagprm)
+  if nerr7>0:
+    plural="s"
+    if nerr7==1: plural=""
+    errors=errors+"    "+str(nerr7)+" mot"+plural+" AG.PRM mais pas n ?) : "+err_msg+"\n"
+    nerr=nerr+nerr7
+
+  nerr8,err_msg=listerr(BADagocc)
+  if nerr8>0:
+    plural="s"
+    if nerr8==1: plural=""
+    errors=errors+"    "+str(nerr8)+" mot"+plural+" AG.OCC mais pas n ?) : "+err_msg+"\n"
+    nerr=nerr+nerr8
+
+  nerr9,err_msg=listerr(BADpfvintr)
+  if nerr9>0:
+    plural="s"
+    if nerr9==1: plural=""
+    errors=errors+"    "+str(nerr9)+" mot"+plural+" PFV.INTR mais pas v ?) : "+err_msg+"\n"
+    nerr=nerr+nerr8
+
+  nerr10,err_msg=listerr(BADptcp)
+  if nerr10>0:
+    if err_msg in ["fɔlen","kɔrɔlen"]: nerr10=0
+    else:
+      plural="s"
+      if nerr10==1: plural=""
+      errors=errors+"    "+str(nerr10)+" mot"+plural+" PTCP.RES mais pas ptcp ?) : "+err_msg+"\n"
+      nerr=nerr+nerr10
+
+  nerr11,err_msg=listerr(BADprog)
+  if nerr11>0:
+    plural="s"
+    if nerr11==1: plural=""
+    errors=errors+"    "+str(nerr11)+" mot"+plural+" PROG mais pas v ?) : "+err_msg+"\n"
+    nerr=nerr+nerr11
+
+  if nerr != 0 :
     errors=errors+"    j'ignore les autres tests...\n"
   else:
 
@@ -454,7 +547,7 @@ for sentence in sentences:
 
     nerr,err_msg=listerr(FOconj_NG_MAPP)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" fo(conj) Gn ma(PP) (devrait être fó/fɔ́ conj) : "+err_msg+"\n"
+      errors=errors+"    "+str(nerr)+" fo(conj) Gn ma(PP) (devrait être fó/fɔ́ prep) : "+err_msg+"\n"
 
     nerr,err_msg=listerr(TEST_KASBJV)
     if nerr>0:
