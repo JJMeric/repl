@@ -39,7 +39,7 @@ def listerr(re_key):
         if err_match!="": 
           err_msg=err_msg+err_match+"_"
     err_msg=err_msg+" "
-    
+
   if err_msg!="":
     err_msg,nerr=re.subn(r' ',' ‖ ',err_msg.strip())
     err_msg=err_msg.replace("_"," ")
@@ -97,6 +97,9 @@ BADpl     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 BADnmlz   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:li|ni)<sub class="ps">mrph</sub><sub class="gloss">NMLZ</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
 BADagprm  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:la|na)<sub class="ps">mrph</sub><sub class="gloss">AG\.PRM</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
 BADagocc  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:baga|baa)<sub class="ps">mrph</sub><sub class="gloss">AG\.OCC</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+BADcom    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n|adj).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">n</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:ma)<sub class="ps">mrph</sub><sub class="gloss">COM</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+BADadj    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!adj).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">vq</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:man)<sub class="ps">mrph</sub><sub class="gloss">ADJ</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+
 
 BADpfvintr=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!v).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:la|na|ra)<sub class="ps">mrph</sub><sub class="gloss">PFV\.INTR</sub></span></span></span>'
 BADprog   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!v).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:la|na)<sub class="ps">mrph</sub><sub class="gloss">PROG</sub></span></span></span>'
@@ -306,35 +309,35 @@ for sentence in sentences:
   if nerr5>0:
     plural="s"
     if nerr5==1: plural=""
-    errors=errors+"    "+str(nerr5)+" mot"+plural+" pluriel mais pas n, adj ou ptcp ?) : "+err_msg+"\n"
+    errors=errors+"    "+str(nerr5)+" mot"+plural+" :mrph:PL pluriel mais pas n, adj ou ptcp ?) : "+err_msg+"\n"
     nerr=nerr+nerr5
 
   nerr6,err_msg=listerr(BADnmlz)
   if nerr6>0:
     plural="s"
     if nerr6==1: plural=""
-    errors=errors+"    "+str(nerr6)+" mot"+plural+" NMLZ mais pas n ?) : "+err_msg+"\n"
+    errors=errors+"    "+str(nerr6)+" mot"+plural+" :mrph:NMLZ mais pas n ?) : "+err_msg+"\n"
     nerr=nerr+nerr6
 
   nerr7,err_msg=listerr(BADagprm)
   if nerr7>0:
     plural="s"
     if nerr7==1: plural=""
-    errors=errors+"    "+str(nerr7)+" mot"+plural+" AG.PRM mais pas n ?) : "+err_msg+"\n"
+    errors=errors+"    "+str(nerr7)+" mot"+plural+" :mrph:AG.PRM mais pas n ?) : "+err_msg+"\n"
     nerr=nerr+nerr7
 
   nerr8,err_msg=listerr(BADagocc)
   if nerr8>0:
     plural="s"
     if nerr8==1: plural=""
-    errors=errors+"    "+str(nerr8)+" mot"+plural+" AG.OCC mais pas n ?) : "+err_msg+"\n"
+    errors=errors+"    "+str(nerr8)+" mot"+plural+" :mrph:AG.OCC mais pas n ?) : "+err_msg+"\n"
     nerr=nerr+nerr8
 
   nerr9,err_msg=listerr(BADpfvintr)
   if nerr9>0:
     plural="s"
     if nerr9==1: plural=""
-    errors=errors+"    "+str(nerr9)+" mot"+plural+" PFV.INTR mais pas v ?) : "+err_msg+"\n"
+    errors=errors+"    "+str(nerr9)+" mot"+plural+" :mrph:PFV.INTR mais pas v ?) : "+err_msg+"\n"
     nerr=nerr+nerr8
 
   nerr10,err_msg=listerr(BADptcp)
@@ -343,15 +346,33 @@ for sentence in sentences:
     else:
       plural="s"
       if nerr10==1: plural=""
-      errors=errors+"    "+str(nerr10)+" mot"+plural+" PTCP.RES mais pas ptcp ?) : "+err_msg+"\n"
+      errors=errors+"    "+str(nerr10)+" mot"+plural+" :mrph:PTCP.RES mais pas ptcp ?) : "+err_msg+"\n"
       nerr=nerr+nerr10
 
   nerr11,err_msg=listerr(BADprog)
   if nerr11>0:
     plural="s"
     if nerr11==1: plural=""
-    errors=errors+"    "+str(nerr11)+" mot"+plural+" PROG mais pas v ?) : "+err_msg+"\n"
+    errors=errors+"    "+str(nerr11)+" mot"+plural+" :mrph:PROG mais pas v ?) : "+err_msg+"\n"
     nerr=nerr+nerr11
+
+  nerr12,err_msg=listerr(BADcom)
+  if nerr12>0:
+    plural="s"
+    if nerr12==1: plural=""
+    errors=errors+"    "+str(nerr12)+" mot"+plural+" :mrph:COM mais pas n/adj ?) : "+err_msg+"\n"
+    nerr=nerr+nerr12
+
+  nerr13,err_msg=listerr(BADadj)
+  if nerr13>0:
+    plural="s"
+    if nerr13==1: plural=""
+    errors=errors+"    "+str(nerr13)+" mot"+plural+" :mrph:ADJectivateur de vq mais pas adj ?) [ ignorer si nominalisation ]: "+err_msg+"\n"
+    nerr=nerr+nerr13
+
+
+  # --- si une des erreurs de validations ci-dessus ne pas faire les autres tests de cohérence ---
+  # --- ignore further tests if error in one of the above
 
   if nerr != 0 :
     errors=errors+"    j'ignore les autres tests...\n"
@@ -359,7 +380,10 @@ for sentence in sentences:
 
     nerr,err_msg=listerr(VERB1_VERB)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" VERBE VERBE (deux verbes qui se suivent) ? "+err_msg+"\n"
+      avis="(deux verbes qui se suivent) ?"
+      if "se " in err_msg:
+        avis=avis+" [comme pour nà ou táa (régulier), parfois possible avec sé (ignorer)]"
+      errors=errors+"    "+str(nerr)+" VERBE VERBE "+avis+" : "+err_msg+"\n"
 
     nerr,err_msg=listerr(PP_PPnon_PP)
     if nerr>0:
@@ -543,7 +567,9 @@ for sentence in sentences:
 
     nerr,err_msg=listerr(VERB1_NG_VNONPERF)
     if nerr>0:
-      errors=errors+"    "+str(nerr)+" VERBE Gn V(non PERF) (deux verbes successifs [ignorer si impératifs]) : "+err_msg+"\n"
+      avis="(deux verbes successifs [ignorer si impératifs]) ? "
+      if "se " in err_msg: avis=avis+" [comme pour nà ou táa (régulier), parfois possible avec sé (ignorer)]"
+      errors=errors+"    "+str(nerr)+" VERBE Gn V(non PERF) "+avis+" : "+err_msg+"\n"
 
     nerr,err_msg=listerr(FOconj_NG_MAPP)
     if nerr>0:

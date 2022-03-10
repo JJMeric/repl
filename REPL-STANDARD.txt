@@ -1067,6 +1067,7 @@ dá-dálen===dá-dálen:ptcp: [dá-dá:v: [dá:v:poser dá:v:poser] len:
 #dábilayɔrɔ===dábilayɔrɔ:n: [dábìla:v:cesser [dá:n:bouche bìla:v:mettre] yɔ́rɔ:n:lieu]
 #dábɔkun===dábɔkun:n: [dábɔ:v:commencer [dá:n:bouche bɔ́:v:sortir] kùn:n:tête]
 #dádɔnbaliw=>=dádɔnbaliw:ptcp: [dádɔnbali:ptcp:non.informé [dádɔn:v:connaître [dá:n:bouche dɔ́n:v:connaître] bali:mrph:PTCP.PRIV] w:mrph:PL] # indéterminé
+dáfan===dáfalen:ptcp: [dáfa:v:compléter [dá:n:bouche fá:v:remplir] len:mrph:PTCP.RES]
 dáfalenden===dáfalenden:n: [dáfàlen:v:faire.voeu [dá:n:bouche fàlen:v:échanger] dén:n:enfant] # enfant posé sur le tas d'ordures
 #dágalaka>>=dágalaka:n:mâchoire [dá:n:bouche gálaka:n:côte]
 dágayɔrɔ>>=dágayɔrɔ:n: [dága:n:campement yɔ́rɔ:n:lieu]
@@ -40411,6 +40412,7 @@ gwánsan_PUNCT===gánsan:adv:inutilement_PUNCT
 NONVERBALGROUP_gánsan_VERBE===NONVERBALGROUP_gánsan:adj:gratuit_VERBE
 NONVERBALGROUP_gánsan_PRMRK===NONVERBALGROUP_gánsan:adj:gratuit_PRMRK
 NONVERBALGROUP_gánsan_COPULE===NONVERBALGROUP_gánsan:adj:gratuit_COPULE
+NONVERBALGROUP_gánsan_POSTP===NONVERBALGROUP_gánsan:adj:gratuit_POSTP
 
 VERBE_dɔ́rɔn===VERBE_dɔ́rɔn:adv:seulement
 POSTP_dɔ́rɔn===POSTP_dɔ́rɔn:adv:seulement
