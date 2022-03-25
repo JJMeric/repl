@@ -147,11 +147,13 @@ else :
 
 if script=="Ancien orthographe malien" : tonal="old"
 elif script=="Nouvel orthographe malien" : tonal="new"
+elif script=="Autres orthographes latines" : tonal="newny"   # forces to this default (assumption based on delprat-contes()
 
 if  filenametemp.startswith("baabu_ni_baabu") or filenametemp.startswith("gorog_meyer-contes_bambara1974") :
   tonal="newny"
 
 if tonal=="" : sys.exit("text:script non defini : pas de meta ou pas d'argument (tonal, bailleul)")
+# never happens : tonal ha sbeen set by default as "new"
 
 totalmots = body.count("class=\"w\"")   # is needed in the final message to compute average ambiguous left and elapse time/word
 
@@ -488,7 +490,7 @@ def filterrepl(m):
   defo=m.groups()[2]
   wordb=m.groups()[3]
   defb=m.groups()[4]
-  if worda=="ye":
+  if worda=="ye" or worda=="ka" :
     wrepl='<span class="w" stage="0">'+worda+'<'+defa+'</span>\n'
     wrepl=wrepl+'<span class="w" stage="0">o<'+defo+'</span>\n'
     wrepl=wrepl+'<span class="w" stage="0">'+wordb+'<'+defb+'</span>\n'

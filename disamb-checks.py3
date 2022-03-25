@@ -99,6 +99,7 @@ BADagprm  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 BADagocc  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:baga|baa)<sub class="ps">mrph</sub><sub class="gloss">AG\.OCC</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
 BADcom    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n|adj).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">n</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:ma)<sub class="ps">mrph</sub><sub class="gloss">COM</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
 BADadj    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!adj).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">vq</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:man)<sub class="ps">mrph</sub><sub class="gloss">ADJ</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+BADstat   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!adj).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">n</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:lama|nama|rɔma)<sub class="ps">mrph</sub><sub class="gloss">STAT</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
 
 
 BADpfvintr=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!v).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:la|na|ra)<sub class="ps">mrph</sub><sub class="gloss">PFV\.INTR</sub></span></span></span>'
@@ -156,6 +157,7 @@ PPnon_PP  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 PPFINAL   =PP+PUNCT
 FOprep    =r'''<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">prep</sub><sub class="gloss">jusqu'à</sub></span></span>\n'''
 FOconj    =r'''<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">conj</sub><sub class="gloss">jusqu'à</sub></span></span>\n'''
+QUOT      =r'''<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">(?:ko|kó|k')+<sub class="ps">cop</sub><sub class="gloss">QUOT</sub></span></span>\n'''
 
 
 
@@ -197,7 +199,9 @@ PM_CONJ   =PM+CONJ
 # ADV_CONJ                # phrases avec absence de virgule derrière le verbe
 FOprep_KAINF=FOprep+KAINF
 FOprep_NIsi =FOprep+NIsi
-
+ADV_VERB  =ADV+VERB
+ADV_PMnon_INF=ADV+PMnon_INF
+ADV_COP1   =ADV+COP1
 # ...tbc...
 # implement : NG (nominal group) NAME+ADJ*+DTM*+POSS*+AND*+... see NONVERBALGROUP in replc
 # example forbiddden sequence : PM_NG_PP, PM_NG_ADV, PM_NG_VQ, 
@@ -213,6 +217,7 @@ NIet_     =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<su
 PP_       =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">pp</sub>.*</span></span>\n'
 CONJ_     =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">[^<\n]+<sub class="ps">(?:conj|prep)</sub>.*</span></span>\n'
 CONJSBJV_ =r'<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">(?:sánì|sánnì|sànní|yànní|wálasa|sànkó|fɔ́|yálasa|yáasa)<sub class="ps">(?:conj)</sub>.*</span></span>\n'
+QUOT_     =r'''<span class="w" stage="[^"]+">[^<\n]+<span class="lemma">(?:ko|kó|k')+<sub class="ps">cop</sub><sub class="gloss">QUOT</sub></span></span>\n'''
 
 # manque pour l'instant les groupes avec ni et etc.
 
@@ -233,6 +238,8 @@ PM_NG_PM  =PM+NG+PM
 VERB1_NG_VNONPERF=VERB1+NG+VNONPERF  # VPERF peut se trouver légitimement après : i n'a fɔ... / o y'a sɔro ... et VPERF
         # taa/na sont exclus de VERB1, mais la construction peut exister avec se : mɔgɔ si kana se a filɛ yen.
 FOconj_NG_MAPP=FOconj+NG+MAPP
+NIsi_NG_PP1=NIsi+NG+PP1
+NG_ADV_NG =NG+ADV+NG
 
 # it would be interesting to define a VERBALGROUP, or "proposition/verbal clause"
 # for instance ( NG PM NG* VNONPERF|VQ)  | ( NG VPERF )
@@ -248,7 +255,7 @@ FOprep_VG =FOprep+VG
 #print(FOprep_VG)
 
 # larger sequences
-TEST_KASBJV=r'(?:'+START+r'|'+PUNCT+r'|'+CONJSBJV_+r')'+NG2+KAnon_SBJV+VG2
+TEST_KASBJV=r'('+START+r'|'+PUNCT+r'|'+CONJSBJV_+r'|'+QUOT_+r')'+NG2+KAnon_SBJV+VG2
 #print ("TEST_KASBJV:\n",TEST_KASBJV)
 nsent=0
 nsenterr=0
@@ -369,6 +376,14 @@ for sentence in sentences:
     if nerr13==1: plural=""
     errors=errors+"    "+str(nerr13)+" mot"+plural+" :mrph:ADJectivateur de vq mais pas adj ?) [ ignorer si nominalisation ]: "+err_msg+"\n"
     nerr=nerr+nerr13
+
+  nerr14,err_msg=listerr(BADstat)
+  if nerr14>0:
+    plural="s"
+    if nerr14==1: plural=""
+    errors=errors+"    "+str(nerr14)+" mot"+plural+" :mrph:STAT de n mais pas adj ?) : "+err_msg+"\n"
+    nerr=nerr+nerr14
+
 
 
   # --- si une des erreurs de validations ci-dessus ne pas faire les autres tests de cohérence ---
@@ -532,6 +547,17 @@ for sentence in sentences:
     if nerr>0:
       errors=errors+"    "+str(nerr)+" fo(prep) GroupeVerbal (devrait être fó/fɔ́ conj) : "+err_msg+"\n"
 
+    nerr,err_msg=listerr(ADV_VERB)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" Adverbe avant le verbe? : "+err_msg+"\n"
+
+    nerr,err_msg=listerr(ADV_PMnon_INF)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" Adverbe avant marque prédicative ? : "+err_msg+"\n"
+
+    nerr,err_msg=listerr(ADV_COP1)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" Adverbe avant copule? : "+err_msg+"\n"
 
 #------------------- 3 terms, NG middle
 
@@ -567,13 +593,21 @@ for sentence in sentences:
 
     nerr,err_msg=listerr(VERB1_NG_VNONPERF)
     if nerr>0:
-      avis="(deux verbes successifs [ignorer si impératifs]) ? "
+      avis="(deux verbes successifs [ignorer si impératifs ou derrière conjonction comme \"k'a sɔrɔ\"]) ? "
       if "se " in err_msg: avis=avis+" [comme pour nà ou táa (régulier), parfois possible avec sé (ignorer)]"
       errors=errors+"    "+str(nerr)+" VERBE Gn V(non PERF) "+avis+" : "+err_msg+"\n"
 
     nerr,err_msg=listerr(FOconj_NG_MAPP)
     if nerr>0:
       errors=errors+"    "+str(nerr)+" fo(conj) Gn ma(PP) (devrait être fó/fɔ́ prep) : "+err_msg+"\n"
+
+    nerr,err_msg=listerr(NIsi_NG_PP1)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" ni(si) Gn PP [ devrait être ni(et) ] : "+err_msg+"\n"
+
+    nerr,err_msg=listerr(NG_ADV_NG)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" Adverbe isolé entre 2 Gn : "+err_msg+"\n"
 
     nerr,err_msg=listerr(TEST_KASBJV)
     if nerr>0:
