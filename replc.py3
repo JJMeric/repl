@@ -680,7 +680,7 @@ if nombre>0 :
 # pars <span class="w" stage="1">Timunakaw<span class="lemma">timunakaw<span class="lemma var">timunakaw<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub><span class="m">timunaka<sub class="ps">n/adj/dtm/prn/ptcp/n.prop/num</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">timunakaw<sub class="ps">n/n.prop</sub><span class="m">timu<sub class="ps">n/n.prop</sub></span><span class="m">na<sub class="ps">mrph</sub><sub class="gloss">LOC</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span><span class="lemma var">timunakaw<sub class="ps">n/n.prop</sub><span class="m">timuna<sub class="ps">n/n.prop</sub></span><span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">GENT</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span></span>\n
 #
 wsearch=r'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">((((?!lemma var).)+)GENT(((?!lemma var).)+))<span class="lemma var">[^\n]+</span></span>\n'
-wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3></span>\n'
+wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3></span></span>\n'
 body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 if nombre>0 :
   msg="%i modifs NOMPROPRE non-initial ambigu type -kaw GENT (lemma sans ps/gloss) " % nombre +"\n"

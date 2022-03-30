@@ -994,6 +994,7 @@ cɛ́macɛɲin>==cɛ́mancɛɲin:n: [cɛ́mancɛɲin:n: [cɛ́mancɛ:n:milieu ɲ
 cɛ́mancɛbolo===cɛ́mancɛbolo:n: [cɛ́mancɛ:n:milieu bólo:n:branche] # Afrique centrale
 cɛ́mancɛkalan=>=cɛ́mancɛkalan:n: [cɛ́mancɛ:n:milieu kàlan:n:lecture] # 2d cycle: lycée, formation prof
 cɛ́mancɛkolo=>=cɛ́mancɛkolo:n: [cɛ́mancɛ:n:milieu kólo:n:os] # colonne vertébrale cf. kɔkolo
+cɛ́mancɛla=>=cɛ́mancɛla:n: [cɛ́mancɛ:n:milieu la:mrph:LOC]
 cɛ́mancɛɲin>>=cɛ́mancɛɲin:n: [cɛ́mancɛ:n:milieu ɲín:n:dent]
 #cɛ̀ɲɛ===cɛ̀ɲɛ:n:beauté [cɛ̀:n:aspect ya:mrph:ABSTR]§§cɛ̀ɲɛ:v:être.beau [cɛ̀:n:aspect ya:mrph:ABSTR]
 Cɛ̀ɲɛ===cɛ̀ɲɛ:n:beauté [cɛ̀:n:aspect ya:mrph:ABSTR]
@@ -1255,8 +1256,13 @@ Díyagòya===díyagòya:n:contrainte [díya:n:bon.goût [dí:vq:agréable 
 díyagoyafariyɛlɛma=>=díyagoyafariyɛlɛma:n: [díyagòya:n:contrainte [dí.ya:n:bon.goût dí:vq:agréable ya:mrph:DEQU gó:vq:désagréable ya:mrph:DEQU] fàri:n:corps yɛ̀lɛma:n:changement]
 díyagoyafaŋa=>=díyagoyafanga:n:tyrannie [díyagoya:adv.p:de.force [díya:v:rendre.agréable [dí:vq:agréable ya:mrph:DEQU] gó:vq:désagréable ya:mrph:DEQU] fànga:n:force]
 #díyayɔrɔ===díyayɔrɔ:n: [díya:n:bon.goût [dí:vq:agréable ya:mrph:DEQU] yɔ́rɔ:n:lieu]
-díyɛnbɛɛtigi=>=díyɛnbɛɛtigi:n: [díɲɛ:n:monde bɛ́ɛ:dtm:tout tìgi:n:maître] # une façon de nommer Ala (Dieu) dans LK
-#díyɛnnatigɛ=>=díyɛnnatigɛ:n:vie [díɲɛ:n:monde látìgɛ:v:faire.passer [lá:mrph:CAUS tìgɛ:v:couper]]
+díyɛnbɛɛtigi=>=díɲɛbɛɛtigi:n: [díɲɛ:n:monde bɛ́ɛ:dtm:tout tìgi:n:maître] # une façon de nommer Ala (Dieu) dans LK
+diyɛndaminɛ=>=díɲɛdaminɛ:n: [díɲɛ:n:monde dáminɛ:n:commencement [dá:n:bouche mìnɛ:v:attraper]]
+diyɛnnaban=>=díɲɛlaban:n:fin.du.monde [díɲɛ:n:monde lában:n:fin [lá:mrph:CAUS bán:v:terminer]]
+diyɛnnabandon=>=díɲɛlabandon:n: [díɲɛlaban:n:fin.du.monde [díɲɛ:n:monde lában:n:fin [lá:mrph:CAUS bán:v:terminer]] dón:n:jour]
+diyɛnnabantuma=>=díɲɛlabantuma:n: [díɲɛlaban:n:fin.du.monde [díɲɛ:n:monde lában:n:fin [lá:mrph:CAUS bán:v:terminer]] tùma:n:moment]
+diyɛnsosigi===díɲɛsosigi:n:vie [díɲɛ:n:monde só:n:maison sìgi:n:position.assise]
+díyɛnnatigɛ=>=díyɛnnatigɛ:n:vie [díɲɛ:n:monde látìgɛ:v:faire.passer [lá:mrph:CAUS tìgɛ:v:couper]]
 díɲɛdenkɔrɔ>>=díɲɛdenkɔrɔ:n: [díɲɛden:n:bon.vivant [díɲɛ:n:monde dén:n:enfant] kɔ̀rɔ:adj:vieux]
 #díɲɛdenya===díɲɛdenya:n:libertinage [díɲɛden:n:bon.vivant [díɲɛ:n:monde dén:n:enfant] ya:mrph:ABSTR]
 díɲɛlamini=>=díɲɛlamini:n: [díɲɛ:n:monde lámini:v:entourer [lá:mrph:CAUS míni:v:enrouler]] # tour du monde
@@ -1910,6 +1916,7 @@ fùntenimajamana>>=fùntenimajamana:n: [fùnteni:n:chaleur ma:mrph:COM jàma
 fùntenidonnan>>=fùntenidonnan:n: [fùnteni:n:chaleur dòn:v:entrer lan:mrph:INSTR]  # valeur énergétique (cf UF Unité Fourragère de l'INRA) / apport calorique
 fùnɛden===fùnɛden:n: [fùnɛ:n:catégorie.de.griot dén:n:enfant]
 #fùrancɛlafanga===fùrancɛlafanga:n:régime.transitoire [fùrancɛ:n:distance [fùran:n:distance cɛ́:n:milieu] lá:pp:à fànga:n:force]
+fùrancɛla===fùrancɛla:n: [fùrancɛ:n:distance [fùran:n:distance cɛ́:n:milieu] la:mrph:LOC]
 fùrancɛlakokɛtaw===fùrancɛlakokɛtaw:n: [fùrancɛ:n:distance [fùran:n:distance cɛ́:n:milieu] lá:pp:à kó:n:affaire kɛ́ta:ptcp:à.faire [kɛ́:v:faire ta:mrph:PTCP.POT] w:mrph:PL] # mesures intérimaires
 #fùrudimi=>=fùrudimi:n: [fùru:n:estomac dími:n:souffrance] # ulcère de l'estomac
 fùrudimifura===fùrudimifura:n: [fùrudimi:n: [fùru:n:estomac dími:n:souffrance] fúra:n:feuille]
@@ -2542,6 +2549,8 @@ jɔ̀yɔrɔɲinina>>=jɔ̀yɔrɔɲinina:n: [jɔ̀yɔrɔ:n:place [jɔ̀:n:station
 #jɔ̀yɔrɔɲinisɛbɛn>>=jɔ̀yɔrɔɲinisɛbɛn:n: [jɔ̀yɔrɔ:n:place [jɔ̀:n:station.debout yɔ́rɔ:n:lieu] ɲíni:v:chercher sɛ́bɛn:n:écrit] # formulaire de candidature
 jɔ̀yɔrɔɲinita===jɔ̀yɔrɔɲinita:ptcp: [jɔ̀yɔrɔ:n:place [jɔ̀:n:station.debout yɔ́rɔ:n:lieu] ɲíni:v:chercher ta:mrph:PTCP.POT]
 jɔ̀ɔrɛ===jɔ̀rɛ:v:s'inquiéter
+jɛ_sigikan=>=jɛ̀:n:assemblée_sìgikan:n: [sìgi:n:position.assise kán:n:cou]  # Tables de la Loi ?(?)
+Jɛ_Sigikan===jɛ̀:n:assemblée_sìgikan:n: [sìgi:n:position.assise kán:n:cou]  # Tables de la Loi ?(?)
 jɛ̀kabaara===jɛ̀-kà-báara:n:travail.en.commun [jɛ̀:v:assembler kà:pm:INF báara:v:travailler]
 jɛ̀kadɔnkilida===jɛ̀kadɔnkilida:n: [jɛ̀:v:assembler kà:pm:INF dɔ̀nkili:n:chant [dɔ̀n:n:danse kíli:v:appeler] dá:v:poser]
 jɛ̀kawale>>=jɛ̀kawale:n: [jɛ̀:n:assemblée ka:pp:POSS wále:n:acte]   # pas de verbe wale!
@@ -2839,6 +2848,8 @@ kénìngekala===kénìngekala:n: [kénìnge:n:sorgho kàla:n:tige]
 kiwikisi=>=Kiwikisi:n.prop:NOM.US # Kiwix
 Kiya===Kiya:n.prop:NOM.F
 Kiyakɔrɔba===Kiyakɔrɔba:n.prop:NOM.F # la même ("la vieille")
+kibaro>>=kìbaru:n:nouvelle
+kibaroduman=>=kìbaruduman:n: [kìbaru:n:nouvelle dúman:adj:agréable [dí:vq:agréable man:mrph:ADJ]]
 Kìbaru===Kìbaru:n.prop:Kibaru
 KÌBARU===Kìbaru:n.prop:Kibaru
 Kìbarudilalaw_Kúntigi===Kìbarudilalaw:n: [Kìbaru:n.prop:Kibaru díla:v:fabriquer la:mrph:AG.PRM w:mrph:PL]_kùntigi:n:chef [kùn:n:tête tìgi:n:maître]
@@ -5544,6 +5555,7 @@ tílaliko===tílaliko:n: [tíla:v:diviser li:mrph:NMLZ kó:n:affaire]
 #tílali>==tílali:n:partage [tíla:v:diviser li:mrph:NMLZ] # divisions
 tíla-tíla===tíla-tíla:v: [tíla:v:diviser tíla:v:diviser]
 tílatíla===tíla-tíla:v: [tíla:v:diviser tíla:v:diviser]
+tílayɔrɔba>>=tílayɔrɔba:n: [tíla:v:diviser yɔ́rɔ:n:lieu ba:mrph:AUGM]  # parties, chapitres
 tíminman===tímiman:adj:savoureux [tími:vq:savoureux man:mrph:ADJ]
 tínyɛ_fɛn=*=tíɲɛfɛn:n: [tíɲɛ:v:gâter fɛ́n:n:chose]
 tínyɛ_fɛnw=*=tíɲɛfɛnw:n: [tíɲɛfɛn:n: [tíɲɛ:v:gâter fɛ́n:n:chose] w:mrph:PL]
@@ -19878,6 +19890,8 @@ síraba_kàn_PUNCT===síraba:n: [síra:n:chemin ba:mrph:AUGM]_kàn:pp:sur_P
 síra_dálen_kàn===síra:n:chemin_dálen:ptcp: [dá:v:poser len:mrph:PTCP.RES]_kàn:pp:sur
 síra_ɲùman_kàn===síra:n:chemin_ɲùman:adj:bon [man:mrph:ADJ]_kàn:pp:sur
 síra_ɲùmanw_kàn===síra:n:chemin_ɲùmanw:adj: [ɲùman:adj:bon [man:mrph:ADJ] w:mrph:PL]_kàn:pp:sur
+síra_júgu_kàn===síra:n:chemin_júgu:adj:méchant_kàn:pp:sur
+sírajugu_kàn===sírajugu:n: [síra:n:chemin júgu:adj:méchant]_kàn:pp:sur
 à_ká_bólo_kàn===à:pers:3SG_ka:pp:POSS_bólo:n:bras_kàn:pp:sur    # sous la responsabilité de, dans la dépendance de
 bɛ́_síra_ɲùman_kàn===bɛ́:cop:être_síra:n:chemin_ɲùman:adj:bon [man:mrph:ADJ]_kàn:pp:sur
 dùgukolo_kàn===dùgukolo:n:terre [dùgu:n:village kólo:n:os]_kàn:pp:sur
@@ -22641,9 +22655,14 @@ ó_EXCLAM=>=ó:prt:empathie_EXCLAM
 jàa_EXCLAM=>=jàa:intj:en.fait_EXCLAM
 dɛ́rɛ_EXCLAM=>=dɛ́rɛ:prt:certainement_EXCLAM
 sá_EXCLAM===sá:prt:enfin_EXCLAM
+PRMRK_sà_EXCLAM===PRMRK_sà:v:mourir_EXCLAM
 kóyi_EXCLAM===kóyi:prt:certes_EXCLAM
 dɛ́_EXCLAM===dɛ́:prt:certes_EXCLAM
 kɛ̀_EXCLAM===kɛ̀:prt:certes_EXCLAM # cf 3PRT
+PRMRK_kɛ́_EXCLAM===PRMRK_kɛ́:v:faire_EXCLAM
+PRMRK_à_kɛ́_EXCLAM===PRMRK_à:pers:3SG_kɛ́:v:faire_EXCLAM
+PRMRK_ò_kɛ́_EXCLAM===PRMRK_ò:prn:ce_kɛ́:v:faire_EXCLAM
+
 dè_EXCLAM===dè:prt:FOC_EXCLAM
 kɔ̀ni_EXCLAM===kɔ̀ni:prt:TOP.CNTR2_EXCLAM
 
@@ -24566,6 +24585,9 @@ síra_tìgɛ===síra:n:chemin_tìgɛ:v:couper   # on peut aussi couper le ta
 síra_ɲùman_sɔ̀rɔ===síra:n:chemin_ɲùman:adj:bon [man:mrph:ADJ]_sɔ̀rɔ:v:obtenir
 síra_ɲíni===síra:n:chemin_ɲíni:v:chercher
 síra_ɲíni===síra:n:chemin_ɲíni:v:chercher
+sírajugu_mìnɛ===sírajugu:n: [síra:n:chemin júgu:adj:méchant]_mìnɛ:v:attraper
+sírajugu_bìla===sírajugu:n: [síra:n:chemin júgu:adj:méchant]_bìla:v:mettre
+sírajugu_táama===sírajugu:n: [síra:n:chemin júgu:adj:méchant]_táama:v:marcher
 sìri_tìgɛ===sìri:n:liaison_tìgɛ:v:couper   # ensorceller
 sìɲɛ_bɔ́===sìɲɛ:n:lutte_bɔ́:v:sortir
 sògo_mìnɛ===sògo:n:viande_mìnɛ:v:attraper
@@ -24680,6 +24702,8 @@ tɔ̀_tóra===tɔ̀:n:le.reste_tóra:v: [tó:v:rester ra:mrph:PFV.INTR]
 tɔ̀nin_tóra===tɔ́nin:n: [tɔ̀:n:le.reste nin:mrph:DIM]_tóra:v: [tó:v:rester ra:mrph:PFV.INTR]
 tɔ̀n_dá_dùgu_mà===tɔ̀n:n:nuque_dá:v:poser_dùgu:n:village_mà:pp:ADR    # faire courber l'échine
 tɔ̀n_dá_dùguma=*=tɔ̀n:n:nuque_dá:v:poser_dùgu:n:village_mà:pp:ADR    # faire courber l'échine
+tɔ́gɔ_dá_kó===tɔ́gɔ:n:nom_dá:v:poser_kó:cop:QUOT
+tɔ́gɔ_dára_kó=>=tɔ́gɔ:n:nom_dára:v: [dá:v:poser ra:mrph:PFV.INTR]_kó:cop:QUOT
 tɔ́gɔ_dá===tɔ́gɔ:n:nom_dá:v:poser
 tɔ́gɔ_dára=>=tɔ́gɔ:n:nom_dára:v: [dá:v:poser ra:mrph:PFV.INTR]
 tɔ́gɔ_dálen=>=tɔ́gɔ:n:nom_dálen:ptcp: [dá:v:poser len:mrph:PTCP.RES]
@@ -28091,6 +28115,7 @@ sánji_nàfama=>=sánji:n:pluie [sán:n:ciel jí:n:eau]_nàfama:adj:utile 
 sánji_nàta=>=sánji:n:pluie [sán:n:ciel jí:n:eau]_nàta:ptcp:prochain [nà:v:venir ta:mrph:PTCP.POT]
 sánji_nàtaw=>=sánji:n:pluie [sán:n:ciel jí:n:eau]_nàtaw:ptcp: [nàta:ptcp:prochain [nà:v:venir ta:mrph:PTCP.POT] w:mrph:PL]
 sánji_nàtaw=>=sánji:n:pluie [sán:n:ciel jí:n:eau]_nàtaw:ptcp: [nàta:ptcp:prochain [nà:v:venir ta:mrph:PTCP.POT] w:mrph:PL]
+sánu_gɛ̀rɛgɛrɛ===sánu:n:or_gɛ̀rɛgɛrɛ:adj:pur
 sárati_fɔ́len=>=sárati:n:promesse_fɔ́len:n:dit [fɔ́:v:dire len:mrph:PTCP.RES]
 sárati_fɔ́lenw=>=sárati:n:promesse_fɔ́lenw:ptcp: [fɔ́len:n:dit [fɔ́:v:dire len:mrph:PTCP.RES] w:mrph:PL]
 sáwura_kúra===sáwura:n:aspect_kúra:adj:nouveau

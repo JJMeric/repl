@@ -118,7 +118,13 @@ try:
     else :
       fileREPCname = os.path.join(scriptdir, "REPL-STANDARD-C.old"+str(ncpu)+".txt")
       tonal="old"
-  fileREPC = open (fileREPCname,"r")
+  
+  if os.path.exists(fileREPCname):
+    fileREPC = open (fileREPCname,"r")
+  else:
+    fileREPCname0=fileREPCname.replace(str(ncpu)+".txt","0.txt")
+    print(fileREPCname+" is missing, trying with "+fileREPCname0)
+    fileREPC = open (fileREPCname0,"r")
 except :
   sys.exit(fileREPCname+" ? repl.py needs a REPL-C.txt file or a REPL-STANDARD-C"+str(ncpu)+".txt file in the current directory (or in "+scriptdir+" )")
 # read all file in one go
@@ -140,10 +146,10 @@ txtsc=textscript.search(head)
 if txtsc!=None :   # supposedly = if txtsc :
   script=txtsc.group(1)
 else :
-    if not filenametemp.startswith("0precorpus"): 
-      script="Nouvel orthographe malien"
-      if filenametemp.endswith(".old"): script="Ancien orthographe malien"
-      print(" ! textscript not set for "+filenametemp+" !!!  ASSUMED : "+script)
+    #if not filenametemp.startswith("0precorpus"): 
+    script="Nouvel orthographe malien"
+    if filenametemp.endswith(".old"): script="Ancien orthographe malien"
+    print(" ! textscript not set for "+filenametemp+" !!!  ASSUMED : "+script)
 
 if script=="Ancien orthographe malien" : tonal="old"
 elif script=="Nouvel orthographe malien" : tonal="new"
@@ -275,7 +281,7 @@ wsearch=r'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-z
 wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.F</sub></span></span>\n'
 body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 wsearch=r'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">((((?!lemma var).)+)GENT(((?!lemma var).)+))<span class="lemma var">[^\n]+</span></span>\n'
-wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3></span>\n'
+wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3></span></span>\n'
 body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 wsearch=r'(</span>|</span>\n)<span class="w" stage="[0-9\-b]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">[^<]+<span class="lemma var">(?P=w)<sub class="ps">n.prop</sub><sub class="gloss">(?P=w)</sub></span></span></span>\n'
 wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<2><sub class="ps">n.prop</sub><sub class="gloss">NOM</sub></span></span>\n'
@@ -285,7 +291,7 @@ wsearch=r'(</span>|</span>\n)<span class="w" stage="[0-9\-b]+">(?P<w>[A-ZƐƆƝ�
 wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3></span></span>\n'
 body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 wsearch=r"(</span>|</span>\n)<span class=\"w\" stage=\"[0-9\-]+\">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class=\"lemma\">[^<]+<span class=\"lemma var\">.+></span>\n"
-wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<2><sub class="ps">n.prop</sub><sub class="gloss">NOM</sub></span>\n'
+wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<2><sub class="ps">n.prop</sub><sub class="gloss">NOM</sub></span></span>\n'
 body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 
 #Added oct 2019:
