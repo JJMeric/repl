@@ -1514,7 +1514,7 @@ for linerepl in toutrepllines :
       # essayer GN | GN CONJ | GN PRT | GN PRT CONJ 
       # modif 15/6/2020
       
-      NOMINAL=r'<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|ptcp|n\.prop|num|dtm|prn|pers)</sub>(((?!lemma var).)*)</span></span>\n'
+      NOMINAL=r'<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|ptcp|n\.prop|conv\.n|num|dtm|prn|pers)</sub>(((?!lemma var).)*)</span></span>\n'
       #wsearch=wsearch+ur'(('+NOMINAL  #  <- il faut FINIR par ça
       wsearch=wsearch+r'(('+NOMINAL+r'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ka|k')<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span></span>\n'''
       wsearch=wsearch+r'|'+NOMINAL+r'''<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ni|n')<sub class="ps">conj</sub><sub class="gloss">et</sub></span></span>\n'''
