@@ -43,7 +43,7 @@ def listerr(re_key):
   if err_msg!="":
     err_msg,nerr=re.subn(r' ',' ‖ ',err_msg.strip())
     err_msg=err_msg.replace("_"," ")
-    nerr=nerr+1
+    nerr+=1
     if "¤" in err_msg: err_msg=err_msg.replace("¤"," ")
     err_msg=err_msg.replace("&lt;","<")
     err_msg=err_msg.replace("&gt;",">")
@@ -115,6 +115,7 @@ INCOMPLETE=r'<span class="lemma">([^<\n]+)<sub class="ps">[^<\n]+</sub><span cla
 #validate derivations - check with bamana.gram.txt - 
 BADpl     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n|adj|ptcp).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">(?:n|adj|ptcp)</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span></span></span>'
 BADnmlz   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:li|ni)<sub class="ps">mrph</sub><sub class="gloss">NMLZ</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+BADinstr  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:lan|nan)<sub class="ps">mrph</sub><sub class="gloss">INSTR</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
 BADagprm  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:la|na)<sub class="ps">mrph</sub><sub class="gloss">AG\.PRM</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
 BADagocc  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:baga|baa)<sub class="ps">mrph</sub><sub class="gloss">AG\.OCC</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
 BADcom    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n|adj).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">n</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:ma)<sub class="ps">mrph</sub><sub class="gloss">COM</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
@@ -123,10 +124,57 @@ BADadj    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 BADadj2   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">[^<\n]+</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">(?:(?!vq).)</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:man)<sub class="ps">mrph</sub><sub class="gloss">ADJ</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
 BADstat   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!adj|n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">n</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:lama|nama|rɔma)<sub class="ps">mrph</sub><sub class="gloss">STAT</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
 BADstat2  =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">[^<\n]+</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">(?:(?!n).)</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:lama|nama|rɔma)<sub class="ps">mrph</sub><sub class="gloss">STAT</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+BADst     =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!adj|n).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">n</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:tɔ)<sub class="ps">mrph</sub><sub class="gloss">ST</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
 
 BADpfvintr=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!v).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:la|na|ra)<sub class="ps">mrph</sub><sub class="gloss">PFV\.INTR</sub></span></span></span>'
 BADprog   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!v).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:la|na)<sub class="ps">mrph</sub><sub class="gloss">PROG</sub></span></span></span>'
 BADptcp   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!ptcp).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:len|nen)<sub class="ps">mrph</sub><sub class="gloss">PTCP\.RES</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+BADconv   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!ptcp).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:tɔ)<sub class="ps">mrph</sub><sub class="gloss">CONV</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+BADpot    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!ptcp).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">v</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:ta)<sub class="ps">mrph</sub><sub class="gloss">PTCP\.POT</sub></span>(?:<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">PL</sub></span>)*</span></span>'
+BADdequ   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<sub class="ps">(?:(?!n|v).)</sub>(?:<sub class="gloss">[^<\n]+</sub>)*<span class="m">[^<\n]+<sub class="ps">vq</sub><sub class="gloss">[^<\n]+</sub></span><span class="m">(?:ya)<sub class="ps">mrph</sub><sub class="gloss">DEQU</sub></span></span></span>'
+
+
+BADmrphBA				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">ba<sub class="ps">mrph</sub><sub class="gloss">(?:(?!AUGM).)+</sub></span>'
+BADmrphBALI			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">bali<sub class="ps">mrph</sub><sub class="gloss">(?:(?!PTCP\.PRIV).)+</sub></span>'
+BADmrphNTAN			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">ntan<sub class="ps">mrph</sub><sub class="gloss">(?:(?!PRIV).)+</sub></span>'
+BADmrphNIN			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">nin<sub class="ps">mrph</sub><sub class="gloss">(?:(?!DIM).)+</sub></span>'
+BADmrphBAGA			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:baa|baga)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!AG\.OCC).)+</sub></span>'
+BADmrphKA				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">(?:(?!GENT).)+</sub></span>'
+BADmrphLANA			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:la|na)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!AG\.PRM|LOC|MNT1|PRIX|PROG|OPT2|PFV\.INTR|à|à).)+</sub></span>'
+BADmrphRA		    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:ra)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!OPT2|PFV\.INTR).)+</sub></span>'
+BADmrphLAMANAMA	=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:lama|nama)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!STAT).)+</sub></span>'
+BADmrphLATANATA	=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:lata|nata)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!MNT2).)+</sub></span>'
+BADmrphLANNAN		=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:lan|nan)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!INSTR|ORD).)+</sub></span>'
+BADmrphLENNEN		=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:len|nen)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!PTCP\.RES).)+</sub></span>'
+BADmrphLINI			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:li|ni)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!NMLZ).)+</sub></span>'
+BADmrphLUNU			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:lu|nu)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!PL2).)+</sub></span>'
+BADmrphMA				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">ma<sub class="ps">mrph</sub><sub class="gloss">(?:(?!COM|DIR|RECP\.PRN|SUPER).)+</sub></span>'
+BADmrphMAN			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">man<sub class="ps">mrph</sub><sub class="gloss">(?:(?!ADJ|SUPER).)+</sub></span>'
+BADmrphNCI			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">nci<sub class="ps">mrph</sub><sub class="gloss">(?:(?!AG\.EX).)+</sub></span>'
+BADmrphƝƆGƆN		=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:ɲɔgɔn|ɲwan)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!RECP).)+</sub></span>'
+BADmrphTA				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">ta<sub class="ps">mrph</sub><sub class="gloss">(?:(?!PTCP\.POT).)+</sub></span>'
+BADmrphTƆ				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">tɔ<sub class="ps">mrph</sub><sub class="gloss">(?:(?!CONV|ST).)+</sub></span>'
+BADmrphW				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">(?:(?!PL).)+</sub></span>'
+BADmrphYA				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:ya|yɛ)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!ABSTR|DEQU).)+</sub></span>'
+""" # NOT IMPLEMENTED
+\\:mrph:NMLZ2
+lá:mrph:CAUS
+lán:mrph:CAUS
+mà:mrph:SUPER
+màn:mrph:SUPER
+n':mrph:PFV.INTR
+nan:mrph:ORD      <--- ajouté en vitesse à LANNAN, à revoir
+ná:mrph:CAUS
+la:mrph:à
+lan:mrph:à  <--- dans lankolon !
+nan:mrph:dans <--- dans kannankolon torse.nu !
+rá:mrph:IN
+rɔ́:mrph:CAUS
+rɔ́:mrph:IN
+rɔ́:mrph:IN
+sɔ̀:mrph:EN
+"""
+
 
 #... tbc ... 
 
@@ -248,6 +296,8 @@ FOprep_NIsi =FOprep+NIsi
 ADV_VERB  =ADV+VERB
 ADV_PMnon_INF=ADV+PMnon_INF
 ADV_COP1   =ADV+COP1
+START_ADJ =START+ADJ
+START_VERB_PM=START+VERB+PM
 # ...tbc...
 # implement : NG (nominal group) NAME+ADJ*+DTM*+POSS*+AND*+... see NONVERBALGROUP in replc
 # example forbiddden sequence : PM_NG_PP, PM_NG_ADV, PM_NG_VQ, 
@@ -287,7 +337,9 @@ PM_NG_PPFINAL  =PM+NG1+PPFINAL    # difficulty with split orthography : a be dug
 PM_NG_ADVFINAL  =PM+NG1+ADVFINAL
 PM_NG_PRTFINAL  =PM+NG1+PRTFINAL
 
-PM_NG_ADV =PM+NG+ADV
+PM_NG_ADV =PM+NG+ADV   # not checked if another error in sentence NG_ADV_NG ???
+#print("PM_NG_ADV:\n"+PM_NG_ADV)
+
 PM_NG_VQ  =PM+NG+VQ
 PM_NG_HPUNCT=PM+NG+HPUNCT
 # print(PM_NG_PUNCT)
@@ -366,56 +418,63 @@ for sentence in sentences:
     plural="s"
     if nerr2==1: plural=""
     errors=errors+"    "+str(nerr2)+" mot"+plural+" inconnu"+plural+": "+err_msg+"\n"
-    nerr=nerr+nerr2
+    nerr+=nerr2
 
   nerr3,err_msg=listerr(UNPARSED)
   if nerr3>0:
     plural="s"
     if nerr3==1: plural=""
     errors=errors+"    "+str(nerr3)+" mot"+plural+" mal parsé (gparser) : "+err_msg+"\n"
-    nerr=nerr+nerr3
+    nerr+=nerr3
 
   nerr4,err_msg=listerr(INCOMPLETE)
   if nerr4>0:
     plural="s"
     if nerr4==1: plural=""
     errors=errors+"    "+str(nerr4)+" mot"+plural+" incomplet (seulement une ou des dérivations) : "+err_msg+"\n"
-    nerr=nerr+nerr4
+    nerr+=nerr4
 
   nerr5,err_msg=listerr(BADpl)
   if nerr5>0:
     plural="s"
     if nerr5==1: plural=""
     errors=errors+"    "+str(nerr5)+" mot"+plural+" :mrph:PL pluriel mais pas n, adj ou ptcp ?) : "+err_msg+"\n"
-    nerr=nerr+nerr5
+    nerr+=nerr5
 
   nerr6,err_msg=listerr(BADnmlz)
   if nerr6>0:
     plural="s"
     if nerr6==1: plural=""
     errors=errors+"    "+str(nerr6)+" mot"+plural+" :mrph:NMLZ mais pas n ?) : "+err_msg+"\n"
-    nerr=nerr+nerr6
+    nerr+=nerr6
+
+  nerr6b,err_msg=listerr(BADinstr)
+  if nerr6b>0:
+    plural="s"
+    if nerr6b==1: plural=""
+    errors=errors+"    "+str(nerr6b)+" mot"+plural+" :mrph:INSTR mais pas n ?) : "+err_msg+"\n"
+    nerr+=nerr6b
 
   nerr7,err_msg=listerr(BADagprm)
   if nerr7>0:
     plural="s"
     if nerr7==1: plural=""
     errors=errors+"    "+str(nerr7)+" mot"+plural+" :mrph:AG.PRM mais pas n ?) : "+err_msg+"\n"
-    nerr=nerr+nerr7
+    nerr+=nerr7
 
   nerr8,err_msg=listerr(BADagocc)
   if nerr8>0:
     plural="s"
     if nerr8==1: plural=""
     errors=errors+"    "+str(nerr8)+" mot"+plural+" :mrph:AG.OCC mais pas n ?) : "+err_msg+"\n"
-    nerr=nerr+nerr8
+    nerr+=nerr8
 
   nerr9,err_msg=listerr(BADpfvintr)
   if nerr9>0:
     plural="s"
     if nerr9==1: plural=""
     errors=errors+"    "+str(nerr9)+" mot"+plural+" :mrph:PFV.INTR mais pas v ?) : "+err_msg+"\n"
-    nerr=nerr+nerr8
+    nerr+=nerr8
 
   nerr10,err_msg=listerr(BADptcp)
   if nerr10>0:
@@ -424,21 +483,36 @@ for sentence in sentences:
       plural="s"
       if nerr10==1: plural=""
       errors=errors+"    "+str(nerr10)+" mot"+plural+" :mrph:PTCP.RES mais pas ptcp ?) : "+err_msg+"\n"
-      nerr=nerr+nerr10
+      nerr+=nerr10
+
+  nerr10b,err_msg=listerr(BADconv)
+  if nerr10b>0:
+    plural="s"
+    if nerr10b==1: plural=""
+    errors=errors+"    "+str(nerr10b)+" mot"+plural+" tɔ:mrph:CONV mais pas ptcp ?) : "+err_msg+"\n"
+    nerr+=nerr10b
+
+  nerr10c,err_msg=listerr(BADpot)
+  if nerr10c>0:
+    plural="s"
+    if nerr10c==1: plural=""
+    errors=errors+"    "+str(nerr10c)+" mot"+plural+" ta:mrph:PTCP.POT mais pas ptcp ?) : "+err_msg+"\n"
+    nerr+=nerr10c
+
 
   nerr11,err_msg=listerr(BADprog)
   if nerr11>0:
     plural="s"
     if nerr11==1: plural=""
     errors=errors+"    "+str(nerr11)+" mot"+plural+" :mrph:PROG mais pas v ?) : "+err_msg+"\n"
-    nerr=nerr+nerr11
+    nerr+=nerr11
 
   nerr12,err_msg=listerr(BADcom)
   if nerr12>0:
     plural="s"
     if nerr12==1: plural=""
     errors=errors+"    "+str(nerr12)+" mot"+plural+" :mrph:COM dont le dérivé n'est pas n/adj ?) : "+err_msg+"\n"
-    nerr=nerr+nerr12
+    nerr+=nerr12
 
   nerr13,err_msg=listerr(BADadj)
   #print("BADadj err_msg: '"+err_msg.strip()+"'")
@@ -456,21 +530,28 @@ for sentence in sentences:
     plural="s"
     if nerr13==1: plural=""
     errors=errors+"    "+str(nerr13)+" mot"+plural+" :mrph:ADJectivateur de vq dont le dérivé n'est pas pas adj ni n ?): "+err_msg+"\n"
-    nerr=nerr+nerr13
+    nerr+=nerr13
 
   nerr14,err_msg=listerr(BADstat)
   if nerr14>0:
     plural="s"
     if nerr14==1: plural=""
     errors=errors+"    "+str(nerr14)+" mot"+plural+" :mrph:STAT de n mais pas adj ni n ?) : "+err_msg+"\n"
-    nerr=nerr+nerr14
+    nerr+=nerr14
+
+  nerr14b,err_msg=listerr(BADst)
+  if nerr14b>0:
+    plural="s"
+    if nerr14b==1: plural=""
+    errors=errors+"    "+str(nerr14b)+" mot"+plural+" tɔ:mrph:ST de n mais pas adj ni n ?) : "+err_msg+"\n"
+    nerr+=nerr14b
 
   nerr15,err_msg=listerr(BADcom2)
   if nerr15>0:
     plural="s"
     if nerr15==1: plural=""
     errors=errors+"    "+str(nerr15)+" mot"+plural+" :mrph:COM ne dérive pas un N ?) : "+err_msg+"\n"
-    nerr=nerr+nerr15
+    nerr+=nerr15
 
   nerr16,err_msg=listerr(BADadj2)
   #print("BADadj2 err_msg: '"+err_msg.strip()+"'")
@@ -488,15 +569,160 @@ for sentence in sentences:
     plural="s"
     if nerr16==1: plural=""
     errors=errors+"    "+str(nerr16)+" mot"+plural+" :mrph:ADJectivateur de vq ne dérive pas un vq ?): "+err_msg+"\n"
-    nerr=nerr+nerr16
+    nerr+=nerr16
 
   nerr17,err_msg=listerr(BADstat2)
   if nerr17>0:
     plural="s"
     if nerr17==1: plural=""
     errors=errors+"    "+str(nerr17)+" mot"+plural+" :mrph:STAT de n mais ne dérive pas un n ?) : "+err_msg+"\n"
-    nerr=nerr+nerr17
+    nerr+=nerr17
 
+  nerr18,err_msg=listerr(BADdequ)
+  if nerr18>0:
+    plural="s"
+    if nerr18==1: plural=""
+    errors=errors+"    "+str(nerr18)+" mot"+plural+" ya:mrph:DEQU de vq mais ne dérive pas un n ou un v ?) : "+err_msg+"\n"
+    nerr+=nerr18
+
+  # --- BAD MORPHEMES --->>>>>>>>>>>>>>>
+
+  nerrm,err_msg=listerr(BADmrphBA)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -ba mais pas AUGM ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphBALI)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -bali mais pas PTCP.PRIV ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphNTAN)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -ntan mais pas PRIV ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphNIN)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -nin mais pas DIM ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphBAGA)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -baga mais pas AG.OCC ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphKA)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -ka mais pas GENT ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphLANA)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -la/-na mais pas AG.PRM|LOC|MNT1|PRIX|PROG|OPT2|PFV.INTR|à ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphRA)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -ra mais pas OPT2|PFV.INTR ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphLAMANAMA)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -lama/-nama mais pas STAT ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphLATANATA)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -lata/-nata mais pas MNT2 ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphLANNAN)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -lan/-nan mais pas INSTR ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphLENNEN)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -len/-nen mais pas PTCP.RES ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphLINI)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -li/-ni mais pas NMLZ ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphLUNU)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -lu/-nu mais pas PL2 ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphMA)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -ma mais pas COM|DIR|RECP.PRN|SUPER ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphMAN)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -man mais pas ADJ|SUPER ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphNCI)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -nci mais pas AG.EX ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphƝƆGƆN)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -ɲɔgɔn/-ɲwan mais pas RECP ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphTA)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -ta mais pas PTCP.POT ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphTƆ)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -tɔ mais pas CONV|ST ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphW)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -w mais pas PL ?) : "+err_msg+"\n"
+    nerr+=nerrm
+  nerrm,err_msg=listerr(BADmrphYA)
+  if nerrm>0:
+    plural="s"
+    if nerrm==1: plural=""
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -ya mais pas ABSTR|DEQU ?) : "+err_msg+"\n"
+    nerr+=nerrm
+
+
+
+  # --- end BAD MORPHEMES <<<<<<<<<<<<<<
 
 
   # --- si une des erreurs de validations ci-dessus ne pas faire les autres tests de cohérence ---
@@ -694,6 +920,14 @@ for sentence in sentences:
     if nerr>0:
       errors=errors+"    "+str(nerr)+" Verbe avant Verbe qualitatif? [possible Nom+Adj?]: "+err_msg+"\n"
 
+    nerr,err_msg=listerr(START_ADJ)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" Adjectif en début de phrase ? [les adj en -nan peuvent être convertis en n !]: "+err_msg+"\n"
+
+    nerr,err_msg=listerr(START_VERB_PM)
+    if nerr>0:
+      errors=errors+"    "+str(nerr)+" Verbe en début devant MP ? : "+err_msg+"\n"
+
 #------------------- 3 terms, NG middle
 
     nerr,err_msg=listerr(PM_NG_PPFINAL)
@@ -785,31 +1019,38 @@ for sentence in sentences:
     totalerrors=totalerrors+len(allerr)
 
     original=original.replace("<br/>","¶")
-    originalhi=original
-    originalhi1=original
+    originalhi=original  # hi = highlight errors in sentence
     
-    if len(allerr)==1:
+    #if len(allerr)==1:
 
-      err_msg_search=r'    [0-9][^\n]+: *([^\n\:]+) *'
-      err_msg_result=re.search(err_msg_search,errors)
-      if err_msg_result:
-        err_msg=err_msg_result.groups()[0]
-        #print("err_msg :",err_msg)
-        err_msgclean=err_msg.replace("[","")
-        err_msgclean=err_msgclean.replace("]","")
-        err_msgclean=err_msgclean.replace("  "," ")
-        err_msgclean=err_msgclean.replace(" .",".")
-        err_msgclean=err_msgclean.replace("’ ","’")
-        err_msgclean=err_msgclean.replace("^ ","")
-        err_msgclean=err_msgclean.replace("' ","'").strip()  # 
-        if err_msgclean[-2:]==" r" or err_msgclean[-2:]==" R" : err_msgclean=err_msgclean[:-2]
-        
-        #print("err_msgclean :",err_msgclean)
-        originalhi1=originalhi.replace(err_msgclean," ⋙ "+err_msgclean+" ⋘ ")
-        if originalhi1==originalhi:
-          fileOUT.write("     -> originalhi fail : '"+err_msgclean+"'\n" )
+    err_msg_search=r'    [0-9][^\n]+: *([^\n\:]+) *'
+    err_msg_result=re.search(err_msg_search,errors)
+    if err_msg_result:
+      #err_msg=err_msg_result.groups()[0]    # only handles the first error type message
+      #print("err_msg :",err_msg)
+      for err_msg in err_msg_result.groups():
+        err_list=[]
+        if " ‖ " in err_msg:
+          err_list=err_msg.split(" ‖ ")
+        else:
+          err_list.append(err_msg)
+        for err_msgclean in err_list:
+          err_msgclean=err_msgclean.replace("[","")   # re.sub would give more flexibility with optional spaces before puncts
+          err_msgclean=err_msgclean.replace("]","")
+          err_msgclean=err_msgclean.replace("  "," ")
+          err_msgclean=err_msgclean.replace(" .",".")
+          err_msgclean=err_msgclean.replace("’ ","’")
+          err_msgclean=err_msgclean.replace("^ ","")
+          err_msgclean=err_msgclean.replace("' ","'").strip()  # 
+          if err_msgclean[-2:]==" r" or err_msgclean[-2:]==" R" : err_msgclean=err_msgclean[:-2]
+          
+          #print("err_msgclean :",err_msgclean)
+          originalhibefore=originalhi
+          originalhi=originalhi.replace(err_msgclean," ⋙ "+err_msgclean+" ⋘ ")    # may repeat several times in sentence!
+          if originalhi==originalhibefore:
+            fileOUT.write("     -> originalhi fail : '"+err_msgclean+"'\n" )
 
-    fileOUT.write(str(nsent)+" "+originalhi1+"\n"+errors+'\n')
+    fileOUT.write(str(nsent)+" "+originalhi+"\n"+errors+'\n')
     nsenterr=nsenterr+1
 
 fileOUT.close()

@@ -68,86 +68,97 @@ textscript=re.compile(r'(?:<meta content\=\"|<meta name\=\"text\:script\" conten
 txtsc=textscript.search(tout,re.U|re.MULTILINE)
 if txtsc!=None :   # supposedly = if txtsc :
   script=txtsc.group(1)
+  if script=="": 
+    print("!!! text:script empty! - assumed Nouvel orthographe malien")
+    script="Nouvel orthographe malien"
 else :
   script="Nouvel orthographe malien"
   if filenamein.endswith(".old"): script="Ancien orthographe malien"
   print(" ! textscript not set for "+filenamein+" !!!  ASSUMED : "+script)
 
-wsearch=r'>fóyì<span class="lemma">fóyì<'
-wrepl=r'>foyi<span class="lemma">fóyì<'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
-  print(msg)
-wsearch=r'>fósì<span class="lemma">fósì<'
-wrepl=r'>fosi<span class="lemma">fósì<'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
-  print(msg)
+# do not do this for tonalized text
 
-wsearch=r'>kà<span class="lemma">kà<'
-wrepl=r'>ka<span class="lemma">kà<'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
-  print(msg)
+# check if text is tonal
+sentresults=re.findall(r'<span class="sent">([^<]+)<span class="annot">',tout,re.U|re.MULTILINE)
+sentencestext=" ".join(sentresults)
+if "lá" in sentencestext or "bɛ́" in sentencestext or "bɔ́" in sentencestext or "kà" in sentencestext:
+  print("tonalized text, skipping dabased fixes")
+else:
+  wsearch=r'>fóyì<span class="lemma">fóyì<'
+  wrepl=r'>foyi<span class="lemma">fóyì<'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
+    print(msg)
+  wsearch=r'>fósì<span class="lemma">fósì<'
+  wrepl=r'>fosi<span class="lemma">fósì<'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
+    print(msg)
 
-wsearch=r'>òlú<span class="lemma">òlú<'
-wrepl=r'>olu<span class="lemma">òlú<'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
-  print(msg)
+  wsearch=r'>kà<span class="lemma">kà<'
+  wrepl=r'>ka<span class="lemma">kà<'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
+    print(msg)
 
-wsearch=r'>òlú<span class="lemma">òlû<'
-wrepl=r'>olu<span class="lemma">òlû<'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
-  print(msg)
+  wsearch=r'>òlú<span class="lemma">òlú<'
+  wrepl=r'>olu<span class="lemma">òlú<'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
+    print(msg)
 
-# DEPENDS on text:script
+  wsearch=r'>òlú<span class="lemma">òlû<'
+  wrepl=r'>olu<span class="lemma">òlû<'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
+    print(msg)
 
-wsearch=r'>dɔ́rɔn<span class="lemma">dɔ́rɔn<'
-wrepl=r'>dɔrɔn<span class="lemma">dɔ́rɔn<'
-if script=="Ancien orthographe malien": wrepl=r'>dòròn<span class="lemma">dɔ́rɔn<'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
-  print(msg)
+  # DEPENDS on text:script
 
-wsearch=r'>wɛ́rɛ<span class="lemma">wɛ́rɛ<'
-wrepl=r'>wɛrɛ<span class="lemma">wɛ́rɛ<'
-if script=="Ancien orthographe malien": wrepl=r'>wèrè<span class="lemma">wɛ́rɛ<'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
-  print(msg)
+  wsearch=r'>dɔ́rɔn<span class="lemma">dɔ́rɔn<'
+  wrepl=r'>dɔrɔn<span class="lemma">dɔ́rɔn<'
+  if script=="Ancien orthographe malien": wrepl=r'>dòròn<span class="lemma">dɔ́rɔn<'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
+    print(msg)
 
-wsearch=r'>wɛrɛw<span class="lemma">wɛrɛw<'
-wrepl=r'>wɛrɛw<span class="lemma">wɛ́rɛw<'
-if script=="Ancien orthographe malien": wrepl=r'>wèrèw<span class="lemma">wɛ́rɛw<'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
-  print(msg)
+  wsearch=r'>wɛ́rɛ<span class="lemma">wɛ́rɛ<'
+  wrepl=r'>wɛrɛ<span class="lemma">wɛ́rɛ<'
+  if script=="Ancien orthographe malien": wrepl=r'>wèrè<span class="lemma">wɛ́rɛ<'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
+    print(msg)
 
-wsearch=r'>dɔ́wɛrɛ<span class="lemma">dɔ́wɛrɛ<'
-wrepl=r'>dɔwɛrɛ<span class="lemma">dɔ́wɛrɛ<'
-if script=="Ancien orthographe malien": wrepl=r'>dòwèrè<span class="lemma">dɔ́wɛrɛ<'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
-  print(msg)
+  wsearch=r'>wɛ́*rɛw<span class="lemma">wɛ́*rɛw<'
+  wrepl=r'>wɛrɛw<span class="lemma">wɛ́rɛw<'
+  if script=="Ancien orthographe malien": wrepl=r'>wèrèw<span class="lemma">wɛ́rɛw<'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
+    print(msg)
 
-wsearch=r'>bɛ́<span class="lemma">bɛ́<'
-wrepl=r'>bɛ<span class="lemma">bɛ́<'
-if script=="Ancien orthographe malien": wrepl=r'>bè<span class="lemma">bɛ́<'
-tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
-  print(msg)
+  wsearch=r'>dɔ́wɛrɛ<span class="lemma">dɔ́wɛrɛ<'
+  wrepl=r'>dɔwɛrɛ<span class="lemma">dɔ́wɛrɛ<'
+  if script=="Ancien orthographe malien": wrepl=r'>dòwèrè<span class="lemma">dɔ́wɛrɛ<'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
+    print(msg)
+
+  wsearch=r'>bɛ́<span class="lemma">bɛ́<'
+  wrepl=r'>bɛ<span class="lemma">bɛ́<'
+  if script=="Ancien orthographe malien": wrepl=r'>bè<span class="lemma">bɛ́<'
+  tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+  if nombre>0 :
+    msg="%i  dabased-tones correction(s) " % nombre +" for "+wsearch
+    print(msg)
 # 
 
 # fix double ps like prn/dtm
@@ -293,7 +304,7 @@ if nombre>0 :
   msg="%i  double-ps correction(s) " % nombre +" for "+wsearch
   print(msg)
 
-wsearch=r'>adv.p</sub><sub class="gloss">sérieusement</sub><span class="m">sɛ̀bɛ<sub class="ps">adj/n</sub><sub class="gloss">sérieux</sub></span><span class="m">kɔ̀rɔ<sub class="ps">vq/adj<'
+wsearch=r'>adv.p</sub><sub class="gloss">sérieusement</sub><span class="m">sɛ̀bɛ́*<sub class="ps">adj/n</sub><sub class="gloss">sérieux</sub></span><span class="m">kɔ̀rɔ<sub class="ps">vq/adj<'
 wrepl=r'>adv.p</sub><sub class="gloss">sérieusement</sub><span class="m">sɛ̀bɛ<sub class="ps">adj</sub><sub class="gloss">sérieux</sub></span><span class="m">kɔ̀rɔ<sub class="ps">adj<'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
 if nombre>0 :
@@ -307,6 +318,21 @@ if nombre>0 :
   msg="%i  double-ps correction(s) " % nombre +" for "+wsearch
   print(msg)
 
+wsearch=r'<span class="lemma">yànní<sub class="ps">conj</sub><sub class="gloss">avant.que</sub><span class="m">yàn<sub class="ps">adv/n</sub><sub class="gloss">ici</sub></span></span>'
+wrepl=r'<span class="lemma">yànní<sub class="ps">conj</sub><sub class="gloss">avant.que</sub></span>'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+if nombre>0 :
+  msg="%i  double-ps correction(s) " % nombre +" for "+wsearch
+  print(msg)
+
+wsearch=r'<sub class="gloss">toux</sub></span><span class="m">nin<sub class="ps">mrph</sub><sub class="gloss">DIM</sub></span><span class="m">jɛ́<sub class="ps">vq/adj</sub>'
+wrepl=r'<sub class="gloss">toux</sub></span><span class="m">nin<sub class="ps">mrph</sub><sub class="gloss">DIM</sub></span><span class="m">jɛ́<sub class="ps">adj</sub>'
+tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
+if nombre>0 :
+  msg="%i  double-ps correction(s) " % nombre +" for "+wsearch
+  print(msg)
+
+
 # fix remaing dots in lemmas ----------------------------------
 wsearch=r'<span class="m">([^<\n\.]+\.[^<\n]+)<'
 tout,nombre=re.subn(wsearch,nodots,tout,0,re.U|re.MULTILINE)
@@ -315,7 +341,7 @@ if nombre>0 :
   print(msg)
 
 # fix NUMnan gloss missing ------------------------------------
-wsearch=r'span class="lemma">([0-9]+)nan<sub class="ps">adj</sub><span class="m">([0-9]+)<sub class="ps">num</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD<'
+wsearch=r'span class="lemma">([0-9]+)nan<sub class="ps">(?:adj|num)</sub><span class="m">([0-9]+)<sub class="ps">num</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD<'
 wrepl=r'span class="lemma">\g<1>nan<sub class="ps">adj</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD<'
 tout,nombre=re.subn(wsearch,wrepl,tout,0,re.U|re.MULTILINE)  
 if nombre>0 :

@@ -224,6 +224,14 @@ body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 wsearch=r'<span class="(lemma|lemma var)">([^\.\<\n]+)\.([^\<\n]+)<'
 wrepl=r'<span class="\g<1>">\g<2>\g<3><'
 body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+# 4 dot
+wsearch=r'<span class="(lemma|lemma var)">([^\.\<\n]+)\.([^\<\n]+)<'
+wrepl=r'<span class="\g<1>">\g<2>\g<3><'
+body,nombre3=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+# 5 dot / FINAL
+wsearch=r'<span class="(lemma|lemma var)">([^\.\<\n]+)\.([^\<\n]+)*<'
+wrepl=r'<span class="\g<1>">\g<2>\g<3><'
+body,nombre3=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 # more dots ignored
 
 # autres ABR possibles
@@ -264,6 +272,15 @@ body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)  # Gloss doubles lemma/lemma
 wsearch=r'<span class="lemma">([^<]+)<sub class="ps">(?P<ps>[^<]+)</sub><sub class="gloss">(?P<gloss>[^<]+)</sub><(?P<details>((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">(?P=ps)</sub><sub class="gloss">(?P=gloss)</sub><(?P=details)></span></span></span>\n'
 wrepl=r'<span class="lemma">\g<1><sub class="ps">\g<2></sub><sub class="gloss">\g<3></sub><\g<4>></span></span>\n'
 body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)  # Gloss doubles lemma/lemma var
+
+# IDEM pour NORADJ
+wsearch=r'<span class="w" +stage="([^>]+)">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)></span></span></span>\n'
+#                                                                           1        2                                                  3                                                                      4                                                                       5                                                                6                                                                                              
+wrepl=r'<span class="w" stage="\g<1>">\g<2><span class="lemma">\g<6><sub class="ps">n</sub><\g<7>><span class="lemma var">\g<3><sub class="ps">adj</sub><\g<4>></span></span></span>\n'
+# attention décalage $5 $6 -> $6 $7 à cause de la formule (((?!lemma var).)*)
+body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  # Gloss doubles lemma/lemma var
+
+
 #
 # déterminer les noms propres, même vaguement!
 #

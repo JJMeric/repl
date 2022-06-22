@@ -289,7 +289,7 @@ if nb_unparsed >0 :
 
 
 psvalides="|adj|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers|pm|pp|prep|prn|prt|ptcp|v|vq|"
-valides="_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VERBENMOD_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_APOSTROPHE_GUILLEMET_PRMRKQUAL_VQADJ_VQORADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_NORADJ_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_NICONJ_YEUNDEF_YEPP_NIUNDEF_NAUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_COPQUOT_COPNEG_ACTION_CONSONNE_LANA_LETTRE_"
+valides="_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VERBENMOD_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_APOSTROPHE_GUILLEMET_PRMRKQUAL_VQADJ_VQORADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_NORADJ_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_NICONJ_YEUNDEF_KUNDEF_YEPP_NIUNDEF_NAUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_COPQUOT_COPNEG_ACTION_CONSONNE_LANA_LETTRE_"
 # toujours commencer et finir par _
 # autres mots utilisés, traitements spéciaux : NUMnan, degremove, ADVNforcen, ADVNforceadv, CONJPREPforceconj, CONJPREPforceprep
 gvalides="NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_NMLZ2_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_OPT2_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
@@ -474,6 +474,14 @@ body,nombre2=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 wsearch=r'<span class="(lemma|lemma var)">([^\.\<\n]+)\.([^\<\n]+)<'
 wrepl=r'<span class="\g<1>">\g<2>\g<3><'
 body,nombre3=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+# 4 dot
+wsearch=r'<span class="(lemma|lemma var)">([^\.\<\n]+)\.([^\<\n]+)<'
+wrepl=r'<span class="\g<1>">\g<2>\g<3><'
+body,nombre3=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+# 5 dot / FINAL
+wsearch=r'<span class="(lemma|lemma var)">([^\.\<\n]+)\.([^\<\n]+)*<'
+wrepl=r'<span class="\g<1>">\g<2>\g<3><'
+body,nombre3=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 # more dots ignored
 nombre=nombre1+nombre2+nombre3
 if nombre>0 :
@@ -596,6 +604,21 @@ if nombre>0 :
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
+
+
+# IDEM pour NORADJ
+wsearch=r'<span class="w" +stage="([^>]+)">([^<]+)<span class="lemma">([^<]+)<sub class="ps">adj</sub><(((?!lemma var).)*)><span class="lemma var">([^<]+)<sub class="ps">n</sub><(((?!lemma var).)*)></span></span></span>\n'
+#                                                                           1        2                                                  3                                                                      4                                                                       5                                                                6                                                                                              
+wrepl=r'<span class="w" stage="\g<1>">\g<2><span class="lemma">\g<6><sub class="ps">n</sub><\g<7>><span class="lemma var">\g<3><sub class="ps">adj</sub><\g<4>></span></span></span>\n'
+# attention décalage $5 $6 -> $6 $7 à cause de la formule (((?!lemma var).)*)
+body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  # Gloss doubles lemma/lemma var
+if nombre>0 :
+  msg="%i modifs doublons adj/n -> n/adj pour NORADJ" % nombre +"\n"
+  log.write(msg)
+  nbrulesapplied=nbrulesapplied+1
+  nbmodif=nbmodif+nombre
+  nbmots=nbmots+nombre
+
 
 # éliminer les doublons où le second choix, calculé, n'a pas de glose
 # test SublimeText (?P<stem> impossible):
@@ -1491,6 +1514,7 @@ for linerepl in toutrepllines :
       elif tonal=="old" : wsearch=wsearch+r'<span class="w" +stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mèkalo|zuwènkalo|zuluyekalo|zuliyekalo|utikalo|sètanburukalo|sètamburukalo|òkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span></span>\n'
       elif tonal=="tonal" : wsearch=wsearch+r'<span class="w" +stage="[^>]+">(zánwuyekalo|zánwiyekalo|féburuyekalo|féburiyekalo|féburuye-kalo|féwuruyekalo|márisikalo|áwirilikalo|mɛ̀kalo|zùwɛnkalo|zùluyekalo|zùliyekalo|ùtikalo|sɛ́tanburukalo|sɛ́tamburukalo|ɔ́kutɔburukalo|nòwanburukalo|nòwamburukalo|désanburukalo|désamburukalo)<span class="lemma">([^\n]+)</span></span>\n'  
     elif mot=="YEUNDEF"  : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(yé|ye|y')<[^\n]+lemma var[^\n]+</span></span>\n'''
+    elif mot=="KUNDEF"  : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(k')<[^\n]+lemma var[^\n]+</span></span>\n'''
     elif mot=="YEPP" : wsearch=wsearch+r'<span class="w" +stage="[^>]+">([^<]+)<span class="lemma">yé<sub class="ps">pp</sub><sub class="gloss">PP</sub></span></span>\n'
     elif mot=="NIUNDEF"  : wsearch=wsearch+r'<span class="w" +stage="[^>]+">(ní|ni)<[^\n]+lemma var[^\n]+</span></span>\n'
     elif mot=="NAUNDEF"  : wsearch=wsearch+r'<span class="w" +stage="[^>]+">(ná|na)<[^\n]+lemma var[^\n]+</span></span>\n'
@@ -1994,6 +2018,12 @@ for linerepl in toutrepllines :
       capt_gr_index=capt_gr_index+1
     elif glose=="YEUNDEFequ":
       wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">yé<sub class="ps">cop</sub><sub class="gloss">EQU</sub></span></span>\n'
+      capt_gr_index=capt_gr_index+1
+    elif glose=="KUNDEFinf":
+      wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">k\'<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n'
+      capt_gr_index=capt_gr_index+1
+    elif glose=="KUNDEFquot":
+      wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">k\'<sub class="ps">cop</sub><sub class="gloss">QUOT</sub></span></span>\n'
       capt_gr_index=capt_gr_index+1
     elif glose=="YEPP":
       wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">yé<sub class="ps">pp</sub><sub class="gloss">PP</sub></span></span>\n'
