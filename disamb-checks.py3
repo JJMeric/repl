@@ -135,7 +135,7 @@ BADdequ   =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^<\n]+<
 
 
 BADmrphBA				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">ba<sub class="ps">mrph</sub><sub class="gloss">(?:(?!AUGM).)+</sub></span>'
-BADmrphBALI			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">bali<sub class="ps">mrph</sub><sub class="gloss">(?:(?!PTCP\.PRIV).)+</sub></span>'
+BADmrphBALI			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">bali<sub class="ps">mrph</sub><sub class="gloss">(?:(?!PTCP\.NEG).)+</sub></span>'
 BADmrphNTAN			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">ntan<sub class="ps">mrph</sub><sub class="gloss">(?:(?!PRIV).)+</sub></span>'
 BADmrphNIN			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">nin<sub class="ps">mrph</sub><sub class="gloss">(?:(?!DIM).)+</sub></span>'
 BADmrphBAGA			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:baa|baga)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!AG\.OCC).)+</sub></span>'
@@ -597,7 +597,7 @@ for sentence in sentences:
   if nerrm>0:
     plural="s"
     if nerrm==1: plural=""
-    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -bali mais pas PTCP.PRIV ?) : "+err_msg+"\n"
+    errors=errors+"    "+str(nerrm)+" mot"+plural+" morphème -bali mais pas PTCP.NEG ?) : "+err_msg+"\n"
     nerr+=nerrm
   nerrm,err_msg=listerr(BADmrphNTAN)
   if nerrm>0:

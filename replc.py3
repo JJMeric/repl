@@ -247,8 +247,10 @@ if  filenametemp.startswith("baabu_ni_baabu") or filenametemp.startswith("gorog_
 
 print("text:script="+script+    ",    tonal="+tonal)
 
-if arg=="tonal" : tonal="tonal"
-elif arg=="bailleul" : tonal="bailleul"
+if arg=="tonal" or arg=="-tonal" : tonal="tonal"
+elif arg=="bailleul" or arg=="-bailleul" : tonal="bailleul"
+
+print("paramètre retenu: tonal =",tonal)
 
 if tonal=="" : sys.exit("text:script non defini : pas de meta ou pas d'argument (tonal, bailleul)")
 
@@ -292,7 +294,7 @@ psvalides="|adj|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers
 valides="_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VERBENMOD_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_PARO_PARF_APOSTROPHE_GUILLEMET_PRMRKQUAL_VQADJ_VQORADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_NORADJ_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_NICONJ_YEUNDEF_KUNDEF_YEPP_NIUNDEF_NAUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_COPQUOT_COPNEG_ACTION_CONSONNE_LANA_LETTRE_"
 # toujours commencer et finir par _
 # autres mots utilisés, traitements spéciaux : NUMnan, degremove, ADVNforcen, ADVNforceadv, CONJPREPforceconj, CONJPREPforceprep
-gvalides="NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.PRIV_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_NMLZ2_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_OPT2_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
+gvalides="NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.NEG_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_NMLZ2_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_OPT2_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
 #  ANAPH, ANAPH.PL, ART, OPT, OPT2, PTCP.PROG removed
 #  CFA à cause de la glose de dɔrɔmɛ qui finit par franc.CFA !!!
 fixevalides="_ETRG_ETRG.FRA_ETRG.USA_ETRG.ENG_ETRG.GER_ETRG.ARB_ETRG.FUL_ETRG.MNK_CHNT_Q_PREV_INCOGN_"
@@ -306,7 +308,7 @@ perslist="ń:pers:1SG_nê:pers:1SG.EMPH_í:pers:2SG_í:pers:REFL_ê:pers:2S
 pplist="ka:pp:POSS_lá:pp:POSS_bólo:pp:CNTRL_yé:pp:PP_y':pp:PP_lɔ́:pp:IN_nɔ́:pp:IN_rɔ́:pp:IN_mà:pp:ADR_mɔ̀:pp:ADR_"   # c'est tout ??? oui car les autres ont des gloses en minuscules, cf besoin de "check"
 conjlist="ô:conj:DISTR_ôo:conj:DISTR_wô:conj:DISTR_"
 prtlist="dè:prt:FOC_dùn:prt:TOP.CNTR_dún:prt:TOP.CNTR_kɔ̀ni:prt:TOP.CNTR2_tùn:prt:PST_kùn:prt:PST_wà:prt:Q_"
-mrphlist="lá:mrph:CAUS_la:mrph:CAUS_ná:mrph:CAUS_mà:mrph:SUPER_màn:mrph:SUPER_rɔ́:mrph:IN_lu:mrph:PL2_nu:mrph:PL2_ba:mrph:AUGM_baa:mrph:AG.OCC_baga:mrph:AG.OCC_bali:mrph:PTCP.PRIV_ka:mrph:GENT_la:mrph:AG.PRM_na:mrph:AG.PRM_la:mrph:LOC_na:mrph:LOC_la:mrph:PRIX_na:mrph:PRIX_la:mrph:MNT1_na:mrph:MNT1_lata:mrph:MNT2_nata:mrph:MNT2_la:mrph:PROG_na:mrph:PROG_la:mrph:PFV.INTR_na:mrph:PFV.INTR_n':mrph:PFV.INTR_ra:mrph:PFV.INTR_rá:mrph:IN_rɔ́:mrph:IN_w:mrph:PL_"
+mrphlist="lá:mrph:CAUS_la:mrph:CAUS_ná:mrph:CAUS_mà:mrph:SUPER_màn:mrph:SUPER_rɔ́:mrph:IN_lu:mrph:PL2_nu:mrph:PL2_ba:mrph:AUGM_baa:mrph:AG.OCC_baga:mrph:AG.OCC_bali:mrph:PTCP.NEG_ka:mrph:GENT_la:mrph:AG.PRM_na:mrph:AG.PRM_la:mrph:LOC_na:mrph:LOC_la:mrph:PRIX_na:mrph:PRIX_la:mrph:MNT1_na:mrph:MNT1_lata:mrph:MNT2_nata:mrph:MNT2_la:mrph:PROG_na:mrph:PROG_la:mrph:PFV.INTR_na:mrph:PFV.INTR_n':mrph:PFV.INTR_ra:mrph:PFV.INTR_rá:mrph:IN_rɔ́:mrph:IN_w:mrph:PL_"
 mrphlist=mrphlist+"lama:mrph:STAT_nama:mrph:STAT_lan:mrph:INSTR_nan:mrph:INSTR_len:mrph:PTCP.RES_nen:mrph:PTCP.RES_li:mrph:NMLZ_ni:mrph:NMLZ_\:mrph:NMLZ2_ma:mrph:COM_ma:mrph:RECP.PRN_man:mrph:ADJ_ntan:mrph:PRIV_ra:mrph:OPT2_la:mrph:OP2_na:mrph:OPT2_"
 mrphlist=mrphlist+"ma:mrph:DIR_nan:mrph:ORD_nin:mrph:DIM_bali:mrph:PRIV_nci:mrph:AG.EX_ɲɔgɔn:mrph:RECP_ɲwan:mrph:RECP_ta:mrph:PTCP.POT_tɔ:mrph:CONV_tɔ:mrph:ST_ya:mrph:DEQU_yɛ:mrph:DEQU_ya:mrph:ABSTR_lá:mrph:CAUS_lán:mrph:CAUS_ná:mrph:CAUS_rɔ́:mrph:CAUS_ma:mrph:SUPER_man:mrph:SUPER_sɔ̀:mrph:EN_"
 # restent u"ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_"
@@ -1503,7 +1505,7 @@ for linerepl in toutrepllines :
     elif mot=="PFVNEG"     : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(ma|m')<span class="lemma">[^\n]+</span></span>\n'''
     elif mot=="PMINF"     : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(ka|k'|Ka|K'|kà|Kà)<span class="lemma">[^\n]+</span></span>\n'''
     elif mot=="PMSBJV"     : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(ka|k'|ká)<span class="lemma">[^\n]+</span></span>\n'''
-    elif mot=="NICONJ"     : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(ni|n'|ní)<span class="lemma">[^\n]+</span></span>\n'''
+    elif mot=="NICONJ"     : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(ni|n'|ní|Ni|N'|Ní)<span class="lemma">[^\n]+</span></span>\n'''
     elif mot=="LANA"     : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(l|n)(a|á)<[^\n]+</span>\n'''
 
     elif mot=="CONSONNE"     : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">([^AEIOUƐƆaeiouɛɔ][^\n\<]*)<span class="lemma">([^\n]+)</span></span>\n'''
@@ -2020,10 +2022,10 @@ for linerepl in toutrepllines :
       wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">yé<sub class="ps">cop</sub><sub class="gloss">EQU</sub></span></span>\n'
       capt_gr_index=capt_gr_index+1
     elif glose=="KUNDEFinf":
-      wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">k\'<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n'
+      wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'''><span class="lemma">k'<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n'''
       capt_gr_index=capt_gr_index+1
     elif glose=="KUNDEFquot":
-      wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">k\'<sub class="ps">cop</sub><sub class="gloss">QUOT</sub></span></span>\n'
+      wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'''><span class="lemma">k'<sub class="ps">cop</sub><sub class="gloss">QUOT</sub></span></span>\n'''
       capt_gr_index=capt_gr_index+1
     elif glose=="YEPP":
       wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">yé<sub class="ps">pp</sub><sub class="gloss">PP</sub></span></span>\n'
@@ -2430,7 +2432,7 @@ if nombre>0 :
 
 
 # PMINF POST correction for k' and K'
-wsearch=r'<span class="w" stage="0">(k\'|K\')<span class="lemma">kà<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n'
+wsearch=r'''<span class="w" stage="0">(k'|K')<span class="lemma">kà<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n'''
 wrepl=r"""<span class="w" stage="0">\g<1><span class="lemma">k'<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n"""
 body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  
 if nombre>0 :
@@ -2441,7 +2443,7 @@ if nombre>0 :
   nbmots=nbmots+nombre
 
 # PMSBJV POST correction for k' and K'
-wsearch=r'<span class="w" stage="0">(k\'|K\')<span class="lemma">ka<sub class="ps">pm</sub><sub class="gloss">SBJV</sub></span></span>\n'
+wsearch=r'''<span class="w" stage="0">(k'|K')<span class="lemma">ka<sub class="ps">pm</sub><sub class="gloss">SBJV</sub></span></span>\n'''
 wrepl=r"""<span class="w" stage="0">\g<1><span class="lemma">k'<sub class="ps">pm</sub><sub class="gloss">SBJV</sub></span></span>\n"""
 body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  
 if nombre>0 :

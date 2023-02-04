@@ -526,11 +526,11 @@ def filterrepl(m):
 body,nombre=re.subn(wsearch,filterrepl,body,0,re.I|re.U|re.MULTILINE)  
 
 # PMINF POST correction for k' and K'
-wsearch=r'<span class="w" stage="0">(k\'|K\')<span class="lemma">kà<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n'
+wsearch=r'''<span class="w" stage="0">(k'|K')<span class="lemma">kà<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n'''
 wrepl=r"""<span class="w" stage="0">\g<1><span class="lemma">k'<sub class="ps">pm</sub><sub class="gloss">INF</sub></span></span>\n"""
 body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)  
 # PMSBJV POST correction for k' and K'
-wsearch=r'<span class="w" stage="0">(k\'|K\')<span class="lemma">ka<sub class="ps">pm</sub><sub class="gloss">SBJV</sub></span></span>\n'
+wsearch=r'''<span class="w" stage="0">(k'|K')<span class="lemma">ka<sub class="ps">pm</sub><sub class="gloss">SBJV</sub></span></span>\n'''
 wrepl=r"""<span class="w" stage="0">\g<1><span class="lemma">k'<sub class="ps">pm</sub><sub class="gloss">SBJV</sub></span></span>\n"""
 body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)  
 # NICONJet POST correction for n'

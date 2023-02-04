@@ -14,7 +14,17 @@ import importlib
 
 global fileINname,fileINnameshort,fichier
 
-fileINname= str(sys.argv[1])
+nargv=len(sys.argv)
+if nargv==1 : 
+  print("needs -at least- one argument : file name\noptional 2d argument: tonal, -tonal")
+  sys.exit
+if nargv>1 : fileINname= str(sys.argv[1])
+
+nontonal=True
+if nargv>2 : 
+  if sys.argv[2]=="tonal" or sys.argv[2]=="-tonal" : 
+    nontonal=False
+
 INext=fileINname.find(".dis.html")
 fileINnameshort=fileINname[0:INext]
 fichier=fileINnameshort
@@ -55,23 +65,27 @@ for sentence in sentences:
   original=original.replace("&lt;","<")
   original=original.replace("&gt;",">")
 
-  lemmaspuncts=re.findall('<span class="(?:lemma|c|t|comment)">([^<]*)',sentence,re.U|re.MULTILINE)
+  lemmaspuncts=re.findall('<span class="(?:lemma|c|t|comment)">([^<]*)(?:<sub class="ps">([^<]*))*',sentence,re.U|re.MULTILINE)
   #print len(lemmaspuncts),"lemma ou c"
   disamb=""
   itemprec=" "
   nitem=0
-  for item in lemmaspuncts:
+  for item,ps in lemmaspuncts:
     nitem=nitem+1
-    item=re.sub(r"́|̀|̌|̂","",item)
+    if nontonal:
+      if item=="á" and ps=="pers": item="a'"
+      else: item=re.sub(r"́|̀|̌|̂","",item)
     item=item.replace("&lt;","<")
     item=item.replace("&gt;",">")
     if nitem==1:
       if item[:1]!="<":
-        item=item.title()
+        #item=item.title()
+        item=item[0].upper()+item[1:]
     #elif nitem==2:
     else: 
       if itemprec[:1]=="<":
-        item=" "+item.title()
+        #item=" "+item.title()
+        item=item[0].upper()+item[1:]
     """if item==";" or item=="?" or item==":" or item=="!": item=" "+item+" "
     #elif item=="," or item=="." : item=item
     elif itemprec[-1:]!="'" and item[:1]!="<" and itemprec[:1]!="<" : item=" "+item

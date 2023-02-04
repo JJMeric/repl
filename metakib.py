@@ -210,6 +210,10 @@ filenames=sorted(filenames)
 for filename in filenames:
 	if ".txt" in filename :
 		print  "\n"+filename
+
+		filehtml=filaname.replace(".txt",".html")
+		if os.path.exists(filehtml) : sys.exit("\n      \033[1m Output file "+filehtml+" ALREADY EXISTS !\033[0m\n")
+
 		find_in_name=re.search(r"(kibaru|kibarufb|ankaso|jekabaara|faso_kumakan|jama|irisila_kunnafoniseben|kalamene|dibifara|koteba_kura|kote|kalanso|nafarinma|ntuloma|nyetaa|saheli|sankore|fakan)([0-9\-]*[a-z]*)\_",filename)
 		periodique=find_in_name.group(1)
 		#print "periodique=",periodique
