@@ -51,6 +51,11 @@
 #     2b1.4) to install pydub, run : pip install pydub
 #     2b1.5) exit - installation done!
 
+# Security note : on 1st use, your browser will ask your permission.
+# Firefox & Edge have an additional checkbox : don't ask again, allow this site permanently
+# Chrome will only show this textbox if the site is trusted : 
+#     Chrome Settings / Confidentiality & Security / Site parameters / Non secure content - add sites like mali-pense.net here
+
 # ways to do the same on other platforms:
 # MacOS/OSX : ?
 # Linux : see https://askubuntu.com/questions/330937/is-it-possible-to-open-an-ubuntu-app-from-html
