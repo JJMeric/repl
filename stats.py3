@@ -105,7 +105,10 @@ csvfile.write('"Folder / File name","T","online","bam_s","bam_w","fra_s","fra_w"
 # open corbamafara list of files in parallel corpus
 # http://cormande.huma-num.fr/corbama/run.cgi/wordlist?corpname=corbamafara;wlmaxitems=1000;wlattr=doc.id;wlminfreq=1;include_nonwords=1;wlsort=f;wlnums=docf
 
-url = 'http://cormande.huma-num.fr/corbama/run.cgi/wordlist?corpname=corbamafara;wlmaxitems=5000;wlattr=doc.id;wlminfreq=1;include_nonwords=1;wlsort=f;wlnums=docf&async=0'
+# old Sketch Engine url = 'http://cormande.huma-num.fr/corbama/run.cgi/wordlist?corpname=corbamafara;wlmaxitems=5000;wlattr=doc.id;wlminfreq=1;include_nonwords=1;wlsort=f;wlnums=docf&async=0'
+# new Sketch Engine:
+# returns empty jQuery page url = "http://cormande.huma-num.fr/corbama/#text-type-analysis?corpname=corbamafara&tab=basic&filter=containing&wlattr=doc.id&wlminfreq=1&include_nonwords=1&itemsPerPage=1000&showresults=1&cols=%5B%22frq%22%5D&wlsort=frq"
+url = "http://cormande.huma-num.fr/bonito/run.cgi/attr_vals?corpname=corbamafara&avattr=doc.id&avmaxitems=5000"
 response = urllib.request.urlopen(url)
 the_page = response.read().decode("utf-8")
 
@@ -202,6 +205,13 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					warning=warning+"! check : not the same number of sentences in dis.html:"+str(sentn)+" and in fra2.txt:"+str(frasentn2)+" "
 					nwarn+=1
 
+			ods3filename=filerootname+".bam-fra3.ods"
+			if os.path.exists(os.path.join(dirname,ods3filename)):
+				frafilename=filerootname+".dis.fra2.txt"
+				if not os.path.exists(os.path.join(dirname,frafilename)):
+					print("      ",ods3filename," exists but no ",frafilename," ?")
+					warning=warning+"! check : "+ods3filename+" but missing "+frafilename+"? "
+					nwarn+=1
 
 			if nsent>0: 
 				if frasentn>0 and frasentn2==0:

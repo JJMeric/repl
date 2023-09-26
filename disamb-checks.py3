@@ -140,8 +140,8 @@ BADmrphNTAN			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n
 BADmrphNIN			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">nin<sub class="ps">mrph</sub><sub class="gloss">(?:(?!DIM).)+</sub></span>'
 BADmrphBAGA			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:baa|baga)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!AG\.OCC).)+</sub></span>'
 BADmrphKA				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">ka<sub class="ps">mrph</sub><sub class="gloss">(?:(?!GENT).)+</sub></span>'
-BADmrphLANA			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:la|na)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!AG\.PRM|LOC|MNT1|PRIX|PROG|OPT2|PFV\.INTR|à|à).)+</sub></span>'
-BADmrphRA		    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:ra)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!OPT2|PFV\.INTR).)+</sub></span>'
+BADmrphLANA			=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:la|na|n\'|l\')<sub class="ps">mrph</sub><sub class="gloss">(?:(?!AG\.PRM|LOC|MNT1|PRIX|PROG|OPT2|PFV\.INTR|à|à).)+</sub></span>'
+BADmrphRA		    =r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:ra|r\')<sub class="ps">mrph</sub><sub class="gloss">(?:(?!OPT2|PFV\.INTR).)+</sub></span>'
 BADmrphLAMANAMA	=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:lama|nama)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!STAT).)+</sub></span>'
 BADmrphLATANATA	=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:lata|nata)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!MNT2).)+</sub></span>'
 BADmrphLANNAN		=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:lan|nan)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!INSTR|ORD).)+</sub></span>'
@@ -156,27 +156,25 @@ BADmrphTA				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]
 BADmrphTƆ				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">tɔ<sub class="ps">mrph</sub><sub class="gloss">(?:(?!CONV|ST).)+</sub></span>'
 BADmrphW				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">w<sub class="ps">mrph</sub><sub class="gloss">(?:(?!PL).)+</sub></span>'
 BADmrphYA				=r'<span class="w" stage="[^"]+">([^<\n]+)<span class="lemma">[^\n]+<span class="m">(?:ya|yɛ)<sub class="ps">mrph</sub><sub class="gloss">(?:(?!ABSTR|DEQU).)+</sub></span>'
-""" # NOT IMPLEMENTED
+""" # mrph NOT IMPLEMENTED
 \\:mrph:NMLZ2
 lá:mrph:CAUS
 lán:mrph:CAUS
-mà:mrph:SUPER
-màn:mrph:SUPER
-n':mrph:PFV.INTR
-nan:mrph:ORD      <--- ajouté en vitesse à LANNAN, à revoir
+mà:mrph:SUPER  <-- sans ton dans BADmrphMA : à revoir !
+màn:mrph:SUPER  <-- sans ton dans BADmrphMAN : à revoir !
 ná:mrph:CAUS
-la:mrph:à
-lan:mrph:à  <--- dans lankolon !
-nan:mrph:dans <--- dans kannankolon torse.nu !
 rá:mrph:IN
 rɔ́:mrph:CAUS
 rɔ́:mrph:IN
-rɔ́:mrph:IN
 sɔ̀:mrph:EN
++
+la:mrph:à   <--- dans BADmrphLANA
+l' et n':mrph:PFV.INTR  <--- dans BADmrphLANA
+r':mrph:PFV.INTR  <--- dans BADmrphRA
+nan:mrph:ORD      <--- ajouté en vitesse à LANNAN, à revoir
 """
 
-
-#... tbc ... 
+#... tbc ... pp ? pm ? 
 
 
 

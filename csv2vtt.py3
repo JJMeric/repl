@@ -20,7 +20,7 @@ if os.path.exists(fileCSVname) :
 
 first,body=tout.split("\n",1)
 
-vtt=re.sub(r'^[A-Z]+\t[A-Z\_\-]*([0-9])','@@\g<1>',body,0,re.U|re.MULTILINE)
+vtt=re.sub(r'^[A-Za-z0-9]+\t[A-Z\_\-]*([0-9])','@@\g<1>',body,0,re.U|re.MULTILINE)
 vtt=re.sub(r'\.([0-9]{3})\t([0-9])','.\g<1> --> \g<2>',vtt,0,re.U|re.MULTILINE)
 vtt=re.sub(r'\t','\n',vtt,0,re.U|re.MULTILINE)
 vtt=re.sub(r'@@','\n',vtt,0,re.U|re.MULTILINE)

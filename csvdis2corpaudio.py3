@@ -115,6 +115,7 @@ for line in lines:
 
 
 #-------------------
+toutout=toutout[:-len("</span>\n</span>\n</span>\n")]  # there is one "</span>\n</span>\n</span>\n" too much
 # injecter les styles pour "fr" et "audio"
 header=re.sub(r"\n\s*</style>","""
       .fr {font-style:italic; color:grey; display:block;}
@@ -134,13 +135,15 @@ header=re.sub(r"\n\s*</style>","""
       b.go a:visited{background-color: lightgrey ;opacity:50%;z-index:2}
       b.go a:after{content: "play / a' y'a lamɛn";z-index:2}
       #haut {position:fixed;top:0px;left:0px;z-index:100;width:100%;border-bottom:3px solid lightslategray;background-color: lightgrey;opacity:100%;}
+      #bas {position:absolute; top:31px;} /* 450px for videos in #haut - this needs fixing ;-( */
    </style>
 """  ,header)
 header=header.replace('span.lemma, span.lemma.var { clear:','span.lemma, span.lemma.var { color: red; clear:')
 
-audioprefix='<audio controls preload="metadata"><source src="'+fileINnameshort+'.wav" type="audio/wav"></audio></p><p>'
+audioprefix='<audio controls preload="metadata"><source src="/IMG/wav/'+fileINnameshort+'.wav" type="audio/wav"></audio></p><div id="bas"><p>'
 
-tout=header+'<body><p id="haut">'+audioprefix+toutout+"""</body>
+tout=header+'<body><p id="haut">'+audioprefix+toutout+"""
+</p></div></body>
    <script type="text/javascript">  
       let audiovid = "audio"; 
       if (document.getElementsByTagName(audiovid).length == 0) {

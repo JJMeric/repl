@@ -24,8 +24,8 @@ wordssearch=re.compile(r'(?:\<meta content\=\"|\<meta name\=\"\_auto\:words\" co
 parsedwords=re.compile(r'\<span class\=\"w\"',re.U)
 extraittxt=re.compile(r'<body><p>([^£]*)</p></body>',re.U)   #  ^< ne marche plus ?
 searchwords=re.compile(r'([a-zɛɔɲŋA-ZƐƆƝŊ0-9\-́̀̌̂]+)',re.U)
-medianame=re.compile(r'^([a-zA-Z\-\_]+)[0-9]*\_',re.U)
-medianumber=re.compile(r'^[a-zA-Z\-\_]+([0-9]*)\_',re.U)
+medianame=re.compile(r'^([a-zA-Z\-\_]+)[0-9]*[a-z]*\_',re.U)
+medianumber=re.compile(r'^[a-zA-Z\-\_]+([0-9]*[a-z]*)\_',re.U)
 #date=re.compile(ur'\<meta content\=\"[0-9]+\.([0-9\.]*)\" name\=\"text\:date\" \/\>|\<meta name\=\"text\:date\" content\=\"[0-9]+\.([0-9\.]*)\" \/\>',re.U)
 date=re.compile(r'(?:\<meta content\=\"[0-9]+\.|\<meta name\=\"text\:date\" content\=\"[0-9]+\.)([0-9\.]*)(?:\" name\=\"text\:date\" \/\>|\" \/\>)',re.U)
 

@@ -812,19 +812,31 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					tout=re.sub(ur" gelen",u" gɛlɛn",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" dɔron",u" dɔrɔn",tout,0,re.U|re.MULTILINE)
 					tout=re.sub(ur" politimɔgɔw",u" politikimɔgɔw",tout,0,re.U|re.MULTILINE)  # zup confuses sometimes
-					tout=re.sub(ur" ɲɛsinnnen",u"  ɲɛsinnen",tout,0,re.U|re.MULTILINE)
-					tout=re.sub(ur" ɲɛsinen",u"  ɲɛsinnen",tout,0,re.U|re.MULTILINE)
-					tout=re.sub(ur" sɛrɛkili",u"  sɛrikili",tout,0,re.U|re.MULTILINE)
-					tout=re.sub(ur" sabau kɛ",u"  sababu kɛ",tout,0,re.U|re.MULTILINE)
-					tout=re.sub(ur" Pɔtirigali",u"  Pɔritigali",tout,0,re.U|re.MULTILINE) 
-					tout=re.sub(ur" jɛkafo",u"  jɛkafɔ",tout,0,re.U|re.MULTILINE)
-					tout=re.sub(ur" lakɔlidɛn",u"  lakɔliden",tout,0,re.U|re.MULTILINE)
-					tout=re.sub(ur" nofɛ",u"  nɔfɛ",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" ɲɛsinnnen",u" ɲɛsinnen",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" ɲɛsinen",u" ɲɛsinnen",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" sɛrɛkili",u" sɛrikili",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" sabau kɛ",u" sababu kɛ",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" Pɔtirigali",u" Pɔritigali",tout,0,re.U|re.MULTILINE) 
+					tout=re.sub(ur" jɛkafo",u" jɛkafɔ",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" lakɔlidɛn",u" lakɔliden",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" nofɛ",u" nɔfɛ",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" Faranɛi",u" Faransi",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" desantalizasɔn",u" desantaralizasɔn",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur"Desantalizasɔn",u"Desantaralizasɔn",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" dɔkɔtɔrɔsɔ",u" dɔkɔtɔrɔso",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" dɔgɔtɔrɔsɔ",u" dɔgɔtɔrɔso",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur"cɔgɔ ",u"cogo ",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur" tɛriya",u" teriya",tout,0,re.U|re.MULTILINE)
 					
+					# erreurs de raccourcis ;e=ɛ ;o=ɔ
+					tout=re.sub(ur"([A-ZƝƐƆŊ][a-zɛɔɲŋ])\;e([a-zɛɔɲŋ])",u"\g<1>ɛ\g<2>",tout,0,re.U|re.MULTILINE)
+					tout=re.sub(ur"([A-ZƝƐƆŊ][a-zɛɔɲŋ])\;o([a-zɛɔɲŋ])",u"\g<1>ɔ\g<2>",tout,0,re.U|re.MULTILINE)
+				
 				
 				# common to .old. and new orthography:
 				tout=re.sub(ur" musomannnin",u"  musomannin",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" sinsinnnen",u"  sinsinnen",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" sinsisn",u"  sinsin",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" lyemowa",u"  Iyemowa",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" Misirijamana",u"  Misirajamana",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" Misiri jamana",u"  Misira jamana",tout,0,re.U|re.MULTILINE)	
@@ -920,12 +932,29 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				tout=re.sub(ur" lakuruya",u" lakuraya",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur"Ola ",u"O la ",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" wati ",u" waati ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" koronawisi",u" koronawirisi",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Kotuba",u"Kɔtuba",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" halikila",u" hakilila",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" kokronawirisi",u" koronawirisi",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" koronawisi",u" koronawirisi",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"Kokronawirisi",u"Koronawirisi",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" is ",u" si ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur"YusufuJara",u"Yusufu Jara",tout,0,re.U|re.MULTILINE)
 				
 				tout=re.sub(ur"([A-ZƝƐƆŊ][a-zɛɔɲŋ]*)\-([A-ZƝƐƆŊ][a-zɛɔɲŋ]*) sira",u"\g<1> - \g<2> sira",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" ([sS])an([12][0-9]{3})",u" \g<1>an \g<2>",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" ([sS])na ([12][0-9]{3})",u" \g<1>an \g<2>",tout,0,re.U|re.MULTILINE)
 				tout=re.sub(ur" ([sS])n ([12][0-9]{3})",u" \g<1>an \g<2>",tout,0,re.U|re.MULTILINE)
-				
+				tout=re.sub(ur" kg([0-9])",u" kg \g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" km([0-9])",u" km \g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" ha([0-9])",u" ha \g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" d([0-9])",u" d \g<1>",tout,0,re.U|re.MULTILINE)
+				# numéros
+				tout=re.sub(ur" no ([0-9])",u" n° \g<1>",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" No ([0-9])",u" N° \g<1>",tout,0,re.U|re.MULTILINE)
+				# températures
+				tout=re.sub(ur" ([0-9]+)oC ",u" \g<1>°C ",tout,0,re.U|re.MULTILINE)
+				tout=re.sub(ur" ([0-9]+)o ",u" \g<1>° ",tout,0,re.U|re.MULTILINE)
 				
 				# repeated consonants at beginning or end of word - handles only pairs: ddugu denww
 				tout=re.sub(ur"w[w]+([ \s\.\,\;\:\!\?\n]) ",u"w\g<1>",tout,0,re.U|re.MULTILINE)

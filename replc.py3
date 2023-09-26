@@ -202,6 +202,14 @@ nlignereplact=re.findall(r"\n[^\#\s\n]",toutrepl,re.U|re.MULTILINE)
 nlignerepl=len(nlignereplact)
 print(nlignereplall," lignes   ", nlignerepl," règles")
 
+fileADHOCname=filenametemp+"-REPL.txt"
+if os.path.exists(fileADHOCname):
+  fileADHOC=open(fileADHOCname,"r")
+  toutADHOC=fileADHOC.read()
+  nltoutADHOCall=toutADHOC.count('\n')
+  print("+ ajoute ",nltoutADHOCall," lignes de ",fileADHOCname)
+  toutrepl=toutADHOC+"\n"+toutrepl
+
 nligne=1
 nbreplok=0
 nbmodif=0
@@ -309,8 +317,13 @@ pplist="ka:pp:POSS_lá:pp:POSS_bólo:pp:CNTRL_yé:pp:PP_y':pp:PP_lɔ́:pp:IN_
 conjlist="ô:conj:DISTR_ôo:conj:DISTR_wô:conj:DISTR_"
 prtlist="dè:prt:FOC_dùn:prt:TOP.CNTR_dún:prt:TOP.CNTR_kɔ̀ni:prt:TOP.CNTR2_tùn:prt:PST_kùn:prt:PST_wà:prt:Q_"
 mrphlist="lá:mrph:CAUS_la:mrph:CAUS_ná:mrph:CAUS_mà:mrph:SUPER_màn:mrph:SUPER_rɔ́:mrph:IN_lu:mrph:PL2_nu:mrph:PL2_ba:mrph:AUGM_baa:mrph:AG.OCC_baga:mrph:AG.OCC_bali:mrph:PTCP.NEG_ka:mrph:GENT_la:mrph:AG.PRM_na:mrph:AG.PRM_la:mrph:LOC_na:mrph:LOC_la:mrph:PRIX_na:mrph:PRIX_la:mrph:MNT1_na:mrph:MNT1_lata:mrph:MNT2_nata:mrph:MNT2_la:mrph:PROG_na:mrph:PROG_la:mrph:PFV.INTR_na:mrph:PFV.INTR_n':mrph:PFV.INTR_ra:mrph:PFV.INTR_rá:mrph:IN_rɔ́:mrph:IN_w:mrph:PL_"
-mrphlist=mrphlist+"lama:mrph:STAT_nama:mrph:STAT_lan:mrph:INSTR_nan:mrph:INSTR_len:mrph:PTCP.RES_nen:mrph:PTCP.RES_li:mrph:NMLZ_ni:mrph:NMLZ_\:mrph:NMLZ2_ma:mrph:COM_ma:mrph:RECP.PRN_man:mrph:ADJ_ntan:mrph:PRIV_ra:mrph:OPT2_la:mrph:OP2_na:mrph:OPT2_"
+mrphlist=mrphlist+"lama:mrph:STAT_nama:mrph:STAT_lan:mrph:INSTR_nan:mrph:INSTR_len:mrph:PTCP.RES_nen:mrph:PTCP.RES_li:mrph:NMLZ_ni:mrph:NMLZ_\:mrph:NMLZ2_ma:mrph:COM_ma:mrph:RECP.PRN_man:mrph:ADJ_ntan:mrph:PRIV_ra:mrph:OPT2_la:mrph:OPT2_na:mrph:OPT2_"
 mrphlist=mrphlist+"ma:mrph:DIR_nan:mrph:ORD_nin:mrph:DIM_bali:mrph:PRIV_nci:mrph:AG.EX_ɲɔgɔn:mrph:RECP_ɲwan:mrph:RECP_ta:mrph:PTCP.POT_tɔ:mrph:CONV_tɔ:mrph:ST_ya:mrph:DEQU_yɛ:mrph:DEQU_ya:mrph:ABSTR_lá:mrph:CAUS_lán:mrph:CAUS_ná:mrph:CAUS_rɔ́:mrph:CAUS_ma:mrph:SUPER_man:mrph:SUPER_sɔ̀:mrph:EN_"
+# = ABSTR|ADJ|AG.EX|AG.OCC|AG.PRM|AUGM|CAUS|COM|CONV|DEQU|DIM|DIR|EN|GENT|IN|INSTR|LOC|MNT1|MNT2|NMLZ|NMLZ2|OPT2|ORD|PFV.INTR|PL|PL2|PRIV|PRIX|PROG|PTCP.NEG|PTCP.POT|PTCP.RES|RECP|RECP.PRN|ST|STAT|SUPER
+# il manque à comme dans la:mrph:à   ??
+# from http://cormand.huma-num.fr/gloses.html
+# Flexion : 
+
 # restent u"ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_"
 lxpsgvalides=pmlist+coplist+prnlist+dtmlist+perslist+pplist+conjlist+prtlist+mrphlist
 lxpsg=re.compile(r"[\_\[\s]([^:\[\_0-9]+:[a-z\/\.]+:[A-Z0-9][A-Z0-9\.\'\|]*)[\_\s\]]",re.U)
@@ -2271,11 +2284,11 @@ for linerepl in toutrepllines :
         topname=forcetop.group(lastnproprenomforcetopindex)
         # print topname
         lastnproprenom=r'<span class="w" +stage="[^>]+">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n\.prop</sub><sub class="gloss">NOM</sub></span></span>\n'
-        lastnproprenomforcetop=r'<span class="w" stage="[^>]+">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span></span>\n'
+        lastnproprenomforcetop=r'<span class="w" stage="0">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span></span>\n'
         body,nombre2=re.subn(lastnproprenom,lastnproprenomforcetop,body,0,re.U|re.MULTILINE)
         nombre=nombre+nombre2
         lastnproprenom=r'<span class="annot"><span class="w" +stage="[^>]+">'+topname+'<span class="lemma">'+topname.lower()+'<sub class="gloss">EMPR</sub></span></span>\n'
-        lastnproprenomforcetop=r'<span class="annot"><span class="w" stage="[^>]+">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span></span>\n'
+        lastnproprenomforcetop=r'<span class="annot"><span class="w" stage="0">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span></span>\n'
         body,nombre3=re.subn(lastnproprenom,lastnproprenomforcetop,body,0,re.U|re.MULTILINE)
         nombre=nombre+nombre3
       
