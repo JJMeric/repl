@@ -51,6 +51,10 @@
 #     2b1.4) to install pydub, run : pip install pydub
 #     2b1.5) exit - installation done!
 
+# ways to do the same on other platforms:
+# MacOS/OSX : ?
+# Linux : see https://askubuntu.com/questions/330937/is-it-possible-to-open-an-ubuntu-app-from-html
+
 import os
 import re
 import sys
