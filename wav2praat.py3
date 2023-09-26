@@ -32,6 +32,25 @@
 # note : wav2praat.exe is created using: pyinstaller --onefile wav2praat.py3
 # which results in a 6MB file containing pythonXX.dll (this version python38), libraries, dll and pyd files.
 
+# Installation instructions
+# Installation package content : 
+#    wav2praat.py3, wav2praat.exe, praat.reg, praat-python37.reg, praat-python38.reg, praat-python39.reg
+# 1) if not done, install Praat in c:\Praat - normally only Praat.exe
+# 2a) if Python is not installed : 
+#   2a1) copy wav2praat.exe in c:\Praat
+#   2a2) copy praat.reg in c:\Praat
+#   2a3) run cmd with option "run as Administrator"
+#   2a4) run praat.reg
+#   2a5) exit - installation done!
+# 2b) if Python is installed
+#   2b0) check which version : in cmd : python --version
+#   2b1) install pydub and praat-pythonXX.reg (if version is 3.8 XX=38) : 
+#     2b1.1) copy preg-pythonXX.reg, wav2praat.py3 in c:\Praat
+#     2b1.2) run cmd with option "run as Administrator"
+#     2b1.3) run praat-pythonXX.reg
+#     2b1.4) to install pydub, run : pip install pydub
+#     2b1.5) exit - installation done!
+
 import os
 import re
 import sys
