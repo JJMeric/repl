@@ -29,7 +29,7 @@
 # and %PYTHONPATH% is not available ...
 # Option : distribute various .reg files: praat.reg, praat-python38.reg, praat-python39.reg, ...
 #
-# note : wav2praat.exe is created using: pyinstaller --onefile wav2praat.py3
+# note : wav2praat.exe (for Windows) is created using (on Windows): pyinstaller --onefile wav2praat.py3
 # which results in a 6MB file containing pythonXX.dll (this version python38), libraries, dll and pyd files.
 
 # Installation instructions
