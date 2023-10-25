@@ -92,9 +92,10 @@ filename=fileurl[fileurl.rfind("/")+1:]
 logfile.write(filename+" is the filename\n")
 
 # note: not checking presence of , and format of start/end times !
-tstart,tend=startend.replace(".","").split(",")
-start=int(tstart)
-end=int(tend)
+# caution, number formats not fixed, number of decimals may vary
+tstart,tend=startend.split(",")
+start=int(float(tstart)*1000)
+end=int(float(tend)*1000)
 treename=Downloads+filename
 logfile.write(treename+" is the treename to check\n")
 
