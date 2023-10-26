@@ -94,8 +94,14 @@ logfile.write(filename+" is the filename\n")
 # note: not checking presence of , and format of start/end times !
 # caution, number formats not fixed, number of decimals may vary
 tstart,tend=startend.split(",")
+
+# start,end in milliseconds for pydub
 start=int(float(tstart)*1000)
 end=int(float(tend)*1000)
+# restate tstart,tend in milliseconds for filename
+tstart=str(start)
+tend=str(end)
+
 treename=Downloads+filename
 logfile.write(treename+" is the treename to check\n")
 

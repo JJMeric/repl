@@ -8221,6 +8221,9 @@ tánko_mùgan===tánko:n:coup.d'envoi [tán:v:donner.coup.de.pied kó:n:aff
 tánko_NUM===tánko:n:coup.d'envoi [tán:v:donner.coup.de.pied kó:n:affaire]_NUM
 tíla_NUM_yé===tíla:v:diviser_NUM_yé:pp:PP
 NUM_ɲɔ̀gɔn===NUM_ɲɔ̀gɔn:n:pareil
+sàba_ɲɔ̀gɔn===sàba:num:trois_ɲɔ̀gɔn:n:pareil
+náani_ɲɔ̀gɔn===náani:num:quatre_ɲɔ̀gɔn:n:pareil
+dúuru_ɲɔ̀gɔn===dúuru:num:cinq_ɲɔ̀gɔn:n:pareil
 NUM_hákɛ_ɲɔ̀gɔn===NUM_hákɛ:n:mesure_ɲɔ̀gɔn:n:pareil
 NUM_ɲɔ̀gɔnna===NUM_ɲɔ̀gɔnna:n:pareil
 wári_NAME_NUM_sàra===wári:n:argent_NAME_NUM_sàra:v:payer
@@ -27489,6 +27492,7 @@ sɔ̀gɔmanɛgɛ_kánɲɛ=>=sɔ̀gɔmanɛgɛ:n: [sɔ̀gɔmà:n:matin nɛ̀gɛ:
 sɔ̀gɔsɔgɔ_fúra===sɔ̀gɔsɔgɔ:n:toux_fúra:n:feuille
 sɔ̀gɔsɔgɔ_jàlannin===sɔ̀gɔsɔgɔ:n:toux_jàlannin:adj: [jàlan:adj:sec nin:mrph:DIM]
 sɔ̀miɲɛ_tùma===sàmiyɛ:n:hivernage_tùma:n:moment
+sɔ̀ngɔ_yɛ̀lɛnni===sɔ̀ngɔ:n:prix_yɛ̀lɛnni:n: [yɛ̀lɛn:v:monter ni:mrph:NMLZ]
 sɔ̀rɔ_jíidili===sɔ̀rɔ:n:gain_jíidili:n: [jíidi:v:accroître li:mrph:NMLZ]
 sɔ̀rɔ_sàbatili===sɔ̀rɔ:n:gain_sàbatili:n: [sàbati:v:prospérer li:mrph:NMLZ]
 sɔ̀rɔ_yíriwali===sɔ̀rɔ:n:gain_yíriwali:n: [yíriwa:v:accroître li:mrph:NMLZ]
@@ -28658,6 +28662,7 @@ PERS_ka_fósì===PERS_ka:pp:POSS_fósì:prn:rien
 PERS_ká_kɔ́lɛ===PERS_ka:pp:POSS_kɔ́lɛ:n:famille
 PERS_ká_hámina===PERS_ka:pp:POSS_hámina:n:souci [hámi:n:souci la:mrph:MNT1]
 PERS_ka_màrifa===PERS_ka:pp:POSS_màrifa:n:fusil
+PERS_ka_nísɔngoya===PERS_ka:pp:POSS_nísɔngoya:n:mauvaise.humeur [nísɔngo:adj:de.mauvaise.humeur [nísɔn:n:humeur [ní:n:âme sɔ̀n:n:coeur] gó:adj:désagréable] ya:mrph:ABSTR]
 PERS_ká_sìgida===PERS_ka:pp:POSS_sìgida:n:localité [sìgi:v:asseoir dá:n:bouche]
 PERS_ká_yɔ́rɔ===PERS_ka:pp:POSS_yɔ́rɔ:n:lieu
 PERS_fà_ka_só===PERS_fà:n:père_ka:pp:POSS_só:n:maison§§sò:n:cheval
@@ -34091,6 +34096,7 @@ NONVERBALGROUP_ká_NORADJ_tùn_COPULE===NONVERBALGROUP_ka:pp:POSS_NORADJname_t
 NONVERBALGROUP_ká_NORADJ_POSTP===NONVERBALGROUP_ka:pp:POSS_NORADJname_POSTP
 
 # PMINF_PERS_ká_NONVERBALGROUP_VERBE===   # non : peut être QUOT PERS SBJV NVG VERBE
+VERBE_PERS_ka_NONVERBALGROUP_POSTP===VERBE_PERS_ka:pp:POSS_NONVERBALGROUP_POSTP
 
 # 2GN adjectifs/ptcp
 
@@ -46097,6 +46103,8 @@ PRMRK_NONVERBALGROUP_ka_NONVERBALGROUP_VERBE===PRMRK_NONVERBALGROUP_ka:pp:POSS_N
 VERBE_COMMA_PMINF_NONVERBALGROUP_ka_NONVERBALGROUP_VERBE===VERBE_COMMA_PMINF_NONVERBALGROUP_ka:pp:POSS_NONVERBALGROUP_VERBE
 ADV_COMMA_PMINF_NONVERBALGROUP_ka_NONVERBALGROUP_VERBE===ADV_COMMA_PMINF_NONVERBALGROUP_ka:pp:POSS_NONVERBALGROUP_VERBE
 POSTP_COMMA_PMINF_NONVERBALGROUP_ka_NONVERBALGROUP_VERBE===POSTP_COMMA_PMINF_NONVERBALGROUP_ka:pp:POSS_NONVERBALGROUP_VERBE
+
+VERBE_PERS_ka_NONVERBALGROUP_POSTP===VERBE_PERS_ka:pp:POSS_NONVERBALGROUP_POSTP
 
 #
 #	sábu
