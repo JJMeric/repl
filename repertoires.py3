@@ -31,6 +31,13 @@ date=re.compile(r'(?:\<meta content\=\"[0-9]+\.|\<meta name\=\"text\:date\" cont
 
 #datesource=re.compile(ur'\<meta content\=\"[0-9]+\.([0-9\.]*)\" name\=\"source\:date\" \/\>|\<meta name\=\"source\:date\" content\=\"[0-9]+\.([0-9\.]*)\" \/\>',re.U)
 datesource=re.compile(r'(?:\<meta content\=\"[0-9]+\.|\<meta name\=\"source\:date\" content\=\"[0-9]+\.)([0-9\.]*)(?:\" name\=\"source\:date\" \/\>|\" \/\>)',re.U)
+textscript=re.compile(r'<meta name="text:script" content="([^\"]*)" />|<meta content="([^\"]*)" name="text:script" />',re.U)
+
+sourceurl=re.compile(r'<meta name="source:url" content="([^\"]*)" />|<meta content="([^\"]*)" name="source:url" />',re.U)
+sourcepagetotal=re.compile(r'<meta name="source:pagetotal" content="([^\"]*)" />|<meta content="([^\"]*)" name="source:pagetotal" />',re.U)
+sourceyear=re.compile(r'<meta name="source:year" content="([^\"]*)" />|<meta content="([^\"]*)" name="source:year" />',re.U)
+
+
 
 import os
 # log=open("repertoire.log","w")
@@ -91,7 +98,17 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 						toutdate=toutdatesearch.group(1)
 					else:
 						toutdate="23.09.2016"
-
+			scriptok=False
+			scriptsearch=textscript.search(tout)
+			if scriptsearch:
+				#print("scriptsearch.group(0):", scriptsearch.group(0))
+				#print("scriptsearch.group(1):'"+scriptsearch.group(1)+"'")
+				script=scriptsearch.group(1)
+				if script!="": scriptok=True
+			scriptpb=""
+			if not scriptok:
+				scriptpb="- ATTENTION PAS DE TEXT-SCRIPT"
+				print(scriptpb)
 			
 			titlefound=title.search(tout)
 			titl=""
@@ -136,7 +153,9 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					word=str(words)
 					#for iword in swords :
 					#	outf.write(": "+iword+"\n")
-
+			url=""
+			pagetotal=""
+			year=""
 			if select!=".html": # càd : = dis.html ou = pars.html
 				ambs=len(ambiguous.findall(tout))
 				unkn=len(unknown.findall(tout))
@@ -145,7 +164,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				if ambs!=0 : nambigus="ambigus: "+str(ambs)+" "
 				ninconnus=""
 				if unkn!=0 : ninconnus="inconnus: "+str(unkn)
-				toutout=toutout+titl+"; ; "+filename+"; ; "+word+"; "+auth+"; "+nambigus+ninconnus+"\n"
+				toutout=toutout+titl+"; ; "+filename+"; ; "+word+"; "+auth+"; "+nambigus+ninconnus+scriptpb+"\n"
 			else:
 				diffauth=""
 				nauth_fn=0
@@ -165,7 +184,15 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 				if nauth_fn!=nauth_meta :
 					diffauth=" "+str(nauth_fn)+"/"+str(nauth_meta)+" ?"
 
-				toutout=toutout+titl+"; ; "+filename+"; ; "+word+"; "+auth+"; "+diffauth+"\n"
+				result=sourceurl.search(tout)
+				if result: url=str(result.group(1))
+				result=sourcepagetotal.search(tout)
+				if result: pagetotal=str(result.group(1))
+				result=sourceyear.search(tout)
+				if result: year=str(result.group(1))
+
+
+				toutout=toutout+titl+"; ; "+filename+"; ; "+word+"; "+auth+"; "+year+"; "+pagetotal+"; "+url+"; "+diffauth+scriptpb+"\n"
 			toutwords=toutwords+words
 
 	if toutout!="" :

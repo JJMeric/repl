@@ -60,7 +60,7 @@ for sentence in sentences:
   #print nsent,"---",sentence
   sentence=sentence+"</span>"   # close last lemma or punct or tag
   
-  originalsent=re.search('<span class="sent">([^<]*)',sentence,re.U|re.MULTILINE)
+  originalsent=re.search('<span class="sent"[^\>]*>([^<]*)',sentence,re.U|re.MULTILINE)
   original=originalsent.group(1)
   original=original.replace("&lt;","<")
   original=original.replace("&gt;",">")

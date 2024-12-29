@@ -304,7 +304,7 @@ for filename in filenames:
 			find_in_name=re.search(r"koteba_kura([0-9]+)",filename)
 			numero=find_in_name.group(1)
 
-		elif periodique=="kibarufb" or periodique=="ankaso" or periodique=="fakan":
+		elif periodique=="kibarufb" or periodique=="fakan":
 			find_in_name=re.search(r"(?:kibarufb|ankaso|fakan)([0-9]{4})([0-9]{2})([0-9]{2})",filename)
 			year=find_in_name.group(1)
 			month=find_in_name.group(2)
@@ -316,6 +316,13 @@ for filename in filenames:
 			print "month:",month
 			print "year:",year
 			"""
+			metasstub=re.sub(r"\"("+datenum+")\" name=\"text\:date\"","\""+day+u"."+month+u"."+year+"\" name=\"text:date\"",metasstub)
+			
+		elif periodique=="ankaso":
+			find_in_name=re.search(r"ankaso([0-9]{4})_([0-9]{2})",filename)
+			year=find_in_name.group(1)
+			month=find_in_name.group(2)
+			day="01"
 
 			metasstub=re.sub(r"\"("+datenum+")\" name=\"text\:date\"","\""+day+u"."+month+u"."+year+"\" name=\"text:date\"",metasstub)
 
@@ -440,16 +447,16 @@ for filename in filenames:
 				addgenre("Litt&#233;rature orale : Chansons populaires",ur"(dònkili|Dònkili)",titl,1)
 				addgenre("Litt&#233;rature orale : Contes populaires",ur"(nin kèra cè dò ye|nin kèra cè fila ye|nin kèra cè saba ye|nin kèra muso dò ye|nin kèra muso ye|Nin kèra cè dò ye|Nin kèra cè fila ye|Nin kèra cè saba ye|Nin kèra muso dò ye|Nin kèra muso ye)",tout,1)
 				addgenre("Litt&#233;rature orale : Contes populaires",ur"(nin kèra muso dò ye|nin kèra muso fila ye|nin kèra muso saba ye)",tout,1)
-				addgenre("Litt&#233;rature orale : Contes populaires",ur"(nin kèra [^\s]* dò ye|nin kèra [^\s]* fila ye|nin kèra [^\s]* saba ye)",tout,1)
-				addgenre("Litt&#233;rature orale : Contes populaires",ur"(juguni|suruku|nsonsanin|waraba|waraninkalan|warabilen|ntura|sama|kami|ntori|wulu|bilisi|dononkòrò)",tout,3)
+				#addgenre("Litt&#233;rature orale : Contes populaires",ur"(nin kèra [^\s]* dò ye|nin kèra [^\s]* fila ye|nin kèra [^\s]* saba ye)",tout,1)
+				addgenre("Litt&#233;rature orale : Contes populaires",ur"(juguni|suruku|nsonsanin|waraba|waraninkalan|warabilen|ntura|kami|ntori|wulu|bilisi|dononkòrò)",tout,3)
 				addgenre("Litt&#233;rature orale : Devinettes",ur"(Kuma kòròma|kuma kòròma|Ntèntèn|ntèntèn|ntenpari|ntènpari|NTÈNTÈN|NTENTEN)",titl,1)
 				addgenre("Litt&#233;rature orale : Devinettes",ur"(Kuma kòròma|kuma kòròma|Ntèntèn|ntèntèn|ntenpari|ntènpari)",tout,1)
 			else :
 				addgenre("Litt&#233;rature orale : Chansons populaires",ur"(dɔnkili|Dɔnkili)",titl,1)
 				addgenre("Litt&#233;rature orale : Contes populaires",ur"(nin kɛra cɛ dɔ ye|nin kɛra cɛ fila ye|nin kɛra cɛ saba ye|nin kɛra muso dɔ ye|nin kɛra muso ye|Nin kɛra cɛ dɔ ye|Nin kɛra cɛ fila ye|Nin kɛra cɛ saba ye|Nin kɛra muso dɔ ye|Nin kɛra muso ye|Tericɛ saba)",tout,1)
 				addgenre("Litt&#233;rature orale : Contes populaires",ur"(nin kɛra muso dɔ ye|nin kɛra muso fila ye|nin kɛra muso saba ye)",tout,1)
-				addgenre("Litt&#233;rature orale : Contes populaires",ur"(nin kɛra [^\s]* dɔ ye|nin kɛra [^\s]* fila ye|nin kɛra [^\s]* saba ye)",tout,1)
-				addgenre("Litt&#233;rature orale : Contes populaires",ur"(juguni|suruku|nsonsanin|waraba|waraninkalan|warabilen|bilisi|ntura|sama|kami|ntori|wulu|dononkɔrɔ)",tout,3)
+				#addgenre("Litt&#233;rature orale : Contes populaires",ur"(nin kɛra [^\s]* dɔ ye|nin kɛra [^\s]* fila ye|nin kɛra [^\s]* saba ye)",tout,1)
+				addgenre("Litt&#233;rature orale : Contes populaires",ur"(juguni|suruku|nsonsanin|waraba|waraninkalan|warabilen|bilisi|ntura|kami|ntori|wulu|dononkɔrɔ)",tout,3)
 				addgenre("Litt&#233;rature orale : Devinettes",ur"(Kuma kɔrɔma|Ntɛntɛn|kuma kɔrɔma|ntɛntɛn|ntɛnpari|ntenpari|NTƐNTƐN)",titl,1)
 				addgenre("Litt&#233;rature orale : Devinettes",ur"(Kuma kɔrɔma|Ntɛntɛn|kuma kɔrɔma|ntɛntɛn|ntɛnpari|ntenpari)",tout,1)
 		

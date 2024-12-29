@@ -32,7 +32,7 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 
 		for filename in sorted(filenames):
 
-			if filename.endswith("-doz.txt") or filename.endswith("-zup.txt") or filename.endswith("-kot.txt")  or filename.endswith("-gedz.txt") :
+			if filename.endswith("-doz.txt") or filename.endswith("-zup.txt") or filename.endswith("-kot.txt")  or filename.endswith("-gedz.txt") or filename.endswith("-tra.txt"):
 				print(os.path.join(dirname, filename))
 				"""
 				if u" " in filename:  # spaces in filename cause no end problems in Corpus build
