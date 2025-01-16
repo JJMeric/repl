@@ -13,8 +13,17 @@ p.cpu_num()
 # CAVEAT : éviter la méthode "replace" qui retourne une chaine en ANSI - utiliser re.sub
 # xxx.py on line x, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
 
-# entrée : le fichier.XXX.pars.html
-# entrée : le fichier REPL.txt qui doit être dans le même répertoire
+# entrée : le fichier XXX.pars.html
+# entrée : le fichier REPL-STANDARD.txt 
+#          soit celui qui doit être dans le même répertoire que le programme replc
+#          soit fichier REPL-STANDARD.txt qui se trouve dans le même répertoire que le fichier pars.html
+#           s'il existe c'est ce dernier qui a la priorité
+#          ce fichier peut-être complété par des fichiers de règles personnalisés
+#          - un fichier REPL.txt qui s'applique à tous les fichiers du même répertoire (typiquement les articles d'un journal)
+#          - et s'il existe un fichier personnalisé au fichier à désambiguiser: Soit XXX.pars.html le nom de ce fichier
+#               alors le fichier des règles s'appelera XXX-REPL.txt
+#          Les fichiers personnalisés (l'un, l'autre, ou les deux) sont chargés avant REPL-STANDARD.txt
+#
 #          (voir ci-dessous : il peut être customisé pour un texte particulier : noms des personnages, etc)
 #          Format de ce fichier : chaque ligne contient une sequence "non ambigüe en bambara non tonal dans tous contextes"
 #          donc de préférence une sequence de plus de 3 mots, pour chaque mot: le mot et sa desambiguisation: le lexeme:la partie du discours:la glose
@@ -227,19 +236,21 @@ if  filenametemp.startswith("baabu_ni_baabu") or filenametemp.startswith("gorog_
 fileREPname="REPL-STANDARD.txt"
 if script=="N’Ko" : fileREPname="REPL-STANDARD-NKO.txt"
 
+"""
 try:
   fileREP = open ("REPL.txt","r", encoding="utf-8")  # was rb
   print("using REPL.txt")
 except : 
+"""
+try:
+  fileREP = open (fileREPname,"r", encoding="utf-8")  # was rb
+  print("using REPL-STANDARD.txt")
+except:
   try:
-    fileREP = open (fileREPname,"r", encoding="utf-8")  # was rb
-    print("using REPL-STANDARD.txt")
-  except:
-    try:
-      fileREP = open(os.path.join(scriptdir, fileREPname), "r", encoding="utf-8")
-      print("using {}".format(os.path.join(scriptdir, fileREPname)))
-    except :
-      sys.exit("repl.py needs a REPL.txt file or a "+fileREPname+" file in the current directory (or in REPL)")
+    fileREP = open(os.path.join(scriptdir, fileREPname), "r", encoding="utf-8")
+    print("using {}".format(os.path.join(scriptdir, fileREPname)))
+  except :
+    sys.exit("repl.py needs a "+fileREPname+" file in the current directory (or in REPL)")
 
 logfilename=filenametemp+"-replacements.log"
 log =  open (logfilename,"w", encoding="utf-8")
@@ -250,10 +261,20 @@ nlignereplact=re.findall(r"\n[^\#\s\n]",toutrepl,re.U|re.MULTILINE)
 nlignerepl=len(nlignereplact)
 print(nlignereplall," lignes   ", nlignerepl," règles")
 
+fileADHOCname="REPL.txt"
+if os.path.exists(fileADHOCname):
+  fileADHOC=open(fileADHOCname,"r", encoding="utf-8")
+  toutADHOC=fileADHOC.read()
+  fileADHOC.close()
+  nltoutADHOCall=toutADHOC.count('\n')
+  print("+ ajoute ",nltoutADHOCall," lignes de ",fileADHOCname)
+  toutrepl=toutADHOC+"\n"+toutrepl
+
 fileADHOCname=filenametemp+"-REPL.txt"
 if os.path.exists(fileADHOCname):
   fileADHOC=open(fileADHOCname,"r", encoding="utf-8")
   toutADHOC=fileADHOC.read()
+  fileADHOC.close()
   nltoutADHOCall=toutADHOC.count('\n')
   print("+ ajoute ",nltoutADHOCall," lignes de ",fileADHOCname)
   toutrepl=toutADHOC+"\n"+toutrepl
@@ -323,7 +344,7 @@ else:
   psvalides="|adj|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers|pm|pp|prep|prn|prt|ptcp|v|vq|"
   # toujours commencer et finir par _
   # autres mots utilisés, traitements spéciaux : NUMnan, degremove, ADVNforcen, ADVNforceadv, CONJPREPforceconj, CONJPREPforceprep
-  gvalides="NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.NEG_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_NMLZ2_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_OPT2_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_"
+  gvalides="NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_NOM.FRA_CFA_FUT_QUOT_PP_IN_CNTRL_PROG_PFV.INTR_PL_PL2_AUGM_AG.OCC_PTCP.NEG_GENT_AG.PRM_LOC_PRIX_MNT1_MNT2_STAT_INSTR_PTCP.RES_NMLZ_NMLZ2_COM_RECP.PRN_ADJ_DIR_ORD_DIM_PRIV_AG.EX_RECP_PTCP.POT_CONV_ST_DEQU_ABSTR_CAUS_SUPER_IN_EN_1SG_1SG.EMPH_2SG_2SG.EMPH_3SG_3SG.EMPH_1PL_1PL.EMPH_2PL_2PL.EMPH_3PL_IPFV_IPFV.AFF_PROG.AFF_INFR_COND.NEG_FOC_PRES_TOP.CNTR_2SG.EMPH_3SG_REFL_DEF_INF_SBJV_OPT2_POSS_QUAL.AFF_PROH_TOP_PFV.NEG_QUAL.NEG_COND.AFF_REL_REL.PL2_CERT_ORD_DEM_RECP_DISTR_COP.NEG_IPFV.NEG_PROG.NEG_INFR.NEG_FUT.NEG_PST_Q_PFV.TR_EQU_IMP_RCNT_ABR_ETRG_ETRG.ARB_ETRG.FRA_ETRG.USA_ETRG.FUL_NOM.CL_NOM.ETRG_NOM.F_NOM.M_NOM.MF_PREV_TOP_CARDINAL_CHNT_DES_ADR_INFR.NEG_INFR.AFF_"
   #  ANAPH, ANAPH.PL, ART, OPT, OPT2, PTCP.PROG removed
   #  CFA à cause de la glose de dɔrɔmɛ qui finit par franc.CFA !!!
   # cf kàmana:n:PREV de kamanagan
@@ -2198,6 +2219,7 @@ for linerepl in toutrepllines :
         html1=daba.formats.glosstext_to_html(glose1,variant=False, encoding='unicode')
         html1=re.sub(r"\<\/span\>$","",html1)
         #html2=daba.formats.glosstext_to_html(glose2,variant=True, encoding='utf-8').decode('utf-8')
+        # print("§§ -",glose2)
         html2=daba.formats.glosstext_to_html(glose2,variant=False, encoding='unicode')
         html2=html2.replace("lemma","lemma var")
         if "*" in word or "(" in word or "[" in word:   # main concern is quote/apostrophe here but may also be loaw tone/ capital on verbs (not handled for §§?)

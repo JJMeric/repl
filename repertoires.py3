@@ -9,33 +9,26 @@ import sys
 #parser = HTMLParser()
 import html
 
+normalizemetas=re.compile(r'<meta content="([^\"]*)" name="([^\"]*)" />',re.U|re.MULTILINE)
+
 ambiguous=re.compile(r'\<span class\=\"w\".*lemma var.*\n\<\/span\>')
 unknown=re.compile(r'<span class="w" stage="-1">[^<]+<span class="lemma">[^<]+</span>')
 sentence=re.compile(r'\<span class\=\"sent\"\>([^<]*)\<')
-# title=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"text\:title\" \/\>|\<meta name\=\"text\:title\" content\=\"([^\"]*)\" \/\>',re.U)  # as of daba 0.9.0 dec 2020 meta format order changed!
-title=re.compile(r'(?:\<meta content\=\"|\<meta name\=\"text\:title\" content\=\")([^\"]*)(?:\" name\=\"text\:title\" \/\>|\" \/\>)',re.U)
-
-#author=re.compile(ur'\<meta content\=\"([^\"]*)\" name\=\"author\:name\" \/\>|\<meta name\=\"author\:name\" content\=\"([^\"]*)\" \/\>',re.U)
-author=re.compile(r'(?:\<meta content\=\"|\<meta name\=\"author\:name\" content\=\")([^\"]*)(?:\" name\=\"author\:name\" \/\>|\" \/\>)',re.U)
-
-#wordssearch=re.compile(ur'\<meta content\=\"([0-9]*)\" name\=\"\_auto\:words\" \/\>|\<meta name\=\"\_auto\:words\" content\=\"([0-9]*)\" \/\>',re.U)
-wordssearch=re.compile(r'(?:\<meta content\=\"|\<meta name\=\"\_auto\:words\" content\=\")([0-9]*)(?:\" name\=\"\_auto\:words\" \/\>|\" \/\>)',re.U)
+title=re.compile(r'<meta name="text:title" content="([^\"]*)" />',re.U|re.MULTILINE)
+author=re.compile(r'<meta name="author:name" content="([^\"]*)" />',re.U|re.MULTILINE)
+wordssearch=re.compile(r'<meta name="_auto:words" content="([^\"]*)" />',re.U|re.MULTILINE)
 
 parsedwords=re.compile(r'\<span class\=\"w\"',re.U)
-extraittxt=re.compile(r'<body><p>([^£]*)</p></body>',re.U)   #  ^< ne marche plus ?
-searchwords=re.compile(r'([a-zɛɔɲŋA-ZƐƆƝŊ0-9\-́̀̌̂]+)',re.U)
+extraittxt=re.compile(r'<body><p>([^£]*)</p></body>',re.U|re.MULTILINE)   #  ^< ne marche plus ?
+searchwords=re.compile(r'([a-zɛɔɲŋA-ZƐƆƝŊ0-9\-́̀̌̂]+)',re.U|re.MULTILINE)
 medianame=re.compile(r'^([a-zA-Z\-\_]+)[0-9]*[a-z]*\_',re.U)
 medianumber=re.compile(r'^[a-zA-Z\-\_]+([0-9]*[a-z]*)\_',re.U)
-#date=re.compile(ur'\<meta content\=\"[0-9]+\.([0-9\.]*)\" name\=\"text\:date\" \/\>|\<meta name\=\"text\:date\" content\=\"[0-9]+\.([0-9\.]*)\" \/\>',re.U)
-date=re.compile(r'(?:\<meta content\=\"[0-9]+\.|\<meta name\=\"text\:date\" content\=\"[0-9]+\.)([0-9\.]*)(?:\" name\=\"text\:date\" \/\>|\" \/\>)',re.U)
-
-#datesource=re.compile(ur'\<meta content\=\"[0-9]+\.([0-9\.]*)\" name\=\"source\:date\" \/\>|\<meta name\=\"source\:date\" content\=\"[0-9]+\.([0-9\.]*)\" \/\>',re.U)
-datesource=re.compile(r'(?:\<meta content\=\"[0-9]+\.|\<meta name\=\"source\:date\" content\=\"[0-9]+\.)([0-9\.]*)(?:\" name\=\"source\:date\" \/\>|\" \/\>)',re.U)
-textscript=re.compile(r'<meta name="text:script" content="([^\"]*)" />|<meta content="([^\"]*)" name="text:script" />',re.U)
-
-sourceurl=re.compile(r'<meta name="source:url" content="([^\"]*)" />|<meta content="([^\"]*)" name="source:url" />',re.U)
-sourcepagetotal=re.compile(r'<meta name="source:pagetotal" content="([^\"]*)" />|<meta content="([^\"]*)" name="source:pagetotal" />',re.U)
-sourceyear=re.compile(r'<meta name="source:year" content="([^\"]*)" />|<meta content="([^\"]*)" name="source:year" />',re.U)
+date=re.compile(r'<meta name="text:date" content="([^\"]*)" />',re.U|re.MULTILINE)
+datesource=re.compile(r'<meta name="source:date" content="([^\"]*)" />',re.U|re.MULTILINE)
+textscript=re.compile(r'<meta name="text:script" content="([^\"]*)" />',re.U|re.MULTILINE)
+sourceurl=re.compile(r'<meta name="source:url" content="([^\"]*)" />',re.U|re.MULTILINE)
+sourcepagetotal=re.compile(r'<meta name="source:pagetotal" content="([^\"]*)" />',re.U|re.MULTILINE)
+sourceyear=re.compile(r'<meta name="source:year" content="([^\"]*)" />',re.U|re.MULTILINE)
 
 
 
@@ -80,13 +73,18 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 					ismedianumber=medianumber.search(filename)
 					if ismedianumber!=[] :
 						toutmedianumber=ismedianumber.group(1)
+			"""
 			#tout=fileIN.readlines()
 			line = fileIN.readline()
 			tout=""
 			while line:
 				tout=tout+line     # py2: .decode("utf-8")
 				line = fileIN.readline()
+			"""
+			tout=fileIN.read()
 			fileIN.close()
+
+			tout=normalizemetas.sub('<meta name="\g<2>" content="\g<1>" />',tout)
 
 			if toutdate=="":
 				toutdatesearch=date.search(tout)
