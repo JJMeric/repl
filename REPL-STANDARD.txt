@@ -29548,8 +29548,10 @@ wáraba_ní_sònsannin===wáraba:n:lion [wára:n:fauve ba:mrph:AUGM]_ni:con
 Wáraba_ní_Sònsannin===wáraba:n:lion [wára:n:fauve ba:mrph:AUGM]_ni:conj:et_sònsannin:n: [sònsan:n:lièvre nin:mrph:DIM]
 wáraba_ní_wáranìnkalan===wáraba:n:lion [wára:n:fauve ba:mrph:AUGM]_ni:conj:et_wáranìnkalan:n:panthère [wára:n:fauve nin:mrph:DIM kálan:vq:bariolé]
 Wáraba_ní_Wáranìnkalan===wáraba:n:lion [wára:n:fauve ba:mrph:AUGM]_ni:conj:et_wáranìnkalan:n:panthère [wára:n:fauve nin:mrph:DIM kálan:vq:bariolé]
-wúlafantan_ni_wúlabantan===wúlafantan:n: [wúla:n:brousse fà:n:père ntan:mrph:PRIV]_ni:conj:et_wúlabantan:n: [wúla:n:brousse bá:n:mère ntan:mrph:PRIV]
-wúlafantan_ni_wúlababantan===wúlafantan:n: [wúla:n:brousse fà:n:père ntan:mrph:PRIV]_ni:conj:et_wúlababantan:n: [wúlaba:n:grande.brousse [wúla:n:brousse ba:mrph:AUGM] bá:n:mère ntan:mrph:PRIV]
+#wúlafantan_ni_wúlabantan===wúlafantan:n: [wúla:n:brousse fà:n:père ntan:mrph:PRIV]_ni:conj:et_wúlabantan:n: [wúla:n:brousse bá:n:mère ntan:mrph:PRIV]
+wúlafantan_ni_wúlabantan===wúlafanntan:n: [wúla:n:brousse fàn:n:côté ntan:mrph:PRIV]_ni:conj:et_wúlabanntan:n: [wúla:n:brousse bán:n:fin ntan:mrph:PRIV]
+#wúlafantan_ni_wúlababantan===wúlafantan:n: [wúla:n:brousse fà:n:père ntan:mrph:PRIV]_ni:conj:et_wúlababantan:n: [wúlaba:n:grande.brousse [wúla:n:brousse ba:mrph:AUGM] bá:n:mère ntan:mrph:PRIV]
+wúlafantan_ni_wúlababantan===wúlafanntan:n: [wúla:n:brousse fàn:n:côté ntan:mrph:PRIV]_ni:conj:et_wúlababanntan:n: [wúlaba:n:grande.brousse [wúla:n:brousse ba:mrph:AUGM] bán:n:fin ntan:mrph:PRIV]
 wùlu_ní_bàkɔrɔnin===wùlu:n:chien_ni:conj:et_bàkɔrɔnin:n:bouc [bàkɔrɔn:n:bouc [bà:n:chèvre kɔrɔn:adj:mâle.adulte] nin:mrph:DIM]
 Wùlu_ní_Bàkɔrɔnin===wùlu:n:chien_ni:conj:et_bàkɔrɔnin:n:bouc [bàkɔrɔn:n:bouc [bà:n:chèvre kɔrɔn:adj:mâle.adulte] nin:mrph:DIM]
 wùlu_ní_jàkuma=>=wùlu:n:chien_ni:conj:et_jàkuma:n:chat
