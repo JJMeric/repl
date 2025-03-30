@@ -79,7 +79,7 @@ body=re.sub(r'\n</span></span>\n</span>','\n</span>\n</span>\n</span>',body,0,re
 
 # check if file is new format nov 2021
 if '</span><span class="w"' in body or '</span><span class="c"' in body:
-  body=re.sub(r'\n</span><span class="(w|c|t)"','</span>\n<span class="\g<1>"',body,0,re.U|re.MULTILINE)
+  body=re.sub(r'\n</span><span class="(w|c|t)"',r'</span>\n<span class="\g<1>"',body,0,re.U|re.MULTILINE)
 
 sentences=body.split("</span>\n</span>\n</span>\n")  # closing tag for last w|c|t + tag for annot + tag for sent
 
@@ -391,7 +391,7 @@ for sentence in sentences:
   #print("\nSentence # ",nsent,"\n",sentence,"\n")
   orig,disamb=sentence.split('<span class="annot">')
 
-  disamb="\^"+disamb+"\$"
+  disamb=r"\^"+disamb+r"\$"
   originalsent=re.search('<span class="sent">([^<]*)',orig,re.U|re.MULTILINE)
   original=originalsent.group(1)
   original=original.replace("&lt;","<")

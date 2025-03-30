@@ -23,7 +23,7 @@ import sys
 #sys.setdefaultencoding("utf-8")
 #import daba.formats
 
-import psutil
+import psutil    # if missing do : pip install psutil
 pid=os.getpid()
 #print "pid : ",pid
 p=psutil.Process(pid)
@@ -59,7 +59,7 @@ if nargv>1 : filename= str(sys.argv[1])
 
 if ".dis.fra" in filename:
   #sys.exit("repl.py does not handle .dis.fra files")
-  print("WARNING repl.py does not know how to handle .dis.fra files - results unclear")
+  print("\033[1mWARNING\033[0m repl.py does not know how to handle .dis.fra files - results unclear")
 #elif ".pars.html" in filename :
 if ".pars.html" in filename :
   filenamein=filename
@@ -126,7 +126,7 @@ try:
     print(fileREPCname+" is missing, trying with "+fileREPCname0)
     fileREPC = open (fileREPCname0,"r")
 except :
-  sys.exit(fileREPCname+" ? repl.py needs a REPL-C.txt file or a REPL-STANDARD-C"+str(ncpu)+".txt file in the current directory (or in "+scriptdir+" )")
+  sys.exit(fileREPCname+"\033[1m ? repl.py needs a REPL-C.txt file or a REPL-STANDARD-C"+str(ncpu)+".txt file\033[0m in the current directory (or in "+scriptdir+" )")
 # read all file in one go
 replall=fileREPC.read()
 fileREPC.close()
@@ -146,9 +146,14 @@ txtsc=textscript.search(head)
 if txtsc!=None :   # supposedly = if txtsc :
   script=txtsc.group(1)
 else :
-    #if not filenametemp.startswith("0precorpus"): 
     script="Nouvel orthographe malien"
     if filenametemp.endswith(".old"): script="Ancien orthographe malien"
+    else:
+      # try to guess: based on wovels is ok in bambara : number of è ò and number of ɛ ɔ 
+      nold=len(re.findall(r'(?:è|ò)', body))  # caution : è is two characters! : avoid [èò]
+      nnew=len(re.findall(r'(?:ɛ|ɔ)', body))
+      if nold > nnew : script="Ancien orthographe malien"
+
     print(" ! textscript not set for "+filenametemp+" !!!  ASSUMED : "+script)
 
 if script=="Ancien orthographe malien" : tonal="old"
@@ -158,7 +163,7 @@ elif script=="Autres orthographes latines" : tonal="newny"   # forces to this de
 if  filenametemp.startswith("baabu_ni_baabu") or filenametemp.startswith("gorog_meyer-contes_bambara1974") :
   tonal="newny"
 
-if tonal=="" : sys.exit("text:script non defini : pas de meta ou pas d'argument (tonal, bailleul)")
+if tonal=="" : sys.exit("\033[1mtext:script non defini\033[0m : pas de meta ou pas d'argument (tonal, bailleul)")
 # never happens : tonal ha sbeen set by default as "new"
 
 totalmots = body.count("class=\"w\"")   # is needed in the final message to compute average ambiguous left and elapse time/word
@@ -167,7 +172,7 @@ totalmots = body.count("class=\"w\"")   # is needed in the final message to comp
 
 # check if file is new format nov 2021
 if '</span><span class="w"' in body or '</span><span class="c"' in body:
-  body=re.sub(r'\n</span><span class="(w|c|t)"','</span>\n<span class="\g<1>"',body,0,re.U|re.MULTILINE)
+  body=re.sub(r'\n</span><span class="(w|c|t)"',r'</span>\n<span class="\g<1>"',body,0,re.U|re.MULTILINE)
 
 # normalize single quotes to avoid pop-up messages in gdisamb complaining that k' is not the same as k’
 # tilted quote (word) to straight quotes (as in Bamadaba)
@@ -316,8 +321,8 @@ body=re.sub(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 # (bamana.gram rules no longer works)
 prefsearch=r'<span class="sent">([^<]*)(?P<stem>[0-9]+)(?P<stemnan>nan|NAN|n)([\s\.\,\;\:\?\!\)\""][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
 nextsearch=r'<span class="w" stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span></span>\n<span class="w" stage="[^\"]">(?P=stemnan)<span class="lemma">(?:nan|ń)<sub class="ps">(?:num|pers)</sub><sub class="gloss">(?:ORD|1SG)</sub></span></span>\n'
-prefrepl=u'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
-nextrepl=u'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
+prefrepl=r'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
+nextrepl=r'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
 wsearch=prefsearch+nextsearch
 wrepl=prefrepl+nextrepl
 #print "\nNUMnan wsearch:",wsearch
@@ -328,8 +333,8 @@ while nombre>0:
 # handling NUM nan types not handled well in gparser - case "23 nan"
 prefsearch=r'<span class="sent">([^<]*)(?P<stem>[0-9]+) (?P<stemnan>nan|NAN)([\s\.\,\;\:\?\!\)\"][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
 nextsearch=r'<span class="w" stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span>\n</span><span class="w" stage="2">(?P=stemnan)<span class="lemma">nan<sub class="ps">num</sub><sub class="gloss">ORD</sub></span></span>\n'
-prefrepl=u'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
-nextrepl=u'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
+prefrepl=r'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
+nextrepl=r'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
 wsearch=prefsearch+nextsearch
 wrepl=prefrepl+nextrepl
 #print "\nNUM nan wsearch:",wsearch

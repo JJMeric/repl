@@ -60,7 +60,7 @@ for sentence in sentences:
   #print nsent,"---",sentence
   sentence=sentence+"</span>"   # close last lemma or punct or tag
   
-  originalsent=re.search('<span class="sent"[^\>]*>([^<]*)',sentence,re.U|re.MULTILINE)
+  originalsent=re.search(r'<span class="sent"[^\>]*>([^<]*)',sentence,re.U|re.MULTILINE)
   original=originalsent.group(1)
   original=original.replace("&lt;","<")
   original=original.replace("&gt;",">")
@@ -95,8 +95,8 @@ for sentence in sentences:
     disamb=disamb+item+" "
     itemprec=item
   disamb=disamb.strip()
-  disamb=re.sub(r"([^aA])' ","\g<1>'",disamb) # suppress space after assimilation quote (except for a' 2PL)
-  disamb=re.sub(r" ([\,\.])","\g<1>",disamb)  # suppress space before comma and point
+  disamb=re.sub(r"([^aA])' ",r"\g<1>'",disamb) # suppress space after assimilation quote (except for a' 2PL)
+  disamb=re.sub(r" ([\,\.])",r"\g<1>",disamb)  # suppress space before comma and point
   disamb=re.sub(r' +',' ', disamb)
   original=original.strip()
   original=re.sub(r' +',' ',original)

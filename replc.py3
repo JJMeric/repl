@@ -256,10 +256,7 @@ logfilename=filenametemp+"-replacements.log"
 log =  open (logfilename,"w", encoding="utf-8")
 
 toutrepl=fileREP.read()
-nlignereplall=toutrepl.count('\n')
-nlignereplact=re.findall(r"\n[^\#\s\n]",toutrepl,re.U|re.MULTILINE)
-nlignerepl=len(nlignereplact)
-print(nlignereplall," lignes   ", nlignerepl," règles")
+
 
 fileADHOCname="REPL.txt"
 if os.path.exists(fileADHOCname):
@@ -279,12 +276,16 @@ if os.path.exists(fileADHOCname):
   print("+ ajoute ",nltoutADHOCall," lignes de ",fileADHOCname)
   toutrepl=toutADHOC+"\n"+toutrepl
 
-
+nlignereplall=toutrepl.count('\n')
+nlignereplact=re.findall(r"\n[^\#\s\n]",toutrepl,re.U|re.MULTILINE)
+nlignerepl=len(nlignereplact)
+print(nlignereplall," lignes   ", nlignerepl," règles")
 
 print("text:script="+script+    ",    tonal="+tonal)
 
 if arg=="tonal" or arg=="-tonal" : tonal="tonal"
 elif arg=="bailleul" or arg=="-bailleul" : tonal="bailleul"
+elif arg=="dukure" or arg=="-dukure": tonal="dukure"
 
 print("paramètre retenu: tonal =",tonal)
 
@@ -326,7 +327,7 @@ if nb_unparsed >0 :
 # à créer : VQORADJ- concerne 20 vq (var comprises)
 
 valides="_COMMA_DOT_QUESTION_COLON_SEMICOLON_EXCLAM_PUNCT_NAME_NPROPRE_NPROPRENOM_NPROPRENOMM_NPROPRENOMF_NPROPRENOMMF_NPROPRENOMCL_NPROPRETOP_PERS_PRONOM_VERBE_VPERF_VNONPERF_VERBENMOD_VQ_DTM_PARTICIPE_PRMRK_COPULE_ADJECTIF_POSTP_NUM_NUMANNEE_ADV_ADVP_CONJ_PREP_AMBIGUOUS_DEGRE_DEBUT_BREAK_ADVN_VN_PRT_LAQUO_RAQUO_LDQUO_RDQUO_PARO_PARF_APOSTROPHE_GUILLEMET_PRMRKQUAL_VQADJ_VQORADJ_CONJPREP_COMMENT_TAG_FIN_CONJPOSS_PPPOSS_PRNDTM_TIRET_ADJN_DOONIN_PERCENT_NORV_NORADJ_AORN_DORP_ADJORD_PMORCOP_DTMORADV_INTJ_IPFVAFF_IPFVNEG_PFVTR_PFVNEG_PMINF_PMSBJV_NICONJ_YEUNDEF_KUNDEF_YEPP_YEEQU_NACERT_NIUNDEF_NAUNDEF_NONVERBALGROUP_NUMORD_MONTH_COPEQU_COPQUOT_COPNEG_ACTION_CONSONNE_LANA_LETTRE_"
-fixevalides="_ETRG_ETRG.FRA_ETRG.USA_ETRG.ENG_ETRG.GER_ETRG.ARB_ETRG.FUL_ETRG.MNK_CHNT_Q_PREV_INCOGN_"
+fixevalides="_ETRG_ETRG.FRA_ETRG.USA_ETRG.ENG_ETRG.GER_ETRG.ARB_ETRG.FUL_ETRG.MNK_CHNT_Q_PREV_INCOGN_ABR_"
 
 if script=="N’Ko":
   psvalides="|adj|ap|adv|adv.p|conj|conv.n|cop|dtm|intj|mrph|n|n.prop|num|onomat|pers|pm|pp|prep|prn|prt|ptcp|v|vq|pers/cop|pers/pm|"
@@ -358,7 +359,7 @@ else:
   conjlist="ô:conj:DISTR_ôo:conj:DISTR_wô:conj:DISTR_"
   prtlist="dè:prt:FOC_dùn:prt:TOP.CNTR_dún:prt:TOP.CNTR_kɔ̀ni:prt:TOP.CNTR2_tùn:prt:PST_kùn:prt:PST_wà:prt:Q_"
   mrphlist="lá:mrph:CAUS_la:mrph:CAUS_ná:mrph:CAUS_mà:mrph:SUPER_màn:mrph:SUPER_rɔ́:mrph:IN_lu:mrph:PL2_nu:mrph:PL2_ba:mrph:AUGM_baa:mrph:AG.OCC_baga:mrph:AG.OCC_bali:mrph:PTCP.NEG_ka:mrph:GENT_la:mrph:AG.PRM_na:mrph:AG.PRM_la:mrph:LOC_na:mrph:LOC_la:mrph:PRIX_na:mrph:PRIX_la:mrph:MNT1_na:mrph:MNT1_lata:mrph:MNT2_nata:mrph:MNT2_la:mrph:PROG_na:mrph:PROG_la:mrph:PFV.INTR_na:mrph:PFV.INTR_n':mrph:PFV.INTR_ra:mrph:PFV.INTR_rá:mrph:IN_rɔ́:mrph:IN_w:mrph:PL_"
-  mrphlist=mrphlist+"lama:mrph:STAT_nama:mrph:STAT_lan:mrph:INSTR_nan:mrph:INSTR_len:mrph:PTCP.RES_nen:mrph:PTCP.RES_li:mrph:NMLZ_ni:mrph:NMLZ_\:mrph:NMLZ2_ma:mrph:COM_ma:mrph:RECP.PRN_man:mrph:ADJ_ntan:mrph:PRIV_ra:mrph:OPT2_la:mrph:OPT2_na:mrph:OPT2_"
+  mrphlist=mrphlist+"lama:mrph:STAT_nama:mrph:STAT_lan:mrph:INSTR_nan:mrph:INSTR_len:mrph:PTCP.RES_nen:mrph:PTCP.RES_li:mrph:NMLZ_ni:mrph:NMLZ_\\:mrph:NMLZ2_ma:mrph:COM_ma:mrph:RECP.PRN_man:mrph:ADJ_ntan:mrph:PRIV_ra:mrph:OPT2_la:mrph:OPT2_na:mrph:OPT2_"
   mrphlist=mrphlist+"ma:mrph:DIR_nan:mrph:ORD_nin:mrph:DIM_bali:mrph:PRIV_nci:mrph:AG.EX_ɲɔgɔn:mrph:RECP_ɲwan:mrph:RECP_ta:mrph:PTCP.POT_tɔ:mrph:CONV_tɔ:mrph:ST_ya:mrph:DEQU_yɛ:mrph:DEQU_ya:mrph:ABSTR_lá:mrph:CAUS_lán:mrph:CAUS_ná:mrph:CAUS_rɔ́:mrph:CAUS_ma:mrph:SUPER_man:mrph:SUPER_sɔ̀:mrph:EN_"
   # = ABSTR|ADJ|AG.EX|AG.OCC|AG.PRM|AUGM|CAUS|COM|CONV|DEQU|DIM|DIR|EN|GENT|IN|INSTR|LOC|MNT1|MNT2|NMLZ|NMLZ2|OPT2|ORD|PFV.INTR|PL|PL2|PRIV|PRIX|PROG|PTCP.NEG|PTCP.POT|PTCP.RES|RECP|RECP.PRN|ST|STAT|SUPER
   # il manque à comme dans la:mrph:à   ??
@@ -398,7 +399,7 @@ if arg=="-d" or arg3=="-d" : logdetails=True
 # check if file is new format nov 2021
 if '</span><span class="w"' in body or '</span><span class="c"' in body:
   print("adapting file to new html format")
-  body,nadapt=re.subn(r'\n</span><span class="(w|c|t)"','</span>\n<span class="\g<1>"',body,0,re.U|re.MULTILINE)
+  body,nadapt=re.subn(r'\n</span><span class="(w|c|t)"',r'</span>\n<span class="\g<1>"',body,0,re.U|re.MULTILINE)
   print(nadapt,"lines adapted")
 
 # suppress artificial empty sentences
@@ -418,43 +419,6 @@ if nombre>0 :
   nbrulesapplied=nbrulesapplied+1
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
-
-"""# Dukure ---------------------------------------------------
-# normaliser les Ɲ
-wsearch=ur'<span class="w" stage="([^\"]+)">Л([^\<\n]+)<span class="lemma">л([^<\n]+)<'
-wrepl=ur'<span class="w" stage="\g<1>">Ɲ\g<2><span class="lemma">ɲ\g<3><'
-body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  DUK normalise Л->Ɲ " % nombre +"\n"
-  log.write(msg)
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
-
-#  normaliser les ʃ - !!! suppose qu'il n'y en a qu'un par mot !!!
-wsearch=ur'<span class="w" stage="([^\"]+)">([^\<\ʃ]*)ʃ([^\<]+)<span class="lemma">([^\<\ʃ]*)ʃ([^\<]+)<'
-wrepl=ur'<span class="w" stage="\g<1>">\g<2>sh\g<3><span class="lemma">\g<4>sh\g<5><'
-body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  DUK normalise ʃ->sh " % nombre +"\n"
-  log.write(msg)
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
-
-# on est sensé être en non tonal (attention dans kà c'est le dernier!)
-wsearch=ur'<span class="w" stage="([^\"]+)">([^\<\̀]*)\̀([^\<]*)<span class="lemma">([^\<\̀]*)\̀([^\<]*)<'
-wrepl=ur'<span class="w" stage="\g<1>">\g<2>\g<3><span class="lemma">\g<4>\g<5><'
-body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  DUK normalise supprimer le premier ton bas " % nombre +"\n"
-  log.write(msg)
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
-
-# ------------------------------ fin Dukure
-"""
 
 # propre names with initial CAPITAL letter please !
 # >([A-Za-z])([^<]+)<sub class="ps">n.prop
@@ -486,17 +450,17 @@ if nombre>0 :
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
-""" ne marche pas à revoir# gloses inutiles en lemma var  - 28/02/2024
-wsearch=r'<span class="lemma var">[^\n\<]+<sub class="ps">[^\n\<]+</sub><span class="m">'
-wrepl=r'<span class="lemma var">'
-body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
-if nombre>0 :
-  msg="%i modifs suppression lemma var simple sans glose " % nombre +"\n"
-  log.write(msg)
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
-"""
+# ne marche pas à revoir# gloses inutiles en lemma var  - 28/02/2024
+# wsearch=r'<span class="lemma var">[^\n\<]+<sub class="ps">[^\n\<]+</sub><span class="m">'
+# wrepl=r'<span class="lemma var">'
+# body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+# if nombre>0 :
+#   msg="%i modifs suppression lemma var simple sans glose " % nombre +"\n"
+#   log.write(msg)
+#   nbrulesapplied=nbrulesapplied+1
+#   nbmodif=nbmodif+nombre
+#   nbmots=nbmots+nombre
+
 
 # non Majuscules non parsés et mis en majuscules!
 wsearch=r'>([A-ZƐƆƝŊ])([^<]+)<span class="lemma">[a-zɛɔɲŋ][^<]+</span></span>\n'
@@ -642,17 +606,17 @@ if nombre>0 :
   nbmots=nbmots+nombre
 
 
-""" VOIR PLUS BAS # éliminer les gloses bizarres des ordinaux : <span class="lemma">39nan<span class="lemma var">39nan<
-wsearch=ur'<span class="lemma">(?P<stem>[0-9]+)nan<span class="lemma var">(?P=stem)nan<sub class="ps">adj</sub><span class="m">(?P=stem)<sub class="ps">num</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
-wrepl=ur'<span class="lemma">\g<1>nan<sub class="ps">adj</sub><span class="m">\g<1><sub class="ps">num</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n'
-body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  # Gloss doubles lemma/lemma var
-if nombre>0 :
-  msg="%i modifs ordinaux type 39nan avec lemma var" % nombre +"\n"
-  log.write(msg)
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
-"""
+# """ VOIR PLUS BAS # éliminer les gloses bizarres des ordinaux : <span class="lemma">39nan<span class="lemma var">39nan<
+# wsearch=ur'<span class="lemma">(?P<stem>[0-9]+)nan<span class="lemma var">(?P=stem)nan<sub class="ps">adj</sub><span class="m">(?P=stem)<sub class="ps">num</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
+# wrepl=ur'<span class="lemma">\g<1>nan<sub class="ps">adj</sub><span class="m">\g<1><sub class="ps">num</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span>\n'
+# body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  # Gloss doubles lemma/lemma var
+# if nombre>0 :
+#   msg="%i modifs ordinaux type 39nan avec lemma var" % nombre +"\n"
+#   log.write(msg)
+#   nbrulesapplied=nbrulesapplied+1
+#   nbmodif=nbmodif+nombre
+#   nbmots=nbmots+nombre
+# """
 
 # remettre dans l'ordre n/v les doublons dictionnaire v/n pour les détections NORV
 # CAS SIMPLE
@@ -708,59 +672,60 @@ if nombre>0 :
   nbmodif=nbmodif+nombre
   nbmots=nbmots+nombre
 
-#
-# déterminer les noms propres, même vaguement!
-#
-# mot non initial commençant par une majuscule
-# et ambigu :
-# remarque : ça pose problème pour Waraba, Suruku, Sonsannin... pour l'instant fixés dans REPL-STANDARD
-
-# <span class="w" stage="0">Kati<span class="lemma">Kati<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub><span class="lemma var">káti<sub class="ps">n</sub><sub class="gloss">caractère</sub></span><span class="lemma var">káti<sub class="ps">adv</sub><sub class="gloss">très.fort</sub></span></span></span>\n
-#wsearch=ur'</span><span class="w" stage="[0-9\-]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">(?P=w)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub>((<span class="lemma var">[^<]+<sub class="ps">[^<\.]+</sub><sub class="gloss">[^<]+</sub></span>)+)</span></span>\n'
-#wsearch=ur'</span><span class="w" stage="[0-9\-]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">(?P=w)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*lemma var.*></span></span>\n'
-#wrepl=ur'</span><span class="w" stage="0">\g<1><span class="lemma">\g<1><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span></span>\n'
-#wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*lemma var.*></span></span>\n'
-wsearch=r'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*"ps">(?!n\.prop).*></span></span>\n'
-# the above fails in sublime text editor ? works ok with \< after non capturing group
-#wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*"ps">(?:n|v|adj|vq|pers|prn|dtm|conj|prep|prt|adv|adv.p|pp|pm|cop|intj|onomat)<.*></span></span>\n'
-wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span></span>\n'
-body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
-if nombre>0 :
-  msg="%i modifs autres NOMPROPRE non initial avec lemma TOP et lemmavar non n.prop " % nombre +"\n"
-  log.write(msg)
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
-
-wsearch=r'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.CL</sub><.*"ps">(?!n\.prop).*></span></span>\n'
-wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.CL</sub></span></span>\n'
-body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
-if nombre>0 :
-  msg="%i modifs autres NOMPROPRE non initial avec lemma NOM.CL et lemmavar non n.prop " % nombre +"\n"
-  log.write(msg)
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
-
-wsearch=r'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.M</sub><.*"ps">(?!n\.prop).*></span></span>\n'
-wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.M</sub></span></span>\n'
-body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
-if nombre>0 :
-  msg="%i modifs autres NOMPROPRE non initial avec lemma NOM.M et lemmavar non n.prop " % nombre +"\n"
-  log.write(msg)
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
-
-wsearch=r'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.F</sub><..*"ps">(?!n\.prop).*></span></span>\n'
-wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.F</sub></span></span>\n'
-body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
-if nombre>0 :
-  msg="%i modifs autres NOMPROPRE non initial avec lemma NOM.F et lemmavar non n.prop " % nombre +"\n"
-  log.write(msg)
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
+# REMOVED 13/02/2025 -mparser works better now
+# # déterminer les noms propres, même vaguement!
+# #
+# # mot non initial commençant par une majuscule
+# # et ambigu :
+# # remarque : ça pose problème pour Waraba, Suruku, Sonsannin... pour l'instant fixés dans REPL-STANDARD
+# 
+# # <span class="w" stage="0">Kati<span class="lemma">Kati<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub><span class="lemma var">káti<sub class="ps">n</sub><sub class="gloss">caractère</sub></span><span class="lemma var">káti<sub class="ps">adv</sub><sub class="gloss">très.fort</sub></span></span></span>\n
+# #wsearch=ur'</span><span class="w" stage="[0-9\-]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">(?P=w)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub>((<span class="lemma var">[^<]+<sub class="ps">[^<\.]+</sub><sub class="gloss">[^<]+</sub></span>)+)</span></span>\n'
+# #wsearch=ur'</span><span class="w" stage="[0-9\-]+">(?P<w>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.]+)<span class="lemma">(?P=w)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*lemma var.*></span></span>\n'
+# #wrepl=ur'</span><span class="w" stage="0">\g<1><span class="lemma">\g<1><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span></span>\n'
+# #wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*lemma var.*></span></span>\n'
+# wsearch=r'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*"ps">(?!n\.prop).*></span></span>\n'
+# # the above fails in sublime text editor ? works ok with \< after non capturing group
+# #wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">TOP</sub><.*"ps">(?:n|v|adj|vq|pers|prn|dtm|conj|prep|prt|adv|adv.p|pp|pm|cop|intj|onomat)<.*></span></span>\n'
+# wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span></span>\n'
+# body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+# if nombre>0 :
+#   msg="%i modifs autres NOMPROPRE non initial avec lemma TOP et lemmavar non n.prop " % nombre +"\n"
+#   log.write(msg)
+#   nbrulesapplied=nbrulesapplied+1
+#   nbmodif=nbmodif+nombre
+#   nbmots=nbmots+nombre
+# 
+# wsearch=r'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.CL</sub><.*"ps">(?!n\.prop).*></span></span>\n'
+# wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.CL</sub></span></span>\n'
+# body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+# if nombre>0 :
+#   msg="%i modifs autres NOMPROPRE non initial avec lemma NOM.CL et lemmavar non n.prop " % nombre +"\n"
+#   log.write(msg)
+#   nbrulesapplied=nbrulesapplied+1
+#   nbmodif=nbmodif+nombre
+#   nbmots=nbmots+nombre
+# 
+# wsearch=r'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.M</sub><.*"ps">(?!n\.prop).*></span></span>\n'
+# wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.M</sub></span></span>\n'
+# body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+# if nombre>0 :
+#   msg="%i modifs autres NOMPROPRE non initial avec lemma NOM.M et lemmavar non n.prop " % nombre +"\n"
+#   log.write(msg)
+#   nbrulesapplied=nbrulesapplied+1
+#   nbmodif=nbmodif+nombre
+#   nbmots=nbmots+nombre
+# 
+# wsearch=r'(</span>|</span>\n)<span class="w" +stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n\.prop</sub><sub class="gloss">NOM\.F</sub><..*"ps">(?!n\.prop).*></span></span>\n'
+# wrepl=r'\g<1><span class="w" stage="0">\g<2><span class="lemma">\g<3><sub class="ps">n.prop</sub><sub class="gloss">NOM.F</sub></span></span>\n'
+# body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
+# if nombre>0 :
+#   msg="%i modifs autres NOMPROPRE non initial avec lemma NOM.F et lemmavar non n.prop " % nombre +"\n"
+#   log.write(msg)
+#   nbrulesapplied=nbrulesapplied+1
+#   nbmodif=nbmodif+nombre
+#   nbmots=nbmots+nombre
+# 
 
 # this should not screw valid ones like Eziputikaw
 #wsearch=ur'(</span>|</span>\n)<span class="w" stage="[0-9\-]+">([A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<span class="lemma">(.+GENT.+)<span class="lemma var">(?P<lv>[A-ZƐƆƝŊ][a-zɛɔɲŋ\-\.́̀̌̂]+)<sub class="ps">n.prop</sub><sub class="gloss">(?P=lv)</sub></span></span>\n'
@@ -827,8 +792,8 @@ if nombre>0 :
 # (bamana.gram rules no longer works)
 prefsearch=r'<span class="sent">([^<]*)(?P<stem>[0-9]+)(?P<stemnan>nan|NAN|n)([\s\.\,\;\:\?\!\)\"\&][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
 nextsearch=r'<span class="w" +stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span></span>\n<span class="w" +stage="[^\"]">(?P=stemnan)<span class="lemma">(?:nan|ń)<sub class="ps">(?:num|pers)</sub><sub class="gloss">(?:ORD|1SG)</sub></span></span>\n'
-prefrepl='<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
-nextrepl='<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
+prefrepl=r'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
+nextrepl=r'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
 wsearch=prefsearch+nextsearch
 wrepl=prefrepl+nextrepl
 #print ("\nNUMnan wsearch:",wsearch)
@@ -845,8 +810,8 @@ while nombre>0:
 # handling NUM nan types not handled well in gparser - CASE   "23 nan" - case where the original text splits 23 & nan
 prefsearch=r'<span class="sent">([^<]*)(?P<stem>[0-9]+) (?P<stemnan>nan|NAN)([\s\.\,\;\:\?\!\)\"\&][^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
 nextsearch=r'<span class="w" +stage="tokenizer">(?P=stem)<span class="lemma">(?P=stem)<sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span></span>\n<span class="w" stage="2">(?P=stemnan)<span class="lemma">nan<sub class="ps">num</sub><sub class="gloss">ORD</sub></span></span>\n'
-prefrepl='<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
-nextrepl='<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
+prefrepl=r'<span class="sent">\g<1>\g<2>\g<3>\g<4><span class="annot">\g<5>'
+nextrepl=r'<span class="w" stage="0">\g<2>\g<3><span class="lemma">\g<2>nan<sub class="ps">adj</sub><sub class="gloss">ORDINAL</sub><span class="m">\g<2><sub class="ps">num</sub><sub class="gloss">CARDINAL</sub></span><span class="m">nan<sub class="ps">mrph</sub><sub class="gloss">ORD</sub></span></span></span>\n'
 wsearch=prefsearch+nextsearch
 wrepl=prefrepl+nextrepl
 # print ("\nNUMnan wsearch:",wsearch)
@@ -862,7 +827,7 @@ while nombre>0:
 
 # handling assimilation on derived verbs PFV.INTR - replace ' by a in lx and in mrph   07 mar 2022
 wsearch=r'''>([^\<]+)'<sub class="ps">v</sub><span class="m">([^\<]+)<sub class="ps">v</sub><sub class="gloss">([^\<]+)</sub></span><span class="m">([rln])'<sub class="ps">mrph</sub><sub class="gloss">PFV.INTR'''
-wrepl='>\g<1>a<sub class="ps">v</sub><span class="m">\g<2><sub class="ps">v</sub><sub class="gloss">\g<3></sub></span><span class="m">\g<4>a<sub class="ps">mrph</sub><sub class="gloss">PFV.INTR'
+wrepl=r'>\g<1>a<sub class="ps">v</sub><span class="m">\g<2><sub class="ps">v</sub><sub class="gloss">\g<3></sub></span><span class="m">\g<4>a<sub class="ps">mrph</sub><sub class="gloss">PFV.INTR'
 body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)
 if nombre>0 :
   msg="%i modifs to handle assimilation on derived verbs PFV.INTR - replace ' by a " % nombre +"\n"
@@ -875,7 +840,7 @@ if nombre>0 :
 shortv=0
 # wsearch=r'''<span class="lemma">b'</span></span>\n'''
 wsearch=r'''<span class="lemma">b'<sub class="ps">pm</sub><sub class="gloss">IPFV\.AFF<([^\n]+)</span></span>\n'''
-wrepl='''<span class="lemma">b'<sub class="ps">pm</sub><sub class="gloss">IPFV.AFF<\g<1>'''
+wrepl=r'''<span class="lemma">b'<sub class="ps">pm</sub><sub class="gloss">IPFV.AFF<\g<1>'''
 wrepl=wrepl+'<span class="lemma var">bɔ́<sub class="ps">v</sub><sub class="gloss">sortir</sub></span>'
 wrepl=wrepl+'<span class="lemma var">bù<sub class="ps">v</sub><sub class="gloss">triturer</sub></span>'
 wrepl=wrepl+'<span class="lemma var">bɔ̀<sub class="ps">v</sub><sub class="gloss">arracher</sub></span>'
@@ -903,7 +868,7 @@ shortv=shortv+nombre
 
 #wsearch=r'''<span class="lemma">f'</span></span>\n'''
 wsearch=r'''<span class="lemma">f'<sub class="ps">prep</sub><sub class="gloss">jusqu'à<([^\n]+)</span></span>\n'''
-wrepl='''<span class="lemma">f'<sub class="ps">prep</sub><sub class="gloss">jusqu'à<\g<1>'''
+wrepl=r'''<span class="lemma">f'<sub class="ps">prep</sub><sub class="gloss">jusqu'à<\g<1>'''
 wrepl=wrepl+'<span class="lemma var">fɔ́<sub class="ps">v</sub><sub class="gloss">dire</sub></span>'
 wrepl=wrepl+'<span class="lemma var">fɔ́<sub class="ps">v</sub><sub class="gloss">rater</sub></span>'
 wrepl=wrepl+'<span class="lemma var">fá<sub class="ps">v</sub><sub class="gloss">remplir</sub></span>'
@@ -931,7 +896,7 @@ shortv=shortv+nombre
 
 # wsearch=r'''<span class="lemma">k'</span></span>\n'''
 wsearch=r'''<span class="lemma">k'<sub class="ps">pp</sub><sub class="gloss">POSS<([^\n]+)</span></span>\n'''
-wrepl='''<span class="lemma">k'<sub class="ps">pp</sub><sub class="gloss">POSS<\g<1>'''
+wrepl=r'''<span class="lemma">k'<sub class="ps">pp</sub><sub class="gloss">POSS<\g<1>'''
 wrepl=wrepl+'<span class="lemma var">kɛ́<sub class="ps">v</sub><sub class="gloss">faire</sub></span>'
 wrepl=wrepl+'<span class="lemma var">kà<sub class="ps">v</sub><sub class="gloss">nier</sub></span>'
 wrepl=wrepl+'<span class="lemma var">kò<sub class="ps">v</sub><sub class="gloss">laver</sub></span>'
@@ -953,7 +918,7 @@ shortv=shortv+nombre
 
 # wsearch=r'''<span class="lemma">t'</span></span>\n'''
 wsearch=r'''<span class="lemma">t'<sub class="ps">pm</sub><sub class="gloss">IPFV\.NEG<([^\n]+)</span></span>\n'''
-wrepl='''<span class="lemma">t'<sub class="ps">pm</sub><sub class="gloss">IPFV.NEG<\g<1>'''
+wrepl=r'''<span class="lemma">t'<sub class="ps">pm</sub><sub class="gloss">IPFV.NEG<\g<1>'''
 wrepl=wrepl+'<span class="lemma var">táa<sub class="ps">v</sub><sub class="gloss">aller</sub></span>'
 wrepl=wrepl+'<span class="lemma var">tà<sub class="ps">v</sub><sub class="gloss">prendre</sub></span>'
 wrepl=wrepl+'<span class="lemma var">tó<sub class="ps">v</sub><sub class="gloss">rester</sub></span>'
@@ -987,6 +952,8 @@ allwordslist=allwords.findall(body,re.U|re.MULTILINE)
 allwordsshortlist=[]
 ndigits=0
 for thisword in allwordslist:
+#  if tonal!="tonal":
+#    thisword=re.sub(r'[́̀̌̂]','',thisword)
   if thisword not in allwordsshortlist: 
     allwordsshortlist.append(thisword)
     if re.match(r"^[0-9]+$",thisword): ndigits=ndigits+1
@@ -1095,14 +1062,16 @@ for linerepl in toutrepllines :
     differ=True
     
   if tonal=="bailleul" : 
-    liste_mots=re.sub("́","",liste_mots)
-    liste_mots=re.sub("̂","",liste_mots)
+    liste_mots=re.sub("́","",liste_mots)  # ton haut \u0301
+    liste_mots=re.sub("̂","",liste_mots)  # ton descendant \u0302
+  elif tonal=="dukure" :
+    liste_mots=re.sub("́","",liste_mots)  # ton haut \u0301
+    liste_mots=re.sub("̂","",liste_mots)  # ton descendant \u0302
+    liste_mots=re.sub("̌","",liste_mots)  # ton ascendant \u030C
   elif tonal!="tonal" :  
     # ne pas faire pour les mots ETRG.FRA dans les définitions uniques (les tons haut bas et descendants sont utilisés pour simuler les accents français)
     if not (("_" not in liste_mots) and ("ETRG.FRA" in liste_gloses)):
       liste_mots=re.sub("́","",liste_mots)
-      #liste_mots=re.sub("̀","̀*",liste_mots)   # DUKure : les tons bas ----- à enlever pour word
-      # cette ligne ci-dessus est très dangereuse car fò* peut être à la fois fo "saluer" et fɔ "dire" A REVOIR
       liste_mots=re.sub("̀","",liste_mots)  # cas normal
       liste_mots=re.sub("̌","",liste_mots)
       liste_mots=re.sub("̂","",liste_mots)
@@ -1118,7 +1087,7 @@ for linerepl in toutrepllines :
   elif  tonal=="newny" :  
     liste_mots=re.sub("ɲ",r"ny",liste_mots)
     liste_mots=re.sub("Ɲ",r"Ny",liste_mots)
-
+  
   liste_mots=re.sub("é","é",liste_mots)   # normaliser les caractères français éventuels (ETRG.FRA intégraux possibles)
   liste_mots=re.sub("è","è",liste_mots)
   liste_mots=re.sub("ë","ë",liste_mots)
@@ -1140,27 +1109,27 @@ for linerepl in toutrepllines :
     log.write("pas d'espace à gauche de === svp !\n")
     sys.exit("\n"+liste_mots+"\nespace à gauche de ===")
     
-  semicolumns=re.findall("\:",liste_gloses)
+  semicolumns=re.findall(r"\:",liste_gloses)
   nbsemic=len(semicolumns)
   if (2*int(nbsemic/2))!=nbsemic :
     log.write("il manque un : dans '"+liste_gloses+"'\n")
     sys.exit("\n"+liste_gloses+"\nerreur de syntaxe ':' dans une glose")   # test sur l'ensemble de la liste des glose, pas sur chaque glose prise individuellement
 
-  openbrackets=re.findall("\[",liste_gloses)
+  openbrackets=re.findall(r"\[",liste_gloses)
   nbopen=len(openbrackets)
-  closebrackets=re.findall("\]",liste_gloses)
+  closebrackets=re.findall(r"\]",liste_gloses)
   nbclose=len(closebrackets)
   if nbopen!=nbclose :
     log.write("problème de [ et ] mal ouvertes/fermées dans '"+liste_gloses+"'\n")
     sys.exit("\n"+liste_gloses+"\nerreur de syntaxe '[/]' dans une glose")
 
-  spacesemicolumns=re.findall("\s\:",liste_gloses)
+  spacesemicolumns=re.findall(r"\s\:",liste_gloses)
   nbspsemic=len(spacesemicolumns)
   if nbspsemic>0 :
     log.write("il y a un espace devant un : dans '"+liste_gloses+"'\n")
     sys.exit("\n"+liste_gloses+"\nerreur de syntaxe ' :' dans une glose") 
 
-  doublelowbar=re.findall("\_\_",liste_gloses)
+  doublelowbar=re.findall(r"\_\_",liste_gloses)
   nbdoublelowbar=len(doublelowbar)
   if nbdoublelowbar>0 :
     log.write("il y a une répétition de _ dans '"+liste_gloses+"'\n")
@@ -1169,7 +1138,7 @@ for linerepl in toutrepllines :
   # gloses spéciales
   # noms valides ?
   #                 verif seulement sur liste_mot car liste_gloses peut contenir de nombreuses glose majuscules comme PFV.TR
-  m=re.findall(r"(\_[A-Z][A-Z]+\_)","_"+re.sub("\_","__",liste_mots)+"_")   # caution: findall only find non overlapping sequences _TU_YA_SI_ only finds _TU_ and _SI_, but  not _YA_
+  m=re.findall(r"(\_[A-Z][A-Z]+\_)","_"+re.sub(r"\_","__",liste_mots)+"_")   # caution: findall only find non overlapping sequences _TU_YA_SI_ only finds _TU_ and _SI_, but  not _YA_
   #print u"_"+re.sub(u"\_",u"__",liste_mots)+u"_"
   #print m
   if m!=None:
@@ -1196,7 +1165,7 @@ for linerepl in toutrepllines :
   #
   # pour la partie gloses, il faut être plus complet : valider également les gloses Corpus !!!
   #
-  m=re.findall(r"(\_[0-9]*[A-Z][A-Z\.]+[0-9]*\_)","_"+re.sub("\_","__",liste_gloses)+"_")
+  m=re.findall(r"(\_[0-9]*[A-Z][A-Z\.]+[0-9]*\_)","_"+re.sub(r"\_","__",liste_gloses)+"_")
   if m!=None:
     for gspe in m :
       #print gspe
@@ -1205,7 +1174,7 @@ for linerepl in toutrepllines :
         sys.exit("\nGlose speciale non valide a droite de === : "+gspe+"\n"+liste_gloses)
   
   # maintenant validons les gloses spéciales en détail
-  m=lxpsg.findall("_"+re.sub("\_","__",liste_gloses)+"_")
+  m=lxpsg.findall("_"+re.sub(r"\_","__",liste_gloses)+"_")
   if m!=None :
     for lxpsgloss in m :
       #log.write("- "+lxpsgloss+"\n")
@@ -1215,7 +1184,7 @@ for linerepl in toutrepllines :
       # ajout de quelques "not in" pour permettre quelques gloses en majuscules a liste non fermée
       # 18 OCT 16 : Pourquoi ne pas sortir les n.prop de ce test ??? ≠===================================
       #if "_"+lxpsgloss_gloss+"_" not in "_ETRG.FRA_TOP_NOM.M_NOM.F_NOM.MF_NOM.CL_NOM.ETRG_" :
-      if (lxpsgloss_ps!="n.prop" and lxpsgloss_gloss+"_" not in fixevalides) :
+      if (lxpsgloss_ps not in ["n.prop","n"] and lxpsgloss_gloss+"_" not in fixevalides) :
         if  lxpsgloss+"_" not in lxpsgvalides:
           log.write(lxpsgloss_gloss+" : problème avec la glose ?standard? "+lxpsgloss+"\n"+"Valides:"+lxpsgvalides+"\n")
           sys.exit("\n"+liste_gloses+"\n"+lxpsgloss_gloss+" : Glose ?standard? non valide a gauche de === "+lxpsgloss+"\nVoir le log : "+logfilename)
@@ -1303,79 +1272,6 @@ for linerepl in toutrepllines :
               break
             
         else:
-          # ajouter ici le code pour les transf Ɲ et verbes Majusc
-          # modifs DUKure ---------------
-          """"
-          if mot[0]=="ɲ" : 
-            mot=ur"(?:ɲ|л|Л)"+mot[1:]  # majuscule en cas (no testé) de verbe
-            #print "mot: ",mot
-          elif mot[0]=="Ɲ" :
-            mot=ur"(?:Ɲ|Л)"+mot[1:]
-            #print "mot: ",mot
-          else:
-            if not differ:
-
-              motglose=gloses[indexmot]
-              if "§§" in motglose:
-                motglose1,motglose2=motglose.split(u"§§")  # sont supposés être des vraies gloses::
-                motglose1_elements=motglose1.split(u":")
-                motglose2_elements=motglose2.split(u":")
-                if motglose1_elements[1]=="v" :
-                  #print "§§ mot/glose :",mot,motglose1
-                  firstl=mot[0].upper()
-                  mot=ur"(?:"+mot[0]+ur"|"+firstl+ur")"+mot[1:]
-                  #print "§§ mot verbe:",mot
-                elif motglose2_elements[1]=="v" :
-                  #print "§§ mot/glose :",mot,motglose2
-                  firstl=mot[0].upper()
-                  mot=ur"(?:"+mot[0]+ur"|"+firstl+ur")"+mot[1:]
-                  #print "§§ mot verbe:",mot
-              else:
-                if u":" in motglose:
-                  motglose_elements=motglose.split(u":")
-                else: 
-                  print "\n",linerepl
-                  sys.exit(mot+" -> erreur: pas de glose pour cet élément?")
-                if motglose_elements[1]=="v" :
-                  #print "mot/glose :",mot,motglose
-                  firstl=mot[0].upper()
-                  mot=ur"(?:"+mot[0]+ur"|"+firstl+ur")"+mot[1:]
-                  #print "mot verbe:",mot
-          #fin modifs DUKure -------------
-          """
-          # modifs Duk pour les verbes capitalisés
-          if not differ:
-
-            motglose=gloses[indexmot]
-            if "§§" in motglose:
-              motglose1,motglose2=motglose.split("§§")  # sont supposés être des vraies gloses::
-              motglose1_elements=motglose1.split(":")
-              motglose2_elements=motglose2.split(":")
-              if motglose1_elements[1]=="v" :
-                #print "§§ mot/glose :",mot,motglose1
-                firstl=mot[0].upper()
-                if firstl!=mot[0] :
-                  mot=r"["+mot[0]+firstl+r"]"+mot[1:]
-                #print "§§ mot verbe:",mot
-              elif motglose2_elements[1]=="v" :
-                #print "§§ mot/glose :",mot,motglose2
-                firstl=mot[0].upper()
-                if firstl!=mot[0] :
-                  mot=r"["+mot[0]+firstl+r"]"+mot[1:]
-                #print "§§ mot verbe:",mot
-            else:
-              if ":" in motglose:
-                motglose_elements=motglose.split(":")
-              else: 
-                print("\n",linerepl)
-                sys.exit(mot+" -> erreur: pas de glose pour cet élément?")
-              if motglose_elements[1]=="v" :
-                #print "mot/glose :",mot,motglose
-                firstl=mot[0].upper()
-                if firstl!=mot[0] :
-                  mot=r"["+mot[0]+firstl+r"]"+mot[1:]
-                #print "mot verbe:",mot
-        #fin modifs DUKure -------------
 
           if "*" in mot or "(" in mot or "[" in mot:
             r=re.compile(r""+mot)  # mot brut ou mots de la forme bà*na ou (?:b|B)ana
@@ -1486,8 +1382,6 @@ for linerepl in toutrepllines :
     elif mot=="SEMICOLON": wsearch=wsearch+r'<span class="c">\;</span>\n'
     elif mot=="EXCLAM"   : wsearch=wsearch+r'<span class="c">\!</span>\n'
     elif mot=="TIRET"    : wsearch=wsearch+r'<span class="c">\-</span>\n'
-    #elif mot==u"PUNCT"    : wsearch=wsearch+ur'<span class="c">([^<]+)</span>\n' 
-    # nb: le point, et autres séparateurs de sentence, n'a normalement pas d'effet ici ! cf DEBUT
     elif mot=="COMMENT"  : wsearch=wsearch+r'<span class="comment">([^<]+)</span>\n' 
     elif mot=="TAG"      : wsearch=wsearch+r'<span class="t">([^<]+)</span>\n' 
     # attention <st> n'est pas un tag !!! <span class="c">&lt;st&gt;</span>
@@ -1579,12 +1473,12 @@ for linerepl in toutrepllines :
 
     # PM and COPs - ajouter bi à IPFVAFF ??? ATTENTION bi : peut être bî dizaine! - enlevé le 14/12/19
     elif mot=="IPFVAFF"     : 
-      if tonal=="new" : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(bɛ|be|b')<span class="lemma">[^\n]+</span></span>\n'''
+      if tonal in ["new","bailleul","dukure"] : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(bɛ|be|b')<span class="lemma">[^\n]+</span></span>\n'''
       elif tonal=="newny" : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(bɛ|be|b')<span class="lemma">[^\n]+</span></span>\n'''
       elif tonal=="old" : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(bè|be|b')<span class="lemma">[^\n]+</span></span>\n'''
       elif tonal=="tonal" : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(bɛ|bɛ́|be|b')<span class="lemma">[^\n]+</span></span>\n'''  
     elif mot=="IPFVNEG"     : 
-      if tonal=="new" : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(tɛ|te|ti|t')<span class="lemma">[^\n]+</span></span>\n'''
+      if tonal in ["new","bailleul","dukure"] : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(tɛ|te|ti|t')<span class="lemma">[^\n]+</span></span>\n'''
       elif tonal=="newny" : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(tɛ|te|ti|t')<span class="lemma">[^\n]+</span></span>\n'''
       elif tonal=="old" : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(tè|te|ti|t')<span class="lemma">[^\n]+</span></span>\n'''
       elif tonal=="tonal" : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">(tɛ|tɛ́|te|ti|t')<span class="lemma">[^\n]+</span></span>\n'''
@@ -1599,7 +1493,7 @@ for linerepl in toutrepllines :
     elif mot=="CONSONNE"     : wsearch=wsearch+r'''<span class="w" +stage="[^>]+">([^AEIOUƐƆaeiouɛɔ][^\n\<]*)<span class="lemma">([^\n]+)</span></span>\n'''
     
     elif mot=="MONTH" : 
-      if tonal=="new" : wsearch=wsearch+r'<span class="w" +stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mɛkalo|zuwɛnkalo|zuluyekalo|zuliyekalo|utikalo|sɛtanburukalo|sɛtamburukalo|ɔkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span></span>\n'
+      if tonal in ["new","bailleul","dukure"] : wsearch=wsearch+r'<span class="w" +stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mɛkalo|zuwɛnkalo|zuluyekalo|zuliyekalo|utikalo|sɛtanburukalo|sɛtamburukalo|ɔkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span></span>\n'
       elif tonal=="newny" : wsearch=wsearch+r'<span class="w" +stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mɛkalo|zuwɛnkalo|zuluyekalo|zuliyekalo|utikalo|sɛtanburukalo|sɛtamburukalo|ɔkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span></span>\n'
       elif tonal=="old" : wsearch=wsearch+r'<span class="w" +stage="[^>]+">(zanwuyekalo|zanwiyekalo|feburuyekalo|feburiyekalo|feburuye-kalo|fewuruyekalo|marisikalo|awirilikalo|mèkalo|zuwènkalo|zuluyekalo|zuliyekalo|utikalo|sètanburukalo|sètamburukalo|òkutɔburukalo|nowanburukalo|nowamburukalo|desanburukalo|desamburukalo)<span class="lemma">([^\n]+)</span></span>\n'
       elif tonal=="tonal" : wsearch=wsearch+r'<span class="w" +stage="[^>]+">(zánwuyekalo|zánwiyekalo|féburuyekalo|féburiyekalo|féburuye-kalo|féwuruyekalo|márisikalo|áwirilikalo|mɛ̀kalo|zùwɛnkalo|zùluyekalo|zùliyekalo|ùtikalo|sɛ́tanburukalo|sɛ́tamburukalo|ɔ́kutɔburukalo|nòwanburukalo|nòwamburukalo|désanburukalo|désamburukalo)<span class="lemma">([^\n]+)</span></span>\n'  
@@ -1614,17 +1508,17 @@ for linerepl in toutrepllines :
     # elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" +stage="0">[^<]+<span class="lemma">[^<]+<sub class="ps">(?!v|vq|cop|pm)</sub>(((?!lemma var).)*)</span></span>\n)+)'
     # elif mot==u"NONVERBALGROUP": wsearch=wsearch+ur'((<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|pp|ptcp|n\.prop|num|dtm|prn|pers|conj)</sub>(((?!lemma var).)*)</span></span>\n)+)'
     elif mot=="NONVERBALGROUP": 
-      """
-      wsearch=wsearch+ur'((<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|ptcp|n\.prop|num|dtm|prn|pers)</sub>(((?!lemma var).)*)</span></span>\n'
-      wsearch=wsearch+ur'''|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ka|k')<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span></span>\n'''
-      wsearch=wsearch+ur'''|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ni|n')<sub class="ps">conj</sub><sub class="gloss">et</sub></span></span>\n'''
-      wsearch=wsearch+ur'''|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:àní|àn')<sub class="ps">conj</sub><sub class="gloss">ainsi.que</sub></span></span>\n'''
-      wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:wàlímà)<sub class="ps">conj</sub><sub class="gloss">ou.bien</sub></span></span>\n'
-      wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ô)<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span></span>\n'
-      wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:dè)<sub class="ps">prt</sub><sub class="gloss">FOC</sub></span></span>\n'
-      wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:kɔ̀ni)<sub class="ps">prt</sub><sub class="gloss">TOP.CNTR2</sub></span></span>\n'
-      wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:fána)<sub class="ps">prt</sub><sub class="gloss">aussi</sub></span></span>\n)+)'
-      """
+#       """
+#       wsearch=wsearch+ur'((<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">[^<]+<sub class="ps">(?:n|adj|ptcp|n\.prop|num|dtm|prn|pers)</sub>(((?!lemma var).)*)</span></span>\n'
+#       wsearch=wsearch+ur'''|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ka|k')<sub class="ps">pp</sub><sub class="gloss">POSS</sub></span></span>\n'''
+#       wsearch=wsearch+ur'''|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ni|n')<sub class="ps">conj</sub><sub class="gloss">et</sub></span></span>\n'''
+#       wsearch=wsearch+ur'''|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:àní|àn')<sub class="ps">conj</sub><sub class="gloss">ainsi.que</sub></span></span>\n'''
+#       wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:wàlímà)<sub class="ps">conj</sub><sub class="gloss">ou.bien</sub></span></span>\n'
+#       wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:ô)<sub class="ps">conj</sub><sub class="gloss">DISTR</sub></span></span>\n'
+#       wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:dè)<sub class="ps">prt</sub><sub class="gloss">FOC</sub></span></span>\n'
+#       wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:kɔ̀ni)<sub class="ps">prt</sub><sub class="gloss">TOP.CNTR2</sub></span></span>\n'
+#       wsearch=wsearch+ur'|<span class="w" +stage="[^\"]+">[^<]+<span class="lemma">(?:fána)<sub class="ps">prt</sub><sub class="gloss">aussi</sub></span></span>\n)+)'
+#       """
       # inconvénient : le NVG peut être réduit à une seule conj isolée ou une seule prt isolée ???!!!
       # chercher à corriger avec une formule du style : N|PRT+ CONJ*
       # essayer GN | GN CONJ | GN PRT | GN PRT CONJ 
@@ -1649,14 +1543,14 @@ for linerepl in toutrepllines :
       
     elif mot=="AMBIGUOUS": wsearch=wsearch+r'<span class="w"(.*)lemma var(.*)</span>\n'
     else :
-      if "'" in mot: mot=re.sub(r"\'","[\'\’]+",mot)   # satanées curly brackets
-      """
-      motsearch=mot
-      if tonal=="new":  # useful for Dumestre script tagged as "new" but not using ɲ (Baabu ni baabu etc.)
-        motsearch=re.sub(u"ɲ",ur"(?:ɲ|ny)",mot)
-        motsearch=re.sub(u"Ɲ",ur"(?:Ɲ|Ny)",motsearch)
-      wsearch=wsearch+ur'<span class="w" +stage="[a-z0-9\.\-]+">'+motsearch+ur'<.*</span></span>\n'
-      """
+      if "'" in mot: mot=re.sub(r"\'",r"[\'\’]+",mot)   # satanées curly brackets
+#       """
+#       motsearch=mot
+#       if tonal=="new":  # useful for Dumestre script tagged as "new" but not using ɲ (Baabu ni baabu etc.)
+#         motsearch=re.sub(u"ɲ",ur"(?:ɲ|ny)",mot)
+#         motsearch=re.sub(u"Ɲ",ur"(?:Ɲ|Ny)",motsearch)
+#       wsearch=wsearch+ur'<span class="w" +stage="[a-z0-9\.\-]+">'+motsearch+ur'<.*</span></span>\n'
+#       """
       if wsearch=="" and ucase1 :
         winitial=mot[0:1]
         wrest=mot[1:len(mot)]
@@ -1670,48 +1564,6 @@ for linerepl in toutrepllines :
         wsearch=wsearch+r'<span class="w" +stage="[a-z0-9\.\-]+">'+mot+r'<.*</span></span>\n'
 
       else:
-        # modifs DUKure ---------------
-        """
-        if mot[0]=="ɲ" : 
-          mot=ur"(?:ɲ|л|Л)"+mot[1:]  # majuscule en cas (no testé) de verbe
-          print "mot: ",mot
-        elif mot[0]=="Ɲ" :
-          mot=ur"(?:Ɲ|Л)"+mot[1:]
-          print "mot: ",mot
-        else:
-          """
-        if not differ:
-
-          motglose=gloses[indexmot]
-          if "§§" in motglose:
-            motglose1,motglose2=motglose.split("§§")  # sont supposés être des vraies gloses::
-            motglose1_elements=motglose1.split(":")
-            motglose2_elements=motglose2.split(":")
-            if motglose1_elements[1]=="v" :
-              #print "§§ mot/glose :",mot,motglose1
-              firstl=mot[0].upper()
-              if firstl!=mot[0]: 
-                mot=r"["+mot[0]+firstl+r"]"+mot[1:]
-              #print "§§ mot verbe:",mot
-            elif motglose2_elements[1]=="v" :
-              #print "§§ mot/glose :",mot,motglose2
-              firstl=mot[0].upper()
-              if firstl!=mot[0]:
-                mot=r"["+mot[0]+firstl+r"]"+mot[1:]
-              #print "§§ mot verbe:",mot
-          else:
-            if ":" in motglose:
-              motglose_elements=motglose.split(":")
-            else: 
-              print("\n",linerepl)
-              sys.exit("erreur: pas de glose pour cet élément?")
-            if motglose_elements[1]=="v" :
-              #print "mot/glose :",mot,motglose
-              firstl=mot[0].upper()
-              if firstl!=mot[0]:
-                mot=r"["+mot[0]+firstl+r"]"+mot[1:]
-              #print "mot verbe:",mot
-        #fin modifs DUKure -------------
 
         if "*" in mot or "(" in mot or "[" in mot :
           wsearch=wsearch+r'<span class="w" +stage="[a-z0-9\.\-]+">('+mot+r')<.*</span></span>\n' # WORD CAPTURE
@@ -1754,6 +1606,10 @@ for linerepl in toutrepllines :
     if tonal=="bailleul" : 
           liste_gloseslx=re.sub("́","",liste_gloseslx)
           liste_gloseslx=re.sub("̂","",liste_gloseslx)
+    elif tonal=="dukure":
+          liste_gloseslx=re.sub("́","",liste_gloseslx)   # ton haut \u0301
+          liste_gloseslx=re.sub("̂","",liste_gloseslx)   # ton descendant \u0302
+          liste_gloseslx=re.sub("̌","",liste_gloseslx)   # ton ascendant \u030C
     elif tonal!="tonal" :  
           liste_gloseslx=re.sub("́","",liste_gloseslx)
           liste_gloseslx=re.sub("̀","",liste_gloseslx)
@@ -1772,8 +1628,7 @@ for linerepl in toutrepllines :
           #if oldny :       # cas type Baabu ni baabu
           liste_gloseslx=re.sub("ɲ","ny",liste_gloseslx)
           liste_gloseslx=re.sub("Ɲ","Ny",liste_gloseslx)
-      
-      # build prefixes for the search and replace expressions 
+    # build prefixes for the search and replace expressions 
     liste_mots_spaced=liste_mots.replace("_"," ")
     liste_mots_spaced=re.sub(r"([A-Z]+[\s])*","",liste_mots_spaced)  # eliminated capitalized keywords after/before
     liste_mots_spaced=re.sub(r"([\s][A-Z]+)*","",liste_mots_spaced)  # eliminated capitalized keywords after/before
@@ -1782,7 +1637,7 @@ for linerepl in toutrepllines :
     elif "' " in liste_mots_spaced : liste_mots_spaced=liste_mots_spaced.replace("' ","'") # par exemple "N'Baru" (et pas "N' Baru")
     prefsearch=r'<span class="sent">([^<]*)'+liste_mots_spaced+'([^<]*)<span class="annot">(((?!"sent")[^¤])*)'    #  ?!"sent": do no span over several sentences / [^¤]: because . does not take \n
     if liste_mots_spaced[0:1].isupper(): liste_gloseslx=liste_gloseslx[0:1].upper()+liste_gloseslx[1:len(liste_gloseslx)]
-    prefrepl='<span class="sent">\g<1>'+liste_gloseslx+'\g<2><span class="annot">\g<3>'
+    prefrepl=r'<span class="sent">\g<1>'+liste_gloseslx+r'\g<2><span class="annot">\g<3>'
     # don't forget to advance the index !
     capt_gr_index=capt_gr_index+3+1
     
@@ -1953,10 +1808,10 @@ for linerepl in toutrepllines :
     #  wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">v</sub><\g<'+str(capt_gr_index+3)+ur'>></span>\n'
     #  capt_gr_index=capt_gr_index+3+1
     elif glose=="CONJ"      : 
-      wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">\g<'+str(capt_gr_index+2)+r'><sub class="ps">\g<'+str(capt_gr_index+3)+'></sub><\g<'+str(capt_gr_index+4)+r'>></span>\n'
+      wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">\g<'+str(capt_gr_index+2)+r'><sub class="ps">\g<'+str(capt_gr_index+3)+r'></sub><\g<'+str(capt_gr_index+4)+r'>></span>\n'
       capt_gr_index=capt_gr_index+4+1
     elif glose=="PREP"      : 
-      wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">\g<'+str(capt_gr_index+2)+r'><sub class="ps">\g<'+str(capt_gr_index+3)+'></sub><\g<'+str(capt_gr_index+4)+r'>></span>\n'
+      wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r'><span class="lemma">\g<'+str(capt_gr_index+2)+r'><sub class="ps">\g<'+str(capt_gr_index+3)+r'></sub><\g<'+str(capt_gr_index+4)+r'>></span>\n'
       capt_gr_index=capt_gr_index+4+1
     #elif glose==u"CONJPREP"      : 
     #  wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur'><span class="lemma">\g<'+str(capt_gr_index+2)+ur'><sub class="ps">conj/prep</sub><\g<'+str(capt_gr_index+4)+ur'>></span>\n'
@@ -2191,6 +2046,11 @@ for linerepl in toutrepllines :
         if tonal=="bailleul" : 
           word=re.sub("́","",word)
           word=re.sub("̂","",word)
+        elif tonal=="dukure":
+          word=re.sub("́","",word)   # ton haut \u0301
+          word=re.sub("̂","",word)   # ton descendant \u0302
+          word=re.sub("̌","",word)   # ton ascendant \u030C
+          if('Pluton') in linerepl: print('word:',word)
         elif tonal!="tonal" :  
           word=re.sub("́","",word)
           word=re.sub("̀","",word)
@@ -2236,20 +2096,20 @@ for linerepl in toutrepllines :
         # try : 
         htmlgloss=daba.formats.glosstext_to_html(glose,variant=False, encoding='unicode')
 
-        #log.write("[] glosstext_to_html: "+glose+" -> "+htmlgloss+"\n")
-        """ ancien code
-        if wrepl=="" and ucase1:
-          wordrepl=ur"\g<1>"
-          wrepl=wrepl+ur'<span class="w" stage="0">'+wordrepl+htmlgloss+ur'</span>\n'
-          capt_gr_index=capt_gr_index+1      # or just =1 ?
-        else:
-          print "word=",word
-          if "*" in word or "(" in word or "[" in word:
-            wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur">"+htmlgloss+ur'</span>\n'
-            capt_gr_index=capt_gr_index+1
-          else:
-            wrepl=wrepl+ur'<span class="w" stage="0">'+word+htmlgloss+ur'</span>\n'
-        """
+#         #log.write("[] glosstext_to_html: "+glose+" -> "+htmlgloss+"\n")
+#         """ ancien code
+#         if wrepl=="" and ucase1:
+#           wordrepl=ur"\g<1>"
+#           wrepl=wrepl+ur'<span class="w" stage="0">'+wordrepl+htmlgloss+ur'</span>\n'
+#           capt_gr_index=capt_gr_index+1      # or just =1 ?
+#         else:
+#           print "word=",word
+#           if "*" in word or "(" in word or "[" in word:
+#             wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur">"+htmlgloss+ur'</span>\n'
+#             capt_gr_index=capt_gr_index+1
+#           else:
+#             wrepl=wrepl+ur'<span class="w" stage="0">'+word+htmlgloss+ur'</span>\n'
+#         """
         #print "word=",word
         if "*" in word or "(" in word or "[" in word:   # includes ucase1 = true (word has [)
           wrepl=wrepl+r'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+r">"+htmlgloss+r'</span>\n'
@@ -2299,8 +2159,18 @@ for linerepl in toutrepllines :
   """
   if logdetails : wmatches=re.finditer(wsearch,body,re.U|re.MULTILINE)
   # TESTNKO
-  # print("wsearch/wrepl","\n",wsearch,"\n",wrepl)
+#  if liste_mots == "DEBUT_e_PUNCT" or liste_mots == "DEBUT_E_PUNCT" : print("wsearch/wrepl","\n",wsearch,"\n",wrepl)
+#  print("wsearch/wrepl","\n",wsearch,"\n",wrepl,'\nlinerepl:',linerepl)
   body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  # derniers parametres : count (0=no limits to number of changes), flags re.U|
+#   if liste_mots == "DEBUT_e_PUNCT" or liste_mots == "DEBUT_E_PUNCT" : 
+#     print(nombre,"remplacements\nbody:",body)
+#   elif liste_mots == "PUNCT_E_PUNCT" : 
+#     print("\n*** règle suivante\nbody:",body)
+#   elif 'eh!' not in body:
+#     print("\nrègle qui perturbe:",liste_mots)
+#     sys.exit("STOPPED")
+  
+
   # TESTED : |re.IGNORECASE ADDED 14/03/2021 - dropped : too slow!!! + rules with caps
   # if nombre >0 : print "updated",wsearch
 
@@ -2318,22 +2188,22 @@ for linerepl in toutrepllines :
       nombre=nombre+nombre_replay
 
   if topl :  # NOOOO! and nombre==0 : # only action IF main updater did not work !!!
-    """
-    if ucase1:
-      mot2=re.sub("\)","w)",mot2)   # mot2 = ([kK]à*lanw)
-      wsearch=ur'<span class="w" +stage="[a-z0-9\.\-]+">'+mot2+ur'<.*</span></span>\n'
-    else : 
-      #print "topl not ucase AVANT:",wsearch
-      #print "topl not ucase AVANT word:",word
-      # word may contain re sensitive characters like * wsearch=re.sub(ur""+word+ur"\)\<",word+"w)<",wsearch)   # wsearch contains only one word, just add w
-      # it is anyway the first )< 
-      wsearch=re.sub(ur"\)\<","w)<",wsearch)
-      #print "topl not ucase APRES:",wsearch
-    """
+#     """
+#     if ucase1:
+#       mot2=re.sub("\)","w)",mot2)   # mot2 = ([kK]à*lanw)
+#       wsearch=ur'<span class="w" +stage="[a-z0-9\.\-]+">'+mot2+ur'<.*</span></span>\n'
+#     else : 
+#       #print "topl not ucase AVANT:",wsearch
+#       #print "topl not ucase AVANT word:",word
+#       # word may contain re sensitive characters like * wsearch=re.sub(ur""+word+ur"\)\<",word+"w)<",wsearch)   # wsearch contains only one word, just add w
+#       # it is anyway the first )< 
+#       wsearch=re.sub(ur"\)\<","w)<",wsearch)
+#       #print "topl not ucase APRES:",wsearch
+#     """
     if not ucase1:   # if ucase1 mot2 is already set
       if mot[0]!="(": mot2="("+mot+")" # for compatibility with wrepl \g<1>
       else : mot2=mot
-    mot2=re.sub("\)","w)",mot2)   # mot2 = ([kK]à*lanw)
+    mot2=re.sub(r"\)","w)",mot2)   # mot2 = ([kK]à*lanw)
     wsearch=r'<span class="w" +stage="[a-z0-9\.\-]+">'+mot2+r'<.*</span></span>\n'
     
     gloseelems=glose.split(":",2)
@@ -2342,19 +2212,19 @@ for linerepl in toutrepllines :
     glose=gloselx+"w:"+gloseps+": ["+glose+" w:mrph:PL]"
     # htmlgloss=daba.formats.glosstext_to_html(glose,variant=False, encoding='utf-8').decode('utf-8')
     htmlgloss=daba.formats.glosstext_to_html(glose,variant=False, encoding='unicode')
-    """
-    if "*" in word or "(" in word or "[" in word:
-      wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur">"+htmlgloss+ur'</span>\n'
-      capt_gr_index=capt_gr_index+1
-    """
-    """
-    if ucase1:
-      wordrepl=ur"\g<1>"
-      wrepl=ur'<span class="w" stage="0">'+wordrepl+htmlgloss+ur'</span>\n'
-      capt_gr_index=capt_gr_index+1      # or just =1 ?
-    else:
-      wrepl=ur'<span class="w" stage="0">'+word+"w"+htmlgloss+ur'</span>\n'
-    """
+#     """
+#     if "*" in word or "(" in word or "[" in word:
+#       wrepl=wrepl+ur'<span class="w" stage="0">\g<'+str(capt_gr_index+1)+ur">"+htmlgloss+ur'</span>\n'
+#       capt_gr_index=capt_gr_index+1
+#     """
+#     """
+#     if ucase1:
+#       wordrepl=ur"\g<1>"
+#       wrepl=ur'<span class="w" stage="0">'+wordrepl+htmlgloss+ur'</span>\n'
+#       capt_gr_index=capt_gr_index+1      # or just =1 ?
+#     else:
+#       wrepl=ur'<span class="w" stage="0">'+word+"w"+htmlgloss+ur'</span>\n'
+#     """
     
     wrepl=r'<span class="w" stage="0">\g<1>'+htmlgloss+r'</span>\n'
     capt_gr_index=capt_gr_index+1      # or just =1 ?
@@ -2373,7 +2243,7 @@ for linerepl in toutrepllines :
       for forcetop in forcetopiterator :
         topname=forcetop.group(lastnproprenomforcetopindex)
         # print topname
-        lastnproprenom=r'<span class="w" +stage="[^>]+">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n\.prop</sub><sub class="gloss">NOM</sub></span></span>\n'
+        lastnproprenom=r'<span class="w" +stage="[^>]+">'+topname+'<span class="lemma">'+topname+r'<sub class="ps">n\.prop</sub><sub class="gloss">NOM</sub></span></span>\n'
         lastnproprenomforcetop=r'<span class="w" stage="0">'+topname+'<span class="lemma">'+topname+'<sub class="ps">n.prop</sub><sub class="gloss">TOP</sub></span></span>\n'
         body,nombre2=re.subn(lastnproprenom,lastnproprenomforcetop,body,0,re.U|re.MULTILINE)
         nombre=nombre+nombre2
@@ -2401,6 +2271,10 @@ for linerepl in toutrepllines :
         lmots=lmots+1
     nbmots=nbmots+(nombre*lmots)
   
+
+# print("\n***before POST\nbody:",body)
+
+
 # POST : systematic global replaces ###############################################
 
 # handle distributed groups type mɔgɔ ô mɔgɔ
@@ -2512,17 +2386,17 @@ if nombre>0 :
 
 # fin : decoration pour consultation dans le navigateur
 #  ambigüs
-'''
-wsearch=ur'<span class="w"(.*)lemma var(.*)</span>\n'
-wrepl=ur'<span class="w" style="background-color:beige;"\g<1>lemma var\g<2></span>\n'
-body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  
-if nombre>0 :
-  msg="%i  highlight ambiguous words left for better navigator visualisation" % nombre +"\n"
-  log.write(msg)
-  nbrulesapplied=nbrulesapplied+1
-  nbmodif=nbmodif+nombre
-  nbmots=nbmots+nombre
-'''
+# '''
+# wsearch=ur'<span class="w"(.*)lemma var(.*)</span>\n'
+# wrepl=ur'<span class="w" style="background-color:beige;"\g<1>lemma var\g<2></span>\n'
+# body,nombre=re.subn(wsearch,wrepl,body,0,re.U|re.MULTILINE)  
+# if nombre>0 :
+#   msg="%i  highlight ambiguous words left for better navigator visualisation" % nombre +"\n"
+#   log.write(msg)
+#   nbrulesapplied=nbrulesapplied+1
+#   nbmodif=nbmodif+nombre
+#   nbmots=nbmots+nombre
+# '''
 wsearch=r'</style>'
 wrepl=r'span.lemma.var {background-color:lightblue;}\n</style><title>'+filenametemp+r'</title>'
 head,nombre=re.subn(wsearch,wrepl,head,0,re.U|re.MULTILINE)  
