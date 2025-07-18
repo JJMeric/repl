@@ -95,8 +95,8 @@ for dirname, dirnames, filenames in sorted(os.walk('.')):
 			print(fname,"missing in .html files")
 			nerrfiles+=1
 	if nerrfiles>0:
-		sys.exit("!!! file names mismatch")
-		#print("!!! file names mismatch")
+		#sys.exit("!!! file names mismatch")
+		print("!!! file names mismatch")
 
 	nfiles+=len(selectedfiles)
 

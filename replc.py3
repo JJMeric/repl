@@ -977,7 +977,27 @@ for thispunct in allpunctsshortlist :
   thispunct=thispunct.replace("&gt;",">")
   allpunctdisplay=allpunctdisplay+thispunct+" "
 print(len(allpunctsshortlist),"ponctuations uniques:", allpunctdisplay)
+punctlist=[]
+punct2test= ["COMMA","DOT","COLON","SEMICOLON","QUESTION","EXCLAM","LAQUO","RAQUO","LDQUO","RDQUO","PARO","PARF","DEGRE"]
+for thispunct in allpunctsshortlist:
+  if thispunct==",": punctlist.append("COMMA")
+  elif "DOT" not in punctlist:
+    if re.match(r'\.+',thispunct): punctlist.append("DOT") # why not PERIOD ?
+  elif thispunct==":": punctlist.append("COLON")
+  elif thispunct==";": punctlist.append("SEMICOLON")
+  elif "QUESTION" not in punctlist: 
+    if re.match(r'\.*[\?]+[\!\.]*',thispunct): punctlist.append("QUESTION")
+  elif "EXCLAM" not in punctlist: 
+    if re.match(r'\.*[\!]+[\?\.]*',thispunct): punctlist.append("EXCLAM")
+  elif thispunct=="«": punctlist.append("LAQUO")
+  elif thispunct=="»": punctlist.append("RAQUO")  
+  elif thispunct=="“": punctlist.append("LDQUO")
+  elif thispunct=="”": punctlist.append("RDQUO")
+  elif thispunct=="(": punctlist.append("PARO")
+  elif thispunct==")": punctlist.append("PARF")
+  elif thispunct=="°": punctlist.append("DEGRE")
 
+print("punctlist=",punctlist)
 
 alltagslist=alltags.findall(body,re.U|re.MULTILINE)
 ntags=len(alltagslist)
@@ -1285,54 +1305,58 @@ for linerepl in toutrepllines :
               break
 
       else:
-        if mot=="EXCLAM":
-          if "!" not in allpunctsshortlist:
+#        if mot=="EXCLAM":
+#          if "!" not in allpunctsshortlist:
+#            applicable=False
+#            break
+#        elif mot=="QUESTION":
+#          if "?" not in allpunctsshortlist:
+#            applicable=False
+#            break
+#        el
+#        if mot=="COMMA":
+#          if "," not in allpunctsshortlist:
+#            applicable=False
+#            break
+#        elif mot=="COLON":
+#          if ":" not in allpunctsshortlist:
+#            applicable=False
+#            break
+#        elif mot=="SEMICOLON":
+#          if ";" not in allpunctsshortlist:
+#            applicable=False
+#            break
+#        elif mot=="DOT":
+#          if "." not in allpunctsshortlist:
+#            applicable=False
+#            break
+#        elif mot=="LAQUO":
+#          if "«" not in allpunctsshortlist:
+#            applicable=False
+#            break
+#        elif mot=="RAQUO":
+#          if "»" not in allpunctsshortlist:
+#            applicable=False
+#            break
+#        elif mot=="LDQUO":
+#          if "“" not in allpunctsshortlist:
+#            applicable=False
+#            break
+#        elif mot=="RDQUO":
+#          if "”" not in allpunctsshortlist:
+#            applicable=False
+#            break
+#        elif mot=="PARO":
+#          if "(" not in allpunctsshortlist:
+#            applicable=False
+#            break
+#        elif mot=="PARF":
+#          if ")" not in allpunctsshortlist:
+#            applicable=False
+#            break
+        if mot in punct2test and mot not in punctlist:
             applicable=False
-            break
-        elif mot=="QUESTION":
-          if "?" not in allpunctsshortlist:
-            applicable=False
-            break
-        elif mot=="COMMA":
-          if "," not in allpunctsshortlist:
-            applicable=False
-            break
-        elif mot=="COLON":
-          if ":" not in allpunctsshortlist:
-            applicable=False
-            break
-        elif mot=="SEMICOLON":
-          if ":" not in allpunctsshortlist:
-            applicable=False
-            break
-        elif mot=="DOT":
-          if "." not in allpunctsshortlist:
-            applicable=False
-            break
-        elif mot=="LAQUO":
-          if "«" not in allpunctsshortlist:
-            applicable=False
-            break
-        elif mot=="RAQUO":
-          if "»" not in allpunctsshortlist:
-            applicable=False
-            break
-        elif mot=="LDQUO":
-          if "“" not in allpunctsshortlist:
-            applicable=False
-            break
-        elif mot=="RDQUO":
-          if "”" not in allpunctsshortlist:
-            applicable=False
-            break
-        elif mot=="PARO":
-          if "(" not in allpunctsshortlist:
-            applicable=False
-            break
-        elif mot=="PARF":
-          if ")" not in allpunctsshortlist:
-            applicable=False
-            break
+            break          
 
         elif mot=="LANA":
           applicable=testapplic(["la","na","lá","ná"])
@@ -1376,11 +1400,11 @@ for linerepl in toutrepllines :
   for mot in mots :
     indexmot=indexmot+1
     if mot=="COMMA"      : wsearch=wsearch+r'<span class="c">,</span>\n'
-    elif mot=="DOT"      : wsearch=wsearch+r'<span class="c">\.</span>\n'
-    elif mot=="QUESTION" : wsearch=wsearch+r'<span class="c">\?</span>\n'
+    elif mot=="DOT"      : wsearch=wsearch+r'<span class="c">(\.+)</span>\n'
+    elif mot=="QUESTION" : wsearch=wsearch+r'<span class="c">(\.*[\?]+[\!\.]*)</span>\n' # un ou plusieurs ? suivi éventuellement de !
     elif mot=="COLON"    : wsearch=wsearch+r'<span class="c">\:</span>\n'
     elif mot=="SEMICOLON": wsearch=wsearch+r'<span class="c">\;</span>\n'
-    elif mot=="EXCLAM"   : wsearch=wsearch+r'<span class="c">\!</span>\n'
+    elif mot=="EXCLAM"   : wsearch=wsearch+r'<span class="c">(\.*[\!]+[\?\.]*)</span>\n' # un ou plusieurs ! suivi éventuellement de ?
     elif mot=="TIRET"    : wsearch=wsearch+r'<span class="c">\-</span>\n'
     elif mot=="COMMENT"  : wsearch=wsearch+r'<span class="comment">([^<]+)</span>\n' 
     elif mot=="TAG"      : wsearch=wsearch+r'<span class="t">([^<]+)</span>\n' 
@@ -1644,12 +1668,18 @@ for linerepl in toutrepllines :
   for glose in gloses :
     imots=imots+1    # commence donc à 0
     if glose=="COMMA"      : wrepl=wrepl+r'<span class="c">,</span>\n'
-    elif glose=="DOT"      : wrepl=wrepl+r'<span class="c">.</span>\n'
+    elif glose=="DOT"      : 
+      wrepl=wrepl+r'<span class="c">\g<'+str(capt_gr_index+1)+r'></span>\n'
+      capt_gr_index=capt_gr_index+1
     elif glose=="DOTnone"  : wrepl=wrepl+r"" # cas spécial où on élimine le DOT (uniquement pour dɔrɔmɛ ?)
-    elif glose=="QUESTION" : wrepl=wrepl+r'<span class="c">?</span>\n'
+    elif glose=="QUESTION" : 
+      wrepl=wrepl+r'<span class="c">\g<'+str(capt_gr_index+1)+r'></span>\n'
+      capt_gr_index=capt_gr_index+1
     elif glose=="COLON"    : wrepl=wrepl+r'<span class="c">:</span>\n'
     elif glose=="SEMICOLON": wrepl=wrepl+r'<span class="c">;</span>\n'
-    elif glose=="EXCLAM"   : wrepl=wrepl+r'<span class="c">!</span>\n'
+    elif glose=="EXCLAM"   : 
+      wrepl=wrepl+r'<span class="c">\g<'+str(capt_gr_index+1)+r'></span>\n'
+      capt_gr_index=capt_gr_index+1
     elif glose=="TIRET"    : wrepl=wrepl+r'<span class="c">-</span>\n'
     elif glose=="DEBUT"    : wrepl=wrepl+r'<span class="annot">'
     elif glose=="FIN"      : wrepl=wrepl+r'</span>\n</span>\n'

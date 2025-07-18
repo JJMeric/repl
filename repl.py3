@@ -358,7 +358,30 @@ allpunctslist=allpuncts.findall(body,re.U|re.MULTILINE)
 allpunctsshortlist=[]
 for thispunct in allpunctslist:
   if thispunct not in allpunctsshortlist: allpunctsshortlist.append(thispunct)
-allpunctsset=set(allpunctsshortlist)
+#allpunctsset=set(allpunctsshortlist)
+
+punctlist=[]
+punct2test= ["COMMA","DOT","COLON","SEMICOLON","QUESTION","EXCLAM","LAQUO","RAQUO","LDQUO","RDQUO","PARO","PARF","DEGRE"]
+for thispunct in allpunctsshortlist:
+  if thispunct==",": punctlist.append("COMMA")
+  elif "DOT" not in punctlist:
+    if re.match(r'\.+',thispunct): punctlist.append("DOT") # why not PERIOD ?
+  elif thispunct==":": punctlist.append("COLON")
+  elif thispunct==";": punctlist.append("SEMICOLON")
+  elif "QUESTION" not in punctlist: 
+    if re.match(r'\.*[\?]+[\!\.]*',thispunct): punctlist.append("QUESTION")
+  elif "EXCLAM" not in punctlist: 
+    if re.match(r'\.*[\!]+[\?\.]*',thispunct): punctlist.append("EXCLAM")
+  elif thispunct=="«": punctlist.append("LAQUO")
+  elif thispunct=="»": punctlist.append("RAQUO")  
+  elif thispunct=="“": punctlist.append("LDQUO")
+  elif thispunct=="”": punctlist.append("RDQUO")
+  elif thispunct=="(": punctlist.append("PARO")
+  elif thispunct==")": punctlist.append("PARF")
+  elif thispunct=="°": punctlist.append("DEGRE")
+
+punct2testset=set(punct2test)
+punctset=set(punctlist)
 
 alltagslist=alltags.findall(body,re.U|re.MULTILINE)
 ntags=len(alltagslist)
@@ -421,46 +444,9 @@ for linerepl in linereplall:
               applicable=False
               break
       else:
-        if mot=="EXCLAM":
-          if "!" not in allpunctsset:
+        if mot in punct2testset and mot not in punctset:
             applicable=False
-            break
-        elif mot=="QUESTION":
-          if "?" not in allpunctsset:
-            applicable=False
-            break
-        elif mot=="COMMA":
-          if "," not in allpunctsset:
-            applicable=False
-            break
-        elif mot=="COLON":
-          if ":" not in allpunctsset:
-            applicable=False
-            break
-        elif mot=="SEMICOLON":
-          if ":" not in allpunctsset:
-            applicable=False
-            break
-        elif mot=="DOT":
-          if "." not in allpunctsset:
-            applicable=False
-            break
-        elif mot=="LAQUO":
-          if "«" not in allpunctsset:
-            applicable=False
-            break
-        elif mot=="RAQUO":
-          if "»" not in allpunctsset:
-            applicable=False
-            break
-        elif mot=="PARO":
-          if "(" not in allpunctsset:
-            applicable=False
-            break
-        elif mot=="PARF":
-          if ")" not in allpunctsset:
-            applicable=False
-            break
+            break 
 
         elif mot=="LANA":
           applicable=testapplic(["la","na","lá","ná"])
