@@ -6,7 +6,7 @@ import re
 import sys
 import time
 import git
-from git import Repo
+from git import Repo   # python3 -m pip install gitpython
 
 normalizemetas=re.compile(r'<meta content="([^\"]*)" name="([^\"]*)" />',re.U|re.MULTILINE)
 retitle=re.compile(r'<meta name="text:title" content="([^\"]*)" />',re.U|re.MULTILINE)
