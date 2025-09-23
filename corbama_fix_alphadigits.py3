@@ -25,7 +25,7 @@ def fix_alphadigits(body):
 			alpha,digit=notes[adword]
 			#print("  alpha,digit: ",alpha,digit)
 			body,nch=re.subn(r'([^\w]|\s)'+adword+r'([^\w]|\s)',\
-				    '\g<1>'+alpha+' ('+digit+')'+'\g<2>',body,0,re.U|re.MULTILINE)
+				    r'\g<1>'+alpha+' ('+digit+')'+r'\g<2>',body,0,re.U|re.MULTILINE)
 			nchtotal+=nch
 			#print("nch:",nch)
 	return body,nchtotal
