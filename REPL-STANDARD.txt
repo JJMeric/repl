@@ -6491,7 +6491,7 @@ tɛ́gɛko=>=tɛ́gɛko:n: [tɛ́gɛ:n:paume kò:v:laver]
 tɛ́gɛkɔnɔtelefɔni>>=tɛ́gɛkɔnɔtelefɔni:n: [tɛ́gɛ:n:paume kɔ́nɔ:pp:dans tèlefɔni:n:téléphone]
 tɛ́gɛrɛfɔkan>>=tɛ́gɛrɛfɔkan:n: [tɛ́gɛrɛ:n:applaudissement fɔ́:v:dire kán:n:cou]
 tɛ́liya===téliya:n:rapidité [téli:vq:rapide ya:mrph:DEQU]§§téliya:v:accélérer [téli:vq:rapide ya:mrph:DEQU]
-tɛ̀m'==tɛ̀mɛ:v:passer
+tɛ̀m'===tɛ̀mɛ:v:passer
 #tɛ̀mɛncogo===tɛ̀mɛncogo:n: [tɛ̀mɛ:v:passer cógo:n:manière]
 tɛ̀mɛnsenna>>=tɛ̀mɛsenna:n:passant [tɛ̀mɛ:v:passer sèn:n:jambe lá:pp:à]
 tɛ̀mɛnsira>>=tɛ̀mɛnsira:n: [tɛ̀mɛ:v:passer síra:n:chemin]
@@ -8475,29 +8475,77 @@ kàba_táari_NUM=>=kàba:n:maïs_táari:n:hectare_NUM
 màlo_táari_NUM=>=màlo:n:riz_táari:n:hectare_NUM
 
 # QUELQUES UNITES MECONNUES
-bam2_NUM>=bàmɛtɛrɛkɛnɛ:n:kilomètre.carré [bàmɛtɛrɛ:n:kilomètre [bà:n:mille mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
-cm2_NUM>==cm2:n: [cm:n:ABR kɛ́nɛ:n:clarté]_NUM
-cm3_NUM>==cm3:n: [cm:n:ABR kibu:adj:cube]_NUM
-dm2_NUM>==dm2:n: [dm:n:ABR kɛ́nɛ:n:clarté]_NUM
-dm3_NUM>==dm3:n: [dm:n:ABR kibu:adj:cube]_NUM
-m2_NUM>==mɛ́tɛrɛkɛnɛ:n:mètre.carré [mɛ́tɛrɛ:n:mètre kɛ́nɛ:n:clarté]_NUM
-m3_NUM>==mɛ́tɛrɛkibu:n:mètre.cube [mɛ́tɛrɛ:n:mètre kibu:adj:cube]_NUM
-hm2_NUM>==hm2:n: [hm:n:ABR kɛ́nɛ:n:clarté]_NUM  # hectomètre
-km2_NUM>==kílomɛtɛrɛkɛnɛ:n:kilomètre.carré [kílomɛtɛrɛ:n:kilomètre [kílo:n:kilomètre mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
-sm2_NUM>==sákɛnɛntimɛtɛrɛkɛnɛ:n: [sántimɛtɛrɛ:n:centimètre kɛ́nɛ:n:clarté]_NUM # sentimɛtɛrɛ
-sm3_NUM>==sm3:n: [sántimɛtɛrɛ:n:centimètre kibu:adj:cube]_NUM
- 
-bam²_NUM>=bàmɛtɛrɛkɛnɛ:n:kilomètre.carré [bàmɛtɛrɛ:n:kilomètre [bà:n:mille mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
-cm²_NUM>==cm2:n: [cm:n:ABR kɛ́nɛ:n:clarté]_NUM
-cm³_NUM>==cm3:n: [cm:n:ABR kibu:adj:cube]_NUM
-dm²_NUM>==dm2:n: [dm:n:ABR kɛ́nɛ:n:clarté]_NUM
-dm³_NUM>==dm3:n: [dm:n:ABR kibu:adj:cube]_NUM
-m²_NUM>==mɛ́tɛrɛkɛnɛ:n:mètre.carré [mɛ́tɛrɛ:n:mètre kɛ́nɛ:n:clarté]_NUM
-m³_NUM>==mɛ́tɛrɛkibu:n:mètre.cube [mɛ́tɛrɛ:n:mètre kibu:adj:cube]_NUM
-hm²_NUM>==hm2:n: [hm:n:ABR kɛ́nɛ:n:clarté]_NUM  # hectomètre
-km²_NUM>==kílomɛtɛrɛkɛnɛ:n:kilomètre.carré [kílomɛtɛrɛ:n:kilomètre [kílo:n:kilomètre mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
-sm²_NUM>==sákɛnɛntimɛtɛrɛkɛnɛ:n: [sántimɛtɛrɛ:n:centimètre kɛ́nɛ:n:clarté]_NUM # sentimɛtɛrɛ
-sm³_NUM>==sm3:n: [sántimɛtɛrɛ:n:centimètre kibu:adj:cube]_NUM
+bam2_NUM===bàmɛtɛrɛkɛnɛ:n:kilomètre.carré [bàmɛtɛrɛ:n:kilomètre [bà:n:mille mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+cm2_NUM===cm2:n: [cm:n:ABR kɛ́nɛ:n:clarté]_NUM
+cm3_NUM===cm3:n: [cm:n:ABR kibu:adj:cube]_NUM
+dm2_NUM===dm2:n: [dm:n:ABR kɛ́nɛ:n:clarté]_NUM
+dm3_NUM===dm3:n: [dm:n:ABR kibu:adj:cube]_NUM
+m2_NUM===mɛ́tɛrɛkɛnɛ:n:mètre.carré [mɛ́tɛrɛ:n:mètre kɛ́nɛ:n:clarté]_NUM
+m3_NUM===mɛ́tɛrɛkibu:n:mètre.cube [mɛ́tɛrɛ:n:mètre kibu:adj:cube]_NUM
+hm2_NUM===hm2:n: [hm:n:ABR kɛ́nɛ:n:clarté]_NUM  # hectomètre
+km2_NUM===kílomɛtɛrɛkɛnɛ:n:kilomètre.carré [kílomɛtɛrɛ:n:kilomètre [kílo:n:kilomètre mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+sm2_NUM===sákɛnɛntimɛtɛrɛkɛnɛ:n: [sántimɛtɛrɛ:n:centimètre kɛ́nɛ:n:clarté]_NUM # sentimɛtɛrɛ
+sm3_NUM===sm3:n: [sántimɛtɛrɛ:n:centimètre kibu:adj:cube]_NUM
+
+Bam2_NUM===bàmɛtɛrɛkɛnɛ:n:kilomètre.carré [bàmɛtɛrɛ:n:kilomètre [bà:n:mille mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+Cm2_NUM===cm2:n: [cm:n:ABR kɛ́nɛ:n:clarté]_NUM
+Cm3_NUM===cm3:n: [cm:n:ABR kibu:adj:cube]_NUM
+Dm2_NUM===dm2:n: [dm:n:ABR kɛ́nɛ:n:clarté]_NUM
+Dm3_NUM===dm3:n: [dm:n:ABR kibu:adj:cube]_NUM
+M2_NUM===mɛ́tɛrɛkɛnɛ:n:mètre.carré [mɛ́tɛrɛ:n:mètre kɛ́nɛ:n:clarté]_NUM
+M3_NUM===mɛ́tɛrɛkibu:n:mètre.cube [mɛ́tɛrɛ:n:mètre kibu:adj:cube]_NUM
+Hm2_NUM===hm2:n: [hm:n:ABR kɛ́nɛ:n:clarté]_NUM  # hectomètre
+Km2_NUM===kílomɛtɛrɛkɛnɛ:n:kilomètre.carré [kílomɛtɛrɛ:n:kilomètre [kílo:n:kilomètre mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+Sm2_NUM===sákɛnɛntimɛtɛrɛkɛnɛ:n: [sántimɛtɛrɛ:n:centimètre kɛ́nɛ:n:clarté]_NUM # sentimɛtɛrɛ
+Sm3_NUM===sm3:n: [sántimɛtɛrɛ:n:centimètre kibu:adj:cube]_NUM
+
+BAM2_NUM===bàmɛtɛrɛkɛnɛ:n:kilomètre.carré [bàmɛtɛrɛ:n:kilomètre [bà:n:mille mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+CM2_NUM===cm2:n: [cm:n:ABR kɛ́nɛ:n:clarté]_NUM
+CM3_NUM===cm3:n: [cm:n:ABR kibu:adj:cube]_NUM
+DM2_NUM===dm2:n: [dm:n:ABR kɛ́nɛ:n:clarté]_NUM
+DM3_NUM===dm3:n: [dm:n:ABR kibu:adj:cube]_NUM
+#M2_NUM===mɛ́tɛrɛkɛnɛ:n:mètre.carré [mɛ́tɛrɛ:n:mètre kɛ́nɛ:n:clarté]_NUM
+#M3_NUM===mɛ́tɛrɛkibu:n:mètre.cube [mɛ́tɛrɛ:n:mètre kibu:adj:cube]_NUM
+HM2_NUM===hm2:n: [hm:n:ABR kɛ́nɛ:n:clarté]_NUM  # hectomètre
+KM2_NUM===kílomɛtɛrɛkɛnɛ:n:kilomètre.carré [kílomɛtɛrɛ:n:kilomètre [kílo:n:kilomètre mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+SM2_NUM===sákɛnɛntimɛtɛrɛkɛnɛ:n: [sántimɛtɛrɛ:n:centimètre kɛ́nɛ:n:clarté]_NUM # sentimɛtɛrɛ
+SM3_NUM===sm3:n: [sántimɛtɛrɛ:n:centimètre kibu:adj:cube]_NUM
+
+bam²_NUM===bàmɛtɛrɛkɛnɛ:n:kilomètre.carré [bàmɛtɛrɛ:n:kilomètre [bà:n:mille mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+cm²_NUM===cm2:n: [cm:n:ABR kɛ́nɛ:n:clarté]_NUM
+cm³_NUM===cm3:n: [cm:n:ABR kibu:adj:cube]_NUM
+dm²_NUM===dm2:n: [dm:n:ABR kɛ́nɛ:n:clarté]_NUM
+dm³_NUM===dm3:n: [dm:n:ABR kibu:adj:cube]_NUM
+m²_NUM===mɛ́tɛrɛkɛnɛ:n:mètre.carré [mɛ́tɛrɛ:n:mètre kɛ́nɛ:n:clarté]_NUM
+m³_NUM===mɛ́tɛrɛkibu:n:mètre.cube [mɛ́tɛrɛ:n:mètre kibu:adj:cube]_NUM
+hm²_NUM===hm2:n: [hm:n:ABR kɛ́nɛ:n:clarté]_NUM  # hectomètre
+km²_NUM===kílomɛtɛrɛkɛnɛ:n:kilomètre.carré [kílomɛtɛrɛ:n:kilomètre [kílo:n:kilomètre mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+sm²_NUM===sákɛnɛntimɛtɛrɛkɛnɛ:n: [sántimɛtɛrɛ:n:centimètre kɛ́nɛ:n:clarté]_NUM # sentimɛtɛrɛ
+sm³_NUM===sm3:n: [sántimɛtɛrɛ:n:centimètre kibu:adj:cube]_NUM
+
+Bam²_NUM===bàmɛtɛrɛkɛnɛ:n:kilomètre.carré [bàmɛtɛrɛ:n:kilomètre [bà:n:mille mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+Cm²_NUM===cm2:n: [cm:n:ABR kɛ́nɛ:n:clarté]_NUM
+Cm³_NUM===cm3:n: [cm:n:ABR kibu:adj:cube]_NUM
+Dm²_NUM===dm2:n: [dm:n:ABR kɛ́nɛ:n:clarté]_NUM
+Dm³_NUM===dm3:n: [dm:n:ABR kibu:adj:cube]_NUM
+M²_NUM===mɛ́tɛrɛkɛnɛ:n:mètre.carré [mɛ́tɛrɛ:n:mètre kɛ́nɛ:n:clarté]_NUM
+M³_NUM===mɛ́tɛrɛkibu:n:mètre.cube [mɛ́tɛrɛ:n:mètre kibu:adj:cube]_NUM
+Hm²_NUM===hm2:n: [hm:n:ABR kɛ́nɛ:n:clarté]_NUM  # hectomètre
+Km²_NUM===kílomɛtɛrɛkɛnɛ:n:kilomètre.carré [kílomɛtɛrɛ:n:kilomètre [kílo:n:kilomètre mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+Sm²_NUM===sákɛnɛntimɛtɛrɛkɛnɛ:n: [sántimɛtɛrɛ:n:centimètre kɛ́nɛ:n:clarté]_NUM # sentimɛtɛrɛ
+Sm³_NUM===sm3:n: [sántimɛtɛrɛ:n:centimètre kibu:adj:cube]_NUM
+
+BAM²_NUM===bàmɛtɛrɛkɛnɛ:n:kilomètre.carré [bàmɛtɛrɛ:n:kilomètre [bà:n:mille mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+CM²_NUM===cm2:n: [cm:n:ABR kɛ́nɛ:n:clarté]_NUM
+CM³_NUM===cm3:n: [cm:n:ABR kibu:adj:cube]_NUM
+DM²_NUM===dm2:n: [dm:n:ABR kɛ́nɛ:n:clarté]_NUM
+DM³_NUM===dm3:n: [dm:n:ABR kibu:adj:cube]_NUM
+#M²_NUM===mɛ́tɛrɛkɛnɛ:n:mètre.carré [mɛ́tɛrɛ:n:mètre kɛ́nɛ:n:clarté]_NUM
+#M³_NUM===mɛ́tɛrɛkibu:n:mètre.cube [mɛ́tɛrɛ:n:mètre kibu:adj:cube]_NUM
+HM²_NUM===hm2:n: [hm:n:ABR kɛ́nɛ:n:clarté]_NUM  # hectomètre
+KM²_NUM===kílomɛtɛrɛkɛnɛ:n:kilomètre.carré [kílomɛtɛrɛ:n:kilomètre [kílo:n:kilomètre mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+SM²_NUM===sákɛnɛntimɛtɛrɛkɛnɛ:n: [sántimɛtɛrɛ:n:centimètre kɛ́nɛ:n:clarté]_NUM # sentimɛtɛrɛ
+SM³_NUM===sm3:n: [sántimɛtɛrɛ:n:centimètre kibu:adj:cube]_NUM
 
 # symboles chimiques etc
 b1>==B1:n:vitamine.B1
@@ -8508,8 +8556,8 @@ b6>==B6:n:vitamine.B6
 b8>==B8:n:vitamine.B8
 b9>==B9:n:vitamine.B9
 b12>==B12:n:vitamine.B12
-co2>=CO2:n:gaz.CO2
-CO2>=CO2:n:gaz.CO2
+co2>==CO2:n:gaz.CO2
+CO2>==CO2:n:gaz.CO2
 
 
 # autres ambiguïtés levées par les nombres
@@ -14208,7 +14256,7 @@ PFVTR_PERS_sí_jɛ́_PUNCT===PFVTR_PERS_sí:n:poil_jɛ́:v:blanchir_PUNCT
 #
 #	jɛ̀   "assembler"
 #
-Jɛ̀ra==jɛ̀ra:v: [jɛ̀:v:assembler ra:mrph:PFV.INTR]   # fakan
+Jɛ̀ra===jɛ̀ra:v: [jɛ̀:v:assembler ra:mrph:PFV.INTR]   # fakan
 ## jɛ̀ra_kà===jɛ̀ra:v: [jɛ̀:v:assembler ra:mrph:PFV.INTR]_kà:pm:INF
 ## jɛ̀ra_k'===jɛ̀ra:v: [jɛ̀:v:assembler ra:mrph:PFV.INTR]_k':pm:INF
 PERS_ká_jɛ̀===PERS_ka:pm:SBJV_jɛ̀:v:assembler
@@ -29110,7 +29158,7 @@ m'_PERS_ká_láhidu===m':pm:PFV.NEG_PERS_ka:pp:POSS_láyidu:n:promesse
 màli_ka_cɛ̀bɔ=>=Màli:n.prop:TOP_ka:pp:POSS_cɛ̀bɔ:n:recrutement.de.militaires [cɛ̀:n:mâle bɔ́:v:sortir]
 màli_ká_kùru=>=Màli:n.prop:TOP_ka:pp:POSS_kùru:n:boule
 màli_ká_yɛ̀rɛmahɔrɔnya=>=Màli:n.prop:TOP_ka:pp:POSS_yɛ̀rɛmahɔrɔnya:n:liberté [yɛ̀rɛmahɔrɔn:n:homme.libre [yɛ̀rɛ̂:dtm:même mà:pp:ADR hɔ́rɔn:adj:libre] ya:mrph:ABSTR]
-màli_ka_ɲɛ́taa=>uso===màsakɛ:n:roi [màsa:n:roi kɛ:adj:mâle]_ka:pp:POSS_báramuso:n:femme.préférée [bára:n:préféré mùso:n:femme]
+màsakɛ_ka_báramuso===màsakɛ:n:roi [màsa:n:roi kɛ:adj:mâle]_ka:pp:POSS_báramuso:n:femme.préférée [bára:n:préféré mùso:n:femme]
 màsakɛ_ka_kɛ̀lɛbolo===màsakɛ:n:roi [màsa:n:roi kɛ:adj:mâle]_ka:pp:POSS_kɛ̀lɛbolo:n:armée [kɛ̀lɛ:n:querelle bólo:n:branche]
 màsakɛ_ka_só===màsakɛ:n:roi [màsa:n:roi kɛ:adj:mâle]_ka:pp:POSS_só:n:maison
 mátigi_ka_mɛ̀lɛkɛ===mátigi:n:seigneur [má:n:Dieu tìgi:n:maître]_ka:pp:POSS_mɛ̀lɛkɛ:n:ange
@@ -32053,7 +32101,7 @@ Amapu===AMAPU:n.prop:AMAP
 AMDH===AMDH:n.prop:ABR  # Association Malienne des Droits de l'Homme
 AMID===AMID:n.prop:ABR     # politikitɔn - Mamadu Igɔri Jara
 AMIPJ===AMIPJ:n.prop:ABR
-AMIP===AMIP:n.prop:ABR_J:n.prop:ABR
+AMIP_J===AMIP:n.prop:ABR_J:n.prop:ABR
 Amunisi===Amunisi:n.prop:Amnesty   # Amnesty International
 An-ka-bɛn===An-ka-bɛn:n.prop:NOM # parti créé en 1995
 anisete=>=anisete:n.prop:ANICT   # appui technique et financier aux collectivités territoriales www.anict.gouv.ml
@@ -32080,7 +32128,7 @@ Azeruti===Azeruti:n.prop:AGEROUTE
 BAKI===báki:n:baccalauréat
 Bedeyɛmu===Bedeyɛmu:n.prop:BDM-SA
 BDM-SA===BDM-SA:n.prop:ABR
-BEPC=BEPC:n.prop:ABR
+BEPC===BEPC:n.prop:ABR
 Beseye===Beseye:n.prop:BCE
 Beseyawo===Beseyawo:n.prop:BCEAO
 Betede===Betede:n.prop:BT2   # diplome
@@ -32090,8 +32138,8 @@ Beyɛnideya===Beyɛnideya:n.prop:BNDA
 BNDA===BNDA:n.prop:ABR    # Banque Nationale de Développement Agricole
 Bimu===Bimu:n.prop:BIM  # Banque
 Bobs===Bobs:n:ETRG.ENG  # Best Of Blogs
-BND==BND:n.prop:ABR
-BNDA==BNDA:n.prop:ABR
+BND===BND:n.prop:ABR
+BNDA===BNDA:n.prop:ABR
 BP===BP:n:ABR  # Boite Postale
 bp===BP:n:ABR  # Boite Postale
 CALAN-MALI===CALAN-Mali:n.prop:ABR [CALAN:n.prop:ABR Màli:n.prop:TOP]
@@ -32117,8 +32165,8 @@ COVID-19===Covid-19:n:ABR
 Kowidi-19===Kowidi-19:n:ABR
 Cowater_Sogema=*=CowaterSogema:n.prop:CowaterSogema   # projet SIRA 	https://cowatersogema.com/a-propos/?lang=fr
 CTSP===CTSP:n.prop:ABR # Comité de Salut Public (1991)
-DDT=DDT:n:ABR # et aussi FRA
-ddt=DDT:n:ABR # et aussi FRA
+DDT===DDT:n:ABR # et aussi FRA
+ddt===DDT:n:ABR # et aussi FRA
 DEDEYƐRI===DEDEYƐRI:n.prop:DDR
 DEDEYƐRl===DEDEYƐRI:n.prop:DDR
 DEDEYɛRl===DEDEYƐRI:n.prop:DDR
