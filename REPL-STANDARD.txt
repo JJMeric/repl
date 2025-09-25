@@ -173,7 +173,7 @@ anpɛrizilisi===anpɛrizilisi:n:aspergillus
 #ansanbulu=>=ansanbulu:n:ETRG.FRA # ensemble (musique)
 ansanbulu_insitirimantali===ánsanbulu:n:ensemble_insitirimantali:adj:ETRG.FRA
 #Ansaridiini===Ansaridini:n:Ansar.Dine
-Anɲin-anɲin=Anɲin-anɲin:n:jeu.enfant
+anɲin-anɲin>==Anɲin-anɲin:n:jeu.enfant
 #arabika=>=Arabika:n:arabica
 àrabukan===làrabukan:n: [làrabu:n:arabe kán:n:cou]
 Araja===araja:n.prop:ETRG.IND # râja
@@ -8474,12 +8474,49 @@ kɔ́ɔri_táari_NUM=>=kɔ́ɔri:n:coton_táari:n:hectare_NUM
 kàba_táari_NUM=>=kàba:n:maïs_táari:n:hectare_NUM
 màlo_táari_NUM=>=màlo:n:riz_táari:n:hectare_NUM
 
+# QUELQUES UNITES MECONNUES
+bam2_NUM>=bàmɛtɛrɛkɛnɛ:n:kilomètre.carré [bàmɛtɛrɛ:n:kilomètre [bà:n:mille mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+cm2_NUM>==cm2:n: [cm:n:ABR kɛ́nɛ:n:clarté]_NUM
+cm3_NUM>==cm3:n: [cm:n:ABR kibu:adj:cube]_NUM
+dm2_NUM>==dm2:n: [dm:n:ABR kɛ́nɛ:n:clarté]_NUM
+dm3_NUM>==dm3:n: [dm:n:ABR kibu:adj:cube]_NUM
+m2_NUM>==mɛ́tɛrɛkɛnɛ:n:mètre.carré [mɛ́tɛrɛ:n:mètre kɛ́nɛ:n:clarté]_NUM
+m3_NUM>==mɛ́tɛrɛkibu:n:mètre.cube [mɛ́tɛrɛ:n:mètre kibu:adj:cube]_NUM
+hm2_NUM>==hm2:n: [hm:n:ABR kɛ́nɛ:n:clarté]_NUM  # hectomètre
+km2_NUM>==kílomɛtɛrɛkɛnɛ:n:kilomètre.carré [kílomɛtɛrɛ:n:kilomètre [kílo:n:kilomètre mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+sm2_NUM>==sákɛnɛntimɛtɛrɛkɛnɛ:n: [sántimɛtɛrɛ:n:centimètre kɛ́nɛ:n:clarté]_NUM # sentimɛtɛrɛ
+sm3_NUM>==sm3:n: [sántimɛtɛrɛ:n:centimètre kibu:adj:cube]_NUM
+ 
+bam²_NUM>=bàmɛtɛrɛkɛnɛ:n:kilomètre.carré [bàmɛtɛrɛ:n:kilomètre [bà:n:mille mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+cm²_NUM>==cm2:n: [cm:n:ABR kɛ́nɛ:n:clarté]_NUM
+cm³_NUM>==cm3:n: [cm:n:ABR kibu:adj:cube]_NUM
+dm²_NUM>==dm2:n: [dm:n:ABR kɛ́nɛ:n:clarté]_NUM
+dm³_NUM>==dm3:n: [dm:n:ABR kibu:adj:cube]_NUM
+m²_NUM>==mɛ́tɛrɛkɛnɛ:n:mètre.carré [mɛ́tɛrɛ:n:mètre kɛ́nɛ:n:clarté]_NUM
+m³_NUM>==mɛ́tɛrɛkibu:n:mètre.cube [mɛ́tɛrɛ:n:mètre kibu:adj:cube]_NUM
+hm²_NUM>==hm2:n: [hm:n:ABR kɛ́nɛ:n:clarté]_NUM  # hectomètre
+km²_NUM>==kílomɛtɛrɛkɛnɛ:n:kilomètre.carré [kílomɛtɛrɛ:n:kilomètre [kílo:n:kilomètre mɛ́tɛrɛ:n:mètre] kɛ́nɛ:n:clarté]_NUM
+sm²_NUM>==sákɛnɛntimɛtɛrɛkɛnɛ:n: [sántimɛtɛrɛ:n:centimètre kɛ́nɛ:n:clarté]_NUM # sentimɛtɛrɛ
+sm³_NUM>==sm3:n: [sántimɛtɛrɛ:n:centimètre kibu:adj:cube]_NUM
+
+# symboles chimiques etc
+b1>==B1:n:vitamine.B1
+b2>==B2:n:vitamine.B2
+b3>==B3:n:vitamine.B3
+b5>==B5:n:vitamine.B5
+b6>==B6:n:vitamine.B6
+b8>==B8:n:vitamine.B8
+b9>==B9:n:vitamine.B9
+b12>==B12:n:vitamine.B12
+co2>=CO2:n:gaz.CO2
+CO2>=CO2:n:gaz.CO2
+
+
 # autres ambiguïtés levées par les nombres
 
 cɛ̀_kélen=>=cɛ̀:n:mâle_kélen:num:un
 cɛ̀_sàba=>=cɛ̀:n:mâle_sàba:num:trois
 cɛ̀_náani=>=cɛ̀:n:mâle_náani:num:quatre
-cɛ̀_dúuru=>=cɛ̀:n:mâle_dúuru:num:cinq
 cɛ̀_ségin=>=cɛ̀:n:mâle_séegin:num:huit
 cɛ̀_tán=>=cɛ̀:n:mâle_tán:num:dix
 cɛ̀_mùgan=>=cɛ̀:n:mâle_mùgan:num:vingt
@@ -31983,8 +32020,13 @@ díɲɛtɔnba_ONI=>=diɲɛtɔnba:n: [díɲɛ:n:monde tɔ́nba:n:grande.associa
 #
 # utilité ? les :n.prop:ABR sont traités globalement par repl.py (en remplacement des ::EMPR)
 # mais ceux terminés en -NA ou en MA risquent d'être d'abord dérivés (!)
+A300===A300:n.prop:ABR # marque d'avion
+A350===A350:n.prop:ABR # marque d'avion
+A380===A380:n.prop:ABR # marque d'avion
 africantongues===africantongues:n.prop:NOM.US  # site d'apprentissage des langues / now closed!
 ACALAN===ACALAN:n.prop:ABR
+ACI2000===ACI2000:n.prop:TOP # Bamako
+ASEYI2000===ACI2000:n.prop:TOP
 ACOD===ACOD:n.prop:ABR
 ACODE_P===ACODE:n.prop:ABR_P:n.prop:ABR
 ACO_D===ACO:n.prop:ABR_D:n.prop:ABR
@@ -32151,15 +32193,24 @@ FMI===FMI:n.prop:ABR
 díɲɛ_wáriko_mábɛnni_cákɛda=>=díɲɛ:n:monde_wáriko:n: [wári:n:argent kó:n:affaire]_màbɛnni:n: [màbɛ̀n:v:arranger [mà:mrph:SUPER bɛ̀n:v:se.rencontrer] li:mrph:NMLZ]_cákɛda:n:lieu.de.travail [cá:n:travail kɛ́:v:faire dá:n:bouche]    # FMI
 Fɛsipako===Fɛsipako:n.prop:FESPACO
 FLSL===FLSL:n.prop:ABR  # école sup. de langues (? cf Isiyaka Baalo) à Bamako
+FR3===FR3:n.prop:ABR
+fr3>==FR3:n.prop:ABR
 Funiyapu===Funiyapu:n.prop:FNUAP
 G5===G5:n.prop:ABR
 G5-Sahel===G5-Sahel:n.prop:ABR
+G7===G7:n.prop:ABR
+G8===G8:n.prop:ABR
 Ginadogɔn===Ginadogɔn:n.prop:NOM   # association culturelle dogon fondée en 1991
+GL7===GL7:n.prop:ABR # semence de coton
 Global_Voices===Global:n:ETRG.ENG_Voices:n:ETRG.ENG
 GNSS===GNSS:n.prop:ABR
 GPS===GPS:n.prop:ABR
 GTZ===GTZ:n.prop:ABR
 GT_Z=*=GTZ:n.prop:ABR
+H1===H1:n.prop:ABR # virus H1 N1
+H5===H5:n.prop:ABR # virus H5 N1
+N1===N1:n.prop:ABR # virus H1 N1
+H1N1===H1N1:n.prop:ABR # virus H1 N1
 huicoma=>=HUICOMA:n.prop:ABR
 HUICOMA===HUICOMA:n.prop:ABR   # Huilerie Cotonnière du Mali
 Huicoma===HUICOMA:n.prop:ABR   # Huilerie Cotonnière du Mali
@@ -32207,6 +32258,7 @@ Áfiriki_kèlenyatɔnba===Áfiriki:n.prop:TOP_kélenyatɔnba:n: [kélenya:n
 IYE===IYE:n.prop:UE
 Jɛ̀-ka-baara===Jɛ̀kabaara:n.prop:Jekabaara
 Jɛ̀kabaara===Jɛ̀kabaara:n.prop:Jekabaara
+k7>==kásɛti:n:cassette
 KALAN-MALI===KALAN-MALI:n.prop:CALAN-MALI
 Kalan-Mali===KALAN-MALI:n.prop:CALAN-MALI
 Kafu===Kafu:n.prop:CAF
@@ -32218,8 +32270,12 @@ Kledu===Kledu:n.prop:NOM   # radio Bko
 Kodɛmu===Kodɛmu:n.prop:CODEM
 Komanawu===Komanawu:n.prop:COMANAV
 COMANAV===COMANAV:n.prop:ABR
+korofina2>==KorofinaII:n.prop:TOP
 Kowɛki===Kowɛki:n.prop:COVEC
 LPK===LPK:n.prop:ABR  # Lycée
+M5===M5-RFP:n.prop:ABR  # parti M5-RFP (IBK)
+M5-RFP===M5-RFP:n.prop:ABR  # parti M5-RFP (IBK)
+M23===M23:n.prop:ABR  # groupe terroriste
 Makdas===MAKDAS:n.prop:ABR # Mali Kanw Danbe Se, org. de Mamadu Dukure
 MA.KO.CI===MAKOCI:n.prop:ABR    # Jɛkabaara
 MAKOCI===MAKOCI:n.prop:ABR    # Jɛkabaara
@@ -32232,6 +32288,10 @@ Mɔki===MƆKU:n.prop:MOC
 MOKU===MƆKU:n.prop:MOC
 MƆKU===MƆKU:n.prop:MOC
 MɔKU===MƆKU:n.prop:MOC
+MP3===MP3:n.prop:ABR  # format audio
+mp3>==MP3:n.prop:ABR
+MP22===MP22:n.prop:ABR  # parti populaire
+mp22>==MP22:n.prop:ABR  # parti populaire
 MUM===MUM:n.prop:ABR    # politikitɔn - Sɛki Haruna Sangare
 Muzawo===Muzawo:n.prop:MUJAO
 NASA===NASA:n.prop:ABR
@@ -32269,6 +32329,8 @@ ORT_m=*=ORTM:n.prop:ABR
 OSI===OSI:n.prop:OCI
 Ɔkisifamu===Ɔkisifamu:n.prop:OXFAM
 Oranzi===Oranzi:n.prop:ORANGE  # l'opérateur téléphonique!
+ORTM===ORTM:n.prop:ABR # télé du Mali
+ORTM1===ORTM1:n.prop:ABR # télé du Mali
 oua=>=OUA:n.prop:ABR
 OUA===OUA:n.prop:ABR
 OU_a=*=OUA:n.prop:ABR
@@ -32313,8 +32375,8 @@ Rising_Voices===Rising:n:ETRG.GER_Voices:n:ETRG.ENG
 Rongead===Rongead:n.prop:RONGEAD    #   http://www.rongead.org - Réseau des ONG Européennes sur le commerce international, les questions Agro-alimentaires, l'environnement et le Développement
 Sadi===SADI:n.prop:Solidarité.Africaine.pour.la.Démocratie.et.l'Indépendance.parti
 SADI===SADI:n.prop:Solidarité.Africaine.pour.la.Démocratie.et.l'Indépendance.parti
-Sahɛli21===Sahɛli21:n.prop:SAHEL21
-Saheli21===Sahɛli21:n.prop:SAHEL21
+sahɛli21>==Sahɛli21:n.prop:SAHEL21
+saheli21>==Sahɛli21:n.prop:SAHEL21
 SAHEL21===SAHEL21:n.prop:ABR
 SANI===SANI:n.prop:SHAN  # une coupe de football
 Sahɛli_21=*=Sahɛli21:n.prop:SAHEL21
@@ -32383,12 +32445,14 @@ Teledɛrimali===Teledɛrimali:n.prop:TelederMali   # télé-dermatologie
 Teyɛmude===Teyɛmude:n.prop:TM2 # chaine de télé
 Teyɛnite===Teyɛnite:n.prop:TNT   # télévision numérique
 Tepeyi===Tepeyi:n.prop:TPI
+TM2===TM2:n.prop:ABR # Télé Mali
 TPI===TPI:n.prop:ABR    # Tribunal de Première Instance /ou/ Tribunal Pénal International
 Turuwazaze===Turuwazaze:n.prop:3AG
 TYS===TYS:n.prop:ABR
 TY_S=*=TYS:n.prop:ABR
 TY_Sídìbe===TYS:n.prop:ABR_Sídìbe:n.prop:NOM.CL
 Тɔрu_Etuwali===Tɔpu:n:ETRG.ENG_Etuwali:n:ETRG.FRA # émission de télé TOP ETOILES
+U20===U20:n.prop:ABR # niveau de compétition en foot (20 ans ?)
 UMRDA===UMRDA:n.prop:ABR
 UM-RDA===UM-RDA:n.prop:ABR
 UMA===UMA:n.prop:ABR    # groupe présentant Muntaga Tall aux élections 2018
