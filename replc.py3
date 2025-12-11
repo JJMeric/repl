@@ -981,14 +981,14 @@ punctlist=[]
 punct2test= ["COMMA","DOT","COLON","SEMICOLON","QUESTION","EXCLAM","LAQUO","RAQUO","LDQUO","RDQUO","PARO","PARF","DEGRE"]
 for thispunct in allpunctsshortlist:
   if thispunct==",": punctlist.append("COMMA")
-  elif "DOT" not in punctlist:
-    if re.match(r'\.+',thispunct): punctlist.append("DOT") # why not PERIOD ?
+  elif re.match(r'\.+',thispunct) :
+    if "DOT" not in punctlist: punctlist.append("DOT") # why not PERIOD ?
   elif thispunct==":": punctlist.append("COLON")
   elif thispunct==";": punctlist.append("SEMICOLON")
-  elif "QUESTION" not in punctlist: 
-    if re.match(r'\.*[\?]+[\!\.]*',thispunct): punctlist.append("QUESTION")
-  elif "EXCLAM" not in punctlist: 
-    if re.match(r'\.*[\!]+[\?\.]*',thispunct): punctlist.append("EXCLAM")
+  elif re.match(r'\.*[\?]+[\!\.]*',thispunct): 
+    if "QUESTION" not in punctlist: punctlist.append("QUESTION")
+  elif re.match(r'\.*[\!]+[\?\.]*',thispunct): 
+    if "EXCLAM" not in punctlist: punctlist.append("EXCLAM")
   elif thispunct=="«": punctlist.append("LAQUO")
   elif thispunct=="»": punctlist.append("RAQUO")  
   elif thispunct=="“": punctlist.append("LDQUO")

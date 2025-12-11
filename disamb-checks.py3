@@ -1019,7 +1019,7 @@ for fileINname in disfiles:
 
       nerr,err_msg=listerr(PPpm_NG_VnonPERF)
       if nerr>0:
-        errors=errors+"    "+str(nerr)+" PP Gn Vnonperf [la PP pourrait-elle être une MP?] : "+err_msg+"\n"
+        errors=errors+"    "+str(nerr)+" PP Gn Vnonperf [la PP pourrait-elle être une MP?] (OK si verbe à l'impératif) : "+err_msg+"\n"
 
       nerr,err_msg=listerr(Ala_MAnon_DES_NG_VERBralana)
       if nerr>0:
