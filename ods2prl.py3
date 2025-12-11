@@ -7,12 +7,41 @@ import sys
 
 from pyexcel_ods3 import get_data    # pip install pyexcel-ods3
 
-data = get_data("sen_tegiziperi-masadennin-bam-fra.ods")
+# on passe deux arguments
+# 1) nom de fichier .ods qui doit se terminer par -bam-fra3.ods ou -bam-fra4.ods
+# 2) n° de colonne où se trouve le français à prendre en compte: 3 ou 4
+#    nb: le bambara, celui ésambiguïsé, est toujours en colonne 1
+#
+# on obtient les fichiers suivants
+# bam-fra4 : un fichier se terminant en .dis.fra.txt
+# s'il n'y a pas alignement un à un, on obtient un fichier se terminant en .dis.bam-fra.prl
+
+
+if len(sys.argv)>1:
+  fileINname=str(sys.argv[1])
+else: sys.exit("svp entrer le nom du fichier -bam-fraX.ods (avec X=3 ou 4)")
+
+colfra=3
+if len(sys.argv)>2:
+	colfra=int(sys.argv[2])
+if colfra<3 :
+	sys.exit("le français doit être en colonne 3 ou +")
+
+if "-bam-fra3.ods" in fileINname or "-bam-fra4.ods" in fileINname : 
+	fileroot=fileINname[:-13]
+	filefraName=fileroot+".dis.fra.txt"
+	fileprlName=fileroot+".dis.bam-fra.prl"
+else:
+	sys.exit("entrer un nom de fichier se terminant en -bam-fra3.ods ou en -bam-fra4.ods")
+
+data = get_data(fileINname)
 
 # ADD: also open .dis.html file to check that number of bam sentences is the same
 
 nbam=-1  # index starts at 0
 nfra=-1
+
+fratext=""
 
 prltext=""
 for key,sheet in data.items():
@@ -20,30 +49,34 @@ for key,sheet in data.items():
 	bamlist=[]
 	fralist=[]
 	nl=0
+	l1=True
 	for elements in sheet:
+		if l1 :
+			l1=False
+			continue  # skips 1st line
 		nl+=1
-		if len(elements)==2:
+		if len(elements)==colfra:
 			#bam,fra=elements
-			bam=elements[0].strip()
-			fra=elements[1].strip()
+			bam=elements[1].strip()
+			fra=elements[colfra-1].strip()
 			if bam!="": 
 				nbam+=1
+				# write in -bam.txt
 			if fra!="": 
 				nfra+=1
 			# else : print(">>> fra empty") # never happens, see $$$
-			# write in -bam.txt
-			# write in -fra.txt
+				# write in -fra.txt
+				fratext+="<s n=\""+str(nfra)+"\">"+fra+"</s>\n"
 			bamlist.append(nbam)
 			fralist.append(nfra)
 		else:
 			if len(elements)==0:
 				print("line",nl," ??? no elements (ignored) ")
 			else:
-				bam=elements[0].strip()
+				bam=elements[1].strip()
 				if bam!="": nbam+=1
 				# print("$$$ fra empty")
 				# write in -bam.txt
-				# write in -fra.txt
 				bamlist.append(nbam)
 				fralist.append(nfra)
 
@@ -119,11 +152,23 @@ else:
 	if nfra==nfrastart+1 : frasep=","
 	prltext+=str(nbamstart)+bamsep+str(nbam)+"\t"+str(nfrastart)+frasep+str(nfra)+"\n"
 
-print("prltext:\n"+prltext)
-# write to .prl file
+linesprl=prltext.split("\n")
+if not (len(linesprl)==2 and linesprl[1]==""):
+	fileprl=open(fileprlName,"w")
+	fileprl.write(prltext)
+	fileprl.close()
+	print(fileprlName,"est disponible")
+else:
+	print("textes alignés, pas besoin de fichier .prl\nprltext:\n"+prltext)
+
+filefra=open(filefraName,"w")
+filefra.write(fratext)
+filefra.close()
+print(filefraName,"est disponible")
 
 
-# Output matches that of Andrij's prl file - 27/06/2025
+# St Exupéry Le Petit prince :
+#   Output matches that of Andrij's prl file - 27/06/2025
 
 #   0:511	0:511
 #   512,513	512
