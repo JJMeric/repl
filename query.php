@@ -23,11 +23,13 @@ Mot bambara à rechercher: <input type="text" name="w"><br>
 </form>
 
 <?php
-$querylink="" # = self - cf sylink
+$querylink=""; # = self - cf sylink
 
 #echo "hello world";
+
 #if (function_exists('mysqli_connect')) { echo '<br/>mysqli_connect exists';} else { echo '<br/>mysqli_connect does not exist';}
 $connection = mysqli_connect('sql.lautre.net', 'jjmeric_bamadaba', '0IpHibwq') or die('Impossible de se connecter : ' . mysql_error());
+
 #echo "<br/>Connected successfully";
 
 #if (function_exists('mysqli_select_db')) { echo '<br/>mysqli_select_db exists';} else { echo '<br/>mysqli_select_db does not exist';}
@@ -95,7 +97,7 @@ $rejeter=preg_match($pattern,$word,$matches, PREG_OFFSET_CAPTURE);
 list($found,$pos)=$matches[1];
 
 if ($rejeter) { 
-        if (in_array($found,array("bl", "br", "bw", "by", "dl", "dr", "dy", "fl", "fr", "fw", "fy", "gl", "gr", "gw", "kl", "kr", "kw", "mn", "my", "nb", "nc", "nd", "nf", "ng", "nk", "nl", "nm", "nn", "np", "nr", "ns", "nt", "nw", "nz", "pl", "pr", "py", "rb", "rd", "rf", "rk", "rl", "rm", "rn", "rr", "rs", "rt", "sh", "sk", "sm", "st", "sw", "sy", "tl", "tn", "tr", "tw", "ty", "ɲw")) ) {
+        if (in_array($found,array("bl", "br", "bw", "by", "dl", "dr", "dy", "fl", "fr", "fw", "fy", "gl", "gr", "gw", "kl", "kr", "kw", "mn", "my", "nb", "nc", "nd", "nf", "ng", "nk", "nl", "nm", "nn", "np", "nr", "ns", "nt", "nw", "nz", "pl", "pr", "py", "rb", "rd", "rf", "rk", "rl", "rm", "rn", "rr", "rs", "rt", "sh", "sk", "sm", "st", "sw", "sy", "tl", "tn", "tr", "tw", "ty", "ɲw", "ny")) ) {
                 $rejeter=False;
         }
         else {

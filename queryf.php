@@ -23,7 +23,7 @@ Mot en français à rechercher: <input type="text" name="w"><br>
 </form>
 
 <?php
-$querylink="query.php" # cf sylink
+$querylink="query.php"; # cf sylink
 
 #echo "hello world";
 #if (function_exists('mysqli_connect')) { echo '<br/>mysqli_connect exists';} else { echo '<br/>mysqli_connect does not exist';}
