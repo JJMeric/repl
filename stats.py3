@@ -99,7 +99,7 @@ def frastat(frafilename) :
 
 	return frasentn,frawords
 
-csvfile=open("/home/corpus-team/corpus_parallele/corbama_parallel_scan.csv","w")
+csvfile=open(os.path.expanduser("~")+"/corpus_parallele/corbama_parallel_scan.csv","w")
 csvfile.write('"Folder / File name","T","online","bam_s","bam_w","fra_s","fra_w","fra2_s","fra2_w","warnings"\n')
 
 # open corbamafara list of files in parallel corpus

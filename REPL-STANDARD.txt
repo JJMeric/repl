@@ -345,6 +345,7 @@ bárikaɲinini=>=bárikaɲinini:n: [bárika:n:bénédiction ɲíni:v:cherche
 #básigiko===básigiko:n: [básigi:n:sécurité [bá:n:base sìgi:v:asseoir] kó:n:affaire]
 #básigiyɔrɔ===básigiyɔrɔ:n: [básigi:n:sécurité [bá:n:base sìgi:v:asseoir] yɔ́rɔ:n:lieu]
 #bátaraden===bátaraden:n: [bátara:n:inutilité dén:n:enfant]
+bátigɛmisi>>=bátigɛmisi:n: [bá:n:fleuve tìgɛ:v:couper mìsi:n:bovidé]
 báw'===báwò:conj:puisque
 báwo===báwò:conj:puisque
 báyɛlɛmani>>=báyɛlɛmani:n:transformation [báyɛ̀lɛma:v:transformer [bá:n:base yɛ̀lɛma:v:changer] li:mrph:NMLZ]
@@ -7794,7 +7795,7 @@ DEBUT_Ségu===DEBUT_Ségu:n.prop:TOP
 # problèmes de majuscules et minuscules
 # nb: en minuscule, ne pas s'encombrer avec le nom propre homonyme
 lámini===lámini:n:alentours [lá:mrph:CAUS míni:v:enrouler]§§lámini:v:entourer [lá:mrph:CAUS míni:v:enrouler]
-Lámini>==Làmínì:n.prop:NOM.M§§lámini:n:alentours [lá:mrph:CAUS míni:v:enrouler]
+Lámini===Làmínì:n.prop:NOM.M§§lámini:n:alentours [lá:mrph:CAUS míni:v:enrouler]
 Làmínì_NPROPRE===Làmínì:n.prop:NOM.M_NPROPRE
 Làmíne_Jàra===Làmíne:n.prop:NOM.M_Jàra:n.prop:NOM.CL
 làlà===làálà:adv:peut-être
@@ -27959,6 +27960,7 @@ kɔ́ɔri_kólobɔli=>=kɔ́ɔri:n:coton_kólobɔli:n: [kólo:n:os bɔ́:v:so
 kɔ́ɔri_mínnu_dàn===kɔ́ɔri:n:coton_mínnu:dtm:REL.PL2 [mîn:dtm:REL lu:mrph:PL2]_dàn:v:semer
 kɔ́ɔri_mínnu_dànna===kɔ́ɔri:n:coton_mínnu:dtm:REL.PL2 [mîn:dtm:REL lu:mrph:PL2]_dànna:v: [dàn:v:semer la:mrph:PFV.INTR]
 kɔ́ɔrimugu_bali===kɔ́ɔrimugu:n:ouate [kɔ́ɔri:n:coton múgu:n:poudre]_bali:n:balle.de.coton
+kɔ́rɔnfɛla_màraw===kɔ́rɔnfɛla:n:l'est [kɔ́rɔn:n:orient fɛ̀:pp:par la:mrph:LOC]_màraw:n: [màra:n:garde w:mrph:PL]
 kɛ̀lɛ_ìn===kɛ̀lɛ:n:querelle_ìn:dtm:DEF
 kɛ̀ɲɛkayanfan_jàmana===kɛ̀ɲɛkayànfan:n:nord [kɛ̀ɲɛka:n:nord yàn:n:cet.endroit fàn:n:côté]_jàmana:n:pays
 kɛ̀ɲɛka_fɛ̀_fítinɛ===kɛ̀ɲɛka:n:nord_fɛ̀:pp:par_fítinɛ:n:grande.querelle
@@ -28281,6 +28283,7 @@ sìshɛkili>>=shɛ̀kili:n: [shɛ̀:n:poule kíli:n:oeuf]
 shì_sún=>=sì:n:karité_sún:n:tronc
 shì_bàle=>=sì:n:karité_bàlen:n:fourche
 Sìgida_Ɲɛ́sigi===sìgida:n:localité [sìgi:v:asseoir dá:n:bouche]_ɲɛ́sigi:n:préparatifs [ɲɛ́:n:oeil sìgi:n:position.assise] # opération de la CMDT
+sìgidalakana=>=sìgidalakana:n: [sìgida:n:localité [sìgi:v:asseoir dá:n:bouche] lákana:n:sécurité [lá:mrph:CAUS kána:v:protéger]]
 sìgili_kàlata=>=sìgili:n:action.de.s'asseoir [sìgi:v:asseoir li:mrph:NMLZ]_kàlata:n:tirage.au.sort [kàla:n:tige tà:n:action.de.prendre]
 Síkaso_màra===Síkaso:n.prop:TOP_màra:n:garde
 sìlamɛya_jɔ̀sen_dúuru=>=sìlamɛya:n:islam [sìlamɛ:n:musulman ya:mrph:ABSTR]_jɔ̀sen:n:statut [jɔ̀:n:station.debout sèn:n:jambe]_dúuru:num:cinq
@@ -28781,6 +28784,9 @@ fàamakunda_àní_jàmakunda=>=fàamakunda:n: [fàama:n:roi kùnda:n:grou
 fàkɔrɔw_ní_bákɔrɔw=>=fàw:n: [fà:n:père kɔ̀rɔ:adj:vieux w:mrph:PL]_ni:conj:et_báw:n: [bá:n:mère kɔ̀rɔ:adj:vieux w:mrph:PL]
 fàama_ní_fàantan=>=fàama:n:roi_ni:conj:et_fàantan:n:pauvre [fànga:n:force ntan:mrph:PRIV]
 fàama_ní_fàantanw=>=fàama:n:roi_ni:conj:et_fàantanw:n: [fàantan:n:pauvre [fànga:n:force ntan:mrph:PRIV] w:mrph:PL]
+fàantan_n'_à_bólodɛsɛbagatɔ=>=fàantan:n:pauvre [fànga:n:force ntan:mrph:PRIV]_n':conj:et_à:pers:3SG_bólodɛsɛbagatɔ:n: [bólodɛsɛ:n:pauvreté [bólo:n:bras dɛ́sɛ:v:échouer] baga:mrph:AG.OCC tɔ:mrph:ST]
+dɛ́sɛbagatɔ_ni_fàantan=>=dɛ́sɛbagatɔ:n:indigent [dɛ́sɛ:v:échouer baga:mrph:AG.OCC tɔ:mrph:ST]_ni:conj:et_fàantan:n:pauvre [fànga:n:force ntan:mrph:PRIV]
+dɛ́sɛbagatɔw_n'_à_fàantanw=>=dɛ́sɛbagatɔw:n: [dɛ́sɛbagatɔ:n:indigent [dɛ́sɛ:v:échouer baga:mrph:AG.OCC tɔ:mrph:ST] w:mrph:PL]_n':conj:et_à:pers:3SG_fàantanw:n: [fàantan:n:pauvre [fànga:n:force ntan:mrph:PRIV] w:mrph:PL]
 fàantan_ní_fàama=>=fàantan:n:pauvre [fànga:n:force ntan:mrph:PRIV]_ni:conj:et_fàama:n:roi
 fàneni_ní_báneni=>=fàneni:n: [fà:n:père nèni:v:insulter]_ni:conj:et_báneni:n: [bá:n:mère nèni:v:insulter]
 fànga_ni_dùsu=>=fànga:n:force_ni:conj:et_dùsu:n:coeur
