@@ -5,8 +5,8 @@
 <title>Bamadaba - Dictionnaire Bambara</title>
  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
  <meta charset="utf-8">
- <meta name="generator" content="Bamadaba/Corbama daba tools, SIL Toolbox &amp; Lexique Pro.3.6" />
- <meta name="date-generated" content="samedi 16 avril 2024 à 20:00 AM" />
+ <meta name="generator" content="Bamadaba/Corbama daba tools, SIL Toolbox &amp; MySQL" />
+ <meta name="date-generated" content="vendredi 26 décembre 2025 - 15:00" />
  <meta name="robots" content="INDEX,FOLLOW">
 <meta name="title" content="Bamadaba - Dictionnaire bambara">
 <meta name="description" content="dictionnaire bambara français" />
@@ -14,13 +14,29 @@
 <meta name="Author" content="Valentin Vydrine"><meta name="Author" content="Jean-Jacques Méric"><meta name="reply-to" content="contact@mali-pense.net">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="/bm/stylesheets/lexiquepro-corpus.css?v=2023Feb222000" type="text/css" />
+ <script src="/bm/javascript/lexiquepro-corpus.js?v=2023Feb222000" type="text/javascript"></script>
 </head>
 
 <body>
-<form action="query.php" method="GET">
-Mot bambara à rechercher: <input type="text" name="w"><br>
-<input type="submit"><small style="margin-left:50px;"><a href="queryf.php">en français?</a></small>
-</form>
+<div id="haut" style="height: 8%;">
+        <div style="height: 30%;font-family: 'Noto Sans','Arial';position: absolute;top: 0px;left: 10px;color: white;font-size: 75%;width:15%;background-color:lightblue;text-align:center;">
+                <a href="http://cormand.huma-num.fr/" title="Le dictionnaire orthographique bambara, l'un des outils du Corpus bambara de référence" target=_blank>BAMADABA</a>
+        </div>
+        <div class="altindex" style="width:15%;background-color:lightblue;text-align:center;font-size:75%;">
+                <a href="queryf.php" title="rechercher dans l'index français?">en français?</a>
+        </div>
+        <div class="search1" id="recherche">
+            <a class=touche onClick="vinput('ɛ')" title="e ouvert">ɛ</a>
+            <a class=touche onClick="vinput('ɔ')" title="o ouvert">ɔ</a>
+            <a class=touche onClick="vinput('ɲ')" title="ny">ɲ</a>
+            <a class=touche onClick="vinput('ŋ')" title="ng">ŋ</a>
+            <form action="" method="GET" style="padding-right:10px;">
+            <small>Mot bambara à rechercher:</small><input type="text" id='ɲini1' name="w" style="width:35%;">
+            <input type="submit" style="width:15%; float:right; background-image: url('/bm/images/search-icon.png');background-repeat: no-repeat; " >
+            </form>
+        </div>
+</div>
+<div id="bas" style="top: 9%;">
 
 <?php
 $querylink=""; # = self - cf sylink
@@ -668,5 +684,7 @@ if ($rdates != FALSE) {
 // Et pour mettre fin à la connexion
 mysqli_close();
 ?>
+<br/><br/><br/><br/><br/>
+</div>
 </body>
 </html>
