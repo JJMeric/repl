@@ -427,7 +427,9 @@ if ($retour === FALSE) {
                                 if ($idlxsy!=0) {
                                         $sylink="<a href='$querylink?id=$idlxsy'>$sylink</a>";
                                 }
-    				$sytxt=$sytxt.$sylink."<i>".$enreg_sy["di"]."</i>, ";
+                                $sydi=$enreg_sy["di"];
+                                if $sydi=="":   $sytxt=$sytxt.$sylink.", ";
+    				else:           $sytxt=$sytxt.$sylink."<i>$sydi</i>, ";
     			}
     			$sytxt=chop($sytxt,", ");  # remove last comma
     			if ($sytxt !="") {

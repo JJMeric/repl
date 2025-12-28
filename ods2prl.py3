@@ -33,6 +33,9 @@ if len(sys.argv)>1:
   fileINname=str(sys.argv[1])
 else: sys.exit("svp entrer le nom du fichier -bam-fraX.ods (avec X=3 ou 4)")
 
+if not os.path.exists(fileINname):
+	sys.exit(fileINname+" n'existe pas dans ce répertoire, vérifier svp")
+
 colfra=3
 checks=False
 if len(sys.argv)>2:
@@ -43,7 +46,7 @@ if len(sys.argv)>2:
 	elif sys.argv[2]=="-c":
 		checks=True
 	else:
-		print("argument ignored:",sys.argv[2])
+		print("argument ignoré:",sys.argv[2])
 
 endswith=fileINname[-13:]
 
@@ -89,10 +92,19 @@ for key,sheet in data.items():
 			l1=False
 			continue  # skips 1st line
 		nl+=1
-		if len(elements)==colfra:
-			#bam,fra=elements
-			bam=elements[1].strip()
-			fra=elements[colfra-1].strip()
+		if len(elements)>=colfra: # nb ; les cellules à droite de colfra sont ignorées
+			
+			#print(nl,elements)
+			if type(elements[1]) is str: bam=elements[1].strip()
+			else: 
+				bam=str(elements[1])
+				print("!!!Attention: éviter les lignes ne contenant que des chiffres, voir ligne",nl,":",bam)
+			
+			if type(elements[colfra-1]) is str: fra=elements[colfra-1].strip()
+			else:	
+				fra=str(elements[colfra-1])
+				print("!!!Attention: éviter les lignes ne contenant que des chiffres, voir ligne",nl,":",fra)
+				
 			NA=False
 			#print("bam:",nl,bam)
 			if bam!="":
@@ -104,6 +116,7 @@ for key,sheet in data.items():
 					if filebamrequired: bamtext+="<s n=\""+str(nbam)+"\">"+bam+"</s>\n"
 				else:
 					NA=True
+					if fra=="": sys.exit("un -NA- ne peut pas être en face d'une cellule vide de continuation, voir ligne"+str(nl))
 			if fra!="":
 				if fra!="-NA-":
 					nfra+=1
@@ -113,6 +126,7 @@ for key,sheet in data.items():
 					fratext+="<s n=\""+str(nfra)+"\">"+fra+"</s>\n"
 				else:
 					NA=True
+					if bam=="": sys.exit("un -NA- ne peut pas être en face d'une cellule vide de continuation, voir ligne"+str(nl))
 			if not NA :
 				nbamlist.append(nbam)
 				nfralist.append(nfra)
@@ -125,7 +139,7 @@ for key,sheet in data.items():
 					nfralist.append(-1)
 		else:
 			if len(elements)==0:
-				print("line",nl," ??? no elements (ignored: lines closing table) ")
+				print("line",nl," ??? no elements (to be ignored if lines closing table) ")
 			else:
 				bam=elements[1].strip()
 				if bam!="": nbam+=1
@@ -158,7 +172,8 @@ nlmax=len(nbamlist)-1
 
 prltext=""     # writes only occur on alignment breaks (ruptures)
 nlseq=False   # opens a sequence one2many or many2one
-nlseqNA=False # same for "not available"
+nlseqNAbam=False # same for "not available" but need to treat bam and fra separately
+nlseqNAfra=False # same for "not available"
 
 nlstart=-22    # start of a new sequence summary
 seqlist=[]
@@ -173,24 +188,48 @@ for nl in range(0, nlmax) :
 	nfra=nfralist[nl]
 	# print(nl,nbam,nfra)
 
-	if nbam==-1 or nfra==-1:
+	if nbam==-1:
 		if nbam==nfra: sys.exit("cannot have -NA- in both columns, check line ",nl)
-		if not nlseqNA:
+		if not nlseqNAbam:
 			# save  previous sequence summary 
 			if nl>0:
 				nbam1=nbamlist[nl-1]
 				nfra1=nfralist[nl-1]
 				if lastseqbam!=nbam1: # or: nbma1 in nbam_in_seq  (already in stored sequences)
 					seqlist.append((nbamlist[nlstart],nbam1,nfralist[nlstart],nfra1))
-					#print("cas A-NA",nl,nbam,nfra,"+",(nbamlist[nlstart],nbam1,nfralist[nlstart],nfra1))
+					#print("cas A-NAbam",nl,nbam,nfra,"+",(nbamlist[nlstart],nbam1,nfralist[nlstart],nfra1))
 					lastseqbam=nbam1
-					for i in range(nbamlist[nlstart],nbam1+1): nbam_in_seq.append(i)
-					for i in range(nfralist[nlstart],nfra1+1): nfra_in_seq.append(i)
+					for i in range(nbamlist[nlstart],nbam1+1): 
+						if i!=-1:nbam_in_seq.append(i)
+					for i in range(nfralist[nlstart],nfra1+1): 
+						if i!=-1:nfra_in_seq.append(i)
 					#lastseqfra=nfra1
 			nlstart=nl
-			nlseqNA=True
+			nlseqNAbam=True
+			nlseqNAfra=False
 			nlseq=False
-			
+
+	elif nfra==-1:
+		if nbam==nfra: sys.exit("cannot have -NA- in both columns, check line ",nl)
+		if not nlseqNAfra:
+			# save  previous sequence summary 
+			if nl>0:
+				nbam1=nbamlist[nl-1]
+				nfra1=nfralist[nl-1]
+				if lastseqbam!=nbam1: # or: nbma1 in nbam_in_seq  (already in stored sequences)
+					seqlist.append((nbamlist[nlstart],nbam1,nfralist[nlstart],nfra1))
+					#print("cas A-NAfra",nl,nbam,nfra,"+",(nbamlist[nlstart],nbam1,nfralist[nlstart],nfra1))
+					lastseqbam=nbam1
+					for i in range(nbamlist[nlstart],nbam1+1): 
+						if i!=-1:nbam_in_seq.append(i)
+					for i in range(nfralist[nlstart],nfra1+1): 
+						if i!=-1:nfra_in_seq.append(i)
+					#lastseqfra=nfra1
+			nlstart=nl
+			nlseqNAfra=True
+			nlseqNAbam=False
+			nlseq=False
+
 	elif nbam==nbamlist[nl+1] or nfra==nfralist[nl+1]:
 		if nbam==nbamlist[nl+1] and nfra==nfralist[nl+1]: sys.exit("cannot have [empty space] in both columns, check line ",nl)
 		if not nlseq:
@@ -202,22 +241,39 @@ for nl in range(0, nlmax) :
 					seqlist.append((nbamlist[nlstart],nbam1,nfralist[nlstart],nfra1))
 					#print("cas A",nl,nbam,nfra,"+",(nbamlist[nlstart],nbam1,nfralist[nlstart],nfra1))
 					lastseqbam=nbam1
-					for i in range(nbamlist[nlstart],nbam1+1): nbam_in_seq.append(i)
-					for i in range(nfralist[nlstart],nfra1+1): nfra_in_seq.append(i)
+					for i in range(nbamlist[nlstart],nbam1+1): 
+						if i!=-1:nbam_in_seq.append(i)
+					for i in range(nfralist[nlstart],nfra1+1): 
+						if i!=-1:nfra_in_seq.append(i)
 			nlstart=nl
 			nlseq=True
-			nlseqNA=False
+			nlseqNAbam=False
+			nlseqNAfra=False
 			
 	else:
-		if nlseqNA:
-			nlseqNA=False
+		if nlseqNAbam:
+			nlseqNAbam=False
 			if nl>0:
 				if lastseqbam!=nbam:
 					seqlist.append((nbamlist[nlstart],nbamlist[nl-1],nfralist[nlstart],nfralist[nl-1]))
-					#print("cas B-NA",nl,nbam,nfra,"+",(nbamlist[nlstart],nbamlist[nl-1],nfralist[nlstart],nfralist[nl-1]))
+					#print("cas B-NAbam",nl,nbam,nfra,"+",(nbamlist[nlstart],nbamlist[nl-1],nfralist[nlstart],nfralist[nl-1]))
 					lastseqbam=nbamlist[nl-1]
-					for i in range(nbamlist[nlstart],nbamlist[nl-1]+1): nbam_in_seq.append(i)
-					for i in range(nfralist[nlstart],nfralist[nl-1]+1): nfra_in_seq.append(i)		
+					for i in range(nbamlist[nlstart],nbamlist[nl-1]+1): 
+						if i!=-1:nbam_in_seq.append(i)
+					for i in range(nfralist[nlstart],nfralist[nl-1]+1): 
+						if i!=-1:nfra_in_seq.append(i)		
+			nlstart=nl
+		elif nlseqNAfra:
+			nlseqNAfra=False
+			if nl>0:
+				if lastseqbam!=nbam:
+					seqlist.append((nbamlist[nlstart],nbamlist[nl-1],nfralist[nlstart],nfralist[nl-1]))
+					#print("cas B-NAfra",nl,nbam,nfra,"+",(nbamlist[nlstart],nbamlist[nl-1],nfralist[nlstart],nfralist[nl-1]))
+					lastseqbam=nbamlist[nl-1]
+					for i in range(nbamlist[nlstart],nbamlist[nl-1]+1): 
+						if i!=-1:nbam_in_seq.append(i)
+					for i in range(nfralist[nlstart],nfralist[nl-1]+1): 
+						if i!=-1:nfra_in_seq.append(i)		
 			nlstart=nl
 		elif nlseq:   # note : at this step next ligne number nbam is different from current
 			nlseq=False
@@ -226,8 +282,10 @@ for nl in range(0, nlmax) :
 				seqlist.append((nbamlist[nlstart],nbam,nfralist[nlstart],nfra))
 				#print("cas B",nl,nbam,nfra,"+",(nbamlist[nlstart],nbam,nfralist[nlstart],nfra))
 				lastseqbam=nbam
-				for i in range(nbamlist[nlstart],nbam+1): nbam_in_seq.append(i)
-				for i in range(nfralist[nlstart],nfra+1): nfra_in_seq.append(i)		
+				for i in range(nbamlist[nlstart],nbam+1): 
+					if i!=-1:nbam_in_seq.append(i)
+				for i in range(nfralist[nlstart],nfra+1): 
+					if i!=-1:nfra_in_seq.append(i)		
 			nlstart=-22
 		else:
 			#print("RAF",nl,nbam,nfra)
@@ -235,12 +293,33 @@ for nl in range(0, nlmax) :
 
 # loop finished
 seqlist.append((nbamlist[nlstart],nbam,nfralist[nlstart],nfra))
-#print("final","+",(nbamlist[nlstart],nbam,nfralist[nlstart],nfra))
-for i in range(nbamlist[nlstart],nbam+1): nbam_in_seq.append(i)
-for i in range(nfralist[nlstart],nfra+1): nfra_in_seq.append(i)
+for i in range(nbamlist[nlstart],nbam+1): 
+	if i!=-1:nbam_in_seq.append(i)
+for i in range(nfralist[nlstart],nfra+1): 
+	if i!=-1:nfra_in_seq.append(i)
 
-if len(nbam_in_seq)!=len(bamdict): print("problème de logique interne nbam_in_seq",len(nbam_in_seq)," not = bamdict",len(bamdict))
-if len(nfra_in_seq)!=len(fradict): print("problème de logique interne nfra_in_seq",len(nfra_in_seq)," not = fradict",len(fradict))
+if len(nbam_in_seq)!=len(bamdict): 
+	print("problème de logique interne nbam_in_seq",len(nbam_in_seq)," not = bamdict",len(bamdict))
+	#print(nbam_in_seq)
+	nbam=0
+	for i in nbam_in_seq:
+		if i!=nbam:
+			print("->problème de séquence ? i,nbam",i,nbam)
+			break
+		nbam+=1
+if len(nfra_in_seq)!=len(fradict): 
+	print("problème de logique interne nfra_in_seq",len(nfra_in_seq)," not = fradict",len(fradict))
+	#print(nfra_in_seq)
+	nfra=0
+	for i in nfra_in_seq:
+		if i!=nfra:
+			print("->problème de séquence ? i,nfra",i,nfra)
+			break
+		nfra+=1
+
+#print("seqlist")
+#for x in seqlist:print(x)
+#sys.exit("fin temporaire")
 
 
 lenlinesprl=len(seqlist)
@@ -314,8 +393,12 @@ if checks:
 			j=nfra1
 			for i in range(nbam1,nbam2+1):
 				nl+=1
-				checktext+=str(nl)+"\t"+str(i)+"\t"+bamdict[i]+"\t"+str(j)+"\t"+fradict[j]+"\n"
+				if i==-1: bamtext="-NA-"
+				else: bamtext=bamdict[i]
+				checktext+=str(nl)+"\t"+str(i)+"\t"+bamtext+"\t"+str(j)+"\t"+fradict[j]+"\n"
 				j+=1
+				if j>=len(fradict):break   # why does this happen sometimes???
+
 	filecheck=open(filecheckName,"w")
 	filecheck.write(checktext)
 	filecheck.close()
@@ -362,7 +445,15 @@ if os.path.exists(disfileName):
 		nsent=int(metasent.group(1))
 	else:
 		nsent=0
-	if bamsent!=nsent: print("!!!IMPORTANT!!! not the same number of sentences in dis file",nsent,"and in ods file",bamsent," !!!")
+	s_matches = re.findall(r'<span class="sent">', distext)
+	nsent_real=len(s_matches)
+	if bamsent!=nsent: 
+		if nsent!=nsent_real:
+			print("Warning: number of sentences in dis file (real)",nsent_real,"does not match number reported in meta:",nsent)
+			if bamsent!=nsent_real:
+				print("!!!IMPORTANT!!! not the same number of sentences in dis file (real):",nsent_real,"and in ods file",bamsent," !!!")
+		else:
+			print("!!!IMPORTANT!!! not the same number of sentences in dis file (meta=real):",nsent,"and in ods file",bamsent," !!!")
 	metaw=metawords.search(distext)
 	if metaw :
 		nwords=int(metaw.group(1))
@@ -402,7 +493,7 @@ print("français :  ",frasent,"sentences -",frawords,"words")
 
 # CAVEAT : the following situation is not handled
 # many2many inversions : where two or more sentences in Bam is not in the same sentence order as in the same number of sentences in French
-#     how is this handled today ? how to signal in ods ?
+#     how is this handled today ? colors!  how to signal in ods ?
 
 # some information about the prl format by Andrij Rovenchak
 # Dear Colleagues,
