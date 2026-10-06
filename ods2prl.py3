@@ -163,6 +163,8 @@ for key,sheet in data.items():
 			fra=elements[colfra].strip()  # last column (2d of French, aligned)
 			fra2dict[nfra]=fra
 			fra2text+="<s n=\""+str(nfra)+"\">"+fra+"</s>\n"
+			if fra=="":
+				sys.exit("chaque ligne de la 2° colonne en français doit être remplie\nproblème ligne n°"+str(nl))
 
 
 nbamlist.append(-1) # to close the lists

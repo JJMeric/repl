@@ -304,7 +304,7 @@ if ($retour === FALSE) {
 		}
 
 	}
-
+        # partie 2->fin: commune à query et queryf
 	while ($enreg = mysqli_fetch_array($retour, MYSQLI_BOTH)) {
 		$matches+=1;
 		$gloss=$enreg["gf"];
@@ -312,7 +312,7 @@ if ($retour === FALSE) {
 		else {$gloss=str_replace("."," ",$gloss);}
     		echo "<small>".$enreg["id"]."</small> <b>".$enreg["lx"]."</b> ".$dictps[$enreg["ps"]]." : <b>$gloss</b><br />\n";
     		echo "<ul id='lx'>\n";
-    		echo "<li><i>glose désamb.: ".$enreg["mmc"]."</i></li>\n";
+    		echo "<li><i>glose désamb.: <input type=\"TEXT\" READONLY onclick=\"this.select();document.execCommand('copy');\" style=\"border:none;\" value=\"".$enreg["mmc"]."\"></i></li>\n";
     		# .. autres données
     		$lt=$enreg["lt"];
     		if ($lt != "") {echo "<li>litt.: $lt</li>\n";}
@@ -428,8 +428,8 @@ if ($retour === FALSE) {
                                         $sylink="<a href='$querylink?id=$idlxsy'>$sylink</a>";
                                 }
                                 $sydi=$enreg_sy["di"];
-                                if $sydi=="":   $sytxt=$sytxt.$sylink.", ";
-    				else:           $sytxt=$sytxt.$sylink."<i>$sydi</i>, ";
+                                if ($sydi=="")   {$sytxt=$sytxt.$sylink.", ";}
+    				else             {$sytxt=$sytxt.$sylink."<i>$sydi</i>, ";}
     			}
     			$sytxt=chop($sytxt,", ");  # remove last comma
     			if ($sytxt !="") {
